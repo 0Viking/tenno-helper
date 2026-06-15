@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenno Helper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-left">
+        <h1 class="site-title">
+          <img class="site-logo" src="assets/icons/logo/tennohelper.png" alt="Tenno Helper">
+        </h1>
+        <button class="nav-button" id="archetype-btn" type="button">
+          <img class="nav-icon" src="assets/icons/nav/archetypes.png" alt="">
+          <span data-i18n="archetypes">Archetypes</span>
+        </button>
+        <button class="nav-button" id="star-chart-btn" type="button">
+          <img class="nav-icon" src="assets/icons/nav/star-chart.png" alt="">
+          <span data-i18n="star_chart">Star Chart</span>
+        </button>
+        <button class="nav-button" id="glossary-btn" type="button">
+          <img class="nav-icon" src="assets/icons/nav/glossary.svg" alt="">
+          <span data-i18n="glossary">Glossary</span>
+        </button>
+        <button class="nav-button" id="rivens-btn" type="button">
+          <img class="nav-icon" src="assets/icons/nav/rivens.png" alt="">
+          <span data-i18n="rivens">Rivens</span>
+        </button>
+      </div>
+      <div class="header-right">
+        <div class="nav-dropdown" id="lang-dropdown">
+          <button class="nav-button lang-button" id="lang-btn" aria-haspopup="true" aria-expanded="false">
+            <img class="flag" id="lang-flag" src="assets/flags/us.svg" alt="">
+            <span class="lang-name" id="lang-name">English</span>
+            <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu dropdown-menu-lang" id="lang-menu" role="menu">
+            <button class="dropdown-item lang-item active" data-lang="en">
+              <img class="flag" src="assets/flags/us.svg" alt=""> English
+            </button>
+            <button class="dropdown-item lang-item" data-lang="pt-BR">
+              <img class="flag" src="assets/flags/br.svg" alt=""> Português
+            </button>
+            <button class="dropdown-item lang-item disabled" data-lang="es" aria-disabled="true">
+              <img class="flag" src="assets/flags/es.svg" alt=""> Español <span class="soon" data-i18n="coming_soon">(coming soon)</span>
+            </button>
+            <button class="dropdown-item lang-item disabled" data-lang="ja" aria-disabled="true">
+              <img class="flag" src="assets/flags/jp.svg" alt=""> 日本語 <span class="soon" data-i18n="coming_soon">(coming soon)</span>
+            </button>
+          </div>
+        </div>
+        <button class="nav-button credits-button" id="credits-btn" type="button" aria-label="Credits">
+          <span class="credits-icon" aria-hidden="true">ⓘ</span>
+          <span class="credits-text" data-i18n="credits">Credits</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div id="tab-archetypes" class="tab-content">
+      <section class="page-intro">
+        <h2 class="page-intro-title" data-i18n="archetypes_title">Archetypes</h2>
+        <p class="page-intro-text" data-i18n="archetypes_intro" data-i18n-html></p>
+      </section>
+
+      <section class="stats-bar" id="stats-bar"></section>
+      <section class="archetype-bar" id="archetype-bar"></section>
+
+      <section class="archetype-info" id="archetype-info">
+        <h2 class="archetype-info-title" id="archetype-name">—</h2>
+        <p class="archetype-info-description" id="archetype-description">—</p>
+      </section>
+
+      <div class="grid-wrapper">
+        <p class="grid-hint" data-i18n="grid_hint">Warframes of the selected archetype are highlighted. Click one to select it.</p>
+        <div class="warframe-grid" id="warframe-grid"></div>
+      </div>
+
+      <div class="chart-wrapper">
+        <svg id="radar" viewBox="-300 -250 600 500" preserveAspectRatio="xMidYMid meet"></svg>
+
+        <div class="stats">
+          <div class="stat" data-stat="dano">
+            <label data-i18n="stat_dano">Damage</label>
+            <input type="number" min="0" max="5" step="1" value="1" data-key="dano">
+          </div>
+          <div class="stat" data-stat="sobrevivencia">
+            <label data-i18n="stat_sobrevivencia">Survival</label>
+            <input type="number" min="0" max="5" step="1" value="3" data-key="sobrevivencia">
+          </div>
+          <div class="stat" data-stat="suporte">
+            <label data-i18n="stat_suporte">Support</label>
+            <input type="number" min="0" max="5" step="1" value="4" data-key="suporte">
+          </div>
+          <div class="stat" data-stat="controle">
+            <label data-i18n="stat_controle">Crowd Control</label>
+            <input type="number" min="0" max="5" step="1" value="2" data-key="controle">
+          </div>
+          <div class="stat" data-stat="furtividade">
+            <label data-i18n="stat_furtividade">Stealth</label>
+            <input type="number" min="0" max="5" step="1" value="0" data-key="furtividade">
+          </div>
+          <div class="stat" data-stat="complexidade">
+            <label data-i18n="stat_complexidade">Complexity</label>
+            <input type="number" min="0" max="5" step="1" value="3" data-key="complexidade">
+          </div>
+        </div>
+      </div>
+
+      <section class="warframe-detail hidden" id="warframe-detail">
+        <div class="warframe-detail-body">
+          <div class="warframe-detail-main">
+            <header class="warframe-detail-header">
+              <h3 class="warframe-detail-name" id="warframe-detail-name">—</h3>
+              <p class="warframe-detail-subtitle" id="warframe-detail-subtitle"></p>
+            </header>
+            <hr class="warframe-detail-sep">
+            <p class="warframe-detail-description" id="warframe-detail-description"></p>
+            <div class="ability-tabs" id="ability-tabs" role="tablist"></div>
+            <div class="ability-panel" id="ability-panel"></div>
+            <div class="warframe-acquisition hidden" id="warframe-acquisition"></div>
+          </div>
+          <aside class="warframe-portrait-wrapper">
+            <div class="variant-tabs" id="variant-tabs" role="tablist"></div>
+            <div class="form-tabs" id="form-tabs" role="tablist"></div>
+            <div class="warframe-portrait">
+              <img class="portrait-layer active" id="warframe-portrait-img" alt="">
+              <img class="portrait-layer" id="warframe-portrait-img-b" alt="" aria-hidden="true">
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <div id="tab-glossary" class="tab-content hidden">
+      <section class="glossary-intro">
+        <h2 class="glossary-intro-title" data-i18n="glossary_title">Glossary</h2>
+        <p class="glossary-intro-text" data-i18n="glossary_intro" data-i18n-html></p>
+      </section>
+
+      <div class="glossary-sections" id="glossary-sections">
+
+        <details class="glossary-section" data-id="status-effects" data-keywords="status,proc,impact,slash,puncture,heat,cold,toxin,electricity,blast,corrosive,gas,magnetic,radiation,viral,colisivo,corte,perfurante,calor,frio,toxico,toxina,eletricidade,explosao,corrosivo,gas,magnetico,radiacao,viral">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_status_effects">Status Effects</span>
+            <span class="glossary-section-caret">▾</span>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-section-intro" id="status-intro-text" data-i18n="status_effects_intro" data-i18n-html></p>
+
+            <section class="status-group">
+              <h3 class="status-group-label" data-i18n="status_physical">Physical</h3>
+              <div class="status-bar status-bar-physical" id="status-bar-physical"></div>
+            </section>
+
+            <section class="status-group">
+              <h3 class="status-group-label" data-i18n="status_elemental">Elemental</h3>
+              <div class="status-bar status-bar-elemental" id="status-bar-elemental"></div>
+              <p class="status-bar-hint" id="status-elemental-hint" data-i18n="status_elemental_hint"></p>
+            </section>
+
+            <section class="status-group">
+              <h3 class="status-group-label" data-i18n="status_special">Special</h3>
+              <div class="status-bar status-bar-special" id="status-bar-special"></div>
+            </section>
+
+            <section class="status-info hidden" id="status-info">
+              <h2 class="status-info-title" id="status-info-title">—</h2>
+              <p class="status-info-description" id="status-info-description"></p>
+              <div class="status-info-proc" id="status-info-proc"></div>
+              <div class="status-faction-grid" id="status-faction-grid"></div>
+            </section>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <div id="tab-rivens" class="tab-content hidden">
+      <section class="riven-intro">
+        <h2 class="riven-intro-title" data-i18n="riven_page_title">Riven Evaluation</h2>
+        <p class="riven-intro-text" data-i18n="riven_page_intro" data-i18n-html></p>
+      </section>
+
+      <section class="riven-section riven-image-section" id="riven-image-section">
+        <input type="file" id="riven-image-input" accept="image/png,image/jpeg,image/webp" hidden>
+        <div class="riven-upload-zone" id="riven-upload-zone">
+          <div class="riven-upload-icon">📷</div>
+          <p class="riven-upload-prompt-text" data-i18n="riven_upload_prompt">Drop a riven screenshot here or click to upload</p>
+          <p class="riven-upload-hint" data-i18n="riven_upload_hint" data-i18n-html>PNG, JPG or WebP</p>
+        </div>
+
+        <div class="riven-image-preview hidden" id="riven-image-preview">
+          <img id="riven-image-preview-img" alt="">
+          <div class="riven-image-actions">
+            <button type="button" class="riven-image-change-btn" id="riven-image-change-btn" data-i18n="riven_ocr_change_image">Choose another image</button>
+            <button type="button" class="riven-image-remove-btn" id="riven-image-remove-btn" data-i18n="riven_ocr_remove_image">Remove image</button>
+          </div>
+        </div>
+
+        <div class="riven-ocr-status hidden" id="riven-ocr-status">
+          <div class="riven-ocr-spinner"></div>
+          <div class="riven-ocr-status-text" id="riven-ocr-status-text">—</div>
+          <div class="riven-ocr-progress-bar"><div class="riven-ocr-progress-fill" id="riven-ocr-progress-fill"></div></div>
+        </div>
+
+        <div class="riven-ocr-banner hidden" id="riven-ocr-banner"></div>
+
+        <div class="riven-ocr-disclaimer" id="riven-ocr-disclaimer">
+          <span class="riven-ocr-disclaimer-icon" aria-hidden="true">⚠️</span>
+          <span data-i18n="riven_ocr_disclaimer">Image reading may contain mistakes — always review the detected values before evaluating.</span>
+        </div>
+      </section>
+
+      <section class="riven-section" id="riven-weapon-section">
+        <h3 class="riven-section-label" data-i18n="riven_weapon_label">Weapon (optional)</h3>
+        <div class="riven-weapon-row" id="riven-weapon-row">
+          <button class="riven-weapon-btn" id="riven-weapon-btn" type="button"></button>
+        </div>
+      </section>
+
+      <section class="riven-section" id="riven-category-section">
+        <h3 class="riven-section-label" data-i18n="riven_category_label">Weapon category</h3>
+        <div class="riven-pill-row" id="riven-category-row"></div>
+      </section>
+
+      <section class="riven-section" id="riven-stats-section">
+        <h3 class="riven-section-label" data-i18n="riven_stats_label">Stats</h3>
+        <div class="riven-stat-list" id="riven-stat-list"></div>
+        <button type="button" class="riven-add-stat-btn" id="riven-add-stat-btn">
+          <span class="riven-add-stat-icon">+</span>
+          <span data-i18n="riven_add_stat">Add stat</span>
+        </button>
+      </section>
+
+      <div class="riven-evaluate-wrap" id="riven-evaluate-wrap">
+        <button class="riven-evaluate-btn" id="riven-evaluate-btn" type="button" data-i18n="riven_evaluate">Evaluate</button>
+      </div>
+
+      <section class="riven-result hidden" id="riven-result">
+        <div class="riven-score-block">
+          <div class="riven-score-number" id="riven-score-number">—</div>
+          <div class="riven-score-meta">
+            <div class="riven-score-verdict" id="riven-score-verdict">—</div>
+            <div class="riven-score-outof">/ 10</div>
+          </div>
+        </div>
+
+        <h4 class="riven-breakdown-label" data-i18n="riven_breakdown_label">Breakdown</h4>
+        <div class="riven-breakdown" id="riven-breakdown"></div>
+      </section>
+    </div>
+
+    <div id="tab-star-chart" class="tab-content hidden">
+      <section class="page-intro">
+        <h2 class="page-intro-title" data-i18n="star_chart_title">Star Chart</h2>
+        <p class="page-intro-text" data-i18n="star_chart_intro" data-i18n-html></p>
+      </section>
+
+      <section class="star-chart-toolbar">
+        <div class="star-chart-filters" id="star-chart-filters"></div>
+        <div class="star-chart-search-wrap">
+          <input type="search" id="star-chart-search" class="star-chart-search-input" placeholder="Search planet, node…" data-i18n-attr="placeholder:star_chart_search_placeholder" autocomplete="off">
+          <button type="button" id="star-chart-search-clear" class="star-chart-search-clear hidden" aria-label="Clear search">×</button>
+        </div>
+      </section>
+
+      <div class="star-chart-view" id="star-chart-view"></div>
+    </div>
+  </div>
+
+  <div class="weapon-modal hidden" id="weapon-modal" role="dialog" aria-modal="true" aria-labelledby="weapon-modal-title">
+    <div class="weapon-modal-backdrop" id="weapon-modal-backdrop"></div>
+    <div class="weapon-modal-content">
+      <header class="weapon-modal-header">
+        <h2 class="weapon-modal-title" id="weapon-modal-title" data-i18n="weapon_picker_title">Select weapon</h2>
+        <button class="weapon-modal-close" id="weapon-modal-close" type="button" aria-label="Close" data-i18n-attr="aria-label:weapon_picker_close">×</button>
+      </header>
+
+      <div class="weapon-modal-cat-tabs" id="weapon-cat-tabs"></div>
+
+      <div class="weapon-modal-search">
+        <input type="search" id="weapon-search" placeholder="Search weapon…" data-i18n-attr="placeholder:weapon_search_placeholder" autocomplete="off">
+      </div>
+
+      <div class="weapon-modal-body">
+        <div class="weapon-list" id="weapon-list"></div>
+        <div class="weapon-detail" id="weapon-detail"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="resource-modal hidden" id="resource-modal" role="dialog" aria-modal="true" aria-labelledby="resource-modal-title">
+    <div class="resource-modal-backdrop" id="resource-modal-backdrop"></div>
+    <div class="resource-modal-content">
+      <header class="resource-modal-header">
+        <h2 class="resource-modal-title" id="resource-modal-title">—</h2>
+        <button class="resource-modal-close" id="resource-modal-close" type="button" aria-label="Close">×</button>
+      </header>
+      <div class="resource-modal-body" id="resource-modal-body"></div>
+    </div>
+  </div>
+
+  <div class="credits-modal hidden" id="credits-modal" role="dialog" aria-modal="true" aria-labelledby="credits-modal-title">
+    <div class="credits-modal-backdrop" id="credits-modal-backdrop"></div>
+    <div class="credits-modal-content">
+      <header class="credits-modal-header">
+        <h2 class="credits-modal-title" id="credits-modal-title" data-i18n="credits_title">Credits</h2>
+        <button class="credits-modal-close" id="credits-modal-close" type="button" aria-label="Close">×</button>
+      </header>
+      <div class="credits-body">
+
+        <section class="credits-disclaimer">
+          <div class="credits-disclaimer-label" data-i18n="credits_game_label">Game content</div>
+          <p data-i18n="credits_game_text">
+            Warframe™ is a trademark of Digital Extremes Ltd. All rights to the game, its art, and its lore belong to Digital Extremes.
+          </p>
+          <p class="credits-disclaimer-link">
+            <a href="https://www.warframe.com" target="_blank" rel="noopener">warframe.com →</a>
+          </p>
+        </section>
+
+        <section class="credits-section">
+          <h3 class="credits-section-label" data-i18n="credits_creator_label">Created by</h3>
+          <p class="credits-name">Yuri Kotoman</p>
+        </section>
+
+        <section class="credits-section">
+          <h3 class="credits-section-label" data-i18n="credits_archetype_label">Archetype system</h3>
+          <p>
+            <a href="https://www.youtube.com/@Vinoncio" target="_blank" rel="noopener">Vinoncio</a>
+            — <span data-i18n="credits_archetype_desc">archetype classification, signature stats and warframe categorization</span>
+          </p>
+          <p class="credits-subref">
+            ↳ <a href="https://www.youtube.com/watch?v=Cg-RLaT1bcU" target="_blank" rel="noopener" data-i18n="credits_archetype_video">Reference video</a>
+          </p>
+        </section>
+
+        <section class="credits-section">
+          <h3 class="credits-section-label" data-i18n="credits_sources_label">References &amp; sources</h3>
+          <ul class="credits-list">
+            <li>
+              <a href="https://wiki.warframe.com" target="_blank" rel="noopener">wiki.warframe.com</a>
+              — <span data-i18n="credits_wiki_desc">weapon data, dispositions, images, status effects, lore</span>
+            </li>
+            <li>
+              <a href="https://morrowshore.com/guide/rivens/" target="_blank" rel="noopener">Morrow Shore — Comprehensive Riven Guide</a>
+              — <span data-i18n="credits_morrow_desc">riven tier reference and evaluation conventions</span>
+            </li>
+            <li>
+              <a href="https://semlar.com/rivencalc" target="_blank" rel="noopener">Semlar Riven Calculator</a>
+              — <span data-i18n="credits_semlar_desc">riven roll mechanics and stat range references</span>
+            </li>
+            <li>
+              <a href="https://browse.wf" target="_blank" rel="noopener">browse.wf</a>
+              — <span data-i18n="credits_browse_desc">weapon database cross-reference</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="credits-section">
+          <h3 class="credits-section-label" data-i18n="credits_tech_label">Tech stack</h3>
+          <ul class="credits-list">
+            <li>
+              <a href="https://github.com/naptha/tesseract.js" target="_blank" rel="noopener">Tesseract.js</a>
+              — <span data-i18n="credits_tesseract_desc">client-side OCR for riven image upload</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="credits-section">
+          <h3 class="credits-section-label" data-i18n="credits_thanks_label">Thanks</h3>
+          <p data-i18n="credits_thanks_text">To the Warframe community for screenshots, feedback and testing.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

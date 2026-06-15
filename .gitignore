@@ -1,0 +1,29 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor junk
+.vscode/
+.idea/
+*.swp
+*~
+
+# Local-only docs (kept in the working folder, not in the repo)
+PLAN.md
+TRANSCRIPT.md
+
+# Dev-only / not part of the deployed site
+_batches/
+scripts/
+**/__pycache__/
+*.pyc
+
+# Secrets / credentials
+obsidian.env
+.env
+.env.local
+
+# Misc
+*.log
+*.zip
