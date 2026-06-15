@@ -40,6 +40,16 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+- **2026-06-15 — Resources, craft costs, and better filters**
+  - **Complete resource catalog** — over 350 resources now listed (was ~25 originally), covering every Open World, Empyrean, Duviri, Höllvania, and quest item from the wiki.
+  - **Tags on every resource** — each one shows its rarity, location, and source as colored chips, so you can scan the list and instantly see what kind of item it is.
+  - **Three independent filters in the resource grid** — narrow it down by rarity, by location (Star Chart, Plains of Eidolon, Orb Vallis, Cambion Drift, Duviri, Höllvania, Dark Refractory, Misc), or by source (Bounty Drops, Heist Drops, Mining, Fishing, Necramech Drops, Hex Treasures, etc.).
+  - **Multi-select mission filters in the Star Chart** — pick several mission types simultaneously (e.g. Assassination + Spy) instead of one at a time. Click an active chip to toggle it off; click "All" to clear them.
+  - **Full craft cost per warframe** — every frame now shows the complete shopping list to build it (Main BP + Neuroptics + Chassis + Systems combined), with each resource clickable to jump straight to its recommended farm node.
+  - **Special cases handled** — Chroma's full breakdown including the Volt / Ember / Frost / Saryn parts it requires; Equinox shows the Day + Night halves separately plus the aggregated total including Forma.
+  - **Smart "View on Star Chart" link** — clicking the link from a warframe now auto-applies the right mission-type filter, so the relevant farm node stands out immediately.
+  - **Open-world planets show every regional resource** — Venus now lists every Orb Vallis item, Earth every Plains of Eidolon item, Deimos every Cambion Drift item, all alphabetized in a 3-column grid.
+
 - **2026-06-15 — First version launch**
   - **Archetypes** — every warframe sorted by combat archetype, with abilities, portraits, and acquisition info.
   - **Star Chart** — full solar system in progression order: all planets, nodes, boss → warframe drops, recommended farms, mission filters, search, and a Show Spoilers toggle.
@@ -92,6 +102,16 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+- **2026-06-15 — Recursos, custos de craft e filtros melhorados**
+  - **Catálogo completo de recursos** — mais de 350 recursos listados agora (antes eram ~25), cobrindo todo Open World, Empyrean, Duviri, Höllvania, Dark Refractory e itens de quest da wiki.
+  - **Tags em cada recurso** — cada um mostra raridade, local e fonte como chips coloridos, então dá pra bater o olho e saber na hora que tipo de item é.
+  - **Três filtros independentes na grid de recursos** — afunile por raridade, por local (Mapa Estelar, Plains of Eidolon, Orb Vallis, Cambion Drift, Duviri, Höllvania, Refratário Sombrio, Diversos) ou por fonte (Drops de Bounty, Heist, Mineração, Pesca, Necramech, Tesouros Hex, etc.).
+  - **Multi-seleção de filtros de missão no Mapa Estelar** — escolha vários tipos de missão ao mesmo tempo (ex: Assassinato + Espionagem) em vez de só um. Clicar num chip ativo desliga ele; clicar em "Todos" limpa tudo.
+  - **Custo de craft completo por warframe** — cada frame agora mostra a lista de compras pra construir ele inteiro (BP Principal + Neuroptics + Chassis + Sistemas somados), com cada recurso clicável pra ir direto pro nodo de farm recomendado.
+  - **Casos especiais tratados** — Chroma mostra o breakdown completo incluindo as partes de Volt / Ember / Frost / Saryn que ele exige; Equinox mostra Day + Night separadamente e o total agregado com Forma.
+  - **Link "Ver no Mapa Estelar" inteligente** — clicar no link a partir de um warframe agora aplica automaticamente o filtro de tipo de missão certo, então o nodo de farm relevante já fica em destaque.
+  - **Planetas de open-world unem recursos automaticamente** — Vênus agora lista todos os itens do Orb Vallis, Terra todos das Plains of Eidolon, Deimos todos do Cambion Drift, em ordem alfabética numa grid de 3 colunas.
 
 - **2026-06-15 — Lançamento da primeira versão**
   - **Arquétipos** — cada warframe organizado por arquétipo de combate, com habilidades, portraits e infos de aquisição.

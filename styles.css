@@ -3018,6 +3018,227 @@ svg#radar {
   font-style: italic;
 }
 
+/* §16.6 — Craft cost (aggregated resource shopping list) */
+.acquisition-craft-cost {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(94, 192, 232, 0.04);
+  border: 1px solid rgba(94, 192, 232, 0.18);
+  border-radius: 6px;
+}
+.acquisition-craft-cost-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.acquisition-craft-cost-label {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #8ed3ed;
+}
+.acquisition-craft-cost-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+@media (max-width: 900px) {
+  .acquisition-craft-cost-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .acquisition-craft-cost-grid { grid-template-columns: 1fr; }
+}
+.craft-cost-pill {
+  background: transparent;
+  border: 1px solid transparent;
+  border-left: 3px solid var(--rarity-color, #444);
+  border-radius: 4px;
+  color: #ddd;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  min-width: 0;
+}
+.craft-cost-pill:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--rarity-color, #888);
+  color: #fff;
+}
+.craft-cost-pill:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.craft-cost-pill-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+.craft-cost-pill-icon-fallback {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  background: #222;
+  border-radius: 3px;
+}
+.craft-cost-pill-name {
+  flex: 1 1 auto;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.craft-cost-pill-qty {
+  flex: 0 0 auto;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--rarity-color, #ccc);
+  background: color-mix(in srgb, var(--rarity-color, #888) 10%, transparent);
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--rarity-color, #888) 40%, transparent);
+}
+
+/* §16.6 — Cross-frame parts (Chroma case) */
+.acquisition-requires-parts {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(232, 152, 92, 0.3);
+}
+.acquisition-requires-parts-header {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #e8985c;
+  margin-bottom: 10px;
+}
+.acquisition-donor-part {
+  margin-bottom: 14px;
+}
+.acquisition-donor-part:last-child {
+  margin-bottom: 0;
+}
+.acquisition-donor-part-title {
+  width: 100%;
+  background: rgba(232, 152, 92, 0.06);
+  border: 1px solid rgba(232, 152, 92, 0.25);
+  border-radius: 6px;
+  color: #ddd;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  transition: background 0.12s, border-color 0.12s;
+}
+.acquisition-donor-part-title:hover {
+  background: rgba(232, 152, 92, 0.14);
+  border-color: rgba(232, 152, 92, 0.55);
+  color: #fff;
+}
+.acquisition-donor-part-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.acquisition-donor-part-label-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.acquisition-donor-part-name {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.acquisition-donor-part-meta {
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+.acquisition-donor-part-qty {
+  flex: 0 0 auto;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e8985c;
+  background: rgba(232, 152, 92, 0.12);
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(232, 152, 92, 0.4);
+}
+.acquisition-donor-part-arrow {
+  flex: 0 0 auto;
+  font-size: 13px;
+  color: #e8985c;
+  opacity: 0.7;
+}
+.acquisition-donor-part-stub {
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+  padding: 6px 12px;
+}
+
+/* §16.6 — Sub-frames (Equinox case) */
+.acquisition-sub-frames {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(184, 136, 255, 0.3);
+}
+.acquisition-sub-frames-header {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #b888ff;
+  margin-bottom: 10px;
+}
+.acquisition-sub-frame {
+  margin-bottom: 14px;
+}
+.acquisition-sub-frame:last-child {
+  margin-bottom: 0;
+}
+.acquisition-sub-frame-title {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ddd;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  border-left: 2px solid #b888ff;
+}
+
 .acquisition-star-chart-link {
   margin-top: 14px;
   padding: 10px 14px;
@@ -3920,6 +4141,12 @@ svg#radar {
   width: fit-content;
   max-width: 100%;
 }
+/* The 3-column grid needs full container width — applies to both the planet
+   detail "Resources on this planet" and the global all-resources list. */
+.star-chart-all-resources:has(.resource-list.is-grid-3col),
+.star-chart-resources:has(.resource-list.is-grid-3col) {
+  width: 100%;
+}
 .star-chart-resources-label {
   font-family: 'Fredoka', 'Segoe UI', sans-serif;
   font-size: 12px;
@@ -3988,6 +4215,85 @@ svg#radar {
   gap: 4px;
 }
 
+/* 3-column grid variant for the global all-resources list (alphabetical fill). */
+.resource-list.is-grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px 10px;
+}
+@media (max-width: 900px) {
+  .resource-list.is-grid-3col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .resource-list.is-grid-3col { grid-template-columns: 1fr; }
+}
+
+/* Three-row filter group above the all-resources list. */
+.star-chart-resource-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 6px 0 14px;
+}
+.star-chart-resource-filter-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: start;
+  gap: 8px;
+}
+.star-chart-resource-filter-row-label {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #888;
+  padding-top: 6px;
+  text-align: right;
+}
+@media (max-width: 700px) {
+  .star-chart-resource-filter-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .star-chart-resource-filter-row-label {
+    text-align: left;
+    padding-top: 0;
+    color: #666;
+  }
+}
+
+/* Category filter chips above the all-resources list. */
+.star-chart-resource-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.star-chart-resource-cat-chip {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  color: #aaa;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.12s, color 0.12s, background 0.12s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.star-chart-resource-cat-chip:hover { color: #fff; border-color: #444; }
+.star-chart-resource-cat-chip.active {
+  color: #fff;
+  border-color: var(--chip-color, #5ec0e8);
+  background: color-mix(in srgb, var(--chip-color, #5ec0e8) 14%, transparent);
+  text-shadow: 0 0 4px color-mix(in srgb, var(--chip-color, #5ec0e8) 50%, transparent);
+}
+
 .resource-list-item {
   background: transparent;
   border: 1px solid transparent;
@@ -4023,22 +4329,59 @@ svg#radar {
   background: #222;
   border-radius: 4px;
 }
+.resource-list-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
 .resource-list-item-name {
   font-family: 'Fredoka', 'Segoe UI', sans-serif;
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.3px;
-  flex: 0 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 }
-.resource-list-item-rarity {
-  font-size: 10px;
+.resource-list-item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+.resource-list-item-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 9px;
   font-weight: 600;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: var(--rarity-color, #888);
-  flex: 0 0 auto;
-  margin-left: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.5;
 }
+.resource-list-item-tag.is-rarity {
+  border: 1px solid var(--rarity-color, #888);
+  color: var(--rarity-color, #888);
+  background: color-mix(in srgb, var(--rarity-color, #888) 8%, transparent);
+}
+.resource-list-item-tag.is-location {
+  border: 1px solid color-mix(in srgb, var(--location-color, #5ec0e8) 50%, transparent);
+  background: color-mix(in srgb, var(--location-color, #5ec0e8) 10%, transparent);
+  color: var(--location-color, #5ec0e8);
+}
+.resource-list-item-tag.is-source {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #aaa;
+}
+/* Hide legacy rarity span (kept for back-compat) */
+.resource-list-item-rarity { display: none; }
 
 /* ----- Resource modal ----- */
 

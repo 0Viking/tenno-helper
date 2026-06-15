@@ -23,6 +23,9 @@ const STRINGS = {
     star_chart_intro: 'Browse the solar system in [[progression order]] — every planet, node, boss drop and resource worth farming. [[Click a planet card]] to expand it in place with its full node list, recommended farms, and which warframes its bosses drop. Use the [[mission filters]] to find specific objectives, the [[search]] to track a planet/node/boss/warframe by name, and toggle [[Show Spoilers]] when you\'re ready for quest-locked content.',
     star_chart_search_placeholder: 'Search planet, node, boss…',
     star_chart_filter_all: 'All',
+    star_chart_filter_label_rarity:   'Rarity',
+    star_chart_filter_label_location: 'Location',
+    star_chart_filter_label_source:   'Source',
     star_chart_no_results: 'No planets or nodes match your search.',
     star_chart_no_nodes_filter: 'No nodes on this planet match the current filter.',
     star_chart_back: 'Back to planets',
@@ -82,6 +85,15 @@ const STRINGS = {
     acquisition_parts: 'Components',
     acquisition_alternative: 'Alternative source',
     acquisition_recommended: 'Recommended farm',
+    acquisition_craft_cost: 'Resources to build the full frame',
+    acquisition_requires_parts: 'Also requires (parts from other frames)',
+    acquisition_sub_frames: 'Sub-frames you must build first',
+    craft_part_neuroptics: 'Neuroptics',
+    craft_part_chassis: 'Chassis',
+    craft_part_systems: 'Systems',
+    craft_part_main_bp: 'Main BP',
+    craft_for_part: 'for',
+    craft_donor_data_pending: 'Donor frame craft data not yet populated.',
     acquisition_view_on_star_chart: 'View on Star Chart',
     source_enemy_drop: 'Enemy drop',
     source_boss_drop: 'Boss drop',
@@ -210,6 +222,9 @@ const STRINGS = {
     star_chart_intro: 'Navegue pelo sistema solar em [[ordem de progressão]] — cada planeta, nodo, drop de boss e recurso que vale farmar. [[Clique no card de um planeta]] pra expandir in-place com a lista completa de nodos, farms recomendados e quais warframes os bosses dropam. Use os [[filtros de missão]] pra encontrar objetivos específicos, a [[busca]] pra rastrear planeta/nodo/boss/warframe pelo nome, e ative [[Mostrar Spoilers]] quando estiver pronto pra conteúdo desbloqueado por quests.',
     star_chart_search_placeholder: 'Buscar planeta, nodo, boss…',
     star_chart_filter_all: 'Todos',
+    star_chart_filter_label_rarity:   'Raridade',
+    star_chart_filter_label_location: 'Local',
+    star_chart_filter_label_source:   'Fonte',
     star_chart_no_results: 'Nenhum planeta ou nodo corresponde à sua busca.',
     star_chart_no_nodes_filter: 'Nenhum nodo deste planeta corresponde ao filtro atual.',
     star_chart_back: 'Voltar aos planetas',
@@ -269,6 +284,15 @@ const STRINGS = {
     acquisition_parts: 'Componentes',
     acquisition_alternative: 'Fonte alternativa',
     acquisition_recommended: 'Farm recomendado',
+    acquisition_craft_cost: 'Recursos pra construir o frame completo',
+    acquisition_requires_parts: 'Também exige (partes de outros frames)',
+    acquisition_sub_frames: 'Sub-frames que precisam ser construídos antes',
+    craft_part_neuroptics: 'Neuroptics',
+    craft_part_chassis: 'Chassis',
+    craft_part_systems: 'Sistemas',
+    craft_part_main_bp: 'BP Principal',
+    craft_for_part: 'pra',
+    craft_donor_data_pending: 'Dados de craft do frame doador ainda não populados.',
     acquisition_view_on_star_chart: 'Ver no Mapa Estelar',
     source_enemy_drop: 'Drop de inimigos',
     source_boss_drop: 'Drop de boss',
@@ -956,6 +980,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Octavia está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Resolva a Music Puzzle de Lua uma vez pelo Chassis; faça Terrorem (Deimos) e Plato (Lua) pelas outras partes.',
     },
+    craftCost: {
+      neuroptics: { oxium: 1000, polymer_bundle: 4800, plastids: 2600, neural_sensors: 5 },
+      chassis: { polymer_bundle: 6000, salvage: 25000, plastids: 1500, neurodes: 3 },
+      systems: { kuva: 2000, circuits: 3000, morphics: 20, orokin_cell: 5 },
+      main_bp: {},
+    },
   },
   'follie': {
     title: 'A Sombrigrafista',
@@ -974,6 +1004,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes também droppam da Rotação A de Follie\'s Hunt a 5% (6% no Steel Path) cada.',
       alternative: 'Alternativamente, compre com o Aspirant Zorba em qualquer relay usando Atramentum obtido em Follie\'s Hunt (400 por componente, 1200 para o principal; 2400 no total).',
       recommended_farm: 'Vesper Relay / Vênus — Follie\'s Hunt no Steel Path para drop chance melhor e Atramentum mais rápido.',
+    },
+    craftCost: {
+      neuroptics: { neurodes: 2, gallium: 3, cryotic: 150, neural_sensors: 2 },
+      chassis: { alloy_plate: 800, argon_crystal: 2, ferrite: 800, salvage: 600 },
+      systems: { circuits: 250, polymer_bundle: 500, morphics: 4, oxium: 50 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'volt': {
@@ -994,6 +1030,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Volt também pode ser comprado pronto do Teshin por 60.000 standing do Conclave após atingir o rank Typhoon.',
       recommended_farm: 'Escolha o Volt como sua warframe inicial, ou pesquise-o no Tenno Lab do Dojo.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis:    { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems:    { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp:    { orokin_cell: 1 },
+    },
   },
   'caliban': {
     title: 'O Sobrevivente',
@@ -1011,6 +1053,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Blueprint principal comprada no Mercado. Aquisição liberada após completar a quest The New War.',
       parts: 'Blueprints de componentes droppam das Narmer Bounties (Cetus ou Fortuna, Lvl 50-70) como drop incomum. O componente disponível roda aleatoriamente a cada 2,5 horas. Taxas em torno de 5,45-8,11% por stage.',
       recommended_farm: 'Faça Narmer Bounties Lvl 50-70 Stages 2 & 3 — ~12 stages esperados por componente.',
+    },
+    craftCost: {
+      neuroptics: { anomaly_shard: 3, narmer_isoplast: 12, neural_sensors: 10, tralok_eyes: 20 },
+      chassis: { anomaly_shard: 3, narmer_isoplast: 16, mortus_horn: 20, hespazym_alloy: 100 },
+      systems: { anomaly_shard: 3, narmer_isoplast: 12, breath_of_the_eidolon: 30, hexenon: 30 },
+      main_bp: { orokin_cell: 12 },
     },
   },
   'oberon': {
@@ -1031,6 +1079,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Disponível também no Circuit (Duviri) nas semanas em que Oberon está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Earth Proxima cobre 2 dos 3 componentes (Neuroptics + Sistemas). Pra evitar RNG, Circuit garante drops tier-based quando Oberon estiver disponível.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, control_module: 1, polymer_bundle: 150, circuits: 500 },
+      chassis: { gallium: 1, polymer_bundle: 1000, rubedo: 300 },
+      systems: { orokin_cell: 1, gallium: 1, polymer_bundle: 500, alloy_plate: 220 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'equinox': {
     title: 'A Dualidade',
@@ -1049,6 +1103,34 @@ const WARFRAMES_DETAILS = {
       parts: 'Todas as partes Day e Night Aspect droppam do assassinato do Tyl Regor em Titania, Urano. Blueprints de Aspect a 22,56% cada, blueprints de componentes a 25,81% cada.',
       recommended_farm: 'Titania / Urano — repita assassinatos do Tyl Regor; espere farm longo devido às 8 partes distintas necessárias.',
     },
+    // Equinox is built from two sub-frames (Day + Night), each itself a full
+    // 4-part build. The final main BP only needs 1 Forma to combine them.
+    // The aggregated total at the top sums everything (Day parts + Night parts + Forma).
+    craftCost: {
+      main_bp: { forma: 1 },
+    },
+    subFrames: [
+      {
+        slug: 'day_aspect',
+        label: { en: 'Day Aspect (Animus)', 'pt-BR': 'Aspecto do Dia (Animus)' },
+        craftCost: {
+          neuroptics: { alloy_plate: 150, neural_sensors: 1, ferrite: 150, rubedo: 500 },
+          chassis:    { gallium: 1, ferrite: 1000, rubedo: 300 },
+          systems:    { control_module: 1, gallium: 1, salvage: 500, rubedo: 500 },
+          main_bp:    { orokin_cell: 1 },
+        },
+      },
+      {
+        slug: 'night_aspect',
+        label: { en: 'Night Aspect (Anima)', 'pt-BR': 'Aspecto da Noite (Anima)' },
+        craftCost: {
+          neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, plastids: 500 },
+          chassis:    { morphics: 1, polymer_bundle: 1000, plastids: 300 },
+          systems:    { control_module: 1, morphics: 1, nano_spores: 500, plastids: 500 },
+          main_bp:    { orokin_cell: 1 },
+        },
+      },
+    ],
   },
   'banshee': {
     title: 'A Sonora',
@@ -1065,6 +1147,12 @@ const WARFRAMES_DETAILS = {
       source_type: 'dojo_research',
       blueprint: 'Todas as blueprints podem ser pesquisadas no Tenno Lab no Dojo.',
       parts: 'Componentes são obtidos via pesquisa no Tenno Lab e construídos na Foundry.',
+    },
+    craftCost: {
+      neuroptics: { circuits: 150, neural_sensors: 1, polymer_bundle: 200, salvage: 500 },
+      chassis: { morphics: 1, ferrite: 900, rubedo: 50 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 400 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'ash': {
@@ -1084,6 +1172,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam de missões de Railjack: Sistemas de Venus Proxima, Neuroptics de Neptune Proxima, Chassis de Pluto Proxima (Defense/Survival Rotação A em ~12,5-13,3%).',
       alternative: 'Também disponível no Circuit (Duviri) quando o Ash está na rotação: todas as blueprints obtidas ao alcançar recompensas de Tier 10.',
       recommended_farm: 'Faça Defense ou Survival no Proxima correspondente para cada componente — ~7-8 rotações A esperadas por parte.',
+    },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 500 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'cyte-09': {
@@ -1123,6 +1217,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Alternativamente, compre com a Archimedean Yonta no Chrysalith usando Lua Thrax Plasm de Conjunction Survival (75 por componente, 125 para o principal; 350 no total).',
       recommended_farm: 'Circulus / Lua Conjunction Survival no Steel Path — melhor taxa de Plasm/rotação; mate Hollow Thrax para Plasm extra.',
     },
+    craftCost: {
+      neuroptics: { somatic_fibers: 20, alloy_plate: 2500, polymer_bundle: 800, lua_thrax_plasm: 25 },
+      chassis: { voidgel_orb: 20, ferrite: 1000, rubedo: 300, lua_thrax_plasm: 25 },
+      systems: { nitain_extract: 5, voidgel_orb: 30, salvage: 5000, lua_thrax_plasm: 25 },
+      main_bp: { lua_thrax_plasm: 50 },
+    },
   },
   'citrine': {
     title: 'O Bastião Cristalino',
@@ -1141,6 +1241,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes também droppam da Rotação C de Mirror Defense Tyana Pass a 6,10% cada.',
       alternative: 'Alternativamente, compre as blueprints com o Otak no Necralisk usando Belric e Rania Crystal Fragments obtidos no Mirror Defense.',
       recommended_farm: 'Tyana Pass / Marte — Mirror Defense, foque na Rotação C; troque fragmentos com o Otak como suplemento.',
+    },
+    craftCost: {
+      neuroptics: { rubedo: 1000, salvage: 1500, faceted_tiametrite: 15, argon_crystal: 2 },
+      chassis: { cryotic: 1200, alloy_plate: 3000, stellated_necrathene: 6, nano_spores: 2000 },
+      systems: { circuits: 1500, polymer_bundle: 1500, gallium: 3, morphics: 2 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'harrow': {
@@ -1161,6 +1267,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Harrow está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Pago Spy para Neuroptics; Kuva Survival em Taveuni para Sistemas; qualquer Void Fissure para Chassis.',
     },
+    craftCost: {
+      neuroptics: { rubedo: 1500, polymer_bundle: 4000, plastids: 2000, neural_sensors: 5 },
+      chassis: { alloy_plate: 20000, salvage: 25000, oxium: 800, orokin_cell: 5 },
+      systems: { circuits: 2500, cryotic: 1000, ferrite: 25000, control_module: 15 },
+      main_bp: { kuva: 2000 },
+    },
   },
   'nekros': {
     title: 'O Manipulador de Almas',
@@ -1179,6 +1291,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam do assassinato do Lephantis em Magnacidium, Deimos a 33,33% cada.',
       alternative: 'Também disponível no Circuit (Duviri) quando o Nekros está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Magnacidium / Deimos Lephantis — ~17 kills garantem cada componente.',
+    },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'trinity': {
@@ -1199,6 +1317,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Trinity está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Plutão / Hades — assassinato do Ambulas; ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'dagath': {
     title: 'A Cavaleira Espectral',
@@ -1216,6 +1340,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Todas as blueprints obtidas no Dagath\'s Hollow no Clan Dojo (sem necessidade de pesquisa, disponível após construção da sala).',
       parts: 'Componentes requerem 102 Vainthorns no total, obtidos na Abyssal Zone em Ceres — acessada via Abyssal Beacons (Faction Syndicate Rank 2, 5.000 de standing). Cada clear dá 6-8 Vainthorns (8-12 no Steel Path).',
       recommended_farm: 'Acumule Abyssal Beacons em qualquer Faction Syndicate e faça a Abyssal Zone no Steel Path para máximo de Vainthorns por run.',
+    },
+    craftCost: {
+      neuroptics: { vainthorn: 34, alloy_plate: 2000, neurodes: 3, neural_sensors: 3 },
+      chassis: { vainthorn: 34, salvage: 1500, morphics: 4, argon_crystal: 2 },
+      systems: { vainthorn: 34, circuits: 1000, control_module: 5, gallium: 4 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'excalibur': {
@@ -1236,6 +1366,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri): Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Principal). Versão pronta pode ser comprada do Teshin por 60.000 standing do Conclave.',
       recommended_farm: 'War / Marte — assassinato rápido do Lech Kril, ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'garuda': {
     title: 'A Rainha do Sangue',
@@ -1254,6 +1390,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam das Fortuna Bounties no Orb Vallis: Chassis em Lvl 5-15, Sistemas em Lvl 10-30, Neuroptics em Lvl 20-40 (final stages ~22,50-27,60%).',
       alternative: 'Também disponível no Circuit (Duviri) quando a Garuda está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Orb Vallis — faça a Fortuna Bounty do nível apropriado para cada componente; final stages têm as melhores chances.',
+    },
+    craftCost: {
+      neuroptics: { vega_toroid: 2, star_amarast: 6, axidrol_alloy: 40, nano_spores: 5000 },
+      chassis: { calda_toroid: 2, radiant_zodian: 3, travocyte_alloy: 40, alloy_plate: 2200 },
+      systems: { sola_toroid: 2, marquise_thyst: 3, venerdo_alloy: 40, polymer_bundle: 2400 },
+      main_bp: { kuva: 3500 },
     },
   },
   'mesa': {
@@ -1274,6 +1416,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Mesa está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Farme Mutalist Alad V Nav Coordinates em Infested Invasions, depois faça o assassinato em Eris. ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 1500, neural_sensors: 2, polymer_bundle: 350, plastids: 500 },
+      chassis: { morphics: 1, oxium: 50, plastids: 300, nano_spores: 1000 },
+      systems: { argon_crystal: 1, nano_spores: 1600, polymer_bundle: 300, circuits: 500 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'mirage': {
     title: 'A Conjuradora Sagaz',
@@ -1292,6 +1440,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes obtidas no fim de cada missão da quest Hidden Messages. Cópias adicionais custam 25.000 de standing com o Cephalon Simaris.',
       alternative: 'Também disponível no Circuit (Duviri) quando a Mirage está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Complete a quest Hidden Messages para obter todas as partes.',
+    },
+    craftCost: {
+      neuroptics: { alloy_plate: 250, neurodes: 1, polymer_bundle: 400, orokin_cell: 1 },
+      chassis: { orokin_cell: 1, ferrite: 2500, plastids: 450, gallium: 1 },
+      systems: { control_module: 1, circuits: 250, polymer_bundle: 650, orokin_cell: 1 },
+      main_bp: { argon_crystal: 1 },
     },
   },
   'saryn': {
@@ -1312,6 +1466,13 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Saryn está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Sedna / Merrow — assassinato da Kela De Thaym; ~14 kills garantem Neuroptics/Chassis.',
     },
+    // Note: Saryn was the first frame to swap Alloy Plate → Circuits in Neuroptics.
+    craftCost: {
+      neuroptics: { circuits: 150, neural_sensors: 1, polymer_bundle: 300, salvage: 400 },
+      chassis:    { morphics: 1, ferrite: 1000, rubedo: 50 },
+      systems:    { control_module: 1, morphics: 1, salvage: 550, plastids: 350 },
+      main_bp:    { orokin_cell: 1 },
+    },
   },
   'sevagoth': {
     title: 'O Ceifador Espectral',
@@ -1329,6 +1490,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Blueprint principal obtida ao completar a quest Call of the Tempestarii. Cópias adicionais custam 50.000 de standing com o Cephalon Simaris.',
       parts: 'Blueprints de componentes têm 10% de bonus drop chance no fim de missões Void Storm: Neptune Proxima (Meso/Neo, 9,52%), Pluto Proxima (Neo, 10%), Veil Proxima (Axi, 10%).',
       recommended_farm: 'Faça Void Storms em Pluto ou Veil Proxima — o bonus reward é separado das recompensas de Relic, ~10 rotações esperadas por parte.',
+    },
+    craftCost: {
+      neuroptics: { neural_sensors: 6, titanium: 1200, rubedo: 750, salvage: 2750 },
+      chassis: { morphics: 8, cryotic: 650, nullstones: 2, alloy_plate: 3300 },
+      systems: { argon_crystal: 2, oxium: 250, asterite: 15, nano_spores: 2950 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'temple': {
@@ -1349,6 +1516,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Alternativamente, compre com o Flare do The Hex (Rank 4 - Hot & Fresh) usando Beating Heartstrings de Stage Defense (65 por componente, 195 para o principal; 390 no total).',
       recommended_farm: 'Solstice Square Stage Defense — chegue na Rotação C; complemente com compras de Beating Heartstrings com o Flare.',
     },
+    craftCost: {
+      neuroptics: { experimental_arc_relay: 22, plastids: 800, neural_sensors: 1, neurodes: 2 },
+      chassis: { hollvanian_pitchweave_fragment: 400, alloy_plate: 250, nano_spores: 1500, argon_crystal: 1 },
+      systems: { techrot_motherboard: 6, nano_spores: 1300, polymer_bundle: 450, control_module: 6 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'xaku': {
     title: 'A Lei do Vazio',
@@ -1366,6 +1539,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Blueprint principal obtida ao completar a quest Heart of Deimos. Cópias adicionais custam 50.000 de standing com o Cephalon Simaris.',
       parts: 'Blueprints de componentes droppam das Necralisk Bounties no Cambion Drift: Neuroptics em Lvl 15-25 (~12%), Sistemas em Lvl 30-40 (~11%), Chassis em Lvl 40-60 ou Steel Path Lvl 100 (~13%). Requer Solaris United Rank 5 ou Vox Solaris Rank 1 para Gyromag Systems usado na construção.',
       recommended_farm: 'Cambion Drift — faça a Necralisk Bounty correspondente para cada componente; foque nos final stages (~21-26%).',
+    },
+    craftCost: {
+      neuroptics: { neural_sensors: 10, thaumic_distillate: 60, sharrac_teeth: 20, esher_devar: 40 },
+      chassis: { gyromag_systems: 5, spinal_core_section: 3, venerdo_alloy: 50, lucent_teroglobe: 50 },
+      systems: { breath_of_the_eidolon: 10, scintillant: 5, pustulite: 45, ganglion: 60 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'grendel': {
@@ -1386,6 +1565,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Neuroptics Locator desbloqueia Archaeo-freighter (Survival de 20 min), Chassis Locator desbloqueia Icefields of Riddah (Defense de 6 ondas), Systems Locator desbloqueia Mines of Karishh (Excavation de 800 Cryotic).',
       recommended_farm: 'Farme Vitus Essence em Arbitrations, depois faça cada missão única de Europa. Missões são apenas pre-made — leve squad.',
     },
+    craftCost: {
+      neuroptics: { argon_crystal: 2, control_module: 5, ferrite: 3500, alloy_plate: 3800 },
+      chassis: { condroc_wing: 25, kuaka_spinal_claw: 30, tralok_eyes: 20, murkray_liver: 15 },
+      systems: { circuits: 1125, morphics: 10, fish_meat: 125, fish_oil: 100 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'rhino': {
     title: 'A Força Imóvel',
@@ -1404,6 +1589,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam do assassinato do Jackal em Fossa, Vênus. Taxas: Neuroptics 38,72%, Chassis 38,72%, Sistemas 22,56%.',
       alternative: 'Também disponível no Circuit (Duviri) quando o Rhino está na rotação: todas as blueprints obtidas ao alcançar recompensas de Tier 10.',
       recommended_farm: 'Vênus / Fossa — assassinato rápido do Jackal, um dos farms de boss mais rápidos do jogo.',
+    },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neurodes: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { circuits: 450, ferrite: 1000, rubedo: 300 },
+      systems: { ferrite: 500, circuits: 250, polymer_bundle: 100, rubedo: 400 },
+      main_bp: { neurodes: 1 },
     },
   },
   'frost': {
@@ -1424,6 +1615,14 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Frost está na rotação: todas as blueprints obtidas ao alcançar recompensas de Tier 10.',
       recommended_farm: 'Ceres / Exta — farm rápido de assassinato, ~14 kills garantem Neuroptics/Chassis.',
     },
+    // §16.6 — resource costs per part. Aggregated at render time into the total
+    // shopping list. Slugs match RESOURCES so each pill links to the farm modal.
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis:    { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems:    { control_module: 1, morphics: 1, salvage: 500, plastids: 500 },
+      main_bp:    { orokin_cell: 1 },
+    },
   },
   'hydroid': {
     title: 'O Saqueador Marítimo',
@@ -1442,6 +1641,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam do assassinato do Councilor Vay Hek em Oro, Terra (requer Mastery Rank 5). Taxas: Neuroptics 38,72%, Chassis 38,72%, Sistemas 22,56%.',
       alternative: 'Também disponível no Circuit (Duviri) quando o Hydroid está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Terra / Oro — assassinato do Vay Hek; ~14 kills garantem Neuroptics/Chassis.',
+    },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, control_module: 1, polymer_bundle: 150, argon_crystal: 2 },
+      chassis: { argon_crystal: 2, polymer_bundle: 1000, rubedo: 300, nano_spores: 1200 },
+      systems: { orokin_cell: 1, gallium: 4, polymer_bundle: 500, alloy_plate: 220 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'nyx': {
@@ -1462,6 +1667,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Nyx está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Espere um alerta de Invasion com Phorid Manifestation — partes da Nyx só ficam disponíveis então. ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'ivara': {
     title: 'A Caçadora Furtiva',
@@ -1480,6 +1691,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam da Rotação C de missões Spy: Sistemas em Easy (Lvl 1-15, 22,56%), Chassis em Medium (Lvl 16-25), Neuroptics em Hard (Lvl 26+). Variantes Proxima Spy dão 36% cada.',
       alternative: 'Também disponível no Circuit (Duviri) quando a Ivara está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Faça missões Proxima Spy (36% Rotação C) — Orvin-Haarc (Sistemas), Brom Cluster (Chassis), Peregrine Axis (Neuroptics). Todos os vaults precisam de sucesso.',
+    },
+    craftCost: {
+      neuroptics: { neurodes: 5, plastids: 800, polymer_bundle: 2600, argon_crystal: 2 },
+      chassis: { morphics: 5, cryotic: 2000, rubedo: 700, nitain_extract: 4 },
+      systems: { control_module: 5, rubedo: 1000, nitain_extract: 5, argon_crystal: 1 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'atlas': {
@@ -1500,6 +1717,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Atlas está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Eris / Jordas Golem Assassinate — ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { polymer_bundle: 1400, alloy_plate: 1100, circuits: 800, neurodes: 5 },
+      chassis: { nano_spores: 1800, cryotic: 1300, rubedo: 700, argon_crystal: 2 },
+      systems: { ferrite: 4600, polymer_bundle: 1700, morphics: 5, orokin_cell: 1 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'baruuk': {
     title: 'O Guerreiro Relutante',
@@ -1518,6 +1741,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes vendidas pela Little Duck no Rank 3 - Hand com Vox Solaris.',
       alternative: 'Também disponível no Circuit (Duviri) quando o Baruuk está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Farme standing da Vox Solaris completando bounties do Profit-Taker e entregando Toroids.',
+    },
+    craftCost: {
+      neuroptics: { sola_toroid: 3, alloy_plate: 2850, hespazym_alloy: 50, synathid_ecosynth_analyzer: 5 },
+      chassis: { vega_toroid: 3, salvage: 3250, hespazym_alloy: 100, marquise_thyst: 5 },
+      systems: { calda_toroid: 3, ferrite: 2500, tromyzon_entroplasma: 10, radiant_zodian: 5 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'chroma': {
@@ -1538,6 +1767,21 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Chroma está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Progrida pelas Junctions do star chart para desbloquear os componentes naturalmente.',
     },
+    // Resource costs per part. The Volt / Ember / Frost / Saryn parts that
+    // Chroma requires are tracked separately in `requiresParts` (they're not
+    // farmable resources — they're built from another frame's blueprints).
+    craftCost: {
+      neuroptics: { plastids: 200, neural_sensors: 2, polymer_bundle: 350 },
+      chassis:    { neurodes: 2, salvage: 900, plastids: 50 },
+      systems:    { oxium: 400, argon_crystal: 2, neurodes: 1 },
+      main_bp:    {},
+    },
+    requiresParts: [
+      { frame: 'volt',  part: 'neuroptics', forPart: 'main_bp',    qty: 1 },
+      { frame: 'ember', part: 'neuroptics', forPart: 'neuroptics', qty: 1 },
+      { frame: 'frost', part: 'chassis',    forPart: 'chassis',    qty: 1 },
+      { frame: 'saryn', part: 'systems',    forPart: 'systems',    qty: 1 },
+    ],
   },
   'gauss': {
     title: 'O Veloz, Santo de Altra',
@@ -1556,6 +1800,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam da Rotação C de Disruption em Kappa, Sedna a 7,84% cada.',
       recommended_farm: 'Kappa / Sedna Disruption — limpe ao menos 4 conduits por round para Rotação C; ~12 rotações C esperadas por parte.',
     },
+    craftCost: {
+      neuroptics: { argon_crystal: 1, rubedo: 1600, salvage: 6200, alloy_plate: 2950 },
+      chassis: { radian_sentirum: 3, heart_nyth: 3, star_crimzian: 6, grokdrul: 55 },
+      systems: { radiant_zodian: 3, marquise_thyst: 3, mytocardia_spore: 70, thermal_sludge: 85 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'kullervo': {
     title: 'O Renegado Carmesim',
@@ -1573,6 +1823,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Todas as blueprints compradas com a Acrithis no Dormizone usando Kullervo\'s Bane (15 para o principal, 9 para cada componente; 42 no total).',
       parts: 'Kullervo\'s Bane dropa ao derrotar o boss Kullervo no Kullervo\'s Hold e completar o Spiral (Orowyrm) no The Duviri Experience. Aparece nos spirals Anger, Sorrow e Fear. Dá 4-6 banes (6-8 no Steel Path).',
       recommended_farm: 'Faça The Duviri Experience nos moods Anger/Sorrow/Fear; fale com o The Warden no Kullervo\'s Hold para a luta do boss.',
+    },
+    craftCost: {
+      neuroptics: { lamentus: 50, tasoma_extract: 50, saggen_pearl: 100, connla_sprout: 100 },
+      chassis: { nacreous_pebble: 125, kovnik: 100, rune_marrow: 75, ueymag: 100 },
+      systems: { aggristone: 100, eevani: 100, ariette_scale: 360, ueymag: 100 },
+      main_bp: { pathos_clamps: 10 },
     },
   },
   'nidus': {
@@ -1593,6 +1849,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Nidus está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Oestrus / Eris Infested Salvage — chegue na Rotação C (~20 min) para melhores chances, ~6 rotações C esperadas por parte.',
     },
+    craftCost: {
+      neuroptics: { mutagen_sample: 10, polymer_bundle: 2600, plastids: 1000, neural_sensors: 3 },
+      chassis: { polymer_bundle: 6000, nano_spores: 5000, plastids: 1400, neurodes: 3 },
+      systems: { nano_spores: 6000, circuits: 3500, morphics: 14, orokin_cell: 6 },
+      main_bp: { kuva: 2000 },
+    },
   },
   'revenant': {
     title: 'O Condenado Retornado',
@@ -1611,6 +1873,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam das Cetus Bounties: Sistemas em Lvl 20-40, Chassis em Lvl 30-50, Neuroptics em Lvl 40-60. Chassis de Plague Star Bounty ~14-16%. Final stages têm melhores chances (21-26%).',
       alternative: 'Também disponível no Circuit (Duviri) quando o Revenant está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Plains of Eidolon — faça a Cetus Bounty correspondente; o evento Plague Star (quando ativo) é a fonte mais rápida do Chassis.',
+    },
+    craftCost: {
+      neuroptics: { neural_sensors: 3, intact_sentient_core: 15, polymer_bundle: 6000, rubedo: 2200 },
+      chassis: { morphics: 3, intact_sentient_core: 10, rubedo: 1500, iradite: 50 },
+      systems: { control_module: 3, cetus_wisp: 3, salvage: 8000, polymer_bundle: 3000 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'valkyr': {
@@ -1631,6 +1899,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Valkyr está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Júpiter / Themisto — assassinato do Alad V; ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { circuits: 150, neural_sensors: 1, polymer_bundle: 200, salvage: 500 },
+      chassis: { morphics: 1, ferrite: 900, rubedo: 50 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 400 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'wukong': {
     title: 'O Resistente, O Veloz',
@@ -1647,6 +1921,12 @@ const WARFRAMES_DETAILS = {
       source_type: 'dojo_research',
       blueprint: 'Todas as blueprints podem ser pesquisadas no Tenno Lab no Dojo.',
       parts: 'Componentes são obtidos via pesquisa no Tenno Lab e construídos na Foundry.',
+    },
+    craftCost: {
+      neuroptics: { circuits: 1400, neural_sensors: 1, polymer_bundle: 2600, nitain_extract: 2 },
+      chassis: { morphics: 1, ferrite: 900, rubedo: 50, nitain_extract: 4 },
+      systems: { argon_crystal: 2, neurodes: 2, salvage: 8000, plastids: 4000 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'hildryn': {
@@ -1667,6 +1947,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Hildryn está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Exploiter Orb — luta rápida no Deck 12; ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { lazulite_toroid: 2, argon_crystal: 1, mytocardia_spore: 85, circuits: 1600 },
+      chassis: { lazulite_toroid: 2, nitain_extract: 2, thermal_sludge: 90, rubedo: 2300 },
+      systems: { lazulite_toroid: 2, tellurium: 2, gorgaricus_spore: 95, plastids: 1500 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'inaros': {
     title: 'O Rei do Deserto',
@@ -1686,6 +1972,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Inaros está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Complete Sands of Inaros — repetível para builds adicionais via Simaris ou trade.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 1500, nitain_extract: 2, polymer_bundle: 350, plastids: 500 },
+      chassis: { neurodes: 3, nano_spores: 1000, plastids: 300, oxium: 100 },
+      systems: { argon_crystal: 2, polymer_bundle: 300, nano_spores: 1600, circuits: 500 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'nezha': {
     title: 'O Príncipe de Lótus',
@@ -1702,6 +1994,12 @@ const WARFRAMES_DETAILS = {
       source_type: 'dojo_research',
       blueprint: 'Todas as blueprints podem ser pesquisadas no Tenno Lab no Dojo.',
       parts: 'Componentes são obtidos via pesquisa no Tenno Lab e construídos na Foundry.',
+    },
+    craftCost: {
+      neuroptics: { argon_crystal: 1, neural_sensors: 1, polymer_bundle: 2100, salvage: 4500 },
+      chassis: { morphics: 2, ferrite: 3200, rubedo: 600, argon_crystal: 1 },
+      systems: { control_module: 1, morphics: 1, ferrite: 5000, plastids: 4200 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'limbo': {
@@ -1722,6 +2020,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Limbo está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Complete a Europa Junction para liberar a quest; jogue The Limbo Theorem.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neurodes: 2, polymer_bundle: 150, rubedo: 500 },
+      chassis: { neural_sensors: 1, ferrite: 1000, rubedo: 300, argon_crystal: 1 },
+      systems: { control_module: 1, morphics: 3, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'titania': {
     title: 'A Rainha das Fadas',
@@ -1741,6 +2045,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Titania está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Complete a quest The Silver Grove.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 1500, neurodes: 2, polymer_bundle: 2500, circuits: 700 },
+      chassis: { nitain_extract: 3, ferrite: 3000, rubedo: 900, tellurium: 1 },
+      systems: { control_module: 1, plastids: 800, cryotic: 2200, tellurium: 1 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'wisp': {
     title: 'A Convocadora Etérea',
@@ -1758,6 +2068,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Blueprint principal dropa do assassinato do Ropalolyst em Júpiter a 22,56%.',
       parts: 'Blueprints de componentes droppam do Ropalolyst em The Ropalolyst, Júpiter a 25,81% cada.',
       recommended_farm: 'Júpiter / The Ropalolyst — ~3-4 kills garantem cada componente; a frame inteira pode dropar desse único boss.',
+    },
+    craftCost: {
+      neuroptics: { hexenon: 300, tellurium: 2, plastids: 950, polymer_bundle: 2200 },
+      chassis: { hexenon: 500, argon_crystal: 1, oxium: 700, alloy_plate: 2750 },
+      systems: { hexenon: 400, nitain_extract: 2, rubedo: 950, salvage: 10000 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'loki': {
@@ -1778,6 +2094,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando o Loki está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Netuno / Psamathe — assassinato do Hyena Pack, ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'ember': {
     title: 'A Fúria Ardente',
@@ -1796,6 +2118,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam do assassinato do General Sargas Ruk em Tethys, Saturno. Taxas: Neuroptics 38,72%, Chassis 38,72%, Sistemas 22,56%.',
       alternative: 'Também disponível no Circuit (Duviri) quando a Ember está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Saturno / Tethys — farm rápido de assassinato, ~14 kills garantem Neuroptics/Chassis.',
+    },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis:    { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems:    { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp:    { orokin_cell: 1 },
     },
   },
   'gara': {
@@ -1816,6 +2144,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Gara está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Plains of Eidolon — faça a Cetus Bounty do nível apropriado para cada componente; final stages têm as melhores chances.',
     },
+    craftCost: {
+      neuroptics: { neurodes: 2, grokdrul: 65, pyrotic_alloy: 90, circuits: 700 },
+      chassis: { cetus_wisp: 2, coprite_alloy: 120, iradite: 55, rubedo: 800 },
+      systems: { morphics: 2, charc_electroplax: 35, esher_devar: 25, circuits: 850 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'gyre': {
     title: 'A Dança Elétrica',
@@ -1833,6 +2167,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Blueprint principal dropa das Zariman Bounties no Chrysalith: Lvl 90-95 ou Lvl 110-115 (12,99% cada).',
       parts: 'Blueprints de componentes droppam das Zariman Bounties: Neuroptics Lvl 50-55 (13,04%), Chassis Lvl 60-65 (13,56%), Sistemas Lvl 70-75 (11,90%).',
       recommended_farm: 'Chrysalith / Zariman — faça a bounty do nível apropriado para cada componente, ~7-8 stages esperados por parte.',
+    },
+    craftCost: {
+      neuroptics: { neural_sensors: 6, thrax_plasm: 300, voidgel_orb: 60, plastids: 4500 },
+      chassis: { morphics: 8, thrax_plasm: 500, entrati_lanthorn: 12, alloy_plate: 3300 },
+      systems: { argon_crystal: 2, thrax_plasm: 300, voidplume_quill: 40, ferrite: 6500 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'khora': {
@@ -1853,6 +2193,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Khora está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Sanctuary Onslaught — chegue na Rotação C (stage 8) para melhores chances; leve uma frame de DPS/eficiência.',
     },
+    craftCost: {
+      neuroptics: { kavat_genetic_code: 2, kuaka_spinal_claw: 35, polymer_bundle: 1500, salvage: 16000 },
+      chassis: { kavat_genetic_code: 5, iradite: 65, alloy_plate: 12250, rubedo: 4300 },
+      systems: { kavat_genetic_code: 2, plastids: 1000, circuits: 2600, ferrite: 11500 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'koumei': {
     title: 'A Senhora do Acaso',
@@ -1872,6 +2218,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Alternativamente, compre no Koumei\'s Shrine em Cetus usando Fate Pearls dropadas pelo Infested Oni no fim de Shrine Defense (55 por componente, 165 para o principal; 330 no total).',
       recommended_farm: 'Saya\'s Visions / Terra Shrine Defense — colete Fate Pearls dos kills do Oni; Steel Path dobra os pearls (20-24 vs 14-18).',
     },
+    craftCost: {
+      neuroptics: { fate_pearl: 24, rubedo: 100, neurodes: 1, iradite: 50 },
+      chassis: { fate_pearl: 24, polymer_bundle: 300, grokdrul: 30, esher_devar: 10 },
+      systems: { fate_pearl: 24, circuits: 150, morphics: 1, tear_azurite: 10 },
+      main_bp: { fate_pearl: 30 },
+    },
   },
   'lavos': {
     title: 'O Alquimista das Eras',
@@ -1889,6 +2241,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Todas as blueprints compradas com o Father com standing dos Entrati. Blueprint principal requer Rank 2 - Acquaintance, componentes Rank 3 - Associate. Cada uma custa 5.000 de standing (20.000 no total).',
       parts: 'Blueprints de componentes vendidas pelo Father ao alcançar Rank 3 - Associate com Entrati.',
       recommended_farm: 'Farme standing dos Entrati no Cambion Drift via bounties e gifting de tokens.',
+    },
+    craftCost: {
+      neuroptics: { trapezium_xenorhast: 6, titanium: 2000, oxium: 750, rubedo: 2750 },
+      chassis: { argon_crystal: 2, nitain_extract: 5, cryotic: 1500, polymer_bundle: 5500 },
+      systems: { cabochon_embolos: 6, nano_spores: 5500, hexenon: 550, circuits: 3000 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'mag': {
@@ -1909,6 +2267,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri): Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Principal). Versão pronta pode ser comprada do Teshin por 60.000 standing do Conclave.',
       recommended_farm: 'Phobos / Iliad — farm rápido de assassinato, ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'nokko': {
     title: 'O Semeador de Esporos',
@@ -1927,6 +2291,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam das Deepmines Bounties como drops incomuns: Neuroptics (Weed The Gardens), Chassis (Critter Liberation), Sistemas (Corporate Restructuring). 10% na Rotação C, 2,50-5% na B.',
       alternative: 'Alternativamente, compre com o Nightcap em Fortuna no Rank 4 - Gardener usando Fergolyte das Deepmines Bounties (160 por componente, 240 para o principal; 720 no total).',
       recommended_farm: 'Faça Deepmines Bounties no Steel Path para drop rates melhores e acúmulo de Fergolyte mais rápido.',
+    },
+    craftCost: {
+      neuroptics: { tepa_nodule: 50, echowinder_anoscopic_sensor: 10, neurodes: 3, nano_spores: 500 },
+      chassis: { thermal_sludge: 30, alloy_plate: 500, gallium: 3, nano_spores: 700 },
+      systems: { mytocardia_spore: 40, gorgaricus_spore: 20, circuits: 250, argon_crystal: 2 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'nova': {
@@ -1947,6 +2317,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Também disponível no Circuit (Duviri) quando a Nova está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Europa / Naamah — assassinato dos Raptors, ~14 kills garantem Neuroptics/Chassis.',
     },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 600 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'qorvex': {
     title: 'O Golem Brutalista',
@@ -1965,6 +2341,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes droppam das Sanctum Anatomica Bounties como drops incomuns: Neuroptics Lvl 55-60 (13,04%), Chassis Lvl 65-70 (13,56%), Sistemas Lvl 75-80 (12,40%).',
       alternative: 'Alternativamente, compre com o Bird 3 de Cavia: componentes por 20.000 de standing (Rank 2 - Researcher), principal por 50.000 de standing (Rank 4 - Scholar).',
       recommended_farm: 'Faça Sanctum Anatomica Bounties no nível apropriado para cada componente, ~7-8 stages esperados por parte.',
+    },
+    craftCost: {
+      neuroptics: { entrati_obols: 2300, necracoil: 45, stela: 25, entrati_lanthorn: 3 },
+      chassis: { entrati_obols: 1900, necracoil: 50, stela: 20, argon_crystal: 2 },
+      systems: { entrati_obols: 1500, necracoil: 60, argon_crystal: 2, entrati_lanthorn: 4 },
+      main_bp: { voca: 1 },
     },
   },
   'uriel': {
@@ -1985,6 +2367,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Alternativamente, compre com o Roathe em La Cathėdrale, Sanctum Anatomica usando Maphica de The Descendia (25 por componente, 75 para o principal; 150 no total).',
       recommended_farm: 'Roathe / Infernium 21 — ~8 rotações esperadas por parte; colete Maphica para compras na loja de fragmentos.',
     },
+    craftCost: {
+      neuroptics: { agnovidisc: 625, laudavi: 340, servoris: 135 },
+      chassis: { agnovidisc: 925, laudavi: 130, servoris: 145 },
+      systems: { agnovidisc: 425, laudavi: 410, servoris: 70 },
+      main_bp: { orokin_cell: 1 },
+    },
   },
   'vauban': {
     title: 'O Engenheiro do Caos',
@@ -2003,6 +2391,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes compradas nas Offerings de Cred do Nightwave por 25 Creds cada (75 no total).',
       alternative: 'Também disponível no Circuit (Duviri) quando o Vauban está na rotação: Tier 2 (Neuroptics), Tier 5 (Chassis), Tier 8 (Sistemas), Tier 10 (Blueprint principal).',
       recommended_farm: 'Complete as atividades semanais do Nightwave para ganhar Creds e rodar a loja de Cred Offerings.',
+    },
+    craftCost: {
+      neuroptics: { alloy_plate: 150, neural_sensors: 1, polymer_bundle: 150, rubedo: 500 },
+      chassis: { morphics: 1, ferrite: 1000, rubedo: 300 },
+      systems: { control_module: 1, morphics: 1, salvage: 500, plastids: 220 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'dante': {
@@ -2023,6 +2417,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Alternativamente, compre com o Loid no Sanctum Anatomica usando Vessel Capillaries dropadas pelos Demolishers (90 por componente, 270 para o principal; 540 no total).',
       recommended_farm: 'Armatus / Deimos Disruption — mate Demolishers para Vessel Capillaries enquanto farma drops da Rotação C.',
     },
+    craftCost: {
+      neuroptics: { entrati_lanthorn: 3, control_module: 10, voca: 4, neural_sensors: 4 },
+      chassis: { entrati_lanthorn: 2, alloy_plate: 8000, entrati_obols: 12000, plastids: 2000 },
+      systems: { entrati_lanthorn: 3, circuits: 4000, entrati_obols: 9000, necracoil: 450 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'jade': {
     title: 'A Virtuosa Luminosa',
@@ -2042,6 +2442,12 @@ const WARFRAMES_DETAILS = {
       alternative: 'Alternativamente, compre com o Ordis no Drifter\'s Camp usando Vestigial Motes obtidos em Ascension (150 por componente, 450 para o principal; 900 no total).',
       recommended_farm: 'Brutus / Urano Ascension no Steel Path — complete o objetivo Sisters of Parvos para máximo de Vestigial Motes.',
     },
+    craftCost: {
+      neuroptics: { circuits: 1000, polymer_bundle: 750, neural_sensors: 3, neurodes: 4 },
+      chassis: { alloy_plate: 600, nano_spores: 4000, plastids: 1500, morphics: 6 },
+      systems: { ferrite: 600, plastids: 600, rubedo: 1100, control_module: 10 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'protea': {
     title: 'A Engenhosa do Tempo',
@@ -2059,6 +2465,12 @@ const WARFRAMES_DETAILS = {
       blueprint: 'Blueprint principal obtida ao completar a quest The Deadlock Protocol. Cópias adicionais custam 50.000 de standing com o Cephalon Simaris.',
       parts: 'Blueprints de componentes droppam da Rotação C dos Granum Void no Corpus Ship: Neuroptics do básico, Chassis do Extended, Sistemas do Nightmare. Todos a 11,11%.',
       recommended_farm: 'Use Granum Crowns de cada tier (Granum, Exemplar, Zenith) dos Treasurers em missões Corpus Ship para entrar no Granum Void correto.',
+    },
+    craftCost: {
+      neuroptics: { salvage: 11500, polymer_bundle: 5150, cubic_diodes: 1250, neural_sensors: 5 },
+      chassis: { alloy_plate: 20000, carbides: 2750, oxium: 550, morphics: 12 },
+      systems: { ferrite: 13400, cryotic: 1000, titanium: 1750, control_module: 10 },
+      main_bp: { orokin_cell: 3 },
     },
   },
   'styanax': {
@@ -2078,6 +2490,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Sistemas no Rank 2 - Encampment, Neuroptics no Rank 3 - Fort, Chassis no Rank 4 - Settlement, Principal no Rank 5 - Home. Componentes custam 60 Stock cada, principal custa 90 (270 no total).',
       recommended_farm: 'Complete as missões semanais Break Narmer do Kahl toda semana para acumular Stock e subir de Rank na Kahl\'s Garrison.',
     },
+    craftCost: {
+      neuroptics: { argon_crystal: 2, ferrite: 3000, purged_dagonic: 40, norg_brain: 5 },
+      chassis: { entrati_lanthorn: 5, hespazym_alloy: 60, star_crimzian: 20, oxium: 1200 },
+      systems: { rubedo: 1200, radian_sentirum: 5, thrax_plasm: 400, voidplume_quill: 15 },
+      main_bp: { orokin_cell: 12 },
+    },
   },
   'yareli': {
     title: 'A Cavaleira das Ondas',
@@ -2096,6 +2514,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes obtidas via pesquisa no Ventkids\' Bash Lab dentro do Clan Dojo.',
       recommended_farm: 'Complete a quest The Waverider; pesquise os componentes no Ventkids\' Bash Lab do Dojo.',
     },
+    craftCost: {
+      neuroptics: { argon_crystal: 2, plastids: 150, salvage: 875, heart_noctrul: 10 },
+      chassis: { tellurium: 2, venerdo_alloy: 20, circuits: 350, nano_spores: 1500 },
+      systems: { nitain_extract: 2, cryotic: 350, scrubber_exa_brain: 5, alloy_plate: 1750 },
+      main_bp: { orokin_cell: 3 },
+    },
   },
   'zephyr': {
     title: 'A Senhora dos Ventos',
@@ -2112,6 +2536,12 @@ const WARFRAMES_DETAILS = {
       source_type: 'dojo_research',
       blueprint: 'Todas as blueprints podem ser pesquisadas no Tenno Lab no Dojo.',
       parts: 'Componentes são obtidos via pesquisa no Tenno Lab e construídos na Foundry.',
+    },
+    craftCost: {
+      neuroptics: { circuits: 150, oxium: 200, polymer_bundle: 200, salvage: 500 },
+      chassis: { oxium: 200, nano_spores: 900, rubedo: 50 },
+      systems: { control_module: 1, oxium: 200, polymer_bundle: 500, plastids: 400 },
+      main_bp: { orokin_cell: 1 },
     },
   },
   'oraxia': {
@@ -2131,6 +2561,12 @@ const WARFRAMES_DETAILS = {
       parts: 'Blueprints de componentes também droppam de Isleweaver Rotação A a 7,69% cada.',
       alternative: 'Alternativamente, compre com a Acrithis no Dormizone usando Scuttler Husks obtidos em Isleweaver (20 por componente, 60 para o principal; 120 no total).',
       recommended_farm: 'Faça Isleweaver em Duviri — Steel Path tem as mesmas chances; ~13 rotações A esperadas por parte.',
+    },
+    craftCost: {
+      neuroptics: { temporal_dust: 50, entrati_obols: 1500, kovnik: 200, neural_sensors: 4 },
+      chassis: { temporal_dust: 50, necracoil: 400, aggristone: 200, morphics: 2 },
+      systems: { temporal_dust: 50, entrati_obols: 800, tasoma_extract: 75, argon_crystal: 2 },
+      main_bp: { orokin_cell: 3 },
     },
   },
 };
@@ -9885,6 +10321,102 @@ const SC_RARITIES = {
   special:   { name: { en: 'Special',   'pt-BR': 'Especial' }, color: '#b888ff' },
 };
 
+// Resource categories — used for the filter chips in the global all-resources
+// list. A resource's `category` field is its functional grouping (separate
+// from rarity, which only drives the badge color).
+const SC_CATEGORIES = {
+  common:      { name: { en: 'Common',     'pt-BR': 'Comum'        }, color: '#8a8a8a' },
+  uncommon:    { name: { en: 'Uncommon',   'pt-BR': 'Incomum'      }, color: '#5fa363' },
+  rare:        { name: { en: 'Rare',       'pt-BR': 'Raro'         }, color: '#d4b25a' },
+  research:    { name: { en: 'Research',   'pt-BR': 'Pesquisa'     }, color: '#8accc9' },
+  currency:    { name: { en: 'Currency',   'pt-BR': 'Moeda'        }, color: '#e87878' },
+  syndicate:   { name: { en: 'Syndicate',  'pt-BR': 'Sindicato'    }, color: '#b888ff' },
+  'open-world':{ name: { en: 'Open World', 'pt-BR': 'Mundo Aberto' }, color: '#7fb88a' },
+  special:     { name: { en: 'Special',    'pt-BR': 'Especial'     }, color: '#e89c4a' },
+};
+
+// Filter chip order — 'all' is always first; rest follows SC_CATEGORIES order.
+const SC_RESOURCE_FILTERS = ['all', 'common', 'uncommon', 'rare', 'research', 'currency', 'syndicate', 'open-world', 'special'];
+
+function getResourceCategory(slug) {
+  return SC_CATEGORIES[slug] || null;
+}
+function resourceCategoryName(slug) {
+  const c = getResourceCategory(slug);
+  if (!c) return slug;
+  return c.name[state.locale] || c.name[DEFAULT_LOCALE] || slug;
+}
+
+// Locations (tabs in the wiki) — shown as a pill on each resource card.
+const SC_LOCATIONS = {
+  'star-chart':        { name: { en: 'Star Chart',        'pt-BR': 'Mapa Estelar'    }, color: '#5ec0e8' },
+  'plains-of-eidolon': { name: { en: 'Plains of Eidolon', 'pt-BR': 'Planícies de Eidolon' }, color: '#d4b25a' },
+  'orb-vallis':        { name: { en: 'Orb Vallis',        'pt-BR': 'Orb Vallis'      }, color: '#8accc9' },
+  'cambion-drift':     { name: { en: 'Cambion Drift',     'pt-BR': 'Cambion Drift'   }, color: '#b888ff' },
+  'duviri':            { name: { en: 'Duviri',            'pt-BR': 'Duviri'          }, color: '#e87878' },
+  'hollvania':         { name: { en: 'Höllvania 1999',    'pt-BR': 'Höllvania 1999'  }, color: '#7fb88a' },
+  'dark-refractory':   { name: { en: 'Dark Refractory',   'pt-BR': 'Refratário Sombrio' }, color: '#e89c4a' },
+  'misc':              { name: { en: 'Miscellaneous',     'pt-BR': 'Diversos'        }, color: '#8a8a8a' },
+};
+
+// Source tags (title + group from the wiki Lua) — shown as smaller pills.
+// An item's `sources` array typically contains 1-2 entries: a primary (e.g. 'mining', 'fishing', 'heist-drops')
+// and optionally a sub-source (e.g. 'gems-blue', 'parts').
+const SC_SOURCES = {
+  'open-world-materials':  { name: { en: 'Open World Materials',   'pt-BR': 'Materiais Mundo Aberto'   } },
+  'bounty-drops':          { name: { en: 'Bounty Drops',           'pt-BR': 'Drops de Bounty'          } },
+  'heist-drops':           { name: { en: 'Heist Drops',            'pt-BR': 'Drops de Heist'           } },
+  'raknoid-drops':         { name: { en: 'Raknoid Drops',          'pt-BR': 'Drops de Raknoid'         } },
+  'sentient-drops':        { name: { en: 'Sentient Drops',         'pt-BR': 'Drops Sentient'           } },
+  'event-currency':        { name: { en: 'Event Currency',         'pt-BR': 'Moeda de Evento'          } },
+  'mining':                { name: { en: 'Mining',                 'pt-BR': 'Mineração'                } },
+  'metals-red':            { name: { en: 'Metals (Red Veins)',     'pt-BR': 'Metais (Veias Vermelhas)' } },
+  'ores-red':              { name: { en: 'Ores (Red Veins)',       'pt-BR': 'Minérios (Veias Vermelhas)' } },
+  'gems-blue':             { name: { en: 'Gems (Blue Veins)',      'pt-BR': 'Gemas (Veias Azuis)'      } },
+  'minerals-yellow':       { name: { en: 'Minerals (Yellow Lesions)', 'pt-BR': 'Minerais (Lesões Amarelas)' } },
+  'gems-blue-cambion':     { name: { en: 'Gems (Blue Lesions)',    'pt-BR': 'Gemas (Lesões Azuis)'     } },
+  'fishing':               { name: { en: 'Fishing',                'pt-BR': 'Pesca'                    } },
+  'parts':                 { name: { en: 'Parts',                  'pt-BR': 'Partes'                   } },
+  'spoils':                { name: { en: 'Spoils',                 'pt-BR': 'Saqueio'                  } },
+  'junk':                  { name: { en: 'Junk',                   'pt-BR': 'Lixo'                     } },
+  'research':              { name: { en: 'Research',               'pt-BR': 'Pesquisa'                 } },
+  'common-drops':          { name: { en: 'Common Drops',           'pt-BR': 'Drops Comuns'             } },
+  'uncommon-drops':        { name: { en: 'Uncommon Drops',         'pt-BR': 'Drops Incomuns'           } },
+  'rare-drops':            { name: { en: 'Rare Drops',             'pt-BR': 'Drops Raros'              } },
+  'mission-drops':         { name: { en: 'Mission Drops',          'pt-BR': 'Drops de Missão'          } },
+  'empyrean':              { name: { en: 'Empyrean',               'pt-BR': 'Empyrean'                 } },
+  'special':               { name: { en: 'Special',                'pt-BR': 'Especial'                 } },
+  'warframe-currency':     { name: { en: 'Warframe Currency',      'pt-BR': 'Moeda Warframe'           } },
+  'navigation-currency':   { name: { en: 'Navigation Currency',    'pt-BR': 'Moeda de Navegação'       } },
+  'misc':                  { name: { en: 'Miscellaneous',          'pt-BR': 'Diversos'                 } },
+  'isolation-vault':       { name: { en: 'Isolation Vault',        'pt-BR': 'Isolation Vault'          } },
+  'necramech-drops':       { name: { en: 'Necramech Drops',        'pt-BR': 'Drops Necramech'          } },
+  'entrati-currency':      { name: { en: 'Entrati Currency',       'pt-BR': 'Moeda Entrati'            } },
+  'undercroft':            { name: { en: 'Undercroft',             'pt-BR': 'Undercroft'               } },
+  'isleweaver':            { name: { en: 'Isleweaver',             'pt-BR': 'Isleweaver'               } },
+  'boss-drops':            { name: { en: 'Boss Drops',             'pt-BR': 'Drops de Boss'            } },
+  'hex-treasures':         { name: { en: 'Hex Treasures',          'pt-BR': 'Tesouros Hex'             } },
+  'temporal-archimedea':   { name: { en: 'Temporal Archimedea',    'pt-BR': 'Archimedea Temporal'      } },
+  'quests':                { name: { en: 'Quests',                 'pt-BR': 'Quests'                   } },
+  'plants':                { name: { en: 'Plants',                 'pt-BR': 'Plantas'                  } },
+  'events':                { name: { en: 'Events',                 'pt-BR': 'Eventos'                  } },
+  'deepmines':             { name: { en: 'Deepmines',              'pt-BR': 'Minas Profundas'          } },
+};
+
+function locationName(key) {
+  const l = SC_LOCATIONS[key];
+  if (!l) return key;
+  return l.name[state.locale] || l.name[DEFAULT_LOCALE] || key;
+}
+function locationColor(key) {
+  return SC_LOCATIONS[key]?.color || '#888';
+}
+function sourceName(key) {
+  const s = SC_SOURCES[key];
+  if (!s) return key;
+  return s.name[state.locale] || s.name[DEFAULT_LOCALE] || key;
+}
+
 // Resources keyed by slug. recommendedFarm.{planet,node} must point to nodes
 // in STAR_CHART — the modal renders that as a clickable link to drill into.
 // Icon images are hotlinked from the Warframe wiki (pattern:
@@ -9893,6 +10425,9 @@ const RESOURCES = {
   salvage: {
     name: { en: 'Salvage', 'pt-BR': 'Sucata' },
     rarity: 'common',
+    category: 'common',
+    location: 'star-chart', sources: ['common-drops'],
+    location: 'star-chart', sources: ['common-drops'],
     image: 'https://wiki.warframe.com/images/Salvage.png',
     description: {
       en: 'Cheap, ubiquitous Grineer-aligned crafting material. Drops from Grineer enemies and lockers across Mars, Phobos, Ceres, Saturn, and Sedna.',
@@ -9909,6 +10444,9 @@ const RESOURCES = {
   polymer_bundle: {
     name: { en: 'Polymer Bundle', 'pt-BR': 'Conjunto de Polímero' },
     rarity: 'uncommon',
+    category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    location: 'star-chart', sources: ['uncommon-drops'],
     image: 'https://wiki.warframe.com/images/PolymerBundle.png',
     description: {
       en: 'Uncommon Corpus-aligned crafting material. Drops on Mercury, Venus, and Uranus. The best farm is Assur (Uranus, Dark Sector Survival).',
@@ -9925,6 +10463,9 @@ const RESOURCES = {
   circuits: {
     name: { en: 'Circuits', 'pt-BR': 'Circuitos' },
     rarity: 'uncommon',
+    category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    location: 'star-chart', sources: ['uncommon-drops'],
     image: 'https://wiki.warframe.com/images/Circuits.png',
     description: {
       en: 'Uncommon crafting material. Drops on Venus, Ceres, and the Kuva Fortress. Ceres has a higher drop chance — Gabii (Dark Sector Survival) is the meta farm.',
@@ -9941,6 +10482,9 @@ const RESOURCES = {
   alloy_plate: {
     name: { en: 'Alloy Plate', 'pt-BR': 'Placa de Liga' },
     rarity: 'common',
+    category: 'common',
+    location: 'star-chart', sources: ['common-drops'],
+    location: 'star-chart', sources: ['common-drops'],
     image: 'https://wiki.warframe.com/images/AlloyPlate.png',
     description: {
       en: 'Common crafting material. Drops on Venus, Phobos, Ceres, Jupiter, Pluto, and Sedna. Gabii (Ceres, Dark Sector Survival) yields ~1k per 15 min with a Resource Booster.',
@@ -9957,6 +10501,9 @@ const RESOURCES = {
   rubedo: {
     name: { en: 'Rubedo', 'pt-BR': 'Rubedo' },
     rarity: 'uncommon',
+    category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    location: 'star-chart', sources: ['uncommon-drops'],
     image: 'https://wiki.warframe.com/images/Rubedo.png',
     description: {
       en: 'Red crystalline crafting material. Drops on Earth, Lua, Phobos, Europa, Pluto, Sedna, and the Void. Zeugma (Phobos, Dark Sector Survival) yields ~250 per 5 min.',
@@ -9973,6 +10520,9 @@ const RESOURCES = {
   plastids: {
     name: { en: 'Plastids', 'pt-BR': 'Plastídeos' },
     rarity: 'uncommon',
+    category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    location: 'star-chart', sources: ['uncommon-drops'],
     image: 'https://wiki.warframe.com/images/Plastids.png',
     description: {
       en: 'Uncommon crafting material. Drops on Phobos, Saturn, Uranus, Pluto, and Eris — Saturn and Uranus have the highest rates. Ophelia (Uranus, Survival) is the meta farm.',
@@ -9989,6 +10539,9 @@ const RESOURCES = {
   morphics: {
     name: { en: 'Morphics', 'pt-BR': 'Mórficos' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/Morphics.png',
     description: {
       en: 'Rare reactive metallic compound. Drops on Mercury, Mars, Phobos, Europa, and Pluto — Mars has the highest drop rate. Hellas (Mars, Exterminate) is the meta farm.',
@@ -10005,6 +10558,9 @@ const RESOURCES = {
   gallium: {
     name: { en: 'Gallium', 'pt-BR': 'Gálio' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/Gallium.png',
     description: {
       en: 'Rare crafting material — long-term bottleneck for many builds. Drops on Mars and Uranus. Tyl Regor (Titania, Uranus) is a guaranteed boss-drop target.',
@@ -10021,6 +10577,9 @@ const RESOURCES = {
   argon_crystal: {
     name: { en: 'Argon Crystal', 'pt-BR': 'Cristal de Argônio' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/ArgonCrystal.png',
     description: {
       en: 'Void-exclusive radioactive crystal. Drops only inside the Void from Argon Pegmatite deposits, Corrupted Vor (50%), and Isolation Vaults. Decays every 24h at GMT 00:00 — collected crystals halve daily.',
@@ -10037,6 +10596,9 @@ const RESOURCES = {
   ferrite: {
     name: { en: 'Ferrite', 'pt-BR': 'Ferrita' },
     rarity: 'common',
+    category: 'common',
+    location: 'star-chart', sources: ['common-drops'],
+    location: 'star-chart', sources: ['common-drops'],
     image: 'https://wiki.warframe.com/images/Ferrite.png',
     description: {
       en: 'Basic crafting material. Drops on Earth, Phobos, Saturn, Pluto, Void, and Deimos. One of the most common materials in the chart.',
@@ -10053,6 +10615,9 @@ const RESOURCES = {
   control_module: {
     name: { en: 'Control Module', 'pt-BR': 'Módulo de Controle' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/ControlModule.png',
     description: {
       en: 'Rare Corpus crafting component. Drops on Europa, Neptune, and the Void. Long-term bottleneck for many Prime parts.',
@@ -10069,6 +10634,9 @@ const RESOURCES = {
   nano_spores: {
     name: { en: 'Nano Spores', 'pt-BR': 'Nano Esporos' },
     rarity: 'common',
+    category: 'common',
+    location: 'star-chart', sources: ['common-drops'],
+    location: 'star-chart', sources: ['common-drops'],
     image: 'https://wiki.warframe.com/images/NanoSpores.png',
     description: {
       en: 'Common Infested-aligned material. Drops on Saturn, Eris, Deimos, Neptune, and Ceres. Comes in huge stacks.',
@@ -10085,6 +10653,9 @@ const RESOURCES = {
   orokin_cell: {
     name: { en: 'Orokin Cell', 'pt-BR': 'Célula Orokin' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/OrokinCell.png',
     description: {
       en: 'Rare crafting component. Drops mainly on Saturn, Ceres, and Deimos (Isolation Vaults). One of the most-needed rare resources.',
@@ -10101,6 +10672,9 @@ const RESOURCES = {
   neural_sensors: {
     name: { en: 'Neural Sensors', 'pt-BR': 'Sensores Neurais' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/NeuralSensors.png',
     description: {
       en: 'Rare Jupiter-exclusive component. Drops mainly from Corpus units and lockers on Jupiter.',
@@ -10117,6 +10691,9 @@ const RESOURCES = {
   cryotic: {
     name: { en: 'Cryotic', 'pt-BR': 'Crióticos' },
     rarity: 'special',
+    category: 'special',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    location: 'star-chart', sources: ['uncommon-drops'],
     image: 'https://wiki.warframe.com/images/Cryotic.png',
     description: {
       en: 'Excavation-only resource. Each successful Excavator extracts 100 Cryotic. Not a passive drop — must run Excavation missions specifically.',
@@ -10133,6 +10710,9 @@ const RESOURCES = {
   tellurium: {
     name: { en: 'Tellurium', 'pt-BR': 'Telúrio' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/Tellurium.png',
     description: {
       en: 'Rare resource from Sealab tileset (Uranus) and Empyrean (Railjack) missions. Bottleneck for Archwing and Railjack builds.',
@@ -10149,6 +10729,9 @@ const RESOURCES = {
   oxium: {
     name: { en: 'Oxium', 'pt-BR': 'Óxio' },
     rarity: 'uncommon',
+    category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    location: 'star-chart', sources: ['uncommon-drops'],
     image: 'https://wiki.warframe.com/images/Oxium.png',
     description: {
       en: 'Uncommon Corpus material. Drops only from Oxium Ospreys (kill before they self-destruct!). Found on most Corpus planets.',
@@ -10165,6 +10748,9 @@ const RESOURCES = {
   neurodes: {
     name: { en: 'Neurodes', 'pt-BR': 'Neuródios' },
     rarity: 'rare',
+    category: 'rare',
+    location: 'star-chart', sources: ['rare-drops'],
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/Neurodes.png',
     description: {
       en: 'Rare bio-organic component. Drops on Earth, Lua, Eris, and Deimos. Iconic early-game bottleneck.',
@@ -10180,7 +10766,9 @@ const RESOURCES = {
   },
   mutagen_sample: {
     name: { en: 'Mutagen Sample', 'pt-BR': 'Amostra Mutagênica' },
-    rarity: 'uncommon',
+    rarity: 'rare',
+    category: 'research',
+    location: 'star-chart', sources: ['research'],
     image: 'https://wiki.warframe.com/images/MutagenSample.png',
     description: {
       en: 'Uncommon Infested material. Drops on Eris and from Deimos Infested. Core to many Infested-themed crafts.',
@@ -10197,6 +10785,8 @@ const RESOURCES = {
   kuva: {
     name: { en: 'Kuva', 'pt-BR': 'Kuva' },
     rarity: 'special',
+    category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/Kuva.png',
     spoilerLocked: true,
     description: {
@@ -10214,6 +10804,8 @@ const RESOURCES = {
   entrati_lanthorn: {
     name: { en: 'Entrati Lanthorn', 'pt-BR': 'Lanthorn Entrati' },
     rarity: 'rare',
+    category: 'syndicate',
+    location: 'star-chart', sources: ['rare-drops'],
     image: 'https://wiki.warframe.com/images/EntratiLanthorn.png',
     spoilerLocked: true,
     description: {
@@ -10231,6 +10823,8 @@ const RESOURCES = {
   voca: {
     name: { en: 'Voca', 'pt-BR': 'Voca' },
     rarity: 'uncommon',
+    category: 'syndicate',
+    location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/EchoVoca.png',
     spoilerLocked: true,
     description: {
@@ -10247,7 +10841,8 @@ const RESOURCES = {
   },
   voidplume_down: {
     name: { en: 'Voidplume Down', 'pt-BR': 'Penugem Voidplume' },
-    rarity: 'uncommon',
+    rarity: 'uncommon', category: 'syndicate',
+    location: 'star-chart', sources: ['special', 'mission-drops'],
     image: 'https://wiki.warframe.com/images/VoidplumeDown.png',
     spoilerLocked: true,
     description: {
@@ -10262,12 +10857,2698 @@ const RESOURCES = {
       noteEn: 'Tuvul Commons (Void Cascade) consistently rewards Voidplume Down per rotation.',
       notePt: 'Tuvul Commons (Cascata Void) recompensa Voidplume Down consistentemente por rotação.' },
   },
+  voidplume_vane: {
+    name: { en: 'Voidplume Vane', 'pt-BR': 'Pena Voidplume' },
+    rarity: 'uncommon', category: 'syndicate', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'mission-drops'],
+    image: 'https://wiki.warframe.com/images/VoidplumeVane.png',
+    description: { en: '2nd-tier Zariman bounty reward. Less common than Down, used for mid-tier Holdfasts offerings.', 'pt-BR': 'Voidplume de 2º tier de bounties do Zariman. Menos comum que Down, usada pra ofertas de tier médio dos Holdfasts.' },
+    usedFor: { en: 'Holdfasts standing — Zariman arcanes and Incarnon adapter prerequisites.', 'pt-BR': 'Standing dos Holdfasts — arcanes do Zariman e pré-requisitos de adaptadores Incarnon.' },
+  },
+  voidplume_crest: {
+    name: { en: 'Voidplume Crest', 'pt-BR': 'Crista Voidplume' },
+    rarity: 'rare', category: 'syndicate', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'mission-drops'],
+    image: 'https://wiki.warframe.com/images/VoidplumeCrest.png',
+    description: { en: '3rd-tier Voidplume from Zariman B/C rotations. Rare drop, more valuable per unit.', 'pt-BR': 'Voidplume de 3º tier das rotações B/C do Zariman. Drop raro, mais valioso por unidade.' },
+    usedFor: { en: 'Higher-rank Holdfasts items including Quassus Veiled Riven blueprint.', 'pt-BR': 'Itens de Holdfasts de rank mais alto, incluindo blueprint da Riven Velada Quassus.' },
+  },
+  voidplume_pinion: {
+    name: { en: 'Voidplume Pinion', 'pt-BR': 'Pinhão Voidplume' },
+    rarity: 'rare', category: 'syndicate', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'mission-drops'],
+    image: 'https://wiki.warframe.com/images/VoidplumePinion.png',
+    description: { en: 'Guaranteed drop from Dormant Void Angels (one per Zariman mission tier 3+). Highly sought-after.', 'pt-BR': 'Drop garantido de Void Angels Dormentes (1 por missão Zariman tier 3+). Muito disputado.' },
+    usedFor: { en: 'Top Holdfasts unlocks — Phenmor/Felarx/Laetum Incarnon and Innodem.', 'pt-BR': 'Desbloqueios top dos Holdfasts — Incarnon Phenmor/Felarx/Laetum e Innodem.' },
+    recommendedFarm: { planet: 'zariman', node: 'oro-works',
+      noteEn: 'Tier 3+ Zariman bounties always include a Dormant Void Angel encounter.',
+      notePt: 'Bounties tier 3+ do Zariman sempre incluem um encontro com Void Angel Dormente.' },
+  },
+  voidplume_quill: {
+    name: { en: 'Voidplume Quill', 'pt-BR': 'Pluma Voidplume' },
+    rarity: 'rare', category: 'syndicate', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'mission-drops'],
+    image: 'https://wiki.warframe.com/images/VoidplumeQuill.png',
+    description: { en: 'Top-tier Voidplume. Ultra rare — drops from Melica caches and Zariman tier 5 endings.', 'pt-BR': 'Voidplume de top tier. Ultra raro — cai de caches da Melica e finais de tier 5 do Zariman.' },
+    usedFor: { en: 'Endgame Holdfasts purchases (Innodem, top arcanes).', 'pt-BR': 'Compras endgame dos Holdfasts (Innodem, top arcanes).' },
+  },
+  detonite_ampule: {
+    name: { en: 'Detonite Ampule', 'pt-BR': 'Ampola de Detonita' },
+    rarity: 'rare', category: 'research',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/DetoniteAmpule.png',
+    description: { en: 'Grineer Clan Dojo research material. Drops from Grineer enemies and lockers; rewarded in Invasions.', 'pt-BR': 'Material de pesquisa Grineer do Dojo do Clã. Cai de inimigos Grineer e armários; vem como recompensa de Invasões.' },
+    usedFor: { en: 'Crafting Detonite Injectors — required for Tenno Lab research (Acrid, Miter, Twin Vipers Wraith, etc.).', 'pt-BR': 'Craft de Injetores de Detonita — necessário pra pesquisa no Tenno Lab (Acrid, Miter, Twin Vipers Wraith, etc.).' },
+    recommendedFarm: { planet: 'ceres', node: 'gabii',
+      noteEn: 'Gabii (Dark Sector Survival) consistently drops Detonite Ampules.',
+      notePt: 'Gabii (Sobrevivência Dark Sector) dropa Ampolas de Detonita constantemente.' },
+  },
+  detonite_injector: {
+    name: { en: 'Detonite Injector', 'pt-BR': 'Injetor de Detonita' },
+    rarity: 'rare', category: 'research',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/DetoniteInjector.png',
+    description: { en: 'Tenno Lab research material. Crafted from 10 Detonite Ampules + Polymer Bundle, or rewarded directly from Invasions.', 'pt-BR': 'Material de pesquisa do Tenno Lab. Craftado de 10 Ampolas de Detonita + Conjunto de Polímero, ou recompensa direta de Invasões.' },
+    usedFor: { en: 'Many Tenno Lab weapons (Acrid, Tenora, Karak Wraith, Twin Vipers Wraith) and Razorback Cipher.', 'pt-BR': 'Muitas armas do Tenno Lab (Acrid, Tenora, Karak Wraith, Twin Vipers Wraith) e Razorback Cipher.' },
+  },
+  fieldron_sample: {
+    name: { en: 'Fieldron Sample', 'pt-BR': 'Amostra de Fieldron' },
+    rarity: 'rare', category: 'research',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/FieldronSample.png',
+    description: { en: 'Corpus Clan Dojo research material. Drops from Corpus enemies/lockers; rewarded in Invasions.', 'pt-BR': 'Material de pesquisa Corpus do Dojo do Clã. Cai de inimigos/armários Corpus; vem como recompensa de Invasões.' },
+    usedFor: { en: 'Crafting Fieldron — required for Energy Lab research (Penta, Supra, etc.).', 'pt-BR': 'Craft de Fieldron — necessário pra pesquisa no Energy Lab (Penta, Supra, etc.).' },
+    recommendedFarm: { planet: 'jupiter', node: 'cameria',
+      noteEn: 'Cameria (Dark Sector Survival) yields steady Fieldron Samples.',
+      notePt: 'Cameria (Sobrevivência Dark Sector) dá Amostras de Fieldron constantemente.' },
+  },
+  fieldron: {
+    name: { en: 'Fieldron', 'pt-BR': 'Fieldron' },
+    rarity: 'rare', category: 'research',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/Fieldron.png',
+    description: { en: 'Energy Lab research material. Crafted from 10 Fieldron Samples + Plastids + Polymer Bundle.', 'pt-BR': 'Material de pesquisa do Energy Lab. Craftado de 10 Amostras de Fieldron + Plastídeos + Conjunto de Polímero.' },
+    usedFor: { en: 'Energy Lab weapons (Convectrix, Glaxion, Opticor, Penta, Supra) and Razorback Cipher.', 'pt-BR': 'Armas do Energy Lab (Convectrix, Glaxion, Opticor, Penta, Supra) e Razorback Cipher.' },
+  },
+  mutagen_mass: {
+    name: { en: 'Mutagen Mass', 'pt-BR': 'Massa Mutagênica' },
+    rarity: 'rare', category: 'research',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/MutagenMass.png',
+    description: { en: 'Bio Lab research material. Crafted from 10 Mutagen Samples + Plastids + Salvage.', 'pt-BR': 'Material de pesquisa do Bio Lab. Craftado de 10 Amostras Mutagênicas + Plastídeos + Sucata.' },
+    usedFor: { en: 'Bio Lab weapons (Embolist, Mutalist Quanta, Mutalist Cernos, Torid) and Hema (5000 needed!).', 'pt-BR': 'Armas do Bio Lab (Embolist, Mutalist Quanta, Mutalist Cernos, Torid) e Hema (5000 necessárias!).' },
+  },
+  synthula: {
+    name: { en: 'Synthula', 'pt-BR': 'Synthula' },
+    rarity: 'rare', category: 'research',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/Synthula.png',
+    description: { en: 'Infested-themed research consumable from Cetus bounties and Daily Tribute. Used to feed the Helminth.', 'pt-BR': 'Consumível de pesquisa temático infestado vindo de bounties de Cetus e Tributo Diário. Usado pra alimentar o Helminth.' },
+    usedFor: { en: 'Helminth feeding (alongside other materials) to lower charge cost.', 'pt-BR': 'Alimentar o Helminth (junto com outros materiais) pra reduzir custo de charge.' },
+  },
+  endo: {
+    name: { en: 'Endo', 'pt-BR': 'Endo' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/Endo.png',
+    description: { en: 'Mod upgrade currency. Earned by dissolving duplicate mods, breaking Ayatan stars/sculptures, Arbitrations, Sortie rewards, and Index runs.', 'pt-BR': 'Moeda de upgrade de mods. Ganha ao dissolver mods duplicados, quebrar estrelas/esculturas Ayatan, Arbitrations, Sorties e Index.' },
+    usedFor: { en: 'Required to rank up every mod in the game. An endgame loadout averages 60–100k Endo invested.', 'pt-BR': 'Necessária pra upar qualquer mod. Loadout endgame tem 60–100k de Endo investido em média.' },
+  },
+  aya: {
+    name: { en: 'Aya', 'pt-BR': 'Aya' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/Aya.png',
+    description: { en: 'Drops from any Void Fissure mission (chance scales with mission tier). Used as Prime Resurgence currency at Varzia in Maroo\'s Bazaar.', 'pt-BR': 'Cai em qualquer missão Void Fissure (chance escala com o tier). Usada como moeda de Prime Resurgence com a Varzia no Maroo\'s Bazaar.' },
+    usedFor: { en: 'Trade Aya for Prime Resurgence relic packs (rotating Primes) or Regal Aya for direct Prime items.', 'pt-BR': 'Troque Aya por packs de relíquias do Prime Resurgence (Primes rotativos) ou Regal Aya por itens Prime diretos.' },
+  },
+  forma: {
+    name: { en: 'Forma', 'pt-BR': 'Forma' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/Forma.png',
+    description: { en: 'Crafted from Forma Blueprints which drop from Void Relics (uncommon and rare slots). 1-day build time per Forma in the Foundry. Also rewarded weekly from Sortie/Steel Path/Nightwave.', 'pt-BR': 'Crafteado a partir de Blueprints de Forma que dropam de Relíquias Void (slots uncommon e rare). 1 dia de build na Foundry. Também recompensa semanal de Sortie/Steel Path/Nightwave.' },
+    usedFor: { en: 'Polarizes mod slots on weapons and warframes to halve mod capacity costs. Also required for some Prime crafts and Equinox.', 'pt-BR': 'Polariza slots de mod em armas e warframes pra reduzir o custo pela metade. Também necessário em alguns crafts Prime e no Equinox.' },
+  },
+  void_traces: {
+    name: { en: 'Void Traces', 'pt-BR': 'Traços do Void' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/VoidTraces.png',
+    description: { en: 'Earned by collecting all 10 Reactant in any Void Fissure mission (max 30 per pickup). Daily cap = MR × 50.', 'pt-BR': 'Ganho ao coletar todos os 10 Reactants em qualquer Void Fissure (máx 30 por pickup). Cap diário = MR × 50.' },
+    usedFor: { en: 'Refining Void Relics (Intact → Exceptional → Flawless → Radiant) to boost rare drop chance from 2% to 10%.', 'pt-BR': 'Refinar Relíquias Void (Intacta → Excepcional → Impecável → Radiante) pra aumentar a chance de rara de 2% pra 10%.' },
+  },
+  vosfor: {
+    name: { en: 'Vosfor', 'pt-BR': 'Vosfor' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/Vosfor.png',
+    description: { en: 'Arcane fusion currency. Earned by dissolving duplicate Arcanes at any Arcane Distillation terminal.', 'pt-BR': 'Moeda de fusão de Arcanes. Ganha ao dissolver Arcanes duplicados em qualquer Arcane Distillation terminal.' },
+    usedFor: { en: 'Rank up Arcanes to R5 without farming duplicates of the target Arcane.', 'pt-BR': 'Upar Arcanes pro R5 sem precisar farmar duplicatas do Arcane alvo.' },
+  },
+  vitus_essence: {
+    name: { en: 'Vitus Essence', 'pt-BR': 'Essência Vitus' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/VitusEssence.png',
+    description: { en: 'Arbitrations C-rotation reward currency. Drops every 4th rotation reward (typically every 20 min).', 'pt-BR': 'Moeda de recompensa da rotação C das Arbitrations. Cai a cada 4ª rotação (geralmente cada 20 min).' },
+    usedFor: { en: 'Arbiters of Hexis shop — Forma Umbra blueprint, Arcanes (Aegis, Avenger, Velocity), augments.', 'pt-BR': 'Loja dos Arbiters of Hexis — blueprint de Forma Umbra, Arcanes (Aegis, Avenger, Velocity), augmentos.' },
+  },
+  riven_sliver: {
+    name: { en: 'Riven Sliver', 'pt-BR': 'Fragmento de Riven' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/RivenSliver.png',
+    description: { en: 'Combine 10 Slivers into a Veiled Riven via Palladino in the Iron Wake. Drops from Sorties, Arbitrations, and the Steel Path shop.', 'pt-BR': 'Combine 10 Fragmentos pra formar um Riven Velado com a Palladino no Iron Wake. Cai de Sorties, Arbitrations e na loja do Steel Path.' },
+    usedFor: { en: 'Crafting Veiled Rivens of chosen weapon category (primary/secondary/melee). 10 Slivers → 1 Veiled Riven.', 'pt-BR': 'Craft de Rivens Velados de categoria escolhida (primária/secundária/melee). 10 Fragmentos → 1 Riven Velado.' },
+  },
+  steel_essence: {
+    name: { en: 'Steel Essence', 'pt-BR': 'Essência de Aço' },
+    rarity: 'special', category: 'currency', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/SteelEssence.png',
+    description: { en: 'Steel Path premium currency. Drops from Acolytes (random spawn on Steel Path nodes) and from completing Steel Path Incursions.', 'pt-BR': 'Moeda premium do Steel Path. Cai de Acólitos (spawn aleatório em nodos do Steel Path) e ao completar Incursões.' },
+    usedFor: { en: 'Teshin\'s Steel Path shop — Umbra Forma, Riven Slivers, Kuva, arcanes, cosmetics.', 'pt-BR': 'Loja do Teshin no Steel Path — Forma Umbra, Fragmentos de Riven, Kuva, arcanes, cosméticos.' },
+    recommendedFarm: { planet: 'saturn', node: 'helene',
+      noteEn: 'Helene Defense on Steel Path — Acolytes spawn frequently in defense waves.',
+      notePt: 'Defesa de Helene no Steel Path — Acólitos spawnam com frequência nas waves.' },
+  },
+  nitain_extract: {
+    name: { en: 'Nitain Extract', 'pt-BR': 'Extrato de Nitaim' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/NitainExtract.png',
+    description: { en: 'Mostly from Nightwave Cred shop (rotating weekly). Rare drop from Reinforced Lockers and Ghoul Purge bounties.', 'pt-BR': 'Principalmente da loja Cred do Nightwave (rotativa semanal). Drop raro de Reinforced Lockers e bounties de Ghoul Purge.' },
+    usedFor: { en: 'Vauban (non-Prime), Vauban Prime parts, several weapons (Engulf, Marelok), sentinel mods.', 'pt-BR': 'Vauban (não-Prime), partes do Vauban Prime, várias armas (Engulf, Marelok), mods de sentinela.' },
+  },
+  kavat_genetic_code: {
+    name: { en: 'Kavat Genetic Code', 'pt-BR': 'Código Genético de Kavat' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/KavatGeneticCode.png',
+    description: { en: 'Scan feral kavats on Deimos (Cambion Drift) or in Infested Salvage on Eris. Use the Synthesis Scanner — Smeeta\'s Charm gives ~4x yield.', 'pt-BR': 'Escaneie kavats selvagens em Deimos (Cambion Drift) ou em Infested Salvage de Eris. Use o Synthesis Scanner — Charm da Smeeta dá ~4x rendimento.' },
+    usedFor: { en: 'Incubating new kavats at the Helminth Charger. 10 codes per kavat egg incubation.', 'pt-BR': 'Incubar novos kavats no Helminth Charger. 10 códigos por incubação de ovo.' },
+  },
+  eidolon_shard: {
+    name: { en: 'Eidolon Shard', 'pt-BR': 'Fragmento de Eidolon' },
+    rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
+    location: 'plains-of-eidolon', sources: ['sentient-drops'],
+    image: 'https://wiki.warframe.com/images/EidolonShard.png',
+    description: { en: 'Drops from defeating Teralyst Eidolons during Plains of Eidolon night cycle (one per kill).', 'pt-BR': 'Cai ao derrotar Teralyst Eidolons durante a noite nas Plains of Eidolon (1 por kill).' },
+    usedFor: { en: 'Focus conversion (high yield), Quills standing, Operator Arcane purchases, Focus intrinsics.', 'pt-BR': 'Conversão pra Focus (alto rendimento), standing dos Quills, compra de Arcanes de Operador, intrinsics de Focus.' },
+  },
+  brilliant_eidolon_shard: {
+    name: { en: 'Brilliant Eidolon Shard', 'pt-BR': 'Fragmento Brilhante de Eidolon' },
+    rarity: 'rare', category: 'open-world', spoilerLocked: true,
+    location: 'plains-of-eidolon', sources: ['sentient-drops'],
+    image: 'https://wiki.warframe.com/images/BrilliantEidolonShard.png',
+    description: { en: 'Drops from Gantulyst (2 per kill). Mid-tier Eidolon shard with bigger Focus yield.', 'pt-BR': 'Cai de Gantulyst (2 por kill). Fragmento Eidolon de tier médio com rendimento maior em Focus.' },
+    usedFor: { en: 'Focus conversion (high yield), Quills standing, top Operator Arcanes.', 'pt-BR': 'Conversão pra Focus (alto rendimento), standing dos Quills, Arcanes de Operador top.' },
+  },
+  radiant_eidolon_shard: {
+    name: { en: 'Radiant Eidolon Shard', 'pt-BR': 'Fragmento Radiante de Eidolon' },
+    rarity: 'rare', category: 'open-world', spoilerLocked: true,
+    location: 'plains-of-eidolon', sources: ['sentient-drops'],
+    image: 'https://wiki.warframe.com/images/RadiantEidolonShard.png',
+    description: { en: 'Drops from Hydrolyst (3 per kill). Top-tier Eidolon shard — biggest Focus yield available.', 'pt-BR': 'Cai de Hydrolyst (3 por kill). Fragmento Eidolon top tier — maior rendimento de Focus disponível.' },
+    usedFor: { en: 'Bulk Focus conversion, Quills top-rank arcanes, MR-gated Operator unlocks.', 'pt-BR': 'Conversão de Focus em massa, arcanes top rank dos Quills, desbloqueios MR-gated do Operador.' },
+  },
+  pathos_clamps: {
+    name: { en: 'Pathos Clamps', 'pt-BR': 'Pinças de Pathos' },
+    rarity: 'special', category: 'currency', spoilerLocked: true,
+    location: 'duviri', sources: ['boss-drops'],
+    image: 'https://wiki.warframe.com/images/PathosClamp.png',
+    description: { en: 'Reward for defeating the Orowyrm at the end of a Duviri spiral. ~1 per spiral on Normal, 2 on Steel Path.', 'pt-BR': 'Recompensa por derrotar a Orowyrm no fim de um espiral de Duviri. ~1 por espiral no Normal, 2 no Steel Path.' },
+    usedFor: { en: 'Acrithis shop in Dormizone — Incarnon Genesis adapters, intrinsics, Kullervo blueprint.', 'pt-BR': 'Loja da Acrithis na Dormizone — adaptadores Incarnon Genesis, intrinsics, blueprint do Kullervo.' },
+  },
+  cetus_wisp: {
+    name: { en: 'Cetus Wisp', 'pt-BR': 'Wisp de Cetus' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/CetusWisp.png',
+    description: { en: 'Floating wisp found on water edges in Plains of Eidolon, mostly at night. Rare — bring a resource booster.', 'pt-BR': 'Wisp flutuante encontrada nas bordas de água nas Plains of Eidolon, principalmente à noite. Raro — leve um resource booster.' },
+    usedFor: { en: 'Amps, Operator Arcanes (Magus/Virtuos), many quest crafts, and Mining drill upgrades.', 'pt-BR': 'Amps, Arcanes de Operador (Magus/Virtuos), muitos crafts de quests e upgrades de drill de mineração.' },
+  },
+  grokdrul: {
+    name: { en: 'Grokdrul', 'pt-BR': 'Grokdrul' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Grokdrul.png',
+    description: { en: 'Grineer-aligned crafting material gathered from white-pole nodes scattered around the Plains of Eidolon. Easy to spot during the day.', 'pt-BR': 'Material de craft Grineer coletado de marcadores brancos espalhados pelas Plains of Eidolon. Fácil de localizar durante o dia.' },
+    usedFor: { en: 'Zaw parts at Hok in Cetus, plus various Ostron offerings (Hok\'s Choice Mod Pack, etc.).', 'pt-BR': 'Partes de Zaw com o Hok em Cetus, e várias ofertas dos Ostron (Hok\'s Choice Mod Pack, etc.).' },
+  },
+  iradite: {
+    name: { en: 'Iradite', 'pt-BR': 'Iradita' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Iradite.png',
+    description: { en: 'Glowing crystal harvested from red-pole nodes on the Plains. Easier to spot at night when crystals glow brightly.', 'pt-BR': 'Cristal brilhante coletado de marcadores vermelhos nas Plains. Mais fácil de achar à noite quando brilham.' },
+    usedFor: { en: 'Zaw parts at Hok, Operator Amp gilding, several Ostron syndicate offerings.', 'pt-BR': 'Partes de Zaw com o Hok, melhoria de Amps de Operador, várias ofertas do sindicato Ostron.' },
+  },
+  maprico: {
+    name: { en: 'Maprico', 'pt-BR': 'Maprico' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Maprico.png',
+    description: { en: 'Bright orange fruit growing on trees in Plains of Eidolon. Visible during day or night.', 'pt-BR': 'Fruta alaranjada que cresce em árvores nas Plains of Eidolon. Visível dia ou noite.' },
+    usedFor: { en: 'Ostron syndicate offerings, Hok\'s mod packs, and standing for Cetus rep.', 'pt-BR': 'Ofertas do sindicato Ostron, mod packs do Hok, e standing pra reputação em Cetus.' },
+  },
+  nistlepod: {
+    name: { en: 'Nistlepod', 'pt-BR': 'Nistlepod' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Nistlepod.png',
+    description: { en: 'Mushroom-like growth found near water and trees on the Plains. Gather alongside Maprico.', 'pt-BR': 'Cogumelo encontrado perto de água e árvores nas Plains. Colete junto com Maprico.' },
+    usedFor: { en: 'Ostron offerings, Konzu bounties standing, Hok\'s crafts.', 'pt-BR': 'Ofertas dos Ostron, standing de bounties do Konzu, crafts do Hok.' },
+  },
+  condroc_wing: {
+    name: { en: 'Condroc Wing', 'pt-BR': 'Asa de Condroc' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/CondrocWing.png',
+    description: { en: 'Drops from killing or capturing Condrocs (flying wildlife on the Plains). Use a Lanka or kill cleanly to preserve.', 'pt-BR': 'Cai ao matar ou capturar Condrocs (animais voadores nas Plains). Use uma Lanka ou kill limpo pra preservar.' },
+    usedFor: { en: 'Hok\'s mod packs and various Ostron crafts.', 'pt-BR': 'Mod packs do Hok e vários crafts dos Ostron.' },
+  },
+  kuaka_spinal_claw: {
+    name: { en: 'Kuaka Spinal Claw', 'pt-BR': 'Garra Espinhal de Kuaka' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/KuakaSpinalClaw.png',
+    description: { en: 'Drops from Kuakas (small lizard-like wildlife) on the Plains. Tranquilize or kill them.', 'pt-BR': 'Cai de Kuakas (pequenos lagartos) nas Plains. Tranquilize ou mate.' },
+    usedFor: { en: 'Hok\'s offerings and several Plains-themed crafts.', 'pt-BR': 'Ofertas do Hok e vários crafts temáticos das Plains.' },
+  },
+  breath_of_the_eidolon: {
+    name: { en: 'Breath of the Eidolon', 'pt-BR': 'Sopro do Eidolon' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['bounty-drops'],
+    image: 'https://wiki.warframe.com/images/BreathOfTheEidolon.png',
+    description: { en: 'Bounty reward from Cetus bounties (mainly Tier 4-5). Used in Operator Amp crafting.', 'pt-BR': 'Recompensa de bounty em Cetus (principalmente Tier 4-5). Usado em craft de Amps de Operador.' },
+    usedFor: { en: 'Operator Amps via Onkko/Little Duck, and Quills standing offerings.', 'pt-BR': 'Amps de Operador via Onkko/Little Duck, e ofertas de standing dos Quills.' },
+  },
+  narmer_isoplast: {
+    name: { en: 'Narmer Isoplast', 'pt-BR': 'Isoplast de Narmer' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['bounty-drops'],
+    image: 'https://wiki.warframe.com/images/NarmerIsoplast.png',
+    description: { en: 'Bounty drop from Narmer-themed Plains/Vallis bounties (rotation C). Required for several quest follow-ups.', 'pt-BR': 'Drop de bounties Narmer nas Plains/Vallis (rotação C). Necessário pra várias quests pós-New War.' },
+    usedFor: { en: 'Caliban parts, Praedos crafting, and Veilbreaker-related items.', 'pt-BR': 'Partes do Caliban, craft do Praedos e itens relacionados ao Veilbreaker.' },
+  },
+  hemocyte_cystolith: {
+    name: { en: 'Hemocyte Cystolith', 'pt-BR': 'Cystolith de Hemocyte' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['event-currency'],
+    image: 'https://wiki.warframe.com/images/HemocyteCystolith.png',
+    description: { en: 'Event-exclusive drop from Hemocytes during Plague Star (rotating event). Used in Plague Star reward crafts.', 'pt-BR': 'Drop exclusivo de evento dos Hemocytes durante Plague Star (evento rotativo). Usado em crafts de recompensas do Plague Star.' },
+    usedFor: { en: 'Plague Star zaw parts, Forma blueprints, and Ghoulsaw event drops.', 'pt-BR': 'Partes de zaw do Plague Star, blueprints de Forma e drops de evento do Ghoulsaw.' },
+  },
+  nakak_pearl: {
+    name: { en: 'Nakak Pearl', 'pt-BR': 'Pérola de Nakak' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['event-currency'],
+    image: 'https://wiki.warframe.com/images/NakakPearl.png',
+    description: { en: 'Event-exclusive currency from Plague Star. Trade with Nakak in Cetus during the event for unique offerings.', 'pt-BR': 'Moeda exclusiva de evento do Plague Star. Troque com a Nakak em Cetus durante o evento por ofertas únicas.' },
+    usedFor: { en: 'Plague Star mods, cosmetics, and Ghoulsaw blueprint via Nakak.', 'pt-BR': 'Mods do Plague Star, cosméticos e blueprint do Ghoulsaw com a Nakak.' },
+  },
+  intact_sentient_core: {
+    name: { en: 'Intact Sentient Core', 'pt-BR': 'Núcleo Sentiente Intacto' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['sentient-drops'],
+    image: 'https://wiki.warframe.com/images/IntactSentientCore.png',
+    description: { en: 'Drops from Vomvalysts and smaller Sentients on the Plains at night. The lowest of 3 Sentient Core tiers.', 'pt-BR': 'Cai de Vomvalysts e Sentients menores nas Plains à noite. O menor dos 3 tiers de Núcleo Sentiente.' },
+    usedFor: { en: 'Quills standing — entry-level offerings and unlocks.', 'pt-BR': 'Standing dos Quills — ofertas iniciais e desbloqueios.' },
+  },
+  exceptional_sentient_core: {
+    name: { en: 'Exceptional Sentient Core', 'pt-BR': 'Núcleo Sentiente Excepcional' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['sentient-drops'],
+    image: 'https://wiki.warframe.com/images/ExceptionalSentientCore.png',
+    description: { en: 'Mid-tier Sentient Core. Drops from larger Sentients on the Plains at night and from Eidolon limb breaks.', 'pt-BR': 'Tier médio de Núcleo Sentiente. Cai de Sentients maiores nas Plains à noite e quando se quebra os membros dos Eidolons.' },
+    usedFor: { en: 'Quills standing for mid-tier Operator Amps and Arcanes.', 'pt-BR': 'Standing dos Quills pra Amps e Arcanes de Operador de tier médio.' },
+  },
+  flawless_sentient_core: {
+    name: { en: 'Flawless Sentient Core', 'pt-BR': 'Núcleo Sentiente Impecável' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['sentient-drops'],
+    image: 'https://wiki.warframe.com/images/FlawlessSentientCore.png',
+    description: { en: 'Top-tier Sentient Core. Drops from Eidolons (limb breaks) and the highest-tier Sentients during Plains night.', 'pt-BR': 'Top tier de Núcleo Sentiente. Cai de Eidolons (quebra de membros) e dos Sentients top da noite nas Plains.' },
+    usedFor: { en: 'Quills standing for top-tier offerings (Magus Lockdown, Virtuos Shadow, etc.).', 'pt-BR': 'Standing dos Quills pra ofertas top tier (Magus Lockdown, Virtuos Shadow, etc.).' },
+  },
+  thermal_sludge: {
+    name: { en: 'Thermal Sludge', 'pt-BR': 'Lodo Térmico' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/ThermalSludge.png',
+    description: { en: 'Glowing yellow goo gathered from steam vents in Orb Vallis. Common find — gather while exploring.', 'pt-BR': 'Gosma amarela brilhante coletada de respiradouros de vapor no Orb Vallis. Achado comum — colete enquanto explora.' },
+    usedFor: { en: 'Kitgun parts at Rude Zuud in Fortuna, Solaris syndicate offerings.', 'pt-BR': 'Partes de Kitgun com a Rude Zuud em Fortuna, ofertas do sindicato Solaris.' },
+  },
+  tepa_nodule: {
+    name: { en: 'Tepa Nodule', 'pt-BR': 'Nódulo de Tepa' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/TepaNodule.png',
+    description: { en: 'Crystalline cluster gathered from rocks in Orb Vallis caverns and surface. Glows blue at night.', 'pt-BR': 'Agrupamento cristalino coletado de rochas em cavernas do Orb Vallis e na superfície. Brilha em azul à noite.' },
+    usedFor: { en: 'Kitgun parts, MOA companion crafts at Legs, Solaris offerings.', 'pt-BR': 'Partes de Kitgun, crafts de companion MOA com o Legs, ofertas dos Solaris.' },
+  },
+  gorgaricus_spore: {
+    name: { en: 'Gorgaricus Spore', 'pt-BR': 'Esporo de Gorgaricus' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/GorgaricusSpore.png',
+    description: { en: 'Fungus spore harvested from Gorgaricus fungus growing on Orb Vallis rocks. Visible during day.', 'pt-BR': 'Esporo fúngico coletado do fungo Gorgaricus em rochas do Orb Vallis. Visível durante o dia.' },
+    usedFor: { en: 'Kitgun and Moa companion crafts, Solaris offerings.', 'pt-BR': 'Crafts de Kitgun e companion Moa, ofertas dos Solaris.' },
+  },
+  mytocardia_spore: {
+    name: { en: 'Mytocardia Spore', 'pt-BR': 'Esporo de Mytocardia' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/MytocardiaSpore.png',
+    description: { en: 'Fungus spore harvested from Mytocardia growth in the colder regions of Orb Vallis. Also drops in Cambion Drift.', 'pt-BR': 'Esporo fúngico coletado de Mytocardia em regiões mais frias do Orb Vallis. Também cai no Cambion Drift.' },
+    usedFor: { en: 'Kitgun parts, Moa companion crafts, Solaris standing offerings.', 'pt-BR': 'Partes de Kitgun, crafts de companion Moa, ofertas de standing dos Solaris.' },
+  },
+  advances_debt_bond: {
+    name: { en: 'Advances Debt-Bond', 'pt-BR': 'Título de Dívida Avançado' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['bounty-drops'],
+    image: 'https://wiki.warframe.com/images/AdvancesDebt-Bond.png',
+    description: { en: 'One of 5 Debt-Bond types from Orb Vallis bounties. Drops from low-tier bounties.', 'pt-BR': 'Um dos 5 tipos de Título de Dívida do Orb Vallis. Cai de bounties de tier baixo.' },
+    usedFor: { en: 'Solaris United standing rank-up (requires increasing combinations of debt bonds).', 'pt-BR': 'Rank up de standing dos Solaris United (exige combinações crescentes de títulos de dívida).' },
+  },
+  familial_debt_bond: {
+    name: { en: 'Familial Debt-Bond', 'pt-BR': 'Título de Dívida Familiar' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['bounty-drops'],
+    image: 'https://wiki.warframe.com/images/FamilialDebt-Bond.png',
+    description: { en: 'One of 5 Debt-Bond types from Orb Vallis bounties. Mid-tier bounty reward.', 'pt-BR': 'Um dos 5 tipos de Título de Dívida do Orb Vallis. Recompensa de bounty tier médio.' },
+    usedFor: { en: 'Solaris United standing rank-up at higher tiers.', 'pt-BR': 'Rank up de standing dos Solaris United em tiers mais altos.' },
+  },
+  medical_debt_bond: {
+    name: { en: 'Medical Debt-Bond', 'pt-BR': 'Título de Dívida Médico' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['bounty-drops'],
+    image: 'https://wiki.warframe.com/images/MedicalDebt-Bond.png',
+    description: { en: 'One of 5 Debt-Bond types from Orb Vallis bounties. Mid-tier.', 'pt-BR': 'Um dos 5 tipos de Título de Dívida do Orb Vallis. Tier médio.' },
+    usedFor: { en: 'Solaris United standing rank-up at higher tiers.', 'pt-BR': 'Rank up de standing dos Solaris United em tiers mais altos.' },
+  },
+  shelter_debt_bond: {
+    name: { en: 'Shelter Debt-Bond', 'pt-BR': 'Título de Dívida de Abrigo' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['bounty-drops'],
+    image: 'https://wiki.warframe.com/images/ShelterDebt-Bond.png',
+    description: { en: 'High-tier Debt-Bond from Orb Vallis bounties (rotation C of tier 4-5).', 'pt-BR': 'Título de Dívida de alto tier de bounties do Orb Vallis (rotação C de tier 4-5).' },
+    usedFor: { en: 'Solaris United top-tier rank-ups and Vox Solaris pledges.', 'pt-BR': 'Rank ups top tier dos Solaris United e penhores dos Vox Solaris.' },
+  },
+  training_debt_bond: {
+    name: { en: 'Training Debt-Bond', 'pt-BR': 'Título de Dívida de Treinamento' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['bounty-drops'],
+    image: 'https://wiki.warframe.com/images/TrainingDebt-Bond.png',
+    description: { en: 'Low-tier Debt-Bond from Orb Vallis bounties. Common rotation A reward.', 'pt-BR': 'Título de Dívida de tier baixo de bounties do Orb Vallis. Recompensa comum da rotação A.' },
+    usedFor: { en: 'Solaris United rank-up at entry levels.', 'pt-BR': 'Rank up de standing dos Solaris United nos níveis iniciais.' },
+  },
+  atmo_systems: {
+    name: { en: 'Atmo Systems', 'pt-BR': 'Sistemas Atmo' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['heist-drops'],
+    image: 'https://wiki.warframe.com/images/AtmoSystems.png',
+    description: { en: 'Drops from Profit-Taker Orb heist (Phase 2) and select Exploiter Orb activities.', 'pt-BR': 'Cai da heist da Profit-Taker Orb (Fase 2) e algumas atividades da Exploiter Orb.' },
+    usedFor: { en: 'Vox Solaris standing, several arcane and amp upgrade unlocks.', 'pt-BR': 'Standing dos Vox Solaris, vários desbloqueios de arcanes e upgrades de amp.' },
+  },
+  gyromag_systems: {
+    name: { en: 'Gyromag Systems', 'pt-BR': 'Sistemas Gyromag' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['heist-drops'],
+    image: 'https://wiki.warframe.com/images/GyromagSystems.png',
+    description: { en: 'Drops from Profit-Taker Orb heist (Phase 3). Mid-tier heist material.', 'pt-BR': 'Cai da heist da Profit-Taker Orb (Fase 3). Material de heist tier médio.' },
+    usedFor: { en: 'Vox Solaris standing and operator Arcane purchases.', 'pt-BR': 'Standing dos Vox Solaris e compras de Arcanes de operador.' },
+  },
+  repeller_systems: {
+    name: { en: 'Repeller Systems', 'pt-BR': 'Sistemas Repeller' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['heist-drops'],
+    image: 'https://wiki.warframe.com/images/RepellerSystems.png',
+    description: { en: 'Drops from Profit-Taker Orb heist (Phase 4). Top-tier heist material.', 'pt-BR': 'Cai da heist da Profit-Taker Orb (Fase 4). Material de heist top tier.' },
+    usedFor: { en: 'Vox Solaris highest-rank offerings (Magus Lockdown, etc.).', 'pt-BR': 'Ofertas de rank máximo dos Vox Solaris (Magus Lockdown, etc.).' },
+  },
+  calda_toroid: {
+    name: { en: 'Calda Toroid', 'pt-BR': 'Toroide Calda' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['raknoid-drops'],
+    image: 'https://wiki.warframe.com/images/CaldaToroid.png',
+    description: { en: 'Drops from Coolant Raknoids in the Temple of Profit (Orb Vallis). Caves nearby are good for spawns.', 'pt-BR': 'Cai de Coolant Raknoids no Templo do Lucro (Orb Vallis). Cavernas próximas são bons spawns.' },
+    usedFor: { en: 'Vox Solaris standing offerings, Arcane purchases.', 'pt-BR': 'Ofertas de standing dos Vox Solaris, compras de Arcanes.' },
+  },
+  sola_toroid: {
+    name: { en: 'Sola Toroid', 'pt-BR': 'Toroide Sola' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['raknoid-drops'],
+    image: 'https://wiki.warframe.com/images/SolaToroid.png',
+    description: { en: 'Drops from Raknoids near the Enrichment Labs (Orb Vallis). Often farmed at the same location for hours.', 'pt-BR': 'Cai de Raknoids perto dos Enrichment Labs (Orb Vallis). Geralmente farmado no mesmo lugar por horas.' },
+    usedFor: { en: 'Vox Solaris standing offerings.', 'pt-BR': 'Ofertas de standing dos Vox Solaris.' },
+  },
+  vega_toroid: {
+    name: { en: 'Vega Toroid', 'pt-BR': 'Toroide Vega' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['raknoid-drops'],
+    image: 'https://wiki.warframe.com/images/VegaToroid.png',
+    description: { en: 'Drops from Raknoids near the Spaceport in Orb Vallis. Bring a stealth frame for sustained farms.', 'pt-BR': 'Cai de Raknoids perto do Spaceport no Orb Vallis. Leve uma frame de stealth pra farms sustentados.' },
+    usedFor: { en: 'Vox Solaris standing offerings.', 'pt-BR': 'Ofertas de standing dos Vox Solaris.' },
+  },
+  crisma_toroid: {
+    name: { en: 'Crisma Toroid', 'pt-BR': 'Toroide Crisma' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['raknoid-drops'],
+    image: 'https://wiki.warframe.com/images/CrismaToroid.png',
+    description: { en: 'Rare drop from Profit-Taker Orb (heist Phase 1) and high-level Raknoids.', 'pt-BR': 'Drop raro da Profit-Taker Orb (Fase 1 da heist) e Raknoids de alto nível.' },
+    usedFor: { en: 'Vox Solaris top-tier offerings, Magus arcane unlocks.', 'pt-BR': 'Ofertas top tier dos Vox Solaris, desbloqueios de arcanes Magus.' },
+  },
+  lazulite_toroid: {
+    name: { en: 'Lazulite Toroid', 'pt-BR': 'Toroide Lazulite' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['raknoid-drops'],
+    image: 'https://wiki.warframe.com/images/LazuliteToroid.png',
+    description: { en: 'Drops exclusively from the Exploiter Orb fight. Used in Hildryn Prime and high-end builds.', 'pt-BR': 'Cai exclusivamente do combate da Exploiter Orb. Usado em Hildryn Prime e builds de alto nível.' },
+    usedFor: { en: 'Hildryn Prime parts (Bishamo armor builds), Vox Solaris top tier.', 'pt-BR': 'Partes da Hildryn Prime (armaduras Bishamo), top tier dos Vox Solaris.' },
+  },
+  diluted_thermia: {
+    name: { en: 'Diluted Thermia', 'pt-BR': 'Termia Diluída' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['event-currency'],
+    image: 'https://wiki.warframe.com/images/DilutedThermia.png',
+    description: { en: 'Event-exclusive currency from Thermia Fractures events. Required to challenge the Exploiter Orb.', 'pt-BR': 'Moeda exclusiva do evento Thermia Fractures. Necessária pra desafiar a Exploiter Orb.' },
+    usedFor: { en: 'Triggering the Exploiter Orb fight (10 Diluted Thermia at the fight terminal).', 'pt-BR': 'Iniciar o combate com a Exploiter Orb (10 Termias Diluídas no terminal do combate).' },
+  },
+  auron: {
+    name: { en: 'Auron', 'pt-BR': 'Aurônio' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/Auron.png',
+    description: { en: 'Common metal ore mined in the Plains of Eidolon. Use the Sunpoint Plasma Drill from Smokefinger or Hok\'s drill.', 'pt-BR': 'Minério metálico comum minerado nas Plains of Eidolon. Use o Sunpoint Plasma Drill da Smokefinger ou o drill do Hok.' },
+    usedFor: { en: 'Refined into Auroxium Alloy at Old Man Suumbat in Cetus. Used in Zaws and Amps.', 'pt-BR': 'Refinado em Liga de Aurônio com o Velho Suumbat em Cetus. Usado em Zaws e Amps.' },
+  },
+  auroxium_alloy: {
+    name: { en: 'Auroxium Alloy', 'pt-BR': 'Liga de Aurônio' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/AuroxiumAlloy.png',
+    description: { en: 'Refined version of Auron. Trade ore at Old Man Suumbat in Cetus to obtain. Also drops from bounties.', 'pt-BR': 'Versão refinada do Aurônio. Troque minério com o Velho Suumbat em Cetus pra obter. Também cai de bounties.' },
+    usedFor: { en: 'Zaw parts (Hok), Operator Amp parts, Ostron syndicate offerings.', 'pt-BR': 'Partes de Zaw (Hok), partes de Amps de Operador, ofertas do sindicato Ostron.' },
+  },
+  coprun: {
+    name: { en: 'Coprun', 'pt-BR': 'Coprun' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/Coprun.png',
+    description: { en: 'Common copper-tone ore from the Plains of Eidolon. Drill it from yellow mineral veins.', 'pt-BR': 'Minério comum cor de cobre das Plains of Eidolon. Drill nas veias minerais amarelas.' },
+    usedFor: { en: 'Refined into Coprite Alloy. Used in Zaws and amp crafting.', 'pt-BR': 'Refinado em Liga de Coprite. Usado em Zaws e craft de amps.' },
+  },
+  coprite_alloy: {
+    name: { en: 'Coprite Alloy', 'pt-BR': 'Liga de Coprite' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/CopriteAlloy.png',
+    description: { en: 'Refined Coprun. Trade ore at Old Man Suumbat in Cetus.', 'pt-BR': 'Coprun refinado. Troque minério com o Velho Suumbat em Cetus.' },
+    usedFor: { en: 'Zaw parts, Amp parts, several Ostron crafts.', 'pt-BR': 'Partes de Zaw, partes de Amp, vários crafts dos Ostron.' },
+  },
+  ferros: {
+    name: { en: 'Ferros', 'pt-BR': 'Ferros' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/Ferros.png',
+    description: { en: 'Uncommon Plains ore. Mine from less-frequent mineral veins (look for slightly larger glowing nodes).', 'pt-BR': 'Minério incomum das Plains. Mine em veias menos frequentes (procure por marcadores brilhantes maiores).' },
+    usedFor: { en: 'Refined into Fersteel Alloy. Used in higher-tier Zaw parts.', 'pt-BR': 'Refinado em Liga de Fersteel. Usado em partes de Zaw de tier mais alto.' },
+  },
+  fersteel_alloy: {
+    name: { en: 'Fersteel Alloy', 'pt-BR': 'Liga de Fersteel' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/FersteelAlloy.png',
+    description: { en: 'Refined Ferros. Higher-tier alloy from Old Man Suumbat. Also from bounties.', 'pt-BR': 'Ferros refinado. Liga de tier mais alto com o Velho Suumbat. Também de bounties.' },
+    usedFor: { en: 'High-tier Zaw parts, Amp parts (Lega and Klamora prisms).', 'pt-BR': 'Partes de Zaw top tier, partes de Amp (prismas Lega e Klamora).' },
+  },
+  pyrol: {
+    name: { en: 'Pyrol', 'pt-BR': 'Pyrol' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/Pyrol.png',
+    description: { en: 'Uncommon Plains ore with a red-orange tint. Mine from medium-tier veins, often near volcanic areas.', 'pt-BR': 'Minério incomum das Plains com tom vermelho-alaranjado. Mine em veias tier médio, normalmente perto de áreas vulcânicas.' },
+    usedFor: { en: 'Refined into Pyrotic Alloy. Used in Amp prisms and Zaw grips.', 'pt-BR': 'Refinado em Liga de Pyrotic. Usado em prismas de Amp e cabos de Zaw.' },
+  },
+  pyrotic_alloy: {
+    name: { en: 'Pyrotic Alloy', 'pt-BR': 'Liga de Pyrotic' },
+    rarity: 'rare', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'metals-red'],
+    image: 'https://wiki.warframe.com/images/PyroticAlloy.png',
+    description: { en: 'Refined Pyrol. Top-tier alloy from Old Man Suumbat or higher Cetus bounty rotations.', 'pt-BR': 'Pyrol refinado. Liga top tier com o Velho Suumbat ou rotações altas de bounty em Cetus.' },
+    usedFor: { en: 'Top-tier Zaw parts and Amp components (Shraksun, Klamora, etc.).', 'pt-BR': 'Partes de Zaw top tier e componentes de Amp (Shraksun, Klamora, etc.).' },
+  },
+  axidite: {
+    name: { en: 'Axidite', 'pt-BR': 'Axidite' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/Axidite.png',
+    description: { en: 'Common Orb Vallis ore. Mine with the Sunpoint Plasma Drill from common veins.', 'pt-BR': 'Minério comum do Orb Vallis. Mine com o Sunpoint Plasma Drill em veias comuns.' },
+    usedFor: { en: 'Refined into Axidrol Alloy at Smokefinger. Used in Kitgun parts.', 'pt-BR': 'Refinado em Liga de Axidrol com o Smokefinger. Usado em partes de Kitgun.' },
+  },
+  axidrol_alloy: {
+    name: { en: 'Axidrol Alloy', 'pt-BR': 'Liga de Axidrol' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/AxidrolAlloy.png',
+    description: { en: 'Refined Axidite. Trade with Smokefinger at Fortuna for the refined version.', 'pt-BR': 'Axidite refinado. Troque com o Smokefinger em Fortuna pela versão refinada.' },
+    usedFor: { en: 'Kitgun parts (Rude Zuud), Moa companion crafts (Legs).', 'pt-BR': 'Partes de Kitgun (Rude Zuud), crafts de companion Moa (Legs).' },
+  },
+  hesperon: {
+    name: { en: 'Hesperon', 'pt-BR': 'Hesperon' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/Hesperon.png',
+    description: { en: 'Common Vallis ore with a silver-blue tint. Mine from common-frequency veins.', 'pt-BR': 'Minério comum do Vallis com tom prateado-azulado. Mine em veias de frequência comum.' },
+    usedFor: { en: 'Refined into Hespazym Alloy at Smokefinger. Used in Kitgun grips and barrels.', 'pt-BR': 'Refinado em Liga de Hespazym com o Smokefinger. Usado em cabos e canos de Kitgun.' },
+  },
+  hespazym_alloy: {
+    name: { en: 'Hespazym Alloy', 'pt-BR': 'Liga de Hespazym' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/HespazymAlloy.png',
+    description: { en: 'Refined Hesperon from Smokefinger. Also from Vallis bounty rotations.', 'pt-BR': 'Hesperon refinado com o Smokefinger. Também de rotações de bounty no Vallis.' },
+    usedFor: { en: 'Kitgun parts and Moa companion crafts.', 'pt-BR': 'Partes de Kitgun e crafts de companion Moa.' },
+  },
+  travoride: {
+    name: { en: 'Travoride', 'pt-BR': 'Travoride' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/Travoride.png',
+    description: { en: 'Uncommon Vallis ore. Mine from larger blue-tinted veins, often deeper in caves.', 'pt-BR': 'Minério incomum do Vallis. Mine em veias maiores de tom azulado, normalmente mais fundo em cavernas.' },
+    usedFor: { en: 'Refined into Travocyte Alloy. Used in higher-tier Kitgun crafts.', 'pt-BR': 'Refinado em Liga de Travocyte. Usado em crafts de Kitgun de tier mais alto.' },
+  },
+  travocyte_alloy: {
+    name: { en: 'Travocyte Alloy', 'pt-BR': 'Liga de Travocyte' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/TravocyteAlloy.png',
+    description: { en: 'Refined Travoride. Higher-tier alloy used in Kitgun loadouts and Solaris crafts.', 'pt-BR': 'Travoride refinado. Liga de tier mais alto usada em loadouts de Kitgun e crafts dos Solaris.' },
+    usedFor: { en: 'Advanced Kitgun parts (Sporelacer, Catchmoon), Moa upgrades.', 'pt-BR': 'Partes avançadas de Kitgun (Sporelacer, Catchmoon), upgrades de Moa.' },
+  },
+  venerol: {
+    name: { en: 'Venerol', 'pt-BR': 'Venerol' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/Venerol.png',
+    description: { en: 'Uncommon Vallis ore with a green-yellow tint. Look for medium-size veins in caverns.', 'pt-BR': 'Minério incomum do Vallis com tom verde-amarelado. Procure veias de tamanho médio em cavernas.' },
+    usedFor: { en: 'Refined into Venerdo Alloy. Used in Kitgun barrels and Moa parts.', 'pt-BR': 'Refinado em Liga de Venerdo. Usado em canos de Kitgun e partes de Moa.' },
+  },
+  venerdo_alloy: {
+    name: { en: 'Venerdo Alloy', 'pt-BR': 'Liga de Venerdo' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'ores-red'],
+    image: 'https://wiki.warframe.com/images/VenerdoAlloy.png',
+    description: { en: 'Refined Venerol from Smokefinger. Used in top-tier Kitgun parts.', 'pt-BR': 'Venerol refinado com o Smokefinger. Usado em partes de Kitgun top tier.' },
+    usedFor: { en: 'Kitgun Sporelacer, Catchmoon and Tombfinger top-tier configurations.', 'pt-BR': 'Configurações top tier de Kitgun Sporelacer, Catchmoon e Tombfinger.' },
+  },
+  azurite: {
+    name: { en: 'Azurite', 'pt-BR': 'Azurita' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Azurite.png',
+    description: { en: 'Common blue gem ore from Plains of Eidolon. Mine with the drill from blue gem veins.', 'pt-BR': 'Minério de gema azul comum das Plains of Eidolon. Mine com o drill em veias de gema azuis.' },
+    usedFor: { en: 'Refined into Cut Azurite at Old Man Suumbat. Used in Zaws and Amps.', 'pt-BR': 'Refinada em Azurita Lapidada com o Velho Suumbat. Usada em Zaws e Amps.' },
+  },
+  veridos: {
+    name: { en: 'Veridos', 'pt-BR': 'Veridos' },
+    rarity: 'common', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Veridos.png',
+    description: { en: 'Uncommon green gem from the Plains. Mine from medium-tier gem veins.', 'pt-BR': 'Gema verde incomum das Plains. Mine em veias de gema tier médio.' },
+    usedFor: { en: 'Refined into Cut Veridos. Used in mid-tier Zaw parts and Amp components.', 'pt-BR': 'Refinada em Veridos Lapidada. Usada em partes de Zaw tier médio e componentes de Amp.' },
+  },
+  nyth: {
+    name: { en: 'Nyth', 'pt-BR': 'Nyth' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Nyth.png',
+    description: { en: 'Rare red gem from the Plains. Mine from rare gem veins (large red glow).', 'pt-BR': 'Gema vermelha rara das Plains. Mine em veias raras de gema (brilho vermelho grande).' },
+    usedFor: { en: 'Refined into Cut Nyth. Used in top-tier Zaw parts.', 'pt-BR': 'Refinada em Nyth Lapidada. Usada em partes de Zaw top tier.' },
+  },
+  sentirum: {
+    name: { en: 'Sentirum', 'pt-BR': 'Sentirum' },
+    rarity: 'uncommon', category: 'open-world',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Sentirum.png',
+    description: { en: 'Rare golden gem from the Plains. Among the rarest mining nodes — bring a booster.', 'pt-BR': 'Gema dourada rara das Plains. Entre os marcadores de mineração mais raros — leve um booster.' },
+    usedFor: { en: 'Refined into Cut Sentirum. Used in top-tier crafts and Operator gear.', 'pt-BR': 'Refinada em Sentirum Lapidada. Usada em crafts top tier e equipamento de Operador.' },
+  },
+  marquise_thyst: {
+    name: { en: 'Marquise Thyst', 'pt-BR': 'Ametista Marquise' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/MarquiseThyst.png',
+    description: { en: 'Rare purple gem from Orb Vallis. Found in rare mineral veins, often deep in caves.', 'pt-BR': 'Gema roxa rara do Orb Vallis. Encontrada em veias raras, normalmente em cavernas profundas.' },
+    usedFor: { en: 'Refined into Star Marquise Thyst. Used in top-tier Kitgun parts.', 'pt-BR': 'Refinada em Estrela Marquise. Usada em partes de Kitgun top tier.' },
+  },
+  amarast: {
+    name: { en: 'Amarast', 'pt-BR': 'Amarast' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Amarast.png',
+    description: { en: 'Uncommon Vallis gem with a yellow-amber tint. Mine from medium-tier veins.', 'pt-BR': 'Gema incomum do Vallis com tom amarelo-âmbar. Mine em veias tier médio.' },
+    usedFor: { en: 'Refined into Star Amarast. Used in Kitgun parts and Solaris offerings.', 'pt-BR': 'Refinada em Estrela de Amarast. Usada em partes de Kitgun e ofertas dos Solaris.' },
+  },
+  star_amarast: {
+    name: { en: 'Star Amarast', 'pt-BR': 'Estrela de Amarast' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/StarAmarast.png',
+    description: { en: 'Cut Amarast from Smokefinger. Used in Kitgun crafts and Moa parts.', 'pt-BR': 'Amarast lapidado com o Smokefinger. Usado em crafts de Kitgun e partes de Moa.' },
+    usedFor: { en: 'Kitgun parts, Moa companion crafts, Solaris standing offerings.', 'pt-BR': 'Partes de Kitgun, crafts de companion Moa, ofertas de standing dos Solaris.' },
+  },
+  noctrul: {
+    name: { en: 'Noctrul', 'pt-BR': 'Noctrul' },
+    rarity: 'common', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Noctrul.png',
+    description: { en: 'Uncommon Vallis gem with a dark/black sheen.', 'pt-BR': 'Gema incomum do Vallis com brilho escuro/preto.' },
+    usedFor: { en: 'Refined into Star Noctrul. Used in Kitgun and Moa crafts.', 'pt-BR': 'Refinada em Estrela de Noctrul. Usada em crafts de Kitgun e Moa.' },
+  },
+  heart_noctrul: {
+    name: { en: 'Heart Noctrul', 'pt-BR': 'Coração de Noctrul' },
+    rarity: 'rare', category: 'open-world',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/HeartNoctrul.png',
+    description: { en: 'Cut Noctrul from Smokefinger. Used in Kitgun parts and Solaris offerings.', 'pt-BR': 'Noctrul lapidado com o Smokefinger. Usado em partes de Kitgun e ofertas dos Solaris.' },
+    usedFor: { en: 'Kitgun loadouts (Sporelacer, Catchmoon, Tombfinger), Moa companions.', 'pt-BR': 'Loadouts de Kitgun (Sporelacer, Catchmoon, Tombfinger), companions Moa.' },
+  },
+  pustulite: {
+    name: { en: 'Pustulite', 'pt-BR': 'Pustulite' },
+    rarity: 'common', category: 'open-world',
+    location: 'cambion-drift', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Pustulite.png',
+    description: { en: 'Common Infested gathering resource from Cambion Drift. Found growing on Infested formations across the Drift.', 'pt-BR': 'Recurso de coleta Infestado comum do Cambion Drift. Cresce em formações Infestadas pela Drift.' },
+    usedFor: { en: 'Father bounty offerings, Necramech upgrades and Entrati syndicate offerings.', 'pt-BR': 'Ofertas de bounty do Father, upgrades de Necramech e ofertas do sindicato Entrati.' },
+  },
+  ganglion: {
+    name: { en: 'Ganglion', 'pt-BR': 'Ganglion' },
+    rarity: 'common', category: 'open-world',
+    location: 'cambion-drift', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Ganglion.png',
+    description: { en: 'Common Cambion Drift Infested resource. Found on Infested growths near caves.', 'pt-BR': 'Recurso Infestado comum do Cambion Drift. Encontrado em crescimentos Infestados perto de cavernas.' },
+    usedFor: { en: 'Entrati offerings, Necramech upgrades, Cambion Drift bounty rewards.', 'pt-BR': 'Ofertas dos Entrati, upgrades de Necramech, recompensas de bounty do Cambion Drift.' },
+  },
+  lucent_teroglobe: {
+    name: { en: 'Lucent Teroglobe', 'pt-BR': 'Teroglobe Luminoso' },
+    rarity: 'common', category: 'open-world',
+    location: 'cambion-drift', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/LucentTeroglobe.png',
+    description: { en: 'Glowing pod growing on Cambion Drift surfaces. Easier to spot at night when they emit light.', 'pt-BR': 'Cápsula brilhante crescendo em superfícies do Cambion Drift. Mais fácil de localizar à noite quando emitem luz.' },
+    usedFor: { en: 'Entrati syndicate offerings, Necramech parts and weapon crafts.', 'pt-BR': 'Ofertas do sindicato Entrati, partes de Necramech e crafts de armas.' },
+  },
+  fass_residue: {
+    name: { en: 'Fass Residue', 'pt-BR': 'Resíduo de Fass' },
+    rarity: 'common', category: 'open-world',
+    location: 'cambion-drift', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/FassResidue.png',
+    description: { en: 'Drops from Fass Wyrm Residue spawns during the Fass cycle in Cambion Drift. Limited window per cycle.', 'pt-BR': 'Cai dos spawns de Resíduo do Fass Wyrm durante o ciclo Fass no Cambion Drift. Janela limitada por ciclo.' },
+    usedFor: { en: 'Son\'s Token offerings (Conservation) and various Entrati crafts.', 'pt-BR': 'Ofertas de Tokens do Son (Conservação) e vários crafts dos Entrati.' },
+  },
+  vome_residue: {
+    name: { en: 'Vome Residue', 'pt-BR': 'Resíduo de Vome' },
+    rarity: 'common', category: 'open-world',
+    location: 'cambion-drift', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/VomeResidue.png',
+    description: { en: 'Drops from Vome Wyrm Residue spawns during the Vome cycle in Cambion Drift. Cycle alternates with Fass.', 'pt-BR': 'Cai dos spawns de Resíduo do Vome Wyrm durante o ciclo Vome no Cambion Drift. Ciclo alterna com Fass.' },
+    usedFor: { en: 'Son\'s offerings, Conservation rewards, various Entrati crafts.', 'pt-BR': 'Ofertas do Son, recompensas de Conservação, vários crafts dos Entrati.' },
+  },
+  scintillant: {
+    name: { en: 'Scintillant', 'pt-BR': 'Cintilante' },
+    rarity: 'rare', category: 'open-world',
+    location: 'cambion-drift', sources: ['isolation-vault'],
+    image: 'https://wiki.warframe.com/images/Scintillant.png',
+    description: { en: 'Rare floating yellow drone resource in Cambion Drift, often at night and in Isolation Vaults. Shoot to collect.', 'pt-BR': 'Recurso raro de drone amarelo flutuante no Cambion Drift, geralmente à noite e em Isolation Vaults. Atire pra coletar.' },
+    usedFor: { en: 'Necramech crafts (required for Voidrig/Bonewidow blueprint) and Helminth Invigorations.', 'pt-BR': 'Crafts de Necramech (obrigatório pra blueprint do Voidrig/Bonewidow) e Invigorações do Helminth.' },
+  },
+  damaged_necramech_engine: {
+    name: { en: 'Damaged Necramech Engine', 'pt-BR': 'Motor Necramech Danificado' },
+    rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/DamagedNecramechEngine.png',
+    description: { en: 'Drops from Necramech kills in Isolation Vaults (Cambion Drift). One of 6 damaged parts for Voidrig blueprint.', 'pt-BR': 'Cai de kills de Necramech em Isolation Vaults (Cambion Drift). Uma das 6 partes danificadas pra blueprint do Voidrig.' },
+    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Blueprint do Necramech Voidrig (parte obrigatória).' },
+  },
+  damaged_necramech_pod: {
+    name: { en: 'Damaged Necramech Pod', 'pt-BR': 'Cápsula Necramech Danificada' },
+    rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/DamagedNecramechPod.png',
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Part of Voidrig blueprint requirements.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Parte dos requisitos da blueprint do Voidrig.' },
+    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Blueprint do Necramech Voidrig (parte obrigatória).' },
+  },
+  damaged_necramech_casing: {
+    name: { en: 'Damaged Necramech Casing', 'pt-BR': 'Carcaça Necramech Danificada' },
+    rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/DamagedNecramechCasing.png',
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Required for Voidrig blueprint.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Obrigatória pra blueprint do Voidrig.' },
+    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Blueprint do Necramech Voidrig (parte obrigatória).' },
+  },
+  damaged_necramech_weapon_pod: {
+    name: { en: 'Damaged Necramech Weapon Pod', 'pt-BR': 'Cápsula de Arma Necramech Danificada' },
+    rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/DamagedNecramechWeaponPod.png',
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Used in Mausolon/Cortege weapon blueprints.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Usada em blueprints de armas Mausolon/Cortege.' },
+    usedFor: { en: 'Necramech weapon (Mausolon, Cortege) blueprint requirements.', 'pt-BR': 'Requisitos de blueprint de armas de Necramech (Mausolon, Cortege).' },
+  },
+  damaged_necramech_weapon_barrel: {
+    name: { en: 'Damaged Necramech Weapon Barrel', 'pt-BR': 'Cano de Arma Necramech Danificado' },
+    rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/DamagedNecramechWeaponBarrel.png',
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Used in Necramech weapon crafts.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Usado em crafts de armas de Necramech.' },
+    usedFor: { en: 'Mausolon/Cortege weapon blueprints.', 'pt-BR': 'Blueprints de armas Mausolon/Cortege.' },
+  },
+  damaged_necramech_weapon_receiver: {
+    name: { en: 'Damaged Necramech Weapon Receiver', 'pt-BR': 'Receptor de Arma Necramech Danificado' },
+    rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/DamagedNecramechWeaponReceiver.png',
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Used in Necramech weapon crafts.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Usado em crafts de armas de Necramech.' },
+    usedFor: { en: 'Necramech weapon blueprints (Mausolon, Cortege, Morgha).', 'pt-BR': 'Blueprints de armas de Necramech (Mausolon, Cortege, Morgha).' },
+  },
+  connla_sprout: {
+    name: { en: 'Connla Sprout', 'pt-BR': 'Broto de Connla' },
+    rarity: 'common', category: 'open-world', spoilerLocked: true,
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/ConnlaSprout.png',
+    description: { en: 'Common Duviri plant gathered from green sprouts in fields. Easy to spot on the surface.', 'pt-BR': 'Planta comum de Duviri coletada de brotos verdes em campos. Fácil de localizar na superfície.' },
+    usedFor: { en: 'Acrithis offerings (Duviri trader) and Drifter Cosmetics crafts.', 'pt-BR': 'Ofertas da Acrithis (mercadora de Duviri) e crafts de Cosméticos do Drifter.' },
+  },
+  tasoma_extract: {
+    name: { en: 'Tasoma Extract', 'pt-BR': 'Extrato de Tasoma' },
+    rarity: 'common', category: 'open-world', spoilerLocked: true,
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/TasomaExtract.png',
+    description: { en: 'Mid-tier Duviri plant extract. Gather from medium-rare plants on the Duviri landscape.', 'pt-BR': 'Extrato de planta de tier médio de Duviri. Colete em plantas raras médias na paisagem de Duviri.' },
+    usedFor: { en: 'Acrithis offerings, Duviri Decree crafts.', 'pt-BR': 'Ofertas da Acrithis, crafts de Decrees de Duviri.' },
+  },
+  asterite: {
+    name: { en: 'Asterite', 'pt-BR': 'Asterite' },
+    rarity: 'uncommon', category: 'special', spoilerLocked: true,
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/Asterite.png',
+    description: { en: 'Common Railjack resource gathered from asteroid debris and small wreckage during Empyrean missions.', 'pt-BR': 'Recurso comum de Railjack coletado de detritos de asteroides e pequenos destroços em missões Empyrean.' },
+    usedFor: { en: 'Railjack repairs, basic Plexus upgrades, dry dock crafts.', 'pt-BR': 'Reparos de Railjack, upgrades básicos do Plexus, crafts da doca seca.' },
+  },
+  carbides: {
+    name: { en: 'Carbides', 'pt-BR': 'Carbides' },
+    rarity: 'common', category: 'special', spoilerLocked: true,
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/Carbides.png',
+    description: { en: 'Uncommon Railjack metal. Drops from destroyed Crewships and large wreckage in Empyrean.', 'pt-BR': 'Metal incomum de Railjack. Cai de Crewships destruídas e destroços grandes no Empyrean.' },
+    usedFor: { en: 'Railjack hull upgrades, Wreckage repair.', 'pt-BR': 'Upgrades de casco do Railjack, reparo de Wreckage.' },
+  },
+  cubic_diodes: {
+    name: { en: 'Cubic Diodes', 'pt-BR': 'Diodos Cúbicos' },
+    rarity: 'common', category: 'special', spoilerLocked: true,
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/CubicDiodes.png',
+    description: { en: 'Uncommon Railjack electronic component. Drops from destroyed Corpus Crewships and Empyrean tech caches.', 'pt-BR': 'Componente eletrônico incomum de Railjack. Cai de Crewships Corpus destruídas e baús de tecnologia do Empyrean.' },
+    usedFor: { en: 'Plexus avionics, Railjack reactor upgrades.', 'pt-BR': 'Aviônicos do Plexus, upgrades do reator do Railjack.' },
+  },
+  ayatan_cyan_star: {
+    name: { en: 'Ayatan Cyan Star', 'pt-BR': 'Estrela Ciano Ayatan' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/AyatanCyanStar.png',
+    description: { en: 'Blue Ayatan star found in containers across the Origin System. Slot into Ayatan sculptures to fill them.', 'pt-BR': 'Estrela Ayatan azul encontrada em containers pelo Sistema Origin. Encaixe em esculturas Ayatan pra preenchê-las.' },
+    usedFor: { en: 'Filling Ayatan sculptures (then trade at Maroo for Endo).', 'pt-BR': 'Preencher esculturas Ayatan (depois troque com a Maroo por Endo).' },
+  },
+  ayatan_amber_star: {
+    name: { en: 'Ayatan Amber Star', 'pt-BR': 'Estrela Âmbar Ayatan' },
+    rarity: 'special', category: 'currency',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/AyatanAmberStar.png',
+    description: { en: 'Rare orange Ayatan star found in special containers. Worth more Endo than Cyan stars when sold.', 'pt-BR': 'Estrela Ayatan laranja rara em containers especiais. Vale mais Endo que estrelas Ciano quando vendida.' },
+    usedFor: { en: 'Filling Ayatan sculptures, direct Endo trade at Maroo.', 'pt-BR': 'Preencher esculturas Ayatan, troca direta de Endo com a Maroo.' },
+  },
+  granum_crown: {
+    name: { en: 'Granum Crown', 'pt-BR': 'Coroa Granum' },
+    rarity: 'special', category: 'currency', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/GranumCrown.png',
+    description: { en: 'Drops from Treasurers (Granum Voids) in Corpus tilesets. Use at a Granum Crown statue to enter the Granum Void.', 'pt-BR': 'Cai de Tesoureiros (Granum Voids) em tilesets Corpus. Use em uma estátua de Coroa Granum pra entrar na Granum Void.' },
+    usedFor: { en: 'Granum Void entry — for Stropha, Protea parts, and Granum mods.', 'pt-BR': 'Entrada na Granum Void — pra Stropha, partes da Protea e mods Granum.' },
+  },
+  exemplar_granum_crown: {
+    name: { en: 'Exemplar Granum Crown', 'pt-BR': 'Coroa Granum Exemplar' },
+    rarity: 'special', category: 'currency', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/ExemplarGranumCrown.png',
+    description: { en: 'Drops from Tier 2 Treasurers (higher-level Corpus missions). Unlocks the Tier 2 Granum Void.', 'pt-BR': 'Cai de Tesoureiros Tier 2 (missões Corpus de nível mais alto). Desbloqueia a Granum Void Tier 2.' },
+    usedFor: { en: 'Tier 2 Granum Void — Protea Systems, harder Granum mods.', 'pt-BR': 'Granum Void Tier 2 — Sistemas da Protea, mods Granum mais difíceis.' },
+  },
+  zenith_granum_crown: {
+    name: { en: 'Zenith Granum Crown', 'pt-BR': 'Coroa Granum Zenith' },
+    rarity: 'special', category: 'currency', spoilerLocked: true,
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/ZenithGranumCrown.png',
+    description: { en: 'Drops from Tier 3 Treasurers (Steel Path Corpus missions). Unlocks the Tier 3 Granum Void.', 'pt-BR': 'Cai de Tesoureiros Tier 3 (missões Corpus Steel Path). Desbloqueia a Granum Void Tier 3.' },
+    usedFor: { en: 'Tier 3 Granum Void — Protea Prime parts, top-tier Granum rewards.', 'pt-BR': 'Granum Void Tier 3 — partes da Protea Prime, recompensas Granum top tier.' },
+  },
+  adramal_alloy: {
+    name: { en: 'Adramal Alloy', 'pt-BR': 'Adramal Alloy' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/AdramalAlloy.png',
+    description: { en: 'Refined alloy crafted in the Foundry from Adramalium. Blueprint from Otak (Rank 0). Yields 20 per build.', 'pt-BR': 'Liga refinada criada na Foundry a partir de Adramalium. Blueprint com Otak (Rank 0). Rende 20 por build.' },
+    usedFor: { en: 'Used for Necramech parts (Voidrig, Bonewidow), Entrati weapons (Cortege, Morgha, Trumna, Zymos), Kitguns and the Helminth Segment.', 'pt-BR': 'Usada em pecas de Necramech (Voidrig, Bonewidow), armas Entrati (Cortege, Morgha, Trumna, Zymos), Kitguns e no Helminth Segment.' },
+  },
+  adramalium: {
+    name: { en: 'Adramalium', 'pt-BR': 'Adramalium' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/Adramalium.png',
+    description: { en: 'Common ore mined from yellow lesions on the Cambion Drift. Also drops from Infested Cysts. Yields 5-10 per node.', 'pt-BR': 'Minerio comum extraido de lesoes amarelas na Cambion Drift. Tambem cai de Cistos Infestados. Rende 5-10 por no.' },
+    usedFor: { en: 'Refined at Otak into Adramal Alloy and traded to Otak for tokens.', 'pt-BR': 'Refinado com Otak em Adramal Alloy e trocado com Otak por tokens.' },
+  },
+  aggristone: {
+    name: { en: 'Aggristone', 'pt-BR': 'Aggristone' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Aggristone.png',
+    description: { en: 'Common Duviri open-world material from Aggristone Formations, Spiral objectives, and The Circuit. Lore-wise, hardened Orowyrm saliva.', 'pt-BR': 'Material comum do mundo aberto de Duviri, obtido de Formacoes de Aggristone, objetivos de Spirals e The Circuit. Na lore, saliva endurecida de Orowyrms.' },
+    usedFor: { en: 'Crafts Duviri weapons (Sampotes, Argo and Vel, Cinta), Kullervo Systems, Oraxia Chassis, and several Incarnon Genesis adapters. Feeds Helminth Bile.', 'pt-BR': 'Usado em armas de Duviri (Sampotes, Argo and Vel, Cinta), Kullervo Systems, Oraxia Chassis e varios adaptadores Incarnon Genesis. Alimenta Bile no Helminth.' },
+  },
+  agnovidisc: {
+    name: { en: 'Agnovidisc', 'pt-BR': 'Agnovidisc' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'dark-refractory', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/Agnovidisc.png',
+    description: { en: 'Common Old War identification mark from The Perita Rebellion in the Dark Refractory. Drops from enemies, lockers, and containers in Recall: Prime Vanguard, Dactolyst, and Hunhullus.', 'pt-BR': 'Marca de identificacao comum da Velha Guerra em The Perita Rebellion no Dark Refractory. Cai de inimigos, armarios e containers em Recall: Prime Vanguard, Dactolyst e Hunhullus.' },
+    usedFor: { en: 'Required to craft the Uriel Warframe, Vinquibus, Galariak Prime, and Sagek Prime. Also traded with Marie Leroux in La Cathedrale for rotating offerings.', 'pt-BR': 'Necessario para criar o Warframe Uriel, Vinquibus, Galariak Prime e Sagek Prime. Tambem trocado com Marie Leroux em La Cathedrale por ofertas rotativas.' },
+  },
+  alpha_corruptor: {
+    name: { en: 'Alpha Corruptor', 'pt-BR': 'Alpha Corruptor' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/AlphaCorruptor.png',
+    description: { en: 'Consumable from Operation Sling-Stone (2013), dropped by Infested enemies during the Fomorian sabotage event.', 'pt-BR': 'Consumivel da Operacao Sling-Stone (2013), obtido ao matar Infestados durante o evento de sabotagem dos Fomorianos.' },
+    usedFor: { en: 'Paired with a Beta Corruptor in the reactor to deal quadruple damage to Grineer Fomorian ships.', 'pt-BR': 'Combinado com um Beta Corruptor no reator para causar quadruplo dano em naves Fomorianas Grineer.' },
+  },
+  animo_nav_beacon: {
+    name: { en: 'Animo Nav Beacon', 'pt-BR': 'Animo Nav Beacon' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/AnimoNavBeacon.png',
+    description: { en: 'Special navigation key dropped by Ambulas proxies on Pluto Corpus Outpost missions. Best farm: Outer Terminus defense or Regna rescue.', 'pt-BR': 'Chave de navegacao especial dropada por Ambulas em missoes Corpus de Pluto. Melhor farm: defesa em Outer Terminus ou resgate em Regna.' },
+    usedFor: { en: 'Required to start the Ambulas boss fight on Hades, Pluto. Each player spends 5 per attempt with 3 refunded on success.', 'pt-BR': 'Necessario para iniciar a luta contra Ambulas em Hades, Pluto. Cada jogador gasta 5 por tentativa, com 3 reembolsados em sucesso.' },
+  },
+  anomaly_shard: {
+    name: { en: 'Anomaly Shard', 'pt-BR': 'Anomaly Shard' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/AnomalyShard.png',
+    description: { en: 'Sentient resource awarded for clearing a Murex in Veil Proxima after killing 20 Sentients onboard. Murex rotates between Grineer nodes every 30 minutes.', 'pt-BR': 'Recurso Sentient ganho ao limpar uma Murex no Veil Proxima apos matar 20 Sentients a bordo. A Murex muda de no Grineer a cada 30 minutos.' },
+    usedFor: { en: 'Used to craft Caliban parts and the Venato scythe. Also spent at Little Duck for the Tenebrous Ephemera and Sentient Captura scenes.', 'pt-BR': 'Usado para construir partes da Caliban e a Venato. Tambem gasto com Little Duck pelo Tenebrous Ephemera e cenas de Captura Sentient.' },
+  },
+  antiserum_injector_fragment: {
+    name: { en: 'Antiserum Injector Fragment', 'pt-BR': 'Antiserum Injector Fragment' },
+    rarity: 'rare', category: 'rare',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/AntiserumInjectorFragment.png',
+    description: { en: 'Rare research drop from enemies in the Infested Salvage mission on Oestrus, Eris. Picks up in stacks of 5 to 15.', 'pt-BR': 'Drop raro de pesquisa em inimigos da missao Infested Salvage em Oestrus, Eris. Cai em pilhas de 5 a 15.' },
+    usedFor: { en: 'Used to craft the Antiserum Injector gear item and contributes to clan research. Also feeds Helminth as Bile.', 'pt-BR': 'Usado para construir o gear Antiserum Injector e contribui em pesquisa de cla. Tambem alimenta o Helminth como Bile.' },
+  },
+  argon_burger_meal: {
+    name: { en: 'Argon Burger Meal', 'pt-BR': 'Argon Burger Meal' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/ArgonBurgerMeal.png',
+    description: { en: 'Hex Treasure collectible scattered across Höllvania missions. Use non-endless missions for free exploration time.', 'pt-BR': 'Tesouro Hex coletável espalhado pelas missões de Höllvania. Use missões não-endless para ter tempo livre de exploração.' },
+    usedFor: { en: 'Traded to Lettie for 1,500 standing with the Hex syndicate. Cannot be sold or traded between players.', 'pt-BR': 'Trocado com Lettie por 1.500 de reputação na sindicato Hex. Não pode ser vendido nem trocado entre jogadores.' },
+  },
+  ariette_scale: {
+    name: { en: 'Ariette Scale', 'pt-BR': 'Ariette Scale' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/ArietteScale.png',
+    description: { en: 'Common Duviri fish part earned through Maw Feeding spots in The Duviri Experience. The same pond can be reused indefinitely.', 'pt-BR': 'Parte comum de peixe de Duviri obtida nos pontos de Maw Feeding no The Duviri Experience. O mesmo ponto pode ser reutilizado indefinidamente.' },
+    usedFor: { en: 'Crafts Kullervo Systems, Cinta Lower Limb, and Incarnon Genesis adapters (Anku, Furax, Ack and Brunt). Feeds Helminth Bile.', 'pt-BR': 'Usado em Kullervo Systems, Cinta Lower Limb e adaptadores Incarnon Genesis (Anku, Furax, Ack and Brunt). Alimenta Bile no Helminth.' },
+  },
+  ascaris_prime: {
+    name: { en: 'Ascaris Prime', 'pt-BR': 'Ascaris Prime' },
+    rarity: 'rare', category: 'rare',
+    location: 'dark-refractory', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/AscarisPrime.png',
+    description: { en: 'Rare remote-piloting tech from The Perita Rebellion. Drops in Recall: Vanguard (1 per Order, 10 from the boss); 75 awarded for completing The Old Peace quest.', 'pt-BR': 'Tecnologia rara de pilotagem remota de The Perita Rebellion. Cai em Recall: Vanguard (1 por Order, 10 do chefe); 75 ao concluir a missao The Old Peace.' },
+    usedFor: { en: 'Used alongside Lyroic Bridge and Ren Hypercore to craft and upgrade the five Tauron Focus School weapons (Lorak, Vexoric, Thara, Nidri, Cogron).', 'pt-BR': 'Usado junto com Lyroic Bridge e Ren Hypercore para criar e melhorar as cinco armas Tauron de Focus School (Lorak, Vexoric, Thara, Nidri, Cogron).' },
+  },
+  atramentum: {
+    name: { en: 'Atramentum', 'pt-BR': 'Atramentum' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/Atramentum.png',
+    description: { en: 'Special currency from Follies Hunt missions at Vesper Relay. Drops 15 per run, 25 on Steel Path, plus Atramentum Balloons that must be shot.', 'pt-BR': 'Moeda especial das missoes Follies Hunt no Vesper Relay. Cai 15 por run, 25 no Steel Path, mais Atramentum Balloons que precisam ser atirados.' },
+    usedFor: { en: 'Spent at Aspirant Zorba for the Follie warframe, Enkaus weapon, Truths Flame mod, Chromatic Atramentum, and cosmetics.', 'pt-BR': 'Gasto com Aspirant Zorba pela warframe Follie, arma Enkaus, mod Truths Flame, Chromatic Atramentum e cosmeticos.' },
+  },
+  aucrux_capacitors: {
+    name: { en: 'Aucrux Capacitors', 'pt-BR': 'Aucrux Capacitors' },
+    rarity: 'rare', category: 'rare',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/AucruxCapacitors.png',
+    description: { en: 'Rare Railjack resource from Corpus Proxima missions in Venus, Neptune, and Pluto. Drops from Basilisks, Harpies, Crewships, and as mission bonus.', 'pt-BR': 'Recurso raro de Railjack das missoes Corpus Proxima em Venus, Neptune e Pluto. Cai de Basilisks, Harpies, Crewships e como bonus de missao.' },
+    usedFor: { en: 'Used to craft and upgrade Lavan, Vidar, and Zetki Railjack components and most Railjack turrets at all Mk tiers.', 'pt-BR': 'Usado para construir e melhorar componentes Lavan, Vidar e Zetki do Railjack e a maioria das turrets em todos os tiers Mk.' },
+  },
+  bapholite: {
+    name: { en: 'Bapholite', 'pt-BR': 'Bapholite' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/Bapholite.png',
+    description: { en: 'Common ore mined from yellow lesions on the Cambion Drift. Also drops from Bonus Vault containers and Infested Cysts.', 'pt-BR': 'Minerio comum extraido de lesoes amarelas na Cambion Drift. Tambem cai de containers de Bonus Vault e Cistos Infestados.' },
+    usedFor: { en: 'Refined at Otak into Tempered Bapholite and traded to Otak for tokens.', 'pt-BR': 'Refinado com Otak em Tempered Bapholite e trocado com Otak por tokens.' },
+  },
+  beating_heartstrings: {
+    name: { en: 'Beating Heartstrings', 'pt-BR': 'Beating Heartstrings' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/BeatingHeartstrings.png',
+    description: { en: 'Rare Techrot growth awarded for completing a rotation of Stage Defense at Solstice Square, Hollvania. Yields 4 to 9 per rotation.', 'pt-BR': 'Crescimento Techrot raro ganho ao completar uma rotacao de Stage Defense em Solstice Square, Hollvania. Rende de 4 a 9 por rotacao.' },
+    usedFor: { en: 'Spent at Flare Varleon for Temple warframe and Riot-848 secondary blueprints, music decorations, and the Blazing Revolutionary Honoria.', 'pt-BR': 'Gasto com Flare Varleon pelos blueprints da Temple e da Riot-848, decoracoes musicais e a skin Blazing Revolutionary da Honoria.' },
+  },
+  belric_crystal_fragment: {
+    name: { en: 'Belric Crystal Fragment', 'pt-BR': 'Belric Crystal Fragment' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/BelricCrystalFragment.png',
+    description: { en: 'Special crystal from Mirror Defense at Tyana Pass on Mars. Awarded every 50 Citrines Remnants and at end of each rotation.', 'pt-BR': 'Cristal especial obtido em Mirror Defense em Tyana Pass, Marte. Ganho a cada 50 Citrines Remnants e ao fim de cada rotacao.' },
+    usedFor: { en: 'Spent at Otak in the Necralisk for Citrine parts, Steflos and Corufell weapons, and arcanes like Steadfast and Kinship.', 'pt-BR': 'Gasto com Otak na Necralisk pelas partes da Citrine, armas Steflos e Corufell e arcanes como Steadfast e Kinship.' },
+  },
+  benign_infested_tumor: {
+    name: { en: 'Benign Infested Tumor', 'pt-BR': 'Benign Infested Tumor' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/BenignInfestedTumor.png',
+    description: { en: 'Common fish part obtained by filleting most Cambion Drift fish at Daughter. Yields scale with fish size.', 'pt-BR': 'Parte de peixe comum obtida ao filetar a maioria dos peixes da Cambion Drift com a Daughter. O rendimento varia com o tamanho.' },
+    usedFor: { en: 'Used for Predasite/Vulpaphyla Antigens at Son, Kitgun parts, K-Drive Feverspine board, and offerings for Daughter Tokens.', 'pt-BR': 'Usado em Antigens de Predasite/Vulpaphyla com o Son, pecas de Kitgun, prancha Feverspine de K-Drive, e ofertas por Daughter Tokens.' },
+  },
+  beta_corruptor: {
+    name: { en: 'Beta Corruptor', 'pt-BR': 'Beta Corruptor' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/BetaCorruptor.png',
+    description: { en: 'Consumable from Operation Sling-Stone (2013), dropped by Infested Ancients during the Fomorian sabotage event.', 'pt-BR': 'Consumivel da Operacao Sling-Stone (2013), obtido principalmente de Ancients Infestados no evento de sabotagem dos Fomorianos.' },
+    usedFor: { en: 'Paired with an Alpha Corruptor to deal quadruple damage to Fomorian reactors; useless alone.', 'pt-BR': 'Combinado com um Alpha Corruptor para causar quadruplo dano em reatores Fomorianos; inutil sozinho.' },
+  },
+  big_bytes_pizza: {
+    name: { en: 'Big Bytes Pizza', 'pt-BR': 'Big Bytes Pizza' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/BigBytesPizza.png',
+    description: { en: 'Hex Treasure collectible found as interactable pickup in Höllvania missions. Loot detection mods help locate it.', 'pt-BR': 'Tesouro Hex coletável encontrado como item interativo nas missões de Höllvania. Mods de detecção de loot ajudam a localizar.' },
+    usedFor: { en: 'Traded to Lettie for standing with the Hex syndicate and required for ranking up to Rank 3 and Rank 5.', 'pt-BR': 'Trocado com Lettie por reputação Hex e necessário para subir ao Rank 3 e Rank 5 da sindicato.' },
+  },
+  biotic_filter: {
+    name: { en: 'Biotic Filter', 'pt-BR': 'Biotic Filter' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/BioticFilter.png',
+    description: { en: 'Uncommon fish part dropped by Aquapulmo (surface, Vome) and Duroid (cave, Fass/Vome). Filleted by Daughter at the Necralisk.', 'pt-BR': 'Parte de peixe incomum dropada por Aquapulmo (superficie, Vome) e Duroid (caverna, Fass/Vome). Filetada com a Daughter na Necralisk.' },
+    usedFor: { en: 'Used for Bonewidow Capsule, Voidrig Weapon Pod, Mutagens, and offerings for Daughter Tokens.', 'pt-BR': 'Usada em Bonewidow Capsule, Voidrig Weapon Pod, Mutagens, e ofertas por Daughter Tokens.' },
+  },
+  blister_stalk: {
+    name: { en: 'Blister Stalk', 'pt-BR': 'Blister Stalk' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/BlisterStalk.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Heat damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano de Calor.' },
+    usedFor: { en: 'Fairy Ring Cave Art decoration and ranking up the Nightcap Field Guide. Also purchasable from Nightcap for Fergolyte.', 'pt-BR': 'Decoração Fairy Ring Cave Art e para subir de rank no Field Guide do Nightcap. Também comprável de Nightcap por Fergolyte.' },
+  },
+  boot: {
+    name: { en: 'Boot', 'pt-BR': 'Boot' },
+    rarity: 'common', category: 'common',
+    location: 'plains-of-eidolon', sources: ['fishing', 'junk'],
+    image: 'https://wiki.warframe.com/images/Boot.png',
+    description: { en: 'Junk item caught while fishing in Plains of Eidolon by grazing a fish hitbox or hitting the floor. Fixed 4.0kg weight and Easter egg reference.', 'pt-BR': 'Item de lixo pescado nas Plains of Eidolon ao raspar o hitbox de um peixe ou acertar o chao. Peso fixo de 4.0kg e referencia easter egg.' },
+    usedFor: { en: 'Crafts the Boot Trophy Orbiter decoration (blueprint from Fisher Hai-Luk, Surah rank). Can also be sold for 400 Credits.', 'pt-BR': 'Cria a decoracao Boot Trophy para o Orbiter (blueprint com Fisher Hai-Luk, rank Surah). Tambem pode ser vendido por 400 Creditos.' },
+  },
+  borica: {
+    name: { en: 'Borica', 'pt-BR': 'Borica' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Borica.png',
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Forward Base section during the Corporate Restructuring bounty. On pickup grants Corrosive damage.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Forward Base durante a bounty Corporate Restructuring. Ao pegar, concede dano Corrosivo.' },
+    usedFor: { en: 'Crafting the Arbucep Stock, Lookout Cave Art decoration, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Stock, decoração Lookout Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  brickie_muon_battery: {
+    name: { en: 'Brickie Muon Battery', 'pt-BR': 'Brickie Muon Battery' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/BrickieMuonBattery.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Brickie Servofish at The Business in Fortuna. Brickie are caught in ponds during Warm weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Brickie em The Business, em Fortuna. Brickies são pescados em lagos durante clima Quente.' },
+    usedFor: { en: 'MOA, Hound, Kitgun and K-Drive parts crafted at Legs and Rude Zuud, plus the Hothead K-Drive Reactor.', 'pt-BR': 'Peças de MOA, Hound, Kitgun e K-Drive feitas em Legs e Rude Zuud, além do Reator Hothead de K-Drive.' },
+  },
+  cabochon_embolos: {
+    name: { en: 'Cabochon Embolos', 'pt-BR': 'Cabochon Embolos' },
+    rarity: 'rare', category: 'rare',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/CabochonEmbolos.png',
+    description: { en: 'Refined gem crafted in the Foundry from Embolos. Blueprint from Otak (Rank 3). Yields 3 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Embolos. Blueprint com Otak (Rank 3). Rende 3 por build.' },
+    usedFor: { en: 'Used for Arum Spinosa, Cortege/Morgha/Trumna stocks, and Lavos Systems.', 'pt-BR': 'Usada em Arum Spinosa, stocks de Cortege/Morgha/Trumna, e Lavos Systems.' },
+  },
+  cephalite_resonance: {
+    name: { en: 'Cephalite Resonance', 'pt-BR': 'Cephalite Resonance' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/CephaliteResonance(xWhite).png',
+    description: { en: 'Untradeable Nightwave Series 3 (Glassmaker) resource, dropped by Cephalite enemies in random Glass Fissures across missions.', 'pt-BR': 'Recurso da Nightwave Series 3 (Glassmaker), nao negociavel, obtido de inimigos Cephalite em Fendas de Vidro aleatorias.' },
+    usedFor: { en: 'Required to access the Glassmaker\'s Weave at each crime scene; needs 5 per scene, max stack 20.', 'pt-BR': 'Necessario para acessar o Weave do Glassmaker em cada cena do crime; 5 por cena, maximo 20.' },
+  },
+  charamote_sagan_module: {
+    name: { en: 'Charamote Sagan Module', 'pt-BR': 'Charamote Sagan Module' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/CharamoteSaganModule.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Charamote Servofish at The Business in Fortuna. Charamote are caught in cave hotspots; also drops from the Exploiter Orb.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Charamote em The Business, em Fortuna. Charamotes aparecem em hotspots de cavernas; também dropa do Exploiter Orb.' },
+    usedFor: { en: 'Ocucor, several Amp parts, Cryotra, Ramflare Kitgun loader, Thugs K-Drive jet, and Ventkid cosmetic bundles.', 'pt-BR': 'Ocucor, várias peças de Amp, Cryotra, loader Ramflare de Kitgun, jet Thugs de K-Drive e bundles cosméticos Ventkid.' },
+  },
+  charc_electroplax: {
+    name: { en: 'Charc Electroplax', 'pt-BR': 'Charc Electroplax' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/CharcElectroplax.png',
+    description: { en: 'Cut from Charc Eels caught in Plains of Eidolon lakes by Fisher Hai-Luk in Cetus. More common at night.', 'pt-BR': 'Extraido das Charc Eels pescadas nos lagos de Plains of Eidolon por Fisher Hai-Luk em Cetus. Mais comum a noite.' },
+    usedFor: { en: 'Used in Gara Systems, Ekwana Ruhang and Vargeet Ruhang Zaw links, and Fosfor Rahd gear.', 'pt-BR': 'Usado em Gara Systems, links de Zaw Ekwana Ruhang e Vargeet Ruhang, e no item Fosfor Rahd.' },
+  },
+  cheddar_crowns_cereal: {
+    name: { en: 'Cheddar Crowns Cereal', 'pt-BR': 'Cheddar Crowns Cereal' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/CheddarCrownsCereal.png',
+    description: { en: 'Hex Treasure scattered across Höllvania missions and Tier 5 Bounties (Lvl 105-110, Rotation A, ~11.76%).', 'pt-BR': 'Tesouro Hex espalhado pelas missões de Höllvania e Bounties Tier 5 (Lvl 105-110, Rotação A, ~11.76%).' },
+    usedFor: { en: 'Traded to Lettie for 750 Hex standing. One required to rank up to Rank 3 (2-For-1) and Rank 5 (Pizza Party).', 'pt-BR': 'Trocado com Lettie por 750 de reputação Hex. Um necessário para Rank 3 (2-For-1) e Rank 5 (Pizza Party).' },
+  },
+  chitinous_husk: {
+    name: { en: 'Chitinous Husk', 'pt-BR': 'Chitinous Husk' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/ChitinousHusk.png',
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to lure Infested and progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca usada para atrair Infestados e avancar a quest.' },
+  },
+  chroma_mark: {
+    name: { en: 'Chroma Mark', 'pt-BR': 'Chroma Mark' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/ChromaMark64.png',
+    description: { en: 'Quest item from The New Strange, built in the Foundry after scanning the hostile Chroma at the Arcane Machine on Alator, Mars.', 'pt-BR': 'Item da quest The New Strange, construido na Forja apos escanear o Chroma hostil na Maquina Arcana em Alator, Marte.' },
+    usedFor: { en: 'Combines Scorched Beacon and Chroma Signal to pinpoint Chroma, unlocking the final mission on Ose, Europa.', 'pt-BR': 'Combina Scorched Beacon e Chroma Signal para localizar Chroma, desbloqueando a missao final em Ose, Europa.' },
+  },
+  chroma_signal: {
+    name: { en: 'Chroma Signal', 'pt-BR': 'Chroma Signal' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/ChromaSignal64.png',
+    description: { en: 'Quest blueprint from The New Strange, rewarded from the Mobile Defense mission on Morax, Europa.', 'pt-BR': 'Projeto da quest The New Strange, obtido na missao de Defesa Movel em Morax, Europa.' },
+    usedFor: { en: 'Built in the Foundry to reveal Chroma as the source of the transmission; combined later into the Chroma Mark.', 'pt-BR': 'Construido na Forja para revelar Chroma como fonte da transmissao; depois combinado no Chroma Mark.' },
+  },
+  chromatic_atramentum: {
+    name: { en: 'Chromatic Atramentum', 'pt-BR': 'Chromatic Atramentum' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'misc'],
+    image: 'https://wiki.warframe.com/images/ChromaticAtramentum.png',
+    description: { en: 'Special conversion item bought from Aspirant Zorba on any relay for 360 Atramentum each.', 'pt-BR': 'Item especial de conversao comprado de Aspirant Zorba em qualquer relay por 360 Atramentum cada.' },
+    usedFor: { en: 'Exchanged with Aspirant Zorba to turn one chosen mod into a cosmetic shiny Atragraph version of itself.', 'pt-BR': 'Trocado com Aspirant Zorba para transformar um mod escolhido em uma versao Atragraph cosmetica e brilhante dele mesmo.' },
+  },
+  chuggin_along_sixpack: {
+    name: { en: 'Chuggin\' Along Sixpack', 'pt-BR': 'Chuggin\' Along Sixpack' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/Chuggin%27AlongSixpack.png',
+    description: { en: 'Hex Treasure pickup across Höllvania missions, also dropped from Tier 3 Central Mall Bounty (Lvl 85-90, ~15.56%).', 'pt-BR': 'Tesouro Hex coletável nas missões de Höllvania, também cai no Tier 3 Central Mall Bounty (Lvl 85-90, ~15.56%).' },
+    usedFor: { en: 'Traded to Lettie for 750 Hex standing. One required to rank up to Rank 3 (2-For-1) and Rank 5 (Pizza Party).', 'pt-BR': 'Trocado com Lettie por 750 de reputação Hex. Um necessário para Rank 3 (2-For-1) e Rank 5 (Pizza Party).' },
+  },
+  corpus_cipher: {
+    name: { en: 'Corpus Cipher', 'pt-BR': 'Corpus Cipher' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/CorpusCipher.png',
+    description: { en: 'Event-exclusive component from Operation: Arid Fear (2013), dropped in special alerts.', 'pt-BR': 'Componente exclusivo de evento da Operacao: Arid Fear (2013), obtido em alertas especiais.' },
+    usedFor: { en: 'Combined with a Corpus Datamass to craft a Corpus Void Key during the event.', 'pt-BR': 'Combinado com um Corpus Datamass para criar uma Corpus Void Key durante o evento.' },
+  },
+  corpus_datamass: {
+    name: { en: 'Corpus Datamass', 'pt-BR': 'Corpus Datamass' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/CorpusDatamass.png',
+    description: { en: 'Event-exclusive component from Operation: Arid Fear (2013), containing encrypted Corpus intel.', 'pt-BR': 'Componente exclusivo de evento da Operacao: Arid Fear (2013), contendo dados criptografados Corpus.' },
+    usedFor: { en: 'Combined with a Corpus Cipher to craft a Corpus Void Key during the event.', 'pt-BR': 'Combinado com um Corpus Cipher para criar uma Corpus Void Key durante o evento.' },
+  },
+  corrupted_holokey: {
+    name: { en: 'Corrupted Holokey', 'pt-BR': 'Corrupted Holokey' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/CorruptedHolokey.png',
+    description: { en: 'Special Railjack reward from Empyrean Void Storm missions and from defeating a Sister of Parvos. Veil Proxima yields the most per run.', 'pt-BR': 'Recompensa especial de Railjack das missoes Empyrean Void Storm e por derrotar uma Sister of Parvos. Veil Proxima rende mais por run.' },
+    usedFor: { en: 'Spent at Ergo Glast for rotating Tenet weapons at 40 keys each. Save extras for Valence Fusion to roll better bonus elements.', 'pt-BR': 'Gasto com Ergo Glast pelas armas Tenet rotativas a 40 keys cada. Guarde para Valence Fusion buscando melhores elementos de bonus.' },
+  },
+  cranial_foremount: {
+    name: { en: 'Cranial Foremount', 'pt-BR': 'Cranial Foremount' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/CranialForemount.png',
+    description: { en: 'Uncommon fish part dropped by Myxostomata, caught in cave hotspots during Vome using Processed Vome Residue. Filleted by Daughter.', 'pt-BR': 'Parte de peixe incomum dropada por Myxostomata, pescado em hotspots de caverna durante Vome usando Processed Vome Residue. Filetada com a Daughter.' },
+    usedFor: { en: 'Used for Bonewidow Engine, Mutagens, and the Sporothrix primary.', 'pt-BR': 'Usada em Bonewidow Engine, Mutagens, e na primaria Sporothrix.' },
+  },
+  crewmans_boot: {
+    name: { en: 'Crewman\'s Boot', 'pt-BR': 'Crewman\'s Boot' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['fishing', 'junk'],
+    image: 'https://wiki.warframe.com/images/Crewman%27sBoot.png',
+    description: { en: 'Common Vallis fishing junk pulled up when grazing a Servofish hitbox or hitting the floor while fishing in Orb Vallis.', 'pt-BR': 'Lixo comum de pesca do Vallis obtido ao raspar a hitbox de um Servofish ou acertar o fundo durante a pesca no Orb Vallis.' },
+    usedFor: { en: 'Crafting the Boot Trophy decoration via The Business blueprint. Can also be sold for credits.', 'pt-BR': 'Crafting da decoração Boot Trophy via blueprint de The Business. Também pode ser vendido por créditos.' },
+  },
+  crimzian: {
+    name: { en: 'Crimzian', 'pt-BR': 'Crimzian' },
+    rarity: 'common', category: 'common',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Crimzian.png',
+    description: { en: 'Raw gem mined from blue veins in Plains of Eidolon, with a bonus chance from red veins. Also drops from Thumpers.', 'pt-BR': 'Gema bruta minerada de veios azuis em Plains of Eidolon, com chance bonus em veios vermelhos. Tambem dropa de Thumpers.' },
+    usedFor: { en: 'Refined into Star Crimzian at the Foundry, or turned in to Old Man Suumbaat for 100 Ostron Standing each.', 'pt-BR': 'Refinado em Star Crimzian na Foundry, ou trocado com Old Man Suumbaat por 100 de Standing Ostron cada.' },
+  },
+  cryptographic_alu: {
+    name: { en: 'Cryptographic ALU', 'pt-BR': 'Cryptographic ALU' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/CryptographicALU.png',
+    description: { en: 'Event-only resource dropped during Razorback Armada by Corpus Archwing enemies on Galilea (Jupiter) and Salacia (Neptune). Best farmed at Salacia.', 'pt-BR': 'Recurso so de evento dropado durante Razorback Armada por inimigos Corpus em Archwing em Galilea (Jupiter) e Salacia (Neptune). Melhor farm: Salacia.' },
+    usedFor: { en: 'Used to craft the Razorback Cipher (4 per cipher), the key needed to access the Razorback boss fight.', 'pt-BR': 'Usado para construir o Razorback Cipher (4 por cipher), a chave necessaria para acessar a luta contra o Razorback.' },
+  },
+  curse_of_hearing: {
+    name: { en: 'Curse of Hearing', 'pt-BR': 'Curse of Hearing' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/CurseofHearing.png',
+    description: { en: 'Event currency from Operation: Gargoyle\'s Cry, dropped by The Fragmented Zelator and The Fragmented One on Effervo, Deimos.', 'pt-BR': 'Moeda de evento da Operacao: Gargoyle\'s Cry, obtida de The Fragmented Zelator e The Fragmented One em Effervo, Deimos.' },
+    usedFor: { en: 'Donated to the Vigile Jahu Gargoyle in the Clan Dojo to progress event clan trophy tiers.', 'pt-BR': 'Doada ao Vigile Jahu Gargoyle no Dojo do Cla para avancar os trofeus de cla do evento.' },
+  },
+  curse_of_knowing: {
+    name: { en: 'Curse of Knowing', 'pt-BR': 'Curse of Knowing' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/CurseofKnowing.png',
+    description: { en: 'Event currency from Operation: Gargoyle\'s Cry, dropped by The Fragmented Suzerain and The Fragmented One on Effervo, Deimos.', 'pt-BR': 'Moeda de evento da Operacao: Gargoyle\'s Cry, obtida de The Fragmented Suzerain e The Fragmented One em Effervo, Deimos.' },
+    usedFor: { en: 'Donated to the Vigile Jahu Gargoyle in the Clan Dojo to progress event clan trophy tiers.', 'pt-BR': 'Doada ao Vigile Jahu Gargoyle no Dojo do Cla para avancar os trofeus de cla do evento.' },
+  },
+  curse_of_seeing: {
+    name: { en: 'Curse of Seeing', 'pt-BR': 'Curse of Seeing' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/CurseofSeeing.png',
+    description: { en: 'Event currency from Operation: Gargoyle\'s Cry, dropped by The Fragmented Anchorite and The Fragmented One on Effervo, Deimos.', 'pt-BR': 'Moeda de evento da Operacao: Gargoyle\'s Cry, obtida de The Fragmented Anchorite e The Fragmented One em Effervo, Deimos.' },
+    usedFor: { en: 'Donated to the Vigile Jahu Gargoyle in the Clan Dojo to progress event clan trophy tiers.', 'pt-BR': 'Doada ao Vigile Jahu Gargoyle no Dojo do Cla para avancar os trofeus de cla do evento.' },
+  },
+  cuthol_tendrils: {
+    name: { en: 'Cuthol Tendrils', 'pt-BR': 'Cuthol Tendrils' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/CutholTendrils.png',
+    description: { en: 'Cut from Cuthol fish caught at night in Plains of Eidolon pond hotspots. Also drops from Thumpers.', 'pt-BR': 'Extraido dos peixes Cuthol pescados a noite em hotspots de lagoa em Plains of Eidolon. Tambem dropa de Thumpers.' },
+    usedFor: { en: 'Required for Granmu Prism, Klebrik Scaffold and Lohrin Brace Amp parts, and for Ostron rank-up from Surah to Kin.', 'pt-BR': 'Necessario para as pecas de Amp Granmu Prism, Klebrik Scaffold e Lohrin Brace, e para subir de Surah para Kin com a Ostron.' },
+  },
+  dagonic: {
+    name: { en: 'Dagonic', 'pt-BR': 'Dagonic' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/Dagonic.png',
+    description: { en: 'Common gem mined from blue lesions on the Cambion Drift. Also drops from Sagiant Caskets and Bonus Vault containers. Yields 3-6.', 'pt-BR': 'Gema comum extraida de lesoes azuis na Cambion Drift. Tambem cai de Sagiant Caskets e containers de Bonus Vault. Rende 3-6.' },
+    usedFor: { en: 'Refined at Otak into Purged Dagonic and traded to Otak for tokens.', 'pt-BR': 'Refinada com Otak em Purged Dagonic e trocada com Otak por tokens.' },
+  },
+  damaged_necramech_weapon_stock: {
+    name: { en: 'Damaged Necramech Weapon Stock', 'pt-BR': 'Damaged Necramech Weapon Stock' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/DamagedNecramechWeaponStock.png',
+    description: { en: 'Uncommon component dropped from Rotation C of Isolation Vault bounties (Cambion Drift). Also purchasable from Loid at Necraloid Rank 1.', 'pt-BR': 'Componente incomum dropado na Rotacao C das bounties de Isolation Vault (Cambion Drift). Tambem comprado com Loid no Necraloid Rank 1.' },
+    usedFor: { en: 'Used to craft Cortege Stock and Morgha Stock for Necramech Archguns.', 'pt-BR': 'Usado para criar Cortege Stock e Morgha Stock para Archguns de Necramech.' },
+  },
+  daughter_token: {
+    name: { en: 'Daughter Token', 'pt-BR': 'Daughter Token' },
+    rarity: 'special', category: 'special',
+    location: 'cambion-drift', sources: ['entrati-currency'],
+    image: 'https://wiki.warframe.com/images/DaughterToken.png',
+    description: { en: 'Entrati family token earned by trading fish products to Daughter, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao trocar produtos de peixe com a Daughter, achado na Drift, ou via opcao Mend the Family da Grandmother.' },
+    usedFor: { en: 'Traded to Grandmother for 500 Entrati Standing each or converted into Grandmother Tokens.', 'pt-BR': 'Trocado com a Grandmother por 500 de Entrati Standing cada, ou convertido em Grandmother Tokens.' },
+  },
+  dendrite_blastoma: {
+    name: { en: 'Dendrite Blastoma', 'pt-BR': 'Dendrite Blastoma' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/DendriteBlastoma.png',
+    description: { en: 'Uncommon fish part dropped by Barbisteo and Vitreospina, caught in Cambion Drift caves during Fass/Vome. Filleted by Daughter.', 'pt-BR': 'Parte de peixe incomum dropada por Barbisteo e Vitreospina, pescados em cavernas da Cambion Drift durante Fass/Vome. Filetada com a Daughter.' },
+    usedFor: { en: 'Used for Antigens, Kitgun grips, Sepulcrum Receiver, Zymos Barrel, and Daughter Token offerings.', 'pt-BR': 'Usada em Antigens, grips de Kitgun, Sepulcrum Receiver, Zymos Barrel, e ofertas por Daughter Tokens.' },
+  },
+  devar: {
+    name: { en: 'Devar', 'pt-BR': 'Devar' },
+    rarity: 'common', category: 'common',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Devar.png',
+    description: { en: 'Raw gem mined from blue veins in Plains of Eidolon. Also drops from Thumpers.', 'pt-BR': 'Gema bruta minerada de veios azuis em Plains of Eidolon. Tambem dropa de Thumpers.' },
+    usedFor: { en: 'Refined into Esher Devar at the Foundry, or sold to Old Man Suumbaat for 50 Ostron Standing per gem.', 'pt-BR': 'Refinado em Esher Devar na Foundry, ou vendido para Old Man Suumbaat por 50 de Standing Ostron por gema.' },
+  },
+  devils_cap: {
+    name: { en: 'Devil\'s Cap', 'pt-BR': 'Devil\'s Cap' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Devil%27sCap.png',
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Corpus Lab section during the Critter Liberation bounty. On pickup grants Slash damage.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Corpus Lab durante a bounty Critter Liberation. Ao pegar, concede dano de Corte.' },
+    usedFor: { en: 'The Prince Cave Art decoration and ranking up the Nightcap Field Guide. Also purchasable from Nightcap for Fergolyte.', 'pt-BR': 'Decoração The Prince Cave Art e para subir de rank no Field Guide do Nightcap. Também comprável de Nightcap por Fergolyte.' },
+  },
+  devolved_namalon: {
+    name: { en: 'Devolved Namalon', 'pt-BR': 'Devolved Namalon' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/DevolvedNamalon.png',
+    description: { en: 'Refined ore crafted in the Foundry from Namalon. Blueprint from Otak (Rank 1). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Namalon. Blueprint com Otak (Rank 1). Rende 20 por build.' },
+    usedFor: { en: 'Used for Necramech parts (Voidrig, Bonewidow, Morgha, Cortege), Pulmonars, Quassus, and the Helminth Archon Shard Segment.', 'pt-BR': 'Usado em pecas de Necramech (Voidrig, Bonewidow, Morgha, Cortege), Pulmonars, Quassus, e no Helminth Archon Shard Segment.' },
+  },
+  dominus_aureus: {
+    name: { en: 'Dominus Aureus', 'pt-BR': 'Dominus Aureus' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/DominusAureus.png',
+    description: { en: 'Event currency from Operation: Eight Claw, earned by completing Isleweaver missions in Duviri.', 'pt-BR': 'Moeda de evento da Operacao: Eight Claw, obtida ao completar missoes Isleweaver em Duviri.' },
+    usedFor: { en: 'Spent with Dominus Thrax on Pathos Clamps, Signas, the Phelonyx Parazon Skin, weapon blueprints, and arcanes.', 'pt-BR': 'Gasta com Dominus Thrax em Pathos Clamps, Signas, skin Phelonyx Parazon, projetos de armas e arcanos.' },
+  },
+  dracroot: {
+    name: { en: 'Dracroot', 'pt-BR': 'Dracroot' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Dracroot.png',
+    description: { en: 'Common Duviri plant found near cliffs on the central island (Lonesome Outlook, Fair Shores, Hermit Landing). Occasionally appears in Teshin\'s Cave.', 'pt-BR': 'Planta comum de Duviri encontrada perto de penhascos na ilha central (Lonesome Outlook, Fair Shores, Hermit Landing). As vezes aparece na Teshin\'s Cave.' },
+    usedFor: { en: 'Crafts Syam, Cinta Upper Limb, and many Incarnon Genesis adapters (Skana, Bo, Magistar, Hate, etc.). Feeds Helminth Biotics.', 'pt-BR': 'Usado em Syam, Cinta Upper Limb e varios adaptadores Incarnon Genesis (Skana, Bo, Magistar, Hate, etc.). Alimenta Biotics no Helminth.' },
+  },
+  dull_button: {
+    name: { en: 'Dull Button', 'pt-BR': 'Dull Button' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/DullButton.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Entrance Caves section during stage 1 of Deepmines bounties. On pickup, clears other mushroom effects.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Entrance Caves durante o estágio 1 das bounties de Deepmines. Ao pegar, limpa efeitos de outros cogumelos.' },
+    usedFor: { en: 'Crafting the Arbucep weapon, The Prince Cave Art decoration, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting da arma Arbucep, decoração The Prince Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  dusklight_sarracenia: {
+    name: { en: 'Dusklight Sarracenia', 'pt-BR': 'Dusklight Sarracenia' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/DusklightSarracenia.png',
+    description: { en: 'Carnivorous plant from the Grineer Shipyard tileset, found in toxic pools (commonly on Ceres).', 'pt-BR': 'Planta carnivora do bioma Grineer Shipyard, encontrada em pocas toxicas (geralmente em Ceres).' },
+    usedFor: { en: 'Apothic crafting ingredient (Nightfall Apothic) and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Nightfall Apothic) e alimento Biotics para o Helminth.' },
+  },
+  echowinder_anoscopic_sensor: {
+    name: { en: 'Echowinder Anoscopic Sensor', 'pt-BR': 'Echowinder Anoscopic Sensor' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/EchowinderAnoscopicSensor.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Echowinder Servofish at The Business in Fortuna. Echowinders are caught in lakes during Warm weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Echowinder em The Business, em Fortuna. Echowinders são pescados em lagos durante clima Quente.' },
+    usedFor: { en: 'Kitgun parts (Bellows Loader, Brash and Ramble Grips), MOA parts, K-Drive jets, and the Nokko Warframe Neuroptics.', 'pt-BR': 'Peças de Kitgun (Loader Bellows, Grips Brash e Ramble), peças de MOA, jets de K-Drive e Neuroptics da Warframe Nokko.' },
+  },
+  eevani: {
+    name: { en: 'Eevani', 'pt-BR': 'Eevani' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Eevani.png',
+    description: { en: 'Common Duviri leaf harvested mainly at Archarbor during Joy, Sorrow, or Envy spirals, with smaller amounts at the Amphitheater and Teshin\'s Cave.', 'pt-BR': 'Folha comum de Duviri colhida principalmente no Archarbor durante spirals de Joy, Sorrow ou Envy, e em menor quantidade no Amphitheater e Teshin\'s Cave.' },
+    usedFor: { en: 'Crafts Syam, Cinta Lower Limb, Kullervo Systems, and Incarnon Genesis adapters (Kunai, Dual Toxocyst, Dera). Feeds Helminth Biotics.', 'pt-BR': 'Usado em Syam, Cinta Lower Limb, Kullervo Systems e adaptadores Incarnon Genesis (Kunai, Dual Toxocyst, Dera). Alimenta Biotics no Helminth.' },
+  },
+  efervon_sample: {
+    name: { en: 'Efervon Sample', 'pt-BR': 'Efervon Sample' },
+    rarity: 'common', category: 'common',
+    location: 'hollvania', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/EfervonSample.png',
+    description: { en: 'Common Höllvania resource dropped from Central Mall Bounties, enemies, containers, and Efervon Stockpiles around the city.', 'pt-BR': 'Recurso comum de Höllvania que cai dos Central Mall Bounties, inimigos, contêineres e Efervon Stockpiles pela cidade.' },
+    usedFor: { en: 'Crafts Cyte-09 parts, AX-52, Vesper 77, Reconifex, EFV-8 Mars, EFV-5 Jupiter, Dual Viciss, Riot-848. Feeds Helminth for Bile.', 'pt-BR': 'Constrói partes do Cyte-09, AX-52, Vesper 77, Reconifex, EFV-8 Mars, EFV-5 Jupiter, Dual Viciss, Riot-848. Alimenta Helminth para Bile.' },
+  },
+  embolos: {
+    name: { en: 'Embolos', 'pt-BR': 'Embolos' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/Embolos.png',
+    description: { en: 'Common gem mined from blue lesions on the Cambion Drift. Requires Advanced Nosam Cutter or Sunpoint Plasma Drill.', 'pt-BR': 'Gema comum extraida de lesoes azuis na Cambion Drift. Requer Advanced Nosam Cutter ou Sunpoint Plasma Drill.' },
+    usedFor: { en: 'Refined at Otak into Cabochon Embolos and traded to Otak for tokens.', 'pt-BR': 'Refinada com Otak em Cabochon Embolos e trocada com Otak por tokens.' },
+  },
+  enigma_gyrum: {
+    name: { en: 'Enigma Gyrum', 'pt-BR': 'Enigma Gyrum' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/EnigmaGyrum.png',
+    description: { en: 'Uncommon token rewarded for solving Duviri Enigma puzzles in the open world, also dropping from Isleweaver mission rotations.', 'pt-BR': 'Token incomum recebido por resolver puzzles Duviri Enigma no mundo aberto, tambem caindo em rotacoes de missoes da Isleweaver.' },
+    usedFor: { en: 'Spent at Acrithis to purchase Duviri-themed decorations like the Watchful Paragrimm and Mortis Stela. Feeds Helminth Bile.', 'pt-BR': 'Gasto com Acrithis para comprar decoracoes tematicas de Duviri como Watchful Paragrimm e Mortis Stela. Alimenta Bile no Helminth.' },
+  },
+  entrati_obols: {
+    name: { en: 'Entrati Obols', 'pt-BR': 'Entrati Obols' },
+    rarity: 'common', category: 'common',
+    location: 'star-chart', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/EntratiObols.png',
+    description: { en: 'Common drop from enemies and containers in Albrechts Laboratories on Deimos. Best farm: Persto Survival or Cambire Alchemy.', 'pt-BR': 'Drop comum de inimigos e containers em Albrechts Laboratories, Deimos. Melhor farm: Survival em Persto ou Alchemy em Cambire.' },
+    usedFor: { en: 'Used to build Qorvex, Dante, Oraxia parts, several Laboratories weapons, and to rank up Cavia.', 'pt-BR': 'Usado para construir partes de Qorvex, Dante e Oraxia, varias armas das Laboratories e para subir rank na Cavia.' },
+  },
+  esher_devar: {
+    name: { en: 'Esher Devar', 'pt-BR': 'Esher Devar' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/EsherDevar.png',
+    description: { en: 'Refined gem crafted from 10 Devar in the Foundry (yields 10). Blueprint from Old Man Suumbaat at Offworlder rank.', 'pt-BR': 'Gema refinada criada com 10 Devar na Foundry (rende 10). Blueprint com Old Man Suumbaat no rank Offworlder.' },
+    usedFor: { en: 'Used in Gara Systems, Xaku and Koumei components, Rahn/Raplak/Shwaak Prisms, several Zaw strikes, and Korrudo.', 'pt-BR': 'Usado em Gara Systems, componentes de Xaku e Koumei, Prismas Rahn/Raplak/Shwaak, varios golpes de Zaw, e Korrudo.' },
+  },
+  experimental_arc_relay: {
+    name: { en: 'Experimental Arc-Relay', 'pt-BR': 'Experimental Arc-Relay' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'hollvania', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/ExperimentalArc-Relay.png',
+    description: { en: 'Uncommon drop from Höllvania Exterminate missions (Rhu Manor, Mausoleum East) and Central Mall Bounties. Boosters apply.', 'pt-BR': 'Drop incomum das missões Exterminate de Höllvania (Rhu Manor, Mausoleum East) e Central Mall Bounties. Boosters funcionam.' },
+    usedFor: { en: 'Crafts Cyte-09 Chassis and Systems, Temple Neuroptics, and Höllvania weapons. Ranks up Hex syndicate; feeds Helminth as Synthetics.', 'pt-BR': 'Constrói Chassis e Sistemas do Cyte-09, Neuroptics do Temple e armas de Höllvania. Sobe rank no Hex; alimenta Helminth como Synthetics.' },
+  },
+  eye_eye_rotoblade: {
+    name: { en: 'Eye-Eye Rotoblade', 'pt-BR': 'Eye-Eye Rotoblade' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/Eye-EyeRotoblade.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Eye-Eye Servofish at The Business in Fortuna. Eye-Eye are caught in ponds during Warm weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Eye-Eye em The Business, em Fortuna. Eye-Eyes são pescados em lagos durante clima Quente.' },
+    usedFor: { en: 'Ocucor research and many Kitgun parts (Gibber Grip, Rattleguts Chamber, Tremor Grip, Zipfire Loader) plus MOA and K-Drive parts.', 'pt-BR': 'Pesquisa do Ocucor e várias peças de Kitgun (Grip Gibber, Chamber Rattleguts, Grip Tremor, Loader Zipfire) e peças de MOA e K-Drive.' },
+  },
+  faceted_tiametrite: {
+    name: { en: 'Faceted Tiametrite', 'pt-BR': 'Faceted Tiametrite' },
+    rarity: 'rare', category: 'rare',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/FacetedTiametrite.png',
+    description: { en: 'Refined gem crafted in the Foundry from Tiametrite. Blueprint from Otak (Rank 0). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Tiametrite. Blueprint com Otak (Rank 0). Rende 10 por build.' },
+    usedFor: { en: 'Used for Citrine Neuroptics, Voidrig Casing, Kitgun loaders, and the Xaku Kintsu Helmet.', 'pt-BR': 'Usada em Citrine Neuroptics, Voidrig Casing, loaders de Kitgun, e no Xaku Kintsu Helmet.' },
+  },
+  fate_pearl: {
+    name: { en: 'Fate Pearl', 'pt-BR': 'Fate Pearl' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/FatePearl.png',
+    description: { en: 'Special drop from the Oni boss at the end of Shrine Defense at Sayas Visions, Earth. Yields 14 to 18 per run, 20 to 24 on Steel Path.', 'pt-BR': 'Drop especial do chefe Oni ao fim do Shrine Defense em Sayas Visions, Terra. Rende 14 a 18 por run, 20 a 24 no Steel Path.' },
+    usedFor: { en: 'Spent at Koumeis Shrine in Cetus for Koumei warframe, Higasa and Amanata weapons, plus their augment mods on Steel Path.', 'pt-BR': 'Gasto no Shrine da Koumei em Cetus pela warframe Koumei, armas Higasa e Amanata e seus augment mods no Steel Path.' },
+  },
+  father_token: {
+    name: { en: 'Father Token', 'pt-BR': 'Father Token' },
+    rarity: 'special', category: 'special',
+    location: 'cambion-drift', sources: ['entrati-currency'],
+    image: 'https://wiki.warframe.com/images/FatherToken.png',
+    description: { en: 'Entrati family token earned by trading Cambion Drift resources to Father, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao trocar recursos da Cambion Drift com o Father, achado na Drift, ou via Mend the Family da Grandmother.' },
+    usedFor: { en: 'Used to gild Kitguns (25), rank up Necraloid, trade to Grandmother for 500 Standing, or convert into Grandmother Tokens.', 'pt-BR': 'Usado para gildar Kitguns (25), subir no Necraloid, trocar com a Grandmother por 500 de Standing, ou converter em Grandmother Tokens.' },
+  },
+  fergolyte: {
+    name: { en: 'Fergolyte', 'pt-BR': 'Fergolyte' },
+    rarity: 'rare', category: 'rare',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Fergolyte.png',
+    description: { en: 'Rare Deepmines currency awarded from completing Deepmines bounties (11-15 per run) and composting analyzed mushrooms with Nightcap.', 'pt-BR': 'Moeda rara de Deepmines obtida ao completar bounties de Deepmines (11-15 por run) e ao compostar cogumelos analisados com Nightcap.' },
+    usedFor: { en: 'Spent at Nightcap for Nokko Warframe, Arbucep weapon, Arcanes, Kuva, Ayatans, and unlocking The Prince Stem Paths.', 'pt-BR': 'Gasto com Nightcap pela Warframe Nokko, arma Arbucep, Arcanes, Kuva, Ayatans e para desbloquear os Stem Paths de The Prince.' },
+  },
+  ferment_bladder: {
+    name: { en: 'Ferment Bladder', 'pt-BR': 'Ferment Bladder' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/FermentBladder.png',
+    description: { en: 'Common fish part obtained from many Cambion Drift fish (Amniophysi, Aquapulmo, Barbisteo, etc.). Filleted by Daughter at the Necralisk.', 'pt-BR': 'Parte de peixe comum obtida de varios peixes da Cambion Drift (Amniophysi, Aquapulmo, Barbisteo, etc.). Filetada com a Daughter na Necralisk.' },
+    usedFor: { en: 'Used for Mutagens, Keratinos gauntlet, Kitgun loaders, and offerings for Daughter Tokens.', 'pt-BR': 'Usada em Mutagens, na Keratinos gauntlet, loaders de Kitgun, e ofertas por Daughter Tokens.' },
+  },
+  ferrofungus: {
+    name: { en: 'Ferrofungus', 'pt-BR': 'Ferrofungus' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Ferrofungus.png',
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Corpus Lab section during the Critter Liberation bounty. On pickup grants Magnetic damage.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Corpus Lab durante a bounty Critter Liberation. Ao pegar, concede dano Magnético.' },
+    usedFor: { en: 'Crafting the Arbucep Barrel, Deep Roots Cave Art decoration, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Barrel, decoração Deep Roots Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  film_35mm: {
+    name: { en: '35mm Film', 'pt-BR': '35mm Film' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/35mmFilm.png',
+    description: { en: 'Hex Treasure pickup glowing bright green in Höllvania missions. Loot Detector, Orokin Eye and Golden Instinct help locate it.', 'pt-BR': 'Tesouro Hex que brilha verde nas missões de Höllvania. Loot Detector, Orokin Eye e Golden Instinct ajudam a localizar.' },
+    usedFor: { en: 'Traded to Lettie for 750 Hex standing. One required for Rank 3 (2-For-1) and Rank 5 (Pizza Party).', 'pt-BR': 'Trocado com Lettie por 750 de reputação Hex. Um necessário para Rank 3 (2-For-1) e Rank 5 (Pizza Party).' },
+  },
+  fish_meat: {
+    name: { en: 'Fish Meat', 'pt-BR': 'Fish Meat' },
+    rarity: 'common', category: 'common',
+    location: 'plains-of-eidolon', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/FishMeat.png',
+    description: { en: 'Filleted from any Plains of Eidolon fish by Fisher Hai-Luk in Cetus. Yield scales with fish size (S/M/L).', 'pt-BR': 'Filetado de qualquer peixe de Plains of Eidolon por Fisher Hai-Luk em Cetus. Quantidade varia conforme o tamanho (S/M/L).' },
+    usedFor: { en: 'Used to craft predatory fish baits (Cuthol, Murkray, Norg, Twilight), Grendel Systems, and Honoria skin.', 'pt-BR': 'Usado para criar iscas de peixes predadores (Cuthol, Murkray, Norg, Twilight), Grendel Systems, e a skin Honoria.' },
+  },
+  fish_oil: {
+    name: { en: 'Fish Oil', 'pt-BR': 'Fish Oil' },
+    rarity: 'common', category: 'common',
+    location: 'plains-of-eidolon', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/FishOil.png',
+    description: { en: 'Filleted from Plains of Eidolon fish by Fisher Hai-Luk in Cetus. Yield scales with fish size, not weight.', 'pt-BR': 'Filetado de peixes de Plains of Eidolon por Fisher Hai-Luk em Cetus. Quantidade varia conforme o tamanho, nao o peso.' },
+    usedFor: { en: 'Used in Amp Braces (Anspatha, Clapkra, Juttni, Lohrin), Mote Amp, Zaw Grips, Grendel Systems, and absolvents for gems.', 'pt-BR': 'Usado em Braces de Amp (Anspatha, Clapkra, Juttni, Lohrin), Mote Amp, Cabos de Zaw, Grendel Systems, e absolventes de gemas.' },
+  },
+  fish_scales: {
+    name: { en: 'Fish Scales', 'pt-BR': 'Fish Scales' },
+    rarity: 'common', category: 'common',
+    location: 'plains-of-eidolon', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/FishScales.png',
+    description: { en: 'Filleted from Plains of Eidolon fish by Fisher Hai-Luk in Cetus. Larger fish yield more scales.', 'pt-BR': 'Filetado de peixes de Plains of Eidolon por Fisher Hai-Luk em Cetus. Peixes maiores rendem mais escamas.' },
+    usedFor: { en: 'Used to craft Zaw Strikes (Balla, Cyath, Dehtat, Dokrahm, Mewan, Sepfahn etc.) and Ceno/Vahd cosmetic apparel.', 'pt-BR': 'Usado para criar Strikes de Zaw (Balla, Cyath, Dehtat, Dokrahm, Mewan, Sepfahn etc.) e apparel cosmetica Ceno/Vahd.' },
+  },
+  frostleaf: {
+    name: { en: 'Frostleaf', 'pt-BR': 'Frostleaf' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/Frostleaf.png',
+    description: { en: 'Resilient plant from the Corpus Outpost tileset (Venus, Neptune, Pluto), growing along cliffsides.', 'pt-BR': 'Planta resistente do bioma Corpus Outpost (Venus, Netuno, Plutao), crescendo em encostas.' },
+    usedFor: { en: 'Apothic crafting ingredient (Sunrise Apothic) and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Sunrise Apothic) e alimento Biotics para o Helminth.' },
+  },
+  gallos_rods: {
+    name: { en: 'Gallos Rods', 'pt-BR': 'Gallos Rods' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/GallosRods.png',
+    description: { en: 'Uncommon Railjack drop from Grineer Empyrean missions in Earth, Saturn, and Veil Proximas. Also from Fuel Canister explosions.', 'pt-BR': 'Drop incomum de Railjack das missoes Grineer Empyrean em Terra, Saturno e Veil Proximas. Tambem de Fuel Canisters explodidas.' },
+    usedFor: { en: 'Used to build Railjack ship turrets across Sigma, Lavan, Vidar, and Zetki at all Mk tiers, plus Shield Arrays.', 'pt-BR': 'Usado para construir turrets do Railjack nas variantes Sigma, Lavan, Vidar e Zetki em todos os tiers Mk, alem de Shield Arrays.' },
+  },
+  gamma_berry: {
+    name: { en: 'Gamma Berry', 'pt-BR': 'Gamma Berry' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/GammaBerry.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Radiation damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano de Radiação.' },
+    usedFor: { en: 'Crafting the Arbucep Receiver, Root Maze Cave Art decoration, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Receiver, decoração Root Maze Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  goblite: {
+    name: { en: 'Goblite', 'pt-BR': 'Goblite' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Goblite.png',
+    description: { en: 'Common Vallis blue-vein gem mined with the Nosam Cutter or Sunpoint Plasma Drill. Refine into Goblite Tears at Smokefinger in Fortuna.', 'pt-BR': 'Gema comum de veias azuis do Vallis minerada com o Nosam Cutter ou Sunpoint Plasma Drill. Refine em Goblite Tears com Smokefinger em Fortuna.' },
+    usedFor: { en: 'Refined into Goblite Tears for MOA, Kitgun, K-Drive and Warframe builds. Raw Goblite can be traded to Smokefinger for Solaris United standing.', 'pt-BR': 'Refinada em Goblite Tears para builds de MOA, Kitgun, K-Drive e Warframe. Goblite cru pode ser trocada com Smokefinger por standing de Solaris United.' },
+  },
+  goblite_tears: {
+    name: { en: 'Goblite Tears', 'pt-BR': 'Goblite Tears' },
+    rarity: 'rare', category: 'rare',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/GobliteTears.png',
+    description: { en: 'Rare refined gem cut from raw Goblite at Smokefinger in Fortuna. Each batch yields 10 from 10 Goblite in one minute.', 'pt-BR': 'Gema rara refinada cortada do Goblite cru com Smokefinger em Fortuna. Cada batch rende 10 a partir de 10 Goblite em um minuto.' },
+    usedFor: { en: 'MOA Companion parts, many Kitgun grips and loaders, K-Drive parts, Oxylus Sentinel, Vulcax, Kompressa Barrel and Bonewidow Casing.', 'pt-BR': 'Peças de MOA Companion, vários grips e loaders de Kitgun, peças de K-Drive, Sentinela Oxylus, Vulcax, Kompressa Barrel e Bonewidow Casing.' },
+  },
+  goopolla_spleen: {
+    name: { en: 'Goopolla Spleen', 'pt-BR': 'Goopolla Spleen' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/GoopollaSpleen.png',
+    description: { en: 'Cut from Goopolla, saltwater fish found on coastlines near Cetus in Plains of Eidolon.', 'pt-BR': 'Extraido do Goopolla, peixe de agua salgada encontrado nas costas perto de Cetus em Plains of Eidolon.' },
+    usedFor: { en: 'Required for Cuthol and Murkray Bait, Ekwana/Vargeet Jai Zaw Links, Fosfor Blau, and the Higasa barrel.', 'pt-BR': 'Necessario para iscas Cuthol e Murkray, Links de Zaw Ekwana/Vargeet Jai, Fosfor Blau, e o cano do Higasa.' },
+  },
+  grandmother_token: {
+    name: { en: 'Grandmother Token', 'pt-BR': 'Grandmother Token' },
+    rarity: 'special', category: 'special',
+    location: 'cambion-drift', sources: ['entrati-currency'],
+    image: 'https://wiki.warframe.com/images/GrandmotherToken.png',
+    description: { en: 'Rare Entrati family token obtained by trading other family tokens to Grandmother (at 50% bonus), found in the Drift, or via Mend the Family.', 'pt-BR': 'Token raro da familia Entrati obtido ao trocar outros tokens com a Grandmother (com bonus de 50%), achado na Drift, ou via Mend the Family.' },
+    usedFor: { en: 'Traded for 3,000 Entrati Standing each, used to craft Seriglass Shards (10 each), and required for Family rank progression.', 'pt-BR': 'Trocado por 3.000 de Entrati Standing cada, usado para criar Seriglass Shards (10 cada), e necessario para o rank Family.' },
+  },
+  grotesque_splinter: {
+    name: { en: 'Grotesque Splinter', 'pt-BR': 'Grotesque Splinter' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/GrotesqueSplinter.png',
+    description: { en: 'Event currency from Operation: Gargoyle\'s Cry, dropped by The Fragmented bosses on Effervo, Deimos.', 'pt-BR': 'Moeda de evento da Operacao: Gargoyle\'s Cry, obtida dos chefes The Fragmented em Effervo, Deimos.' },
+    usedFor: { en: 'Spent with Vigile Jahu in the Clan Dojo on sigils, glyphs, arcanes, the Krios Signa, and weapon blueprints.', 'pt-BR': 'Gasta com Vigile Jahu no Dojo em sigilos, glifos, arcanos, Krios Signa e projetos de armas.' },
+  },
+  heart_nyth: {
+    name: { en: 'Heart Nyth', 'pt-BR': 'Heart Nyth' },
+    rarity: 'rare', category: 'rare',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/HeartNyth.png',
+    description: { en: 'Refined gem crafted from 3 raw Nyth (yields 3). Nyth is mined from blue veins in Plains of Eidolon.', 'pt-BR': 'Gema refinada criada com 3 Nyth bruto (rende 3). Nyth e minerado de veios azuis em Plains of Eidolon.' },
+    usedFor: { en: 'Used in Caliban Cranion, Gauss Chassis, Phahd Scaffold, Vahd armor cosmetics, and Exceptional Sentient Core packs.', 'pt-BR': 'Usado em Caliban Cranion, Gauss Chassis, Phahd Scaffold, cosmeticos de armadura Vahd, e packs de Exceptional Sentient Core.' },
+  },
+  heciphron: {
+    name: { en: 'Heciphron', 'pt-BR': 'Heciphron' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/Heciphron.png',
+    description: { en: 'Common gem mined from blue lesions on the Cambion Drift. Also drops from Requiem Obelisks via Operator kills. Yields 2-4.', 'pt-BR': 'Gema comum extraida de lesoes azuis na Cambion Drift. Tambem cai de Requiem Obelisks por kills do Operator. Rende 2-4.' },
+    usedFor: { en: 'Refined at Otak into Purified Heciphron and traded to Otak for tokens.', 'pt-BR': 'Refinada com Otak em Purified Heciphron e trocada com Otak por tokens.' },
+  },
+  hexenon: {
+    name: { en: 'Hexenon', 'pt-BR': 'Hexenon' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/Hexenon.png',
+    description: { en: 'Uncommon resource from Jupiter, mainly from Ganymede Disruption rewards and Amalgam enemies. Also drops in Cameria and Sinai Dark Sectors.', 'pt-BR': 'Recurso incomum de Jupiter, principalmente como recompensa de Disruption em Ganymede e de inimigos Amalgam. Tambem cai em Cameria e Sinai.' },
+    usedFor: { en: 'Used to build Wisp, Lavos Systems, Caliban Systems, and weapons like Acceltra, Fulmin, Cyanex, Komorex, and Ambassador.', 'pt-BR': 'Usado para construir Wisp, Lavos Systems, Caliban Systems e armas como Acceltra, Fulmin, Cyanex, Komorex e Ambassador.' },
+  },
+  hollvanian_pitchweave_fragment: {
+    name: { en: 'Höllvanian Pitchweave Fragment', 'pt-BR': 'Höllvanian Pitchweave Fragment' },
+    rarity: 'common', category: 'common',
+    location: 'hollvania', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/HollvanianPitchweaveFragment.png',
+    description: { en: 'Common drop from Höllvania Central Mall Bounties (Lvl 75-80 ~18.6%, Lvl 115-120 ~12%). Efervon-resistant Scaldra uniform material.', 'pt-BR': 'Drop comum dos Central Mall Bounties de Höllvania (Lvl 75-80 ~18.6%, Lvl 115-120 ~12%). Material resistente a Efervon das uniformes Scaldra.' },
+    usedFor: { en: 'Crafts Cyte-09 and Temple Chassis, AX-52, Vesper 77, Reconifex, EFV-8 Mars, EFV-5 Jupiter, Purgator 1, plus Oblivion Kiss for Honoria.', 'pt-BR': 'Constrói Chassis do Cyte-09 e Temple, AX-52, Vesper 77, Reconifex, EFV-8 Mars, EFV-5 Jupiter, Purgator 1 e Oblivion Kiss para Honoria.' },
+  },
+  ignia: {
+    name: { en: 'Ignia', 'pt-BR': 'Ignia' },
+    rarity: 'common', category: 'common',
+    location: 'dark-refractory', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/Ignia.png',
+    description: { en: 'Common container drop from The Descendia in the Dark Refractory. Awarded in stacks on Infernums 2, 4, 9, 11, 16, and 18; bigger stacks on Steel Path.', 'pt-BR': 'Drop comum de containers em The Descendia no Dark Refractory. Concedido em pilhas em Infernums 2, 4, 9, 11, 16 e 18; pilhas maiores no Steel Path.' },
+    usedFor: { en: 'Spent at Roathe to buy the Descendia Arcane Collection and the Fire And Brimstone Honoria cosmetic. Not a crafting ingredient.', 'pt-BR': 'Gasto com Roathe para comprar a Descendia Arcane Collection e o cosmetico Fire And Brimstone Honoria. Nao e ingrediente de craft.' },
+  },
+  infected_palpators: {
+    name: { en: 'Infected Palpators', 'pt-BR': 'Infected Palpators' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/InfectedPalpators.png',
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a quest.' },
+  },
+  ironwood: {
+    name: { en: 'Ironwood', 'pt-BR': 'Ironwood' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Ironwood.png',
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Forward Base section during the Corporate Restructuring bounty. On pickup grants Impact damage.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Forward Base durante a bounty Corporate Restructuring. Ao pegar, concede dano de Impacto.' },
+    usedFor: { en: 'Undermind Whispers Cave Art decoration and ranking up the Nightcap Field Guide. Also purchasable from Nightcap for Fergolyte.', 'pt-BR': 'Decoração Undermind Whispers Cave Art e para subir de rank no Field Guide do Nightcap. Também comprável de Nightcap por Fergolyte.' },
+  },
+  isos: {
+    name: { en: 'Isos', 'pt-BR': 'Isos' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/Isos.png',
+    description: { en: 'Uncommon Railjack drop from Corpus Proxima missions in Venus, Neptune, and Pluto. Ramsleds drop it reliably.', 'pt-BR': 'Drop incomum de Railjack das missoes Corpus Proxima em Venus, Neptune e Pluto. Ramsleds dropam de forma confiavel.' },
+    usedFor: { en: 'Used to craft Basmu, the Ambassador Barrel, Carcinnox turrets, Galvarc ordnance, and most Railjack Engines and Plating tiers.', 'pt-BR': 'Usado para construir Basmu, o Ambassador Barrel, turrets Carcinnox, ordnance Galvarc e a maioria dos tiers de Engines e Plating do Railjack.' },
+  },
+  javlok_capacitor: {
+    name: { en: 'Javlok Capacitor', 'pt-BR': 'Javlok Capacitor' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/JavlokCapacitor.png',
+    description: { en: 'Uncommon resource with a 100 percent drop from Grineer Prosecutors, found mainly in the Grineer Shipyard tileset on Ceres.', 'pt-BR': 'Recurso incomum com drop de 100 por cento de Prosecutors Grineer, encontrados principalmente no tileset Grineer Shipyard em Ceres.' },
+    usedFor: { en: 'Used to craft the Javlok primary weapon (6 needed). Can also be fed to Helminth as Bile.', 'pt-BR': 'Usado para construir a arma primaria Javlok (6 necessarios). Tambem pode ser dado ao Helminth como Bile.' },
+  },
+  judgement_points: {
+    name: { en: 'Judgement Points', 'pt-BR': 'Judgement Points' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/JudgementPoints(xWhite).png',
+    description: { en: 'Special currency earned by winning Rathuum Arena matches on Sedna. Nakki gives 10, Yam gives 15, Vodyanoi gives 25.', 'pt-BR': 'Moeda especial ganha vencendo partidas na Rathuum Arena em Sedna. Nakki da 10, Yam da 15, Vodyanoi da 25.' },
+    usedFor: { en: 'Required to enter higher Rathuum arenas and to challenge Kela De Thaym at Merrow (25 per player, 13 refunded).', 'pt-BR': 'Necessario para entrar nas arenas mais altas e desafiar Kela De Thaym em Merrow (25 por jogador, 13 reembolsados).' },
+  },
+  karkina_antenna: {
+    name: { en: 'Karkina Antenna', 'pt-BR': 'Karkina Antenna' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/KarkinaAntenna.png',
+    description: { en: 'Cut from Karkina, oceanic crustaceans found near coastlines around Cetus. Caught any time using Twilight Bait.', 'pt-BR': 'Extraido do Karkina, crustaceos oceanicos encontrados nas costas perto de Cetus. Pescado a qualquer hora com Twilight Bait.' },
+    usedFor: { en: 'Used to craft Fosfor Blau, Norg Bait, and Vahd Greaves cosmetic.', 'pt-BR': 'Usado para criar Fosfor Blau, Norg Bait, e o cosmetico Vahd Greaves.' },
+  },
+  khut_khut_venom_sac: {
+    name: { en: 'Khut-Khut Venom Sac', 'pt-BR': 'Khut-Khut Venom Sac' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/Khut-KhutVenomSac.png',
+    description: { en: 'Cut from Khut-Khut, freshwater fish found in Plains of Eidolon ponds, mostly during the day. Also drops from Thumpers.', 'pt-BR': 'Extraido do Khut-Khut, peixe de agua doce encontrado em lagoas de Plains of Eidolon, principalmente de dia. Tambem dropa de Thumpers.' },
+    usedFor: { en: 'Used as an ingredient for the Jai Zaw Link (5 per build).', 'pt-BR': 'Usado como ingrediente do Link de Zaw Jai (5 por build).' },
+  },
+  komms: {
+    name: { en: 'Komms', 'pt-BR': 'Komms' },
+    rarity: 'rare', category: 'rare',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/Komms.png',
+    description: { en: 'Rare Grineer Railjack drop from Earth, Saturn, and Veil Proximas. Comes from Exo, Gyre, Kosma units and as mission bonus.', 'pt-BR': 'Drop raro de Railjack Grineer em Earth, Saturno e Veil Proximas. Vem de unidades Exo, Gyre, Kosma e como bonus de missao.' },
+    usedFor: { en: 'Used to upgrade Lavan, Vidar, and Zetki Railjack components and turrets, plus the Protea Telema Helmet.', 'pt-BR': 'Usado para melhorar componentes e turrets Lavan, Vidar e Zetki do Railjack, alem do Protea Telema Helmet.' },
+  },
+  kovnik: {
+    name: { en: 'Kovnik', 'pt-BR': 'Kovnik' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Kovnik.png',
+    description: { en: 'Common Duviri plant harvested from Kovnik shrubs scattered across the landscape, with occasional spawns in Teshin\'s Cave.', 'pt-BR': 'Planta comum de Duviri colhida de arbustos Kovnik espalhados pela paisagem, com aparicoes ocasionais na Teshin\'s Cave.' },
+    usedFor: { en: 'Crafts Sampotes, Argo and Vel, Sun and Moon, Kullervo Chassis, Oraxia Neuroptics, and several Incarnon Genesis adapters. Feeds Helminth Biotics.', 'pt-BR': 'Usado em Sampotes, Argo and Vel, Sun and Moon, Kullervo Chassis, Oraxia Neuroptics e varios adaptadores Incarnon Genesis. Alimenta Biotics no Helminth.' },
+  },
+  kriller_thermal_laser: {
+    name: { en: 'Kriller Thermal Laser', 'pt-BR': 'Kriller Thermal Laser' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/KrillerThermalLaser.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Kriller Servofish at The Business in Fortuna. Krillers are caught in lakes during Warm weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Kriller em The Business, em Fortuna. Krillers são pescados em lagos durante clima Quente.' },
+    usedFor: { en: 'Battacor clan research, several K-Drive noses and boards, Kitgun parts (Gaze Chamber, Swiftfire Loader) and the Vulcax companion.', 'pt-BR': 'Pesquisa de clã da Battacor, vários noses e boards de K-Drive, peças de Kitgun (Chamber Gaze, Loader Swiftfire) e o companion Vulcax.' },
+  },
+  kullervos_bane: {
+    name: { en: 'Kullervo\'s Bane', 'pt-BR': 'Kullervo\'s Bane' },
+    rarity: 'rare', category: 'rare',
+    location: 'duviri', sources: ['boss-drops'],
+    image: 'https://wiki.warframe.com/images/Kullervo%27sBane.png',
+    description: { en: 'Rare drop from defeating both Kullervo and the Orowyrm in a single Duviri Fear, Anger, or Sorrow spiral. Yields 4-6 normally, 6-8 on Steel Path.', 'pt-BR': 'Drop raro por derrotar Kullervo e o Orowyrm no mesmo spiral de Fear, Anger ou Sorrow em Duviri. Da 4-6 unidades no normal, 6-8 no Steel Path.' },
+    usedFor: { en: 'Traded at Acrithis for the Kullervo Warframe (42), Rauta secondary (30), credits, a Captura scene, and the Honoria cosmetic. Feeds Helminth Bile.', 'pt-BR': 'Trocado com Acrithis pela Warframe Kullervo (42), secundaria Rauta (30), creditos, uma cena de Captura e o cosmetico Honoria. Alimenta Bile no Helminth.' },
+  },
+  lamentus: {
+    name: { en: 'Lamentus', 'pt-BR': 'Lamentus' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Lamentus.png',
+    description: { en: 'Common drop from Dax enemies across the Duviri open zone (not Undercroft Dax). Stall the prison-rescue Decree to keep waves spawning for farming.', 'pt-BR': 'Drop comum de inimigos Dax pelo mundo aberto de Duviri (nao vale Dax da Undercroft). Adie o Decree de libertar o prisioneiro para manter waves spawnando.' },
+    usedFor: { en: 'Crafts Sun and Moon, Kullervo Neuroptics, all four Cinta components, and Incarnon Genesis adapters (Okina, Furis, Atomos, Angstrum, Gammacor).', 'pt-BR': 'Usado em Sun and Moon, Kullervo Neuroptics, todos os quatro componentes da Cinta e adaptadores Incarnon Genesis (Okina, Furis, Atomos, Angstrum, Gammacor).' },
+  },
+  laudavi: {
+    name: { en: 'Laudavi', 'pt-BR': 'Laudavi' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'dark-refractory', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/Laudavi.png',
+    description: { en: 'Uncommon Old War valor token from The Perita Rebellion in the Dark Refractory. Drops from enemies, lockers, and containers in the three Recall missions.', 'pt-BR': 'Simbolo incomum de valor da Velha Guerra em The Perita Rebellion no Dark Refractory. Cai de inimigos, armarios e containers nas tres missoes Recall.' },
+    usedFor: { en: 'Used to craft the Uriel Warframe, Vinquibus, Galariak Prime, and Sagek Prime. Also tradable with Marie Leroux for her rotating stock.', 'pt-BR': 'Usado para criar o Warframe Uriel, Vinquibus, Galariak Prime e Sagek Prime. Tambem trocavel com Marie Leroux por seu estoque rotativo.' },
+  },
+  longwinder_lathe_coagulant: {
+    name: { en: 'Longwinder Lathe Coagulant', 'pt-BR': 'Longwinder Lathe Coagulant' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/LongwinderLatheCoagulant.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Longwinder Servofish at The Business in Fortuna. Longwinders are caught in lakes during Warm weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Longwinder em The Business, em Fortuna. Longwinders são pescados em lagos durante clima Quente.' },
+    usedFor: { en: 'Amp parts (Cantic Prism, Exard Scaffold, Suo Brace), Kreska, Kompressa, Killstream Loader, Oxylus, Tazicor and Ventkid armor.', 'pt-BR': 'Peças de Amp (Prism Cantic, Scaffold Exard, Brace Suo), Kreska, Kompressa, Loader Killstream, Oxylus, Tazicor e armaduras Ventkid.' },
+  },
+  lua_thrax_plasm: {
+    name: { en: 'Lua Thrax Plasm', 'pt-BR': 'Lua Thrax Plasm' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/LuaThraxPlasm.png',
+    description: { en: 'Special variant of Thrax Plasm guaranteed from Conjunction Survival rotations on Yuvarium and Circulus, Lua. Also drops from Hollow Thrax enemies.', 'pt-BR': 'Variante especial de Thrax Plasm garantida nas rotacoes de Conjunction Survival em Yuvarium e Circulus, Lua. Tambem cai de Hollow Thrax.' },
+    usedFor: { en: 'Used to craft Voruna, Perigale, and Sarofang, and spent at Archimedean Yonta for their arcanes like Primary Frostbite and Conjunction Voltage.', 'pt-BR': 'Usado para construir Voruna, Perigale e Sarofang, e gasto com Archimedean Yonta nos arcanes como Primary Frostbite e Conjunction Voltage.' },
+  },
+  lunar_pitcher: {
+    name: { en: 'Lunar Pitcher', 'pt-BR': 'Lunar Pitcher' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/LunarPitcher.png',
+    description: { en: 'Carnivorous plant from the Orokin Moon tileset on Lua; Copernicus (Capture) is a solid farm.', 'pt-BR': 'Planta carnivora do bioma Orokin Moon em Lua; Copernicus (Captura) e um bom local de farm.' },
+    usedFor: { en: 'Apothic crafting ingredient (Twilight Apothic) and required for the Seeding Step Ephemera.', 'pt-BR': 'Ingrediente de Apothic (Twilight Apothic) e necessario para a Seeding Step Ephemera.' },
+  },
+  lyroic_bridge: {
+    name: { en: 'Lyroic Bridge', 'pt-BR': 'Lyroic Bridge' },
+    rarity: 'rare', category: 'rare',
+    location: 'dark-refractory', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/LyroicBridge.png',
+    description: { en: 'Rare paraneural interface from The Perita Rebellion. Drops in Recall: Hunhullus (1 per Order, 10 from the boss); 75 from completing The Old Peace quest.', 'pt-BR': 'Interface paraneural rara de The Perita Rebellion. Cai em Recall: Hunhullus (1 por Order, 10 do chefe); 75 ao concluir a missao The Old Peace.' },
+    usedFor: { en: 'Core crafting material for the five Tauron Focus School weapons, used with Ren Hypercore and Ascaris Prime for both build and max upgrades.', 'pt-BR': 'Material chave para criar as cinco armas Tauron de Focus School, usado com Ren Hypercore e Ascaris Prime tanto na criacao quanto no upgrade maximo.' },
+  },
+  mandachord_body: {
+    name: { en: 'Mandachord Body', 'pt-BR': 'Mandachord Body' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/MandachordBody.png',
+    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da quest Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
+    usedFor: { en: 'Crafted with the Bridge and Fret to build the Mandachord, required to unlock the Octavia blueprint.', 'pt-BR': 'Combinada com Bridge e Fret para criar o Mandachord, necessario para desbloquear o projeto da Octavia.' },
+  },
+  mandachord_bridge: {
+    name: { en: 'Mandachord Bridge', 'pt-BR': 'Mandachord Bridge' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/MandachordBridge.png',
+    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da quest Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
+    usedFor: { en: 'Crafted with the Body and Fret to build the Mandachord, required to unlock the Octavia blueprint.', 'pt-BR': 'Combinada com Body e Fret para criar o Mandachord, necessario para desbloquear o projeto da Octavia.' },
+  },
+  mandachord_fret: {
+    name: { en: 'Mandachord Fret', 'pt-BR': 'Mandachord Fret' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/MandachordFret.png',
+    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da quest Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
+    usedFor: { en: 'Crafted with the Body and Bridge to build the Mandachord, required to unlock the Octavia blueprint.', 'pt-BR': 'Combinada com Body e Bridge para criar o Mandachord, necessario para desbloquear o projeto da Octavia.' },
+  },
+  maphica: {
+    name: { en: 'Maphica', 'pt-BR': 'Maphica' },
+    rarity: 'common', category: 'common',
+    location: 'dark-refractory', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/Maphica.png',
+    description: { en: 'Common container drop from The Descendia in the Dark Refractory. Awarded from boss encounters on Infernums 2, 4, 9, 11, and 16/18, with larger stacks on Steel Path.', 'pt-BR': 'Drop comum de containers em The Descendia no Dark Refractory. Concedido em encontros com chefes nos Infernums 2, 4, 9, 11 e 16/18, com pilhas maiores no Steel Path.' },
+    usedFor: { en: 'Spent at Roathe to buy Uriel parts, Vinquibus/Galariak Prime/Sagek Prime, arcanes, and exclusives like the Insign Bundle and Captura scenes.', 'pt-BR': 'Gasto com Roathe para comprar pecas do Uriel, Vinquibus/Galariak Prime/Sagek Prime, arcanos e exclusivos como o Insign Bundle e cenas de Captura.' },
+  },
+  marks_of_valiance: {
+    name: { en: 'Marks of Valiance', 'pt-BR': 'Marks of Valiance' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/MarksOfValiance.png',
+    description: { en: 'Event currency from Operation: Blood of Perita, earned from Perita Rebellion missions or timed Operation Alerts.', 'pt-BR': 'Moeda de evento da Operacao: Blood of Perita, obtida em missoes Perita Rebellion ou Alertas do evento.' },
+    usedFor: { en: 'Spent with Roathe in La Cathedrale (Sanctum Anatomica) on arcanes, cosmetics, weapon blueprints, Kuva, and Focus Lenses.', 'pt-BR': 'Gasta com Roathe em La Cathedrale (Sanctum Anatomica) em arcanos, cosmeticos, projetos, Kuva e Focus Lenses.' },
+  },
+  marquise_veridos: {
+    name: { en: 'Marquise Veridos', 'pt-BR': 'Marquise Veridos' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/MarquiseVeridos.png',
+    description: { en: 'Refined gem crafted from 10 Veridos (yields 10). Veridos is mined from blue veins in Plains of Eidolon.', 'pt-BR': 'Gema refinada criada com 10 Veridos (rende 10). Veridos e minerado de veios azuis em Plains of Eidolon.' },
+    usedFor: { en: 'Used in Zaw strikes (Cyath, Dehtat, Dokrahm, Mewan), Granmu and Shwaak Prisms, Trumna Barrel, and Vulcax.', 'pt-BR': 'Usado em strikes de Zaw (Cyath, Dehtat, Dokrahm, Mewan), Prismas Granmu e Shwaak, Cano do Trumna, e Vulcax.' },
+  },
+  maw_fang: {
+    name: { en: 'Maw Fang', 'pt-BR': 'Maw Fang' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/MawFang.png',
+    description: { en: 'Common Duviri fish part earned through Maw Feeding spots in The Duviri Experience. Each pond can be fed indefinitely without moving.', 'pt-BR': 'Parte comum de peixe de Duviri obtida em pontos de Maw Feeding no The Duviri Experience. Cada poco pode ser alimentado infinitamente sem se mover.' },
+    usedFor: { en: 'Crafts Azothane, Syam, Cinta Grip, and Incarnon Genesis adapters (Latron, Torid, Burston, Hate, Okina). Feeds Helminth Oxides.', 'pt-BR': 'Usado em Azothane, Syam, Cinta Grip e adaptadores Incarnon Genesis (Latron, Torid, Burston, Hate, Okina). Alimenta Oxides no Helminth.' },
+  },
+  mawfish_bones: {
+    name: { en: 'Mawfish Bones', 'pt-BR': 'Mawfish Bones' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/MawfishBones.png',
+    description: { en: 'Cut from Mawfish, freshwater fish caught during the day in Plains of Eidolon lakes.', 'pt-BR': 'Extraido do Mawfish, peixe de agua doce pescado durante o dia em lagos de Plains of Eidolon.' },
+    usedFor: { en: 'Used to craft the Korrudo melee weapon (20) and the Ruhang Zaw Link (5).', 'pt-BR': 'Usado para criar a arma corpo a corpo Korrudo (20) e o Link de Zaw Ruhang (5).' },
+  },
+  mirewinder_parallel_biode: {
+    name: { en: 'Mirewinder Parallel Biode', 'pt-BR': 'Mirewinder Parallel Biode' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/MirewinderParallelBiode.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Mirewinder Servofish at The Business in Fortuna. Mirewinders are caught in cave hotspots.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Mirewinder em The Business, em Fortuna. Mirewinders aparecem em hotspots de cavernas.' },
+    usedFor: { en: 'Crafting the Bad Baby K-Drive board, Bashrack Kitgun loader, and Tyli Gyro MOA part.', 'pt-BR': 'Crafting do board Bad Baby de K-Drive, loader Bashrack de Kitgun e peça Tyli Gyro de MOA.' },
+  },
+  mood_crystal: {
+    name: { en: 'Mood Crystal', 'pt-BR': 'Mood Crystal' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/MoodCrystal.png',
+    description: { en: 'Hex Treasure scattered across Höllvania missions and Tier 4 Bounty (Central Mall Lvl 95-100, Rotation A, ~11.11%).', 'pt-BR': 'Tesouro Hex espalhado pelas missões de Höllvania e Bounty Tier 4 (Central Mall Lvl 95-100, Rotação A, ~11.11%).' },
+    usedFor: { en: 'Traded to Lettie for 750 Hex standing. One required for Rank 3 (2-For-1) and Rank 5 (Pizza Party).', 'pt-BR': 'Trocado com Lettie por 750 de reputação Hex. Um necessário para Rank 3 (2-For-1) e Rank 5 (Pizza Party).' },
+  },
+  moonlight_dragonlily: {
+    name: { en: 'Moonlight Dragonlily', 'pt-BR': 'Moonlight Dragonlily' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/MoonlightDragonlily.png',
+    description: { en: 'Uncommon plant from the Grineer Forest tileset on Earth, found near grass or water only at night.', 'pt-BR': 'Planta incomum do bioma Grineer Forest na Terra, encontrada perto de grama ou agua somente a noite.' },
+    usedFor: { en: 'Apothic crafting ingredient (Nightfall Apothic), Antitoxins, and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Nightfall Apothic), Antitoxinas e alimento Biotics para o Helminth.' },
+  },
+  moonlight_jadeleaf: {
+    name: { en: 'Moonlight Jadeleaf', 'pt-BR': 'Moonlight Jadeleaf' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/MoonlightJadeleaf.png',
+    description: { en: 'Rare plant from the Grineer Forest tileset on Earth, found near grass or water only at night.', 'pt-BR': 'Planta rara do bioma Grineer Forest na Terra, encontrada perto de grama ou agua somente a noite.' },
+    usedFor: { en: 'Apothic crafting ingredient (Twilight Apothic), Antitoxins, Health Restores, and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Twilight Apothic), Antitoxinas, Health Restores e alimento Biotics para o Helminth.' },
+  },
+  moonlight_threshcone: {
+    name: { en: 'Moonlight Threshcone', 'pt-BR': 'Moonlight Threshcone' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/MoonlightThreshcone.png',
+    description: { en: 'Common plant from the Grineer Forest tileset on Earth, found near trees only at night.', 'pt-BR': 'Planta comum do bioma Grineer Forest na Terra, encontrada perto de arvores somente a noite.' },
+    usedFor: { en: 'Used for Antitoxins, Health Restores, and Helminth Biotics feed; pairs with Apothic crafting.', 'pt-BR': 'Usada em Antitoxinas, Health Restores e alimento Biotics; usada na criacao de Apothics.' },
+  },
+  mortus_horn: {
+    name: { en: 'Mortus Horn', 'pt-BR': 'Mortus Horn' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/MortusHorn.png',
+    description: { en: 'Cut from the Mortus Lungfish found in Plains of Eidolon ponds. Also drops from Thumpers.', 'pt-BR': 'Extraido do Mortus Lungfish encontrado em lagoas de Plains of Eidolon. Tambem dropa de Thumpers.' },
+    usedFor: { en: 'Used in Caliban Chassis, Ceno Greaves, Ekwana/Vargeet II Jai Zaw Links, Murkray Bait, and Verdilac melee.', 'pt-BR': 'Usado em Caliban Chassis, Ceno Greaves, Links de Zaw Ekwana/Vargeet II Jai, Murkray Bait, e na corpo a corpo Verdilac.' },
+  },
+  mother_token: {
+    name: { en: 'Mother Token', 'pt-BR': 'Mother Token' },
+    rarity: 'special', category: 'special',
+    location: 'cambion-drift', sources: ['entrati-currency'],
+    image: 'https://wiki.warframe.com/images/MotherToken.png',
+    description: { en: 'Entrati family token earned by completing Mother bounties on the Cambion Drift, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao completar bounties da Mother na Cambion Drift, achado na Drift, ou via Mend the Family da Grandmother.' },
+    usedFor: { en: 'Traded to Grandmother for 100 Entrati Standing each, converted into Grandmother Tokens, or spent during Nights of Naberus events.', 'pt-BR': 'Trocado com a Grandmother por 100 de Entrati Standing cada, convertido em Grandmother Tokens, ou gasto no evento Nights of Naberus.' },
+  },
+  muck_bonnet: {
+    name: { en: 'Muck Bonnet', 'pt-BR': 'Muck Bonnet' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/MuckBonnet.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Entrance Caves section during stage 1 of Deepmines bounties. On pickup grants Toxin damage that bypasses Corpus shields.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Entrance Caves durante o estágio 1 das bounties de Deepmines. Ao pegar, concede dano Tóxico que ignora shields dos Corpus.' },
+    usedFor: { en: 'Fairy Ring and Root Maze Cave Art decorations and ranking up the Nightcap Field Guide.', 'pt-BR': 'Decorações Fairy Ring e Root Maze Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  murkray_liver: {
+    name: { en: 'Murkray Liver', 'pt-BR': 'Murkray Liver' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/MurkrayLiver.png',
+    description: { en: 'Cut from Murkray, saltwater fish caught in Plains of Eidolon ocean hotspots using Murkray Bait.', 'pt-BR': 'Extraido do Murkray, peixe de agua salgada pescado em hotspots oceanicos de Plains of Eidolon usando Murkray Bait.' },
+    usedFor: { en: 'Used for Ostron rank-up to Trusted, Clapkra Brace, Cuthol Bait, Grendel Chassis, Pencha Scaffold, and Raplak Prism.', 'pt-BR': 'Usado para subir de rank para Trusted na Ostron, Clapkra Brace, Cuthol Bait, Grendel Chassis, Pencha Scaffold, e Raplak Prism.' },
+  },
+  nacreous_pebble: {
+    name: { en: 'Nacreous Pebble', 'pt-BR': 'Nacreous Pebble' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/NacreousPebble.png',
+    description: { en: 'Common Duviri fish part from Maw Feeding spots in The Duviri Experience. Same spot is reusable, so no travel needed between catches.', 'pt-BR': 'Parte comum de peixe de Duviri obtida em pontos de Maw Feeding no The Duviri Experience. O mesmo ponto e reutilizavel, sem precisar se mover.' },
+    usedFor: { en: 'Crafts Edun, Kullervo Chassis, and Incarnon Genesis adapters (Lato, Bronco, Zylok, Sicarus). Feeds Helminth Calx.', 'pt-BR': 'Usado em Edun, Kullervo Chassis e adaptadores Incarnon Genesis (Lato, Bronco, Zylok, Sicarus). Alimenta Calx no Helminth.' },
+  },
+  namalon: {
+    name: { en: 'Namalon', 'pt-BR': 'Namalon' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/Namalon.png',
+    description: { en: 'Uncommon ore mined from yellow lesions on the Cambion Drift, often near Actuary Pride and the Infested Seraglio Cave. Yields 4-10.', 'pt-BR': 'Minerio incomum extraido de lesoes amarelas na Cambion Drift, frequentemente perto de Actuary Pride e Infested Seraglio Cave. Rende 4-10.' },
+    usedFor: { en: 'Refined at Otak into Devolved Namalon and traded to Otak for tokens.', 'pt-BR': 'Refinado com Otak em Devolved Namalon e trocado com Otak por tokens.' },
+  },
+  nav_coordinate: {
+    name: { en: 'Nav Coordinate', 'pt-BR': 'Nav Coordinate' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/NavCoordinate.png',
+    description: { en: 'Special drop from storage containers and lockers across all tilesets, plus rare drops from Eximus and feral animals.', 'pt-BR': 'Drop especial de containers e armarios em todos os tilesets, mais drops raros de Eximus e animais selvagens.' },
+    usedFor: { en: 'Used to craft Chroma Signal and Scorched Beacon for The New Strange, plus Mutalist Alad V keys. Now mostly Helminth Bile food.', 'pt-BR': 'Usado para construir Chroma Signal e Scorched Beacon na quest The New Strange e chaves do Mutalist Alad V. Hoje quase so comida de Bile.' },
+  },
+  necracoil: {
+    name: { en: 'Necracoil', 'pt-BR': 'Necracoil' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/Necracoil.png',
+    description: { en: 'Uncommon drop from enemies and containers in Albrechts Laboratories on Deimos. Best farm: Persto Survival or Cambire Alchemy.', 'pt-BR': 'Drop incomum de inimigos e containers em Albrechts Laboratories, Deimos. Melhor farm: Survival em Persto ou Alchemy em Cambire.' },
+    usedFor: { en: 'Used to build Qorvex, Dante Systems, Oraxia Chassis, and weapons like Grimoire, Ekhein, Ruvox, Onos, plus the Helminth Coalescent Segment.', 'pt-BR': 'Usado para construir Qorvex, Dante Systems, Oraxia Chassis e armas como Grimoire, Ekhein, Ruvox, Onos, alem do Helminth Coalescent Segment.' },
+  },
+  necrathene: {
+    name: { en: 'Necrathene', 'pt-BR': 'Necrathene' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/Necrathene.png',
+    description: { en: 'Common gem mined from blue lesions on the Cambion Drift. Also drops from Requiem Obelisks. Yields 1-3 per pickup.', 'pt-BR': 'Gema comum extraida de lesoes azuis na Cambion Drift. Tambem cai de Requiem Obelisks. Rende 1-3 por coleta.' },
+    usedFor: { en: 'Refined at Otak into Stellated Necrathene and traded to Otak for tokens.', 'pt-BR': 'Refinada com Otak em Stellated Necrathene e trocada com Otak por tokens.' },
+  },
+  nightmare_tatters: {
+    name: { en: 'Nightmare Tatters', 'pt-BR': 'Nightmare Tatters' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/NightmareTatters.png',
+    description: { en: 'Event currency from Operation: Atramentum, earned via Follie\'s Hunt on Vesper Relay or Nightmare Mode missions.', 'pt-BR': 'Moeda de evento da Operacao: Atramentum, obtida na Follie\'s Hunt em Vesper Relay ou missoes Nightmare Mode.' },
+    usedFor: { en: 'Spent with Aspirant Zorba at any Relay on the Honoria skin, ephemeras, sigils, Universal Medallions, and Vosfor.', 'pt-BR': 'Gasta com Aspirant Zorba em qualquer Relay na skin Honoria, ephemeras, sigilos, Universal Medallions e Vosfor.' },
+  },
+  nonono: {
+    name: { en: 'Nonono', 'pt-BR': 'Nonono' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Nonono.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Void damage for 90 seconds.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano de Void por 90 segundos.' },
+    usedFor: { en: 'Adventure Walk and Lookout Cave Art decorations and ranking up the Nightcap Field Guide.', 'pt-BR': 'Decorações Adventure Walk e Lookout Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  norg_brain: {
+    name: { en: 'Norg Brain', 'pt-BR': 'Norg Brain' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/NorgBrain.png',
+    description: { en: 'Cut from Norg, freshwater fish found only at night in the large lake near Cetus. Requires Norg Bait.', 'pt-BR': 'Extraido do Norg, peixe de agua doce encontrado apenas a noite no grande lago perto de Cetus. Requer Norg Bait.' },
+    usedFor: { en: 'Used for Ostron rank-up to Surah, Juttni Brace, Shraksun Scaffold, Shwaak Prism, and Styanax Neuroptics.', 'pt-BR': 'Usado para subir de rank para Surah na Ostron, Juttni Brace, Shraksun Scaffold, Shwaak Prism, e Styanax Neuroptics.' },
+  },
+  nullstones: {
+    name: { en: 'Nullstones', 'pt-BR': 'Nullstones' },
+    rarity: 'rare', category: 'rare',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/Nullstones.png',
+    description: { en: 'Rare Railjack drop found in any Empyrean mission by destroying asteroids, red barrels, and metal scrap, plus mission bonuses.', 'pt-BR': 'Drop raro de Railjack achado em qualquer missao Empyrean destruindo asteroides, barris vermelhos e sucata, alem de bonus de missao.' },
+    usedFor: { en: 'Used to craft most Railjack components and turrets at all Mk tiers, plus Basmu, Nautilus, Sevagoth Chassis, and Protea Mavv Helmet.', 'pt-BR': 'Usado para construir a maioria dos componentes e turrets do Railjack em todos os tiers Mk, alem de Basmu, Nautilus, Sevagoth Chassis e Protea Mavv Helmet.' },
+  },
+  ocular_stem_root: {
+    name: { en: 'Ocular Stem-Root', 'pt-BR': 'Ocular Stem-Root' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/OcularStem-Root.png',
+    description: { en: 'Uncommon fish part dropped by Flagellocanth, caught at surface hotspots with Processed Fass Residue. Filleted by Daughter.', 'pt-BR': 'Parte de peixe incomum dropada por Flagellocanth, pescado em hotspots de superficie com Processed Fass Residue. Filetada com a Daughter.' },
+    usedFor: { en: 'Used for the Catabolyst secondary and the Gristlebuck Reactor and Nodulite Nose K-Drive parts.', 'pt-BR': 'Usada na secundaria Catabolyst e nas pecas de K-Drive Gristlebuck Reactor e Nodulite Nose.' },
+  },
+  omega_isotope: {
+    name: { en: 'Omega Isotope', 'pt-BR': 'Omega Isotope' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'navigation-currency'],
+    image: 'https://wiki.warframe.com/images/OmegaIsotope.png',
+    description: { en: 'Event drop from enemies during a Balor Fomorian alert on any non-Archwing mission of the affected planet. Excavation doubles farm with Cryotic.', 'pt-BR': 'Drop de evento de inimigos durante um alerta Balor Fomorian em qualquer missao nao-Archwing do planeta afetado. Excavation farma com Cryotic.' },
+    usedFor: { en: 'Used to craft the Fomorian Disruptor gear item, needed to fight the Balor Fomorian boss.', 'pt-BR': 'Usado para construir o gear Fomorian Disruptor, necessario para lutar contra o Balor Fomorian.' },
+  },
+  on_lyne_cd: {
+    name: { en: 'On-lyne CD', 'pt-BR': 'On-lyne CD' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/On-lyneCD.png',
+    description: { en: 'Hex Treasure pickup in Höllvania missions, also from Tier 2 Central Mall Bounty (Lvl 75-80, Rotation A, ~13.95%).', 'pt-BR': 'Tesouro Hex coletável nas missões de Höllvania, também do Tier 2 Central Mall Bounty (Lvl 75-80, Rotação A, ~13.95%).' },
+    usedFor: { en: 'Traded to Lettie for 750 Hex standing. One required for Rank 3 (2-For-1) and Rank 5 (Pizza Party).', 'pt-BR': 'Trocado com Lettie por 750 de reputação Hex. Um necessário para Rank 3 (2-For-1) e Rank 5 (Pizza Party).' },
+  },
+  orokin_animus_matrix: {
+    name: { en: 'Orokin Animus Matrix', 'pt-BR': 'Orokin Animus Matrix' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/OrokinAnimusMatrix.png',
+    description: { en: 'Uncommon matrix guaranteed to drop from all three Necramechs guarding Tier 3 Isolation Vaults on the Cambion Drift.', 'pt-BR': 'Matriz incomum garantida ao derrotar os tres Necramechs que guardam as Tier 3 Isolation Vaults na Cambion Drift.' },
+    usedFor: { en: 'Turned in to Loid for 5,000 Necraloid Standing each; 15 needed to reach Clearance: Odima (Rank 3).', 'pt-BR': 'Entregue ao Loid por 5.000 de Necraloid Standing cada; 15 necessarios para alcancar Clearance: Odima (Rank 3).' },
+  },
+  orokin_archive: {
+    name: { en: 'Orokin Archive', 'pt-BR': 'Orokin Archive' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/NavCoordinate.png',
+    description: { en: 'Quest item from The Archwing, recovered during the Sabotage mission on Tessera, Venus by reversing a Void portal.', 'pt-BR': 'Item da quest The Archwing, recuperado na missao Sabotagem em Tessera, Venus, revertendo um portal Void.' },
+    usedFor: { en: 'Decoded by Ordis to reveal the locations of the Odonata Archwing component blueprints.', 'pt-BR': 'Decodificado por Ordis para revelar a localizacao dos projetos dos componentes do Archwing Odonata.' },
+  },
+  orokin_ballistics_matrix: {
+    name: { en: 'Orokin Ballistics Matrix', 'pt-BR': 'Orokin Ballistics Matrix' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/OrokinBallisticsMatrix.png',
+    description: { en: 'Uncommon matrix guaranteed to drop from the Necramech guarding Tier 2 Isolation Vaults. Also rewarded by all vault bounty tiers.', 'pt-BR': 'Matriz incomum garantida ao derrotar o Necramech que guarda a Tier 2 Isolation Vault. Tambem recompensa de todas as bounties de vault.' },
+    usedFor: { en: 'Turned in to Loid for 2,500 Necraloid Standing each; 15 needed to reach Clearance: Modus (Rank 2).', 'pt-BR': 'Entregue ao Loid por 2.500 de Necraloid Standing cada; 15 necessarios para alcancar Clearance: Modus (Rank 2).' },
+  },
+  orokin_cipher: {
+    name: { en: 'Orokin Cipher', 'pt-BR': 'Orokin Cipher' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/OrokinCipher.png',
+    description: { en: 'Special drop guaranteed when opening an Orokin Vault on Deimos Derelict missions. Requires a Dragon Key.', 'pt-BR': 'Drop especial garantido ao abrir um Orokin Vault nas missoes do Derelict de Deimos. Requer uma Dragon Key.' },
+    usedFor: { en: 'Now used only as Helminth Bile food after the old Hidden Messages quest was removed.', 'pt-BR': 'Hoje usado so como comida de Bile no Helminth, depois que a antiga quest Hidden Messages foi removida.' },
+  },
+  orokin_orientation_matrix: {
+    name: { en: 'Orokin Orientation Matrix', 'pt-BR': 'Orokin Orientation Matrix' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['necramech-drops'],
+    image: 'https://wiki.warframe.com/images/OrokinOrientationMatrix.png',
+    description: { en: 'Uncommon matrix guaranteed to drop from the Necramech guarding Tier 1 Isolation Vaults on the Cambion Drift.', 'pt-BR': 'Matriz incomum garantida ao derrotar o Necramech que guarda a Tier 1 Isolation Vault na Cambion Drift.' },
+    usedFor: { en: 'Turned in to Loid for 1,000 Necraloid Standing each; 10 needed to reach Clearance: Agnesis (Rank 1).', 'pt-BR': 'Entregue ao Loid por 1.000 de Necraloid Standing cada; 10 necessarios para alcancar Clearance: Agnesis (Rank 1).' },
+  },
+  otak_token: {
+    name: { en: 'Otak Token', 'pt-BR': 'Otak Token' },
+    rarity: 'special', category: 'special',
+    location: 'cambion-drift', sources: ['entrati-currency'],
+    image: 'https://wiki.warframe.com/images/OtakToken.png',
+    description: { en: 'Entrati family token earned by trading gems and ores to Otak, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao trocar gemas e minerios com o Otak, achado na Drift, ou via Mend the Family da Grandmother.' },
+    usedFor: { en: 'Traded to Grandmother for 500 Entrati Standing each or converted into Grandmother Tokens.', 'pt-BR': 'Trocado com a Grandmother por 500 de Entrati Standing cada, ou convertido em Grandmother Tokens.' },
+  },
+  parasitic_tethermaw: {
+    name: { en: 'Parasitic Tethermaw', 'pt-BR': 'Parasitic Tethermaw' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/ParasiticTethermaw.png',
+    description: { en: 'Uncommon fish part dropped by Lobotriscid, caught on the Cambion Drift surface during Vome. Filleted by Daughter at the Necralisk.', 'pt-BR': 'Parte de peixe incomum dropada por Lobotriscid, pescado na superficie da Cambion Drift durante Vome. Filetada com a Daughter na Necralisk.' },
+    usedFor: { en: 'Used for the Voidrig Engine, Pulmonars, Feverspine K-Drive board, and Steeba K-Drive jet.', 'pt-BR': 'Usada em Voidrig Engine, Pulmonars, prancha de K-Drive Feverspine, e jato de K-Drive Steeba.' },
+  },
+  phasmin: {
+    name: { en: 'Phasmin', 'pt-BR': 'Phasmin' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Phasmin.png',
+    description: { en: 'Common Vallis blue-vein gem mined with the Nosam Cutter or Sunpoint Plasma Drill. Refine into Smooth Phasmin at Smokefinger in Fortuna.', 'pt-BR': 'Gema comum de veias azuis do Vallis minerada com o Nosam Cutter ou Sunpoint Plasma Drill. Refine em Smooth Phasmin com Smokefinger em Fortuna.' },
+    usedFor: { en: 'Refined into Smooth Phasmin for MOA and Kitgun parts. Raw Phasmin can be traded to Smokefinger for Solaris United standing.', 'pt-BR': 'Refinada em Smooth Phasmin para peças de MOA e Kitgun. Phasmin cru pode ser trocada com Smokefinger por standing de Solaris United.' },
+  },
+  pigment: {
+    name: { en: 'Pigment', 'pt-BR': 'Pigment' },
+    rarity: 'rare', category: 'rare',
+    location: 'star-chart', sources: ['research'],
+    image: 'https://wiki.warframe.com/images/GenericDojoColorPigment.png',
+    description: { en: 'Rare research drop only available while a Polychrome color is being researched at the Tenno Lab. Each color has a designated enemy.', 'pt-BR': 'Drop raro de pesquisa, so disponivel enquanto uma cor Polychrome esta sendo pesquisada no Tenno Lab. Cada cor tem um inimigo designado.' },
+    usedFor: { en: 'Used in Tenno Lab Polychrome research to unlock dojo colors for interior decoration and lighting.', 'pt-BR': 'Usado na pesquisa de Polychromes no Tenno Lab para desbloquear cores do dojo em decoracao e iluminacao.' },
+  },
+  pix_chip: {
+    name: { en: 'Pix Chip', 'pt-BR': 'Pix Chip' },
+    rarity: 'rare', category: 'rare',
+    location: 'hollvania', sources: ['temporal-archimedea'],
+    image: 'https://wiki.warframe.com/images/PixChip.png',
+    description: { en: 'Rare currency from Elite Temporal Archimedea in Höllvania (6 at 28 pts, 9 at 37 pts). Extra chips drop with debuff Peely Pix equipped.', 'pt-BR': 'Moeda rara da Elite Temporal Archimedea em Höllvania (6 com 28 pts, 9 com 37 pts). Chips extras caem com Peely Pix de debuff equipados.' },
+    usedFor: { en: 'Traded to Kaya Velasco for Peely Paks, Vosfor Caches, Peely Pix decoration, and Arcane Enhancements (Universal Fallout, Hot Shot, Escapist).', 'pt-BR': 'Trocado com Kaya Velasco por Peely Paks, Vosfor Caches, decoração Peely Pix e Arcane Enhancements (Universal Fallout, Hot Shot, Escapist).' },
+  },
+  processed_fass_residue: {
+    name: { en: 'Processed Fass Residue', 'pt-BR': 'Processed Fass Residue' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/ProcessedFassResidue.png',
+    description: { en: 'Refined Fass matter purchased from Daughter at Rank 3 (Associate) for 300 Standing each.', 'pt-BR': 'Materia de Fass refinada comprada com a Daughter no Rank 3 (Associate) por 300 de Standing cada.' },
+    usedFor: { en: 'Fishing bait used to attract Aquapulmo and Flagellocanth on the Cambion Drift.', 'pt-BR': 'Isca de pesca usada para atrair Aquapulmo e Flagellocanth na Cambion Drift.' },
+  },
+  processed_vome_residue: {
+    name: { en: 'Processed Vome Residue', 'pt-BR': 'Processed Vome Residue' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/ProcessedVomeResidue.png',
+    description: { en: 'Refined Vome matter purchased from Daughter at Rank 4 (Friend) for 400 Standing each.', 'pt-BR': 'Materia de Vome refinada comprada com a Daughter no Rank 4 (Friend) por 400 de Standing cada.' },
+    usedFor: { en: 'Fishing bait used to attract Myxostomata on the Cambion Drift.', 'pt-BR': 'Isca de pesca usada para atrair Myxostomata na Cambion Drift.' },
+  },
+  proof_fragment: {
+    name: { en: 'Proof Fragment', 'pt-BR': 'Proof Fragment' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/NavCoordinate.png',
+    description: { en: 'Quest resource from The Limbo Theorem, dropped by enemies as Nav Coordinates.', 'pt-BR': 'Recurso da quest The Limbo Theorem, obtido de inimigos como Nav Coordinates.' },
+    usedFor: { en: '9 are needed to craft the keys required to finish the quest and build the Limbo Warframe.', 'pt-BR': 'Sao necessarios 9 para criar as chaves para concluir a quest e construir a Warframe Limbo.' },
+  },
+  pulsating_tubercles: {
+    name: { en: 'Pulsating Tubercles', 'pt-BR': 'Pulsating Tubercles' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/PulsatingTubercles.png',
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a quest.' },
+  },
+  purged_dagonic: {
+    name: { en: 'Purged Dagonic', 'pt-BR': 'Purged Dagonic' },
+    rarity: 'rare', category: 'rare',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/PurgedDagonic.png',
+    description: { en: 'Refined gem crafted in the Foundry from Dagonic. Blueprint from Otak (Rank 0). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Dagonic. Blueprint com Otak (Rank 0). Rende 10 por build.' },
+    usedFor: { en: 'Used for Styanax components, Voidrig Weapon Pod, Keratinos Blades, and Kitgun parts.', 'pt-BR': 'Usada em componentes do Styanax, Voidrig Weapon Pod, Keratinos Blades, e pecas de Kitgun.' },
+  },
+  purified_heciphron: {
+    name: { en: 'Purified Heciphron', 'pt-BR': 'Purified Heciphron' },
+    rarity: 'rare', category: 'rare',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/PurifiedHeciphron.png',
+    description: { en: 'Refined gem crafted in the Foundry from Heciphron. Blueprint from Otak (Rank 1). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Heciphron. Blueprint com Otak (Rank 1). Rende 10 por build.' },
+    usedFor: { en: 'Used for Sepulcrum, Trumna, Zymos, Vitrica, and the Voidrig Weapon Pod.', 'pt-BR': 'Usada em Sepulcrum, Trumna, Zymos, Vitrica, e Voidrig Weapon Pod.' },
+  },
+  pustulent_cognitive_nodule: {
+    name: { en: 'Pustulent Cognitive Nodule', 'pt-BR': 'Pustulent Cognitive Nodule' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/PustulentCognitiveNodule.png',
+    description: { en: 'Uncommon fish part dropped by Aquapulmo (Vome) and Cryptosuctus (Fass) on the Cambion Drift surface. Filleted by Daughter.', 'pt-BR': 'Parte de peixe incomum dropada por Aquapulmo (Vome) e Cryptosuctus (Fass) na superficie da Cambion Drift. Filetada com a Daughter.' },
+    usedFor: { en: 'Used for Antigens, Sepulcrum Barrel, Zymos Receiver, Gristlebuck Reactor, and the Helminth Invigoration Segment.', 'pt-BR': 'Usada em Antigens, Sepulcrum Barrel, Zymos Receiver, Gristlebuck Reactor, e Helminth Invigoration Segment.' },
+  },
+  pyrus_essence: {
+    name: { en: 'Pyrus Essence', 'pt-BR': 'Pyrus Essence' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/PyrusEssence.png',
+    description: { en: 'Event resource from The Pyrus Project (Relay Construction), captured from Pyrus Essence Carriers on Earth, Mercury, Ceres, or Saturn.', 'pt-BR': 'Recurso de evento do The Pyrus Project (Reconstrucao de Relays), capturado de Pyrus Essence Carriers em Terra, Mercurio, Ceres ou Saturno.' },
+    usedFor: { en: 'Donated to rebuild destroyed Tenno Relays during the event; 30 were needed to complete it.', 'pt-BR': 'Doado para reconstruir os Relays Tenno destruidos durante o evento; 30 eram necessarios.' },
+  },
+  radian_sentirum: {
+    name: { en: 'Radian Sentirum', 'pt-BR': 'Radian Sentirum' },
+    rarity: 'rare', category: 'rare',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/RadianSentirum.png',
+    description: { en: 'Refined gem crafted from 3 raw Sentirum (yields 3). Sentirum is mined from blue veins in Plains of Eidolon.', 'pt-BR': 'Gema refinada criada com 3 Sentirum bruto (rende 3). Sentirum e minerado de veios azuis em Plains of Eidolon.' },
+    usedFor: { en: 'Used in Anspatha Brace, Gauss Chassis, Styanax Systems, Ceno armor cosmetics, Dorma Hound, and Exceptional Sentient Core packs.', 'pt-BR': 'Usado em Anspatha Brace, Gauss Chassis, Styanax Systems, cosmeticos de armadura Ceno, Dorma Hound, e packs de Exceptional Sentient Core.' },
+  },
+  radiant_zodian: {
+    name: { en: 'Radiant Zodian', 'pt-BR': 'Radiant Zodian' },
+    rarity: 'rare', category: 'rare',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/RadiantZodian.png',
+    description: { en: 'Rare refined gem cut from raw Zodian at Smokefinger in Fortuna. Blueprint requires Doer rank with Solaris United.', 'pt-BR': 'Gema rara refinada cortada do Zodian cru com Smokefinger em Fortuna. A blueprint exige rank Doer com Solaris United.' },
+    usedFor: { en: 'Amp prisms (Cantic, Klamora, Lega), Korumm, Larkspur, Warframe components (Baruuk, Garuda, Gauss) and Ventkid cosmetics.', 'pt-BR': 'Prisms de Amp (Cantic, Klamora, Lega), Korumm, Larkspur, componentes de Warframe (Baruuk, Garuda, Gauss) e cosméticos Ventkid.' },
+  },
+  rania_crystal_fragment: {
+    name: { en: 'Rania Crystal Fragment', 'pt-BR': 'Rania Crystal Fragment' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/RaniaCrystalFragment.png',
+    description: { en: 'Special crystal from Mirror Defense at Tyana Pass on Mars. Awarded every 50 Citrines Remnants and at end of each rotation.', 'pt-BR': 'Cristal especial obtido em Mirror Defense em Tyana Pass, Marte. Ganho a cada 50 Citrines Remnants e ao fim de cada rotacao.' },
+    usedFor: { en: 'Spent at Otak in the Necralisk for Citrine parts, Steflos and Corufell weapons, and arcanes like Double Back and Plated Round.', 'pt-BR': 'Gasto com Otak na Necralisk pelas partes da Citrine, armas Steflos e Corufell e arcanes como Double Back e Plated Round.' },
+  },
+  recaster_neural_relay: {
+    name: { en: 'Recaster Neural Relay', 'pt-BR': 'Recaster Neural Relay' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/RecasterNeuralRelay.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Recaster Servofish at The Business in Fortuna. Recasters are caught in pond hotspots during Cold weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Recaster em The Business, em Fortuna. Recasters aparecem em hotspots de lagos durante clima Frio.' },
+    usedFor: { en: 'Helstrum, Tazicor, Flatbelly K-Drive board, Kitgun grips (Haymaker, Steadyslam) and the Kreska melee.', 'pt-BR': 'Helstrum, Tazicor, board Flatbelly de K-Drive, grips de Kitgun (Haymaker, Steadyslam) e a melee Kreska.' },
+  },
+  reeking_puffball: {
+    name: { en: 'Reeking Puffball', 'pt-BR': 'Reeking Puffball' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/ReekingPuffball.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Entrance Caves section during stage 1 of Deepmines bounties. On pickup grants Gas damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Entrance Caves durante o estágio 1 das bounties de Deepmines. Ao pegar, concede dano de Gás.' },
+    usedFor: { en: 'Crafting the Arbucep Receiver, Deep Roots and Lookout Cave Art decorations, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Receiver, decorações Deep Roots e Lookout Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  regal_aya: {
+    name: { en: 'Regal Aya', 'pt-BR': 'Regal Aya' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/RegalAya.png',
+    description: { en: 'Premium currency purchased with real money from the Warframe website (packs of 3, 7, or 15 with bonus Platinum). Untradeable.', 'pt-BR': 'Moeda premium comprada com dinheiro real no site da Warframe (pacotes de 3, 7 ou 15 com Platinum bonus). Nao negociavel.' },
+    usedFor: { en: 'Spent with Varzia in Maroo\'s Bazaar during Prime Resurgence to buy vaulted Prime Warframes, weapons, and accessories.', 'pt-BR': 'Gasta com Varzia no Maroo\'s Bazaar durante Prime Resurgence para comprar Primes, armas e acessorios do cofre.' },
+  },
+  ren_hypercore: {
+    name: { en: 'Ren Hypercore', 'pt-BR': 'Ren Hypercore' },
+    rarity: 'rare', category: 'rare',
+    location: 'dark-refractory', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/RenHypercore.png',
+    description: { en: 'Rare evolved Dactolyst core from The Perita Rebellion. Drops in Recall: Dactolyst (1 per Order, 10 from the boss); 75 from completing The Old Peace quest.', 'pt-BR': 'Nucleo raro de Dactolyst evoluido de The Perita Rebellion. Cai em Recall: Dactolyst (1 por Order, 10 do chefe); 75 ao concluir a missao The Old Peace.' },
+    usedFor: { en: 'Required to craft and fully upgrade all five Tauron Focus School weapons (Lorak, Vexoric, Thara, Nidri, Cogron) alongside Lyroic Bridge and Ascaris Prime.', 'pt-BR': 'Necessario para criar e melhorar ao maximo as cinco armas Tauron de Focus School (Lorak, Vexoric, Thara, Nidri, Cogron) junto com Lyroic Bridge e Ascaris Prime.' },
+  },
+  ruks_claw: {
+    name: { en: 'Ruk\'s Claw', 'pt-BR': 'Ruk\'s Claw' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/Ruk%27sClaw.png',
+    description: { en: 'Plant from the Grineer Settlement tileset on Mars, found in shaded, damp spots.', 'pt-BR': 'Planta do bioma Grineer Settlement em Marte, encontrada em locais sombreados e umidos.' },
+    usedFor: { en: 'Apothic crafting ingredient (Twilight Apothic) and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Twilight Apothic) e alimento Biotics para o Helminth.' },
+  },
+  rune_marrow: {
+    name: { en: 'Rune Marrow', 'pt-BR': 'Rune Marrow' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'duviri', sources: ['undercroft'],
+    image: 'https://wiki.warframe.com/images/RuneMarrow.png',
+    description: { en: 'Uncommon Undercroft resource from Runic Compact deposits and guaranteed from Corrupted Vor/Jackal. Companions cannot enter, so use Loot Detector.', 'pt-BR': 'Recurso incomum da Undercroft obtido de depositos Runic Compact e garantido de Corrupted Vor/Jackal. Companions nao entram, use Loot Detector.' },
+    usedFor: { en: 'Crafts most Duviri melees (Sun and Moon, Azothane, Edun, Syam), Kullervo Chassis, and a wide range of Incarnon Genesis adapters from Cavalero.', 'pt-BR': 'Usado nos melees de Duviri (Sun and Moon, Azothane, Edun, Syam), Kullervo Chassis e varios adaptadores Incarnon Genesis comprados com Cavalero.' },
+  },
+  saggen_pearl: {
+    name: { en: 'Saggen Pearl', 'pt-BR': 'Saggen Pearl' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/SaggenPearl.png',
+    description: { en: 'Common Duviri open-world material harvested from Saggen Well nodes scattered across the landscape.', 'pt-BR': 'Material comum do mundo aberto de Duviri colhido de nodes Saggen Well espalhados pela paisagem.' },
+    usedFor: { en: 'Crafts Azothane, Cinta String, Kullervo Neuroptics, and Incarnon Genesis adapters (Sybaris, Cestra, Lex, Vasto). Feeds Helminth Synthetics.', 'pt-BR': 'Usado em Azothane, Cinta String, Kullervo Neuroptics e adaptadores Incarnon Genesis (Sybaris, Cestra, Lex, Vasto). Alimenta Synthetics no Helminth.' },
+  },
+  sapcaddy_venedo_case: {
+    name: { en: 'Sapcaddy Venedo Case', 'pt-BR': 'Sapcaddy Venedo Case' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/SapcaddyVenedoCase.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Sapcaddy Servofish at The Business in Fortuna. Sapcaddies are caught in lakes during Cold weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Sapcaddy em The Business, em Fortuna. Sapcaddies são pescados em lagos durante clima Frio.' },
+    usedFor: { en: 'Coldfusor K-Drive reactor, Kitgun grips (Lovetap, Shrewd), Slap Loader and Phazor Gyro MOA part.', 'pt-BR': 'Reator Coldfusor de K-Drive, grips de Kitgun (Lovetap, Shrewd), Slap Loader e peça Phazor Gyro de MOA.' },
+  },
+  saturated_muscle_mass: {
+    name: { en: 'Saturated Muscle Mass', 'pt-BR': 'Saturated Muscle Mass' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/SaturatedMuscleMass.png',
+    description: { en: 'Uncommon fish part dropped by Kymaeros (Fass/Vome) and Ostimyr (Fass) on the Cambion Drift surface. Filleted by Daughter.', 'pt-BR': 'Parte de peixe incomum dropada por Kymaeros (Fass/Vome) e Ostimyr (Fass) na superficie da Cambion Drift. Filetada com a Daughter.' },
+    usedFor: { en: 'Used for the Helminth Segment, Antigens, Steeba K-Drive jet, and Trumna Stock.', 'pt-BR': 'Usada no Helminth Segment, em Antigens, no jato de K-Drive Steeba, e em Trumna Stock.' },
+  },
+  scorched_beacon: {
+    name: { en: 'Scorched Beacon', 'pt-BR': 'Scorched Beacon' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/ScorchedBeacon64.png',
+    description: { en: 'Quest blueprint from The New Strange, given by Cephalon Simaris after synthesizing three Elite Arid Lancers on Mars.', 'pt-BR': 'Projeto da quest The New Strange, dado por Cephalon Simaris apos sintetizar tres Elite Arid Lancers em Marte.' },
+    usedFor: { en: 'Built in the Foundry to transmit a signal from the Arcane Machine, then combined into the Chroma Mark.', 'pt-BR': 'Construido na Forja para emitir um sinal da Maquina Arcana, depois combinado no Chroma Mark.' },
+  },
+  scrap: {
+    name: { en: 'Scrap', 'pt-BR': 'Scrap' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/Scrap.png',
+    description: { en: 'Common Vallis fishing spoil, a by-product from dismantling almost any Servofish at The Business in Fortuna. Yield scales with catch quality.', 'pt-BR': 'Subproduto comum de pesca do Vallis obtido ao desmontar quase qualquer Servofish em The Business, em Fortuna. O rendimento escala com a qualidade do peixe.' },
+    usedFor: { en: 'Most Kitgun grips and loaders, K-Drive reactors and boards, Oxylus Sentinel and the Bonewidow Weapon Pod.', 'pt-BR': 'A maioria dos grips e loaders de Kitgun, reatores e boards de K-Drive, Sentinela Oxylus e o Bonewidow Weapon Pod.' },
+  },
+  scrubber_exa_brain: {
+    name: { en: 'Scrubber Exa Brain', 'pt-BR': 'Scrubber Exa Brain' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/ScrubberExaBrain.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Scrubber Servofish at The Business in Fortuna. Scrubbers are caught in caves during any weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Scrubber em The Business, em Fortuna. Scrubbers aparecem em cavernas em qualquer clima.' },
+    usedFor: { en: 'Catchmoon Chamber, Deepbreath Loader, several K-Drive noses and reactors, Munit Gyro and Yareli Systems.', 'pt-BR': 'Catchmoon Chamber, Deepbreath Loader, vários noses e reatores de K-Drive, Munit Gyro e Yareli Systems.' },
+  },
+  scuttler_husk: {
+    name: { en: 'Scuttler Husk', 'pt-BR': 'Scuttler Husk' },
+    rarity: 'rare', category: 'rare',
+    location: 'duviri', sources: ['boss-drops'],
+    image: 'https://wiki.warframe.com/images/ScuttlerHusk.png',
+    description: { en: 'Rare drop from defeating The Fragmented (Oraxia) in Isleweaver missions: 16-20 normally, 20-24 on Steel Path. Boosters do not affect the amount.', 'pt-BR': 'Drop raro por derrotar The Fragmented (Oraxia) em missoes da Isleweaver: 16-20 no normal, 20-24 no Steel Path. Boosters nao afetam a quantidade.' },
+    usedFor: { en: 'Spent at Acrithis (Dormizone) for the Oraxia Warframe, Scyotid, Spinnerex, Thalys melee, Captura scenes, and a weekly Kuva bundle.', 'pt-BR': 'Gasto com Acrithis (Dormizone) pela Warframe Oraxia, Scyotid, Spinnerex, melee Thalys, cenas de Captura e um pacote semanal de Kuva.' },
+  },
+  seram_beetle_shell: {
+    name: { en: 'Seram Beetle Shell', 'pt-BR': 'Seram Beetle Shell' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/SeramBeetleShell.png',
+    description: { en: 'Cut from Glappid fish caught at night in Plains of Eidolon ocean with Glappid Bait. Also drops from Tusk Thumpers.', 'pt-BR': 'Extraido do peixe Glappid pescado a noite no oceano de Plains of Eidolon com Glappid Bait. Tambem dropa de Tusk Thumpers.' },
+    usedFor: { en: 'Used in Anspatha Brace, Phahd Scaffold, Rahn Prism, and Ceno/Vahd cosmetic armor pieces.', 'pt-BR': 'Usado em Anspatha Brace, Phahd Scaffold, Rahn Prism, e pecas de armadura cosmetica Ceno/Vahd.' },
+  },
+  servoris: {
+    name: { en: 'Servoris', 'pt-BR': 'Servoris' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'dark-refractory', sources: ['common-drops'],
+    image: 'https://wiki.warframe.com/images/Servoris.png',
+    description: { en: 'Uncommon Orokin service medal from The Perita Rebellion in the Dark Refractory. Drops from enemies, lockers, and containers across the three Recall missions.', 'pt-BR': 'Medalha incomum de servico Orokin de The Perita Rebellion no Dark Refractory. Cai de inimigos, armarios e containers nas tres missoes Recall.' },
+    usedFor: { en: 'Used to craft the Uriel Warframe, Vinquibus, Galariak Prime, and Sagek Prime. Also tradable with Marie Leroux for her rotating offerings.', 'pt-BR': 'Usado para criar o Warframe Uriel, Vinquibus, Galariak Prime e Sagek Prime. Tambem trocavel com Marie Leroux por suas ofertas rotativas.' },
+  },
+  severed_bile_sac: {
+    name: { en: 'Severed Bile Sac', 'pt-BR': 'Severed Bile Sac' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['quests'],
+    image: 'https://wiki.warframe.com/images/SeveredBileSac.png',
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a quest.' },
+  },
+  sharrac_teeth: {
+    name: { en: 'Sharrac Teeth', 'pt-BR': 'Sharrac Teeth' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/SharracTeeth.png',
+    description: { en: 'Cut from Sharrac, shark-like saltwater fish found in coastlines near Cetus in Plains of Eidolon.', 'pt-BR': 'Extraido do Sharrac, peixe de agua salgada parecido com tubarao encontrado nas costas perto de Cetus em Plains of Eidolon.' },
+    usedFor: { en: 'Used in Ceno Pauldrons, Fosfor Rahd, Norg Bait, Xaku Neuroptics, Ghoulsaw Blade, and Amanata Blade.', 'pt-BR': 'Usado em Ceno Pauldrons, Fosfor Rahd, Norg Bait, Xaku Neuroptics, Ghoulsaw Blade, e Amanata Blade.' },
+  },
+  silphsela: {
+    name: { en: 'Silphsela', 'pt-BR': 'Silphsela' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Silphsela.png',
+    description: { en: 'Common Duviri plant harvested from Sun Silphs on hillsides, with dense clusters near Titan\'s Rest. During Anger Spirals they float as sky embers.', 'pt-BR': 'Planta comum de Duviri colhida dos Sun Silphs em encostas, com aglomerados densos perto de Titan\'s Rest. No Anger Spiral, flutuam como brasas no ceu.' },
+    usedFor: { en: 'Crafts Sampotes, Argo and Vel, Sun and Moon, Thalys, Cinta and Scyotid/Spinnerex parts, and Incarnon adapters (Paris, Boltor, Soma, Despair).', 'pt-BR': 'Usado em Sampotes, Argo and Vel, Sun and Moon, Thalys, partes da Cinta/Scyotid/Spinnerex e adaptadores Incarnon (Paris, Boltor, Soma, Despair).' },
+  },
+  smooth_phasmin: {
+    name: { en: 'Smooth Phasmin', 'pt-BR': 'Smooth Phasmin' },
+    rarity: 'rare', category: 'rare',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/SmoothPhasmin.png',
+    description: { en: 'Uncommon refined gem cut from raw Phasmin at Smokefinger in Fortuna. Each batch yields 10 from 10 Phasmin in one minute.', 'pt-BR': 'Gema incomum refinada cortada do Phasmin cru com Smokefinger em Fortuna. Cada batch rende 10 a partir de 10 Phasmin em um minuto.' },
+    usedFor: { en: 'MOA parts (Alcrom, Drex, Harpen, Tian), Kitgun grips and loaders, Thugs K-Drive jet and the Tazicor robotic.', 'pt-BR': 'Peças de MOA (Alcrom, Drex, Harpen, Tian), grips e loaders de Kitgun, jet Thugs de K-Drive e o robô Tazicor.' },
+  },
+  somatic_fibers: {
+    name: { en: 'Somatic Fibers', 'pt-BR': 'Somatic Fibers' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/SomaticFibers.png',
+    description: { en: 'Special drop from Demolishers in Lua Disruption and from Conjunction Survival Rotation A on Yuvarium and Circulus.', 'pt-BR': 'Drop especial de Demolishers em Disruption de Lua e da Rotacao A em Conjunction Survival em Yuvarium e Circulus.' },
+    usedFor: { en: 'Used to craft Lua Lenses and Voruna Neuroptics (plus its Helminth version).', 'pt-BR': 'Usado para construir Lua Lenses e Voruna Neuroptics (alem da versao para o Helminth).' },
+  },
+  son_token: {
+    name: { en: 'Son Token', 'pt-BR': 'Son Token' },
+    rarity: 'special', category: 'special',
+    location: 'cambion-drift', sources: ['entrati-currency'],
+    image: 'https://wiki.warframe.com/images/SonToken.png',
+    description: { en: 'Entrati family token earned by trading conservation tags to Son, donating gilded Predasites/Vulpaphylas, or via Mend the Family.', 'pt-BR': 'Token da familia Entrati obtido ao trocar tags de conservacao com o Son, doar Predasites/Vulpaphylas gildados, ou via Mend the Family.' },
+    usedFor: { en: 'Used to gild Predasites and Vulpaphylas (10 each) or traded to Grandmother for 1,000 Entrati Standing.', 'pt-BR': 'Usado para gildar Predasites e Vulpaphylas (10 cada) ou trocado com a Grandmother por 1.000 de Entrati Standing.' },
+  },
+  spectral_debris: {
+    name: { en: 'Spectral Debris', 'pt-BR': 'Spectral Debris' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/SpectralDebris.png',
+    description: { en: 'Special drop from Errant Specters in the Granum Void at a 5 percent chance per kill.', 'pt-BR': 'Drop especial de Errant Specters no Granum Void com 5 por cento de chance por kill.' },
+    usedFor: { en: 'Used to craft modular Hound parts (Adlet, Garmr, Raiju cores and Bhaira, Dorma, Hec models) and the Sworn Sister Honoria skin.', 'pt-BR': 'Usado para construir partes modulares de Hounds (cores Adlet, Garmr, Raiju e modelos Bhaira, Dorma, Hec) e a skin Sworn Sister da Honoria.' },
+  },
+  spinal_core_section: {
+    name: { en: 'Spinal Core Section', 'pt-BR': 'Spinal Core Section' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/SpinalCoreSection.png',
+    description: { en: 'Uncommon fish part dropped by Chondricord and Vitreospina, caught in cave hotspots during Fass/Vome. Filleted by Daughter.', 'pt-BR': 'Parte de peixe incomum dropada por Chondricord e Vitreospina, pescados em cavernas da Cambion Drift durante Fass/Vome. Filetada com a Daughter.' },
+    usedFor: { en: 'Used for Xaku Chassis, Cortege/Morgha barrels, Voidrig Capsule, Bonewidow Weapon Pod, and Mutagens.', 'pt-BR': 'Usada em Xaku Chassis, barrels de Cortege/Morgha, Voidrig Capsule, Bonewidow Weapon Pod, e Mutagens.' },
+  },
+  sporulate_sac: {
+    name: { en: 'Sporulate Sac', 'pt-BR': 'Sporulate Sac' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/SporulateSac.png',
+    description: { en: 'Uncommon fish part dropped by Glutinox, caught on the Cambion Drift surface during Vome. Filleted by Daughter at the Necralisk.', 'pt-BR': 'Parte de peixe incomum dropada por Glutinox, pescado na superficie da Cambion Drift durante Vome. Filetada com a Daughter na Necralisk.' },
+    usedFor: { en: 'Used for Trumna Barrel, Sporelacer chamber, Nodulite K-Drive nose, Mutagens, and the Helminth Archon Shard Segment.', 'pt-BR': 'Usada em Trumna Barrel, camara Sporelacer, nariz Nodulite de K-Drive, Mutagens, e Helminth Archon Shard Segment.' },
+  },
+  spring_popper: {
+    name: { en: 'Spring Popper', 'pt-BR': 'Spring Popper' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/SpringPopper.png',
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Forward Base section during the Corporate Restructuring bounty. On pickup grants Blast damage and ragdolls enemies.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Forward Base durante a bounty Corporate Restructuring. Ao pegar, concede dano de Explosão e faz ragdoll dos inimigos.' },
+    usedFor: { en: 'Crafting the Arbucep Barrel, The Prince Cave Art decoration, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Barrel, decoração The Prince Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  stable_corruptor: {
+    name: { en: 'Stable Corruptor', 'pt-BR': 'Stable Corruptor' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/StableCorruptor.png',
+    description: { en: 'Consumable from Operation Sling-Stone (2013), dropped by Infested enemies during the Fomorian sabotage event.', 'pt-BR': 'Consumivel da Operacao Sling-Stone (2013), obtido de Infestados durante o evento de sabotagem dos Fomorianos.' },
+    usedFor: { en: 'Inserted into Fomorian reactor cores to deal normal sabotage damage during the event.', 'pt-BR': 'Inserido nos nucleos dos reatores Fomorianos para causar dano normal de sabotagem durante o evento.' },
+  },
+  star_crimzian: {
+    name: { en: 'Star Crimzian', 'pt-BR': 'Star Crimzian' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/StarCrimzian.png',
+    description: { en: 'Refined gem crafted from 6 raw Crimzian (yields 6). Blueprint from Old Man Suumbaat at Trusted rank.', 'pt-BR': 'Gema refinada criada com 6 Crimzian bruto (rende 6). Blueprint com Old Man Suumbaat no rank Trusted.' },
+    usedFor: { en: 'Used in Bonewidow Capsule, Gauss Chassis, Styanax Chassis, Granmu Prism, Helstrum, and Ramflare Loader.', 'pt-BR': 'Usado em Bonewidow Capsule, Gauss Chassis, Styanax Chassis, Granmu Prism, Helstrum, e Ramflare Loader.' },
+  },
+  stela: {
+    name: { en: 'Stela', 'pt-BR': 'Stela' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/Stela.png',
+    description: { en: 'Uncommon Void resource from Albrechts Laboratories on Deimos. Drops from Murmur enemies, Sarcophage containers, Mirror Defense, and Sanctum bounties.', 'pt-BR': 'Recurso Void incomum de Albrechts Laboratories, Deimos. Cai de inimigos Murmur, Sarcophage containers, Mirror Defense e bounties do Sanctum.' },
+    usedFor: { en: 'Used to rank up Cavia, build Qorvex parts, and most importantly to fuse Archon Shards into Tauforged via Coalescent or Ascent Fusion.', 'pt-BR': 'Usado para subir rank na Cavia, construir partes da Qorvex e principalmente para fundir Archon Shards em Tauforged via Coalescent ou Ascent Fusion.' },
+  },
+  stellated_necrathene: {
+    name: { en: 'Stellated Necrathene', 'pt-BR': 'Stellated Necrathene' },
+    rarity: 'rare', category: 'rare',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/StellatedNecrathene.png',
+    description: { en: 'Refined gem crafted in the Foundry from Necrathene. Blueprint from Otak (Rank 2). Yields 6 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Necrathene. Blueprint com Otak (Rank 2). Rende 6 por build.' },
+    usedFor: { en: 'Used for Citrine Chassis, Catabolyst, Parallax Engines, and the Nodulite K-Drive nose.', 'pt-BR': 'Usada em Citrine Chassis, Catabolyst, Parallax Engines, e no nariz Nodulite de K-Drive.' },
+  },
+  stock_kahl: {
+    name: { en: 'Stock (Kahl)', 'pt-BR': 'Stock (Kahl)' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/Stock.png',
+    description: { en: 'Special weekly currency earned from Kahls Break Narmer bonus objectives and blue crates. Capped at 105 per week.', 'pt-BR': 'Moeda semanal especial ganha pelos objetivos bonus de Kahls Break Narmer e crates azuis. Limite de 105 por semana.' },
+    usedFor: { en: 'Spent at Chipper for Styanax blueprints, Afentis, Aegrit, Slaytra weapons, Archon Mods, the Skaut, ephemeras, and Captura scenes.', 'pt-BR': 'Gasto com Chipper pelos blueprints da Styanax, armas Afentis, Aegrit, Slaytra, Archon Mods, a Skaut, ephemeras e cenas de Captura.' },
+  },
+  sunlight_dragonlily: {
+    name: { en: 'Sunlight Dragonlily', 'pt-BR': 'Sunlight Dragonlily' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/SunlightDragonlily.png',
+    description: { en: 'Uncommon plant from the Grineer Forest tileset on Earth, found near grass or water only during the day.', 'pt-BR': 'Planta incomum do bioma Grineer Forest na Terra, encontrada perto de grama ou agua somente durante o dia.' },
+    usedFor: { en: 'Used for Antitoxin gear (Citrine, Lapis, Vermillion) and Helminth Biotics feed.', 'pt-BR': 'Usada em Antitoxinas (Citrine, Lapis, Vermillion) e alimento Biotics para o Helminth.' },
+  },
+  sunlight_jadeleaf: {
+    name: { en: 'Sunlight Jadeleaf', 'pt-BR': 'Sunlight Jadeleaf' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/SunlightJadeleaf.png',
+    description: { en: 'Rare plant from the Grineer Forest tileset on Earth, found only during the day.', 'pt-BR': 'Planta rara do bioma Grineer Forest na Terra, encontrada somente durante o dia.' },
+    usedFor: { en: 'Apothic crafting ingredient (Sunrise Apothic), Antitoxins, Health Restores, and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Sunrise Apothic), Antitoxinas, Health Restores e alimento Biotics para o Helminth.' },
+  },
+  sunlight_threshcone: {
+    name: { en: 'Sunlight Threshcone', 'pt-BR': 'Sunlight Threshcone' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/SunlightThreshcone.png',
+    description: { en: 'Common plant from the Grineer Forest tileset on Earth, found near trees only during the day.', 'pt-BR': 'Planta comum do bioma Grineer Forest na Terra, encontrada perto de arvores somente durante o dia.' },
+    usedFor: { en: 'Apothic crafting ingredient (Nightfall Apothic), Antitoxins, Health Restores, and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Nightfall Apothic), Antitoxinas, Health Restores e alimento Biotics para o Helminth.' },
+  },
+  synathid_ecosynth_analyzer: {
+    name: { en: 'Synathid Ecosynth Analyzer', 'pt-BR': 'Synathid Ecosynth Analyzer' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/SynathidEcosynthAnalyzer.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Synathid Servofish at The Business in Fortuna. Synathids are caught in cave hotspots; also drops from the Exploiter Orb.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Synathid em The Business, em Fortuna. Synathids aparecem em hotspots de cavernas; também dropa do Exploiter Orb.' },
+    usedFor: { en: 'Baruuk Neuroptics, Helstrum, Larkspur, Splat Kitgun loader, and several Ventkid cosmetic mask bundles.', 'pt-BR': 'Baruuk Neuroptics, Helstrum, Larkspur, loader Splat de Kitgun e vários bundles de máscaras cosméticas Ventkid.' },
+  },
+  synthetic_eidolon_shard: {
+    name: { en: 'Synthetic Eidolon Shard', 'pt-BR': 'Synthetic Eidolon Shard' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['mission-drops'],
+    image: 'https://wiki.warframe.com/images/SyntheticEidolonShard.png',
+    description: { en: 'Special drop from Sanctuary Onslaught Rotation B (elite or normal) at around 7 to 8 percent chance.', 'pt-BR': 'Drop especial da Rotacao B do Sanctuary Onslaught (elite ou normal) com cerca de 7 a 8 por cento de chance.' },
+    usedFor: { en: 'Converted at the Orbiters Transference Room into 5,000 Focus points for any unlocked school, bypassing the daily cap.', 'pt-BR': 'Convertido na Transference Room do Orbiter em 5.000 pontos de Focus para qualquer escola desbloqueada, sem contar no cap diario.' },
+  },
+  tear_azurite: {
+    name: { en: 'Tear Azurite', 'pt-BR': 'Tear Azurite' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/TearAzurite.png',
+    description: { en: 'Refined gem crafted from 10 Azurite (yields 10). Azurite is mined from blue veins in Plains of Eidolon.', 'pt-BR': 'Gema refinada criada com 10 Azurite (rende 10). Azurite e minerado de veios azuis em Plains of Eidolon.' },
+    usedFor: { en: 'Used in Zaw strikes (Balla, Ooltha, Plague Kripath, Sepfahn), Mote Amp, Rahn/Raplak Prisms, Koumei Systems, and Ostron rank-up.', 'pt-BR': 'Usado em strikes de Zaw (Balla, Ooltha, Plague Kripath, Sepfahn), Mote Amp, Prismas Rahn/Raplak, Koumei Systems, e rank-up Ostron.' },
+  },
+  techrot_chitin: {
+    name: { en: 'Techrot Chitin', 'pt-BR': 'Techrot Chitin' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'hollvania', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/TechrotChitin.png',
+    description: { en: 'Common Höllvania drop from Exterminate missions (Rhu Manor, Mausoleum East), Central Mall Bounties (Lvl 75-120), enemies and containers.', 'pt-BR': 'Drop comum de Höllvania das missões Exterminate (Rhu Manor, Mausoleum East), Central Mall Bounties (Lvl 75-120), inimigos e contêineres.' },
+    usedFor: { en: 'Crafts Cyte-09 Neuroptics, AX-52, Vesper 77 parts, Reconifex, EFV-8 Mars, Dual Viciss Blades. Feeds Helminth as Pheromones.', 'pt-BR': 'Constrói Neuroptics do Cyte-09, AX-52, partes do Vesper 77, Reconifex, EFV-8 Mars, Lâminas do Dual Viciss. Alimenta Helminth como Pheromones.' },
+  },
+  techrot_motherboard: {
+    name: { en: 'Techrot Motherboard', 'pt-BR': 'Techrot Motherboard' },
+    rarity: 'rare', category: 'rare',
+    location: 'hollvania', sources: ['rare-drops'],
+    image: 'https://wiki.warframe.com/images/TechrotMotherboard.png',
+    description: { en: 'Rare drop from Höllvania Central Mall Bounties (underground Techrot areas). Best odds at Lvl 115-120 bounty (~10% for 8 units).', 'pt-BR': 'Drop raro dos Central Mall Bounties de Höllvania (áreas subterrâneas Techrot). Melhor chance no Lvl 115-120 (~10% por 8 unidades).' },
+    usedFor: { en: 'Crafts Cyte-09 parts, AX-52, Vesper 77, Reconifex, EFV-8 Mars, EFV-5 Jupiter, Dual Viciss, Temple parts. Feeds Helminth as Pheromones.', 'pt-BR': 'Constrói partes do Cyte-09, AX-52, Vesper 77, Reconifex, EFV-8 Mars, EFV-5 Jupiter, Dual Viciss, partes do Temple. Alimenta Helminth como Pheromones.' },
+  },
+  tempered_bapholite: {
+    name: { en: 'Tempered Bapholite', 'pt-BR': 'Tempered Bapholite' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/TemperedBapholite.png',
+    description: { en: 'Refined ore crafted in the Foundry from Bapholite. Blueprint from Otak (Rank 0). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Bapholite. Blueprint com Otak (Rank 0). Rende 20 por build.' },
+    usedFor: { en: 'Used for Necramech parts (Bonewidow, Voidrig), Cortege/Morgha stocks, Trumna, Vitrica, and Kitgun parts.', 'pt-BR': 'Usado em pecas de Necramech (Bonewidow, Voidrig), stocks de Cortege/Morgha, Trumna, Vitrica, e pecas de Kitgun.' },
+  },
+  temporal_dust: {
+    name: { en: 'Temporal Dust', 'pt-BR': 'Temporal Dust' },
+    rarity: 'rare', category: 'rare',
+    location: 'duviri', sources: ['isleweaver'],
+    image: 'https://wiki.warframe.com/images/TemporalDust.png',
+    description: { en: 'Rare Isleweaver resource: 20 per mission end (25 on Steel Path), plus uncommon drops from Murmur enemies and Entrati storage containers.', 'pt-BR': 'Recurso raro da Isleweaver: 20 por fim de missao (25 no Steel Path), alem de drops incomuns de inimigos Murmur e baus Entrati.' },
+    usedFor: { en: 'Crafts the Oraxia Warframe (all parts), Scyotid Gauntlets, Spinnerex Blade and String, and the Thalys melee.', 'pt-BR': 'Usado em todas as partes da Warframe Oraxia, nas Scyotid Gauntlets, na Spinnerex Blade e String, e no melee Thalys.' },
+  },
+  tethra_data_fragments: {
+    name: { en: 'Tethra Data Fragments', 'pt-BR': 'Tethra Data Fragments' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/TethraDataFragments.png',
+    description: { en: 'Event resource from Tethra\'s Doom, earned by completing the Interception mission on Earth (2 per run).', 'pt-BR': 'Recurso do evento Tethra\'s Doom, obtido completando a missao de Intercepcao na Terra (2 por partida).' },
+    usedFor: { en: 'Used to craft the Tethra Cipher and Tethra Shield Cipher during the event.', 'pt-BR': 'Usado para criar o Tethra Cipher e Tethra Shield Cipher durante o evento.' },
+  },
+  thaumic_distillate: {
+    name: { en: 'Thaumic Distillate', 'pt-BR': 'Thaumic Distillate' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/ThaumicDistillate.png',
+    description: { en: 'Refined ore crafted in the Foundry from Thaumica. Blueprint from Otak (Rank 2). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Thaumica. Blueprint com Otak (Rank 2). Rende 20 por build.' },
+    usedFor: { en: 'Used for Xaku Neuroptics, Bonewidow Casing, and Cambion Drift fish trophy decorations.', 'pt-BR': 'Usado em Xaku Neuroptics, Bonewidow Casing, e decoracoes de trofeu de peixes da Cambion Drift.' },
+  },
+  thaumica: {
+    name: { en: 'Thaumica', 'pt-BR': 'Thaumica' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
+    image: 'https://wiki.warframe.com/images/Thaumica.png',
+    description: { en: 'Common ore mined from yellow lesions on the Cambion Drift, often in the Infested Seraglio cave. Yields 3-8 per node.', 'pt-BR': 'Minerio comum extraido de lesoes amarelas na Cambion Drift, frequentemente na caverna Infested Seraglio. Rende 3-8 por no.' },
+    usedFor: { en: 'Refined at Otak into Thaumic Distillate and traded to Otak for tokens.', 'pt-BR': 'Refinado com Otak em Thaumic Distillate e trocado com Otak por tokens.' },
+  },
+  the_countessa_comic: {
+    name: { en: 'The Countessa Comic', 'pt-BR': 'The Countessa Comic' },
+    rarity: 'special', category: 'special',
+    location: 'hollvania', sources: ['hex-treasures'],
+    image: 'https://wiki.warframe.com/images/TheCountessaComic.png',
+    description: { en: 'Hex Treasure pickup across Höllvania missions and possible reward from Tier 1 Bounties on the Bounty Board.', 'pt-BR': 'Tesouro Hex coletável nas missões de Höllvania e possível recompensa dos Tier 1 Bounties no Bounty Board.' },
+    usedFor: { en: 'Traded to Lettie for 750 Hex standing. One required for Rank 3 (2-For-1) and Rank 5 (Pizza Party).', 'pt-BR': 'Trocado com Lettie por 750 de reputação Hex. Um necessário para Rank 3 (2-For-1) e Rank 5 (Pizza Party).' },
+  },
+  thorn_tooth: {
+    name: { en: 'Thorn Tooth', 'pt-BR': 'Thorn Tooth' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/ThornTooth.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Puncture damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano de Perfuração.' },
+    usedFor: { en: 'Undermind Whispers Cave Art decoration and ranking up the Nightcap Field Guide. Also purchasable from Nightcap for Fergolyte.', 'pt-BR': 'Decoração Undermind Whispers Cave Art e para subir de rank no Field Guide do Nightcap. Também comprável de Nightcap por Fergolyte.' },
+  },
+  thrax_plasm: {
+    name: { en: 'Thrax Plasm', 'pt-BR': 'Thrax Plasm' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/ThraxPlasm.png',
+    description: { en: 'Uncommon Zariman drop from Thrax Centurion and Thrax Legatus enemies (100 percent at 6 per kill). Best farms: Tuvul Commons or The Greenway.', 'pt-BR': 'Drop incomum do Zariman de Thrax Centurion e Thrax Legatus (100 por cento a 6 por kill). Melhores farms: Tuvul Commons ou The Greenway.' },
+    usedFor: { en: 'Used to craft Gyre, Styanax Systems, Parallax Avionics, and weapons like Alternox, Praedos, Aeolak, Hespar, and Innodem.', 'pt-BR': 'Usado para construir Gyre, Styanax Systems, Parallax Avionics e armas como Alternox, Praedos, Aeolak, Hespar e Innodem.' },
+  },
+  thunder_button: {
+    name: { en: 'Thunder-Button', 'pt-BR': 'Thunder-Button' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Thunder-Button.png',
+    description: { en: 'Deepmines mushroom found in the Corpus Lab section of Vallis Deepmines. Pickup grants a temporary Electricity damage buff.', 'pt-BR': 'Cogumelo dos Deepmines encontrado na seção Corpus Lab. Pegar concede buff temporário de dano Elétrico.' },
+    usedFor: { en: 'Solaris United standing offerings, Fergolyte exchange at Nightcap, Deepmines progression.', 'pt-BR': 'Ofertas de standing dos Solaris United, troca por Fergolyte no Nightcap, progressão dos Deepmines.' },
+  },
+  thyst: {
+    name: { en: 'Thyst', 'pt-BR': 'Thyst' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Thyst.png',
+    description: { en: 'Rare Vallis blue-vein gem mined with the Advanced Nosam Cutter or Sunpoint Plasma Drill. Also drops from the Exploiter Orb in bulk.', 'pt-BR': 'Gema rara de veias azuis do Vallis minerada com o Advanced Nosam Cutter ou Sunpoint Plasma Drill. Também dropa em grande quantidade do Exploiter Orb.' },
+    usedFor: { en: 'Refined into Marquise Thyst at Smokefinger for use in many Warframe, weapon and companion blueprints. Raw Thyst also trades for Solaris United standing.', 'pt-BR': 'Refinada em Marquise Thyst com Smokefinger para muitas blueprints de Warframe, armas e companions. Thyst cru também pode ser trocado por standing de Solaris United.' },
+  },
+  tiametrite: {
+    name: { en: 'Tiametrite', 'pt-BR': 'Tiametrite' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/Tiametrite.png',
+    description: { en: 'Common gem mined from blue lesions on the Cambion Drift. Also drops from Sagiant Caskets and Bonus Vault containers. Yields 3-6.', 'pt-BR': 'Gema comum extraida de lesoes azuis na Cambion Drift. Tambem cai de Sagiant Caskets e containers de Bonus Vault. Rende 3-6.' },
+    usedFor: { en: 'Refined at Otak into Faceted Tiametrite and traded to Otak for tokens.', 'pt-BR': 'Refinada com Otak em Faceted Tiametrite e trocada com Otak por tokens.' },
+  },
+  ticor_plate: {
+    name: { en: 'Ticor Plate', 'pt-BR': 'Ticor Plate' },
+    rarity: 'common', category: 'common',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/TicorPlate.png',
+    description: { en: 'Common Railjack drop from enemy spacecraft (fighters, crewships, ramsleds, cannon batteries). Skirmish missions are best for farming.', 'pt-BR': 'Drop comum de Railjack de naves inimigas (fighters, crewships, ramsleds, cannon batteries). Skirmish e o melhor modo para farmar.' },
+    usedFor: { en: 'Used to craft and upgrade Railjack Plating at all Mk tiers across Sigma, Lavan, Vidar, and Zetki variants.', 'pt-BR': 'Usado para construir e melhorar Railjack Plating em todos os tiers Mk nas variantes Sigma, Lavan, Vidar e Zetki.' },
+  },
+  tink_dissipator_coil: {
+    name: { en: 'Tink Dissipator Coil', 'pt-BR': 'Tink Dissipator Coil' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/TinkDissipatorCoil.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Tink Servofish at The Business in Fortuna. Tinks are caught in ponds during Cold weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Tink em The Business, em Fortuna. Tinks são pescados em lagos durante clima Frio.' },
+    usedFor: { en: 'Arc Twelve K-Drive reactor, Cortege Receiver, Kompressa and Morgha receivers, Tombfinger Chamber and Gauth/Harpen MOA parts.', 'pt-BR': 'Reator Arc Twelve de K-Drive, Cortege Receiver, receivers da Kompressa e Morgha, Tombfinger Chamber e peças de MOA Gauth/Harpen.' },
+  },
+  titanium: {
+    name: { en: 'Titanium', 'pt-BR': 'Titanium' },
+    rarity: 'common', category: 'common',
+    location: 'star-chart', sources: ['empyrean'],
+    image: 'https://wiki.warframe.com/images/Titanium.png',
+    description: { en: 'Common Railjack drop from asteroids, scrap, red barrels, and from Gyrix, Ionyx, Anu units. Mission completion grants 200 per Proxima run.', 'pt-BR': 'Drop comum de Railjack de asteroides, sucata, barris vermelhos e de unidades Gyrix, Ionyx, Anu. A missao completa da 200 por run de Proxima.' },
+    usedFor: { en: 'Used heavily in Railjack turrets, ordnance, and components, plus Basmu, Lavos, Protea Systems, Sevagoth, Bonewidow Engine, and Cipher.', 'pt-BR': 'Usado muito em turrets, ordnance e componentes do Railjack, alem de Basmu, Lavos, Protea Systems, Sevagoth, Bonewidow Engine e Cipher.' },
+  },
+  tralok_eyes: {
+    name: { en: 'Tralok Eyes', 'pt-BR': 'Tralok Eyes' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/TralokEyes.png',
+    description: { en: 'Cut from Tralok, saltwater fish found in coastlines near Cetus during the day. Also drops from Thumpers.', 'pt-BR': 'Extraido do Tralok, peixe de agua salgada encontrado nas costas perto de Cetus durante o dia. Tambem dropa de Thumpers.' },
+    usedFor: { en: 'Used in Ekwana/Vargeet II Ruhang Zaw Links, Grendel Chassis, Murkray Bait, Vahd Pauldrons, and Caliban Neuroptics.', 'pt-BR': 'Usado em Links de Zaw Ekwana/Vargeet II Ruhang, Grendel Chassis, Murkray Bait, Vahd Pauldrons, e Caliban Neuroptics.' },
+  },
+  trapezium_xenorhast: {
+    name: { en: 'Trapezium Xenorhast', 'pt-BR': 'Trapezium Xenorhast' },
+    rarity: 'rare', category: 'rare',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/TrapeziumXenorhast.png',
+    description: { en: 'Refined gem crafted in the Foundry from Xenorhast. Blueprint from Otak (Rank 3). Yields 3 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Xenorhast. Blueprint com Otak (Rank 3). Rende 3 por build.' },
+    usedFor: { en: 'Used for Arum Spinosa, Cortege/Morgha receivers, Lavos Neuroptics, Sepulcrum Receiver, and the Hec Hound.', 'pt-BR': 'Usada em Arum Spinosa, receivers de Cortege/Morgha, Lavos Neuroptics, Sepulcrum Receiver, e no Hec Hound.' },
+  },
+  trembera_essence: {
+    name: { en: 'Trembera Essence', 'pt-BR': 'Trembera Essence' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/TremberaEssence.png',
+    description: { en: 'Event resource from The Pyrus Project (Relay Construction), obtained on Earth, Mercury, Ceres, or Saturn by breaking containers and killing enemies.', 'pt-BR': 'Recurso do evento The Pyrus Project (Reconstrucao de Relays), obtido em Terra, Mercurio, Ceres ou Saturno quebrando contineres e matando inimigos.' },
+    usedFor: { en: '75 were needed to craft 5 Relay Strut Components for the relay rebuild effort.', 'pt-BR': 'Eram necessarios 75 para criar 5 Relay Strut Components na reconstrucao dos relays.' },
+  },
+  tromyzon_entroplasma: {
+    name: { en: 'Tromyzon Entroplasma', 'pt-BR': 'Tromyzon Entroplasma' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/TromyzonEntroplasma.png',
+    description: { en: 'Uncommon Vallis fishing part cut from Tromyzon Servofish at The Business in Fortuna. Tromyzons are caught in pond hotspots during Cold weather.', 'pt-BR': 'Peça de pesca incomum do Vallis extraída do Servofish Tromyzon em The Business, em Fortuna. Tromyzons aparecem em hotspots de lagos durante clima Frio.' },
+    usedFor: { en: 'Baruuk Systems, Battacor, Nepheri, Vulcax, Amp parts (Certus Brace, Klamora Prism, Propa Scaffold) and Flutterfire Loader.', 'pt-BR': 'Baruuk Systems, Battacor, Nepheri, Vulcax, peças de Amp (Brace Certus, Prism Klamora, Scaffold Propa) e Flutterfire Loader.' },
+  },
+  tubercular_gill_system: {
+    name: { en: 'Tubercular Gill System', 'pt-BR': 'Tubercular Gill System' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['fishing', 'spoils'],
+    image: 'https://wiki.warframe.com/images/TubercularGillSystem.png',
+    description: { en: 'Common fish part obtained from many Cambion Drift fish (Ostimyr, Aquapulmo, Vitreospina, Myxostomata, Duroid, Chondricord).', 'pt-BR': 'Parte de peixe comum obtida de varios peixes da Cambion Drift (Ostimyr, Aquapulmo, Vitreospina, Myxostomata, Duroid, Chondricord).' },
+    usedFor: { en: 'Used for Mutagens, Arcroid Kitgun loaders, and offerings for Daughter Tokens.', 'pt-BR': 'Usada em Mutagens, loaders de Kitgun Arcroid, e ofertas por Daughter Tokens.' },
+  },
+  ueymag: {
+    name: { en: 'Ueymag', 'pt-BR': 'Ueymag' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/Ueymag.png',
+    description: { en: 'Common Duviri cactus-like plant found in Kullervo\'s Hold (during Anger, Fear, Sorrow spirals) and the Chamber of the Muses.', 'pt-BR': 'Planta comum de Duviri parecida com cacto, encontrada em Kullervo\'s Hold (durante spirals de Anger, Fear, Sorrow) e na Chamber of the Muses.' },
+    usedFor: { en: 'Crafts Kullervo Chassis and Systems, plus Incarnon Genesis adapters (Gammacor, Angstrum, Anku, Sybaris, Dera). Feeds Helminth Biotics.', 'pt-BR': 'Usado em Kullervo Chassis e Systems, e em adaptadores Incarnon Genesis (Gammacor, Angstrum, Anku, Sybaris, Dera). Alimenta Biotics no Helminth.' },
+  },
+  vainthorn: {
+    name: { en: 'Vainthorn', 'pt-BR': 'Vainthorn' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/Vainthorn.png',
+    description: { en: 'Special reward from the Abyssal Zone on Ceres, accessed using an Abyssal Beacon bought from any main syndicate at Rank 2 for 5,000 standing.', 'pt-BR': 'Recompensa especial da Abyssal Zone em Ceres, acessada com um Abyssal Beacon comprado em qualquer sindicato principal no Rank 2 por 5.000 standing.' },
+    usedFor: { en: 'Used to craft Dagath and the Dorrclave melee weapon. 34 per Dagath component, 20 per Dorrclave part.', 'pt-BR': 'Usado para construir Dagath e a arma corpo a corpo Dorrclave. 34 por componente da Dagath, 20 por parte da Dorrclave.' },
+  },
+  vessel_capillaries: {
+    name: { en: 'Vessel Capillaries', 'pt-BR': 'Vessel Capillaries' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/VesselCapillaries.png',
+    description: { en: 'Special drop from Demolisher Voidrigs and Bonewidows in Disruption at Armatus, Deimos. Yields 2 to 4 per kill, 5 to 7 on Steel Path.', 'pt-BR': 'Drop especial de Demolisher Voidrigs e Bonewidows no Disruption em Armatus, Deimos. Rende 2 a 4 por kill, 5 a 7 no Steel Path.' },
+    usedFor: { en: 'Spent at Loid in the Sanctum Anatomica as an alternate way to buy Dante, Onos, Ruvox, Riven Transmuters, and Captura scenes.', 'pt-BR': 'Gasto com Loid no Sanctum Anatomica como alternativa para comprar Dante, Onos, Ruvox, Riven Transmuters e cenas de Captura.' },
+  },
+  vestan_moss: {
+    name: { en: 'Vestan Moss', 'pt-BR': 'Vestan Moss' },
+    rarity: 'common', category: 'common',
+    location: 'misc', sources: ['plants'],
+    image: 'https://wiki.warframe.com/images/VestanMoss.png',
+    description: { en: 'Plant from the Grineer Asteroid tileset (Mercury, Ceres), found in shaded spots under bridges, stairs, or rocky corners.', 'pt-BR': 'Planta do bioma Grineer Asteroid (Mercurio, Ceres), encontrada em locais sombreados sob pontes, escadas ou pedras.' },
+    usedFor: { en: 'Apothic crafting ingredient (Sunrise Apothic) and Helminth Biotics feed.', 'pt-BR': 'Ingrediente de Apothic (Sunrise Apothic) e alimento Biotics para o Helminth.' },
+  },
+  vestigial_motes: {
+    name: { en: 'Vestigial Motes', 'pt-BR': 'Vestigial Motes' },
+    rarity: 'special', category: 'special',
+    location: 'star-chart', sources: ['special', 'warframe-currency'],
+    image: 'https://wiki.warframe.com/images/VestigialMotes.png',
+    description: { en: 'Special drop from Ascension missions on Brutus, Uranus. Yields 11 to 14 per run, 16 to 18 on Steel Path, plus summoned Sisters drop more.', 'pt-BR': 'Drop especial das missoes Ascension em Brutus, Uranus. Rende 11 a 14 por run, 16 a 18 no Steel Path, e Sisters invocadas dropam mais.' },
+    usedFor: { en: 'Spent at Ordis at the Drifters Camp for Jade blueprints, Evensong, Cantare, Harmony weapons, and rank 5 arcanes like Ice Storm and Battery.', 'pt-BR': 'Gasto com Ordis no Drifters Camp pelos blueprints da Jade, armas Evensong, Cantare, Harmony e arcanes rank 5 como Ice Storm e Battery.' },
+  },
+  violets_bane: {
+    name: { en: 'Violet\'s Bane', 'pt-BR': 'Violet\'s Bane' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/Violet%27sBane.png',
+    description: { en: 'Common Deepmines mushroom harvested in the Entrance Caves section during stage 1 of Deepmines bounties. On pickup grants Viral damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Entrance Caves durante o estágio 1 das bounties de Deepmines. Ao pegar, concede dano Viral.' },
+    usedFor: { en: 'Crafting the Arbucep Stock, Adventure Walk and Undermind Whispers Cave Art decorations, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Stock, decorações Adventure Walk e Undermind Whispers Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  voidgel_orb: {
+    name: { en: 'Voidgel Orb', 'pt-BR': 'Voidgel Orb' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'star-chart', sources: ['uncommon-drops'],
+    image: 'https://wiki.warframe.com/images/VoidgelOrb.png',
+    description: { en: 'Uncommon Zariman drop from every standard Zariman mission and bounty (Halako, Greenway, Oro Works, Tuvul Commons, Everview Arc).', 'pt-BR': 'Drop incomum do Zariman de toda missao padrao do Zariman e bounty (Halako, Greenway, Oro Works, Tuvul Commons, Everview Arc).' },
+    usedFor: { en: 'Used to craft Gyre Neuroptics, Voruna Chassis and Systems, Laetum, Felarx, Parallax Engines, and to rank up Holdfasts and Cavia.', 'pt-BR': 'Usado para construir Gyre Neuroptics, Voruna Chassis e Systems, Laetum, Felarx, Parallax Engines e para subir rank em Holdfasts e Cavia.' },
+  },
+  volatile_motes: {
+    name: { en: 'Volatile Motes', 'pt-BR': 'Volatile Motes' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/VolatileMotes.png',
+    description: { en: 'Event currency from Operation: Belly of the Beast, dropped from the Brutus mission on Uranus and Sisters of Parvos there.', 'pt-BR': 'Moeda do evento Operacao: Belly of the Beast, obtida na missao Brutus em Urano e das Sisters of Parvos.' },
+    usedFor: { en: 'Spent with Ordis on Larunda Relay for Jade\'s parts, weapon blueprints, arcanes, ephemeras, and Archon Shards.', 'pt-BR': 'Gasta com Ordis no Larunda Relay em partes da Jade, projetos de armas, arcanos, ephemeras e Archon Shards.' },
+  },
+  vomval_trumpet: {
+    name: { en: 'Vomval Trumpet', 'pt-BR': 'Vomval Trumpet' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/VomvalTrumpet.png',
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Corpus Lab section during the Critter Liberation bounty. On pickup grants Tau damage.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Corpus Lab durante a bounty Critter Liberation. Ao pegar, concede dano Tau.' },
+    usedFor: { en: 'Adventure Walk and Root Maze Cave Art decorations and ranking up the Nightcap Field Guide.', 'pt-BR': 'Decorações Adventure Walk e Root Maze Cave Art e para subir de rank no Field Guide do Nightcap.' },
+  },
+  waxen_sebum_deposit: {
+    name: { en: 'Waxen Sebum Deposit', 'pt-BR': 'Waxen Sebum Deposit' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'cambion-drift', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/WaxenSebumDeposit.png',
+    description: { en: 'Uncommon fish part dropped by Amniophysi, caught in Cambion Drift caves during Fass/Vome. Filleted by Daughter at the Necralisk.', 'pt-BR': 'Parte de peixe incomum dropada por Amniophysi, pescado em cavernas da Cambion Drift durante Fass/Vome. Filetada com a Daughter na Necralisk.' },
+    usedFor: { en: 'Used for Keratinos Gauntlets, Trumna Receiver, Antigens, and offerings for Daughter Tokens.', 'pt-BR': 'Usada em Keratinos Gauntlets, Trumna Receiver, Antigens, e ofertas por Daughter Tokens.' },
+  },
+  winter_spear: {
+    name: { en: 'Winter Spear', 'pt-BR': 'Winter Spear' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'orb-vallis', sources: ['deepmines'],
+    image: 'https://wiki.warframe.com/images/WinterSpear.png',
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Forward Base section during the Corporate Restructuring bounty. On pickup grants Cold damage and parkour bonuses.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Forward Base durante a bounty Corporate Restructuring. Ao pegar, concede dano de Gelo e bônus de parkour.' },
+    usedFor: { en: 'Deep Roots Cave Art decoration and ranking up the Nightcap Field Guide. Also purchasable from Nightcap for Fergolyte.', 'pt-BR': 'Decoração Deep Roots Cave Art e para subir de rank no Field Guide do Nightcap. Também comprável de Nightcap por Fergolyte.' },
+  },
+  xenorhast: {
+    name: { en: 'Xenorhast', 'pt-BR': 'Xenorhast' },
+    rarity: 'common', category: 'common',
+    location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
+    image: 'https://wiki.warframe.com/images/Xenorhast.png',
+    description: { en: 'Common gem mined from blue lesions on the Cambion Drift. Requires Advanced Nosam Cutter or Sunpoint Plasma Drill.', 'pt-BR': 'Gema comum extraida de lesoes azuis na Cambion Drift. Requer Advanced Nosam Cutter ou Sunpoint Plasma Drill.' },
+    usedFor: { en: 'Refined at Otak into Trapezium Xenorhast and traded to Otak for tokens.', 'pt-BR': 'Refinada com Otak em Trapezium Xenorhast e trocada com Otak por tokens.' },
+  },
+  yao_shrub: {
+    name: { en: 'Yao Shrub', 'pt-BR': 'Yao Shrub' },
+    rarity: 'common', category: 'common',
+    location: 'duviri', sources: ['open-world-materials'],
+    image: 'https://wiki.warframe.com/images/YaoShrub.png',
+    description: { en: 'Common Duviri shrub found in snowy areas (Titan\'s Rest, Netherbarrow, Throneguard Barracks). Also from Enigma puzzles and Teshin\'s Cave.', 'pt-BR': 'Arbusto comum de Duviri encontrado em areas nevadas (Titan\'s Rest, Netherbarrow, Throneguard Barracks). Tambem vem de puzzles Enigma e Teshin\'s Cave.' },
+    usedFor: { en: 'Crafts Azothane, Cinta Upper Limb, the Honoria Kaithe Tamer skin, and many Incarnon adapters (Atomos, Bronco, Lato, Lex, Vasto, Kunai, etc.).', 'pt-BR': 'Usado em Azothane, Cinta Upper Limb, skin Honoria Kaithe Tamer e varios adaptadores Incarnon (Atomos, Bronco, Lato, Lex, Vasto, Kunai, etc.).' },
+  },
+  yogwun_stomach: {
+    name: { en: 'Yogwun Stomach', 'pt-BR': 'Yogwun Stomach' },
+    rarity: 'uncommon', category: 'uncommon',
+    location: 'plains-of-eidolon', sources: ['fishing', 'parts'],
+    image: 'https://wiki.warframe.com/images/YogwunStomach.png',
+    description: { en: 'Cut from Yogwun, freshwater fish caught in Plains of Eidolon ponds during the day. Also drops from Thumpers.', 'pt-BR': 'Extraido do Yogwun, peixe de agua doce pescado em lagoas de Plains of Eidolon durante o dia. Tambem dropa de Thumpers.' },
+    usedFor: { en: 'Used to craft the Jai II and Ruhang II Zaw Links (5 each).', 'pt-BR': 'Usado para criar os Links de Zaw Jai II e Ruhang II (5 cada).' },
+  },
+  zealot_derelict_code: {
+    name: { en: 'Zealot Derelict Code', 'pt-BR': 'Zealot Derelict Code' },
+    rarity: 'special', category: 'special',
+    location: 'misc', sources: ['events'],
+    image: 'https://wiki.warframe.com/images/ZealotDerelictCode.png',
+    description: { en: 'Untradeable Nightwave Series 2 item; one code drops after completing three Infestation Outbreak invasion missions.', 'pt-BR': 'Item nao negociavel da Nightwave Series 2; um codigo cai apos completar tres invasoes de Surto Infestado.' },
+    usedFor: { en: 'Consumed to access Derelict Emissary missions, including the Zealoid Prelate assassination.', 'pt-BR': 'Consumido para acessar missoes Derelict Emissary, incluindo o assassinato do Zealoid Prelate.' },
+  },
+  zodian: {
+    name: { en: 'Zodian', 'pt-BR': 'Zodian' },
+    rarity: 'common', category: 'common',
+    location: 'orb-vallis', sources: ['mining', 'gems-blue'],
+    image: 'https://wiki.warframe.com/images/Zodian.png',
+    description: { en: 'Rare Vallis blue-vein gem mined with the Advanced Nosam Cutter or Sunpoint Plasma Drill. Also drops from the Exploiter Orb in bulk.', 'pt-BR': 'Gema rara de veias azuis do Vallis minerada com o Advanced Nosam Cutter ou Sunpoint Plasma Drill. Também dropa em grande quantidade do Exploiter Orb.' },
+    usedFor: { en: 'Refined into Radiant Zodian at Smokefinger for Amps, Warframes (Baruuk, Garuda, Gauss) and weapons. Raw Zodian also trades for Solaris United standing.', 'pt-BR': 'Refinada em Radiant Zodian com Smokefinger para Amps, Warframes (Baruuk, Garuda, Gauss) e armas. Zodian cru também pode ser trocado por standing de Solaris United.' },
+  },
+
+
 };
 
 // v1 mockup: 3 planets with the classic early boss-warframe drops + resources.
 // Each assassination node carries `boss` + `warframeDrop` (slug from WARFRAMES_DATA).
 // `resources` array lists slugs of resources that drop on the planet.
 // Real scrape will follow — this is just enough to validate the UI flow.
+// Planets that host an open-world / sub-region. The planet's "resources" list
+// is auto-merged with every resource whose `location` matches one of these
+// regions, so we don't have to hand-maintain ~70 Vallis slugs on Venus, etc.
+const PLANET_HOSTS_LOCATIONS = {
+  earth:  ['plains-of-eidolon'],
+  venus:  ['orb-vallis'],
+  deimos: ['cambion-drift'],
+};
+
+// Returns the full slug list shown on a planet's "resources" section: the
+// explicit `planet.resources` array union'd with every RESOURCES entry whose
+// `location` is hosted by this planet (e.g. all Orb Vallis stuff for Venus).
+// Falls back to just `planet.resources` for planets without hosted regions.
+function planetResourceSlugs(planet) {
+  const base = Array.isArray(planet?.resources) ? planet.resources : [];
+  const hosted = PLANET_HOSTS_LOCATIONS[planet?.slug];
+  if (!hosted || hosted.length === 0) return base.slice();
+  const set = new Set(base);
+  Object.entries(RESOURCES).forEach(([slug, r]) => {
+    if (r && hosted.includes(r.location)) set.add(slug);
+  });
+  return [...set];
+}
+
 const STAR_CHART = {
   planets: [
     {
@@ -12267,7 +15548,7 @@ const state = {
   variant: 'base',
   form: 'normal', // 'normal' | <variant-key> (e.g. 'broken', 'day')
   locale: detectInitialLocale(),
-  tab: null, // 'archetypes' | 'glossary' | 'star-chart' | 'rivens' — set by initial selectTab('archetypes') call
+  tab: null, // 'archetypes' | 'glossary' | 'star-chart' | 'rivens' | 'tutorials' — set by initial selectTab('archetypes') call
   statusPhysical: null, // 'impact' | 'puncture' | 'slash' | null
   statusElementals: new Set(), // subset of {'heat','cold','electricity','toxin'}, max 2
   statusSpecial: null, // 'void' | 'tau' | 'true' | null
@@ -12299,9 +15580,13 @@ const state = {
   },
   starChart: {
     expandedPlanet: null, // slug of in-place expanded planet card, or null = all collapsed
-    filter: 'all',        // mission type slug or 'all' or 'assassination'
+    filters: new Set(),   // mission type slugs; empty Set = show all (multi-select, §20.1)
     search: '',
     resourceSearch: '',   // search query in the global all-resources section
+    resourceCategory: 'all', // active category filter chip in the all-resources section (legacy)
+    resourceRarity: 'all',   // active rarity filter (common/uncommon/rare/special/all)
+    resourceLocation: 'all', // active location filter (star-chart/plains-of-eidolon/.../all)
+    resourceSource: 'all',   // active source filter (mining/fishing/heist-drops/.../all)
     // Spoiler protection — hides quest-locked planets (Lua/Kuva Fortress/Zariman),
     // the Albrecht's Laboratories section within Deimos, and their exclusive
     // resources. Persisted in localStorage so the choice survives reloads.
@@ -12333,6 +15618,9 @@ function getWarframeDetails(slug) {
       };
     }),
     acquisition: en.acquisition || pt.acquisition,
+    craftCost: pt.craftCost,         // numeric — locale-agnostic, lives on the PT base
+    requiresParts: pt.requiresParts, // structural — frame slugs are also locale-agnostic
+    subFrames: pt.subFrames,         // localized via `label[locale]` at render time
   };
 }
 
@@ -12473,11 +15761,13 @@ function selectTab(tab) {
   document.getElementById('tab-star-chart').classList.toggle('hidden', tab !== 'star-chart');
   document.getElementById('tab-glossary').classList.toggle('hidden', tab !== 'glossary');
   document.getElementById('tab-rivens').classList.toggle('hidden', tab !== 'rivens');
+  document.getElementById('tab-tutorials').classList.toggle('hidden', tab !== 'tutorials');
 
   const archBtn = document.getElementById('archetype-btn');
   const starBtn = document.getElementById('star-chart-btn');
   const glossBtn = document.getElementById('glossary-btn');
   const rivensBtn = document.getElementById('rivens-btn');
+  const tutBtn = document.getElementById('tutorials-btn');
   if (archBtn) {
     archBtn.classList.toggle('active', tab === 'archetypes');
     archBtn.style.setProperty('--neon-color', '#d4b25a');
@@ -12493,6 +15783,10 @@ function selectTab(tab) {
   if (rivensBtn) {
     rivensBtn.classList.toggle('active', tab === 'rivens');
     rivensBtn.style.setProperty('--neon-color', '#b888ff');
+  }
+  if (tutBtn) {
+    tutBtn.classList.toggle('active', tab === 'tutorials');
+    tutBtn.style.setProperty('--neon-color', '#ff9a3c');
   }
 
   if (tab === 'glossary') renderStatusEffects();
@@ -12671,6 +15965,295 @@ function renderWarframeDetail(slug) {
   renderPortrait();
 }
 
+// §16.6 — Sum per-part resource costs into a single { slug: total } map.
+// Input shape: { neuroptics: { ferrite: 1000, ... }, chassis: { ... }, ... }
+// Output: { ferrite: 4500, rubedo: 800, ... } sorted at render time.
+function aggregateCraftCost(craftCost) {
+  const total = {};
+  if (!craftCost) return total;
+  Object.values(craftCost).forEach(part => {
+    if (!part) return;
+    Object.entries(part).forEach(([slug, qty]) => {
+      total[slug] = (total[slug] || 0) + qty;
+    });
+  });
+  return total;
+}
+
+// Merge a `details` object's craftCost AND every subFrame's craftCost AND every
+// donor-part's craftCost into a single aggregated total. Used for both Equinox
+// (subFrames) and Chroma (requiresParts) so the pill grid at the top of the
+// section reflects the FULL shopping list — including resources you need to
+// build the cross-frame ingredients.
+function aggregateFullCraftCost(details) {
+  const total = aggregateCraftCost(details.craftCost);
+
+  if (Array.isArray(details.subFrames)) {
+    details.subFrames.forEach(sf => {
+      const sub = aggregateCraftCost(sf.craftCost);
+      Object.entries(sub).forEach(([slug, qty]) => {
+        total[slug] = (total[slug] || 0) + qty;
+      });
+    });
+  }
+
+  // Recurse into requiresParts: lookup the donor frame's craftCost for the
+  // referenced part and add (qty × cost) per resource. Silently skips entries
+  // whose donor frame doesn't have craftCost populated yet.
+  if (Array.isArray(details.requiresParts)) {
+    details.requiresParts.forEach(req => {
+      const donorPart = donorPartCost(req.frame, req.part);
+      if (!donorPart) return;
+      Object.entries(donorPart).forEach(([slug, qty]) => {
+        total[slug] = (total[slug] || 0) + qty * (req.qty || 1);
+      });
+    });
+  }
+
+  return total;
+}
+
+// Lookup the resource cost of one specific part on a donor frame. Returns null
+// when the data isn't populated yet so callers can handle the gap gracefully.
+function donorPartCost(frameSlug, partKey) {
+  const donor = WARFRAMES_DETAILS[frameSlug];
+  if (!donor || !donor.craftCost) return null;
+  return donor.craftCost[partKey] || null;
+}
+
+// Order rarities cheapest-to-rarest so the pills sort with the bottleneck up
+// top (we reverse at sort time). 'special' is treated as rarest.
+const CRAFT_COST_RARITY_ORDER = { common: 0, uncommon: 1, rare: 2, special: 3 };
+
+function buildCraftCostSection(details) {
+  const section = document.createElement('div');
+  section.className = 'acquisition-craft-cost';
+
+  const header = document.createElement('div');
+  header.className = 'acquisition-craft-cost-header';
+  const label = document.createElement('span');
+  label.className = 'acquisition-craft-cost-label';
+  label.textContent = '🛠 ' + t('acquisition_craft_cost');
+  header.appendChild(label);
+  section.appendChild(header);
+
+  // Aggregated total across craftCost AND any subFrames (Equinox case).
+  const totals = aggregateFullCraftCost(details);
+  const sortedSlugs = sortBySlugRarity(Object.keys(totals));
+
+  const grid = document.createElement('div');
+  grid.className = 'acquisition-craft-cost-grid';
+  sortedSlugs.forEach(slug => {
+    grid.appendChild(buildCraftCostPill(slug, totals[slug]));
+  });
+  section.appendChild(grid);
+
+  // Cross-frame ingredients (Chroma case) — clickable to jump to donor frame.
+  if (Array.isArray(details.requiresParts) && details.requiresParts.length > 0) {
+    section.appendChild(buildRequiresPartsBlock(details.requiresParts));
+  }
+
+  // Sub-frames (Equinox case) — collapsible breakdown per aspect.
+  if (Array.isArray(details.subFrames) && details.subFrames.length > 0) {
+    section.appendChild(buildSubFramesBlock(details.subFrames));
+  }
+
+  return section;
+}
+
+function sortBySlugRarity(slugs) {
+  return slugs.slice().sort((a, b) => {
+    const ra = RESOURCES[a], rb = RESOURCES[b];
+    const oa = ra ? (CRAFT_COST_RARITY_ORDER[ra.rarity] ?? 0) : -1;
+    const ob = rb ? (CRAFT_COST_RARITY_ORDER[rb.rarity] ?? 0) : -1;
+    if (oa !== ob) return ob - oa; // rarer first
+    const na = ra ? resourceName(a) : a;
+    const nb = rb ? resourceName(b) : b;
+    return na.localeCompare(nb);
+  });
+}
+
+const FRAME_PART_LABEL_KEY = {
+  neuroptics: 'craft_part_neuroptics',
+  chassis:    'craft_part_chassis',
+  systems:    'craft_part_systems',
+  main_bp:    'craft_part_main_bp',
+};
+
+function partLabel(partKey) {
+  const k = FRAME_PART_LABEL_KEY[partKey];
+  return k ? t(k) : partKey;
+}
+
+function buildRequiresPartsBlock(requiresParts) {
+  const block = document.createElement('div');
+  block.className = 'acquisition-requires-parts';
+
+  const header = document.createElement('div');
+  header.className = 'acquisition-requires-parts-header';
+  header.textContent = '🔗 ' + t('acquisition_requires_parts');
+  block.appendChild(header);
+
+  requiresParts.forEach(req => {
+    block.appendChild(buildDonorPartRow(req));
+  });
+
+  return block;
+}
+
+function buildDonorPartRow(req) {
+  const row = document.createElement('div');
+  row.className = 'acquisition-donor-part';
+
+  // Title bar — clickable, jumps to the donor warframe.
+  const titleBar = document.createElement('button');
+  titleBar.type = 'button';
+  titleBar.className = 'acquisition-donor-part-title';
+
+  const donorDetails = WARFRAMES_DETAILS[req.frame];
+  const icon = document.createElement('img');
+  icon.className = 'acquisition-donor-part-icon';
+  icon.alt = '';
+  icon.loading = 'lazy';
+  icon.src = donorDetails?.portraits?.base || `assets/icons/base/${req.frame}.png`;
+  titleBar.appendChild(icon);
+
+  const labelWrap = document.createElement('div');
+  labelWrap.className = 'acquisition-donor-part-label-wrap';
+  const name = document.createElement('span');
+  name.className = 'acquisition-donor-part-name';
+  const frameDisplay = req.frame.charAt(0).toUpperCase() + req.frame.slice(1);
+  name.textContent = `${frameDisplay} ${partLabel(req.part)}`;
+  labelWrap.appendChild(name);
+  const meta = document.createElement('span');
+  meta.className = 'acquisition-donor-part-meta';
+  meta.textContent = `${t('craft_for_part')} ${partLabel(req.forPart)}`;
+  labelWrap.appendChild(meta);
+  titleBar.appendChild(labelWrap);
+
+  const qty = document.createElement('span');
+  qty.className = 'acquisition-donor-part-qty';
+  qty.textContent = '×' + req.qty;
+  titleBar.appendChild(qty);
+
+  const arrow = document.createElement('span');
+  arrow.className = 'acquisition-donor-part-arrow';
+  arrow.textContent = '⤴';
+  arrow.setAttribute('aria-hidden', 'true');
+  titleBar.appendChild(arrow);
+
+  titleBar.addEventListener('click', () => {
+    selectWarframe(req.frame);
+    selectTab('archetypes');
+  });
+  row.appendChild(titleBar);
+
+  // Per-donor-part resource grid (like subFrames).
+  const partCost = donorPartCost(req.frame, req.part);
+  if (partCost) {
+    // Scale by qty if multiple donor parts are needed (rare case but possible).
+    const scaled = {};
+    Object.entries(partCost).forEach(([slug, q]) => {
+      scaled[slug] = q * (req.qty || 1);
+    });
+    const sortedSlugs = sortBySlugRarity(Object.keys(scaled));
+    const grid = document.createElement('div');
+    grid.className = 'acquisition-craft-cost-grid';
+    sortedSlugs.forEach(slug => {
+      grid.appendChild(buildCraftCostPill(slug, scaled[slug]));
+    });
+    row.appendChild(grid);
+  } else {
+    // Donor frame doesn't have craftCost populated yet — show a hint.
+    const stub = document.createElement('div');
+    stub.className = 'acquisition-donor-part-stub';
+    stub.textContent = t('craft_donor_data_pending');
+    row.appendChild(stub);
+  }
+
+  return row;
+}
+
+function buildSubFramesBlock(subFrames) {
+  const block = document.createElement('div');
+  block.className = 'acquisition-sub-frames';
+
+  const header = document.createElement('div');
+  header.className = 'acquisition-sub-frames-header';
+  header.textContent = '🌗 ' + t('acquisition_sub_frames');
+  block.appendChild(header);
+
+  subFrames.forEach(sf => {
+    block.appendChild(buildSubFrameRow(sf));
+  });
+
+  return block;
+}
+
+function buildSubFrameRow(subFrame) {
+  const row = document.createElement('div');
+  row.className = 'acquisition-sub-frame';
+
+  const title = document.createElement('div');
+  title.className = 'acquisition-sub-frame-title';
+  const lbl = subFrame.label || {};
+  title.textContent = lbl[state.locale] || lbl[DEFAULT_LOCALE] || subFrame.slug;
+  row.appendChild(title);
+
+  const totals = aggregateCraftCost(subFrame.craftCost);
+  const sortedSlugs = sortBySlugRarity(Object.keys(totals));
+  const grid = document.createElement('div');
+  grid.className = 'acquisition-craft-cost-grid';
+  sortedSlugs.forEach(slug => {
+    grid.appendChild(buildCraftCostPill(slug, totals[slug]));
+  });
+  row.appendChild(grid);
+
+  return row;
+}
+
+function buildCraftCostPill(slug, qty) {
+  const r = RESOURCES[slug];
+  const pill = document.createElement('button');
+  pill.type = 'button';
+  pill.className = 'craft-cost-pill';
+  if (r) {
+    const rarity = getRarity(r.rarity);
+    if (rarity) pill.style.setProperty('--rarity-color', rarity.color);
+  }
+
+  // Icon (or fallback box if resource missing/unknown)
+  if (r && r.image) {
+    const img = document.createElement('img');
+    img.className = 'craft-cost-pill-icon';
+    img.src = r.image;
+    img.alt = '';
+    img.loading = 'lazy';
+    pill.appendChild(img);
+  } else {
+    const fallback = document.createElement('span');
+    fallback.className = 'craft-cost-pill-icon-fallback';
+    pill.appendChild(fallback);
+  }
+
+  const name = document.createElement('span');
+  name.className = 'craft-cost-pill-name';
+  name.textContent = r ? resourceName(slug) : slug;
+  pill.appendChild(name);
+
+  const qtyEl = document.createElement('span');
+  qtyEl.className = 'craft-cost-pill-qty';
+  qtyEl.textContent = '×' + qty.toLocaleString(state.locale === 'pt-BR' ? 'pt-BR' : 'en-US');
+  pill.appendChild(qtyEl);
+
+  if (r) {
+    pill.addEventListener('click', () => openResourceModal(slug));
+  } else {
+    pill.disabled = true;
+  }
+  return pill;
+}
+
 function renderAcquisitionBox(details) {
   const box = document.getElementById('warframe-acquisition');
   if (!box) return;
@@ -12733,6 +16316,14 @@ function renderAcquisitionBox(details) {
     box.appendChild(rec);
   }
 
+  // §16.6 Craft Cost — aggregated shopping list of all resources to build the
+  // full frame. Each pill is clickable and opens the resource modal (which has
+  // the recommended farm node). Also handles cross-frame requirements (Chroma)
+  // and multi-aspect frames (Equinox).
+  if (details.craftCost || details.subFrames || details.requiresParts) {
+    box.appendChild(buildCraftCostSection(details));
+  }
+
   // Star Chart link — if this warframe drops from a node we have mapped, show
   // a clickable link that switches to Star Chart and drills into that planet.
   const dropLocation = findWarframeDropNode(state.warframe);
@@ -12755,7 +16346,10 @@ function renderAcquisitionBox(details) {
     link.appendChild(target);
     link.addEventListener('click', () => {
       state.starChart.expandedPlanet = dropLocation.planet.slug;
-      state.starChart.filter = 'all';
+      // §20.2: pre-apply a filter matching the target node's mission type so
+      // the expanded planet highlights just the relevant node (e.g. for boss
+      // drops, only the assassination node shows up).
+      state.starChart.filters = new Set([dropLocation.node.type]);
       state.starChart.search = '';
       const searchInput = document.getElementById('star-chart-search');
       if (searchInput) searchInput.value = '';
@@ -13191,24 +16785,26 @@ function buildGrid() {
 // are the most common mission types.
 const STAR_CHART_FILTERS = ['all', 'assassination', 'survival', 'defense', 'spy', 'capture', 'exterminate', 'mobile_defense', 'excavation', 'interception', 'sabotage', 'disruption'];
 
-function planetMatchesFilter(planet, filter, search) {
+function planetMatchesFilter(planet, filters, search) {
   if (!planet) return false;
-  const matchedNodes = planetNodesFiltered(planet, filter, search);
+  const matchedNodes = planetNodesFiltered(planet, filters, search);
   if (matchedNodes.length > 0) return true;
   // When only searching, allow planet-name match too
-  if (search && !filter || filter === 'all') {
+  if (search && (!filters || filters.size === 0)) {
     const norm = normalizeForMatch(search);
     if (norm && normalizeForMatch(planetName(planet)).includes(norm)) return true;
   }
   return false;
 }
 
-function planetNodesFiltered(planet, filter, search) {
+function planetNodesFiltered(planet, filters, search) {
   if (!planet) return [];
   const norm = search ? normalizeForMatch(search) : '';
   const showSpoilers = state.starChart.showSpoilers;
+  // filters is a Set of mission type slugs. Empty Set = no filter applied.
+  const hasFilters = filters && filters.size > 0;
   return planet.nodes.filter(n => {
-    if (filter !== 'all' && n.type !== filter) return false;
+    if (hasFilters && !filters.has(n.type)) return false;
     // Hide nodes in spoiler-locked sections (e.g., Albrecht's Laboratories
     // inside Deimos) unless the user toggled spoilers on.
     if (!showSpoilers && n.section && planet.sections?.[n.section]?.spoilerLocked) {
@@ -13243,8 +16839,20 @@ function selectPlanet(slug) {
   }
 }
 
-function selectStarChartFilter(filter) {
-  state.starChart.filter = filter;
+function selectStarChartFilter(key) {
+  // §20.1 multi-select:
+  // - 'all' chip clears the set
+  // - clicking an already-active type toggles it off
+  // - clicking an inactive type adds it
+  // Empty set = show all nodes (logical OR of zero filters = pass-through).
+  const filters = state.starChart.filters;
+  if (key === 'all') {
+    filters.clear();
+  } else if (filters.has(key)) {
+    filters.delete(key);
+  } else {
+    filters.add(key);
+  }
   renderStarChart();
 }
 
@@ -13283,7 +16891,10 @@ function renderStarChartFilters() {
     chip.type = 'button';
     chip.className = 'star-chart-filter-chip';
     chip.dataset.filter = key;
-    if (state.starChart.filter === key) chip.classList.add('active');
+    const isActive = key === 'all'
+      ? state.starChart.filters.size === 0
+      : state.starChart.filters.has(key);
+    if (isActive) chip.classList.add('active');
 
     const color = key === 'all' ? '#5ec0e8' : (MISSION_TYPES[key]?.color || '#5ec0e8');
     chip.style.setProperty('--chip-color', color);
@@ -13331,7 +16942,7 @@ function renderStarChartGrid(view) {
   const grid = document.createElement('div');
   grid.className = 'star-chart-grid';
 
-  const filter = state.starChart.filter;
+  const filters = state.starChart.filters;
   const search = state.starChart.search;
 
   let visible = 0;
@@ -13339,7 +16950,7 @@ function renderStarChartGrid(view) {
   STAR_CHART.planets.forEach(p => {
     // Skip quest-locked planets (Lua, Kuva Fortress, Zariman) unless toggled.
     if (!showSpoilers && p.spoilerLocked) return;
-    const card = buildPlanetCard(p, filter, search);
+    const card = buildPlanetCard(p, filters, search);
     if (card) {
       visible++;
       grid.appendChild(card);
@@ -13368,8 +16979,8 @@ function buildAllResourcesSection(filterPlanetSlug) {
   // When filtering by an expanded planet, the source list is just that planet's
   // resources. Otherwise it's the full catalog.
   const filterPlanet = filterPlanetSlug ? getPlanet(filterPlanetSlug) : null;
-  const sourceSlugs = (filterPlanet && Array.isArray(filterPlanet.resources))
-    ? filterPlanet.resources
+  const sourceSlugs = filterPlanet
+    ? planetResourceSlugs(filterPlanet)
     : Object.keys(RESOURCES);
 
   const header = document.createElement('div');
@@ -13400,31 +17011,130 @@ function buildAllResourcesSection(filterPlanetSlug) {
   header.appendChild(searchWrap);
   section.appendChild(header);
 
+  // Filter chips — only on the global list, not on planet-specific.
+  // Three independent dimensions, AND-combined: Rarity, Location, Source.
+  let rarityChips = null, locationChips = null, sourceChips = null;
+  if (!filterPlanet) {
+    const filtersWrap = document.createElement('div');
+    filtersWrap.className = 'star-chart-resource-filters';
+
+    const mkRow = (labelKey, fallbackLabel) => {
+      const row = document.createElement('div');
+      row.className = 'star-chart-resource-filter-row';
+      const lbl = document.createElement('span');
+      lbl.className = 'star-chart-resource-filter-row-label';
+      lbl.textContent = t(labelKey) || fallbackLabel;
+      row.appendChild(lbl);
+      const chipsBox = document.createElement('div');
+      chipsBox.className = 'star-chart-resource-categories';
+      row.appendChild(chipsBox);
+      filtersWrap.appendChild(row);
+      return chipsBox;
+    };
+
+    rarityChips   = mkRow('star_chart_filter_label_rarity',   'Rarity');
+    locationChips = mkRow('star_chart_filter_label_location', 'Location');
+    sourceChips   = mkRow('star_chart_filter_label_source',   'Source');
+    section.appendChild(filtersWrap);
+  }
+
   const listWrap = document.createElement('div');
-  listWrap.className = 'resource-list';
+  listWrap.className = 'resource-list is-grid-3col';
   section.appendChild(listWrap);
 
-  // Sort order: common → uncommon → rare → special (matches SC_RARITIES order).
-  // Also filter out spoiler-locked resources when the spoiler toggle is off.
-  const RARITY_ORDER = { common: 0, uncommon: 1, rare: 2, special: 3 };
+  // Sort alphabetically (case-insensitive) using localeCompare.
+  // Filter out spoiler-locked resources when the spoiler toggle is off.
   const showSpoilers = state.starChart.showSpoilers;
   const sortedSlugs = sourceSlugs.filter(s => {
     const r = RESOURCES[s];
     if (!r) return false;
     if (!showSpoilers && r.spoilerLocked) return false;
     return true;
-  }).slice().sort((a, b) => {
-    const ra = RARITY_ORDER[RESOURCES[a].rarity] ?? 99;
-    const rb = RARITY_ORDER[RESOURCES[b].rarity] ?? 99;
-    if (ra !== rb) return ra - rb;
-    return resourceName(a).localeCompare(resourceName(b));
+  }).slice().sort((a, b) => resourceName(a).localeCompare(resourceName(b)));
+
+  // Compute which source keys actually appear in our data — skip empty chips.
+  const usedSourceSet = new Set();
+  sortedSlugs.forEach(s => {
+    const arr = RESOURCES[s]?.sources;
+    if (Array.isArray(arr)) arr.forEach(x => usedSourceSet.add(x));
   });
+
+  const RARITY_FILTERS = ['all', 'common', 'uncommon', 'rare', 'special'];
+  const LOCATION_FILTERS = ['all', ...Object.keys(SC_LOCATIONS)];
+  const SOURCE_FILTERS = ['all', ...Object.keys(SC_SOURCES).filter(k => usedSourceSet.has(k))];
+
+  const mkChip = (key, isActive, color, label, onClick) => {
+    const chip = document.createElement('button');
+    chip.type = 'button';
+    chip.className = 'star-chart-resource-cat-chip';
+    if (isActive) chip.classList.add('active');
+    chip.style.setProperty('--chip-color', color);
+    if (key !== 'all') {
+      const dot = document.createElement('span');
+      dot.className = 'star-chart-filter-chip-dot';
+      chip.appendChild(dot);
+    }
+    const lbl = document.createElement('span');
+    lbl.textContent = label;
+    chip.appendChild(lbl);
+    chip.addEventListener('click', onClick);
+    return chip;
+  };
+
+  const renderChips = () => {
+    if (!rarityChips) return;
+
+    rarityChips.innerHTML = '';
+    RARITY_FILTERS.forEach(key => {
+      const active = state.starChart.resourceRarity === key;
+      const color = key === 'all' ? '#5ec0e8' : (SC_RARITIES[key]?.color || '#888');
+      const label = key === 'all' ? t('star_chart_filter_all') : rarityName(key);
+      rarityChips.appendChild(mkChip(key, active, color, label, () => {
+        state.starChart.resourceRarity = key;
+        renderChips();
+        renderItems();
+      }));
+    });
+
+    locationChips.innerHTML = '';
+    LOCATION_FILTERS.forEach(key => {
+      const active = state.starChart.resourceLocation === key;
+      const color = key === 'all' ? '#5ec0e8' : locationColor(key);
+      const label = key === 'all' ? t('star_chart_filter_all') : locationName(key);
+      locationChips.appendChild(mkChip(key, active, color, label, () => {
+        state.starChart.resourceLocation = key;
+        renderChips();
+        renderItems();
+      }));
+    });
+
+    sourceChips.innerHTML = '';
+    SOURCE_FILTERS.forEach(key => {
+      const active = state.starChart.resourceSource === key;
+      const color = key === 'all' ? '#5ec0e8' : '#aaa';
+      const label = key === 'all' ? t('star_chart_filter_all') : sourceName(key);
+      sourceChips.appendChild(mkChip(key, active, color, label, () => {
+        state.starChart.resourceSource = key;
+        renderChips();
+        renderItems();
+      }));
+    });
+  };
 
   const renderItems = () => {
     listWrap.innerHTML = '';
     const q = state.starChart.resourceSearch ? normalizeForMatch(state.starChart.resourceSearch) : '';
+    const fRarity   = state.starChart.resourceRarity;
+    const fLocation = state.starChart.resourceLocation;
+    const fSource   = state.starChart.resourceSource;
     sortedSlugs.forEach(slug => {
       const r = RESOURCES[slug];
+      // AND-combine: all active filters must pass (only on global list).
+      if (!filterPlanet) {
+        if (fRarity   && fRarity   !== 'all' && r.rarity   !== fRarity)   return;
+        if (fLocation && fLocation !== 'all' && r.location !== fLocation) return;
+        if (fSource   && fSource   !== 'all' && !(Array.isArray(r.sources) && r.sources.includes(fSource))) return;
+      }
       if (q) {
         const hay = normalizeForMatch(
           resourceName(slug) + ' ' + rarityName(r.rarity) + ' ' + (r.description?.[state.locale] || '')
@@ -13448,11 +17158,12 @@ function buildAllResourcesSection(filterPlanetSlug) {
     input.focus();
   });
 
+  renderChips();
   renderItems();
   return section;
 }
 
-function buildPlanetCard(planet, filter, search) {
+function buildPlanetCard(planet, filters, search) {
   const isExpanded = state.starChart.expandedPlanet === planet.slug;
   const hasOtherExpanded = state.starChart.expandedPlanet && !isExpanded;
 
@@ -13473,14 +17184,14 @@ function buildPlanetCard(planet, filter, search) {
     card.classList.add('no-image');
   }
 
-  const matchingNodes = planetNodesFiltered(planet, filter, search);
+  const matchingNodes = planetNodesFiltered(planet, filters, search);
   const planetNameMatchesSearch = search && normalizeForMatch(planetName(planet))
     .includes(normalizeForMatch(search));
 
   // If no nodes match the filter AND the planet name doesn't match search → hide
   // (but never hide the currently-expanded card)
   if (!isExpanded && matchingNodes.length === 0 && !planetNameMatchesSearch) {
-    if (filter === 'all' && !search) {
+    if (filters.size === 0 && !search) {
       // fall through — show all
     } else {
       return null;
@@ -13507,10 +17218,10 @@ function buildPlanetCard(planet, filter, search) {
   const count = document.createElement('span');
   count.className = 'star-chart-planet-card-count';
   // Count reflects what the user actually sees: filtered nodes + spoiler-aware.
-  // When a filter is active, show "matching/total-visible" so the denominator
-  // also respects the spoiler toggle (e.g. Deimos = 8 with spoilers off).
-  const visibleTotal = planetNodesFiltered(planet, 'all', '').length;
-  if (filter !== 'all') {
+  // When at least one filter is active, show "matching/total-visible" so the
+  // denominator also respects the spoiler toggle (e.g. Deimos = 8 with spoilers off).
+  const visibleTotal = planetNodesFiltered(planet, new Set(), '').length;
+  if (filters.size > 0) {
     count.textContent = `${matchingNodes.length}/${visibleTotal} ${t('star_chart_nodes')}`;
   } else {
     count.textContent = `${visibleTotal} ${t('star_chart_nodes')}`;
@@ -13564,7 +17275,7 @@ function buildPlanetCard(planet, filter, search) {
     // Detail content wrapper sits above the bg image
     const detail = document.createElement('div');
     detail.className = 'star-chart-card-detail';
-    const nodes = planetNodesFiltered(planet, filter, search);
+    const nodes = planetNodesFiltered(planet, filters, search);
     if (nodes.length === 0) {
       const empty = document.createElement('div');
       empty.className = 'star-chart-empty';
@@ -13608,21 +17319,17 @@ function buildResourcesSection(planet) {
   section.appendChild(label);
 
   const list = document.createElement('div');
-  list.className = 'resource-list';
-  // Sort planet resources by rarity, filter out spoiler-locked when toggle is off.
-  const RARITY_ORDER = { common: 0, uncommon: 1, rare: 2, special: 3 };
+  list.className = 'resource-list is-grid-3col';
+  // Sort planet resources alphabetically, filter out spoiler-locked when toggle is off.
+  // planetResourceSlugs() unions the explicit list with every resource hosted by
+  // an open-world region under this planet (e.g. Orb Vallis for Venus).
   const showSpoilers = state.starChart.showSpoilers;
-  const sorted = planet.resources.filter(s => {
+  const sorted = planetResourceSlugs(planet).filter(s => {
     const r = RESOURCES[s];
     if (!r) return false;
     if (!showSpoilers && r.spoilerLocked) return false;
     return true;
-  }).slice().sort((a, b) => {
-    const ra = RESOURCES[a] ? (RARITY_ORDER[RESOURCES[a].rarity] ?? 99) : 99;
-    const rb = RESOURCES[b] ? (RARITY_ORDER[RESOURCES[b].rarity] ?? 99) : 99;
-    if (ra !== rb) return ra - rb;
-    return resourceName(a).localeCompare(resourceName(b));
-  });
+  }).slice().sort((a, b) => resourceName(a).localeCompare(resourceName(b)));
   sorted.forEach(slug => {
     const r = getResource(slug);
     if (!r) return;
@@ -13652,17 +17359,44 @@ function buildResourceListItem(slug, r) {
     item.appendChild(fallback);
   }
 
+  const body = document.createElement('div');
+  body.className = 'resource-list-item-body';
+
   const text = document.createElement('span');
   text.className = 'resource-list-item-name';
   text.textContent = resourceName(slug);
-  item.appendChild(text);
+  body.appendChild(text);
+
+  const tags = document.createElement('div');
+  tags.className = 'resource-list-item-tags';
 
   if (rarity) {
     const rTag = document.createElement('span');
-    rTag.className = 'resource-list-item-rarity';
+    rTag.className = 'resource-list-item-tag is-rarity';
     rTag.textContent = rarityName(r.rarity);
-    item.appendChild(rTag);
+    tags.appendChild(rTag);
   }
+
+  if (r.location && SC_LOCATIONS[r.location]) {
+    const loc = document.createElement('span');
+    loc.className = 'resource-list-item-tag is-location';
+    loc.style.setProperty('--location-color', locationColor(r.location));
+    loc.textContent = locationName(r.location);
+    tags.appendChild(loc);
+  }
+
+  if (Array.isArray(r.sources)) {
+    r.sources.forEach(srcKey => {
+      if (!SC_SOURCES[srcKey]) return;
+      const s = document.createElement('span');
+      s.className = 'resource-list-item-tag is-source';
+      s.textContent = sourceName(srcKey);
+      tags.appendChild(s);
+    });
+  }
+
+  body.appendChild(tags);
+  item.appendChild(body);
 
   item.addEventListener('click', () => openResourceModal(slug));
   return item;
@@ -13845,7 +17579,16 @@ function openResourceModal(slug) {
       linkBtn.textContent = `${planetName(targetPlanet)} / ${targetNode.name} (${missionTypeName(targetNode.type)})`;
       linkBtn.addEventListener('click', () => {
         closeResourceModal();
-        selectPlanet(r.recommendedFarm.planet);
+        // Same pattern as the warframe-acquisition Star Chart redirect (§20.2):
+        // set expansion + filter directly, clear search, then switch tabs.
+        // selectPlanet() toggles, which collapsed the card when it was already
+        // open from a previous click — that was the bug.
+        state.starChart.expandedPlanet = r.recommendedFarm.planet;
+        state.starChart.filters = new Set([targetNode.type]);
+        state.starChart.search = '';
+        const searchInput = document.getElementById('star-chart-search');
+        if (searchInput) searchInput.value = '';
+        selectTab('star-chart');
       });
       farmBox.appendChild(linkBtn);
     }
@@ -13922,6 +17665,7 @@ function setupTabNav() {
   document.getElementById('glossary-btn')?.addEventListener('click', () => selectTab('glossary'));
   document.getElementById('rivens-btn')?.addEventListener('click', () => selectTab('rivens'));
   document.getElementById('star-chart-btn')?.addEventListener('click', () => selectTab('star-chart'));
+  document.getElementById('tutorials-btn')?.addEventListener('click', () => selectTab('tutorials'));
   // Selecting an archetype from the dropdown or the bar should bring us back to that tab.
   document.getElementById('archetype-btn')?.addEventListener('click', () => {
     if (state.tab !== 'archetypes') selectTab('archetypes');
