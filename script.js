@@ -15757,11 +15757,18 @@ function selectForm(f) {
 function selectTab(tab) {
   if (state.tab === tab) return;
   state.tab = tab;
-  document.getElementById('tab-archetypes').classList.toggle('hidden', tab !== 'archetypes');
-  document.getElementById('tab-star-chart').classList.toggle('hidden', tab !== 'star-chart');
-  document.getElementById('tab-glossary').classList.toggle('hidden', tab !== 'glossary');
-  document.getElementById('tab-rivens').classList.toggle('hidden', tab !== 'rivens');
-  document.getElementById('tab-tutorials').classList.toggle('hidden', tab !== 'tutorials');
+  // Null-guard every getElementById here: the shipped main/index.html strips
+  // tabs that aren't ready (Tutorials, etc.). A missing element would throw
+  // on .classList.toggle and break the whole initial render.
+  const showHide = (id, shouldShow) => {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('hidden', !shouldShow);
+  };
+  showHide('tab-archetypes', tab === 'archetypes');
+  showHide('tab-star-chart', tab === 'star-chart');
+  showHide('tab-glossary',   tab === 'glossary');
+  showHide('tab-rivens',     tab === 'rivens');
+  showHide('tab-tutorials',  tab === 'tutorials');
 
   const archBtn = document.getElementById('archetype-btn');
   const starBtn = document.getElementById('star-chart-btn');
