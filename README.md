@@ -40,6 +40,15 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+- **2026-06-16 — Railjack & Special systems, Riven categories, and spoiler control**
+  - **Star Chart now has three tabs** — Origin System, Railjack (Empyrean), and Special (Duviri, Höllvania 1999, Dark Refractory), each with its own missions and themed backdrop.
+  - **Open worlds on the map** — Plains of Eidolon, Orb Vallis (incl. Deepmines), and Cambion Drift now appear as navigable areas inside Earth, Venus, and Deimos, with their activities (Free Roam, Bounties, Eidolon Hunt, Orb Heists, Isolation Vault) plus Deep & Temporal Archimedea.
+  - **Click a resource → jump to where it drops** — open-world and special-system resources now link straight to their farm node on the map.
+  - **Archwing missions flagged** — Archwing nodes (Caelus, Salacia, Erpo, etc.) now show an Archwing icon.
+  - **Four new Riven categories** — the Riven evaluator now covers Archgun, Kitgun, Zaw, and Companion weapons on top of Primary/Secondary/Melee.
+  - **Smarter Show Spoilers** — with spoilers off, the Railjack and Special tabs (and their resources) are hidden for a clean base-game view; open worlds stay visible.
+  - **New warframe drops mapped** — Oraxia (Isleweaver), Temple (Solstice Square), Cyte-09 (Höllvania Central Mall), and Uriel (The Descendia) show on their nodes; frames also farmable in The Circuit get an "Also in The Circuit" link.
+
 - **2026-06-15 — Resources, craft costs, and better filters**
   - **Complete resource catalog** — over 350 resources now listed (was ~25 originally), covering every Open World, Empyrean, Duviri, Höllvania, and quest item from the wiki.
   - **Tags on every resource** — each one shows its rarity, location, and source as colored chips, so you can scan the list and instantly see what kind of item it is.
@@ -102,6 +111,15 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+- **2026-06-16 — Sistemas Railjack & Special, categorias de Riven e controle de spoiler**
+  - **Mapa Estelar agora tem três abas** — Sistema Origin, Railjack (Empyrean) e Special (Duviri, Höllvania 1999, Refratário Sombrio), cada uma com missões próprias e fundo temático.
+  - **Mundos abertos no mapa** — Plains of Eidolon, Orb Vallis (com Deepmines) e Cambion Drift agora aparecem como áreas navegáveis dentro de Terra, Vênus e Deimos, com suas atividades (Mundo Aberto, Contratos, Caçada de Eidolon, Assaltos aos Orbs, Cofre de Isolamento) e Deep & Temporal Archimedea.
+  - **Clique num recurso → vá direto pra onde ele cai** — recursos de mundo aberto e dos sistemas especiais agora linkam pro nodo de farm no mapa.
+  - **Missões de Archwing sinalizadas** — nodos de Archwing (Caelus, Salacia, Erpo, etc.) agora mostram um ícone de Archwing.
+  - **Quatro novas categorias de Riven** — o avaliador agora cobre Archgun, Kitgun, Zaw e Companion além de Primária/Secundária/Corpo a corpo.
+  - **Show Spoilers mais esperto** — com spoilers desligado, as abas Railjack e Special (e seus recursos) ficam escondidas pra uma visão limpa do base game; mundos abertos continuam visíveis.
+  - **Novos drops de warframe mapeados** — Oraxia (Isleweaver), Temple (Solstice Square), Cyte-09 (Höllvania Central Mall) e Uriel (The Descendia) aparecem nos nodos; frames também farmáveis no Circuito ganham link "Também no Circuito".
 
 - **2026-06-15 — Recursos, custos de craft e filtros melhorados**
   - **Catálogo completo de recursos** — mais de 350 recursos listados agora (antes eram ~25), cobrindo todo Open World, Empyrean, Duviri, Höllvania, Dark Refractory e itens de quest da wiki.

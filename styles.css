@@ -2376,6 +2376,7 @@ svg#radar {
 
 .weapon-modal-cat-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   padding: 14px 20px 8px;
 }
@@ -3283,6 +3284,74 @@ svg#radar {
   color: #fff;
 }
 
+/* §20.5 — Alternative farms in Railjack. Same shape as the Star Chart link
+   above but tinted purple (Railjack tab theme) and rendered as a stacked
+   list of links since a frame can have multiple Proxima sources. */
+.acquisition-railjack-farms {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(184, 136, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.acquisition-railjack-farms-header {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #b888ff;
+  margin-bottom: 2px;
+}
+.acquisition-railjack-farm-link {
+  padding: 8px 12px;
+  background: rgba(184, 136, 255, 0.06);
+  border: 1px solid rgba(184, 136, 255, 0.3);
+  border-radius: 6px;
+  color: #ddd;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  transition: border-color 0.12s, background 0.12s, color 0.12s, transform 0.08s;
+}
+.acquisition-railjack-farm-link:hover {
+  border-color: rgba(184, 136, 255, 0.65);
+  background: rgba(184, 136, 255, 0.14);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.acquisition-railjack-farm-arrow {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #b888ff;
+  flex-shrink: 0;
+}
+.acquisition-railjack-farm-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.acquisition-railjack-farm-target {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #d4c5f0;
+}
+.acquisition-railjack-farm-link:hover .acquisition-railjack-farm-target {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(184, 136, 255, 0.5);
+}
+.acquisition-railjack-farm-note {
+  font-size: 11.5px;
+  letter-spacing: 0.2px;
+  color: #aaa;
+  line-height: 1.4;
+}
+
 @media (max-width: 600px) {
   .acquisition-row { grid-template-columns: 1fr; gap: 4px; }
   .acquisition-row-label { padding-top: 0; }
@@ -3311,6 +3380,17 @@ svg#radar {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
+}
+
+/* §20.5 — Mission filter chips moved inside each tab section, centered between
+   the tab buttons row and the planet grid. */
+.star-chart-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 auto 16px;
+  max-width: 100%;
 }
 
 .star-chart-filter-chip {
@@ -3352,6 +3432,102 @@ svg#radar {
   display: flex;
   justify-content: center;
   margin: 14px 0 16px;
+}
+
+/* §20.5 — Three top-level Star Chart tab buttons (Origin System / Railjack /
+   Special). Rectangular cards centered as a row, each with a placeholder image
+   on the left and a left→right gradient fade so the label stays legible. */
+.star-chart-top-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 auto 20px;
+  flex-wrap: wrap;
+}
+.star-chart-top-tab {
+  --tab-color: #5ec0e8;
+  position: relative;
+  overflow: hidden;
+  width: 220px;
+  height: 72px;
+  padding: 0;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  background: #0a0a0a;
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  display: flex;
+  align-items: stretch;
+}
+.star-chart-top-tab[data-theme="origin"]   { --tab-color: #5ec0e8; }
+.star-chart-top-tab[data-theme="empyrean"] { --tab-color: #b888ff; }
+.star-chart-top-tab[data-theme="special"]  { --tab-color: #e89c4a; }
+
+.star-chart-top-tab-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.star-chart-top-tab[data-theme="origin"]   .star-chart-top-tab-image { background-image: url('assets/backgrounds/OriginSystem.jpg'); }
+.star-chart-top-tab[data-theme="empyrean"] .star-chart-top-tab-image { background-image: url('assets/backgrounds/Railjack.jpg'); }
+.star-chart-top-tab[data-theme="special"]  .star-chart-top-tab-image { background-image: url('assets/backgrounds/Special.png'); }
+.star-chart-top-tab-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 55%,
+    rgba(0, 0, 0, 0.92) 100%
+  );
+}
+.star-chart-top-tab-label {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #d8d8d8;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+.star-chart-top-tab:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: color-mix(in srgb, var(--tab-color) 60%, transparent);
+}
+.star-chart-top-tab:hover .star-chart-top-tab-label {
+  color: #fff;
+}
+.star-chart-top-tab.active {
+  border-color: var(--tab-color);
+  box-shadow:
+    0 0 0 1px var(--tab-color),
+    0 0 18px color-mix(in srgb, var(--tab-color) 55%, transparent),
+    inset 0 0 16px color-mix(in srgb, var(--tab-color) 18%, transparent);
+}
+.star-chart-top-tab.active .star-chart-top-tab-label {
+  color: #fff;
+  text-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.8),
+    0 0 8px color-mix(in srgb, var(--tab-color) 70%, transparent);
+}
+@media (max-width: 720px) {
+  .star-chart-top-tab {
+    width: 160px;
+    height: 60px;
+  }
+  .star-chart-top-tab-label {
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 0 10px;
+  }
 }
 .star-chart-spoiler-toggle {
   background: transparent;
@@ -4059,6 +4235,25 @@ svg#radar {
   border-radius: 50%;
   background: var(--type-color, #888);
   flex-shrink: 0;
+}
+/* Archwing indicator: white glyph with a neon glow tinted by the node's
+   mission-type color — same treatment as the active nav-tab icons (no border
+   ring). brightness(0) invert(1) forces the glyph white; the drop-shadows add
+   the colored glow on top. */
+.star-chart-node-archwing {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.star-chart-node-archwing img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  filter:
+    brightness(0) invert(1)
+    drop-shadow(0 0 2px var(--mission-color, #5ec0e8))
+    drop-shadow(0 0 6px color-mix(in srgb, var(--mission-color, #5ec0e8) 65%, transparent));
 }
 
 .star-chart-node-level {
