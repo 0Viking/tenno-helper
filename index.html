@@ -316,7 +316,7 @@
         <h2 class="credits-modal-title" id="credits-modal-title" data-i18n="credits_title">Credits</h2>
         <button class="credits-modal-close" id="credits-modal-close" type="button" aria-label="Close">×</button>
       </header>
-      <div class="credits-body">
+      <div class="credits-body" id="credits-body">
 
         <section class="credits-disclaimer">
           <div class="credits-disclaimer-label" data-i18n="credits_game_label">Game content</div>
@@ -381,7 +381,17 @@
           <p data-i18n="credits_thanks_text">To the Warframe community for screenshots, feedback and testing.</p>
         </section>
 
+        <div class="credits-patchnotes-link-row">
+          <button id="credits-patchnotes-btn" class="credits-patchnotes-btn" data-i18n="credits_patchnotes_link">Patch notes</button>
+        </div>
+
       </div>
+
+      <div class="credits-patchnotes-view hidden" id="credits-patchnotes-view">
+        <button class="credits-patchnotes-back" id="credits-patchnotes-back" data-i18n="credits_patchnotes_back">← Back to credits</button>
+        <div class="credits-patchnotes-body" id="credits-patchnotes-body"></div>
+      </div>
+
     </div>
   </div>
 

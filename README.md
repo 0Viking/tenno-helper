@@ -40,6 +40,14 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+- **2026-06-16 — Warframe farm map, interactive icons, and Star Chart polish**
+  - **Now on Cloudflare Pages** — the site is now hosted at [tennohelper.pages.dev](https://tennohelper.pages.dev), with faster global load times via Cloudflare's CDN.
+  - **Warframe icons on planet cards** — every planet card now shows which warframes drop on it; click an icon to jump straight to that warframe's archetype detail.
+  - **All 64 warframes mapped** — every farmable frame now has its drop location marked on the Star Chart, including Oberon in Railjack proximas and Octavia in Lua.
+  - **Star Chart tabs always visible** — Origin System, Railjack, and Special tabs now appear at the top regardless of the spoiler toggle; clicking Railjack or Special auto-enables spoilers.
+  - **Patch Notes in Credits** — the Credits modal now has a patch history you can browse.
+  - **Warframe badge icons smaller** — badges on planet cards are more compact so multiple drops no longer get clipped.
+
 - **2026-06-16 — Railjack & Special systems, Riven categories, and spoiler control**
   - **Star Chart now has three tabs** — Origin System, Railjack (Empyrean), and Special (Duviri, Höllvania 1999, Dark Refractory), each with its own missions and themed backdrop.
   - **Open worlds on the map** — Plains of Eidolon, Orb Vallis (incl. Deepmines), and Cambion Drift now appear as navigable areas inside Earth, Venus, and Deimos, with their activities (Free Roam, Bounties, Eidolon Hunt, Orb Heists, Isolation Vault) plus Deep & Temporal Archimedea.
@@ -111,6 +119,14 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+- **2026-06-16 — Mapa de farm de warframes, ícones interativos e polimento do Mapa Estelar**
+  - **Agora no Cloudflare Pages** — o site agora está em [tennohelper.pages.dev](https://tennohelper.pages.dev), com carregamento mais rápido pelo CDN global da Cloudflare.
+  - **Ícones de warframe nos cards de planeta** — cada card agora mostra quais warframes droppam nele; clique no ícone para ir direto ao detalhe do arquétipo.
+  - **Todos os 64 warframes mapeados** — todo frame farmável agora tem a localização de drop marcada no Mapa Estelar, incluindo Oberon nas proximas de Railjack e Octavia na Lua.
+  - **Abas do Mapa Estelar sempre visíveis** — Sistema Origin, Railjack e Especial aparecem sempre no topo, independente do toggle de spoilers; clicar em Railjack ou Especial ativa os spoilers automaticamente.
+  - **Notas de atualização nos Créditos** — o modal de Créditos agora tem um histórico de atualizações que você pode consultar.
+  - **Ícones de warframe menores** — os badges nos cards de planeta são mais compactos para não cortar quando vários warframes droppam no mesmo planeta.
 
 - **2026-06-16 — Sistemas Railjack & Special, categorias de Riven e controle de spoiler**
   - **Mapa Estelar agora tem três abas** — Sistema Origin, Railjack (Empyrean) e Special (Duviri, Höllvania 1999, Refratário Sombrio), cada uma com missões próprias e fundo temático.

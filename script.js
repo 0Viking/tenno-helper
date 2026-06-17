@@ -74,7 +74,9 @@ const STRINGS = {
     credits_archetype_desc: 'archetype classification, signature stats and warframe categorization',
     credits_archetype_video: 'Reference video',
     credits_game_label: 'Game content',
-    credits_game_text: 'Warframe™ is a trademark of Digital Extremes Ltd. All rights to the game, its art and its lore belong to Digital Extremes.',
+    credits_game_text: 'Warframe™ is a trademark of Digital Extremes Ltd. All rights to the game, its art and its lore belong to Digital Extremes. This is an unofficial fan-made site, not affiliated with or endorsed by Digital Extremes.',
+    credits_patchnotes_link: 'Patch notes',
+    credits_patchnotes_back: '← Back to credits',
     credits_sources_label: 'References & sources',
     credits_wiki_desc: 'weapon data, dispositions, images, status effects, lore',
     credits_morrow_desc: 'riven tier reference and evaluation conventions',
@@ -287,7 +289,9 @@ const STRINGS = {
     credits_archetype_desc: 'classificação por arquétipos, stats de assinatura e categorização dos warframes',
     credits_archetype_video: 'Vídeo de referência',
     credits_game_label: 'Conteúdo do jogo',
-    credits_game_text: 'Warframe™ é uma marca registrada da Digital Extremes Ltd. Todos os direitos do jogo, sua arte e seu universo pertencem à Digital Extremes.',
+    credits_game_text: 'Warframe™ é uma marca registrada da Digital Extremes Ltd. Todos os direitos do jogo, sua arte e seu universo pertencem à Digital Extremes. Este é um site não oficial feito por fã, sem afiliação ou endosso da Digital Extremes.',
+    credits_patchnotes_link: 'Notas de atualização',
+    credits_patchnotes_back: '← Voltar aos créditos',
     credits_sources_label: 'Referências e fontes',
     credits_wiki_desc: 'dados de armas, dispositions, imagens, status effects, lore',
     credits_morrow_desc: 'referência de tiers de rivens e convenções de avaliação',
@@ -10485,6 +10489,9 @@ const MISSION_TYPES = {
   // Weekly endgame in the Sanctum Anatomica (Albrecht's Laboratories, Deimos) —
   // sibling to Temporal Archimedea. Surfaces as a chip on the Origin System tab.
   deep_archimedea:     { name: { en: 'Deep Archimedea',     'pt-BR': 'Archimedea Profunda' }, color: '#a88ad4' },
+  shrine_defense:      { name: { en: 'Shrine Defense',      'pt-BR': 'Defesa do Santuário'  }, color: '#d4a84d' },
+  follies_hunt:        { name: { en: "Follie's Hunt",       'pt-BR': "Follie's Hunt"         }, color: '#b56b66' },
+  abyssal_zone:        { name: { en: 'Abyssal Zone',        'pt-BR': 'Zona Abissal'          }, color: '#8b4a8b' },
 };
 
 // Factions for Star Chart UI (colored tint per faction). NOTE: there's an
@@ -13839,8 +13846,9 @@ const STAR_CHART = {
         { slug: 'tikal',     name: 'Tikal',     type: 'excavation',     levelRange: '6-16', darkSector: true },
         { slug: 'coba',      name: 'Coba',      type: 'defense',        levelRange: '6-16', darkSector: true },
         { slug: 'oro',       name: 'Oro',       type: 'assassination',  levelRange: '20-25', boss: 'Vay Hek', warframeDrop: 'hydroid' },
+        { slug: 'sayas-visions', name: "Saya's Visions", type: 'shrine_defense', levelRange: '5-15', warframeDrop: 'koumei' },
         { slug: 'poe-free-roam', name: { en: 'Free Roam', 'pt-BR': 'Mundo Aberto' }, type: 'free_roam',     levelRange: '5-30',  section: 'plains-of-eidolon' },
-        { slug: 'cetus-bounties', name: { en: 'Cetus Bounties', 'pt-BR': 'Contratos de Cetus' }, type: 'bounty', levelRange: '5-30', section: 'plains-of-eidolon' },
+        { slug: 'cetus-bounties', name: { en: 'Cetus Bounties', 'pt-BR': 'Contratos de Cetus' }, type: 'bounty', levelRange: '5-30', section: 'plains-of-eidolon', warframeDrop: ['revenant', 'gara'] },
         { slug: 'eidolon-hunt',  name: { en: 'Eidolon Hunt', 'pt-BR': 'Caçada de Eidolon' }, type: 'assassination', levelRange: '50-100', boss: 'Teralyst / Gantulyst / Hydrolyst', section: 'plains-of-eidolon' },
       ],
     },
@@ -13857,6 +13865,11 @@ const STAR_CHART = {
           note: { en: 'Open world via Fortuna (Solaris United): bounties, mining, fishing, Deepmines and Orb heists.',
                   'pt-BR': 'Mundo aberto via Fortuna (Solaris United): contratos, mineração, pesca, Deepmines e assaltos aos Orbs.' },
           location: 'orb-vallis',
+        },
+        'vesper-relay': {
+          name: { en: 'Vesper Relay', 'pt-BR': 'Vesper Relay' },
+          note: { en: "Ruined relay hosting Follie's Hunt. Requires Chains of Harrow.",
+                  'pt-BR': "Relay destruído que abriga a Follie's Hunt. Requer Chains of Harrow." },
         },
       },
       nodes: [
@@ -13875,9 +13888,10 @@ const STAR_CHART = {
         { slug: 'malva',     name: 'Malva',     type: 'survival',       levelRange: '8-18', darkSector: true },
         { slug: 'romula',    name: 'Romula',    type: 'defense',        levelRange: '8-18', darkSector: true },
         { slug: 'vallis-free-roam', name: { en: 'Free Roam', 'pt-BR': 'Mundo Aberto' }, type: 'free_roam', levelRange: '7-40', section: 'orb-vallis' },
-        { slug: 'fortuna-bounties', name: { en: 'Fortuna Bounties', 'pt-BR': 'Contratos de Fortuna' }, type: 'bounty', levelRange: '7-40', section: 'orb-vallis' },
-        { slug: 'deepmines',        name: { en: 'Deepmines', 'pt-BR': 'Minas Profundas' }, type: 'free_roam', levelRange: '15-40', section: 'orb-vallis' },
-        { slug: 'orb-heists',       name: { en: 'Orb Heists', 'pt-BR': 'Assaltos aos Orbs' }, type: 'assassination', levelRange: '30-60', boss: 'Profit-Taker / Exploiter Orb', section: 'orb-vallis' },
+        { slug: 'fortuna-bounties', name: { en: 'Fortuna Bounties', 'pt-BR': 'Contratos de Fortuna' }, type: 'bounty', levelRange: '7-40', section: 'orb-vallis', warframeDrop: 'garuda' },
+        { slug: 'deepmines',        name: { en: 'Deepmines', 'pt-BR': 'Minas Profundas' }, type: 'free_roam', levelRange: '15-40', section: 'orb-vallis', warframeDrop: 'nokko' },
+        { slug: 'orb-heists',       name: { en: 'Orb Heists', 'pt-BR': 'Assaltos aos Orbs' }, type: 'assassination', levelRange: '30-60', boss: 'Profit-Taker / Exploiter Orb', section: 'orb-vallis', warframeDrop: 'hildryn' },
+        { slug: 'follies-hunt', name: { en: "Follie's Hunt", 'pt-BR': "Follie's Hunt" }, type: 'follies_hunt', levelRange: '35-45', section: 'vesper-relay', warframeDrop: 'follie' },
       ],
     },
     {
@@ -13922,11 +13936,11 @@ const STAR_CHART = {
         { slug: 'martialis',  name: 'Martialis',  type: 'rescue',         levelRange: '10-12' },
         { slug: 'kadesh',     name: 'Kadesh',     type: 'defense',        levelRange: '10-20', darkSector: true },
         { slug: 'wahiba',     name: 'Wahiba',     type: 'survival',       levelRange: '10-20', darkSector: true },
-        { slug: 'war',        name: 'War',        type: 'assassination',  levelRange: '11-13', boss: 'Lt. Lech Kril', warframeDrop: 'frost' },
+        { slug: 'war',        name: 'War',        type: 'assassination',  levelRange: '11-13', boss: 'Lt. Lech Kril', warframeDrop: 'excalibur' },
         { slug: 'vallis',     name: 'Vallis',     type: 'mobile_defense', levelRange: '11-13' },
         { slug: 'ultor',      name: 'Ultor',      type: 'exterminate',    levelRange: '11-13' },
         { slug: 'olympus',    name: 'Olympus',    type: 'disruption',     levelRange: '15-20' },
-        { slug: 'tyana-pass', name: 'Tyana Pass', type: 'mirror_defense', levelRange: '25-30' },
+        { slug: 'tyana-pass', name: 'Tyana Pass', type: 'mirror_defense', levelRange: '25-30', warframeDrop: 'citrine' },
       ],
     },
     {
@@ -13950,7 +13964,8 @@ const STAR_CHART = {
         { slug: 'ludi',    name: 'Ludi',    type: 'hijack',         levelRange: '15-17' },
         { slug: 'thon',    name: 'Thon',    type: 'sabotage',       levelRange: '15-17' },
         { slug: 'seimeni', name: 'Seimeni', type: 'defense',        levelRange: '15-25', darkSector: true },
-        { slug: 'gabii',   name: 'Gabii',   type: 'survival',       levelRange: '15-25', darkSector: true },
+        { slug: 'gabii',      name: 'Gabii',      type: 'survival',      levelRange: '15-25', darkSector: true },
+        { slug: 'abyssal-zone', name: { en: 'Abyssal Zone', 'pt-BR': 'Zona Abissal' }, type: 'abyssal_zone', levelRange: '20-60', warframeDrop: 'dagath' },
       ],
     },
     {
@@ -13988,6 +14003,12 @@ const STAR_CHART = {
                   'pt-BR': 'Mundo aberto via Necrólise (Entrati): contratos, mineração, pesca, conservação e Cofres de Isolamento.' },
           location: 'cambion-drift',
         },
+        'sanctum-anatomica': {
+          name: { en: 'Sanctum Anatomica', 'pt-BR': 'Sanctum Anatomica' },
+          note: { en: 'Open world via the Necralisk (The Cavia / Bird 3). Unlocked after Whispers in the Walls.',
+                  'pt-BR': 'Mundo aberto via Necrólise (The Cavia / Bird 3). Desbloqueado após Whispers in the Walls.' },
+          spoilerLocked: true,
+        },
         'albrechts-laboratories': {
           name: { en: "Albrecht's Laboratories", 'pt-BR': 'Laboratórios de Albrecht' },
           note: { en: 'Unlocked after the Whispers in the Walls quest.',
@@ -14003,13 +14024,14 @@ const STAR_CHART = {
         { slug: 'dirus',       name: 'Dirus',       type: 'mobile_defense', levelRange: '15-17' },
         { slug: 'hyf',         name: 'Hyf',         type: 'defense',        levelRange: '15-20' },
         { slug: 'magnacidium', name: 'Magnacidium', type: 'assassination',  levelRange: '20-25', boss: 'Lephantis', warframeDrop: 'nekros' },
-        { slug: 'terrorem',    name: 'Terrorem',    type: 'survival',       levelRange: '25-35' },
+        { slug: 'terrorem',    name: 'Terrorem',    type: 'survival',       levelRange: '25-35', warframeDrop: 'octavia' },
         { slug: 'exequias',    name: 'Exequias',    type: 'assassination',  levelRange: '30-35' },
         { slug: 'cambion-free-roam', name: { en: 'Free Roam', 'pt-BR': 'Mundo Aberto' }, type: 'free_roam', levelRange: '5-40', section: 'cambion-drift' },
-        { slug: 'entrati-bounties',  name: { en: 'Entrati Bounties', 'pt-BR': 'Contratos Entrati' }, type: 'bounty', levelRange: '5-40', section: 'cambion-drift' },
+        { slug: 'entrati-bounties',  name: { en: 'Entrati Bounties', 'pt-BR': 'Contratos Entrati' }, type: 'bounty', levelRange: '5-40', section: 'cambion-drift', warframeDrop: 'lavos' },
         { slug: 'isolation-vault',   name: { en: 'Isolation Vault', 'pt-BR': 'Cofre de Isolamento' }, type: 'bounty', levelRange: '15-40', boss: 'Necramech', section: 'cambion-drift' },
+        { slug: 'sanctum-anatomica-bounties', name: { en: 'Sanctum Anatomica Bounties', 'pt-BR': 'Contratos do Sanctum Anatomica' }, type: 'bounty', levelRange: '55-80', section: 'sanctum-anatomica', warframeDrop: 'qorvex' },
         { slug: 'effervo',     name: 'Effervo',     type: 'assassination',  levelRange: '55-60', section: 'albrechts-laboratories', boss: 'The Fragmented' },
-        { slug: 'armatus',     name: 'Armatus',     type: 'disruption',     levelRange: '55-60', section: 'albrechts-laboratories' },
+        { slug: 'armatus',     name: 'Armatus',     type: 'disruption',     levelRange: '55-60', section: 'albrechts-laboratories', warframeDrop: 'dante' },
         { slug: 'munio',       name: 'Munio',       type: 'mirror_defense', levelRange: '55-60', section: 'albrechts-laboratories' },
         { slug: 'nex',         name: 'Nex',         type: 'exterminate',    levelRange: '55-60', section: 'albrechts-laboratories' },
         { slug: 'persto',      name: 'Persto',      type: 'survival',       levelRange: '55-60', section: 'albrechts-laboratories' },
@@ -14114,7 +14136,7 @@ const STAR_CHART = {
         { slug: 'rosalind',  name: 'Rosalind',  type: 'spy',            levelRange: '27-29' },
         { slug: 'puck',      name: 'Puck',      type: 'exterminate',    levelRange: '27-29' },
         { slug: 'ur',        name: 'Ur',        type: 'disruption',     levelRange: '30-35', darkSector: true },
-        { slug: 'brutus',    name: 'Brutus',    type: 'ascension',      levelRange: '45-50' },
+        { slug: 'brutus',    name: 'Brutus',    type: 'ascension',      levelRange: '45-50', warframeDrop: 'jade' },
       ],
     },
     {
@@ -14181,7 +14203,7 @@ const STAR_CHART = {
         { slug: 'isos',              name: 'Isos',              type: 'capture',         levelRange: '32-36' },
         { slug: 'solium',            name: 'Solium',            type: 'mobile_defense',  levelRange: '34-38' },
         { slug: 'saxis',             name: 'Saxis',             type: 'exterminate',     levelRange: '34-38' },
-        { slug: 'oestrus',           name: 'Oestrus',           type: 'infested_salvage',levelRange: '34-38' },
+        { slug: 'oestrus',           name: 'Oestrus',           type: 'infested_salvage',levelRange: '34-38', warframeDrop: 'nidus' },
         { slug: 'akkad',             name: 'Akkad',             type: 'defense',         levelRange: '35-45', darkSector: true },
         { slug: 'zabala',            name: 'Zabala',            type: 'survival',        levelRange: '35-45', darkSector: true },
       ],
@@ -14200,7 +14222,7 @@ const STAR_CHART = {
         { slug: 'selkie',    name: 'Selkie',    type: 'survival',       levelRange: '30-40' },
         { slug: 'rusalka',   name: 'Rusalka',   type: 'sabotage',       levelRange: '32-36' },
         { slug: 'adaro',     name: 'Adaro',     type: 'exterminate',    levelRange: '32-36' },
-        { slug: 'kappa',     name: 'Kappa',     type: 'disruption',     levelRange: '34-38' },
+        { slug: 'kappa',     name: 'Kappa',     type: 'disruption',     levelRange: '34-38', warframeDrop: 'gauss' },
         { slug: 'marid',     name: 'Marid',     type: 'hijack',         levelRange: '34-38' },
         { slug: 'charybdis', name: 'Charybdis', type: 'mobile_defense', levelRange: '34-38' },
         { slug: 'merrow',    name: 'Merrow',    type: 'assassination',  levelRange: '35-40', boss: 'Kela de Thaym', warframeDrop: 'saryn' },
@@ -14249,11 +14271,11 @@ const STAR_CHART = {
         { slug: 'zeipel',     name: 'Zeipel',     type: 'rescue',         levelRange: '25-30' },
         { slug: 'pavlov',     name: 'Pavlov',     type: 'spy',            levelRange: '25-30' },
         { slug: 'stofler',    name: 'Stöfler',    type: 'defense',        levelRange: '25-30' },
-        { slug: 'plato',      name: 'Plato',      type: 'exterminate',    levelRange: '25-30' },
+        { slug: 'plato',      name: 'Plato',      type: 'exterminate',    levelRange: '25-30', warframeDrop: 'octavia' },
         { slug: 'tycho',      name: 'Tycho',      type: 'survival',       levelRange: '25-30' },
         { slug: 'copernicus', name: 'Copernicus', type: 'capture',        levelRange: '25-30' },
         { slug: 'apollo',     name: 'Apollo',     type: 'disruption',     levelRange: '35-40' },
-        { slug: 'circulus',   name: 'Circulus',   type: 'survival',       levelRange: '80-100' },
+        { slug: 'circulus',   name: 'Circulus',   type: 'survival',       levelRange: '80-100', warframeDrop: 'voruna' },
       ],
     },
     {
@@ -14269,7 +14291,7 @@ const STAR_CHART = {
         { slug: 'koro',    name: 'Koro',    type: 'assault',        levelRange: '29-31' },
         { slug: 'rotuma',  name: 'Rotuma',  type: 'mobile_defense', levelRange: '30-32' },
         { slug: 'nabuk',   name: 'Nabuk',   type: 'defense',        levelRange: '30-32' },
-        { slug: 'pago',    name: 'Pago',    type: 'spy',            levelRange: '31-33' },
+        { slug: 'pago',    name: 'Pago',    type: 'spy',            levelRange: '31-33', warframeDrop: 'harrow' },
         { slug: 'garus',   name: 'Garus',   type: 'rescue',         levelRange: '31-33' },
         { slug: 'taveuni', name: 'Taveuni', type: 'survival',       levelRange: '32-37' },
         { slug: 'tamu',    name: 'Tamu',    type: 'disruption',     levelRange: '35-40' },
@@ -14293,6 +14315,7 @@ const STAR_CHART = {
         { slug: 'oro-works',        name: 'Oro Works',        type: 'void_armageddon', levelRange: '50-55' },
         { slug: 'everview-arc',     name: 'Everview Arc',     type: 'void_flood',      levelRange: '50-55' },
         { slug: 'tuvul-commons',    name: 'Tuvul Commons',    type: 'void_cascade',    levelRange: '50-55' },
+        { slug: 'zariman-bounties', name: { en: 'Chrysalith Bounties', 'pt-BR': 'Contratos do Chrysalith' }, type: 'bounty', levelRange: '50-115', warframeDrop: 'gyre' },
       ],
     },
   ],
@@ -14311,7 +14334,7 @@ const STAR_CHART = {
       resources: ['carbides', 'cubic_diodes', 'titanium', 'ticor_plate', 'asterite', 'pustrels', 'copernics', 'anomaly_shard', 'corrupted_holokey'],
       nodes: [
         { slug: 'free-flight-rj',          name: 'Free Flight',                  type: 'free_flight',   levelRange: '1'      },
-        { slug: 'sover-strait',            name: 'Sover Strait',                 type: 'skirmish',      levelRange: '15-20'  },
+        { slug: 'sover-strait',            name: 'Sover Strait',                 type: 'skirmish',      levelRange: '15-20',  warframeDrop: 'oberon' },
         { slug: 'iota-temple',             name: 'Iota Temple',                  type: 'skirmish',      levelRange: '20-28'  },
         { slug: 'ogal-cluster',            name: 'Ogal Cluster',                 type: 'skirmish',      levelRange: '21-26'  },
         { slug: 'korms-belt',              name: "Korm's Belt",                  type: 'skirmish',      levelRange: '24-30'  },
@@ -14343,7 +14366,7 @@ const STAR_CHART = {
       image: 'https://wiki.warframe.com/images/Saturn.png',
       resources: ['carbides', 'cubic_diodes', 'asterite', 'gallos_rods', 'isos', 'tellurium', 'anomaly_shard', 'corrupted_holokey'],
       nodes: [
-        { slug: 'lupal-pass',                 name: 'Lupal Pass',                 type: 'skirmish',      levelRange: '48-56' },
+        { slug: 'lupal-pass',                 name: 'Lupal Pass',                 type: 'skirmish',      levelRange: '48-56', warframeDrop: 'oberon' },
         { slug: 'nodo-gap',                   name: 'Nodo Gap',                   type: 'skirmish',      levelRange: '54-60' },
         { slug: 'mordo-cluster',              name: 'Mordo Cluster',              type: 'skirmish',      levelRange: '55-60' },
         { slug: 'vand-cluster',               name: 'Vand Cluster',               type: 'skirmish',      levelRange: '65-70' },
@@ -14424,6 +14447,7 @@ const STAR_CHART = {
         { slug: 'the-undercroft',    name: 'The Undercroft', type: 'exterminate', levelRange: '55-90' },
         { slug: 'orowyrm',           name: 'Orowyrm', type: 'assassination', levelRange: '70-80', boss: 'Orowyrm' },
         { slug: 'isleweaver',        name: 'Isleweaver', type: 'assassination', levelRange: '55-70', boss: 'Oraxia', warframeDrop: 'oraxia' },
+        { slug: 'kullervos-hold', name: { en: "Kullervo's Hold", 'pt-BR': 'Covil de Kullervo' }, type: 'assassination', levelRange: '55-70', boss: 'Kullervo', warframeDrop: 'kullervo' },
       ],
     },
     {
@@ -14449,7 +14473,7 @@ const STAR_CHART = {
       slug: 'dark-refractory',
       name: { en: 'Dark Refractory', 'pt-BR': 'Refratário Sombrio' },
       location: 'dark-refractory',
-      image: 'assets/backgrounds/DarkRefractory.jpg',
+      image: 'assets/backgrounds/DarkRefractory.png',
       sections: {
         'the-descendia': {
           name: { en: 'The Descendia', 'pt-BR': 'A Descendia' },
@@ -14538,6 +14562,12 @@ function findNode(planetSlug, nodeSlug) {
   return p.nodes.find(n => n.slug === nodeSlug) || null;
 }
 
+// Normalize warframeDrop to an array regardless of string vs array form.
+function warframeDropSlugs(drop) {
+  if (!drop) return [];
+  return Array.isArray(drop) ? drop : [drop];
+}
+
 // Reverse-lookup: given a warframe slug, find the planet + node it drops from
 // in STAR_CHART (used by the acquisition link in the Archetypes tab).
 function findWarframeDropNode(warframeSlug) {
@@ -14552,7 +14582,7 @@ function findWarframeDropNode(warframeSlug) {
   ];
   for (const planet of all) {
     for (const node of (planet.nodes || [])) {
-      if (node.warframeDrop === warframeSlug) {
+      if (warframeDropSlugs(node.warframeDrop).includes(warframeSlug)) {
         return { planet, node };
       }
     }
@@ -15998,10 +16028,146 @@ function setupWeaponPickerEvents() {
 
 // ============== Credits modal ==============
 
+const PATCH_NOTES = {
+  en: [
+    {
+      date: '2026-06-16',
+      title: 'Warframe farm map, interactive icons, and Star Chart polish',
+      items: [
+        'Now on Cloudflare Pages — the site is now hosted at tennohelper.pages.dev, with faster global load times via Cloudflare\'s CDN.',
+        'Warframe icons on planet cards — every planet card now shows which warframes drop on it; click an icon to jump straight to that warframe\'s archetype detail.',
+        'All 64 warframes mapped — every farmable frame now has its drop location marked on the Star Chart, including Oberon in Railjack proximas and Octavia in Lua.',
+        'Star Chart tabs always visible — Origin System, Railjack, and Special tabs now appear at the top regardless of the spoiler toggle; clicking Railjack or Special auto-enables spoilers.',
+        'Patch Notes in Credits — the Credits modal now has a patch history you can browse.',
+        'Warframe badge icons smaller — badges on planet cards are more compact so multiple drops no longer get clipped.',
+      ]
+    },
+    {
+      date: '2026-06-16',
+      title: 'Railjack & Special systems, Riven categories, and spoiler control',
+      items: [
+        'Star Chart now has three tabs — Origin System, Railjack (Empyrean), and Special (Duviri, Höllvania 1999, Dark Refractory), each with its own missions and themed backdrop.',
+        'Open worlds on the map — Plains of Eidolon, Orb Vallis (incl. Deepmines), and Cambion Drift now appear as navigable areas inside Earth, Venus, and Deimos, with their activities (Free Roam, Bounties, Eidolon Hunt, Orb Heists, Isolation Vault) plus Deep & Temporal Archimedea.',
+        'Click a resource → jump to where it drops — open-world and special-system resources now link straight to their farm node on the map.',
+        'Archwing missions flagged — Archwing nodes (Caelus, Salacia, Erpo, etc.) now show an Archwing icon.',
+        'Four new Riven categories — the Riven evaluator now covers Archgun, Kitgun, Zaw, and Companion weapons on top of Primary/Secondary/Melee.',
+        'Smarter Show Spoilers — with spoilers off, the Railjack and Special tabs (and their resources) are hidden for a clean base-game view; open worlds stay visible.',
+        'New warframe drops mapped — Oraxia (Isleweaver), Temple (Solstice Square), Cyte-09 (Höllvania Central Mall), and Uriel (The Descendia) show on their nodes; frames also farmable in The Circuit get an "Also in The Circuit" link.',
+      ]
+    },
+    {
+      date: '2026-06-15',
+      title: 'Resources, craft costs, and better filters',
+      items: [
+        'Complete resource catalog — over 350 resources now listed (was ~25 originally), covering every Open World, Empyrean, Duviri, Höllvania, and quest item from the wiki.',
+        'Tags on every resource — each one shows its rarity, location, and source as colored chips, so you can scan the list and instantly see what kind of item it is.',
+        'Three independent filters in the resource grid — narrow it down by rarity, by location (Star Chart, Plains of Eidolon, Orb Vallis, Cambion Drift, Duviri, Höllvania, Dark Refractory, Misc), or by source (Bounty Drops, Heist Drops, Mining, Fishing, Necramech Drops, Hex Treasures, etc.).',
+        'Multi-select mission filters in the Star Chart — pick several mission types simultaneously (e.g. Assassination + Spy) instead of one at a time. Click an active chip to toggle it off; click "All" to clear them.',
+        'Full craft cost per warframe — every frame now shows the complete shopping list to build it (Main BP + Neuroptics + Chassis + Systems combined), with each resource clickable to jump straight to its recommended farm node.',
+        'Special cases handled — Chroma\'s full breakdown including the Volt / Ember / Frost / Saryn parts it requires; Equinox shows the Day + Night halves separately plus the aggregated total including Forma.',
+        'Smart "View on Star Chart" link — clicking the link from a warframe now auto-applies the right mission-type filter, so the relevant farm node stands out immediately.',
+        'Open-world planets show every regional resource — Venus now lists every Orb Vallis item, Earth every Plains of Eidolon item, Deimos every Cambion Drift item, all alphabetized in a 3-column grid.',
+      ]
+    },
+    {
+      date: '2026-06-15',
+      title: 'First version launch',
+      items: [
+        'Archetypes — every warframe sorted by combat archetype, with abilities, portraits, and acquisition info.',
+        'Star Chart — full solar system in progression order: all planets, nodes, boss → warframe drops, recommended farms, mission filters, search, and a Show Spoilers toggle.',
+        'Glossary — interactive Status Effects (Procs) reference for all 13 damage types and faction vulnerabilities.',
+        'Riven Evaluator — 0–10 scoring based on stat tier and roll quality, with built-in OCR for screenshot input (EN + PT).',
+        'Bilingual — full Português (BR) and English support.',
+      ]
+    }
+  ],
+  'pt-BR': [
+    {
+      date: '2026-06-16',
+      title: 'Mapa de farm de warframes, ícones interativos e polimento do Mapa Estelar',
+      items: [
+        'Agora no Cloudflare Pages — o site agora está em tennohelper.pages.dev, com carregamento mais rápido pelo CDN global da Cloudflare.',
+        'Ícones de warframe nos cards de planeta — cada card agora mostra quais warframes droppam nele; clique no ícone para ir direto ao detalhe do arquétipo.',
+        'Todos os 64 warframes mapeados — todo frame farmável agora tem a localização de drop marcada no Mapa Estelar, incluindo Oberon nas proximas de Railjack e Octavia na Lua.',
+        'Abas do Mapa Estelar sempre visíveis — Sistema Origin, Railjack e Especial aparecem sempre no topo, independente do toggle de spoilers; clicar em Railjack ou Especial ativa os spoilers automaticamente.',
+        'Notas de atualização nos Créditos — o modal de Créditos agora tem um histórico de atualizações que você pode consultar.',
+        'Ícones de warframe menores — os badges nos cards de planeta são mais compactos para não cortar quando vários warframes droppam no mesmo planeta.',
+      ]
+    },
+    {
+      date: '2026-06-16',
+      title: 'Sistemas Railjack & Special, categorias de Riven e controle de spoiler',
+      items: [
+        'Mapa Estelar agora tem três abas — Sistema Origin, Railjack (Empyrean) e Special (Duviri, Höllvania 1999, Refratário Sombrio), cada uma com missões próprias e fundo temático.',
+        'Mundos abertos no mapa — Plains of Eidolon, Orb Vallis (com Deepmines) e Cambion Drift agora aparecem como áreas navegáveis dentro de Terra, Vênus e Deimos, com suas atividades (Mundo Aberto, Contratos, Caçada de Eidolon, Assaltos aos Orbs, Cofre de Isolamento) e Deep & Temporal Archimedea.',
+        'Clique num recurso → vá direto pra onde ele cai — recursos de mundo aberto e dos sistemas especiais agora linkam pro nodo de farm no mapa.',
+        'Missões de Archwing sinalizadas — nodos de Archwing (Caelus, Salacia, Erpo, etc.) agora mostram um ícone de Archwing.',
+        'Quatro novas categorias de Riven — o avaliador agora cobre Archgun, Kitgun, Zaw e Companion além de Primária/Secundária/Corpo a corpo.',
+        'Show Spoilers mais esperto — com spoilers desligado, as abas Railjack e Special (e seus recursos) ficam escondidas pra uma visão limpa do base game; mundos abertos continuam visíveis.',
+        'Novos drops de warframe mapeados — Oraxia (Isleweaver), Temple (Solstice Square), Cyte-09 (Höllvania Central Mall) e Uriel (The Descendia) aparecem nos nodos; frames também farmáveis no Circuito ganham link "Também no Circuito".',
+      ]
+    },
+    {
+      date: '2026-06-15',
+      title: 'Recursos, custos de craft e filtros melhorados',
+      items: [
+        'Catálogo completo de recursos — mais de 350 recursos listados agora (antes eram ~25), cobrindo todo Open World, Empyrean, Duviri, Höllvania, Dark Refractory e itens de quest da wiki.',
+        'Tags em cada recurso — cada um mostra raridade, local e fonte como chips coloridos, então dá pra bater o olho e saber na hora que tipo de item é.',
+        'Três filtros independentes na grid de recursos — afunile por raridade, por local (Mapa Estelar, Plains of Eidolon, Orb Vallis, Cambion Drift, Duviri, Höllvania, Refratário Sombrio, Diversos) ou por fonte (Drops de Bounty, Heist, Mineração, Pesca, Necramech, Tesouros Hex, etc.).',
+        'Multi-seleção de filtros de missão no Mapa Estelar — escolha vários tipos de missão ao mesmo tempo (ex: Assassinato + Espionagem) em vez de só um. Clicar num chip ativo desliga ele; clicar em "Todos" limpa tudo.',
+        'Custo de craft completo por warframe — cada frame agora mostra a lista de compras pra construir ele inteiro (BP Principal + Neuroptics + Chassis + Sistemas somados), com cada recurso clicável pra ir direto pro nodo de farm recomendado.',
+        'Casos especiais tratados — Chroma mostra o breakdown completo incluindo as partes de Volt / Ember / Frost / Saryn que ele exige; Equinox mostra Day + Night separadamente e o total agregado com Forma.',
+        'Link "Ver no Mapa Estelar" inteligente — clicar no link a partir de um warframe agora aplica automaticamente o filtro de tipo de missão certo, então o nodo de farm relevante já fica em destaque.',
+        'Planetas de open-world unem recursos automaticamente — Vênus agora lista todos os itens do Orb Vallis, Terra todos das Plains of Eidolon, Deimos todos do Cambion Drift, em ordem alfabética numa grid de 3 colunas.',
+      ]
+    },
+    {
+      date: '2026-06-15',
+      title: 'Lançamento da primeira versão',
+      items: [
+        'Arquétipos — cada warframe organizado por arquétipo de combate, com habilidades, portraits e infos de aquisição.',
+        'Mapa Estelar — sistema solar completo em ordem de progressão: todos os planetas, nodos, drops de boss → warframe, farms recomendados, filtros de missão, busca, e toggle Mostrar Spoilers.',
+        'Glossário — referência interativa de Status Effects (Procs) pros 13 tipos de dano e vulnerabilidades por facção.',
+        'Avaliador de Rivens — nota de 0 a 10 baseada em tier de stats e qualidade do roll, com OCR embutido pra leitura de print (EN + PT).',
+        'Bilíngue — suporte completo em Português (BR) e Inglês.',
+      ]
+    }
+  ]
+};
+
+function renderPatchNotes() {
+  const locale = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const entries = PATCH_NOTES[locale] || PATCH_NOTES.en;
+  const html = entries.map(entry => `
+    <div class="patchnotes-entry">
+      <h3 class="patchnotes-entry-header">
+        <span class="patchnotes-date">${entry.date}</span>
+        <span class="patchnotes-title">${entry.title}</span>
+      </h3>
+      <ul class="patchnotes-list">
+        ${entry.items.map(item => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
+  document.getElementById('credits-patchnotes-body').innerHTML = html;
+}
+
+function openPatchNotes() {
+  document.getElementById('credits-body')?.classList.add('hidden');
+  document.getElementById('credits-patchnotes-view')?.classList.remove('hidden');
+  renderPatchNotes();
+}
+
+function closePatchNotes() {
+  document.getElementById('credits-patchnotes-view')?.classList.add('hidden');
+  document.getElementById('credits-body')?.classList.remove('hidden');
+}
+
 function openCreditsModal() {
   document.getElementById('credits-modal')?.classList.remove('hidden');
 }
 function closeCreditsModal() {
+  closePatchNotes();
   document.getElementById('credits-modal')?.classList.add('hidden');
 }
 
@@ -16009,6 +16175,8 @@ function setupCreditsEvents() {
   document.getElementById('credits-btn')?.addEventListener('click', openCreditsModal);
   document.getElementById('credits-modal-close')?.addEventListener('click', closeCreditsModal);
   document.getElementById('credits-modal-backdrop')?.addEventListener('click', closeCreditsModal);
+  document.getElementById('credits-patchnotes-btn')?.addEventListener('click', openPatchNotes);
+  document.getElementById('credits-patchnotes-back')?.addEventListener('click', closePatchNotes);
   document.addEventListener('keydown', e => {
     const modal = document.getElementById('credits-modal');
     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
@@ -16338,6 +16506,15 @@ function selectTab(tab) {
 // star-chart tab — selectTab() early-returns on an unchanged tab, which would
 // otherwise leave the new expansion/filter state on screen unrendered (the bug
 // when clicking a resource's farm link from within the Star Chart itself).
+function goToArchetype(warframeSlug) {
+  selectWarframe(warframeSlug);
+  if (state.tab !== 'archetypes') selectTab('archetypes');
+  requestAnimationFrame(() => {
+    const detail = document.getElementById('warframe-detail');
+    if (detail) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
 function goToStarChart(planetSlug, filterTypes) {
   const tab = findPlanetTab(planetSlug);
   // Navigating to a Railjack/Special target (e.g. a warframe's Railjack farm
@@ -16355,9 +16532,7 @@ function goToStarChart(planetSlug, filterTypes) {
   if (searchInput) searchInput.value = '';
   if (state.tab === 'star-chart') renderStarChart();
   else selectTab('star-chart');
-  // Scroll back to the top so the user lands on the Star Chart toolbar/grid
-  // rather than wherever the resource list / warframe panel was scrolled to.
-  window.scrollTo(0, 0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function selectStatusPhysical(slug) {
@@ -17458,7 +17633,7 @@ function planetNodesFiltered(planet, filters, search) {
     }
     if (norm) {
       const hay = normalizeForMatch(
-        nodeName(n) + ' ' + missionTypeName(n.type) + ' ' + (n.boss || '') + ' ' + (n.warframeDrop || '')
+        nodeName(n) + ' ' + missionTypeName(n.type) + ' ' + (n.boss || '') + ' ' + warframeDropSlugs(n.warframeDrop).join(' ')
       );
       if (!hay.includes(norm)) return false;
     }
@@ -18013,21 +18188,24 @@ function buildPlanetCard(planet, filters, search) {
       const wfWrap = document.createElement('div');
       wfWrap.className = 'star-chart-planet-card-wf-wrap';
       assassinations.forEach(n => {
-        const slug = n.warframeDrop;
-        const wfName = slug.charAt(0).toUpperCase() + slug.slice(1);
-        const badge = document.createElement('div');
-        badge.className = 'star-chart-planet-card-wf-badge';
-        const img = document.createElement('img');
-        img.className = 'star-chart-planet-card-wf-icon';
-        img.src = `assets/icons/base/${slug}.png`;
-        img.alt = '';
-        img.loading = 'lazy';
-        badge.appendChild(img);
-        const name = document.createElement('span');
-        name.className = 'star-chart-planet-card-wf-name';
-        name.textContent = wfName;
-        badge.appendChild(name);
-        wfWrap.appendChild(badge);
+        warframeDropSlugs(n.warframeDrop).forEach(slug => {
+          const wfName = slug.charAt(0).toUpperCase() + slug.slice(1);
+          const badge = document.createElement('div');
+          badge.className = 'star-chart-planet-card-wf-badge';
+          badge.title = wfName;
+          badge.addEventListener('click', e => { e.stopPropagation(); goToArchetype(slug); });
+          const img = document.createElement('img');
+          img.className = 'star-chart-planet-card-wf-icon';
+          img.src = `assets/icons/base/${slug}.png`;
+          img.alt = '';
+          img.loading = 'lazy';
+          badge.appendChild(img);
+          const name = document.createElement('span');
+          name.className = 'star-chart-planet-card-wf-name';
+          name.textContent = wfName;
+          badge.appendChild(name);
+          wfWrap.appendChild(badge);
+        });
       });
       card.appendChild(wfWrap);
     }
@@ -18262,19 +18440,23 @@ function buildNodeRow(node) {
       bossPill.textContent = node.boss;
       dropWrap.appendChild(bossPill);
     }
-    const wfName = node.warframeDrop.charAt(0).toUpperCase() + node.warframeDrop.slice(1);
-    const wf = document.createElement('span');
-    wf.className = 'star-chart-node-warframe';
-    const img = document.createElement('img');
-    img.className = 'star-chart-node-warframe-icon';
-    img.src = `assets/icons/base/${node.warframeDrop}.png`;
-    img.alt = '';
-    img.loading = 'lazy';
-    wf.appendChild(img);
-    const wfStrong = document.createElement('strong');
-    wfStrong.textContent = wfName;
-    wf.appendChild(wfStrong);
-    dropWrap.appendChild(wf);
+    warframeDropSlugs(node.warframeDrop).forEach(slug => {
+      const wfName = slug.charAt(0).toUpperCase() + slug.slice(1);
+      const wf = document.createElement('span');
+      wf.className = 'star-chart-node-warframe';
+      wf.title = wfName;
+      wf.addEventListener('click', e => { e.stopPropagation(); goToArchetype(slug); });
+      const img = document.createElement('img');
+      img.className = 'star-chart-node-warframe-icon';
+      img.src = `assets/icons/base/${slug}.png`;
+      img.alt = '';
+      img.loading = 'lazy';
+      wf.appendChild(img);
+      const wfStrong = document.createElement('strong');
+      wfStrong.textContent = wfName;
+      wf.appendChild(wfStrong);
+      dropWrap.appendChild(wf);
+    });
     row.appendChild(dropWrap);
   } else if (node.boss) {
     const drop = document.createElement('span');
