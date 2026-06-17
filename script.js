@@ -17621,12 +17621,8 @@ const STAR_CHART_TABS = [
   { key: 'special',       labelKey: 'star_chart_tab_special',  theme: 'special',  image: 'assets/backgrounds/Special.png'      },
 ];
 
-// With spoilers OFF, only the base-game Origin System tab is shown — Railjack
-// (Empyrean) and Special are post-base systems and stay hidden until toggled.
 function visibleStarChartTabs() {
-  return state.starChart.showSpoilers
-    ? STAR_CHART_TABS
-    : STAR_CHART_TABS.filter(tab => tab.key === 'origin-system');
+  return STAR_CHART_TABS;
 }
 
 function buildStarChartTopTabs() {
@@ -17668,6 +17664,10 @@ function buildStarChartTopTabs() {
 
     btn.addEventListener('click', () => {
       if (state.starChart.tab === spec.key) return;
+      if ((spec.key === 'empyrean' || spec.key === 'special') && !state.starChart.showSpoilers) {
+        state.starChart.showSpoilers = true;
+        try { localStorage.setItem('starChart.showSpoilers', 'true'); } catch (e) {}
+      }
       state.starChart.tab = spec.key;
       // Collapse any expanded planet from the previous tab — it doesn't exist
       // in the new tab's planet set, so leaving it expanded would render
