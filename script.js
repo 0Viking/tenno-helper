@@ -16298,10 +16298,16 @@ const state = {
 // ============== Client-side router ==============
 let _routerPaused = false;
 
+// Maps internal star-chart tab keys → URL slugs (and back).
+const STAR_CHART_TAB_SLUGS = { origin: 'origin-system', empyrean: 'railjack', special: 'special' };
+const STAR_CHART_SLUG_TABS = { 'origin-system': 'origin', 'railjack': 'empyrean', 'special': 'special' };
+
 function pathFromState() {
   const { tab, warframe, starChart } = state;
   if (tab === 'star-chart') {
-    return starChart.expandedPlanet ? `/star-chart/${starChart.expandedPlanet}` : '/star-chart';
+    if (starChart.expandedPlanet) return `/star-chart/${starChart.expandedPlanet}`;
+    const tabSlug = STAR_CHART_TAB_SLUGS[starChart.tab] || 'origin-system';
+    return `/star-chart/${tabSlug}`;
   }
   if (tab === 'glossary') return '/glossary';
   if (tab === 'rivens') return '/rivens';
@@ -16319,15 +16325,25 @@ function applyPath(path) {
     const parts = path.replace(/^\//, '').split('/').filter(Boolean);
     const section = parts[0];
     if (section === 'star-chart') {
-      const planetSlug = parts[1] || null;
-      if (planetSlug) {
-        const tab = findPlanetTab(planetSlug);
+      const seg = parts[1] || null;
+      const tabKey = seg ? STAR_CHART_SLUG_TABS[seg] : null;
+      if (tabKey) {
+        // seg is a tab slug (origin-system / railjack / special)
+        if ((tabKey === 'empyrean' || tabKey === 'special') && !state.starChart.showSpoilers) {
+          state.starChart.showSpoilers = true;
+          try { localStorage.setItem('starChart.showSpoilers', 'true'); } catch (e) {}
+        }
+        state.starChart.tab = tabKey;
+        state.starChart.expandedPlanet = null;
+      } else if (seg) {
+        // seg is a planet slug — infer tab from the planet
+        const tab = findPlanetTab(seg);
         if ((tab === 'empyrean' || tab === 'special') && !state.starChart.showSpoilers) {
           state.starChart.showSpoilers = true;
           try { localStorage.setItem('starChart.showSpoilers', 'true'); } catch (e) {}
         }
         state.starChart.tab = tab;
-        state.starChart.expandedPlanet = planetSlug;
+        state.starChart.expandedPlanet = seg;
       } else {
         state.starChart.expandedPlanet = null;
       }
