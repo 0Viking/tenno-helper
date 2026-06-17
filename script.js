@@ -17718,6 +17718,7 @@ function selectPlanet(slug) {
       state.starChart.expandedPlanet = slug;
     }
     renderStarChart();
+    pushPath();
   };
   if (typeof document.startViewTransition === 'function') {
     document.startViewTransition(apply);
