@@ -17911,6 +17911,7 @@ function buildStarChartTopTabs() {
       // in the new tab's planet set, so leaving it expanded would render
       // nothing and look broken.
       state.starChart.expandedPlanet = null;
+      state.starChart.filters = new Set();
       renderStarChart();
       pushPath();
     });
