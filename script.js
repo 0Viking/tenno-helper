@@ -14473,7 +14473,7 @@ const STAR_CHART = {
       slug: 'dark-refractory',
       name: { en: 'Dark Refractory', 'pt-BR': 'Refratário Sombrio' },
       location: 'dark-refractory',
-      image: 'assets/backgrounds/DarkRefractory.png',
+      image: 'assets/backgrounds/DarkRefractory.jpg',
       sections: {
         'the-descendia': {
           name: { en: 'The Descendia', 'pt-BR': 'A Descendia' },
