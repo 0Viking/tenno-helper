@@ -16295,6 +16295,64 @@ const state = {
   },
 };
 
+// ============== Client-side router ==============
+let _routerPaused = false;
+
+function pathFromState() {
+  const { tab, warframe, starChart } = state;
+  if (tab === 'star-chart') {
+    return starChart.expandedPlanet ? `/star-chart/${starChart.expandedPlanet}` : '/star-chart';
+  }
+  if (tab === 'glossary') return '/glossary';
+  if (tab === 'rivens') return '/rivens';
+  return warframe ? `/archetypes/${warframe}` : '/archetypes';
+}
+
+function pushPath() {
+  if (_routerPaused) return;
+  history.pushState(null, '', pathFromState());
+}
+
+function applyPath(path) {
+  _routerPaused = true;
+  try {
+    const parts = path.replace(/^\//, '').split('/').filter(Boolean);
+    const section = parts[0];
+    if (section === 'star-chart') {
+      const planetSlug = parts[1] || null;
+      if (planetSlug) {
+        const tab = findPlanetTab(planetSlug);
+        if ((tab === 'empyrean' || tab === 'special') && !state.starChart.showSpoilers) {
+          state.starChart.showSpoilers = true;
+          try { localStorage.setItem('starChart.showSpoilers', 'true'); } catch (e) {}
+        }
+        state.starChart.tab = tab;
+        state.starChart.expandedPlanet = planetSlug;
+      } else {
+        state.starChart.expandedPlanet = null;
+      }
+      if (state.tab === 'star-chart') renderStarChart();
+      else selectTab('star-chart');
+    } else if (section === 'glossary') {
+      selectTab('glossary');
+    } else if (section === 'rivens') {
+      selectTab('rivens');
+    } else {
+      const warframeSlug = parts[1] || null;
+      if (warframeSlug && WARFRAMES_DETAILS[warframeSlug]) {
+        if (state.warframe !== warframeSlug) {
+          state.warframe = warframeSlug;
+          state.activeAbility = 0; state.variant = 'base'; state.form = 'normal';
+          const arch = WARFRAME_TO_ARCHETYPE[warframeSlug];
+          if (arch) { state.archetype = arch; state.activeStats = new Set(); }
+        }
+      } else { state.warframe = null; }
+      render();
+      selectTab('archetypes');
+    }
+  } finally { _routerPaused = false; }
+}
+
 function getWarframeDetails(slug) {
   const pt = WARFRAMES_DETAILS[slug];
   if (!pt) return null;
@@ -16434,6 +16492,7 @@ function selectWarframe(slug) {
     }
   }
   render();
+  pushPath();
 }
 
 function selectAbility(idx) {
@@ -16507,8 +16566,11 @@ function selectTab(tab) {
 // otherwise leave the new expansion/filter state on screen unrendered (the bug
 // when clicking a resource's farm link from within the Star Chart itself).
 function goToArchetype(warframeSlug) {
+  _routerPaused = true;
   selectWarframe(warframeSlug);
   if (state.tab !== 'archetypes') selectTab('archetypes');
+  _routerPaused = false;
+  pushPath();
   requestAnimationFrame(() => {
     const detail = document.getElementById('warframe-detail');
     if (detail) detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -16532,6 +16594,7 @@ function goToStarChart(planetSlug, filterTypes) {
   if (searchInput) searchInput.value = '';
   if (state.tab === 'star-chart') renderStarChart();
   else selectTab('star-chart');
+  pushPath();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -17849,6 +17912,7 @@ function buildStarChartTopTabs() {
       // nothing and look broken.
       state.starChart.expandedPlanet = null;
       renderStarChart();
+      pushPath();
     });
     row.appendChild(btn);
   });
@@ -18632,19 +18696,20 @@ document.querySelectorAll('input[data-key]').forEach(input => {
   input.addEventListener('change', updateChart);
 });
 setLocale(state.locale);
-selectTab('archetypes');
+applyPath(window.location.pathname);
+window.addEventListener('popstate', () => applyPath(window.location.pathname));
 
 function setupTabNav() {
-  document.getElementById('glossary-btn')?.addEventListener('click', () => selectTab('glossary'));
-  document.getElementById('rivens-btn')?.addEventListener('click', () => selectTab('rivens'));
-  document.getElementById('star-chart-btn')?.addEventListener('click', () => selectTab('star-chart'));
-  document.getElementById('tutorials-btn')?.addEventListener('click', () => selectTab('tutorials'));
+  document.getElementById('glossary-btn')?.addEventListener('click', () => { selectTab('glossary'); pushPath(); });
+  document.getElementById('rivens-btn')?.addEventListener('click', () => { selectTab('rivens'); pushPath(); });
+  document.getElementById('star-chart-btn')?.addEventListener('click', () => { selectTab('star-chart'); pushPath(); });
+  document.getElementById('tutorials-btn')?.addEventListener('click', () => { selectTab('tutorials'); pushPath(); });
   // Selecting an archetype from the dropdown or the bar should bring us back to that tab.
   document.getElementById('archetype-btn')?.addEventListener('click', () => {
-    if (state.tab !== 'archetypes') selectTab('archetypes');
+    if (state.tab !== 'archetypes') { selectTab('archetypes'); pushPath(); }
   });
   document.getElementById('archetype-bar')?.addEventListener('click', () => {
-    if (state.tab !== 'archetypes') selectTab('archetypes');
+    if (state.tab !== 'archetypes') { selectTab('archetypes'); pushPath(); }
   });
 
   document.getElementById('riven-evaluate-btn')?.addEventListener('click', evaluateRiven);
