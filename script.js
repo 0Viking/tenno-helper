@@ -18721,6 +18721,30 @@ applyPath(window.location.pathname);
 window.addEventListener('popstate', () => applyPath(window.location.pathname));
 
 function setupTabNav() {
+  // Mobile hamburger: toggles the nav drawer (.header-nav). Closes when a nav
+  // item is tapped or when clicking outside. CSS-gated to mobile, so on desktop
+  // the toggle is hidden and the drawer is always an inline row — inert here.
+  const navToggle = document.getElementById('nav-toggle');
+  const headerNav = document.getElementById('header-nav');
+  const closeNav = () => {
+    headerNav?.classList.remove('open');
+    navToggle?.classList.remove('open');
+    navToggle?.setAttribute('aria-expanded', 'false');
+  };
+  navToggle?.addEventListener('click', () => {
+    const open = headerNav?.classList.toggle('open');
+    navToggle.classList.toggle('open', !!open);
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  headerNav?.addEventListener('click', (e) => {
+    if (e.target.closest('.nav-button')) closeNav();
+  });
+  document.addEventListener('click', (e) => {
+    if (!headerNav?.classList.contains('open')) return;
+    if (e.target.closest('#header-nav') || e.target.closest('#nav-toggle')) return;
+    closeNav();
+  });
+
   document.getElementById('glossary-btn')?.addEventListener('click', () => { selectTab('glossary'); pushPath(); });
   document.getElementById('rivens-btn')?.addEventListener('click', () => { selectTab('rivens'); pushPath(); });
   document.getElementById('star-chart-btn')?.addEventListener('click', () => { selectTab('star-chart'); pushPath(); });

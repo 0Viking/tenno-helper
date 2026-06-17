@@ -40,6 +40,11 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+- **2026-06-17 — Mobile menu, shareable links, and patch notes**
+  - **Mobile-friendly header** — on phones the navigation collapses into a hamburger menu (☰), with the logo centered and language/credits on the right, so the tabs no longer overflow.
+  - **Shareable links** — pages now have their own URL (e.g. `/archetypes/frost`, `/star-chart/mars`); copy the address bar to share a specific warframe, planet, or tab, and the browser back button works.
+  - **Patch notes in Credits** — the Credits dialog now has a "Patch notes" view with the recent changelog.
+
 - **2026-06-16 — Warframe farm map, interactive icons, and Star Chart polish**
   - **Now on Cloudflare Pages** — the site is now hosted at [tennohelper.pages.dev](https://tennohelper.pages.dev), with faster global load times via Cloudflare's CDN.
   - **Warframe icons on planet cards** — every planet card now shows which warframes drop on it; click an icon to jump straight to that warframe's archetype detail.
@@ -119,6 +124,11 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+- **2026-06-17 — Menu mobile, links compartilháveis e notas de atualização**
+  - **Header adaptado pra celular** — no celular a navegação vira um menu hambúrguer (☰), com o logo centralizado e idioma/créditos à direita, então as abas não estouram mais.
+  - **Links compartilháveis** — cada página agora tem URL própria (ex.: `/archetypes/frost`, `/star-chart/mars`); copie a barra de endereço pra compartilhar um warframe, planeta ou aba específica, e o botão voltar do navegador funciona.
+  - **Notas de atualização nos Créditos** — o modal de Créditos agora tem uma view "Notas de atualização" com o changelog recente.
 
 - **2026-06-16 — Mapa de farm de warframes, ícones interativos e polimento do Mapa Estelar**
   - **Agora no Cloudflare Pages** — o site agora está em [tennohelper.pages.dev](https://tennohelper.pages.dev), com carregamento mais rápido pelo CDN global da Cloudflare.

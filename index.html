@@ -13,26 +13,33 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="header-nav" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
       <div class="header-left">
         <h1 class="site-title">
           <img class="site-logo" src="assets/icons/logo/tennohelper.png" alt="Tenno Helper">
         </h1>
-        <button class="nav-button" id="archetype-btn" type="button">
-          <img class="nav-icon" src="assets/icons/nav/archetypes.png" alt="">
-          <span data-i18n="archetypes">Archetypes</span>
-        </button>
-        <button class="nav-button" id="star-chart-btn" type="button">
-          <img class="nav-icon" src="assets/icons/nav/star-chart.png" alt="">
-          <span data-i18n="star_chart">Star Chart</span>
-        </button>
-        <button class="nav-button" id="glossary-btn" type="button">
-          <img class="nav-icon" src="assets/icons/nav/glossary.svg" alt="">
-          <span data-i18n="glossary">Glossary</span>
-        </button>
-        <button class="nav-button" id="rivens-btn" type="button">
-          <img class="nav-icon" src="assets/icons/nav/rivens.png" alt="">
-          <span data-i18n="rivens">Rivens</span>
-        </button>
+        <nav class="header-nav" id="header-nav">
+          <button class="nav-button" id="archetype-btn" type="button">
+            <img class="nav-icon" src="assets/icons/nav/archetypes.png" alt="">
+            <span data-i18n="archetypes">Archetypes</span>
+          </button>
+          <button class="nav-button" id="star-chart-btn" type="button">
+            <img class="nav-icon" src="assets/icons/nav/star-chart.png" alt="">
+            <span data-i18n="star_chart">Star Chart</span>
+          </button>
+          <button class="nav-button" id="glossary-btn" type="button">
+            <img class="nav-icon" src="assets/icons/nav/glossary.svg" alt="">
+            <span data-i18n="glossary">Glossary</span>
+          </button>
+          <button class="nav-button" id="rivens-btn" type="button">
+            <img class="nav-icon" src="assets/icons/nav/rivens.png" alt="">
+            <span data-i18n="rivens">Rivens</span>
+          </button>
+        </nav>
       </div>
       <div class="header-right">
         <div class="nav-dropdown" id="lang-dropdown">
