@@ -16440,6 +16440,7 @@ function selectArchetype(slug) {
     state.activeStats = new Set();
     state.warframe = null;
     render();
+    pushPath();
     return;
   }
   state.archetype = slug;
@@ -16451,6 +16452,7 @@ function selectArchetype(slug) {
     : null;
   state.activeAbility = 0;
   render();
+  pushPath();
 }
 
 function selectStat(key) {
@@ -16472,6 +16474,7 @@ function selectStat(key) {
     state.warframe = null;
   }
   render();
+  pushPath();
 }
 
 function selectWarframe(slug) {
