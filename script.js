@@ -79,11 +79,16 @@ const STRINGS = {
     credits_patchnotes_back: '← Back to credits',
     credits_sources_label: 'References & sources',
     credits_wiki_desc: 'weapon data, dispositions, images, status effects, lore',
+    credits_wfcd_desc: 'machine-readable weapon stats & dispositions for riven classification',
+    credits_market_desc: 'riven market prices — which stats the meta values',
+    credits_overframe_desc: 'Incarnon evolutions and build meta',
     credits_morrow_desc: 'riven tier reference and evaluation conventions',
+    credits_grading_desc: 'riven grading methodology',
     credits_semlar_desc: 'riven roll mechanics and stat range references',
     credits_browse_desc: 'weapon database cross-reference',
     credits_tech_label: 'Tech stack',
-    credits_tesseract_desc: 'client-side OCR for riven image upload',
+    credits_vision_desc: 'OCR for reading riven screenshots',
+    credits_tesseract_desc: 'offline OCR fallback',
     credits_thanks_label: 'Thanks',
     credits_thanks_text: 'To the Warframe community for screenshots, feedback and testing.',
     acquisition_title: 'Acquisition',
@@ -303,11 +308,16 @@ const STRINGS = {
     credits_patchnotes_back: '← Voltar aos créditos',
     credits_sources_label: 'Referências e fontes',
     credits_wiki_desc: 'dados de armas, dispositions, imagens, status effects, lore',
+    credits_wfcd_desc: 'stats e disposições de armas em formato legível — base da classificação de rivens',
+    credits_market_desc: 'preços de rivens no mercado — quais stats a meta valoriza',
+    credits_overframe_desc: 'evoluções Incarnon e build de meta',
     credits_morrow_desc: 'referência de tiers de rivens e convenções de avaliação',
+    credits_grading_desc: 'metodologia de avaliação de rivens',
     credits_semlar_desc: 'mecânicas de roll de riven e ranges de stats',
     credits_browse_desc: 'cross-reference do banco de armas',
     credits_tech_label: 'Stack técnica',
-    credits_tesseract_desc: 'OCR client-side pra upload de imagem de riven',
+    credits_vision_desc: 'OCR para leitura de prints de riven',
+    credits_tesseract_desc: 'OCR de reserva (offline)',
     credits_thanks_label: 'Agradecimentos',
     credits_thanks_text: 'À comunidade Warframe pelos prints, feedback e testes.',
     acquisition_title: 'Aquisição',
@@ -16026,6 +16036,7 @@ function renderRivenWeaponBtn() {
     btn.appendChild(icon);
     btn.appendChild(text);
     document.getElementById('riven-incarnon-row')?.classList.add('hidden');
+    document.getElementById('riven-incarnon-auto')?.classList.add('hidden');
     return;
   }
 
@@ -16092,18 +16103,19 @@ function renderRivenWeaponBtn() {
   });
   btn.appendChild(clear);
 
-  // Show/hide incarnon toggle depending on whether the selected weapon has incarnon data.
+  // O toggle Incarnon só aparece pra armas COM dados de Incarnon; o aviso só
+  // aparece quando o toggle está LIGADO.
   const incarnonRow = document.getElementById('riven-incarnon-row');
+  const incarnonAuto = document.getElementById('riven-incarnon-auto');
   if (incarnonRow) {
     if (w.incarnon) {
       incarnonRow.classList.remove('hidden');
       const cb = document.getElementById('riven-incarnon-checkbox');
       if (cb) cb.checked = state.riven.incarnonMode;
-      // Notice that the mode was auto-enabled because this weapon's meta is the Incarnon form.
-      const auto = document.getElementById('riven-incarnon-auto');
-      if (auto) auto.classList.toggle('hidden', w.incarnon.metaDefault === false);
+      if (incarnonAuto) incarnonAuto.classList.toggle('hidden', !state.riven.incarnonMode);
     } else {
       incarnonRow.classList.add('hidden');
+      if (incarnonAuto) incarnonAuto.classList.add('hidden');
     }
   }
 }
