@@ -40,6 +40,13 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+- **2026-06-18 — Smarter Riven evaluator & photo reading**
+  - **Re-tuned weapon ratings** — every weapon's ideal Riven stats were re-derived from real stats: raw +Damage is no longer treated as a top stat (it's filler on most weapons), and crit/status priorities now match each weapon's build. Status weapons correctly mark crit as wasted.
+  - **Incarnon Mode** — weapons built around their Incarnon form (Torid, Braton, Latron, Strun…) auto-enable Incarnon Mode when selected, grading the Riven against that form's meta build. Toggle it off to evaluate the base form.
+  - **Roll strength & disposition** — the result now shows how strong your roll is (normalized by the weapon's disposition) plus the disposition dots.
+  - **Better photo reading** — uploading a Riven screenshot now uses Google Vision for far more accurate text recognition (it even reads photos taken of a monitor), with the local reader as a fallback. Faction-damage stats (e.g. "x1.27 to Infested") are read correctly now.
+  - **Update 43 content** — new augments (Dante, Temple, Koumei, Nokko), the Nidus retouch (200 Mutation stacks, Virulence/Ravenous changes), and Uranus Proxima on the Star Chart.
+
 - **2026-06-17 — Riven comparator, mobile menu, and shareable links**
   - **Compare two Rivens side by side** — the Riven evaluator now has two independent columns (Roll A / Roll B). Evaluate a single roll or fill both to compare — ideal when deciding which roll to keep after a reroll. Each column has its own screenshot upload, stat slots, and 0–10 score with full breakdown.
   - **Weapon lock** — the first roll to have a weapon set (manually or via OCR) locks it for both columns; the lock releases only when both columns are cleared.
@@ -126,6 +133,13 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+- **2026-06-18 — Avaliador de Rivens e leitura por foto mais inteligentes**
+  - **Notas de arma recalibradas** — os stats ideais de Riven de cada arma foram refeitos a partir dos stats reais: +Dano cru não é mais tratado como stat top (é filler na maioria), e as prioridades de crit/status agora batem com a build de cada arma. Armas de status marcam crit como desperdício.
+  - **Modo Incarnon** — armas construídas na forma Incarnon (Torid, Braton, Latron, Strun…) ligam o Modo Incarnon automaticamente ao serem selecionadas, avaliando o Riven pela build de meta da forma. Desligue para avaliar a forma base.
+  - **Força do roll & disposição** — o resultado agora mostra quão forte foi seu roll (normalizado pela disposição da arma) e os pontos de disposição.
+  - **Leitura por foto melhor** — enviar um print de Riven agora usa o Google Vision, com reconhecimento muito mais preciso (lê até foto de monitor), com o leitor local como reserva. Stats de dano de facção (ex.: "x1,27 contra Infestados") agora são lidos corretamente.
+  - **Conteúdo do Update 43** — novos augments (Dante, Temple, Koumei, Nokko), o retoque do Nidus (200 cargas de Mutação, mudanças em Virulence/Ravenous) e o Uranus Proxima no Mapa Estelar.
 
 - **2026-06-17 — Comparador de Rivens, menu mobile e links compartilháveis**
   - **Compare dois Rivens lado a lado** — o avaliador agora tem duas colunas independentes (Roll A / Roll B). Avalie um roll só ou preencha os dois pra comparar — ideal pra decidir qual roll manter depois de um reroll. Cada coluna tem upload de print próprio, slots de stats e nota de 0 a 10 com breakdown completo.
