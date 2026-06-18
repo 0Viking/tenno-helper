@@ -141,7 +141,7 @@ const STRINGS = {
     status_none: 'None',
     rivens: 'Rivens',
     riven_page_title: 'Riven Evaluation',
-    riven_page_intro: 'Describe your riven below and get a [[0–10 score]] for how good it is. Pick the weapon category, the number of stats (2, 3 or 4), then fill in each stat. The evaluator weighs stat [[tier]], whether negatives are [[free or harmful]], and the overall [[slot shape]] of the roll.',
+    riven_page_intro: 'Evaluate [[one riven or compare two side by side]] — useful when deciding which roll to keep after a reroll. Upload a [[screenshot]] for automatic reading or fill in the stats manually. Optionally pick a weapon for tailored recommendations. Each roll gets a [[0–10 score]] based on stat [[tier]], whether negatives are [[free or harmful]], and the overall [[slot shape]].',
     riven_category_label: 'Weapon category',
     riven_cat_primary: 'Primary',
     riven_cat_secondary: 'Secondary',
@@ -152,7 +152,7 @@ const STRINGS = {
     riven_cat_companion: 'Companion',
     riven_stats_label: 'Stats',
     riven_stat_placeholder: '— select a stat —',
-    riven_value_placeholder: 'value (e.g. 25 or -30)',
+    riven_value_placeholder: 'value',
     riven_add_stat: 'Add stat',
     riven_remove_stat: 'Remove stat',
     riven_evaluate: 'Evaluate',
@@ -226,6 +226,10 @@ const STRINGS = {
     riven_rec_free_neg: 'Free negatives',
     riven_rec_wasted_pos: 'Wasted on this weapon',
     riven_rec_avoid_neg: 'Negatives to avoid',
+    riven_roll_a: 'Roll A',
+    riven_roll_b: 'Roll B',
+    riven_clear: 'Clear',
+    riven_ocr_weapon_locked: 'Detected riven for {weapon} — weapon is locked.',
   },
   'pt-BR': {
     archetypes: 'Arquétipos',
@@ -356,7 +360,7 @@ const STRINGS = {
     status_none: 'Nenhuma',
     rivens: 'Rivens',
     riven_page_title: 'Avaliação de Riven',
-    riven_page_intro: 'Descreva seu riven abaixo e receba uma [[nota de 0 a 10]] sobre o quão bom ele é. Escolha a categoria da arma, o número de stats (2, 3 ou 4) e então preencha cada um. O avaliador pesa o [[tier do stat]], se negativos são [[livres ou prejudiciais]], e a [[forma geral]] do roll.',
+    riven_page_intro: 'Avalie [[um riven ou compare dois lado a lado]] — ideal para decidir qual roll manter depois de um reroll. Faça upload de um [[print]] para leitura automática ou preencha os stats manualmente. Selecione a arma (opcional) para recomendações personalizadas. Cada roll recebe uma [[nota de 0 a 10]] com base no [[tier do stat]], se negativos são [[livres ou prejudiciais]], e a [[forma geral]] do roll.',
     riven_category_label: 'Categoria da arma',
     riven_cat_primary: 'Primária',
     riven_cat_secondary: 'Secundária',
@@ -367,7 +371,7 @@ const STRINGS = {
     riven_cat_companion: 'Companion',
     riven_stats_label: 'Stats',
     riven_stat_placeholder: '— escolha um stat —',
-    riven_value_placeholder: 'valor (ex: 25 ou -30)',
+    riven_value_placeholder: 'valor',
     riven_add_stat: 'Adicionar stat',
     riven_remove_stat: 'Remover stat',
     riven_evaluate: 'Avaliar',
@@ -441,6 +445,10 @@ const STRINGS = {
     riven_rec_free_neg: 'Negativos gratuitos',
     riven_rec_wasted_pos: 'Desperdício nessa arma',
     riven_rec_avoid_neg: 'Negativos pra evitar',
+    riven_roll_a: 'Roll A',
+    riven_roll_b: 'Roll B',
+    riven_clear: 'Limpar',
+    riven_ocr_weapon_locked: 'Riven detectado para {weapon} — arma bloqueada.',
   },
 };
 
@@ -796,7 +804,7 @@ const ARCHETYPES = [
       en: 'The category reserved for warframes that do not stand out in any single category — the poor souls who desperately need a rework.',
       'pt-BR': 'A categoria reservada pros warframes que não se destacam em nenhuma categoria — os coitados que precisam desesperadamente de um rework.',
     },
-    warframes: ['Banshee'] },
+    warframes: ['Banshee', 'Sirius & Orion'] },
 ];
 
 function archName(a) { return (a.name && (a.name[state.locale] || a.name[DEFAULT_LOCALE])) || ''; }
@@ -897,6 +905,9 @@ const WARFRAMES_DATA = {
   'mirage':    { stats: { dano: 5, sobrevivencia: 2, suporte: 1, controle: 2, furtividade: 0, complexidade: 2 }, color: '#2289a6' },
   'saryn':     { stats: { dano: 5, sobrevivencia: 0, suporte: 0, controle: 1, furtividade: 0, complexidade: 3 }, color: '#c1701f' },
   'sevagoth':  { stats: { dano: 5, sobrevivencia: 2, suporte: 1, controle: 2, furtividade: 0, complexidade: 3 }, color: '#6e8caf' },
+  // Sirius & Orion (Update 43, frame #65) — sem classificação por enquanto (stats 0,
+  // arquétipo Rework provisório); pendente decisão de classificação (usuário/Vinoncio).
+  'sirius & orion': { stats: { dano: 0, sobrevivencia: 0, suporte: 0, controle: 0, furtividade: 0, complexidade: 0 }, color: '#6c5ce7' },
   'temple':    { stats: { dano: 4, sobrevivencia: 2, suporte: 1, controle: 1, furtividade: 0, complexidade: 3 }, color: '#b56b66' },
   'xaku':      { stats: { dano: 4, sobrevivencia: 2, suporte: 1, controle: 2, furtividade: 0, complexidade: 4 }, color: '#9aa334' },
 
@@ -1580,6 +1591,37 @@ const WARFRAMES_DETAILS = {
       main_bp: { orokin_cell: 3 },
     },
   },
+  'sirius & orion': {
+    title: 'Os Rivais Estelares',
+    description: 'Duas Warframes de linhas do tempo paralelas controladas como uma só, alternáveis em missão. Sirius assume o suporte (calor, cura e energia); Orion, o dano e o controle (corte, strip de defesas e gravidade). A forma inativa segue como aliada controlada por IA, invulnerável, e a rivalidade culmina em um choque celestial compartilhado.',
+    portraits: { base: 'assets/icons/base/sirius.png', normalLabel: 'Sirius', variantCover: true, variants: [{ key: 'orion', label: 'Orion' }] },
+    abilities: [
+      { type: 'passive', name: 'Constelação Gêmea', description: 'Trocar entre Sirius e Orion concede +45% de Eficiência de Habilidade nos 2 lançamentos seguintes e acumula Constellation Stars para a ultimate. Abaixo de 50 de energia, os dois roubam energia um do outro. A forma inativa permanece em campo como aliada controlada por IA, invulnerável.' },
+      { name: 'Coronal Ejection / Gravitic Slash', forms: [
+        { label: 'Sirius', name: 'Coronal Ejection', description: 'Arremessa uma foice de Luz Jade que retorna como bumerangue, causando dano de Calor e recolhendo itens no caminho.' },
+        { label: 'Orion', name: 'Gravitic Slash', description: 'Um corte frontal amplo que inflige status de Corte enquanto remove Armadura e Escudos dos inimigos atingidos.' },
+      ] },
+      { name: 'Jade Stars / Astral Shell', forms: [
+        { label: 'Sirius', name: 'Jade Stars', description: 'Invoca motes de Luz Jade que disparam contra os inimigos atacados, causando dano de Calor e status.' },
+        { label: 'Orion', name: 'Astral Shell', description: 'Envolve Orion (e Sirius) em uma casca que, ao receber dano, gera um chamariz invulnerável que atrai a atenção inimiga.' },
+      ] },
+      { name: "Light's Sanctuary / Event Horizon", forms: [
+        { label: 'Sirius', name: "Light's Sanctuary", description: 'Cria um santuário em expansão que cura aliados, concede Redução de Dano e revive quem estiver caído na área.' },
+        { label: 'Orion', name: 'Event Horizon', description: 'Lança um buraco negro errante que ragdolla e puxa os inimigos, causando dano enquanto os agrupa.' },
+      ] },
+      { name: 'Celestial Clash', description: 'Ultimate compartilhada: Sirius e Orion duelam no ar consumindo Constellation Stars para causar dano radial massivo de Explosão, com crítico bônus quando as cores se alinham.' },
+    ],
+    acquisition: {
+      source_type: 'railjack',
+      blueprint: 'Blueprint principal recompensada ao concluir a quest Jade Shadows: Constellations.',
+      parts: 'Blueprints de componentes dropam de Scoria\'s Angel no Uranus Proxima (Railjack), conteúdo pós-quest.',
+      alternative: 'Alternativamente, compre com o Hunhow na Pontis Tower: principal por 275 Emerald/Crimson Talents e cada parte por 90 (365 Talents no total).',
+      recommended_farm: 'Uranus Proxima (Railjack) — repita Scoria\'s Angel para as partes; agora jogável também no Steel Path.',
+    },
+    railjackFarms: [
+      { planet: 'uranus-proxima', missionTypes: [], note: { en: 'Component blueprints drop from Scoria\'s Angel.', 'pt-BR': 'Blueprints de componentes dropam de Scoria\'s Angel.' } },
+    ],
+  },
   'temple': {
     title: 'A Estrela do Rock',
     description: 'Empunhando Lizzie, sua guitarra Infestada flamejante, Temple acende a chama da revolução com solos de fogo e poder de palco que inspira aliados.',
@@ -1918,11 +1960,11 @@ const WARFRAMES_DETAILS = {
     description: 'Warframe tematizado em Infestação focado em dano, sobrevivência e controle de multidão, ganhando poder ao acumular pilhas de Mutação durante o combate.',
     portraits: { base: 'assets/icons/base/nidus.png', prime: 'assets/icons/prime/nidus.png', variants: [{ key: 'mutated', label: 'Mutated' }] },
     abilities: [
-      { type: 'passive', name: 'Pilhas de Mutação', icon: 'assets/abilities/nidus/passive.png', description: 'Se Nidus morreria tendo pilhas de Mutação suficientes, ele consome essas pilhas para ganhar invulnerabilidade temporária e restaurar parte da vida.' },
-      { name: 'Virulence', icon: 'assets/abilities/nidus/virulence.png', description: 'Bate no chão para liberar um caminho de crescimento fúngico que causa dano aos inimigos e gera pilhas de Mutação a cada acerto.' },
+      { type: 'passive', name: 'Pilhas de Mutação', icon: 'assets/abilities/nidus/passive.png', description: 'Acumula até 200 pilhas de Mutação (antes 100). Se Nidus morreria tendo pilhas suficientes, ele as consome para ganhar invulnerabilidade temporária e restaurar parte da vida. O retoque do Update 43 elevou a Vida base (555→675; Prime 650→825) e dobrou a regeneração de vida nativa.' },
+      { name: 'Virulence', icon: 'assets/abilities/nidus/virulence.png', description: 'Bate no chão liberando um caminho de crescimento fúngico que causa dano no acerto inicial e continua causando dano ao longo do tempo nos inimigos tocados durante a duração — ambos geram pilhas de Mutação, então não é mais preciso ficar repetindo a habilidade. O reembolso de energia por acerto vale só no acerto inicial; a travessia em superfícies de alturas variadas foi melhorada.' },
       { name: 'Larva', icon: 'assets/abilities/nidus/larva.png', description: 'Lança um casulo Infestado que agarra os inimigos próximos e os aglomera em um ponto central, prontos para serem destruídos em sequência.' },
       { name: 'Parasitic Link', icon: 'assets/abilities/nidus/parasiticlink.png', description: 'Cria um elo com um alvo; em aliados aumenta dano de arma e Força; em inimigos redireciona uma parte do dano que Nidus receberia para eles.' },
-      { name: 'Ravenous', icon: 'assets/abilities/nidus/ravenous.png', description: 'Cria um campo Infestado que regenera a vida de Nidus e gera Maggots que se prendem aos inimigos e explodem ao seu redor.' },
+      { name: 'Ravenous', icon: 'assets/abilities/nidus/ravenous.png', description: 'Cria um campo Infestado cujo raio agora escala com Alcance de Habilidade, regenerando 75 de vida por segundo (antes 20) e limpando efeitos de status nos pulsos de cura. Gera Maggots que se prendem aos inimigos e explodem ao seu redor; recastar enquanto está sobre o campo faz os Maggots explodirem.' },
     ],
     acquisition: {
       source_type: 'quest_reward',
@@ -3027,6 +3069,26 @@ const WARFRAMES_DETAILS_EN = {
       recommended_farm: 'Run Pluto or Veil Proxima Void Storms — bonus reward is separate from Relic rewards, ~10 rotations expected per part.',
     },
   },
+  'sirius & orion': {
+    title: 'The Stellar Rivals',
+    description: 'Two Warframes from parallel timelines controlled as one, swappable mid-mission. Sirius plays support (Heat, healing and energy); Orion deals damage and crowd control (Slash, defense stripping and gravity). The inactive form fights on as an invulnerable AI ally, and their rivalry culminates in a shared celestial clash.',
+    abilities: [
+      { type: 'passive', name: 'Twin Constellation', description: 'Swapping between Sirius and Orion grants +45% Ability Efficiency for the next 2 casts and builds Constellation Stars for the ultimate. Below 50 energy, the two steal energy from each other. The inactive form remains on the field as an invulnerable AI-controlled ally.' },
+      { name: 'Coronal Ejection / Gravitic Slash', forms: [
+        { label: 'Sirius', name: 'Coronal Ejection', description: 'Throws a Jade Light scythe that boomerangs back, dealing Heat damage and gathering pickups along the way.' },
+        { label: 'Orion', name: 'Gravitic Slash', description: 'A wide frontal slice that inflicts Slash status while stripping Armor and Shields from struck enemies.' },
+      ] },
+      { name: 'Jade Stars / Astral Shell', forms: [
+        { label: 'Sirius', name: 'Jade Stars', description: 'Summons Jade Light motes that launch at attacked enemies, dealing Heat damage and status.' },
+        { label: 'Orion', name: 'Astral Shell', description: 'Wraps Orion (and Sirius) in a shell that, when hit, spawns an invulnerable decoy that draws enemy attention.' },
+      ] },
+      { name: "Light's Sanctuary / Event Horizon", forms: [
+        { label: 'Sirius', name: "Light's Sanctuary", description: 'Creates an expanding sanctuary that heals allies, grants Damage Reduction, and revives anyone downed inside it.' },
+        { label: 'Orion', name: 'Event Horizon', description: 'Throws a drifting black hole that ragdolls and pulls enemies, dealing damage while grouping them up.' },
+      ] },
+      { name: 'Celestial Clash', description: 'Shared ultimate: Sirius and Orion duel in the air, consuming Constellation Stars for massive radial Blast damage, with bonus crit when their colors align.' },
+    ],
+  },
   'temple': {
     title: 'The Rock Star',
     description: 'Wielding Lizzie, her flaming Infested guitar, Temple ignites the flame of revolution with fiery solos and stage presence that inspires allies.',
@@ -3262,11 +3324,11 @@ const WARFRAMES_DETAILS_EN = {
     title: 'The Adaptive Scourge',
     description: 'An Infestation-themed Warframe focused on damage, survival, and crowd control, gaining power by accumulating Mutation stacks during combat.',
     abilities: [
-      { type: 'passive', name: 'Mutation Stacks', description: 'If Nidus would die with enough Mutation stacks, he consumes those stacks to gain temporary invulnerability and restore part of his health.' },
-      { name: 'Virulence', description: 'Slams the ground to release a path of fungal growth that damages enemies and generates Mutation stacks with each hit.' },
+      { type: 'passive', name: 'Mutation Stacks', description: 'Builds up to 200 Mutation stacks (was 100). If Nidus would die with enough stacks, he consumes them to gain temporary invulnerability and restore part of his health. The Update 43 retouch raised his base Health (555→675; Prime 650→825) and doubled his innate health regeneration.' },
+      { name: 'Virulence', description: 'Slams the ground to release a path of fungal growth that deals damage on the initial hit and continues dealing damage over time to enemies touched during its duration — both contribute to Mutation stacks, so it no longer needs to be spammed. The per-hit energy refund still only applies to the initial hit; traversal across surfaces of varying heights was improved.' },
       { name: 'Larva', description: 'Launches an Infested cocoon that grabs nearby enemies and clusters them at a central point, ready to be destroyed in sequence.' },
       { name: 'Parasitic Link', description: 'Creates a link with a target; on allies it boosts weapon damage and Strength; on enemies it redirects a portion of the damage Nidus would take to them.' },
-      { name: 'Ravenous', description: "Creates an Infested field that regenerates Nidus's health and spawns Maggots that latch onto enemies and explode around them." },
+      { name: 'Ravenous', description: "Creates an Infested field whose radius now scales with Ability Range, regenerating 75 health per second (up from 20) and cleansing Status Effects on its healing pulses. It spawns Maggots that latch onto enemies and explode around them; recasting while standing on the field makes the Maggots explode." },
     ],
     acquisition: {
       source_type: 'quest_reward',
@@ -3792,6 +3854,44 @@ const WARFRAMES_DETAILS_EN = {
 // Augments are keyed by warframe slug, then by ability index (0 = passive, 1-4 = abilities).
 // Each augment: { name, description, image }. Descriptions verbatim from wiki.warframe.com.
 const AUGMENTS = {
+  // Update 43 (Jade Shadows: Constellations) — augments novos (Faction Syndicates).
+  // Imagens são placeholders (screenshots dos cards) até a wiki publicar as oficiais.
+  dante: {
+    1: [
+      {
+        name: 'Noctua Swarm',
+        image: 'assets/augments/dante/noctuaswarm.png',
+        description: {
+          en: 'Noctua Augment: Alternate Fire releases Paragrimms that swarm 8m around the point of aim for 15s, silencing enemies and stealing their Energy for allies.',
+          'pt-BR': 'Augment de Noctua: o fogo alternativo libera Paragrimms que enxameiam 8m ao redor do ponto de mira por 15s, silenciando inimigos e roubando a Energia deles para os aliados.',
+        },
+      },
+    ],
+  },
+  temple: {
+    0: [
+      {
+        name: 'Rhythm Guard',
+        image: 'assets/augments/temple/rhythmguard.png',
+        description: {
+          en: 'Passive Augment: Gain 100 Overguard when using an Ability on the Backbeat. Amount doubles up to 1600 per Beat, but resets if the Beat is missed.',
+          'pt-BR': 'Augment da Passiva: ganhe 100 de Sobreguarda ao usar uma Habilidade no Backbeat. O valor dobra até 1600 por Batida, mas zera se a Batida for perdida.',
+        },
+      },
+    ],
+  },
+  nokko: {
+    3: [
+      {
+        name: 'Reroot Rampage',
+        image: 'assets/augments/nokko/rerootrampage.png',
+        description: {
+          en: 'Reroot Augment: Collecting Reroot orbs summons additional Sprodlings inflicting 250 Toxin Damage with increased Critical Chance each hit.',
+          'pt-BR': 'Augment de Reroot: coletar orbes de Reroot invoca Sprodlings adicionais que infligem 250 de Dano de Toxina com Chance de Crítico aumentada a cada acerto.',
+        },
+      },
+    ],
+  },
   ash: {
     1: [
       {
@@ -4627,6 +4727,16 @@ const AUGMENTS = {
     ],
   },
   koumei: {
+    1: [
+      {
+        name: 'Kumihimo Loading',
+        image: 'assets/augments/koumei/kumihimoloading.png',
+        description: {
+          en: "Kumihimo Augment: 6 kills with weapons affected by Koumei's Passive give a loaded die that always rolls 6. Hold to cast empowered Kumihimo and consume dice.",
+          'pt-BR': 'Augment de Kumihimo: 6 abates com armas afetadas pela Passiva de Koumei concedem um dado viciado que sempre rola 6. Segure para lançar Kumihimo potencializada e consumir os dados.',
+        },
+      },
+    ],
     2: [
       {
         name: 'Omikuji\'s Fortune',
@@ -4990,8 +5100,8 @@ const AUGMENTS = {
         name: 'Abundant Mutation',
         image: 'assets/augments/nidus/abundantmutation.png',
         description: {
-          en: 'Nidus gains an additional 200 max stacks of Mutation. Undying has a 30s cooldown.',
-          'pt-BR': 'Nidus ganha 200 cargas máximas adicionais de Mutação. Undying tem um tempo de recarga de 30s.',
+          en: 'Nidus gains an additional 300 max stacks of Mutation. Undying has a 30s cooldown.',
+          'pt-BR': 'Nidus ganha 300 cargas máximas adicionais de Mutação. Undying tem um tempo de recarga de 30s.',
         },
       },
     ],
@@ -14431,6 +14541,20 @@ const STAR_CHART = {
         { slug: 'sabmir-cloud', name: 'Sabmir Cloud', type: 'spy',      levelRange: '95-100', section: 'corpus', warframeDrop: 'sevagoth' },
       ],
     },
+    {
+      // Uranus Proxima — Update 43 (Jade Shadows: Constellations). Post-quest Railjack
+      // location with the Pontis Tower hub. levelRange e mission types ainda não
+      // publicados na wiki (work-in-progress) — omitidos por ora, confirmar depois.
+      slug: 'uranus-proxima',
+      name: { en: 'Uranus Proxima', 'pt-BR': 'Proxima de Urano' },
+      faction: 'grineer',
+      image: 'https://wiki.warframe.com/images/Uranus.png',
+      resources: [],
+      nodes: [
+        { slug: 'the-kuva-wytch', name: "The Kuva Wytch", type: 'skirmish' },
+        { slug: 'scorias-angel',  name: "Scoria's Angel",  type: 'assassination', warframeDrop: 'sirius & orion' },
+      ],
+    },
   ],
   // §20.5 — Special tab: Duviri, Höllvania (1999) and Dark Refractory. Regions
   // have no faction/levelRange like planets; the card themes off `location`.
@@ -15418,66 +15542,62 @@ function preprocessImageForOcr(imageSrc) {
   });
 }
 
-async function runRivenOcr(file) {
-  // Reset previous result/warnings.
-  state.riven.result = null;
-  state.riven.warning = null;
-  state.riven.imageError = null;
-  state.riven.imageDetectedCount = 0;
+async function runRivenOcr(file, rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  roll.result = null;
+  roll.warning = null;
+  roll.imageError = null;
+  roll.imageDetectedCount = 0;
+  roll.weaponMismatch = null;
 
-  // Show preview while we work.
-  if (state.riven.imagePreviewUrl) URL.revokeObjectURL(state.riven.imagePreviewUrl);
-  state.riven.imagePreviewUrl = URL.createObjectURL(file);
+  if (roll.imagePreviewUrl) URL.revokeObjectURL(roll.imagePreviewUrl);
+  roll.imagePreviewUrl = URL.createObjectURL(file);
 
   try {
-    state.riven.imageState = 'loading_lib';
-    state.riven.imageProgress = 0;
+    roll.imageState = 'loading_lib';
+    roll.imageProgress = 0;
     renderRivens();
     await ensureTesseractLoaded();
 
-    state.riven.imageState = 'processing';
-    state.riven.imageProgress = 0;
+    roll.imageState = 'processing';
+    roll.imageProgress = 0;
     renderRivens();
 
-    const preprocessed = await preprocessImageForOcr(state.riven.imagePreviewUrl);
+    const preprocessed = await preprocessImageForOcr(roll.imagePreviewUrl);
 
     const { data } = await window.Tesseract.recognize(preprocessed, 'eng+por', {
       logger: m => {
         if (m.status === 'recognizing text' && typeof m.progress === 'number') {
-          state.riven.imageProgress = m.progress;
-          updateRivenOcrProgressUi();
+          roll.imageProgress = m.progress;
+          updateRivenOcrProgressUi(rollIdx);
         }
       },
     });
 
     const detected = parseRivenOcrText(data.text || '');
     if (detected.length === 0) {
-      state.riven.imageState = 'error';
-      state.riven.imageError = 'no_stats';
+      roll.imageState = 'error';
+      roll.imageError = 'no_stats';
       renderRivens();
       return;
     }
 
-    // Try to identify the weapon by name from the raw OCR text. The riven card
-    // shows the weapon name in a large prominent line right above the stats
-    // (e.g. "Nukor Hexa-acrides" — first token is the weapon name).
     const detectedWeapon = detectWeaponFromOcr(data.text || '');
     if (detectedWeapon) {
-      state.riven.weapon = detectedWeapon.slug;
-      state.riven.weaponAutoDetected = true;
-      state.riven.category = detectedWeapon.category;
+      if (!state.riven.weapon) {
+        state.riven.weapon = detectedWeapon.slug;
+        state.riven.weaponAutoDetected = true;
+        state.riven.category = detectedWeapon.category;
+      } else if (state.riven.weapon !== detectedWeapon.slug) {
+        const w = weaponBySlug(detectedWeapon.slug);
+        roll.weaponMismatch = (w && w.name) || detectedWeapon.slug;
+      }
     } else {
-      // Auto-detect category from the detected stats — if any stat is melee-exclusive
-      // (Range, Combo Duration, Initial Combo, etc.) we switch the category to melee
-      // so the dropdown contains the right options.
       const inferred = inferCategoryFromDetected(detected);
       if (inferred) state.riven.category = inferred;
     }
 
-    // Auto-populate the form below. Slot count matches the detected count
-    // (between 2 and 4). Value carries its sign — negative effects become
-    // negative numbers (e.g. "-30").
-    state.riven.slots = Math.min(4, Math.max(2, detected.length));
+    roll.slots = Math.min(4, Math.max(2, detected.length));
     const fresh = [
       { slug: null, value: '' },
       { slug: null, value: '' },
@@ -15489,20 +15609,12 @@ async function runRivenOcr(file) {
       const def = RIVEN_STATS[d.slug];
       let value;
       if (def && def.multiplier) {
-        // Faction damage is stored as a multiplier (0.75x / 1.23x).
-        // In-game: positive roll shows as "+30%" (percentage), negative as
-        // "x0.73" (multiplier). The OCR captures the raw number — if it
-        // came from the percentage form (value > 5 typically), convert to
-        // a multiplier so the form treats it correctly.
         const raw = parseFloat(d.value);
         if (d.sign === 'neg') {
-          // Should not happen for faction damage, but handle as "1 - X%"
           value = (1 - raw / 100).toFixed(2);
         } else if (raw > 5) {
-          // Looks like a percentage from a positive faction-damage roll
           value = (1 + raw / 100).toFixed(2);
         } else {
-          // Already a multiplier (e.g. 0.73)
           value = String(raw);
         }
       } else {
@@ -15510,86 +15622,93 @@ async function runRivenOcr(file) {
       }
       fresh[i] = { slug: d.slug, value };
     });
-    state.riven.stats = fresh;
-    state.riven.imageState = 'success';
-    state.riven.imageDetectedCount = detected.length;
+    roll.stats = fresh;
+    roll.imageState = 'success';
+    roll.imageDetectedCount = detected.length;
     renderRivens();
   } catch (err) {
     console.error('Riven OCR error:', err);
-    state.riven.imageState = 'error';
-    state.riven.imageError = err && err.message && err.message.includes('Tesseract load')
+    roll.imageState = 'error';
+    roll.imageError = err && err.message && err.message.includes('Tesseract load')
       ? 'load_failed' : 'ocr_failed';
     renderRivens();
   }
 }
 
-function updateRivenOcrProgressUi() {
-  const fill = document.getElementById('riven-ocr-progress-fill');
-  if (fill) fill.style.width = `${Math.round(state.riven.imageProgress * 100)}%`;
+function updateRivenOcrProgressUi(rollIdx) {
+  const fill = document.getElementById(`riven-ocr-progress-fill-${rollIdx}`);
+  if (fill) fill.style.width = `${Math.round(state.riven.rolls[rollIdx].imageProgress * 100)}%`;
 }
 
 function setupRivenUploadEvents() {
-  const zone = document.getElementById('riven-upload-zone');
-  const input = document.getElementById('riven-image-input');
-  const changeBtn = document.getElementById('riven-image-change-btn');
-  const removeBtn = document.getElementById('riven-image-remove-btn');
-  if (!zone || !input) return;
+  [0, 1].forEach(rollIdx => {
+    const zone      = document.getElementById(`riven-upload-zone-${rollIdx}`);
+    const input     = document.getElementById(`riven-image-input-${rollIdx}`);
+    const changeBtn = document.getElementById(`riven-image-change-btn-${rollIdx}`);
+    const removeBtn = document.getElementById(`riven-image-remove-btn-${rollIdx}`);
+    if (!zone || !input) return;
 
-  zone.addEventListener('click', () => input.click());
-  changeBtn?.addEventListener('click', () => input.click());
-  removeBtn?.addEventListener('click', () => resetRivenForm());
+    zone.addEventListener('click', () => input.click());
+    changeBtn?.addEventListener('click', () => input.click());
+    removeBtn?.addEventListener('click', () => removeRivenImage(rollIdx));
 
-  input.addEventListener('change', e => {
-    const file = e.target.files && e.target.files[0];
-    if (file) runRivenOcr(file);
-    input.value = ''; // allow re-uploading the same file
-  });
-
-  ['dragenter', 'dragover'].forEach(ev => {
-    zone.addEventListener(ev, e => {
-      e.preventDefault();
-      zone.classList.add('dragging');
+    input.addEventListener('change', e => {
+      const file = e.target.files && e.target.files[0];
+      if (file) runRivenOcr(file, rollIdx);
+      input.value = '';
     });
-  });
-  ['dragleave', 'drop'].forEach(ev => {
-    zone.addEventListener(ev, e => {
-      e.preventDefault();
-      zone.classList.remove('dragging');
+
+    ['dragenter', 'dragover'].forEach(ev => {
+      zone.addEventListener(ev, e => {
+        e.preventDefault();
+        zone.classList.add('dragging');
+      });
     });
-  });
-  zone.addEventListener('drop', e => {
-    const file = e.dataTransfer.files && e.dataTransfer.files[0];
-    if (file && file.type.startsWith('image/')) runRivenOcr(file);
+    ['dragleave', 'drop'].forEach(ev => {
+      zone.addEventListener(ev, e => {
+        e.preventDefault();
+        zone.classList.remove('dragging');
+      });
+    });
+    zone.addEventListener('drop', e => {
+      const file = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) runRivenOcr(file, rollIdx);
+    });
   });
 }
 
-function resetRivenForm() {
-  if (state.riven.imagePreviewUrl) {
-    try { URL.revokeObjectURL(state.riven.imagePreviewUrl); } catch (e) {}
+function removeRivenImage(rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  if (roll.imagePreviewUrl) {
+    try { URL.revokeObjectURL(roll.imagePreviewUrl); } catch (e) {}
+    roll.imagePreviewUrl = null;
   }
-  state.riven.category = 'primary';
-  state.riven.slots = 2;
-  state.riven.stats = [
-    { slug: null, value: '' },
-    { slug: null, value: '' },
-    { slug: null, value: '' },
-    { slug: null, value: '' },
-  ];
-  state.riven.result = null;
-  state.riven.warning = null;
-  state.riven.imageState = 'idle';
-  state.riven.imagePreviewUrl = null;
-  state.riven.imageProgress = 0;
-  state.riven.imageError = null;
-  state.riven.imageDetectedCount = 0;
-  state.riven.weapon = null;
-  state.riven.weaponAutoDetected = false;
-
-  const fileInput = document.getElementById('riven-image-input');
+  roll.imageState = 'idle';
+  roll.imageProgress = 0;
+  roll.imageError = null;
+  roll.imageDetectedCount = 0;
+  roll.weaponMismatch = null;
+  const fileInput = document.getElementById(`riven-image-input-${rollIdx}`);
   if (fileInput) fileInput.value = '';
-  const previewImg = document.getElementById('riven-image-preview-img');
+  const previewImg = document.getElementById(`riven-image-preview-img-${rollIdx}`);
   if (previewImg) previewImg.src = '';
+  renderRivenImageSection(rollIdx);
+}
 
+function resetRivenForm(rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  if (roll.imagePreviewUrl) {
+    try { URL.revokeObjectURL(roll.imagePreviewUrl); } catch (e) {}
+  }
+  const fileInput = document.getElementById(`riven-image-input-${rollIdx}`);
+  if (fileInput) fileInput.value = '';
+  const previewImg = document.getElementById(`riven-image-preview-img-${rollIdx}`);
+  if (previewImg) previewImg.src = '';
+  state.riven.rolls[rollIdx] = makeRoll();
+  if (state.riven.rolls.every(r => r.imageState === 'idle' && r.stats.every(s => !s.slug))) {
+    state.riven.weapon = null;
+    state.riven.weaponAutoDetected = false;
+  }
   renderRivens();
 }
 
@@ -15710,18 +15829,16 @@ function closeWeaponPicker() {
 function selectWeapon(slug, autoDetected = false) {
   state.riven.weapon = slug;
   state.riven.weaponAutoDetected = autoDetected;
-  // Snap category to the selected weapon's category
   const w = weaponBySlug(slug);
   if (w) state.riven.category = w.category;
-  // Invalidate any previous evaluation so the score reflects new context
-  state.riven.result = null;
+  state.riven.rolls.forEach(roll => { roll.result = null; });
   renderRivens();
 }
 
 function clearWeapon() {
   state.riven.weapon = null;
   state.riven.weaponAutoDetected = false;
-  state.riven.result = null;
+  state.riven.rolls.forEach(roll => { roll.result = null; });
   renderRivens();
 }
 
@@ -16255,6 +16372,26 @@ function applyWarframeStats(slug) {
 
 // ============== Estado e render ==============
 
+function makeRoll() {
+  return {
+    slots: 2,
+    stats: [
+      { slug: null, value: '' },
+      { slug: null, value: '' },
+      { slug: null, value: '' },
+      { slug: null, value: '' },
+    ],
+    result: null,
+    warning: null,
+    imageState: 'idle',
+    imagePreviewUrl: null,
+    imageProgress: 0,
+    imageError: null,
+    imageDetectedCount: 0,
+    weaponMismatch: null,
+  };
+}
+
 const state = {
   archetype: 'canhao-de-vidro',
   warframe: null,
@@ -16269,22 +16406,9 @@ const state = {
   statusSpecial: null, // 'void' | 'tau' | 'true' | null
   riven: {
     category: 'primary',
-    slots: 2,
-    stats: [
-      { slug: null, value: '' },
-      { slug: null, value: '' },
-      { slug: null, value: '' },
-      { slug: null, value: '' },
-    ],
-    result: null, // last evaluation result or null
-    warning: null, // 'pick_stat' | 'duplicate' | null
-    imageState: 'idle', // 'idle' | 'loading_lib' | 'processing' | 'success' | 'error'
-    imagePreviewUrl: null, // object URL of last uploaded image (for preview)
-    imageProgress: 0, // 0..1 during OCR
-    imageError: null, // 'no_stats' | 'ocr_failed' | 'load_failed'
-    imageDetectedCount: 0,
-    weapon: null,            // slug of selected weapon, or null
-    weaponAutoDetected: false, // true when set by OCR (so we can show "auto" indicator)
+    weapon: null,
+    weaponAutoDetected: false,
+    rolls: [makeRoll(), makeRoll()],
   },
   weaponPicker: {
     open: false,
@@ -16400,6 +16524,23 @@ function getWarframeDetails(slug) {
     abilities: pt.abilities.map((ptAb, i) => {
       const enAb = en.abilities && en.abilities[i];
       if (!enAb) return ptAb;
+      // Dual-form abilities (forms[]) merge each form by index: keep label/icon
+      // from PT base, take name/description from EN when present.
+      if (ptAb.forms) {
+        return {
+          type: ptAb.type,
+          name: enAb.name || ptAb.name,
+          forms: ptAb.forms.map((f, j) => {
+            const ef = enAb.forms && enAb.forms[j];
+            return {
+              label: f.label,
+              icon: f.icon,
+              name: (ef && ef.name) || f.name,
+              description: (ef && ef.description) || f.description,
+            };
+          }),
+        };
+      }
       return {
         type: ptAb.type,
         icon: ptAb.icon,
@@ -17330,7 +17471,7 @@ function renderPortrait() {
       state.form = 'normal';
     }
 
-    const formTabs = [{ key: 'normal', label: 'Normal' }, ...availableForms];
+    const formTabs = [{ key: 'normal', label: portraits.normalLabel || 'Normal' }, ...availableForms];
     formTabs.forEach(f => {
       const btn = document.createElement('button');
       btn.className = 'form-tab';
@@ -17348,7 +17489,10 @@ function renderPortrait() {
     ? portraits[state.variant]
     : `assets/icons/${state.variant}/${slug}-${state.form}.png`;
   const portraitBox = layerA.parentElement;
-  if (portraitBox) portraitBox.classList.toggle('is-variant', state.form !== 'normal');
+  // is-variant switches the portrait to object-fit:contain (for variant art framed
+  // differently, e.g. Equinox/Sevagoth). Frames whose variant uses the same framing
+  // as the base (e.g. Sirius & Orion) opt out via portraits.variantCover.
+  if (portraitBox) portraitBox.classList.toggle('is-variant', state.form !== 'normal' && !portraits.variantCover);
   const active = layerA.classList.contains('active') ? layerA
                : layerB.classList.contains('active') ? layerB : null;
 
@@ -17411,7 +17555,25 @@ function renderAbilityPanel() {
     </div>
   ` : '';
 
-  panel.innerHTML = `
+  // Dual-form abilities (ab.forms) render each form stacked (e.g. Sirius on top,
+  // Orion below), each with its own label/icon/name/description. Single abilities
+  // keep the original one-block layout.
+  const contentHtml = Array.isArray(ab.forms) ? `
+    <div class="ability-forms">
+      ${ab.forms.map(f => `
+        <div class="ability-content">
+          <div class="ability-icon">
+            ${f.icon ? `<img src="${f.icon}" alt="">` : ''}
+          </div>
+          <div class="ability-text">
+            ${f.label ? `<span class="ability-form-label">${f.label}</span>` : ''}
+            <h4 class="ability-name">${f.name}</h4>
+            <p class="ability-description">${f.description}</p>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  ` : `
     <div class="ability-content">
       <div class="ability-icon">
         ${ab.icon ? `<img src="${ab.icon}" alt="">` : ''}
@@ -17421,6 +17583,10 @@ function renderAbilityPanel() {
         <p class="ability-description">${ab.description}</p>
       </div>
     </div>
+  `;
+
+  panel.innerHTML = `
+    ${contentHtml}
     ${augmentsHtml}
   `;
 }
@@ -18266,10 +18432,12 @@ function buildPlanetCard(planet, filters, search) {
   const count = document.createElement('span');
   count.className = 'star-chart-planet-card-count';
   // Count reflects what the user actually sees: filtered nodes + spoiler-aware.
-  // When at least one filter is active, show "matching/total-visible" so the
-  // denominator also respects the spoiler toggle (e.g. Deimos = 8 with spoilers off).
+  // Show "matching/total-visible" when a mission filter is active OR when a
+  // search actually matched nodes (so "war" on Mars shows e.g. 1/18). When the
+  // search only matched the planet *name* (no node matches), show the plain
+  // total — all nodes are relevant there.
   const visibleTotal = planetNodesFiltered(planet, new Set(), '').length;
-  if (filters.size > 0) {
+  if (filters.size > 0 || (search && matchingNodes.length > 0)) {
     count.textContent = `${matchingNodes.length}/${visibleTotal} ${t('star_chart_nodes')}`;
   } else {
     count.textContent = `${visibleTotal} ${t('star_chart_nodes')}`;
@@ -18775,8 +18943,11 @@ function setupTabNav() {
     if (state.tab !== 'archetypes') { selectTab('archetypes'); pushPath(); }
   });
 
-  document.getElementById('riven-evaluate-btn')?.addEventListener('click', evaluateRiven);
-  document.getElementById('riven-add-stat-btn')?.addEventListener('click', addRivenStatSlot);
+  [0, 1].forEach(rollIdx => {
+    document.getElementById(`riven-evaluate-btn-${rollIdx}`)?.addEventListener('click', () => evaluateRiven(rollIdx));
+    document.getElementById(`riven-add-stat-btn-${rollIdx}`)?.addEventListener('click', () => addRivenStatSlot(rollIdx));
+    document.getElementById(`riven-clear-btn-${rollIdx}`)?.addEventListener('click', () => resetRivenForm(rollIdx));
+  });
   setupRivenUploadEvents();
   setupWeaponPickerEvents();
   setupCreditsEvents();
@@ -18833,56 +19004,57 @@ function setupGlossarySearch() {
 function renderRivens() {
   renderRivenWeaponBtn();
   renderRivenCategoryPills();
-  renderRivenStatRows();
+  renderRivenStatRows(0);
+  renderRivenStatRows(1);
   renderRivenResult();
-  renderRivenImageSection();
+  renderRivenImageSection(0);
+  renderRivenImageSection(1);
 }
 
-// Upload + OCR feedback. The upload zone is always visible (no more "mode"
-// toggle — image upload is just an optional shortcut). The form below the
-// upload is also always visible so manual entry is possible at any time.
-function renderRivenImageSection() {
-  const section = document.getElementById('riven-image-section');
+function renderRivenImageSection(rollIdx) {
+  const section = document.getElementById(`riven-image-section-${rollIdx}`);
   if (!section) return;
 
-  const zone       = document.getElementById('riven-upload-zone');
-  const preview    = document.getElementById('riven-image-preview');
-  const previewImg = document.getElementById('riven-image-preview-img');
-  const statusEl   = document.getElementById('riven-ocr-status');
-  const statusText = document.getElementById('riven-ocr-status-text');
-  const banner     = document.getElementById('riven-ocr-banner');
+  const zone       = document.getElementById(`riven-upload-zone-${rollIdx}`);
+  const preview    = document.getElementById(`riven-image-preview-${rollIdx}`);
+  const previewImg = document.getElementById(`riven-image-preview-img-${rollIdx}`);
+  const statusEl   = document.getElementById(`riven-ocr-status-${rollIdx}`);
+  const statusText = document.getElementById(`riven-ocr-status-text-${rollIdx}`);
+  const banner     = document.getElementById(`riven-ocr-banner-${rollIdx}`);
 
-  const s = state.riven.imageState;
-  const hasImage = !!state.riven.imagePreviewUrl;
+  const roll = state.riven.rolls[rollIdx];
+  const s = roll.imageState;
+  const hasImage = !!roll.imagePreviewUrl;
 
-  // While an image is uploaded, swap the upload zone for the preview.
   zone.classList.toggle('hidden', hasImage);
   preview.classList.toggle('hidden', !hasImage);
-  if (hasImage && previewImg.src !== state.riven.imagePreviewUrl) {
-    previewImg.src = state.riven.imagePreviewUrl;
+  if (hasImage && previewImg.src !== roll.imagePreviewUrl) {
+    previewImg.src = roll.imagePreviewUrl;
   }
 
-  // OCR progress spinner
   const busy = (s === 'loading_lib' || s === 'processing');
   statusEl.classList.toggle('hidden', !busy);
   if (busy) {
     statusText.textContent = s === 'loading_lib'
       ? t('riven_ocr_loading_lib')
       : t('riven_ocr_processing');
-    updateRivenOcrProgressUi();
+    updateRivenOcrProgressUi(rollIdx);
   }
 
-  // Result/error banner
   banner.classList.remove('error', 'success');
   if (s === 'success') {
     banner.classList.add('success');
-    banner.textContent = t('riven_ocr_success').replace('{n}', state.riven.imageDetectedCount);
+    let msg = t('riven_ocr_success').replace('{n}', roll.imageDetectedCount);
+    if (roll.weaponMismatch) {
+      msg += ' · ' + t('riven_ocr_weapon_locked').replace('{weapon}', roll.weaponMismatch);
+    }
+    banner.textContent = msg;
     banner.classList.remove('hidden');
   } else if (s === 'error') {
     banner.classList.add('error');
     let key = 'riven_ocr_failed';
-    if (state.riven.imageError === 'no_stats') key = 'riven_ocr_no_stats';
-    else if (state.riven.imageError === 'load_failed') key = 'riven_ocr_load_failed';
+    if (roll.imageError === 'no_stats') key = 'riven_ocr_no_stats';
+    else if (roll.imageError === 'load_failed') key = 'riven_ocr_load_failed';
     banner.textContent = t(key);
     banner.classList.remove('hidden');
   } else {
@@ -18906,43 +19078,42 @@ function renderRivenCategoryPills() {
   });
 }
 
-function renderRivenStatRows() {
-  const list = document.getElementById('riven-stat-list');
+function renderRivenStatRows(rollIdx) {
+  const list = document.getElementById(`riven-stat-list-${rollIdx}`);
   if (!list) return;
   list.innerHTML = '';
 
-  for (let i = 0; i < state.riven.slots; i++) {
-    list.appendChild(buildRivenStatRow(i));
+  const roll = state.riven.rolls[rollIdx];
+  for (let i = 0; i < roll.slots; i++) {
+    list.appendChild(buildRivenStatRow(rollIdx, i));
   }
 
-  // Add-stat button only enabled until we hit the 4-slot cap.
-  const addBtn = document.getElementById('riven-add-stat-btn');
-  if (addBtn) addBtn.classList.toggle('hidden', state.riven.slots >= 4);
+  const addBtn = document.getElementById(`riven-add-stat-btn-${rollIdx}`);
+  if (addBtn) addBtn.classList.toggle('hidden', roll.slots >= 4);
 }
 
-function addRivenStatSlot() {
-  if (state.riven.slots >= 4) return;
-  state.riven.slots += 1;
-  // Reset the new slot to a clean state in case it had stale data from a
-  // previous larger configuration.
-  const idx = state.riven.slots - 1;
-  state.riven.stats[idx] = { slug: null, value: '' };
-  state.riven.result = null;
-  state.riven.warning = null;
-  renderRivenStatRows();
+function addRivenStatSlot(rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  if (roll.slots >= 4) return;
+  roll.slots += 1;
+  const idx = roll.slots - 1;
+  roll.stats[idx] = { slug: null, value: '' };
+  roll.result = null;
+  roll.warning = null;
+  renderRivenStatRows(rollIdx);
 }
 
-function removeRivenStatSlot(index) {
-  if (state.riven.slots <= 2) return;
-  // Shift slots after `index` one position up, then shrink.
-  for (let i = index; i < state.riven.slots - 1; i++) {
-    state.riven.stats[i] = state.riven.stats[i + 1];
+function removeRivenStatSlot(rollIdx, index) {
+  const roll = state.riven.rolls[rollIdx];
+  if (roll.slots <= 2) return;
+  for (let i = index; i < roll.slots - 1; i++) {
+    roll.stats[i] = roll.stats[i + 1];
   }
-  state.riven.stats[state.riven.slots - 1] = { slug: null, value: '' };
-  state.riven.slots -= 1;
-  state.riven.result = null;
-  state.riven.warning = null;
-  renderRivenStatRows();
+  roll.stats[roll.slots - 1] = { slug: null, value: '' };
+  roll.slots -= 1;
+  roll.result = null;
+  roll.warning = null;
+  renderRivenStatRows(rollIdx);
 }
 
 // Sign is derived from the value's sign:
@@ -18971,8 +19142,9 @@ function rivenStatUnit(slug) {
   return (def && def.unit) || '%';
 }
 
-function buildRivenStatRow(index) {
-  const slot = state.riven.stats[index];
+function buildRivenStatRow(rollIdx, index) {
+  const roll = state.riven.rolls[rollIdx];
+  const slot = roll.stats[index];
 
   const row = document.createElement('div');
   row.className = 'riven-stat-row';
@@ -18993,10 +19165,9 @@ function buildRivenStatRow(index) {
     sel.appendChild(opt);
   });
   sel.addEventListener('change', () => {
-    state.riven.stats[index].slug = sel.value || null;
-    state.riven.warning = null;
-    // Re-render so the unit suffix updates with the new stat selection.
-    renderRivenStatRows();
+    state.riven.rolls[rollIdx].stats[index].slug = sel.value || null;
+    state.riven.rolls[rollIdx].warning = null;
+    renderRivenStatRows(rollIdx);
   });
   row.appendChild(sel);
 
@@ -19007,12 +19178,11 @@ function buildRivenStatRow(index) {
   input.className = 'riven-stat-value';
   input.type = 'number';
   input.step = '0.1';
-  // No `min` — negative values represent negative effects.
   input.placeholder = t('riven_value_placeholder');
   input.value = slot.value;
   input.addEventListener('input', () => {
-    state.riven.stats[index].value = input.value;
-    row.classList.toggle('is-negative', isStatNegative(state.riven.stats[index]));
+    state.riven.rolls[rollIdx].stats[index].value = input.value;
+    row.classList.toggle('is-negative', isStatNegative(state.riven.rolls[rollIdx].stats[index]));
   });
   valueWrap.appendChild(input);
 
@@ -19022,15 +19192,14 @@ function buildRivenStatRow(index) {
   valueWrap.appendChild(unit);
   row.appendChild(valueWrap);
 
-  // Remove button — only visible when there are more than 2 slots.
-  if (state.riven.slots > 2) {
+  if (roll.slots > 2) {
     const removeBtn = document.createElement('button');
     removeBtn.type = 'button';
     removeBtn.className = 'riven-stat-remove';
     removeBtn.textContent = '−';
     removeBtn.title = t('riven_remove_stat');
     removeBtn.setAttribute('aria-label', t('riven_remove_stat'));
-    removeBtn.addEventListener('click', () => removeRivenStatSlot(index));
+    removeBtn.addEventListener('click', () => removeRivenStatSlot(rollIdx, index));
     row.appendChild(removeBtn);
   }
 
@@ -19038,9 +19207,16 @@ function buildRivenStatRow(index) {
 }
 
 function renderRivenResult() {
-  const panel = document.getElementById('riven-result');
-  const result = state.riven.result;
-  const warning = state.riven.warning;
+  renderRivenResultFor(0);
+  renderRivenResultFor(1);
+}
+
+function renderRivenResultFor(rollIdx) {
+  const panel = document.getElementById(`riven-result-${rollIdx}`);
+  if (!panel) return;
+  const roll = state.riven.rolls[rollIdx];
+  const result = roll.result;
+  const warning = roll.warning;
 
   if (!result && !warning) {
     panel.classList.add('hidden');
@@ -19049,23 +19225,23 @@ function renderRivenResult() {
 
   if (warning) {
     panel.classList.remove('hidden');
-    document.getElementById('riven-score-number').textContent = '—';
-    const verdictEl = document.getElementById('riven-score-verdict');
+    document.getElementById(`riven-score-number-${rollIdx}`).textContent = '—';
+    const verdictEl = document.getElementById(`riven-score-verdict-${rollIdx}`);
     verdictEl.textContent = warning === 'duplicate' ? t('riven_warn_duplicate') : t('riven_warn_pick_stat');
     verdictEl.style.color = '#d14545';
-    document.getElementById('riven-breakdown').innerHTML = '';
+    document.getElementById(`riven-breakdown-${rollIdx}`).innerHTML = '';
     panel.style.removeProperty('--neon-color');
     return;
   }
 
   panel.classList.remove('hidden');
   panel.style.setProperty('--neon-color', result.verdict.color);
-  document.getElementById('riven-score-number').textContent = result.score.toFixed(1);
-  const verdictEl = document.getElementById('riven-score-verdict');
+  document.getElementById(`riven-score-number-${rollIdx}`).textContent = result.score.toFixed(1);
+  const verdictEl = document.getElementById(`riven-score-verdict-${rollIdx}`);
   verdictEl.textContent = `${result.verdict.emoji} ${t('riven_verdict_' + result.verdict.key)}`;
   verdictEl.style.color = result.verdict.color;
 
-  const list = document.getElementById('riven-breakdown');
+  const list = document.getElementById(`riven-breakdown-${rollIdx}`);
   list.innerHTML = '';
 
   const weaponObj = result.weapon ? weaponBySlug(result.weapon.slug) : null;
@@ -19145,15 +19321,11 @@ function renderRivenResult() {
   list.appendChild(shape);
 
   // ---- Recommended panel ----
-  renderRivenRecommended(weaponObj);
+  renderRivenRecommended(weaponObj, rollIdx);
 }
 
-function renderRivenRecommended(weapon) {
-  // Append after the breakdown list. The "Recommended" panel renders the
-  // ideal positives and free negatives for either the chosen weapon (when
-  // selected) or generic universals.
-  // The container lives inside the result panel, after the breakdown list.
-  const list = document.getElementById('riven-breakdown');
+function renderRivenRecommended(weapon, rollIdx) {
+  const list = document.getElementById(`riven-breakdown-${rollIdx}`);
   if (!list) return;
 
   // Header
@@ -19278,11 +19450,11 @@ function buildRecSection(label, items) {
 function setRivenCategory(cat) {
   if (state.riven.category === cat) return;
   state.riven.category = cat;
-  // Clear stat selections — different category has different stat list.
-  state.riven.stats.forEach(s => { s.slug = null; });
-  state.riven.result = null;
-  state.riven.warning = null;
-  // If the selected weapon doesn't match the new category, drop it.
+  state.riven.rolls.forEach(roll => {
+    roll.stats.forEach(s => { s.slug = null; });
+    roll.result = null;
+    roll.warning = null;
+  });
   if (state.riven.weapon) {
     const w = weaponBySlug(state.riven.weapon);
     if (w && w.category !== cat) {
@@ -19293,27 +19465,26 @@ function setRivenCategory(cat) {
   renderRivens();
 }
 
-function evaluateRiven() {
-  const slots = state.riven.slots;
-  const active = state.riven.stats.slice(0, slots);
+function evaluateRiven(rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  const active = roll.stats.slice(0, roll.slots);
 
-  // Validation
   if (active.some(s => !s.slug)) {
-    state.riven.warning = 'pick_stat';
-    state.riven.result = null;
+    roll.warning = 'pick_stat';
+    roll.result = null;
     renderRivenResult();
     return;
   }
   const slugs = active.map(s => s.slug);
   if (new Set(slugs).size !== slugs.length) {
-    state.riven.warning = 'duplicate';
-    state.riven.result = null;
+    roll.warning = 'duplicate';
+    roll.result = null;
     renderRivenResult();
     return;
   }
 
-  state.riven.warning = null;
-  state.riven.result = scoreRiven({ stats: active, weaponSlug: state.riven.weapon });
+  roll.warning = null;
+  roll.result = scoreRiven({ stats: active, weaponSlug: state.riven.weapon });
   renderRivenResult();
 }
 selectArchetype(state.archetype);

@@ -197,36 +197,6 @@
         <p class="riven-intro-text" data-i18n="riven_page_intro" data-i18n-html></p>
       </section>
 
-      <section class="riven-section riven-image-section" id="riven-image-section">
-        <input type="file" id="riven-image-input" accept="image/png,image/jpeg,image/webp" hidden>
-        <div class="riven-upload-zone" id="riven-upload-zone">
-          <div class="riven-upload-icon">📷</div>
-          <p class="riven-upload-prompt-text" data-i18n="riven_upload_prompt">Drop a riven screenshot here or click to upload</p>
-          <p class="riven-upload-hint" data-i18n="riven_upload_hint" data-i18n-html>PNG, JPG or WebP</p>
-        </div>
-
-        <div class="riven-image-preview hidden" id="riven-image-preview">
-          <img id="riven-image-preview-img" alt="">
-          <div class="riven-image-actions">
-            <button type="button" class="riven-image-change-btn" id="riven-image-change-btn" data-i18n="riven_ocr_change_image">Choose another image</button>
-            <button type="button" class="riven-image-remove-btn" id="riven-image-remove-btn" data-i18n="riven_ocr_remove_image">Remove image</button>
-          </div>
-        </div>
-
-        <div class="riven-ocr-status hidden" id="riven-ocr-status">
-          <div class="riven-ocr-spinner"></div>
-          <div class="riven-ocr-status-text" id="riven-ocr-status-text">—</div>
-          <div class="riven-ocr-progress-bar"><div class="riven-ocr-progress-fill" id="riven-ocr-progress-fill"></div></div>
-        </div>
-
-        <div class="riven-ocr-banner hidden" id="riven-ocr-banner"></div>
-
-        <div class="riven-ocr-disclaimer" id="riven-ocr-disclaimer">
-          <span class="riven-ocr-disclaimer-icon" aria-hidden="true">⚠️</span>
-          <span data-i18n="riven_ocr_disclaimer">Image reading may contain mistakes — always review the detected values before evaluating.</span>
-        </div>
-      </section>
-
       <section class="riven-section" id="riven-weapon-section">
         <h3 class="riven-section-label" data-i18n="riven_weapon_label">Weapon (optional)</h3>
         <div class="riven-weapon-row" id="riven-weapon-row">
@@ -234,36 +204,122 @@
         </div>
       </section>
 
-      <section class="riven-section" id="riven-category-section">
-        <h3 class="riven-section-label" data-i18n="riven_category_label">Weapon category</h3>
-        <div class="riven-pill-row" id="riven-category-row"></div>
-      </section>
+      <div class="riven-columns">
 
-      <section class="riven-section" id="riven-stats-section">
-        <h3 class="riven-section-label" data-i18n="riven_stats_label">Stats</h3>
-        <div class="riven-stat-list" id="riven-stat-list"></div>
-        <button type="button" class="riven-add-stat-btn" id="riven-add-stat-btn">
-          <span class="riven-add-stat-icon">+</span>
-          <span data-i18n="riven_add_stat">Add stat</span>
-        </button>
-      </section>
-
-      <div class="riven-evaluate-wrap" id="riven-evaluate-wrap">
-        <button class="riven-evaluate-btn" id="riven-evaluate-btn" type="button" data-i18n="riven_evaluate">Evaluate</button>
-      </div>
-
-      <section class="riven-result hidden" id="riven-result">
-        <div class="riven-score-block">
-          <div class="riven-score-number" id="riven-score-number">—</div>
-          <div class="riven-score-meta">
-            <div class="riven-score-verdict" id="riven-score-verdict">—</div>
-            <div class="riven-score-outof">/ 10</div>
+        <!-- Roll A -->
+        <div class="riven-column" id="riven-col-0">
+          <div class="riven-col-header">
+            <span class="riven-col-label" data-i18n="riven_roll_a">Roll A</span>
+            <button type="button" class="riven-clear-btn" id="riven-clear-btn-0" data-i18n="riven_clear">Clear</button>
           </div>
+          <section class="riven-section riven-image-section" id="riven-image-section-0">
+            <input type="file" id="riven-image-input-0" accept="image/png,image/jpeg,image/webp" hidden>
+            <div class="riven-upload-zone" id="riven-upload-zone-0">
+              <div class="riven-upload-icon">📷</div>
+              <p class="riven-upload-prompt-text" data-i18n="riven_upload_prompt">Drop a riven screenshot here or click to upload</p>
+              <p class="riven-upload-hint" data-i18n="riven_upload_hint" data-i18n-html>PNG, JPG or WebP</p>
+            </div>
+            <div class="riven-image-preview hidden" id="riven-image-preview-0">
+              <img id="riven-image-preview-img-0" alt="">
+              <div class="riven-image-actions">
+                <button type="button" class="riven-image-change-btn" id="riven-image-change-btn-0" data-i18n="riven_ocr_change_image">Choose another image</button>
+                <button type="button" class="riven-image-remove-btn" id="riven-image-remove-btn-0" data-i18n="riven_ocr_remove_image">Remove image</button>
+              </div>
+            </div>
+            <div class="riven-ocr-status hidden" id="riven-ocr-status-0">
+              <div class="riven-ocr-spinner"></div>
+              <div class="riven-ocr-status-text" id="riven-ocr-status-text-0">—</div>
+              <div class="riven-ocr-progress-bar"><div class="riven-ocr-progress-fill" id="riven-ocr-progress-fill-0"></div></div>
+            </div>
+            <div class="riven-ocr-banner hidden" id="riven-ocr-banner-0"></div>
+            <div class="riven-ocr-disclaimer">
+              <span class="riven-ocr-disclaimer-icon" aria-hidden="true">⚠️</span>
+              <span data-i18n="riven_ocr_disclaimer">Image reading may contain mistakes — always review the detected values before evaluating.</span>
+            </div>
+          </section>
+          <section class="riven-section" id="riven-stats-section-0">
+            <h3 class="riven-section-label" data-i18n="riven_stats_label">Stats</h3>
+            <div class="riven-stat-list" id="riven-stat-list-0"></div>
+            <button type="button" class="riven-add-stat-btn" id="riven-add-stat-btn-0">
+              <span class="riven-add-stat-icon">+</span>
+              <span data-i18n="riven_add_stat">Add stat</span>
+            </button>
+          </section>
+          <div class="riven-evaluate-wrap" id="riven-evaluate-wrap-0">
+            <button class="riven-evaluate-btn" id="riven-evaluate-btn-0" type="button" data-i18n="riven_evaluate">Evaluate</button>
+          </div>
+          <section class="riven-result hidden" id="riven-result-0">
+            <div class="riven-score-block">
+              <div class="riven-score-number" id="riven-score-number-0">—</div>
+              <div class="riven-score-meta">
+                <div class="riven-score-verdict" id="riven-score-verdict-0">—</div>
+                <div class="riven-score-outof">/ 10</div>
+              </div>
+            </div>
+            <h4 class="riven-breakdown-label" data-i18n="riven_breakdown_label">Breakdown</h4>
+            <div class="riven-breakdown" id="riven-breakdown-0"></div>
+          </section>
         </div>
 
-        <h4 class="riven-breakdown-label" data-i18n="riven_breakdown_label">Breakdown</h4>
-        <div class="riven-breakdown" id="riven-breakdown"></div>
-      </section>
+        <!-- VS separator -->
+        <div class="riven-col-vs" aria-hidden="true">VS</div>
+
+        <!-- Roll B -->
+        <div class="riven-column" id="riven-col-1">
+          <div class="riven-col-header">
+            <span class="riven-col-label" data-i18n="riven_roll_b">Roll B</span>
+            <button type="button" class="riven-clear-btn" id="riven-clear-btn-1" data-i18n="riven_clear">Clear</button>
+          </div>
+          <section class="riven-section riven-image-section" id="riven-image-section-1">
+            <input type="file" id="riven-image-input-1" accept="image/png,image/jpeg,image/webp" hidden>
+            <div class="riven-upload-zone" id="riven-upload-zone-1">
+              <div class="riven-upload-icon">📷</div>
+              <p class="riven-upload-prompt-text" data-i18n="riven_upload_prompt">Drop a riven screenshot here or click to upload</p>
+              <p class="riven-upload-hint" data-i18n="riven_upload_hint" data-i18n-html>PNG, JPG or WebP</p>
+            </div>
+            <div class="riven-image-preview hidden" id="riven-image-preview-1">
+              <img id="riven-image-preview-img-1" alt="">
+              <div class="riven-image-actions">
+                <button type="button" class="riven-image-change-btn" id="riven-image-change-btn-1" data-i18n="riven_ocr_change_image">Choose another image</button>
+                <button type="button" class="riven-image-remove-btn" id="riven-image-remove-btn-1" data-i18n="riven_ocr_remove_image">Remove image</button>
+              </div>
+            </div>
+            <div class="riven-ocr-status hidden" id="riven-ocr-status-1">
+              <div class="riven-ocr-spinner"></div>
+              <div class="riven-ocr-status-text" id="riven-ocr-status-text-1">—</div>
+              <div class="riven-ocr-progress-bar"><div class="riven-ocr-progress-fill" id="riven-ocr-progress-fill-1"></div></div>
+            </div>
+            <div class="riven-ocr-banner hidden" id="riven-ocr-banner-1"></div>
+            <div class="riven-ocr-disclaimer">
+              <span class="riven-ocr-disclaimer-icon" aria-hidden="true">⚠️</span>
+              <span data-i18n="riven_ocr_disclaimer">Image reading may contain mistakes — always review the detected values before evaluating.</span>
+            </div>
+          </section>
+          <section class="riven-section" id="riven-stats-section-1">
+            <h3 class="riven-section-label" data-i18n="riven_stats_label">Stats</h3>
+            <div class="riven-stat-list" id="riven-stat-list-1"></div>
+            <button type="button" class="riven-add-stat-btn" id="riven-add-stat-btn-1">
+              <span class="riven-add-stat-icon">+</span>
+              <span data-i18n="riven_add_stat">Add stat</span>
+            </button>
+          </section>
+          <div class="riven-evaluate-wrap" id="riven-evaluate-wrap-1">
+            <button class="riven-evaluate-btn" id="riven-evaluate-btn-1" type="button" data-i18n="riven_evaluate">Evaluate</button>
+          </div>
+          <section class="riven-result hidden" id="riven-result-1">
+            <div class="riven-score-block">
+              <div class="riven-score-number" id="riven-score-number-1">—</div>
+              <div class="riven-score-meta">
+                <div class="riven-score-verdict" id="riven-score-verdict-1">—</div>
+                <div class="riven-score-outof">/ 10</div>
+              </div>
+            </div>
+            <h4 class="riven-breakdown-label" data-i18n="riven_breakdown_label">Breakdown</h4>
+            <div class="riven-breakdown" id="riven-breakdown-1"></div>
+          </section>
+        </div>
+
+      </div>
     </div>
 
     <div id="tab-star-chart" class="tab-content hidden">
