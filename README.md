@@ -40,11 +40,9 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
-- **2026-06-17 — Riven comparator**
+- **2026-06-17 — Riven comparator, mobile menu, and shareable links**
   - **Compare two Rivens side by side** — the Riven evaluator now has two independent columns (Roll A / Roll B). Evaluate a single roll or fill both to compare — ideal when deciding which roll to keep after a reroll. Each column has its own screenshot upload, stat slots, and 0–10 score with full breakdown.
   - **Weapon lock** — the first roll to have a weapon set (manually or via OCR) locks it for both columns; the lock releases only when both columns are cleared.
-
-- **2026-06-17 — Mobile menu, shareable links, and patch notes**
   - **Mobile-friendly header** — on phones the navigation collapses into a hamburger menu (☰), with the logo centered and language/credits on the right, so the tabs no longer overflow.
   - **Shareable links** — pages now have their own URL (e.g. `/archetypes/frost`, `/star-chart/mars`); copy the address bar to share a specific warframe, planet, or tab, and the browser back button works.
   - **Patch notes in Credits** — the Credits dialog now has a "Patch notes" view with the recent changelog.
@@ -129,11 +127,9 @@ O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne 
 
 ### Patches
 
-- **2026-06-17 — Comparador de Rivens**
+- **2026-06-17 — Comparador de Rivens, menu mobile e links compartilháveis**
   - **Compare dois Rivens lado a lado** — o avaliador agora tem duas colunas independentes (Roll A / Roll B). Avalie um roll só ou preencha os dois pra comparar — ideal pra decidir qual roll manter depois de um reroll. Cada coluna tem upload de print próprio, slots de stats e nota de 0 a 10 com breakdown completo.
   - **Trava de arma** — o primeiro roll que define uma arma (manual ou via OCR) trava ela pras duas colunas; a trava só é liberada quando as duas colunas são limpas.
-
-- **2026-06-17 — Menu mobile, links compartilháveis e notas de atualização**
   - **Header adaptado pra celular** — no celular a navegação vira um menu hambúrguer (☰), com o logo centralizado e idioma/créditos à direita, então as abas não estouram mais.
   - **Links compartilháveis** — cada página agora tem URL própria (ex.: `/archetypes/frost`, `/star-chart/mars`); copie a barra de endereço pra compartilhar um warframe, planeta ou aba específica, e o botão voltar do navegador funciona.
   - **Notas de atualização nos Créditos** — o modal de Créditos agora tem uma view "Notas de atualização" com o changelog recente.
