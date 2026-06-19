@@ -523,10 +523,6 @@ h1 {
   display: none;
 }
 
-#radar {
-  padding: 16px 20px 8px;
-}
-
 .chart-provisional-note {
   text-align: center;
   font-size: 0.75rem;
@@ -538,6 +534,10 @@ h1 {
 
 .chart-provisional-note.hidden {
   display: none;
+}
+
+#radar {
+  padding: 16px 20px 8px;
 }
 
 svg#radar {
@@ -937,9 +937,7 @@ svg#radar {
 }
 
 .ability-form-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
+  display: inline-block;
   font-family: 'Fredoka', sans-serif;
   font-size: 11px;
   font-weight: 700;
@@ -947,14 +945,6 @@ svg#radar {
   letter-spacing: 1.2px;
   color: #9b8cff;
   margin: 0 0 4px;
-}
-
-.ability-form-label-icon {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  border-radius: 3px;
-  flex-shrink: 0;
 }
 
 .ability-icon {

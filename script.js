@@ -122,6 +122,7 @@ const STRINGS = {
     source_railjack: 'Railjack',
     source_duviri: 'Duviri / Circuit',
     grid_hint: 'Warframes of the selected archetype are highlighted. Click one to select it.',
+    chart_provisional_note: 'Stats subject to change — classification is still being validated.',
     stat_dano: 'Damage',
     stat_sobrevivencia: 'Survival',
     stat_suporte: 'Support',
@@ -185,7 +186,6 @@ const STRINGS = {
     riven_warn_duplicate: 'You picked the same stat twice. Each row must be unique.',
     riven_upload_prompt: 'Drop a riven screenshot here or click to upload',
     riven_upload_hint: 'PNG, JPG or WebP — [[the sharper the image, the more accurate the reading]]',
-    chart_provisional_note: 'Stats subject to change — classification is still being validated.',
     riven_ocr_disclaimer: 'Image reading may contain mistakes — always review the detected values before evaluating.',
     riven_ocr_loading_lib: 'Loading OCR engine (one-time, ~3 MB)…',
     riven_ocr_processing: 'Reading image…',
@@ -357,6 +357,7 @@ const STRINGS = {
     source_railjack: 'Railjack',
     source_duviri: 'Duviri / Circuit',
     grid_hint: 'Warframes do arquétipo selecionado em destaque. Clique em um para selecioná-lo.',
+    chart_provisional_note: 'Valores sujeitos a mudanças — classificação em validação.',
     stat_dano: 'Dano',
     stat_sobrevivencia: 'Sobrevivência',
     stat_suporte: 'Suporte',
@@ -420,7 +421,6 @@ const STRINGS = {
     riven_warn_duplicate: 'Você escolheu o mesmo stat duas vezes. Cada linha precisa ser única.',
     riven_upload_prompt: 'Solte um print do riven aqui ou clique para enviar',
     riven_upload_hint: 'PNG, JPG ou WebP — [[quanto mais nítida a imagem, mais precisa a leitura]]',
-    chart_provisional_note: 'Valores sujeitos a mudanças — classificação em validação.',
     riven_ocr_disclaimer: 'A leitura por imagem pode conter erros — sempre revise os valores detectados antes de avaliar.',
     riven_ocr_loading_lib: 'Carregando engine de OCR (uma única vez, ~3 MB)…',
     riven_ocr_processing: 'Lendo imagem…',
@@ -927,13 +927,6 @@ ARCHETYPES.forEach(a => {
 
 const ALL_WARFRAMES = ARCHETYPES.flatMap(a => a.warframes).sort((a, b) => a.localeCompare(b));
 
-const WARFRAME_ICON_OVERRIDES = {
-  'sirius & orion': 'assets/icons/base/sirius-orion.png',
-};
-function warframeIconUrl(slug) {
-  return WARFRAME_ICON_OVERRIDES[slug] || `assets/icons/base/${slug}.png`;
-}
-
 // Dados de cada warframe (stats + cor do gráfico). Preenchido incrementalmente.
 const WARFRAMES_DATA = {
   // Canhão de Vidro
@@ -944,8 +937,9 @@ const WARFRAMES_DATA = {
   'mirage':    { stats: { dano: 5, sobrevivencia: 2, suporte: 1, controle: 2, furtividade: 0, complexidade: 2 }, color: '#2289a6' },
   'saryn':     { stats: { dano: 5, sobrevivencia: 0, suporte: 0, controle: 1, furtividade: 0, complexidade: 3 }, color: '#c1701f' },
   'sevagoth':  { stats: { dano: 5, sobrevivencia: 2, suporte: 1, controle: 2, furtividade: 0, complexidade: 3 }, color: '#6e8caf' },
-  // Sirius & Orion (Update 43, frame #65) — sem classificação por enquanto (stats 0,
-  // arquétipo Rework provisório); pendente decisão de classificação (usuário/Vinoncio).
+  // Sirius & Orion (Update 43, frame #65) — classificação PROVISÓRIA como Estrategista
+  // (proposta do Vinoncio: Dano 3, Surv 2, Suporte 4, CC 3, Frt 0, Cmx 4). `provisional`
+  // dispara o aviso "valores sujeitos a mudanças" no gráfico até validar.
   'sirius & orion': { stats: { dano: 3, sobrevivencia: 2, suporte: 4, controle: 3, furtividade: 0, complexidade: 4 }, color: '#6c5ce7', provisional: true },
   'temple':    { stats: { dano: 4, sobrevivencia: 2, suporte: 1, controle: 1, furtividade: 0, complexidade: 3 }, color: '#b56b66' },
   'xaku':      { stats: { dano: 4, sobrevivencia: 2, suporte: 1, controle: 2, furtividade: 0, complexidade: 4 }, color: '#9aa334' },
@@ -1633,20 +1627,20 @@ const WARFRAMES_DETAILS = {
   'sirius & orion': {
     title: 'Os Rivais Estelares',
     description: 'Duas Warframes de linhas do tempo paralelas controladas como uma só, alternáveis em missão. Sirius assume o suporte (calor, cura e energia); Orion, o dano e o controle (corte, strip de defesas e gravidade). A forma inativa segue como aliada controlada por IA, invulnerável, e a rivalidade culmina em um choque celestial compartilhado.',
-    portraits: { base: 'assets/icons/base/sirius.png', normalLabel: 'Sirius', variantCover: true, variants: [{ key: 'orion', label: 'Orion', src: 'assets/icons/base/orion.png' }] },
+    portraits: { base: 'assets/icons/base/sirius.png', normalLabel: 'Sirius', variantCover: true, variants: [{ key: 'orion', label: 'Orion' }] },
     abilities: [
-      { type: 'passive', icon: 'assets/icons/base/sirius-orion.png', name: 'Constelação Gêmea', description: 'Trocar entre Sirius e Orion concede +45% de Eficiência de Habilidade nos 2 lançamentos seguintes e acumula Constellation Stars para a ultimate. Abaixo de 50 de energia, os dois roubam energia um do outro. A forma inativa permanece em campo como aliada controlada por IA, invulnerável.' },
+      { type: 'passive', name: 'Constelação Gêmea', description: 'Trocar entre Sirius e Orion concede +45% de Eficiência de Habilidade nos 2 lançamentos seguintes e acumula Constellation Stars para a ultimate. Abaixo de 50 de energia, os dois roubam energia um do outro. A forma inativa permanece em campo como aliada controlada por IA, invulnerável.' },
       { name: 'Coronal Ejection / Gravitic Slash', forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/coronalejection.png', name: 'Coronal Ejection', description: 'Arremessa uma foice de Luz Jade que retorna como bumerangue, causando dano de Calor e recolhendo itens no caminho.' },
-        { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/graviticslash.png', name: 'Gravitic Slash', description: 'Um corte frontal amplo que inflige status de Corte enquanto remove Armadura e Escudos dos inimigos atingidos.' },
+        { label: 'Sirius', icon: 'assets/abilities/sirius and orion/coronalejection.png', name: 'Coronal Ejection', description: 'Arremessa uma foice de Luz Jade que retorna como bumerangue, causando dano de Calor e recolhendo itens no caminho.' },
+        { label: 'Orion', icon: 'assets/abilities/sirius and orion/graviticslash.png', name: 'Gravitic Slash', description: 'Um corte frontal amplo que inflige status de Corte enquanto remove Armadura e Escudos dos inimigos atingidos.' },
       ] },
       { name: 'Jade Stars / Astral Shell', forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/jadestars.png', name: 'Jade Stars', description: 'Invoca motes de Luz Jade que disparam contra os inimigos atacados, causando dano de Calor e status.' },
-        { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/astralshell.png', name: 'Astral Shell', description: 'Envolve Orion (e Sirius) em uma casca que, ao receber dano, gera um chamariz invulnerável que atrai a atenção inimiga.' },
+        { label: 'Sirius', icon: 'assets/abilities/sirius and orion/jadestars.png', name: 'Jade Stars', description: 'Invoca motes de Luz Jade que disparam contra os inimigos atacados, causando dano de Calor e status.' },
+        { label: 'Orion', icon: 'assets/abilities/sirius and orion/astralshell.png', name: 'Astral Shell', description: 'Envolve Orion (e Sirius) em uma casca que, ao receber dano, gera um chamariz invulnerável que atrai a atenção inimiga.' },
       ] },
       { name: "Light's Sanctuary / Event Horizon", forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/lightssanctuary.png', name: "Light's Sanctuary", description: 'Cria um santuário em expansão que cura aliados, concede Redução de Dano e revive quem estiver caído na área.' },
-        { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/eventhorizon.png', name: 'Event Horizon', description: 'Lança um buraco negro errante que ragdolla e puxa os inimigos, causando dano enquanto os agrupa.' },
+        { label: 'Sirius', icon: 'assets/abilities/sirius and orion/lightssanctuary.png', name: "Light's Sanctuary", description: 'Cria um santuário em expansão que cura aliados, concede Redução de Dano e revive quem estiver caído na área.' },
+        { label: 'Orion', icon: 'assets/abilities/sirius and orion/eventhorizon.png', name: 'Event Horizon', description: 'Lança um buraco negro errante que ragdolla e puxa os inimigos, causando dano enquanto os agrupa.' },
       ] },
       { name: 'Celestial Clash', icon: 'assets/abilities/sirius and orion/celestialclash.png', description: 'Ultimate compartilhada: Sirius e Orion duelam no ar consumindo Constellation Stars para causar dano radial massivo de Explosão, com crítico bônus quando as cores se alinham.' },
     ],
@@ -3112,18 +3106,18 @@ const WARFRAMES_DETAILS_EN = {
     title: 'The Stellar Rivals',
     description: 'Two Warframes from parallel timelines controlled as one, swappable mid-mission. Sirius plays support (Heat, healing and energy); Orion deals damage and crowd control (Slash, defense stripping and gravity). The inactive form fights on as an invulnerable AI ally, and their rivalry culminates in a shared celestial clash.',
     abilities: [
-      { type: 'passive', icon: 'assets/icons/base/sirius-orion.png', name: 'Twin Constellation', description: 'Swapping between Sirius and Orion grants +45% Ability Efficiency for the next 2 casts and builds Constellation Stars for the ultimate. Below 50 energy, the two steal energy from each other. The inactive form remains on the field as an invulnerable AI-controlled ally.' },
+      { type: 'passive', name: 'Twin Constellation', description: 'Swapping between Sirius and Orion grants +45% Ability Efficiency for the next 2 casts and builds Constellation Stars for the ultimate. Below 50 energy, the two steal energy from each other. The inactive form remains on the field as an invulnerable AI-controlled ally.' },
       { name: 'Coronal Ejection / Gravitic Slash', forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/coronalejection.png', name: 'Coronal Ejection', description: 'Throws a Jade Light scythe that boomerangs back, dealing Heat damage and gathering pickups along the way.' },
-        { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/graviticslash.png', name: 'Gravitic Slash', description: 'A wide frontal slice that inflicts Slash status while stripping Armor and Shields from struck enemies.' },
+        { label: 'Sirius', icon: 'assets/abilities/sirius and orion/coronalejection.png', name: 'Coronal Ejection', description: 'Throws a Jade Light scythe that boomerangs back, dealing Heat damage and gathering pickups along the way.' },
+        { label: 'Orion', icon: 'assets/abilities/sirius and orion/graviticslash.png', name: 'Gravitic Slash', description: 'A wide frontal slice that inflicts Slash status while stripping Armor and Shields from struck enemies.' },
       ] },
       { name: 'Jade Stars / Astral Shell', forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/jadestars.png', name: 'Jade Stars', description: 'Summons Jade Light motes that launch at attacked enemies, dealing Heat damage and status.' },
-        { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/astralshell.png', name: 'Astral Shell', description: 'Wraps Orion (and Sirius) in a shell that, when hit, spawns an invulnerable decoy that draws enemy attention.' },
+        { label: 'Sirius', icon: 'assets/abilities/sirius and orion/jadestars.png', name: 'Jade Stars', description: 'Summons Jade Light motes that launch at attacked enemies, dealing Heat damage and status.' },
+        { label: 'Orion', icon: 'assets/abilities/sirius and orion/astralshell.png', name: 'Astral Shell', description: 'Wraps Orion (and Sirius) in a shell that, when hit, spawns an invulnerable decoy that draws enemy attention.' },
       ] },
       { name: "Light's Sanctuary / Event Horizon", forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/lightssanctuary.png', name: "Light's Sanctuary", description: 'Creates an expanding sanctuary that heals allies, grants Damage Reduction, and revives anyone downed inside it.' },
-        { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/eventhorizon.png', name: 'Event Horizon', description: 'Throws a drifting black hole that ragdolls and pulls enemies, dealing damage while grouping them up.' },
+        { label: 'Sirius', icon: 'assets/abilities/sirius and orion/lightssanctuary.png', name: "Light's Sanctuary", description: 'Creates an expanding sanctuary that heals allies, grants Damage Reduction, and revives anyone downed inside it.' },
+        { label: 'Orion', icon: 'assets/abilities/sirius and orion/eventhorizon.png', name: 'Event Horizon', description: 'Throws a drifting black hole that ragdolls and pulls enemies, dealing damage while grouping them up.' },
       ] },
       { name: 'Celestial Clash', icon: 'assets/abilities/sirius and orion/celestialclash.png', description: 'Shared ultimate: Sirius and Orion duel in the air, consuming Constellation Stars for massive radial Blast damage, with bonus crit when their colors align.' },
     ],
@@ -18188,10 +18182,9 @@ function renderPortrait() {
   }
 
   const slug = state.warframe;
-  const activeForm = allForms.find(f => f.key === state.form);
   const nextSrc = state.form === 'normal'
     ? portraits[state.variant]
-    : (activeForm?.src || `assets/icons/${state.variant}/${slug}-${state.form}.png`);
+    : `assets/icons/${state.variant}/${slug}-${state.form}.png`;
   const portraitBox = layerA.parentElement;
   // is-variant switches the portrait to object-fit:contain (for variant art framed
   // differently, e.g. Equinox/Sevagoth). Frames whose variant uses the same framing
@@ -18270,7 +18263,7 @@ function renderAbilityPanel() {
             ${f.icon ? `<img src="${f.icon}" alt="">` : ''}
           </div>
           <div class="ability-text">
-            ${f.label ? `<span class="ability-form-label">${f.labelIcon ? `<img class="ability-form-label-icon" src="${f.labelIcon}" alt="">` : ''}${f.label}</span>` : ''}
+            ${f.label ? `<span class="ability-form-label">${f.label}</span>` : ''}
             <h4 class="ability-name">${f.name}</h4>
             <p class="ability-description">${f.description}</p>
           </div>
@@ -18554,7 +18547,7 @@ function buildGrid() {
     card.dataset.warframe = slug;
 
     const img = document.createElement('img');
-    img.src = warframeIconUrl(slug);
+    img.src = `assets/icons/base/${slug}.png`;
     img.alt = name;
     img.loading = 'lazy';
 
@@ -19167,14 +19160,14 @@ function buildPlanetCard(planet, filters, search) {
       wfWrap.className = 'star-chart-planet-card-wf-wrap';
       assassinations.forEach(n => {
         warframeDropSlugs(n.warframeDrop).forEach(slug => {
-          const wfName = ALL_WARFRAMES.find(w => w.toLowerCase() === slug) || (slug.charAt(0).toUpperCase() + slug.slice(1));
+          const wfName = slug.charAt(0).toUpperCase() + slug.slice(1);
           const badge = document.createElement('div');
           badge.className = 'star-chart-planet-card-wf-badge';
           badge.title = wfName;
           badge.addEventListener('click', e => { e.stopPropagation(); goToArchetype(slug); });
           const img = document.createElement('img');
           img.className = 'star-chart-planet-card-wf-icon';
-          img.src = warframeIconUrl(slug);
+          img.src = `assets/icons/base/${slug}.png`;
           img.alt = '';
           img.loading = 'lazy';
           badge.appendChild(img);
@@ -19419,14 +19412,14 @@ function buildNodeRow(node) {
       dropWrap.appendChild(bossPill);
     }
     warframeDropSlugs(node.warframeDrop).forEach(slug => {
-      const wfName = ALL_WARFRAMES.find(w => w.toLowerCase() === slug) || (slug.charAt(0).toUpperCase() + slug.slice(1));
+      const wfName = slug.charAt(0).toUpperCase() + slug.slice(1);
       const wf = document.createElement('span');
       wf.className = 'star-chart-node-warframe';
       wf.title = wfName;
       wf.addEventListener('click', e => { e.stopPropagation(); goToArchetype(slug); });
       const img = document.createElement('img');
       img.className = 'star-chart-node-warframe-icon';
-      img.src = warframeIconUrl(slug);
+      img.src = `assets/icons/base/${slug}.png`;
       img.alt = '';
       img.loading = 'lazy';
       wf.appendChild(img);
