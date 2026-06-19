@@ -19170,7 +19170,7 @@ function buildPlanetCard(planet, filters, search) {
       wfWrap.className = 'star-chart-planet-card-wf-wrap';
       assassinations.forEach(n => {
         warframeDropSlugs(n.warframeDrop).forEach(slug => {
-          const wfName = slug.charAt(0).toUpperCase() + slug.slice(1);
+          const wfName = ALL_WARFRAMES.find(w => w.toLowerCase() === slug) || (slug.charAt(0).toUpperCase() + slug.slice(1));
           const badge = document.createElement('div');
           badge.className = 'star-chart-planet-card-wf-badge';
           badge.title = wfName;
@@ -19422,7 +19422,7 @@ function buildNodeRow(node) {
       dropWrap.appendChild(bossPill);
     }
     warframeDropSlugs(node.warframeDrop).forEach(slug => {
-      const wfName = slug.charAt(0).toUpperCase() + slug.slice(1);
+      const wfName = ALL_WARFRAMES.find(w => w.toLowerCase() === slug) || (slug.charAt(0).toUpperCase() + slug.slice(1));
       const wf = document.createElement('span');
       wf.className = 'star-chart-node-warframe';
       wf.title = wfName;
