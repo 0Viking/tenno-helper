@@ -40,7 +40,8 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
-#### 2026-06-18 — Smarter Riven evaluator & photo reading
+#### 2026-06-18 — Sirius & Orion, Riven evaluator & photo reading
+- **Sirius & Orion** — the new dual warframe (Update 43) is now live in the Archetypes page, classified as **Strategist** (Damage + Support + Crowd Control). Stats marked as subject to change while the classification is being validated.
 - **Re-tuned weapon ratings** — every weapon's ideal Riven stats were re-derived from real stats: raw +Damage is no longer treated as a top stat (it's filler on most weapons), and crit/status priorities now match each weapon's build. Status weapons correctly mark crit as wasted.
 - **Incarnon Mode** — weapons built around their Incarnon form (Torid, Braton, Latron, Strun…) auto-enable Incarnon Mode when selected, grading the Riven against that form's meta build. Toggle it off to evaluate the base form.
 - **Roll strength & disposition** — the result now shows how strong your roll is (normalized by the weapon's disposition) plus the disposition dots.
@@ -134,7 +135,8 @@ O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne 
 
 ### Patches
 
-#### 2026-06-18 — Avaliador de Rivens e leitura por foto mais inteligentes
+#### 2026-06-18 — Sirius & Orion, avaliador de Rivens e leitura por foto mais inteligentes
+- **Sirius & Orion** — o novo warframe duplo (Update 43) está no ar na página de Arquétipos, classificado como **Estrategista** (Dano + Suporte + Controle de Grupo). Stats marcados como sujeitos a mudanças enquanto a classificação é validada.
 - **Notas de arma recalibradas** — os stats ideais de Riven de cada arma foram refeitos a partir dos stats reais: +Dano cru não é mais tratado como stat top (é filler na maioria), e as prioridades de crit/status agora batem com a build de cada arma. Armas de status marcam crit como desperdício.
 - **Modo Incarnon** — armas construídas na forma Incarnon (Torid, Braton, Latron, Strun…) ligam o Modo Incarnon automaticamente ao serem selecionadas, avaliando o Riven pela build de meta da forma. Desligue para avaliar a forma base.
 - **Força do roll & disposição** — o resultado agora mostra quão forte foi seu roll (normalizado pela disposição da arma) e os pontos de disposição.
