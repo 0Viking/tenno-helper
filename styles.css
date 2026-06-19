@@ -5428,7 +5428,7 @@ input[type="search"]::-webkit-search-decoration {
 
 @media (max-width: 600px) {
   .relics-toolbar { flex-direction: column; align-items: stretch; }
-  .relics-search-wrap { max-width: none; }
+  .relics-search-wrap { max-width: none; flex: none; }
   .relics-grid { grid-template-columns: 1fr; }
   .relic-loc-row { flex-direction: column; gap: 4px; }
 }
