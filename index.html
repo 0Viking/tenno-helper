@@ -197,22 +197,6 @@
         <p class="riven-intro-text" data-i18n="riven_page_intro" data-i18n-html></p>
       </section>
 
-      <section class="riven-section" id="riven-weapon-section">
-        <h3 class="riven-section-label" data-i18n="riven_weapon_label">Weapon (optional)</h3>
-        <div class="riven-weapon-row" id="riven-weapon-row">
-          <button class="riven-weapon-btn" id="riven-weapon-btn" type="button"></button>
-        </div>
-        <div class="riven-incarnon-row hidden" id="riven-incarnon-row">
-          <label class="riven-incarnon-label">
-            <input type="checkbox" id="riven-incarnon-checkbox" class="riven-incarnon-checkbox">
-            <span class="riven-incarnon-toggle-track"><span class="riven-incarnon-toggle-thumb"></span></span>
-            <span class="riven-incarnon-text" data-i18n="riven_incarnon_mode">Incarnon Mode</span>
-            <span class="riven-incarnon-hint" data-i18n="riven_incarnon_hint">Uses Incarnon form stats (higher CC/CD)</span>
-          </label>
-          <p class="riven-incarnon-auto hidden" id="riven-incarnon-auto" data-i18n="riven_incarnon_auto">Auto-enabled — this weapon is built around its Incarnon form. Turn off to grade the base form.</p>
-        </div>
-      </section>
-
       <div class="riven-columns">
 
         <!-- Roll A -->
@@ -244,6 +228,21 @@
             <div class="riven-ocr-disclaimer">
               <span class="riven-ocr-disclaimer-icon" aria-hidden="true">⚠️</span>
               <span data-i18n="riven_ocr_disclaimer">Image reading may contain mistakes — always review the detected values before evaluating.</span>
+            </div>
+          </section>
+          <section class="riven-section riven-weapon-per-col" id="riven-weapon-section-0">
+            <h3 class="riven-section-label" data-i18n="riven_weapon_label">Weapon (optional)</h3>
+            <div class="riven-weapon-row" id="riven-weapon-row-0">
+              <button class="riven-weapon-btn" id="riven-weapon-btn-0" type="button"></button>
+            </div>
+            <div class="riven-incarnon-row hidden" id="riven-incarnon-row-0">
+              <label class="riven-incarnon-label">
+                <input type="checkbox" id="riven-incarnon-checkbox-0" class="riven-incarnon-checkbox">
+                <span class="riven-incarnon-toggle-track"><span class="riven-incarnon-toggle-thumb"></span></span>
+                <span class="riven-incarnon-text" data-i18n="riven_incarnon_mode">Incarnon Mode</span>
+                <span class="riven-incarnon-hint" data-i18n="riven_incarnon_hint">Uses Incarnon form stats (higher CC/CD)</span>
+              </label>
+              <p class="riven-incarnon-auto hidden" id="riven-incarnon-auto-0" data-i18n="riven_incarnon_auto">Auto-enabled — this weapon is built around its Incarnon form. Turn off to grade the base form.</p>
             </div>
           </section>
           <section class="riven-section" id="riven-stats-section-0">
@@ -304,6 +303,21 @@
               <span data-i18n="riven_ocr_disclaimer">Image reading may contain mistakes — always review the detected values before evaluating.</span>
             </div>
           </section>
+          <section class="riven-section riven-weapon-per-col" id="riven-weapon-section-1">
+            <h3 class="riven-section-label" data-i18n="riven_weapon_label">Weapon (optional)</h3>
+            <div class="riven-weapon-row" id="riven-weapon-row-1">
+              <button class="riven-weapon-btn" id="riven-weapon-btn-1" type="button"></button>
+            </div>
+            <div class="riven-incarnon-row hidden" id="riven-incarnon-row-1">
+              <label class="riven-incarnon-label">
+                <input type="checkbox" id="riven-incarnon-checkbox-1" class="riven-incarnon-checkbox">
+                <span class="riven-incarnon-toggle-track"><span class="riven-incarnon-toggle-thumb"></span></span>
+                <span class="riven-incarnon-text" data-i18n="riven_incarnon_mode">Incarnon Mode</span>
+                <span class="riven-incarnon-hint" data-i18n="riven_incarnon_hint">Uses Incarnon form stats (higher CC/CD)</span>
+              </label>
+              <p class="riven-incarnon-auto hidden" id="riven-incarnon-auto-1" data-i18n="riven_incarnon_auto">Auto-enabled — this weapon is built around its Incarnon form. Turn off to grade the base form.</p>
+            </div>
+          </section>
           <section class="riven-section" id="riven-stats-section-1">
             <h3 class="riven-section-label" data-i18n="riven_stats_label">Stats</h3>
             <div class="riven-stat-list" id="riven-stat-list-1"></div>
@@ -328,6 +342,28 @@
           </section>
         </div>
 
+      </div>
+
+      <div class="riven-conflict-modal hidden" id="riven-conflict-modal">
+        <div class="riven-conflict-backdrop" id="riven-conflict-backdrop"></div>
+        <div class="riven-conflict-box">
+          <h3 class="riven-conflict-title" data-i18n="riven_conflict_title">Different weapons selected</h3>
+          <div class="riven-conflict-weapons">
+            <button type="button" class="riven-conflict-weapon-btn" id="riven-conflict-use-a">
+              <span class="riven-conflict-roll-label" data-i18n="riven_roll_a">Roll A</span>
+              <img class="riven-conflict-weapon-img" id="riven-conflict-img-a" src="" alt="">
+              <span class="riven-conflict-weapon-name" id="riven-conflict-name-a"></span>
+            </button>
+            <button type="button" class="riven-conflict-weapon-btn" id="riven-conflict-use-b">
+              <span class="riven-conflict-roll-label" data-i18n="riven_roll_b">Roll B</span>
+              <img class="riven-conflict-weapon-img" id="riven-conflict-img-b" src="" alt="">
+              <span class="riven-conflict-weapon-name" id="riven-conflict-name-b"></span>
+            </button>
+          </div>
+          <div class="riven-conflict-footer">
+            <button type="button" class="riven-conflict-clear-link" id="riven-conflict-clear-both" data-i18n="riven_conflict_clear_both">Clear both columns</button>
+          </div>
+        </div>
       </div>
     </div>
 

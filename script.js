@@ -203,6 +203,11 @@ const STRINGS = {
     riven_incarnon_mode: 'Incarnon Mode',
     riven_incarnon_hint: 'Uses Incarnon form stats (higher CC/CD)',
     riven_incarnon_auto: '⚡ Auto-enabled — this weapon is built around its Incarnon form. Turn off to grade the base form.',
+    riven_conflict_title: 'Different weapons selected',
+    riven_conflict_body: 'Roll A: {a} · Roll B: {b}',
+    riven_conflict_use_a: 'Use Roll A\'s weapon for both',
+    riven_conflict_use_b: 'Use Roll B\'s weapon for both',
+    riven_conflict_clear_both: 'Clear both columns',
     riven_roll_strength: 'Roll strength',
     riven_disposition: 'Disposition',
     weapon_picker_title: 'Select weapon',
@@ -432,6 +437,11 @@ const STRINGS = {
     riven_incarnon_mode: 'Modo Incarnon',
     riven_incarnon_hint: 'Usa stats da forma Incarnon (CC/CD maiores)',
     riven_incarnon_auto: '⚡ Ligado automaticamente — essa arma é usada na forma Incarnon. Desligue para avaliar a forma base.',
+    riven_conflict_title: 'Armas diferentes selecionadas',
+    riven_conflict_body: 'Roll A: {a} · Roll B: {b}',
+    riven_conflict_use_a: 'Usar a arma do Roll A nas duas',
+    riven_conflict_use_b: 'Usar a arma do Roll B nas duas',
+    riven_conflict_clear_both: 'Limpar ambas as colunas',
     riven_roll_strength: 'Força do roll',
     riven_disposition: 'Disposição',
     weapon_picker_title: 'Selecione a arma',
@@ -6759,6 +6769,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/BurstonPrime.png',
       preferred_positive: { critical_chance: 'A', critical_damage: 'A', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon form — crit build, same priority as Burston base.', 'pt-BR': 'Forma Incarnon — build crit, mesma prioridade que o Burston base.' },
+      },
     },
     {
       slug: 'buzlok', name: 'Buzlok', category: 'primary',
@@ -7282,6 +7297,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/LatronPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_damage: 'S', multishot: 'S', critical_chance: 'A', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon form — crit-flat evolution saturates CC, CD/MS lead.', 'pt-BR': 'Forma Incarnon — evolução de crit-flat satura CC, CD/MS lideram.' },
+      },
     },
     {
       slug: 'latron-wraith', name: 'Latron Wraith', category: 'primary',
@@ -7289,6 +7309,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/LatronWraith.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_damage: 'S', multishot: 'S', critical_chance: 'A', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon form — crit-flat evolution saturates CC, CD/MS lead.', 'pt-BR': 'Forma Incarnon — evolução de crit-flat satura CC, CD/MS lideram.' },
+      },
     },
     {
       slug: 'lenz', name: 'Lenz', category: 'primary',
@@ -7692,6 +7717,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/Soma.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit build as base.', 'pt-BR': 'Forma Incarnon — mesma build crit da base.' },
+      },
     },
     {
       slug: 'soma-prime', name: 'Soma Prime', category: 'primary',
@@ -7699,6 +7730,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/SomaPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit build as base.', 'pt-BR': 'Forma Incarnon — mesma build crit da base.' },
+      },
       notes: {
         en: 'Crit auto rifle — Multishot/Crit Chance/Damage all top tier picks.',
         'pt-BR': 'Rifle automático de crítico — Multishot/Chance de Crítico/Dano são picks top tier.',
@@ -8012,6 +8049,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/Vectis.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form (U43) — rapid-fire crit mode, same crit priorities.', 'pt-BR': 'Forma Incarnon (U43) — modo crit de disparo rápido, mesmas prioridades de crit.' },
+      },
     },
     {
       slug: 'vectis-prime', name: 'Vectis Prime', category: 'primary',
@@ -8019,6 +8062,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/VectisPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form (U43) — rapid-fire crit mode, same crit priorities.', 'pt-BR': 'Forma Incarnon (U43) — modo crit de disparo rápido, mesmas prioridades de crit.' },
+      },
       notes: {
         en: '2-shot sniper — Multishot/Crit Chance/Crit Damage are king. −Magazine is genuinely FREE (only 2 shots before reload anyway).',
         'pt-BR': 'Sniper de 2 tiros — Multishot/Crit Chance/Crit Damage são reis. −Carregador é genuinamente GRÁTIS (só 2 tiros antes da recarga).',
@@ -8280,8 +8329,9 @@ const WEAPONS = {
     {
       slug: 'athodai-prime', name: 'Athodai Prime', category: 'secondary',
       type: 'Pistol (Auto)', mastery_rank: 10, disposition: 0.5, family: 'athodai',
-      image: 'https://wiki.warframe.com/images/AthodaiPrime.png',
+      image: 'https://wiki.warframe.com/images/AthodaiPrime.png?7c419',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+      wasted_positive: { status_chance: 'D' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
     },
     {
@@ -8314,6 +8364,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/Ballistica.png',
       preferred_positive: { multishot: 'S', damage: 'B' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form (U43) — crit mode, transforms from neutral base.', 'pt-BR': 'Forma Incarnon (U43) — modo crit, transforma da base neutra.' },
+      },
     },
     {
       slug: 'ballistica-prime', name: 'Ballistica Prime', category: 'secondary',
@@ -8321,6 +8377,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/BallisticaPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', status_chance: 'A', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form (U43) — crit build, same as base priority.', 'pt-BR': 'Forma Incarnon (U43) — build crit, mesma prioridade da base.' },
+      },
     },
     {
       slug: 'bolto', name: 'Bolto', category: 'secondary',
@@ -8461,6 +8523,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/DexFuris.png',
       preferred_positive: { multishot: 'S', damage: 'B' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { status_chance: 'S', multishot: 'S', damage: 'C' },
+        wasted_positive: { critical_chance: 'D', critical_damage: 'D' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon form — Furis family: Elemental Balance makes status meta.', 'pt-BR': 'Forma Incarnon — família Furis: Elemental Balance torna status meta.' },
+      },
     },
     {
       slug: 'dual-cestra', name: 'Dual Cestra', category: 'secondary',
@@ -8468,6 +8536,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/DualCestra.png',
       preferred_positive: { multishot: 'S', damage: 'B' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { multishot: 'S', critical_damage: 'S', critical_chance: 'A', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon form — crit, CC secondary due to high base CC saturation.', 'pt-BR': 'Forma Incarnon — crit, CC secundário por saturação do crit-flat alto.' },
+      },
     },
     {
       slug: 'dual-coda-torxica', name: 'Dual Coda Torxica', category: 'secondary',
@@ -8753,6 +8826,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/LatoPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_damage: 'S', multishot: 'S', critical_chance: 'A', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon: crit-flat evolution saturates CC → CD/MS lead.', 'pt-BR': 'Incarnon: evolução crit-flat satura CC → CD/MS lideram.' },
+      },
     },
     {
       slug: 'lato-vandal', name: 'Lato Vandal', category: 'secondary',
@@ -8760,6 +8838,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/LatoVandal.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_damage: 'S', multishot: 'S', critical_chance: 'A', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon: crit-flat evolution saturates CC → CD/MS lead.', 'pt-BR': 'Incarnon: evolução crit-flat satura CC → CD/MS lideram.' },
+      },
     },
     {
       slug: 'lex', name: 'Lex', category: 'secondary',
@@ -8894,6 +8977,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/PrismaAngstrum.png',
       preferred_positive: { critical_chance: 'A', critical_damage: 'A', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { multishot: 'S', critical_damage: 'S', critical_chance: 'A', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon: crit explosivo (Critical Parallel; CC secundario)', 'pt-BR': 'Incarnon: crit explosivo (Critical Parallel; CC secundário)' },
+      },
     },
     {
       slug: 'prisma-twin-gremlins', name: 'Prisma Twin Gremlins', category: 'secondary',
@@ -8929,6 +9017,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/RaktaBallistica.png',
       preferred_positive: { multishot: 'S', damage: 'B' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form — crit mode, transforms from neutral base.', 'pt-BR': 'Forma Incarnon — modo crit, transforma da base neutra.' },
+      },
     },
     {
       slug: 'riot-848', name: 'Riot-848', category: 'secondary',
@@ -8964,6 +9058,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/SecuraDualCestra.png',
       preferred_positive: { critical_chance: 'A', critical_damage: 'A', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { multishot: 'S', critical_damage: 'S', critical_chance: 'A', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon form — crit, CC secondary due to high base CC saturation.', 'pt-BR': 'Forma Incarnon — crit, CC secundário por saturação do crit-flat alto.' },
+      },
     },
     {
       slug: 'seer', name: 'Seer', category: 'secondary',
@@ -8985,6 +9084,11 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/Sicarus.png',
       preferred_positive: { critical_chance: 'A', critical_damage: 'A', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        notes: { en: 'Incarnon form — full-auto crit mode, CC/CD become top priority.', 'pt-BR': 'Forma Incarnon — modo crit full-auto, CC/CD viram prioridade máxima.' },
+      },
     },
     {
       slug: 'sicarus-prime', name: 'Sicarus Prime', category: 'secondary',
@@ -8992,6 +9096,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/SicarusPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit build as base.', 'pt-BR': 'Forma Incarnon — mesma build crit da base.' },
+      },
     },
     {
       slug: 'sonicor', name: 'Sonicor', category: 'secondary',
@@ -9053,6 +9163,12 @@ const WEAPONS = {
       image: 'https://wiki.warframe.com/images/Stug.png',
       preferred_positive: { multishot: 'S', damage: 'B' },
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', damage: 'C' },
+        preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form (U43) — crit mode, transforms from neutral base.', 'pt-BR': 'Forma Incarnon (U43) — modo crit, transforma da base neutra.' },
+      },
     },
     {
       slug: 'synoid-gammacor', name: 'Synoid Gammacor', category: 'secondary',
@@ -9308,6 +9424,11 @@ const WEAPONS = {
       type: 'Scythe', mastery_rank: 3, disposition: 1.46, family: 'anku',
       image: 'https://wiki.warframe.com/images/Anku.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — crit wave; same Riven priorities as base.', 'pt-BR': 'Forma Incarnon — onda crit; mesmas prioridades de Riven da base.' },
+      },
     },
     {
       slug: 'ankyros', name: 'Ankyros', category: 'melee',
@@ -9361,12 +9482,22 @@ const WEAPONS = {
       type: 'Staff', mastery_rank: 0, disposition: 1.35, family: 'bo',
       image: 'https://wiki.warframe.com/images/Bo.png',
       preferred_positive: { attack_speed: 'A', combo_duration: 'B', damage: 'B' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form — electric crit shockwave; CC/CD become viable.', 'pt-BR': 'Forma Incarnon — onda elétrica crit; CC/CD passam a ser viáveis.' },
+      },
     },
     {
       slug: 'bo-prime', name: 'Bo Prime', category: 'melee',
       type: 'Staff', mastery_rank: 5, disposition: 1.35, family: 'bo',
       image: 'https://wiki.warframe.com/images/BoPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', status_chance: 'A', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', status_chance: 'A', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit/status priorities as base.', 'pt-BR': 'Forma Incarnon — mesmas prioridades crit/status da base.' },
+      },
     },
     {
       slug: 'boltace', name: 'Boltace', category: 'melee',
@@ -9414,6 +9545,11 @@ const WEAPONS = {
       type: 'Dagger', mastery_rank: 3, disposition: 1.43, family: 'ceramic-dagger',
       image: 'https://wiki.warframe.com/images/CeramicDagger.png',
       preferred_positive: { attack_speed: 'A', combo_duration: 'B', damage: 'B' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form — crit projectile (cc~50%); CC/CD are top picks.', 'pt-BR': 'Forma Incarnon — projétil crit (cc~50%); CC/CD são picks top.' },
+      },
       notes: {
         en: 'Highest disposition melee with Incarnon adapter — riven plus Incarnon turns it into a powerhouse.',
         'pt-BR': 'Melee com maior disposição do jogo e adaptador Incarnon — riven + Incarnon transforma em arma top.',
@@ -9527,12 +9663,22 @@ const WEAPONS = {
       type: 'Rapier', mastery_rank: 7, disposition: 1.25, family: 'destreza',
       image: 'https://wiki.warframe.com/images/Destreza.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form (U43) — same crit priorities as base.', 'pt-BR': 'Forma Incarnon (U43) — mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'destreza-prime', name: 'Destreza Prime', category: 'melee',
       type: 'Rapier', mastery_rank: 10, disposition: 1.14, family: 'destreza',
       image: 'https://wiki.warframe.com/images/DestrezaPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form (U43) — same crit priorities as base.', 'pt-BR': 'Forma Incarnon (U43) — mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'dex-dakra', name: 'Dex Dakra', category: 'melee',
@@ -9618,6 +9764,11 @@ const WEAPONS = {
       type: 'Dual Swords', mastery_rank: 0, disposition: 1.48, family: 'dual-skana',
       image: 'https://wiki.warframe.com/images/DualSkana.png',
       preferred_positive: { attack_speed: 'A', combo_duration: 'B', damage: 'B' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form — crit energy slash; CC/CD become primary picks.', 'pt-BR': 'Forma Incarnon — corte de energia crit; CC/CD viram picks primários.' },
+      },
     },
     {
       slug: 'dual-viciss', name: 'Dual Viciss', category: 'melee',
@@ -9712,12 +9863,22 @@ const WEAPONS = {
       type: 'Fist', mastery_rank: 5, disposition: 1.38, family: 'furax',
       image: 'https://wiki.warframe.com/images/Furax.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit priorities as base.', 'pt-BR': 'Forma Incarnon — mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'furax-wraith', name: 'Furax Wraith', category: 'melee',
       type: 'Fist', mastery_rank: 9, disposition: 1.15, family: 'furax',
       image: 'https://wiki.warframe.com/images/FuraxWraith.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit priorities as base.', 'pt-BR': 'Forma Incarnon — mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'galariak-prime', name: 'Galariak Prime', category: 'melee',
@@ -10067,6 +10228,11 @@ const WEAPONS = {
       type: 'Hammer', mastery_rank: 1, disposition: 1.35, family: 'magistar',
       image: 'https://wiki.warframe.com/images/Magistar.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — projectile burst; same crit priorities as base.', 'pt-BR': 'Forma Incarnon — rajada de projéteis; mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'masseter', name: 'Masseter', category: 'melee',
@@ -10099,12 +10265,22 @@ const WEAPONS = {
       type: 'Staff', mastery_rank: 0, disposition: 1.4, family: 'mk1-bo',
       image: 'https://wiki.warframe.com/images/MK1-Bo.png',
       preferred_positive: { attack_speed: 'A', combo_duration: 'B', damage: 'B' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form — electric crit shockwave; CC/CD become viable.', 'pt-BR': 'Forma Incarnon — onda elétrica crit; CC/CD passam a ser viáveis.' },
+      },
     },
     {
       slug: 'mk1-furax', name: 'Mk1-Furax', category: 'melee',
       type: 'Fist', mastery_rank: 0, disposition: 1.45, family: 'mk1-furax',
       image: 'https://wiki.warframe.com/images/MK1-Furax.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit priorities as base.', 'pt-BR': 'Forma Incarnon — mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'nami-skyla', name: 'Nami Skyla', category: 'melee',
@@ -10165,6 +10341,11 @@ const WEAPONS = {
       type: 'Sparring', mastery_rank: 4, disposition: 1.3, family: 'obex',
       image: 'https://wiki.warframe.com/images/Obex.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form (U43) — same crit priorities as base.', 'pt-BR': 'Forma Incarnon (U43) — mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'ohma', name: 'Ohma', category: 'melee',
@@ -10269,6 +10450,11 @@ const WEAPONS = {
       type: 'Sparring', mastery_rank: 10, disposition: 1.25, family: 'obex',
       image: 'https://wiki.warframe.com/images/PrismaObex.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', status_chance: 'A', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', status_chance: 'A', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form (U43) — same crit/status priorities as base.', 'pt-BR': 'Forma Incarnon (U43) — mesmas prioridades crit/status da base.' },
+      },
     },
     {
       slug: 'prisma-ohma', name: 'Prisma Ohma', category: 'melee',
@@ -10281,6 +10467,11 @@ const WEAPONS = {
       type: 'Sword', mastery_rank: 8, disposition: 1.2, family: 'skana',
       image: 'https://wiki.warframe.com/images/PrismaSkana.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit priorities as base.', 'pt-BR': 'Forma Incarnon — mesmas prioridades crit da base.' },
+      },
     },
     {
       slug: 'prova', name: 'Prova', category: 'melee',
@@ -10381,6 +10572,11 @@ const WEAPONS = {
       type: 'Hammer', mastery_rank: 8, disposition: 1.25, family: 'magistar',
       image: 'https://wiki.warframe.com/images/SanctiMagistar.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit priorities as base.', 'pt-BR': 'Forma Incarnon — mesmas prioridades crit da base.' },
+      },
       notes: {
         en: 'Healing hammer with Incarnon adapter — Damage/Crit Chance/Heavy Attack Efficiency carry.',
         'pt-BR': 'Martelo de cura com adaptador Incarnon — Dano/Chance de Crítico/Eficiência de Ataque Pesado carregam.',
@@ -10482,12 +10678,22 @@ const WEAPONS = {
       type: 'Sword', mastery_rank: 0, disposition: 1.3, family: 'skana',
       image: 'https://wiki.warframe.com/images/Skana.png',
       preferred_positive: { attack_speed: 'A', combo_duration: 'B', damage: 'B' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', damage: 'C' },
+        metaDefault: true,
+        notes: { en: 'Incarnon form — crit wave; CC/CD become primary picks.', 'pt-BR': 'Forma Incarnon — onda crit; CC/CD viram picks primários.' },
+      },
     },
     {
       slug: 'skana-prime', name: 'Skana Prime', category: 'melee',
       type: 'Sword', mastery_rank: 12, disposition: 1.2, family: 'skana',
       image: 'https://wiki.warframe.com/images/SkanaPrime.png',
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', status_chance: 'A', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
+      incarnon: {
+        preferred_positive: { critical_chance: 'S', critical_damage: 'S', status_chance: 'A', attack_speed: 'A', damage: 'C' },
+        metaDefault: false,
+        notes: { en: 'Incarnon form — same crit/status priorities as base.', 'pt-BR': 'Forma Incarnon — mesmas prioridades crit/status da base.' },
+      },
     },
     {
       slug: 'skiajati', name: 'Skiajati', category: 'melee',
@@ -15890,13 +16096,13 @@ async function runRivenOcr(file, rollIdx) {
 
     const detectedWeapon = detectWeaponFromOcr(text || '');
     if (detectedWeapon) {
-      if (!state.riven.weapon) {
-        state.riven.weapon = detectedWeapon.slug;
-        state.riven.weaponAutoDetected = true;
-        state.riven.category = detectedWeapon.category;
-      } else if (state.riven.weapon !== detectedWeapon.slug) {
-        const w = weaponBySlug(detectedWeapon.slug);
-        roll.weaponMismatch = (w && w.name) || detectedWeapon.slug;
+      roll.weapon = detectedWeapon.slug;
+      roll.weaponAutoDetected = true;
+      roll.weaponMismatch = null;
+      state.riven.category = detectedWeapon.category;
+      const dw = weaponBySlug(detectedWeapon.slug);
+      if (dw && dw.incarnon && dw.incarnon.metaDefault !== false) {
+        state.riven.incarnonMode = true;
       }
     } else {
       const inferred = inferCategoryFromDetected(detected);
@@ -15932,6 +16138,7 @@ async function runRivenOcr(file, rollIdx) {
     roll.imageState = 'success';
     roll.imageDetectedCount = detected.length;
     renderRivens();
+    checkWeaponConflict();
   } catch (err) {
     console.error('Riven OCR error:', err);
     roll.imageState = 'error';
@@ -16011,21 +16218,24 @@ function resetRivenForm(rollIdx) {
   const previewImg = document.getElementById(`riven-image-preview-img-${rollIdx}`);
   if (previewImg) previewImg.src = '';
   state.riven.rolls[rollIdx] = makeRoll();
-  if (state.riven.rolls.every(r => r.imageState === 'idle' && r.stats.every(s => !s.slug))) {
-    state.riven.weapon = null;
-    state.riven.weaponAutoDetected = false;
+  if (state.riven.rolls.every(r => !r.weapon)) {
+    state.riven.incarnonMode = false;
   }
   renderRivens();
 }
 
 // ============== Weapon picker render + state ==============
 
-function renderRivenWeaponBtn() {
-  const btn = document.getElementById('riven-weapon-btn');
+function renderRivenWeaponBtn(rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  const btn = document.getElementById(`riven-weapon-btn-${rollIdx}`);
   if (!btn) return;
   btn.innerHTML = '';
 
-  if (!state.riven.weapon) {
+  const incarnonRow = document.getElementById(`riven-incarnon-row-${rollIdx}`);
+  const incarnonAuto = document.getElementById(`riven-incarnon-auto-${rollIdx}`);
+
+  if (!roll.weapon) {
     btn.classList.remove('has-weapon');
     const icon = document.createElement('span');
     icon.className = 'weapon-btn-icon';
@@ -16035,15 +16245,15 @@ function renderRivenWeaponBtn() {
     text.textContent = t('riven_weapon_none');
     btn.appendChild(icon);
     btn.appendChild(text);
-    document.getElementById('riven-incarnon-row')?.classList.add('hidden');
-    document.getElementById('riven-incarnon-auto')?.classList.add('hidden');
+    incarnonRow?.classList.add('hidden');
+    incarnonAuto?.classList.add('hidden');
     return;
   }
 
-  const w = weaponBySlug(state.riven.weapon);
+  const w = weaponBySlug(roll.weapon);
   if (!w) {
-    state.riven.weapon = null;
-    return renderRivenWeaponBtn();
+    roll.weapon = null;
+    return renderRivenWeaponBtn(rollIdx);
   }
 
   btn.classList.add('has-weapon');
@@ -16056,7 +16266,6 @@ function renderRivenWeaponBtn() {
     iconImg.alt = '';
     iconImg.loading = 'lazy';
     iconImg.onerror = () => {
-      // Fallback to the lightning emoji if the wiki URL ever 404s.
       const fallback = document.createElement('span');
       fallback.className = 'weapon-btn-icon';
       fallback.textContent = '⚡';
@@ -16082,7 +16291,7 @@ function renderRivenWeaponBtn() {
   dots.className = 'dots';
   dots.textContent = dispositionLabel(w.disposition);
   meta.appendChild(dots);
-  if (state.riven.weaponAutoDetected) {
+  if (roll.weaponAutoDetected) {
     const autoBadge = document.createElement('span');
     autoBadge.className = 'weapon-btn-auto';
     autoBadge.textContent = t('riven_weapon_auto');
@@ -16099,18 +16308,16 @@ function renderRivenWeaponBtn() {
   clear.title = t('riven_weapon_clear');
   clear.addEventListener('click', e => {
     e.stopPropagation();
-    clearWeapon();
+    clearWeapon(rollIdx);
   });
   btn.appendChild(clear);
 
-  // O toggle Incarnon só aparece pra armas COM dados de Incarnon; o aviso só
-  // aparece quando o toggle está LIGADO.
-  const incarnonRow = document.getElementById('riven-incarnon-row');
-  const incarnonAuto = document.getElementById('riven-incarnon-auto');
+  // Toggle Incarnon: só aparece se essa coluna tem uma arma com dados de Incarnon.
+  // O toggle controla state.riven.incarnonMode (compartilhado entre as duas colunas).
   if (incarnonRow) {
     if (w.incarnon) {
       incarnonRow.classList.remove('hidden');
-      const cb = document.getElementById('riven-incarnon-checkbox');
+      const cb = document.getElementById(`riven-incarnon-checkbox-${rollIdx}`);
       if (cb) cb.checked = state.riven.incarnonMode;
       if (incarnonAuto) incarnonAuto.classList.toggle('hidden', !state.riven.incarnonMode);
     } else {
@@ -16120,28 +16327,25 @@ function renderRivenWeaponBtn() {
   }
 }
 
-function openWeaponPicker() {
+function openWeaponPicker(rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  const currentWeapon = roll.weapon ? weaponBySlug(roll.weapon) : null;
+  const defaultCat = currentWeapon
+    ? currentWeapon.category
+    : (WEAPONS[state.riven.category]?.length ? state.riven.category : 'secondary');
+
   state.weaponPicker.open = true;
-  state.weaponPicker.selected = state.riven.weapon || null;
-  // Default the picker's tab to the riven category if it has anything,
-  // otherwise the only populated one (secondary for v3).
-  state.weaponPicker.category = WEAPONS[state.riven.category]?.length
-    ? state.riven.category
-    : 'secondary';
+  state.weaponPicker.rollIdx = rollIdx;
+  state.weaponPicker.selected = roll.weapon || null;
+  state.weaponPicker.category = defaultCat;
   state.weaponPicker.search = '';
-  // Reset family expansion, then auto-expand the display-family of the
-  // currently selected weapon (if any) so it's visible after open. Uses
-  // displayFamily so picking Kuva Karak expands the Karak group, not the
-  // empty Kuva Karak group.
   state.weaponPicker.expandedFamilies = new Set();
-  const sel = state.weaponPicker.selected ? weaponBySlug(state.weaponPicker.selected) : null;
-  if (sel) {
-    const df = displayFamily(sel);
+  if (currentWeapon) {
+    const df = displayFamily(currentWeapon);
     if (df) state.weaponPicker.expandedFamilies.add(df);
   }
   document.getElementById('weapon-modal').classList.remove('hidden');
   renderWeaponPicker();
-  // Focus search after the modal renders
   setTimeout(() => document.getElementById('weapon-search')?.focus(), 0);
 }
 
@@ -16150,25 +16354,54 @@ function closeWeaponPicker() {
   document.getElementById('weapon-modal').classList.add('hidden');
 }
 
-function selectWeapon(slug, autoDetected = false) {
-  state.riven.weapon = slug;
-  state.riven.weaponAutoDetected = autoDetected;
+function selectWeapon(slug, rollIdx, autoDetected = false) {
+  const roll = state.riven.rolls[rollIdx];
+  roll.weapon = slug;
+  roll.weaponAutoDetected = autoDetected;
+  roll.result = null;
   const w = weaponBySlug(slug);
-  // Auto-enable Incarnon Mode for weapons built around their Incarnon form
-  // (the meta for most Incarnon weapons, e.g. Torid). A weapon can opt out with
-  // incarnon.metaDefault === false. User can still toggle it off manually.
-  state.riven.incarnonMode = !!(w && w.incarnon && w.incarnon.metaDefault !== false);
+  // Auto-enable Incarnon Mode for weapons built around their Incarnon form.
+  // Only auto-ON (never auto-OFF) so selecting a non-incarnon weapon in one
+  // column doesn't disable incarnon for an incarnon weapon in the other.
+  if (w && w.incarnon && w.incarnon.metaDefault !== false) {
+    state.riven.incarnonMode = true;
+  }
   if (w) state.riven.category = w.category;
-  state.riven.rolls.forEach(roll => { roll.result = null; });
+  renderRivens();
+  checkWeaponConflict();
+}
+
+function clearWeapon(rollIdx) {
+  const roll = state.riven.rolls[rollIdx];
+  roll.weapon = null;
+  roll.weaponAutoDetected = false;
+  roll.result = null;
+  if (state.riven.rolls.every(r => !r.weapon)) {
+    state.riven.incarnonMode = false;
+  }
   renderRivens();
 }
 
-function clearWeapon() {
-  state.riven.weapon = null;
-  state.riven.weaponAutoDetected = false;
-  state.riven.incarnonMode = false;
-  state.riven.rolls.forEach(roll => { roll.result = null; });
-  renderRivens();
+function checkWeaponConflict() {
+  const w0 = state.riven.rolls[0].weapon;
+  const w1 = state.riven.rolls[1].weapon;
+  if (!w0 || !w1 || w0 === w1) return;
+
+  function fillSlot(imgId, nameId, slug) {
+    const w = weaponBySlug(slug);
+    const imgEl = document.getElementById(imgId);
+    const nameEl = document.getElementById(nameId);
+    if (imgEl) {
+      const url = w && weaponImageUrl(w);
+      imgEl.src = url || '';
+      imgEl.style.display = url ? '' : 'none';
+    }
+    if (nameEl) nameEl.textContent = w?.name || slug;
+  }
+
+  fillSlot('riven-conflict-img-a', 'riven-conflict-name-a', w0);
+  fillSlot('riven-conflict-img-b', 'riven-conflict-name-b', w1);
+  document.getElementById('riven-conflict-modal')?.classList.remove('hidden');
 }
 
 function renderWeaponPicker() {
@@ -16447,14 +16680,15 @@ function renderWeaponDetail() {
   useBtn.className = 'weapon-detail-use-btn';
   useBtn.textContent = t('weapon_use_btn');
   useBtn.addEventListener('click', () => {
-    selectWeapon(w.slug, false);
+    selectWeapon(w.slug, state.weaponPicker.rollIdx, false);
     closeWeaponPicker();
   });
   panel.appendChild(useBtn);
 }
 
 function setupWeaponPickerEvents() {
-  document.getElementById('riven-weapon-btn')?.addEventListener('click', openWeaponPicker);
+  document.getElementById('riven-weapon-btn-0')?.addEventListener('click', () => openWeaponPicker(0));
+  document.getElementById('riven-weapon-btn-1')?.addEventListener('click', () => openWeaponPicker(1));
   document.getElementById('weapon-modal-close')?.addEventListener('click', closeWeaponPicker);
   document.getElementById('weapon-modal-backdrop')?.addEventListener('click', closeWeaponPicker);
 
@@ -16464,11 +16698,47 @@ function setupWeaponPickerEvents() {
     renderWeaponList();
   });
 
-  document.getElementById('riven-incarnon-checkbox')?.addEventListener('change', e => {
+  // Ambos os checkboxes de incarnon controlam o mesmo state.riven.incarnonMode.
+  // renderRivenWeaponBtn(0/1) sincroniza o checked de cada coluna.
+  function onIncarnon(e) {
     state.riven.incarnonMode = e.target.checked;
-    // Re-evaluate any rolls that already have a result so scores update immediately.
     state.riven.rolls.forEach((roll, i) => { if (roll.result) evaluateRiven(i); });
-    renderRivenWeaponBtn();
+    renderRivenWeaponBtn(0);
+    renderRivenWeaponBtn(1);
+  }
+  document.getElementById('riven-incarnon-checkbox-0')?.addEventListener('change', onIncarnon);
+  document.getElementById('riven-incarnon-checkbox-1')?.addEventListener('change', onIncarnon);
+
+  // Conflict modal actions
+  function applyConflictChoice(keepIdx) {
+    const slug = state.riven.rolls[keepIdx].weapon;
+    if (!slug) return;
+    const otherIdx = keepIdx === 0 ? 1 : 0;
+    const other = state.riven.rolls[otherIdx];
+    if (other.imagePreviewUrl) { try { URL.revokeObjectURL(other.imagePreviewUrl); } catch (e) {} }
+    const fi = document.getElementById(`riven-image-input-${otherIdx}`);
+    if (fi) fi.value = '';
+    state.riven.rolls[otherIdx] = makeRoll();
+    state.riven.rolls[otherIdx].weapon = slug;
+    document.getElementById('riven-conflict-modal')?.classList.add('hidden');
+    renderRivens();
+  }
+  document.getElementById('riven-conflict-use-a')?.addEventListener('click', () => applyConflictChoice(0));
+  document.getElementById('riven-conflict-use-b')?.addEventListener('click', () => applyConflictChoice(1));
+  document.getElementById('riven-conflict-clear-both')?.addEventListener('click', () => {
+    [0, 1].forEach(idx => {
+      const r = state.riven.rolls[idx];
+      if (r.imagePreviewUrl) { try { URL.revokeObjectURL(r.imagePreviewUrl); } catch (e) {} }
+      const fi = document.getElementById(`riven-image-input-${idx}`);
+      if (fi) fi.value = '';
+    });
+    state.riven.rolls = [makeRoll(), makeRoll()];
+    state.riven.incarnonMode = false;
+    document.getElementById('riven-conflict-modal')?.classList.add('hidden');
+    renderRivens();
+  });
+  document.getElementById('riven-conflict-backdrop')?.addEventListener('click', () => {
+    document.getElementById('riven-conflict-modal')?.classList.add('hidden');
   });
 
   document.addEventListener('keydown', e => {
@@ -16736,6 +17006,8 @@ function applyWarframeStats(slug) {
 
 function makeRoll() {
   return {
+    weapon: null,
+    weaponAutoDetected: false,
     slots: 2,
     stats: [
       { slug: null, value: '' },
@@ -16768,13 +17040,12 @@ const state = {
   statusSpecial: null, // 'void' | 'tau' | 'true' | null
   riven: {
     category: 'primary',
-    weapon: null,
-    weaponAutoDetected: false,
     incarnonMode: false,
     rolls: [makeRoll(), makeRoll()],
   },
   weaponPicker: {
     open: false,
+    rollIdx: 0, // which roll this picker is editing
     category: 'secondary', // active tab in the picker modal
     search: '',
     selected: null, // slug currently highlighted in the picker
@@ -18427,6 +18698,9 @@ const STAR_CHART_TABS = [
 ];
 
 function visibleStarChartTabs() {
+  if (!state.starChart.showSpoilers) {
+    return STAR_CHART_TABS.filter(t => t.key === 'origin-system');
+  }
   return STAR_CHART_TABS;
 }
 
@@ -19365,7 +19639,8 @@ function setupGlossarySearch() {
 // ============== Rivens render ==============
 
 function renderRivens() {
-  renderRivenWeaponBtn();
+  renderRivenWeaponBtn(0);
+  renderRivenWeaponBtn(1);
   renderRivenCategoryPills();
   renderRivenStatRows(0);
   renderRivenStatRows(1);
@@ -19842,13 +20117,16 @@ function setRivenCategory(cat) {
     roll.stats.forEach(s => { s.slug = null; });
     roll.result = null;
     roll.warning = null;
-  });
-  if (state.riven.weapon) {
-    const w = weaponBySlug(state.riven.weapon);
-    if (w && w.category !== cat) {
-      state.riven.weapon = null;
-      state.riven.weaponAutoDetected = false;
+    if (roll.weapon) {
+      const w = weaponBySlug(roll.weapon);
+      if (w && w.category !== cat) {
+        roll.weapon = null;
+        roll.weaponAutoDetected = false;
+      }
     }
+  });
+  if (state.riven.rolls.every(r => !r.weapon)) {
+    state.riven.incarnonMode = false;
   }
   renderRivens();
 }
@@ -19872,7 +20150,7 @@ function evaluateRiven(rollIdx) {
   }
 
   roll.warning = null;
-  roll.result = scoreRiven({ stats: active, weaponSlug: state.riven.weapon });
+  roll.result = scoreRiven({ stats: active, weaponSlug: roll.weapon });
   renderRivenResult();
 }
 selectArchetype(state.archetype);
