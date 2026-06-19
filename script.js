@@ -111012,7 +111012,6 @@ function buildRivenStatRow(rollIdx, index) {
     state.riven.rolls[rollIdx].warning = null;
     renderRivenStatRows(rollIdx);
   });
-  row.appendChild(sel);
 
   const valueWrap = document.createElement('div');
   valueWrap.className = 'riven-stat-value-wrap';
@@ -111034,6 +111033,7 @@ function buildRivenStatRow(rollIdx, index) {
   unit.textContent = rivenStatUnit(slot.slug);
   valueWrap.appendChild(unit);
   row.appendChild(valueWrap);
+  row.appendChild(sel);
 
   if (roll.slots > 2) {
     const removeBtn = document.createElement('button');

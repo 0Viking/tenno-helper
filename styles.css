@@ -1830,7 +1830,7 @@ input[type="search"]::-webkit-search-decoration {
 
 .riven-stat-row {
   display: grid;
-  grid-template-columns: minmax(0, 280px) 120px 32px;
+  grid-template-columns: 120px minmax(0, 280px) 32px;
   align-items: center;
   gap: 10px;
   padding: 10px 14px;
@@ -2405,8 +2405,7 @@ input[type="search"]::-webkit-search-decoration {
 
 @media (max-width: 600px) {
   .riven-intro-title { font-size: 18px; }
-  .riven-stat-row { grid-template-columns: 32px 1fr; gap: 8px; }
-  .riven-stat-row { grid-template-columns: 1fr 100px 28px; }
+  .riven-stat-row { grid-template-columns: 100px 1fr 28px; gap: 8px; }
   .riven-score-number { font-size: 60px; }
   .riven-score-verdict { font-size: 18px; }
   .riven-upload-zone { padding: 24px 16px; }
