@@ -5235,6 +5235,37 @@ input[type="search"]::-webkit-search-decoration {
   box-shadow: 0 0 10px color-mix(in srgb, var(--era-color) 35%, transparent);
 }
 .relics-era-chip-icon { width: 18px; height: 18px; object-fit: contain; }
+.relics-filters { display: flex; flex-wrap: wrap; gap: 8px; margin: -2px 0 16px; }
+.relics-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: #cfcfd6;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color .12s, color .12s, background .12s, box-shadow .12s;
+}
+.relics-toggle::before {
+  content: '';
+  width: 14px; height: 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  flex: none;
+  transition: background .12s, border-color .12s;
+}
+.relics-toggle:hover { color: #fff; border-color: #7bdcb5; }
+.relics-toggle.active {
+  color: #fff;
+  border-color: #7bdcb5;
+  background: rgba(123, 220, 181, 0.14);
+  box-shadow: 0 0 10px rgba(123, 220, 181, 0.3);
+}
+.relics-toggle.active::before { background: #7bdcb5; border-color: #7bdcb5; }
 .relics-search-wrap { position: relative; flex: 1 1 220px; max-width: 320px; }
 .relics-search-input {
   width: 100%;
@@ -5286,6 +5317,8 @@ input[type="search"]::-webkit-search-decoration {
 }
 .relic-card-drops { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3px; }
 .relic-card-drop { display: flex; align-items: center; gap: 7px; font-size: 12px; color: #c4c4cc; }
+.relic-card-drop-name { flex: 1; min-width: 0; }
+.relic-card-duc { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 3px; color: #d9c07a; font-weight: 600; }
 .relic-dot { width: 8px; height: 8px; border-radius: 50%; flex: 0 0 auto; }
 
 .relic-modal { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; }

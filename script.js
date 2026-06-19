@@ -151,6 +151,8 @@ const STRINGS = {
     relics_intro: 'Search a relic [[by name or by Prime part]], filter by era, and see exactly [[what it drops]], the [[ducat]] value, drop chances per [[refinement]], and [[where it drops]] on the Star Chart.',
     relics_search_placeholder: 'Relic name or Prime part…',
     relics_era_all: 'All',
+    relics_no_forma: 'No Forma',
+    relics_unvaulted: 'Unvaulted',
     relics_no_results: 'No relics match your search.',
     relics_more: 'Showing {n} of {total} — search or filter by era to narrow.',
     relic_vaulted: 'Vaulted',
@@ -407,6 +409,8 @@ const STRINGS = {
     relics_intro: 'Procure uma relíquia [[pelo nome ou por peça Prime]], filtre por era, e veja exatamente [[o que ela dropa]], o valor em [[ducados]], as chances por [[refinamento]], e [[onde ela dropa]] no Mapa Estelar.',
     relics_search_placeholder: 'Nome da relíquia ou peça Prime…',
     relics_era_all: 'Todas',
+    relics_no_forma: 'Sem Forma',
+    relics_unvaulted: 'Unvaulted',
     relics_no_results: 'Nenhuma relíquia corresponde à busca.',
     relics_more: 'Mostrando {n} de {total} — busque ou filtre por era pra refinar.',
     relic_vaulted: 'Vaulted',
@@ -6338,36 +6342,36 @@ function rivenConfigFactor(p, n) {
 // negTier  = harm bucket when stat appears as a negative (beneficial/neutral/mild/harmful)
 // cats     = which weapon categories this stat can appear on
 const RIVEN_STATS = {
-  damage:               { name: { en: 'Damage',                  'pt-BR': 'Dano' },                       posTier: 'S', negTier: 'harmful',    cats: ['primary', 'secondary', 'melee'] },
+  damage:               { name: { en: 'Damage',                  'pt-BR': 'Dano' },                       posTier: 'C', negTier: 'harmful',    cats: ['primary', 'secondary', 'melee'] },
   multishot:            { name: { en: 'Multishot',               'pt-BR': 'Disparo Múltiplo' },           posTier: 'S', negTier: 'harmful',    cats: ['primary', 'secondary'] },
   critical_chance:      { name: { en: 'Critical Chance',         'pt-BR': 'Chance de Crítico' },          posTier: 'S', negTier: 'harmful',    cats: ['primary', 'secondary', 'melee'] },
   critical_damage:      { name: { en: 'Critical Damage',         'pt-BR': 'Dano Crítico' },               posTier: 'S', negTier: 'harmful',    cats: ['primary', 'secondary', 'melee'] },
   status_chance:        { name: { en: 'Status Chance',           'pt-BR': 'Chance de Status' },           posTier: 'A', negTier: 'harmful',    cats: ['primary', 'secondary', 'melee'] },
-  status_duration:      { name: { en: 'Status Duration',         'pt-BR': 'Duração de Status' },          posTier: 'B', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'], typicalMax: 100 },
+  status_duration:      { name: { en: 'Status Duration',         'pt-BR': 'Duração de Status' },          posTier: 'D', negTier: 'neutral',       cats: ['primary', 'secondary', 'melee'], typicalMax: 100 },
   toxin:                { name: { en: 'Toxin Damage',            'pt-BR': 'Dano Tóxico' },                posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
   heat:                 { name: { en: 'Heat Damage',             'pt-BR': 'Dano de Calor' },              posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
-  cold:                 { name: { en: 'Cold Damage',             'pt-BR': 'Dano de Frio' },               posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
+  cold:                 { name: { en: 'Cold Damage',             'pt-BR': 'Dano de Frio' },               posTier: 'B', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
   electricity:          { name: { en: 'Electricity Damage',      'pt-BR': 'Dano Elétrico' },              posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
-  impact:               { name: { en: 'Impact Damage',           'pt-BR': 'Dano Colisivo' },              posTier: 'C', negTier: 'beneficial', cats: ['primary', 'secondary', 'melee'] },
-  puncture:             { name: { en: 'Puncture Damage',         'pt-BR': 'Dano de Penetração' },         posTier: 'C', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'] },
-  slash:                { name: { en: 'Slash Damage',            'pt-BR': 'Dano de Corte' },              posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
-  fire_rate:            { name: { en: 'Fire Rate',               'pt-BR': 'Cadência de Tiro' },           posTier: 'C', negTier: 'harmful',    cats: ['primary', 'secondary'], typicalMax: 100 },
+  impact:               { name: { en: 'Impact Damage',           'pt-BR': 'Dano Colisivo' },              posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary', 'melee'] },
+  puncture:             { name: { en: 'Puncture Damage',         'pt-BR': 'Dano de Penetração' },         posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary', 'melee'] },
+  slash:                { name: { en: 'Slash Damage',            'pt-BR': 'Dano de Corte' },              posTier: 'C', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
+  fire_rate:            { name: { en: 'Fire Rate',               'pt-BR': 'Cadência de Tiro' },           posTier: 'B', negTier: 'mild',    cats: ['primary', 'secondary'], typicalMax: 100 },
   reload_speed:         { name: { en: 'Reload Speed',            'pt-BR': 'Velocidade de Recarga' },      posTier: 'C', negTier: 'mild',       cats: ['primary', 'secondary'], typicalMax: 100 },
-  magazine_capacity:    { name: { en: 'Magazine Capacity',       'pt-BR': 'Capacidade do Carregador' },   posTier: 'C', negTier: 'mild',       cats: ['primary', 'secondary'] },
-  ammo_max:             { name: { en: 'Ammo Maximum',            'pt-BR': 'Munição Máxima' },             posTier: 'C', negTier: 'harmful',    cats: ['primary', 'secondary'] },
+  magazine_capacity:    { name: { en: 'Magazine Capacity',       'pt-BR': 'Capacidade do Carregador' },   posTier: 'C', negTier: 'neutral',       cats: ['primary', 'secondary'] },
+  ammo_max:             { name: { en: 'Ammo Maximum',            'pt-BR': 'Munição Máxima' },             posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary'] },
   punch_through:        { name: { en: 'Punch Through',           'pt-BR': 'Penetração' },                 posTier: 'B', negTier: 'neutral',    cats: ['primary', 'secondary'], unit: 'm', minVal: 0.1, maxVal: 10 },
-  projectile_speed:     { name: { en: 'Projectile Speed',        'pt-BR': 'Velocidade do Projétil' },     posTier: 'C', negTier: 'mild',       cats: ['primary', 'secondary'] },
-  recoil:               { name: { en: 'Recoil',                  'pt-BR': 'Recuo' },                      posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary'], typicalMax: 100 },
+  projectile_speed:     { name: { en: 'Projectile Speed',        'pt-BR': 'Velocidade do Projétil' },     posTier: 'C', negTier: 'neutral',       cats: ['primary', 'secondary'] },
+  recoil:               { name: { en: 'Recoil',                  'pt-BR': 'Recuo' },                      posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary'], typicalMax: 100, inverse: true },
   zoom:                 { name: { en: 'Zoom',                    'pt-BR': 'Zoom' },                       posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary'], typicalMax: 100 },
-  faction_grineer:      { name: { en: 'Damage to Grineer',       'pt-BR': 'Dano em Grineer' },            posTier: 'B', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
-  faction_corpus:       { name: { en: 'Damage to Corpus',        'pt-BR': 'Dano em Corpus' },             posTier: 'B', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
-  faction_infested:     { name: { en: 'Damage to Infested',      'pt-BR': 'Dano em Infestados' },         posTier: 'B', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
-  faction_corrupted:    { name: { en: 'Damage to Corrupted',     'pt-BR': 'Dano em Corrompidos' },        posTier: 'B', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
-  combo_duration:       { name: { en: 'Combo Duration',          'pt-BR': 'Duração do Combo' },           posTier: 'C', negTier: 'neutral',    cats: ['melee'], minVal: 1, maxVal: 30, unit: 's' },
+  faction_grineer:      { name: { en: 'Damage to Grineer',       'pt-BR': 'Dano em Grineer' },            posTier: 'C', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
+  faction_corpus:       { name: { en: 'Damage to Corpus',        'pt-BR': 'Dano em Corpus' },             posTier: 'C', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
+  faction_infested:     { name: { en: 'Damage to Infested',      'pt-BR': 'Dano em Infestados' },         posTier: 'C', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
+  faction_corrupted:    { name: { en: 'Damage to Corrupted',     'pt-BR': 'Dano em Corrompidos' },        posTier: 'C', negTier: 'neutral',    cats: ['primary', 'secondary', 'melee'], unit: 'x', multiplier: true, minVal: 0.1, maxVal: 100 },
+  combo_duration:       { name: { en: 'Combo Duration',          'pt-BR': 'Duração do Combo' },           posTier: 'C', negTier: 'mild',    cats: ['melee'], minVal: 1, maxVal: 30, unit: 's' },
   combo_count_chance:   { name: { en: 'Combo Count Chance',      'pt-BR': 'Chance de Acúmulo de Combo' }, posTier: 'A', negTier: 'mild',       cats: ['melee'] },
   initial_combo:        { name: { en: 'Initial Combo',           'pt-BR': 'Combo Inicial' },              posTier: 'A', negTier: 'neutral',    cats: ['melee'], minVal: 1, maxVal: 50, unit: 'x' },
-  attack_speed:         { name: { en: 'Attack Speed',            'pt-BR': 'Velocidade de Ataque' },       posTier: 'A', negTier: 'harmful',    cats: ['melee'] },
-  range:                { name: { en: 'Range',                   'pt-BR': 'Alcance' },                    posTier: 'A', negTier: 'mild',       cats: ['melee'], minVal: 0.05, maxVal: 2.5, unit: 'm' },
+  attack_speed:         { name: { en: 'Attack Speed',            'pt-BR': 'Velocidade de Ataque' },       posTier: 'A', negTier: 'mild',    cats: ['melee'] },
+  range:                { name: { en: 'Range',                   'pt-BR': 'Alcance' },                    posTier: 'A', negTier: 'harmful',    cats: ['melee'], minVal: 0.05, maxVal: 2.5, unit: 'm' },
   heavy_attack_eff:     { name: { en: 'Heavy Attack Efficiency', 'pt-BR': 'Eficiência de Ataque Pesado' }, posTier: 'B', negTier: 'mild',      cats: ['melee'] },
   heavy_attack_windup:  { name: { en: 'Heavy Attack Wind-Up',    'pt-BR': 'Carregamento de Ataque Pesado' }, posTier: 'C', negTier: 'mild',    cats: ['melee'] },
   finisher_damage:      { name: { en: 'Finisher Damage',         'pt-BR': 'Dano de Execução' },           posTier: 'C', negTier: 'neutral',    cats: ['melee'] },
@@ -106142,7 +106146,7 @@ const RIVEN_RATIONALE = {
   },
   puncture: {
     pos: { en: 'Adds Puncture. Decent on armor-heavy targets, weakens enemy damage.', 'pt-BR': 'Adiciona Penetração. Bom contra armadura, enfraquece o dano inimigo.' },
-    neg: { en: 'Reduces Puncture. Neutral on most builds.', 'pt-BR': 'Reduz Penetração. Neutro na maioria das builds.' },
+    neg: { en: 'Reduces Puncture — raises the share of desirable status procs (Slash/Corrosive). One of the best free negatives.', 'pt-BR': 'Reduz Penetração — aumenta a proporção de status bons (Corte/Corrosivo). Um dos melhores negativos grátis.' },
   },
   slash: {
     pos: { en: 'Adds Slash — increases bleed proc rate, which bypasses armor entirely.', 'pt-BR': 'Adiciona Corte — aumenta a taxa de sangramento, que ignora armadura.' },
@@ -106162,7 +106166,7 @@ const RIVEN_RATIONALE = {
   },
   ammo_max: {
     pos: { en: 'More reserve ammo. Niche on ammo-hungry weapons.', 'pt-BR': 'Mais munição de reserva. Nicho em armas que gastam muito.' },
-    neg: { en: 'Can underflow and leave you with 0 ammo. Game-breaking — harmful.', 'pt-BR': 'Pode estourar e te deixar com 0 munição. Quebra o jogo — prejudicial.' },
+    neg: { en: 'Less reserve ammo. Harmless on most builds (ammo pickups / mutation cover it) — a free negative.', 'pt-BR': 'Menos munição de reserva. Inofensivo na maioria das builds (pickups / mutação cobrem) — negativo grátis.' },
   },
   punch_through: {
     pos: { en: 'Bullets pierce through targets. Strong for AoE wave clear.', 'pt-BR': 'Tiros atravessam alvos. Forte pra limpar grupos.' },
@@ -106173,8 +106177,8 @@ const RIVEN_RATIONALE = {
     neg: { en: 'Slower projectiles. Annoying on bows, irrelevant on hitscan.', 'pt-BR': 'Projéteis mais lentos. Chato em arcos, irrelevante em hitscan.' },
   },
   recoil: {
-    pos: { en: 'More recoil — actively bad, wastes the slot.', 'pt-BR': 'Mais recuo — ativamente ruim, desperdiça o slot.' },
-    neg: { en: 'Less recoil. Best free negative — always welcomed.', 'pt-BR': 'Menos recuo. Melhor negativo grátis — sempre bem-vindo.' },
+    pos: { en: 'Less recoil — minor, and it wastes a positive slot.', 'pt-BR': 'Menos recuo — leve, e desperdiça um slot positivo.' },
+    neg: { en: 'More recoil. Negligible on beams, bows and launchers; more noticeable on full-auto / high fire-rate weapons.', 'pt-BR': 'Mais recuo. Irrelevante em beams, arcos e launchers; mais perceptível em armas de tiro rápido (auto/burst).' },
   },
   zoom: {
     pos: { en: 'More zoom — usually pointless outside snipers.', 'pt-BR': 'Mais zoom — geralmente inútil fora de snipers.' },
@@ -106286,9 +106290,26 @@ function effectivePosTier(slug, weapon) {
   return def.posTier;
 }
 
+// Quão bom é recoil como NEGATIVO depende do tipo de arma. Avaliado em 3 camadas
+// (ordem importa — keyword de modo de disparo é ambígua):
+//   1) CLASSE inerentemente sem recuo de mira (beam, bow, crossbow, sniper, thrown,
+//      speargun, launcher contínuo Held) → freebie ('beneficial'), qualquer modo.
+//   2) Disparo SUSTENTADO (auto/burst/semi) em rifle/pistol/shotgun → recuo atrapalha
+//      ('neutral'). Pega "Auto Charge" do Gorgon (spool-up full-auto, NÃO tiro carregado).
+//   3) Tiro único / carga / contínuo (charge/active/arc/launcher/chamber) → freebie.
+function recoilNegTier(weapon) {
+  const type = ((weapon && weapon.type) || '').toLowerCase();
+  if (!type) return 'beneficial';
+  if (/beam|bow|crossbow|sniper|thrown|speargun|held/.test(type)) return 'beneficial';
+  if (/auto|burst|semi|duplex/.test(type)) return 'neutral';
+  if (/charge|active|arc|launcher|chamber/.test(type)) return 'beneficial';
+  return 'beneficial';
+}
+
 function effectiveNegTier(slug, weapon) {
   const def = RIVEN_STATS[slug];
   if (!def) return null;
+  if (slug === 'recoil') return recoilNegTier(weapon);
   if (weapon && weapon.preferred_negative && weapon.preferred_negative[slug]) {
     return weapon.preferred_negative[slug];
   }
@@ -106367,7 +106388,11 @@ function scoreRiven({ stats, weaponSlug }) {
     });
     if (factors.length) {
       rollStrength = factors.reduce((a, b) => a + b, 0) / factors.length;
-      magFactor = rollStrength;
+      // §8.5: a força do roll AJUSTA a nota (~±10–20%), não a domina — o grosso vem
+      // da combinação de stats. Mapeia [0,1] -> [0.8,1.0] (antes era multiplicador
+      // direto: um roll 67% cortava 33% da nota, o que afundava armas de disposition
+      // alta tipo Torid mesmo com combinação god-roll).
+      magFactor = 0.8 + 0.2 * rollStrength;
     }
   }
 
@@ -107530,6 +107555,16 @@ const PATCH_NOTES = {
   en: [
     {
       date: '2026-06-19',
+      title: 'Riven recoil overhaul & relic filters',
+      items: [
+        'Recoil graded by weapon type — recoil as a Riven negative is now handled correctly: it\'s a harmless freebie on weapons where it doesn\'t disrupt aim (beams, bows, snipers, launchers, the Torid\'s Incarnon beam) and a real downside on full-auto / burst weapons where it actually matters. It\'s also correctly read as a *negative* effect (more recoil), not a bonus.',
+        'Fairer roll-strength scoring — a god-roll combination no longer gets dragged down just because the weapon has a high disposition. Roll strength now *adjusts* the score instead of dominating it, so the same great Riven scores similarly across weapons (fixes a Torid Incarnon scoring lower than weapons it should beat).',
+        'Riven stat grades aligned to the community reference — about 17 stat tiers were re-checked against the Morrow Shore guide (impact, puncture, ammo, range, fire rate, faction damage and more).',
+        'Relic filters — new Unvaulted and No Forma toggles narrow the relic list quickly, and each part now shows its Ducat value right in the relic cards.',
+      ]
+    },
+    {
+      date: '2026-06-19',
       title: 'Void Relics, War Prime & Styanax Prime',
       items: [
         'New Void Relics page — browse all 767 relics: search by relic name or by Prime part, filter by era (Lith/Meso/Neo/Axi/Requiem), and open a detailed card showing every drop with its rarity, Ducat value, and drop chance per refinement tier (Intact → Radiant). Vaulted relics explain how their parts come back; Requiem relics point to Palladino.',
@@ -107615,6 +107650,16 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-19',
+      title: 'Reforma do recuo nos Rivens e filtros de relíquias',
+      items: [
+        'Recuo avaliado por tipo de arma — o recuo como negativo de Riven agora é tratado certo: é um bônus inofensivo nas armas onde não atrapalha a mira (beams, arcos, snipers, lançadores, o beam Incarnon da Torid) e um ponto negativo de verdade nas armas full-auto / burst, onde ele realmente importa. Também é lido corretamente como um efeito *negativo* (mais recuo), não um bônus.',
+        'Pontuação mais justa pela força do roll — uma combinação god-roll não afunda mais só porque a arma tem disposition alta. A força do roll agora *ajusta* a nota em vez de dominá-la, então o mesmo Riven ótimo pontua parecido entre armas diferentes (corrige uma Torid Incarnon pontuando abaixo de armas que deveria superar).',
+        'Notas de stats alinhadas à referência da comunidade — cerca de 17 tiers de stats foram reconferidos com o guia da Morrow Shore (impacto, perfuração, munição, alcance, cadência, dano por facção e mais).',
+        'Filtros de relíquias — novos toggles Unvaulted e Sem Forma afunilam a lista rapidamente, e cada peça agora mostra o valor em Ducados direto nos cards.',
+      ]
+    },
     {
       date: '2026-06-19',
       title: 'Relíquias Void, War Prime e Styanax Prime',
@@ -107842,7 +107887,7 @@ const state = {
   form: 'normal', // 'normal' | <variant-key> (e.g. 'broken', 'day')
   locale: detectInitialLocale(),
   tab: null, // 'archetypes' | 'glossary' | 'star-chart' | 'rivens' | 'tutorials' | 'relics' — set by initial selectTab('archetypes') call
-  relics: { search: '', era: 'all', selected: null }, // Void Relics tab
+  relics: { search: '', era: 'all', noForma: false, unvaulted: false, selected: null }, // Void Relics tab
   statusPhysical: null, // 'impact' | 'puncture' | 'slash' | null
   statusElementals: new Set(), // subset of {'heat','cold','electricity','toxin'}, max 2
   statusSpecial: null, // 'void' | 'tau' | 'true' | null
@@ -108182,7 +108227,23 @@ function renderRelics() {
     setupRelicControls();
     _relicsBound = true;
   }
+  renderRelicFilters();
   renderRelicList();
+}
+
+function relicHasForma(r) {
+  return r.rewards.some(rw => /\bforma\b/i.test(rw.item));
+}
+
+function renderRelicFilters() {
+  const un = document.getElementById('relics-toggle-unvaulted');
+  const nf = document.getElementById('relics-toggle-noforma');
+  if (un) un.classList.toggle('active', state.relics.unvaulted);
+  if (nf) {
+    nf.classList.toggle('active', state.relics.noForma);
+    // Requiem não dropa Forma → o toggle não faz sentido nessa era.
+    nf.classList.toggle('hidden', state.relics.era === 'requiem');
+  }
 }
 
 function renderRelicEraChips() {
@@ -108209,6 +108270,7 @@ function renderRelicEraChips() {
     chip.addEventListener('click', () => {
       state.relics.era = era;
       renderRelicEraChips();
+      renderRelicFilters();
       renderRelicList();
     });
     row.appendChild(chip);
@@ -108232,6 +108294,16 @@ function setupRelicControls() {
     renderRelicList();
     input?.focus();
   });
+  document.getElementById('relics-toggle-unvaulted')?.addEventListener('click', () => {
+    state.relics.unvaulted = !state.relics.unvaulted;
+    renderRelicFilters();
+    renderRelicList();
+  });
+  document.getElementById('relics-toggle-noforma')?.addEventListener('click', () => {
+    state.relics.noForma = !state.relics.noForma;
+    renderRelicFilters();
+    renderRelicList();
+  });
   document.getElementById('relic-modal-close')?.addEventListener('click', closeRelicModal);
   document.getElementById('relic-modal-backdrop')?.addEventListener('click', closeRelicModal);
   document.addEventListener('keydown', e => {
@@ -108250,8 +108322,12 @@ function renderRelicList() {
   if (!view) return;
   const q = normalizeForMatch(state.relics.search || '');
   const era = state.relics.era;
+  const noForma = state.relics.noForma;
+  const unvaulted = state.relics.unvaulted;
   const list = Object.entries(RELICS)
-    .filter(([, r]) => (era === 'all' || r.era === era) && relicMatches(r, q))
+    .filter(([, r]) => (era === 'all' || r.era === era) && relicMatches(r, q)
+      && (!unvaulted || !r.vaulted)
+      && (!noForma || r.era === 'requiem' || !relicHasForma(r)))
     .sort((a, b) => a[1].name.localeCompare(b[1].name));
 
   view.innerHTML = '';
@@ -108290,7 +108366,9 @@ function buildRelicCard(slug, r, q) {
   }
   const drops = shownRewards.map(rw => {
     const c = relicRarityColor(rw.rarity);
-    return `<li class="relic-card-drop"><span class="relic-dot" style="background:${c}"></span>${relicEsc(relicLoc(rw.item))}</li>`;
+    const duc = (rw.requiemMod || rw.ducats == null) ? '' :
+      `<span class="relic-card-duc"><img class="relic-ducat-icon" src="assets/icons/relics/ducat.png" alt="">${rw.ducats}</span>`;
+    return `<li class="relic-card-drop"><span class="relic-dot" style="background:${c}"></span><span class="relic-card-drop-name">${relicEsc(relicLoc(rw.item))}</span>${duc}</li>`;
   }).join('');
   card.innerHTML =
     `<div class="relic-card-head">
@@ -110969,7 +111047,10 @@ function isStatNegative(slot) {
   if (!isFinite(v)) return false;
   const def = slot.slug ? RIVEN_STATS[slot.slug] : null;
   if (def && def.multiplier) return v < 1.0;
-  return v < 0;
+  // Stats inversos (recoil): "lower is better" — um valor POSITIVO (+recoil = mais
+  // recuo) é o efeito NEGATIVO/curse; um valor negativo (−recoil) é o efeito positivo.
+  const neg = v < 0;
+  return (def && def.inverse) ? !neg : neg;
 }
 
 function rivenStatSign(slot) {
@@ -111222,7 +111303,7 @@ function renderRivenRecommended(weapon, rollIdx) {
     const freeSlugs = Object.keys(free);
     if (freeSlugs.length > 0) {
       grid.appendChild(buildRecSection(t('riven_rec_free_neg'), freeSlugs.map(slug => ({
-        slug, tier: free[slug], side: 'neg',
+        slug, tier: effectiveNegTier(slug, weapon), side: 'neg',
       }))));
     }
 

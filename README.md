@@ -40,6 +40,12 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-19 — Riven recoil overhaul & relic filters
+- **Recoil graded by weapon type** — recoil as a Riven negative is now handled correctly: it's a harmless freebie on weapons where it doesn't disrupt aim (beams, bows, snipers, launchers, the Torid's Incarnon beam) and a real downside on full-auto / burst weapons where it actually matters. It's also correctly read as a *negative* effect (more recoil), not a bonus.
+- **Fairer roll-strength scoring** — a god-roll combination no longer gets dragged down just because the weapon has a high disposition. Roll strength now *adjusts* the score instead of dominating it, so the same great Riven scores similarly across weapons (fixes a Torid Incarnon scoring lower than weapons it should beat).
+- **Riven stat grades aligned to the community reference** — about 17 stat tiers were re-checked against the Morrow Shore guide (impact, puncture, ammo, range, fire rate, faction damage and more).
+- **Relic filters** — new **Unvaulted** and **No Forma** toggles narrow the relic list quickly, and each part now shows its Ducat value right in the relic cards.
+
 #### 2026-06-19 — Void Relics, War Prime & Styanax Prime
 - **New Void Relics page** — browse all 767 relics: search by relic name or by Prime part, filter by era (Lith/Meso/Neo/Axi/Requiem), and open a detailed card showing every drop with its rarity, Ducat value, and drop chance per refinement tier (Intact → Radiant). Vaulted relics explain how their parts come back; Requiem relics point to Palladino.
 - **Relic drop locations** — each relic lists where it drops, grouped by planet, with a "View on map" button that jumps straight to the Star Chart (Railjack/Proxima nodes now link correctly). Filter the locations by mission type.
@@ -142,6 +148,12 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-19 — Reforma do recuo nos Rivens e filtros de relíquias
+- **Recuo avaliado por tipo de arma** — o recuo como negativo de Riven agora é tratado certo: é um bônus inofensivo nas armas onde não atrapalha a mira (beams, arcos, snipers, lançadores, o beam Incarnon da Torid) e um ponto negativo de verdade nas armas full-auto / burst, onde ele realmente importa. Também é lido corretamente como um efeito *negativo* (mais recuo), não um bônus.
+- **Pontuação mais justa pela força do roll** — uma combinação god-roll não afunda mais só porque a arma tem disposition alta. A força do roll agora *ajusta* a nota em vez de dominá-la, então o mesmo Riven ótimo pontua parecido entre armas diferentes (corrige uma Torid Incarnon pontuando abaixo de armas que deveria superar).
+- **Notas de stats alinhadas à referência da comunidade** — cerca de 17 tiers de stats foram reconferidos com o guia da Morrow Shore (impacto, perfuração, munição, alcance, cadência, dano por facção e mais).
+- **Filtros de relíquias** — novos toggles **Unvaulted** e **Sem Forma** afunilam a lista rapidamente, e cada peça agora mostra o valor em Ducados direto nos cards.
 
 #### 2026-06-19 — Relíquias Void, War Prime e Styanax Prime
 - **Nova página de Relíquias Void** — navegue por todas as 767 relíquias: busque por nome da relíquia ou por peça Prime, filtre por era (Lith/Meso/Neo/Axi/Requiem), e abra um card detalhado com cada drop, sua raridade, valor em Ducados e chance de drop por nível de refinamento (Intacta → Radiante). Relíquias no Vault explicam como as peças voltam; as Requiem apontam pra Palladino.
