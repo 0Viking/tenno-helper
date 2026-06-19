@@ -6665,6 +6665,13 @@ const WEAPONS = {
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
     },
     {
+      slug: 'afentis-prime', name: 'Afentis Prime', category: 'primary',
+      type: 'Speargun (Semi)', mastery_rank: 13, disposition: 0.5, family: 'afentis',
+      image: 'https://wiki.warframe.com/images/AfentisPrime.png',
+      preferred_positive: { critical_chance: 'S', critical_damage: 'S', multishot: 'S', status_chance: 'A', damage: 'C' },
+      preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
+    },
+    {
       slug: 'alternox', name: 'Alternox', category: 'primary',
       type: 'Rifle (Active)', mastery_rank: 8, disposition: 1.15, family: 'alternox',
       image: 'https://wiki.warframe.com/images/Alternox.png',
@@ -107527,7 +107534,7 @@ const PATCH_NOTES = {
       items: [
         'New Void Relics page — browse all 767 relics: search by relic name or by Prime part, filter by era (Lith/Meso/Neo/Axi/Requiem), and open a detailed card showing every drop with its rarity, Ducat value, and drop chance per refinement tier (Intact → Radiant). Vaulted relics explain how their parts come back; Requiem relics point to Palladino.',
         'Relic drop locations — each relic lists where it drops, grouped by planet, with a "View on map" button that jumps straight to the Star Chart (Railjack/Proxima nodes now link correctly). Filter the locations by mission type.',
-        'War Prime added to the Riven evaluator (Heavy Blade, hybrid crit build).',
+        'War Prime & Afentis Prime added to the Riven evaluator.',
         'Styanax Prime — now in the Archetypes page with a Base/Prime toggle.',
         'Sharper Riven photo reading — the stat parser was rebuilt structurally: faction damage in % (e.g. "+5.6% Damage to Grineer") and Punch Through are read correctly now, even when the game packs stats onto one line or splits a value from its name.',
         'More Star Chart filters — Mirror Defense and other missing mission types now have filter chips.',
@@ -107614,7 +107621,7 @@ const PATCH_NOTES = {
       items: [
         'Nova página de Relíquias Void — navegue por todas as 767 relíquias: busque por nome da relíquia ou por peça Prime, filtre por era (Lith/Meso/Neo/Axi/Requiem), e abra um card detalhado com cada drop, sua raridade, valor em Ducados e chance de drop por nível de refinamento (Intacta → Radiante). Relíquias no Vault explicam como as peças voltam; as Requiem apontam pra Palladino.',
         'Locais de drop das relíquias — cada relíquia lista onde dropa, agrupado por planeta, com um botão "Ver no mapa" que pula direto pro Mapa Estelar (nós de Railjack/Proxima agora linkam certo). Filtre os locais por tipo de missão.',
-        'War Prime adicionado ao avaliador de Rivens (Espada de Duas Mãos, build híbrida de crit).',
+        'War Prime e Afentis Prime adicionados ao avaliador de Rivens.',
         'Styanax Prime — agora na página de Arquétipos com toggle Base/Prime.',
         'Leitura de foto de Riven mais precisa — o parser de stats foi reconstruído de forma estrutural: dano de facção em % (ex.: "+5.6% Damage to Grineer") e Penetração agora são lidos corretamente, mesmo quando o jogo junta stats numa linha só ou separa o valor do nome.',
         'Mais filtros no Mapa Estelar — Defesa Espelhada e outros tipos de missão que faltavam agora têm chip de filtro.',
