@@ -39,6 +39,10 @@
             <img class="nav-icon" src="assets/icons/nav/rivens.png" alt="">
             <span data-i18n="rivens">Rivens</span>
           </button>
+          <button class="nav-button" id="relics-btn" type="button">
+            <img class="nav-icon" src="assets/icons/nav/relics.png" alt="">
+            <span data-i18n="void_relics">Void Relics</span>
+          </button>
         </nav>
       </div>
       <div class="header-right">
@@ -385,6 +389,40 @@
       <div class="star-chart-view" id="star-chart-view"></div>
     </div>
 
+    <div id="tab-relics" class="tab-content hidden">
+      <section class="page-intro">
+        <h2 class="page-intro-title" data-i18n="relics_title">Void Relics</h2>
+        <p class="page-intro-text" data-i18n="relics_intro" data-i18n-html></p>
+      </section>
+
+      <section class="relics-toolbar">
+        <div class="relics-eras" id="relics-eras"></div>
+        <div class="relics-search-wrap">
+          <input type="search" id="relics-search" class="relics-search-input" placeholder="Relic name or Prime part…" data-i18n-attr="placeholder:relics_search_placeholder" autocomplete="off">
+          <button type="button" id="relics-search-clear" class="relics-search-clear hidden" aria-label="Clear search">×</button>
+        </div>
+      </section>
+
+      <div class="relics-view" id="relics-view"></div>
+    </div>
+
+  </div>
+
+  <div class="relic-modal hidden" id="relic-modal" role="dialog" aria-modal="true" aria-labelledby="relic-modal-title">
+    <div class="relic-modal-backdrop" id="relic-modal-backdrop"></div>
+    <div class="relic-modal-content">
+      <header class="relic-modal-header">
+        <div class="relic-modal-title-wrap">
+          <img class="relic-modal-era-icon" id="relic-modal-era-icon" src="" alt="">
+          <div>
+            <h2 class="relic-modal-title" id="relic-modal-title"></h2>
+            <p class="relic-modal-era" id="relic-modal-era"></p>
+          </div>
+        </div>
+        <button class="relic-modal-close" id="relic-modal-close" type="button" aria-label="Close">×</button>
+      </header>
+      <div class="relic-modal-body" id="relic-modal-body"></div>
+    </div>
   </div>
 
   <div class="weapon-modal hidden" id="weapon-modal" role="dialog" aria-modal="true" aria-labelledby="weapon-modal-title">
