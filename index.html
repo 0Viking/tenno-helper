@@ -158,9 +158,235 @@
         <p class="glossary-intro-text" data-i18n="glossary_intro" data-i18n-html></p>
       </section>
 
+      <section class="glossary-search">
+        <input type="search" id="glossary-search-input" class="glossary-search-input" placeholder="Search…" data-i18n-attr="placeholder:glossary_search_placeholder" autocomplete="off">
+        <button type="button" id="glossary-search-clear" class="glossary-search-clear hidden" aria-label="Clear search">×</button>
+      </section>
+
       <div class="glossary-sections" id="glossary-sections">
 
-        <details class="glossary-section" data-id="status-effects" data-keywords="status,proc,impact,slash,puncture,heat,cold,toxin,electricity,blast,corrosive,gas,magnetic,radiation,viral,colisivo,corte,perfurante,calor,frio,toxico,toxina,eletricidade,explosao,corrosivo,gas,magnetico,radiacao,viral">
+        <div class="glossary-category">
+          <span class="glossary-category-label" data-i18n="glossary_cat_progression">Progressão</span>
+        </div>
+
+        <details class="glossary-section" data-id="star-chart-junctions">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_star_chart">Star Chart & Junctions</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag" data-i18n="glossary_tag_foundation">Base</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_star_chart_body" data-i18n-html></p>
+            <div class="glossary-figures glossary-figures-sm">
+              <figure class="glossary-figure">
+                <img src="https://wiki.warframe.com/images/StarChartBeginning.jpg" alt="" loading="lazy">
+                <figcaption data-i18n="glossary_star_chart_fig1"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="https://wiki.warframe.com/images/StarChartLateGame.jpg" alt="" loading="lazy">
+                <figcaption data-i18n="glossary_star_chart_fig2"></figcaption>
+              </figure>
+            </div>
+            <div class="sc-gloss" id="sc-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="mission-types">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_mission_types">Mission Types</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag" data-i18n="glossary_tag_foundation">Base</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_mission_types_body" data-i18n-html></p>
+            <div class="sc-gloss" id="mission-types-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="mr">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_mr">Mastery Rank</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag" data-i18n="glossary_tag_foundation">Base</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_mr_body" data-i18n-html></p>
+            <div class="glossary-figures glossary-figures-sm">
+              <figure class="glossary-figure">
+                <img src="https://wiki.warframe.com/images/Mastery_Info_New.png" alt="" loading="lazy">
+                <figcaption data-i18n="glossary_mr_fig1"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="https://wiki.warframe.com/images/MasteryRankUp.png" alt="" loading="lazy">
+                <figcaption data-i18n="glossary_mr_fig2"></figcaption>
+              </figure>
+            </div>
+            <div class="sc-gloss" id="mr-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="quests">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_quests">Quests</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag" data-i18n="glossary_tag_story">História</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <div id="quest-arcs-container" class="quest-arcs"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="sorties">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_sorties">Sorties</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-daily" data-i18n="glossary_tag_daily">Diário</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_sorties_body" data-i18n-html></p>
+            <div class="glossary-figures glossary-figures-sm">
+              <figure class="glossary-figure">
+                <img src="https://shacknews-www.s3.amazonaws.com/assets/editorial/2025/05/warframe-screenshot-20250505-19155956.jpg" alt="" loading="lazy">
+                <figcaption data-i18n="glossary_sorties_fig1"></figcaption>
+              </figure>
+            </div>
+            <div class="sc-gloss" id="sorties-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="syndicates">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_syndicates">Syndicates</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-daily" data-i18n="glossary_tag_daily">Diário</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_syndicates_body" data-i18n-html></p>
+            <div class="sc-gloss" id="syn-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="nightwave">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_nightwave">Nightwave</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-weekly" data-i18n="glossary_tag_weekly">Semanal</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_nightwave_body" data-i18n-html></p>
+            <div class="glossary-figures glossary-figures-sm">
+              <figure class="glossary-figure">
+                <img src="assets/glossary/nightwave-location.jpg" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_nightwave_fig1"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="assets/glossary/nightwave-hud.jpg" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_nightwave_fig2"></figcaption>
+              </figure>
+            </div>
+            <div class="sc-gloss" id="nw-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="the-circuit">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_circuit">The Circuit</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-weekly" data-i18n="glossary_tag_weekly">Semanal</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_circuit_body" data-i18n-html></p>
+            <div class="glossary-figures glossary-figures-grid glossary-figures-sm">
+              <figure class="glossary-figure">
+                <img src="assets/glossary/circuit-normal-rotation.jpg" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_circuit_fig1"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="assets/glossary/circuit-normal-progression.jpg" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_circuit_fig2"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="assets/glossary/circuit-sp-rotation.jpg" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_circuit_fig3"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="assets/glossary/circuit-sp-progression.jpg" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_circuit_fig4"></figcaption>
+              </figure>
+            </div>
+            <div class="sc-gloss" id="circuit-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="arbitrations">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_arbitrations">Arbitrations</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-endgame" data-i18n="glossary_tag_endless">Endless</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_arbitrations_body" data-i18n-html></p>
+            <div class="glossary-figures glossary-figures-sm">
+              <figure class="glossary-figure">
+                <img src="https://i.redd.it/h3nfztogurt71.png" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_arbitrations_fig1"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/10/Warframe-Arbitration-Tab.jpg?q=50&fit=crop&w=825&dpr=1.5" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_arbitrations_fig2"></figcaption>
+              </figure>
+            </div>
+            <div class="sc-gloss" id="arb-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="steel-path">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_steel_path">The Steel Path</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-endgame" data-i18n="glossary_tag_endgame">Endgame</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_steel_path_body" data-i18n-html></p>
+            <div class="glossary-figures glossary-figures-sm">
+              <figure class="glossary-figure">
+                <img src="https://wiki.warframe.com/images/SteelPathKeyart.png?65d3f" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_steel_path_fig1"></figcaption>
+              </figure>
+              <figure class="glossary-figure">
+                <img src="https://wiki.warframe.com/images/Acolytes.png?adf7e" alt="" loading="lazy" onerror="this.closest('.glossary-figure').style.display='none'">
+                <figcaption data-i18n="glossary_steel_path_fig2"></figcaption>
+              </figure>
+            </div>
+            <div class="sc-gloss" id="sp-gloss"></div>
+          </div>
+        </details>
+
+        <div class="glossary-category">
+          <span class="glossary-category-label" data-i18n="glossary_cat_combat">Combat</span>
+        </div>
+
+        <details class="glossary-section" data-id="status-effects">
           <summary class="glossary-section-header">
             <span class="glossary-section-title" data-i18n="glossary_status_effects">Status Effects</span>
             <span class="glossary-section-caret">▾</span>
@@ -193,6 +419,221 @@
           </div>
         </details>
 
+        <details class="glossary-section" data-id="crits">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_crits">Critical Hits</span>
+            <span class="glossary-section-caret">▾</span>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_crits_body" data-i18n-html></p>
+            <div class="sc-gloss" id="crits-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section" data-id="rotations">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_rotations">Mission Rotations (A/B/C)</span>
+            <span class="glossary-section-caret">▾</span>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_rotations_body" data-i18n-html></p>
+            <div class="sc-gloss" id="rotations-gloss"></div>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="caches" data-keywords="cache,sabotage,sabotagem,railjack,poi,defective,damaged,intact,reservoir,oberon,bonus">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_caches">Caches</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <div class="glossary-category">
+          <span class="glossary-category-label" data-i18n="glossary_cat_build">Builds &amp; Mods</span>
+        </div>
+
+        <details class="glossary-section glossary-section-soon" data-id="modding" data-keywords="mod,modding,polaridade,polarity,forma,capacity,capacidade,reator,reactor,catalisador,catalyst,potato,batata,galvanized,set,conjunto,exilus">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_modding">Modding Basics</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="rivens" data-keywords="riven,disposition,kuva,sliver,roll,cycle,tier,exilus">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_rivens">Riven Mods</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="arcanes" data-keywords="arcane,operator,operador,energize,grace,resistance,velocity,molt,virtuos">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_arcanes">Arcanes</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="helminth" data-keywords="helminth,subsume,invigoration,molt,bile,calx,oxides,pheromones,synthase,sentient,wisdom">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_helminth">Helminth (Subsume)</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="forma" data-keywords="forma,polaridade,polarity,catalyst,catalisador,reactor,reator,potato,batata,orokin,slot,polarize,polarizar,umbra,aura,exilus">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_forma">Forma &amp; Orokin Catalyst / Reactor</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <div class="glossary-category">
+          <span class="glossary-category-label" data-i18n="glossary_cat_economy">Economy &amp; Resources</span>
+        </div>
+
+        <details class="glossary-section glossary-section-soon" data-id="relics" data-keywords="reliquia,relic,lith,meso,neo,axi,void,trace,refinement,prime,share,intacto,exceptional,flawless,radiante,radiant">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_relics">Relics & Void Traces</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="ducats" data-keywords="ducat,ducado,baro,kiteer,prime,vender,sell,void trader,prime parts,relay,peca">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_ducats">Ducats</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="endo" data-keywords="endo,upar,rank,mod,ayatan,star,estrela,sculpture,escultura,maroo,arbitration">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_endo">Endo</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="kuva" data-keywords="kuva,lich,siphon,flood,reroll,cycle,riven,railjack,fortress,fortaleza">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_kuva">Kuva</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="riven-slivers" data-keywords="riven sliver,sliver,palladino,requiem,reroll,kuva,iron wake,cycle">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_riven_slivers">Riven Slivers</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <div class="glossary-category">
+          <span class="glossary-category-label" data-i18n="glossary_cat_enemies">Enemies</span>
+        </div>
+
+        <details class="glossary-section glossary-section-soon" data-id="eximus" data-keywords="eximus,elite,overguard,arctic,leech,energy,nullifier,acolyte,sanctuary,blitz,guardian">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_eximus">Eximus</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="liches-sisters" data-keywords="lich,kuva lich,sister,parvos,nemesis,requiem,murmur,thrall,ephemera,converted,vanquish,convert">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_liches_sisters">Kuva Liches &amp; Sisters of Parvos</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
+
+        <details class="glossary-section glossary-section-soon" data-id="necramechs" data-keywords="necramech,voidrig,bonewidow,mech,entrati,deimos,arcana,necraloid,isolation vault">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_necramechs">Necramechs</span>
+            <div class="glossary-section-meta">
+              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
+              <span class="glossary-section-caret">▾</span>
+            </div>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
+          </div>
+        </details>
       </div>
     </div>
 
@@ -531,6 +972,10 @@
               <a href="https://browse.wf" target="_blank" rel="noopener">browse.wf</a>
               — <span data-i18n="credits_browse_desc">weapon database cross-reference</span>
             </li>
+            <li>
+              <a href="https://tennoinfo.weebly.com" target="_blank" rel="noopener">Tenno Info (Dawit Thepchatree)</a>
+              — <span data-i18n="credits_tennoinfo_desc">explanatory infographics used in the Glossary</span>
+            </li>
           </ul>
         </section>
 
@@ -565,6 +1010,37 @@
       </div>
 
     </div>
+  </div>
+
+  <div class="quest-modal hidden" id="quest-modal" role="dialog" aria-modal="true" aria-labelledby="quest-modal-title">
+    <div class="quest-modal-backdrop" id="quest-modal-backdrop"></div>
+    <div class="quest-modal-content">
+      <img class="quest-modal-banner" id="quest-modal-img" src="" alt="">
+      <div class="quest-modal-header">
+        <h2 class="quest-modal-title" id="quest-modal-title"></h2>
+        <button class="quest-modal-close" id="quest-modal-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div class="quest-modal-body">
+        <div class="quest-modal-tags" id="quest-modal-tags"></div>
+        <div class="quest-modal-meta">
+          <div class="quest-meta-row">
+            <span class="quest-meta-label" data-i18n="quest_how_to_get">Pré-requisitos</span>
+            <span class="quest-meta-value" id="quest-meta-how"></span>
+          </div>
+        </div>
+        <p class="quest-modal-desc" id="quest-modal-desc"></p>
+        <div class="quest-rewards hidden" id="quest-modal-rewards-wrap">
+          <span class="quest-rewards-label" data-i18n="quest_rewards">Recompensas</span>
+          <div class="quest-rewards-grid" id="quest-modal-rewards"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox-modal hidden" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">×</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
   </div>
 
   <script src="script.js"></script>

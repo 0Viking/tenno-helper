@@ -40,6 +40,12 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-22 — Glossary launch
+- **The Glossary is live** — a searchable, categorized reference (Progression, Combat, Builds & Mods, Economy, Enemies) with rich, illustrated sections. A few entries are still marked "Soon" and will be filled in over the coming updates.
+- **Mission Types** — a new section covering all 40 mission types from the Star Chart filters (Exterminate, Survival, Disruption, the Void/Zariman modes, Railjack and more), grouped and color-coded, with late-game modes tucked behind a spoiler veil.
+- **Mission Rotations (A/B/C)** — how the AABC reward cycle works, when each rotation lands per mission type (Survival, Defense, Interception…), plus the special cases (Disruption, Arbitrations, The Index).
+- **Critical Hits** — a clearer take on how Critical Chance and Critical Damage multiply, a worked example table per crit tier, and what the in-game "!", "!!" and "!!!" actually mean.
+
 #### 2026-06-19 — Riven recoil overhaul & relic filters
 - **Recoil graded by weapon type** — recoil as a Riven negative is now handled correctly: it's a harmless freebie on weapons where it doesn't disrupt aim (beams, bows, snipers, launchers, the Torid's Incarnon beam) and a real downside on full-auto / burst weapons where it actually matters. It's also correctly read as a *negative* effect (more recoil), not a bonus.
 - **Fairer roll-strength scoring** — a god-roll combination no longer gets dragged down just because the weapon has a high disposition. Roll strength now *adjusts* the score instead of dominating it, so the same great Riven scores similarly across weapons (fixes a Torid Incarnon scoring lower than weapons it should beat).
@@ -148,6 +154,12 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-22 — Lançamento do Glossário
+- **O Glossário está no ar** — uma referência pesquisável e categorizada (Progressão, Combate, Builds & Mods, Economia, Inimigos) com seções ricas e ilustradas. Algumas entradas ainda estão marcadas como "Em breve" e serão preenchidas nas próximas atualizações.
+- **Tipos de Missão** — nova seção cobrindo os 40 tipos de missão dos filtros do Mapa Estelar (Exterminar, Sobrevivência, Disrupção, os modos Void/Zariman, Railjack e mais), agrupados e coloridos, com os modos de fim de jogo atrás de um véu de spoiler.
+- **Rotações de Missão (A/B/C)** — como funciona o ciclo de recompensas AABC, quando cada rotação cai por tipo de missão (Sobrevivência, Defesa, Interceptação…) e os casos especiais (Disrupção, Arbitragens, O Índice).
+- **Críticos** — uma explicação mais clara de como Chance de Crítico e Dano de Crítico se multiplicam, uma tabela de exemplo por tier de crítico, e o que significam os "!", "!!" e "!!!" que aparecem no jogo.
 
 #### 2026-06-19 — Reforma do recuo nos Rivens e filtros de relíquias
 - **Recuo avaliado por tipo de arma** — o recuo como negativo de Riven agora é tratado certo: é um bônus inofensivo nas armas onde não atrapalha a mira (beams, arcos, snipers, lançadores, o beam Incarnon da Torid) e um ponto negativo de verdade nas armas full-auto / burst, onde ele realmente importa. Também é lido corretamente como um efeito *negativo* (mais recuo), não um bônus.

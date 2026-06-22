@@ -48,24 +48,83 @@ const STRINGS = {
     glossary_title: 'Glossary',
     glossary_intro: 'Quick reference for Warframe systems and mechanics. Click a topic to expand, or use the search to filter.',
     glossary_search_placeholder: 'Search the glossary…',
-    glossary_no_results: 'No glossary entries match your search.',
     glossary_status_effects: 'Status Effects',
+    glossary_mission_types: 'Mission Types',
+    glossary_mission_types_body: 'The Star Chart is built from a handful of [[mission types]], each with its own objective — kill everything, hack a vault, survive, defend a target. Knowing what a node asks of you (and which ones loop on [[A/B/C rotations]]) makes planning a run much easier.',
     glossary_rotations: 'Mission Rotations (A/B/C)',
-    glossary_rotations_body: 'Endless missions cycle through reward tables [[A]], [[B]], and [[C]] as you progress. The standard pattern is [[AABC]] — A at 5 min/wave 5, A at 10 min/wave 10, B at 15 min/wave 15, C at 20 min/wave 20, then it loops. The [[C tier]] holds the rarest rewards (most Prime parts come from C). Exceptions: [[Disruption]] uses A/B/C/C per round (4 conduits), [[Defection]] uses AAABA AAC, and [[Sabotage caches]] roll on a separate C-tier table independent of the mission reward.',
+    glossary_rotations_body: 'Endless missions hand out loot from three reward tables — [[A]], [[B]] and [[C]] — cycling in the [[AABC]] pattern as you push deeper. [[Rotation C]] holds the rarest drops, so most farms are built around reaching it.',
     glossary_relics: 'Relics & Void Traces',
     glossary_relics_body: 'Void Relics drop [[Prime parts]] when cracked in Void Fissure missions. Each relic has 6 possible rewards split as [[Common ×3]] (~76% combined), [[Uncommon ×2]] (~22%), [[Rare ×1]] (2% at Intact). Spend [[Void Traces]] to refine a relic — [[Intact → Exceptional → Flawless → Radiant]] — bumping the rare chance from 2% to 10%. In a squad of 4, after cracking, you see all 4 players\' reward choices and pick one — bring [[radiant relics]] for the rare, share with the team. Earn traces by collecting [[Reactant]] during Fissure missions (10 Reactant required to crack; up to 30 traces awarded per mission, daily cap = MR × 50).',
     glossary_modding: 'Modding Basics',
     glossary_modding_body: 'Mods grant stat bonuses but cost [[Mod Capacity]] equal to the mod\'s rank. Each item starts with capacity equal to its rank (max 30); installing an [[Orokin Reactor]] (Warframes/companions) or [[Orokin Catalyst]] (weapons) doubles that to 60. [[Polarities]] on slots cut the cost of matching-polarity mods in half (rounded up). [[Forma]] adds or changes a polarity on a slot, but resets the item\'s rank to 0. [[Set bonuses]] (Augur, Vigilante, etc.) stack from multiple equipped items. The [[Exilus slot]] only takes utility mods (movement, ammo, reload). [[Galvanized]] mods stack a damage buff on kill (from the Arbitrations vendor).',
     glossary_crits: 'Critical Hits',
-    glossary_crits_body: 'Crits roll on every hit. [[Critical Chance]] above 100% creates [[orange crits]] (tier 2, base damage × crit multiplier × 2), and above 200% creates [[red crits]] (tier 3, × 3). [[Headshots]] add a flat ×2 multiplier — and a crit headshot gets an extra ×1.5 on top, effectively ×3 a body crit. Stacking mods like [[Point Strike]] (+150% crit chance), Riven crit rolls, and faction-specific buffs is how primaries reach red-crit territory. [[Critical Damage]] mods (Vital Sense at +120%) multiply the crit multiplier directly, so they only matter when you actually crit.',
+    glossary_crits_body: 'A [[critical hit]] deals bonus damage. How often is your [[Critical Chance (CC)]]; how big is your [[Critical Damage (CD)]]. Push CC past 100% and crits [[tier up]] — orange, then red — for even bigger multipliers.',
     glossary_rivens: 'Riven Mods',
     glossary_rivens_body: 'Rivens are randomized mods tied to a specific weapon. Each weapon has a [[Disposition]] (1–5 dots) that scales the magnitude of every Riven stat — meta weapons usually have low disposition (small bonuses), low-tier weapons get huge ones. Rerolling ([[cycling]]) a Riven costs [[Kuva]], starting at 900 and rising per cycle until it caps at 3,500. Unrolled Rivens are [[veiled]] — complete a specific challenge in-mission to unveil. MR requirement scales with disposition (MR 8–16). The generic strong combo for guns is [[CC + CD + Damage / Multishot]] with no negative; for status weapons, [[Status Chance + Multishot]] beats raw damage.',
     glossary_arcanes: 'Arcanes',
     glossary_arcanes_body: 'Arcanes are slot-based bonuses that trigger on conditions ([[on kill]], [[on hit]], [[on cast]], etc.). [[Warframe Arcanes]] go on the Arcane slot (1 slot, 2 with an Arcane Adapter). [[Operator/Tenno Arcanes]] (Magus, Virtuos, Molt) go on Operator gear. Rank from 0 to 5 by feeding duplicates — each rank cuts cooldown or boosts the effect. Common picks: [[Arcane Energize]] (energy on orb pickup), [[Arcane Grace]] (health regen on damage), [[Molt Augmented]] (+ability strength after kills). [[Set bonuses]] no longer exist after the rework — each Arcane stands alone.',
     glossary_mr: 'Mastery Rank',
-    glossary_mr_body: '[[Mastery Rank (MR)]] is your account-wide level — increases when you rank new gear (Warframes, weapons, companions) to 30. Each rank gives [[+1 baseline mod capacity]] across all gear, +1 daily trade (capped), and unlocks MR-gated items and Rivens. The [[MR test]] (one per rank up) is a mandatory mini-challenge — practice it in [[Cephalon Simaris\'s Sanctuary]] in the Relays. Most daily resource caps (Endo, Standing) scale with MR. There\'s a 24-hour cooldown if you fail a test.',
+    glossary_mr_body: 'Your [[Mastery Rank (MR)]] is an account-wide level that rises as you rank new gear to 30. It raises daily caps, gives new gear a head start on [[mod capacity]], and gates some weapons, items and [[Rivens]] behind a minimum rank.',
     glossary_helminth: 'Helminth (Subsume)',
     glossary_helminth_body: 'The [[Helminth]] system (unlocked at MR 8 + the Heart of Deimos quest) lets you replace one ability on most Warframes with a [[subsumed ability]] from another. To subsume: feed a fully-ranked Warframe to Helminth — that consumes the frame but permanently unlocks its 1st ability for installation. Some abilities can\'t be subsumed (e.g., Octavia\'s Mallet, Mesa\'s Peacemaker). Installing a subsumed ability costs [[Helminth resources]] (Bile, Calx, Oxides, Pheromones, Synthetics, Biotics, Sentient Appetite) — each ability slot has a specific resource type. [[Invigorations]] are random weekly buffs picked from the Helminth menu — separate system, same room.',
+    glossary_cat_progression: 'Progression',
+    glossary_tag_foundation: 'Foundation',
+    glossary_tag_story: 'Story',
+    glossary_tag_weekly: 'Weekly',
+    glossary_tag_daily: 'Daily',
+    glossary_tag_endgame: 'Endgame',
+    glossary_tag_endless: 'Endless',
+    glossary_tag_soon: 'Soon',
+    glossary_cat_combat: 'Combat',
+    glossary_cat_build: 'Builds & Mods',
+    glossary_cat_economy: 'Economy & Resources',
+    glossary_cat_enemies: 'Enemies',
+    glossary_soon_body: 'A detailed explanation for this term is coming soon.',
+    glossary_caches: 'Caches',
+    glossary_forma: 'Forma & Orokin Catalyst / Reactor',
+    glossary_ducats: 'Ducats',
+    glossary_endo: 'Endo',
+    glossary_kuva: 'Kuva',
+    glossary_riven_slivers: 'Riven Slivers',
+    glossary_eximus: 'Eximus',
+    glossary_liches_sisters: 'Kuva Liches & Sisters of Parvos',
+    glossary_necramechs: 'Necramechs',
+    glossary_star_chart: 'Star Chart & Junctions',
+    glossary_star_chart_body: 'The [[Star Chart]] is your map of the Origin System. You progress by completing [[Junctions]] — gateways between planets that unlock the next destination. Each planet has its own [[faction]], [[level range]] and mission [[nodes]].',
+    glossary_star_chart_fig1: 'The Star Chart at the start of the game — only Mercury and Venus are accessible.',
+    glossary_star_chart_fig2: 'Later in the game, more planets and mission nodes open up across the system.',
+    glossary_quests: 'Quests',
+    glossary_quests_body: 'Warframe\'s story unfolds through [[Quests]] — missions that unlock mechanics, Warframes, and lore. Key milestones: [[Vor\'s Prize]] (tutorial), [[The Second Dream]] (unlocks the Operator), [[The War Within]] (Operator combat + Focus), [[The Sacrifice]] (Excalibur Umbra), [[The New War]] (Drifter + Archon Hunts), [[The Duviri Paradox]] (Drifter combat), [[Whispers in the Walls]] (Zariman + Helminth expanded). Some quests award unique Warframes: [[Chains of Harkon]] → Harrow, [[The Deadlock Protocol]] → Protea, [[Echoes of War]] → Kullervo. Find quests in the [[Codex]] (Navigation screen, bottom-left corner).',
+    glossary_quests_fig1: 'The Second Dream — the quest that reveals the Operator and permanently changes the game.',
+    glossary_quests_fig2: 'The New War — the culmination of Warframe\'s main story arc.',
+    glossary_mr_fig1: 'Your Mastery Rank and progress toward the next rank are visible on your profile screen.',
+    glossary_mr_fig2: 'When you have enough XP, a prompt appears to attempt the Mastery Rank test.',
+    glossary_nightwave: 'Nightwave',
+    glossary_nightwave_body: '[[Nightwave]] is Nora Night\'s always-on challenge track that replaced the old Alert system. Complete [[Acts]] to earn Standing, climb a [[30-rank reward track]], and bank [[Cred]] for a rotating shop. The terminal sits on the left of your Orbiter\'s navigation console.',
+    glossary_nightwave_fig1: 'Where to find Nightwave in your Orbiter — left of the navigation console.',
+    glossary_nightwave_fig2: 'The full Nightwave menu — the rank track and your active Acts.',
+    glossary_sorties: 'Sorties',
+    glossary_sorties_body: '[[Sorties]] are a daily chain of [[three high-level missions]], each with a tough [[modifier]]. Finish all three for [[one reward]] from a premium pool. They unlock at [[MR 5]] after [[The War Within]] (and clearing Oro on Earth), and require a rank-30 Warframe.',
+    glossary_sorties_fig1: 'The Sortie option in the navigation bar — three linked missions, each with a modifier.',
+    glossary_syndicates: 'Syndicates',
+    glossary_syndicates_body: '[[Syndicates]] are factions you pledge to for [[Standing]], spent on exclusive mods, [[augments]], weapons, arcanes and cosmetics. Equip a [[Sigil]] and a share of your affinity becomes Standing (daily cap scales with MR). The six faction Syndicates form an [[alliance hexagon]] — gaining Standing with one rewards its allies and angers its enemies.',
+    glossary_arbitrations: 'Arbitrations',
+    glossary_arbitrations_body: '[[Arbitrations]] are an endgame mode: one tougher [[endless mission]] is active at a time, rotating every hour. The stakes are higher — [[no bleedout]] — and you earn [[Vitus Essence]] for a special shop. They unlock via the [[Eris Junction]] (reach Pluto and equip a Focus Lens).',
+    glossary_arbitrations_fig1: 'Arbitrations push tougher enemies and special rules.',
+    glossary_arbitrations_fig2: 'The Arbitration tab in navigation — the active endless mission of the hour.',
+    glossary_steel_path: 'The Steel Path',
+    glossary_steel_path_body: '[[The Steel Path]] is hard mode for the entire Star Chart — every node again, but deadlier. You earn [[Steel Essence]] for a premium shop. Unlock it by clearing the whole Star Chart (through [[The New War]]), then talk to [[Teshin]] in a Relay; it becomes a toggle on the Star Chart.',
+    glossary_steel_path_fig1: 'The Steel Path — a tougher remix of the whole Star Chart.',
+    glossary_steel_path_fig2: 'Acolytes: minibosses that stalk you in Steel Path and drop Steel Essence.',
+    glossary_circuit: 'The Circuit',
+    glossary_circuit_body: '[[The Circuit]] is an endless run of [[back-to-back Duviri missions]] with a weekly rotation. Normal rewards [[Warframe blueprints]]; Steel Path rewards [[Incarnon Genesis adapters]]. You play with a random loadout and power up with [[Decrees]]. Unlocks after [[The Duviri Paradox]].',
+    glossary_circuit_fig1: 'Normal Circuit — the week’s three Warframe choices.',
+    glossary_circuit_fig2: 'Normal Circuit progress and tier rewards.',
+    glossary_circuit_fig3: 'Steel Path Circuit — the week’s Incarnon adapter choices.',
+    glossary_circuit_fig4: 'Steel Path Circuit progress.',
+    quest_how_to_get: 'Prerequisites',
+    quest_rewards: 'Rewards',
+    quest_mr: 'Min. MR',
     coming_soon: '(coming soon)',
     credits: 'Credits',
     credits_title: 'Credits',
@@ -86,6 +145,7 @@ const STRINGS = {
     credits_grading_desc: 'riven grading methodology',
     credits_semlar_desc: 'riven roll mechanics and stat range references',
     credits_browse_desc: 'weapon database cross-reference',
+    credits_tennoinfo_desc: 'explanatory infographics used in the Glossary',
     credits_tech_label: 'Tech stack',
     credits_vision_desc: 'OCR for reading riven screenshots',
     credits_tesseract_desc: 'offline OCR fallback',
@@ -278,7 +338,7 @@ const STRINGS = {
     archetypes_title: 'Arquétipos',
     archetypes_intro: 'Cada warframe organizado por [[arquétipo de combate]] — combinações de Dano, Sobrevivência, Suporte, Controle e Furtividade que definem o estilo de jogo de cada frame. Clique numa [[stat pill]] pra destacar warframes que se especializam nela, num [[arquétipo]] pra ver seus membros, ou em qualquer [[card de warframe]] pra ver habilidades, variantes de portrait e detalhes de aquisição.',
     star_chart_title: 'Mapa Estelar',
-    star_chart_intro: 'Navegue pelo sistema solar em [[ordem de progressão]] — cada planeta, nodo, drop de boss e recurso que vale farmar. [[Clique no card de um planeta]] pra expandir in-place com a lista completa de nodos, farms recomendados e quais warframes os bosses dropam. Use os [[filtros de missão]] pra encontrar objetivos específicos, a [[busca]] pra rastrear planeta/nodo/boss/warframe pelo nome, e ative [[Mostrar Spoilers]] quando estiver pronto pra conteúdo desbloqueado por quests.',
+    star_chart_intro: 'Navegue pelo sistema solar em [[ordem de progressão]] — cada planeta, nodo, drop de boss e recurso que vale farmar. [[Clique no card de um planeta]] pra expandir in-place com a lista completa de nodos, farms recomendados e quais warframes os bosses dropam. Use os [[filtros de missão]] pra encontrar objetivos específicos, a [[busca]] pra rastrear planeta/nodo/boss/warframe pelo nome, e ative [[Mostrar Spoilers]] quando estiver pronto pra conteúdo desbloqueado por jornadas.',
     star_chart_search_placeholder: 'Buscar planeta, nodo, boss…',
     star_chart_filter_all: 'Todos',
     star_chart_filter_label_rarity:   'Raridade',
@@ -295,7 +355,7 @@ const STRINGS = {
     star_chart_tab_empyrean: 'Railjack',
     star_chart_tab_special:  'Especial',
     star_chart_tab_coming_soon: 'O conteúdo desta aba estará disponível em breve.',
-    star_chart_spoiler_toggle_tooltip: 'Alterna visibilidade do conteúdo com quest-lock e dos recursos vinculados.',
+    star_chart_spoiler_toggle_tooltip: 'Alterna visibilidade do conteúdo com jornada-lock e dos recursos vinculados.',
     star_chart_resource_search_placeholder: 'Buscar recurso…',
     star_chart_resource_no_results: 'Nenhum recurso corresponde à busca.',
     resource_modal_description: 'Sobre',
@@ -306,24 +366,83 @@ const STRINGS = {
     glossary_title: 'Glossário',
     glossary_intro: 'Referência rápida de sistemas e mecânicas do Warframe. Clique num tópico pra expandir, ou use a busca pra filtrar.',
     glossary_search_placeholder: 'Buscar no glossário…',
-    glossary_no_results: 'Nenhuma entrada do glossário corresponde à sua busca.',
     glossary_status_effects: 'Status Effects',
+    glossary_mission_types: 'Tipos de Missão',
+    glossary_mission_types_body: 'O Mapa Estelar é feito de um punhado de [[tipos de missão]], cada um com seu objetivo — matar tudo, hackear um cofre, sobreviver, defender um alvo. Saber o que cada nó pede de você (e quais rodam em [[rotações A/B/C]]) facilita muito planejar a partida.',
     glossary_rotations: 'Rotações de Missão (A/B/C)',
-    glossary_rotations_body: 'Missões endless ciclam por tabelas de recompensa [[A]], [[B]] e [[C]] conforme você progride. O padrão usual é [[AABC]] — A em 5 min/wave 5, A em 10 min/wave 10, B em 15 min/wave 15, C em 20 min/wave 20, depois loop. A tabela [[C]] tem as recompensas mais raras (maior parte das peças Prime cai em C). Exceções: [[Disruption]] usa A/B/C/C por round (4 conduítes), [[Defection]] usa AAABA AAC, e [[caches de Sabotage]] rolam numa tabela C separada, independente da recompensa da missão.',
+    glossary_rotations_body: 'Missões infinitas entregam loot de três tabelas de recompensa — [[A]], [[B]] e [[C]] — ciclando no padrão [[AABC]] conforme você avança. A [[rotação C]] guarda os drops mais raros, então a maioria dos farms é montada pra chegar nela.',
     glossary_relics: 'Relíquias & Void Traces',
     glossary_relics_body: 'Relíquias Void dropam [[peças Prime]] quando crackadas em missões Void Fissure. Cada relíquia tem 6 recompensas possíveis: [[Comum ×3]] (~76% somado), [[Incomum ×2]] (~22%), [[Rara ×1]] (2% no Intacta). Gaste [[Void Traces]] pra refinar uma relíquia — [[Intacta → Excepcional → Impecável → Radiante]] — subindo a chance de rara de 2% pra 10%. Em squad de 4, depois de crackar, aparecem as 4 escolhas de recompensa — escolhe a melhor. Leve [[relíquias radiantes]] pra puxar a rara, divida com o time. Ganha traces coletando [[Reactant]] durante missões Fissure (10 Reactant pra crackar; até 30 traces por missão, cap diário = MR × 50).',
     glossary_modding: 'Modding Básico',
-    glossary_modding_body: 'Mods dão bônus de stat mas custam [[Capacidade de Mod]] igual ao rank do mod. Cada item começa com capacidade igual ao seu rank (máx 30); instalar um [[Orokin Reactor]] (Warframes/companions) ou [[Orokin Catalyst]] (armas) dobra pra 60. [[Polaridades]] nos slots cortam pela metade o custo de mods de mesma polaridade (arredonda pra cima). [[Forma]] adiciona ou muda a polaridade num slot, mas reseta o rank do item pra 0. [[Set bonuses]] (Augur, Vigilante, etc.) acumulam de múltiplos itens equipados. O [[slot Exilus]] aceita só mods utilitários (mobilidade, munição, recarga). Mods [[Galvanized]] empilham buff de dano ao matar (vêm do vendedor de Arbitrations).',
+    glossary_modding_body: 'Mods dão bônus de stat mas custam [[Capacidade de Mod]] igual ao rank do mod. Cada item começa com capacidade igual ao seu rank (máx 30); instalar um [[Reator Orokin]] (Warframes/companions) ou [[Catalisador Orokin]] (armas) dobra pra 60. [[Polaridades]] nos slots cortam pela metade o custo de mods de mesma polaridade (arredonda pra cima). [[Forma]] adiciona ou muda a polaridade num slot, mas reseta o rank do item pra 0. [[Set bonuses]] (Augur, Vigilante, etc.) acumulam de múltiplos itens equipados. O [[slot Exilus]] aceita só mods utilitários (mobilidade, munição, recarga). Mods [[Galvanized]] empilham buff de dano ao matar (vêm do vendedor de Arbitragens).',
     glossary_crits: 'Críticos',
-    glossary_crits_body: 'Críticos são rolados em cada hit. [[Crit Chance]] acima de 100% gera [[crit laranja]] (tier 2, dano base × multiplicador de crit × 2), e acima de 200% gera [[crit vermelho]] (tier 3, × 3). [[Tiros na cabeça]] adicionam ×2 fixo — e crit no headshot ganha um extra ×1.5 por cima, efetivamente ×3 um crit no corpo. Empilhar mods como [[Point Strike]] (+150% crit chance), rolls de crit em Rivens, e buffs específicos de facção é como armas primárias chegam em red crit. Mods de [[Crit Damage]] (Vital Sense em +120%) multiplicam o multiplicador de crit direto — então só importam quando você de fato crita.',
+    glossary_crits_body: 'Um [[acerto crítico]] causa dano extra. A frequência é a [[Chance de Crítico (CC)]]; o tamanho é o [[Dano de Crítico (CD)]]. Passe a CC de 100% e os críticos [[sobem de tier]] — laranja, depois vermelho — pra multiplicadores ainda maiores.',
     glossary_rivens: 'Mods Riven',
     glossary_rivens_body: 'Rivens são mods randomizados ligados a uma arma específica. Cada arma tem uma [[Disposition]] (1–5 pontos) que escala a magnitude de todo stat de Riven — armas meta geralmente têm disposition baixo (bônus pequenos), armas low-tier ganham bônus enormes. Rerollar ([[cycling]]) um Riven custa [[Kuva]], começa em 900 e sobe por cycle até travar em 3.500. Rivens não rolados são [[velados]] — completa um desafio específico em missão pra desvelar. Requisito de MR escala com disposition (MR 8–16). Combo genérico forte pra armas é [[CC + CD + Dano / Multishot]] sem negativo; pra armas de status, [[Status Chance + Multishot]] bate dano puro.',
     glossary_arcanes: 'Arcanes',
     glossary_arcanes_body: 'Arcanes são bônus de slot que ativam em condições ([[on kill]], [[on hit]], [[on cast]], etc.). [[Arcanes de Warframe]] vão no slot de Arcane (1 slot, 2 com Arcane Adapter). [[Arcanes de Operador/Tenno]] (Magus, Virtuos, Molt) vão no equipamento do Operador. Rank de 0 a 5 alimentando duplicatas — cada rank corta cooldown ou aumenta o efeito. Escolhas comuns: [[Arcane Energize]] (energia ao pegar orb), [[Arcane Grace]] (regen de vida ao tomar dano), [[Molt Augmented]] (+força de habilidade após kills). [[Set bonuses]] não existem mais depois do rework — cada Arcane se sustenta sozinho.',
-    glossary_mr: 'Mastery Rank',
-    glossary_mr_body: '[[Mastery Rank (MR)]] é o nível geral da conta — sobe rankando novos equipamentos (Warframes, armas, companions) até 30. Cada rank dá [[+1 capacidade base de mod]] em todo equipamento, +1 trade por dia (limitado), e desbloqueia itens e Rivens com MR-lock. O [[teste de MR]] (um por rank up) é um mini-desafio obrigatório — pratique no [[Santuário do Cephalon Simaris]] nos Relays. Caps diários (Endo, Standing) escalam com MR. Tem cooldown de 24h se você falhar no teste.',
+    glossary_mr: 'Nível de Maestria',
+    glossary_mr_body: 'Seu [[Nível de Maestria (MR)]] é um nível geral da conta que sobe conforme você ranqueia equipamentos novos até 30. Ele aumenta limites diários, dá uma vantagem inicial de [[capacidade de mod]], e tranca algumas armas, itens e [[Rivens]] atrás de um rank mínimo.',
     glossary_helminth: 'Helminth (Subsume)',
-    glossary_helminth_body: 'O sistema [[Helminth]] (desbloqueado em MR 8 + quest Heart of Deimos) deixa você substituir uma habilidade da maioria dos Warframes por uma [[habilidade subsumida]] de outro. Pra subsumir: alimente um Warframe no rank máximo ao Helminth — consome o frame mas desbloqueia a 1ª habilidade dele permanentemente pra instalação. Algumas habilidades não podem ser subsumidas (ex: Mallet da Octavia, Peacemaker da Mesa). Instalar uma habilidade subsumida custa [[recursos do Helminth]] (Bile, Calx, Oxides, Pheromones, Synthetics, Biotics, Sentient Appetite) — cada slot de habilidade pede um tipo específico. [[Invigorations]] são buffs aleatórios semanais escolhidos no menu Helminth — sistema separado, mesma sala.',
+    glossary_helminth_body: 'O sistema [[Helminth]] (desbloqueado em MR 8 + jornada Heart of Deimos) deixa você substituir uma habilidade da maioria dos Warframes por uma [[habilidade subsumida]] de outro. Pra subsumir: alimente um Warframe no rank máximo ao Helminth — consome o frame mas desbloqueia a 1ª habilidade dele permanentemente pra instalação. Algumas habilidades não podem ser subsumidas (ex: Mallet da Octavia, Peacemaker da Mesa). Instalar uma habilidade subsumida custa [[recursos do Helminth]] (Bile, Calx, Oxides, Pheromones, Synthetics, Biotics, Sentient Appetite) — cada slot de habilidade pede um tipo específico. [[Invigorations]] são buffs aleatórios semanais escolhidos no menu Helminth — sistema separado, mesma sala.',
+    glossary_cat_progression: 'Progressão',
+    glossary_tag_foundation: 'Base',
+    glossary_tag_story: 'História',
+    glossary_tag_weekly: 'Semanal',
+    glossary_tag_daily: 'Diário',
+    glossary_tag_endgame: 'Endgame',
+    glossary_tag_endless: 'Endless',
+    glossary_tag_soon: 'Em breve',
+    glossary_cat_combat: 'Combate',
+    glossary_cat_build: 'Builds & Mods',
+    glossary_cat_economy: 'Economia & Recursos',
+    glossary_cat_enemies: 'Inimigos',
+    glossary_soon_body: 'A explicação detalhada deste termo vem em breve.',
+    glossary_caches: 'Caches',
+    glossary_forma: 'Forma & Catalisador / Reator Orokin',
+    glossary_ducats: 'Ducados',
+    glossary_endo: 'Endo',
+    glossary_kuva: 'Kuva',
+    glossary_riven_slivers: 'Riven Slivers',
+    glossary_eximus: 'Eximus',
+    glossary_liches_sisters: 'Kuva Liches & Sisters of Parvos',
+    glossary_necramechs: 'Necramechs',
+    glossary_star_chart: 'Mapa Estelar & Junções',
+    glossary_star_chart_body: 'O [[Mapa Estelar]] é o seu mapa do Sistema de Origem. Você avança completando [[Junções]] — portões entre planetas que liberam o próximo destino. Cada planeta tem sua própria [[facção]], [[faixa de nível]] e [[nodos]] de missão.',
+    glossary_star_chart_fig1: 'O Mapa Estelar no início do jogo — apenas Mercúrio e Vênus estão acessíveis.',
+    glossary_star_chart_fig2: 'Com o progresso, mais planetas e nodos de missão abrem pelo sistema solar.',
+    glossary_quests: 'Jornadas',
+    glossary_quests_body: 'A história de Warframe se desenvolve pelas [[Jornadas]] — missões que desbloqueiam mecânicas, Warframes e lore. Marcos principais: [[Vor\'s Prize]] (tutorial), [[The Second Dream]] (desbloqueia o Operador), [[The War Within]] (combate do Operador + Focus), [[The Sacrifice]] (Excalibur Umbra), [[The New War]] (Drifter + Archon Hunts), [[The Duviri Paradox]] (combate do Drifter), [[Whispers in the Walls]] (Zariman + Helminth expandido). Algumas jornadas concedem Warframes únicos: [[Chains of Harkon]] → Harrow, [[The Deadlock Protocol]] → Protea, [[Echoes of War]] → Kullervo. Encontre as jornadas no [[Codex]] (tela de navegação, canto inferior esquerdo).',
+    glossary_quests_fig1: 'The Second Dream — a jornada que revela o Operador e muda o jogo permanentemente.',
+    glossary_quests_fig2: 'The New War — o desfecho do arco principal da história de Warframe.',
+    glossary_mr_fig1: 'Seu Nível de Maestria e o progresso para o próximo rank ficam visíveis no perfil.',
+    glossary_mr_fig2: 'Com XP suficiente, aparece um prompt para tentar o teste de Nível de Maestria.',
+    glossary_nightwave: 'Nightwave',
+    glossary_nightwave_body: 'A [[Nightwave]] é a trilha de desafios sempre ativa da Nora Night, que substituiu o antigo sistema de Alertas. Complete [[Atos]] pra ganhar Reputação, subir uma [[trilha de 30 ranks]] de recompensas, e juntar [[Cred]] pra uma loja rotativa. O terminal fica à esquerda no console de navegação da sua Orbiter.',
+    glossary_nightwave_fig1: 'Onde achar a Nightwave na sua Orbiter — à esquerda do console de navegação.',
+    glossary_nightwave_fig2: 'O menu completo da Nightwave — a trilha de ranks e seus Atos ativos.',
+    glossary_sorties: 'Incursões',
+    glossary_sorties_body: '[[Incursões]] são uma corrente diária de [[três missões de nível alto]], cada uma com um [[modificador]] difícil. Complete as três pra ganhar [[uma recompensa]] de um pool premium. Desbloqueiam no [[MR 5]] após [[The War Within]] (e limpar o nodo Oro na Terra), e exigem um Warframe no rank 30.',
+    glossary_sorties_fig1: 'A opção de Incursão na barra de navegação — três missões encadeadas, cada uma com um modificador.',
+    glossary_syndicates: 'Sindicatos',
+    glossary_syndicates_body: '[[Sindicatos]] são facções com quem você se alia por [[Reputação]], gasta em mods exclusivos, [[augmentos]], armas, arcanos e cosméticos. Equipe um [[Sigilo]] e parte da sua afinidade vira Reputação (o cap diário escala com o MR). Os seis sindicatos de facção formam um [[hexágono de alianças]] — ganhar Reputação com um beneficia os aliados e irrita os inimigos.',
+    glossary_arbitrations: 'Arbitragens',
+    glossary_arbitrations_body: '[[Arbitragens]] são um modo de endgame: uma [[missão infinita]] mais difícil fica ativa por vez, girando a cada hora. O risco é maior — [[sem bleedout]] — e você ganha [[Vitus Essence]] pra uma loja especial. Desbloqueiam pela [[Junção de Eris]] (chegue a Plutão e equipe um Focus Lens).',
+    glossary_arbitrations_fig1: 'As Arbitragens trazem inimigos mais fortes e regras especiais.',
+    glossary_arbitrations_fig2: 'A aba de Arbitração na navegação — a missão endless ativa da hora.',
+    glossary_steel_path: 'Percurso de Aço',
+    glossary_steel_path_body: 'O [[Percurso de Aço]] é o modo difícil de todo o Mapa Estelar — cada nodo de novo, porém mais letal. Você ganha [[Essência de Aço]] pra uma loja premium. Desbloqueia limpando todo o Mapa Estelar (até [[The New War]]), aí fale com o [[Teshin]] num Relay; ele vira um toggle no Mapa Estelar.',
+    glossary_steel_path_fig1: 'O Percurso de Aço — uma versão mais dura de todo o Mapa Estelar.',
+    glossary_steel_path_fig2: 'Acólitos: mini-bosses que te caçam no Percurso de Aço e dropam Essência de Aço.',
+    glossary_circuit: 'O Circuito',
+    glossary_circuit_body: 'O [[Circuito]] é uma sequência infinita de [[missões de Duviri uma atrás da outra]], com rotação semanal. O normal dá [[diagramas de Warframes]]; o Percurso de Aço dá [[adaptadores de Incarnon Genesis]]. Você joga com um loadout aleatório e se fortalece com [[Decretos]]. Desbloqueia após [[The Duviri Paradox]].',
+    glossary_circuit_fig1: 'Circuito normal — as três escolhas de Warframe da semana.',
+    glossary_circuit_fig2: 'Progresso e recompensas de tier do Circuito normal.',
+    glossary_circuit_fig3: 'Circuito do Percurso de Aço — as escolhas de adaptador Incarnon da semana.',
+    glossary_circuit_fig4: 'Progresso do Circuito do Percurso de Aço.',
+    quest_how_to_get: 'Pré-requisitos',
+    quest_rewards: 'Recompensas',
+    quest_mr: 'MR mínimo',
     coming_soon: '(em breve)',
     credits: 'Créditos',
     credits_title: 'Créditos',
@@ -344,13 +463,14 @@ const STRINGS = {
     credits_grading_desc: 'metodologia de avaliação de rivens',
     credits_semlar_desc: 'mecânicas de roll de riven e ranges de stats',
     credits_browse_desc: 'cross-reference do banco de armas',
+    credits_tennoinfo_desc: 'infográficos explicativos usados no Glossário',
     credits_tech_label: 'Stack técnica',
     credits_vision_desc: 'OCR para leitura de prints de riven',
     credits_tesseract_desc: 'OCR de reserva (offline)',
     credits_thanks_label: 'Agradecimentos',
     credits_thanks_text: 'À comunidade Warframe pelos prints, feedback e testes.',
     acquisition_title: 'Aquisição',
-    acquisition_blueprint: 'Blueprint principal',
+    acquisition_blueprint: 'Diagrama principal',
     acquisition_parts: 'Componentes',
     acquisition_alternative: 'Fonte alternativa',
     acquisition_recommended: 'Farm recomendado',
@@ -368,7 +488,7 @@ const STRINGS = {
     acquisition_view_circuit: 'Também no Circuito',
     source_enemy_drop: 'Drop de inimigos',
     source_boss_drop: 'Drop de boss',
-    source_quest_reward: 'Recompensa de quest',
+    source_quest_reward: 'Recompensa de jornada',
     source_dojo_research: 'Pesquisa de dojo',
     source_syndicate: 'Sindicato',
     source_cetus_offerings: 'Ofertas de Cetus',
@@ -981,6 +1101,505 @@ const WARFRAME_ICON_OVERRIDES = {
 function warframeIconUrl(slug) {
   return WARFRAME_ICON_OVERRIDES[slug] || `assets/icons/base/${slug}.png`;
 }
+
+// ── Quest data (Glossário §19) ────────────────────────────────────────────────
+
+const QUEST_ARCS = [
+  { key: 'arc1', label: { pt: 'Arco 1 — O Despertar do Tenno', en: 'Arc 1: Tenno Awakening' } },
+  { key: 'arc2', label: { pt: 'Arco 2 — Isto É O Que Você É',  en: 'Arc 2: This Is What You Are' } },
+  { key: 'arc3', label: { pt: 'Arco 3 — A Nova Guerra',          en: 'Arc 3: The New War' } },
+  {
+    key: 'arc4',
+    label: { pt: 'Arco 4 — A Saga do Void', en: 'Arc 4: Void War Saga' },
+    subarcs: [
+      { key: 'kalymos', label: { pt: 'Sequência Kalymos', en: 'Kalymos Sequence Arc' } },
+      { key: 'jade',    label: { pt: 'Arco Jade Shadows', en: 'Jade Shadows Arc' } },
+      { key: 'oneoff',  label: { pt: 'Avulsos',            en: 'One-Offs' } },
+    ],
+  },
+  { key: 'side',     label: { pt: 'Missões Secundárias', en: 'Side Quests' } },
+  { key: 'warframe', label: { pt: 'Missões de Warframe', en: 'Warframe Quests' } },
+];
+
+const QUESTS = [
+  // ─── Arc 1 ───────────────────────────────────────────────────────────────────
+  { slug: 'awakening', name: 'Awakening', arc: 'arc1',
+    image: "https://wiki.warframe.com/images/Awakening.png?45dfd", mr: 0,
+    howToGet: { pt: ["Primeiro login"], en: ["First Login"] },
+    rewards: [
+      { name: { pt: "Warframe inicial", en: "Starter Warframe" } },
+      { name: { pt: "Armas iniciais", en: "Starter Weapons" } },
+    ],
+    desc: { pt: "Tutorial de Warframe — apresenta o mundo, os Tenno e as mecânicas básicas. Você escolhe seu primeiro Warframe entre Excalibur, Mag ou Volt.",
+            en: "Warframe's tutorial — introduces the world, the Tenno, and basic mechanics. You choose your first Warframe among Excalibur, Mag, or Volt." } },
+  { slug: 'vors-prize', name: "Vor's Prize", arc: 'arc1',
+    image: "https://wiki.warframe.com/images/Vor%27sPrize.png?46f54", mr: 0,
+    howToGet: { pt: ["Awakening"], en: ["Awakening"] },
+    rewards: [
+      { name: { pt: "Burston diagrama", en: "Burston blueprint" }, icon: "https://wiki.warframe.com/images/Burston.png?3e21c" },
+      { name: { pt: "25,000 Credits", en: "25,000 Credits" }, icon: "https://wiki.warframe.com/images/Credits64.png?6022f" },
+    ],
+    desc: { pt: "Jornada obrigatória que te leva pelas missões básicas do Mapa Estelar e apresenta o sistema de mods. O ponto de partida de toda a progressão.",
+            en: "Mandatory quest walking you through basic Star Chart missions and introducing the mod system. The starting point for all in-game progression." } },
+  { slug: 'the-teacher', name: 'The Teacher', arc: 'arc1',
+    image: "https://wiki.warframe.com/images/TheTeacher.png?d981e", mr: 0,
+    howToGet: { pt: ["Vor's Prize"], en: ["Vor's Prize"] },
+    rewards: [
+      { name: { pt: "Thornbak", en: "Thornbak" }, icon: "https://wiki.warframe.com/images/Thornbak.png?ac555" },
+      { name: { pt: "Mod Segment", en: "Mod Segment" } },
+      { name: { pt: "Acesso a Cetus", en: "Access to Cetus" } },
+      { name: { pt: "Stormbringer", en: "Stormbringer" }, icon: "https://wiki.warframe.com/images/StormbringerMod.png?7215d" },
+      { name: { pt: "Cryo Rounds", en: "Cryo Rounds" }, icon: "https://wiki.warframe.com/images/CryoRoundsMod.png?dee2a" },
+      { name: { pt: "Vitality", en: "Vitality" }, icon: "https://wiki.warframe.com/images/VitalityMod.png?ac1e5" },
+      { name: { pt: "Pressure Point", en: "Pressure Point" }, icon: "https://wiki.warframe.com/images/PressurePointMod.png?d9969" },
+      { name: { pt: "Fury", en: "Fury" }, icon: "https://wiki.warframe.com/images/FuryMod.png?f0224" },
+      { name: { pt: "Serration", en: "Serration" }, icon: "https://wiki.warframe.com/images/SerrationMod.png?0b8ff" },
+      { name: { pt: "Hornet Strike", en: "Hornet Strike" }, icon: "https://wiki.warframe.com/images/HornetStrikeMod.png?37dcd" },
+      { name: { pt: "Heated Charge", en: "Heated Charge" }, icon: "https://wiki.warframe.com/images/HeatedChargeMod.png?2a534" },
+      { name: { pt: "Continuity", en: "Continuity" }, icon: "https://wiki.warframe.com/images/ContinuityMod.png?06c37" },
+      { name: { pt: "Equilibrium", en: "Equilibrium" }, icon: "https://wiki.warframe.com/images/EquilibriumMod.png?a6c8d" },
+      { name: { pt: "Redirection", en: "Redirection" }, icon: "https://wiki.warframe.com/images/RedirectionMod.png?e62e9" },
+      { name: { pt: "500 Endo", en: "500 Endo" }, icon: "https://wiki.warframe.com/images/Endo.png?34c5c" },
+      { name: { pt: "30,000 Credits", en: "30,000 Credits" }, icon: "https://wiki.warframe.com/images/Credits.png?a6ad7" },
+    ],
+    desc: { pt: "Jornada guiada pelo Cephalon Ordis que ensina polaridades, fusão e como maxar um mod. Recomendada logo após Vor's Prize.",
+            en: "A guided quest from Cephalon Ordis teaching polarities, fusion, and how to max a mod. Recommended right after Vor's Prize." } },
+  { slug: 'vox-solaris', name: 'Vox Solaris', arc: 'arc1',
+    image: "https://wiki.warframe.com/images/VoxSolaris.png?14cd8", mr: 0,
+    howToGet: { pt: ["Talk with Eudico in Fortuna"], en: ["Talk with Eudico in Fortuna"] },
+    rewards: [
+      { name: { pt: "K-Drive Launcher", en: "K-Drive Launcher" }, icon: "https://wiki.warframe.com/images/K-DriveLauncher.png?f892b" },
+      { name: { pt: "Garuda Diagrama", en: "Garuda Blueprint" }, icon: "https://wiki.warframe.com/images/GarudaIcon272.png?55b93" },
+      { name: { pt: "Acesso a Solaris United sindicato", en: "Access to Solaris United syndicate" } },
+      { name: { pt: "Acesso a Fortuna bounties", en: "Access to Fortuna bounties" } },
+    ],
+    desc: { pt: 'Introdução a Fortuna (Vênus) e ao mundo aberto Orb Vallis. Apresenta a sindicato Solaris United e a luta dos trabalhadores contra Nef Anyo.',
+            en: "Introduction to Fortuna (Venus) and the Orb Vallis open world. Introduces Solaris United and the workers' struggle against Nef Anyo." } },
+  { slug: 'once-awake', name: 'Once Awake', arc: 'arc1',
+    image: "https://wiki.warframe.com/images/OnceAwake.png?663f7", mr: 1,
+    howToGet: { pt: ["Mercury Junction"], en: ["Mercury Junction"] },
+    rewards: [
+      { name: { pt: "Molten Impact", en: "Molten Impact" }, icon: "https://wiki.warframe.com/images/MoltenImpactMod.png?74e14" },
+      { name: { pt: "Heat Sword (Diagrama)", en: "Heat Sword (Blueprint)" }, icon: "https://wiki.warframe.com/images/HeatSword.png?4bd81" },
+    ],
+    desc: { pt: "Jornada curta que apresenta os Corpus como ameaça crescente e abre caminhos narrativos sobre o papel dos Tenno no sistema solar.",
+            en: "A short quest introducing the Corpus as a growing threat and opening narrative threads about the Tenno's role in the solar system." } },
+  { slug: 'heart-of-deimos', name: 'Heart of Deimos', arc: 'arc1',
+    image: "https://wiki.warframe.com/images/HeartofDeimos.jpg?8c281", mr: 0,
+    howToGet: { pt: ["Earth to Mars Junction"], en: ["Earth to Mars Junction"] },
+    rewards: [
+      { name: { pt: "Xaku diagrama", en: "Xaku blueprint" }, icon: "https://wiki.warframe.com/images/XakuIcon272.png?ad108" },
+      { name: { pt: "Deimos Necralisk Captura Scene", en: "Deimos Necralisk Captura Scene" } },
+      { name: { pt: "Acesso a Entrati sindicato", en: "Access to Entrati syndicate" } },
+      { name: { pt: "Acesso a Necralisk bounties", en: "Access to Necralisk bounties" } },
+      { name: { pt: "Voidrig diagrama", en: "Voidrig blueprint" } },
+      { name: { pt: "Voidrig Capsule diagrama", en: "Voidrig Capsule blueprint" } },
+      { name: { pt: "Voidrig Casing diagrama", en: "Voidrig Casing blueprint" } },
+      { name: { pt: "Voidrig Engine diagrama", en: "Voidrig Engine blueprint" } },
+      { name: { pt: "Voidrig Weapon Pod diagrama", en: "Voidrig Weapon Pod blueprint" } },
+      { name: { pt: "Mirror Defense", en: "Mirror Defense" } },
+    ],
+    desc: { pt: 'Introduz Deimos e o mundo aberto Cambion Drift, dominado pela Infestação. Apresenta a família Entrati e abre o caminho para o Helminth.',
+            en: 'Introduces Deimos and the Cambion Drift open world. Meets the Entrati family and opens the path to the Helminth system.' } },
+  { slug: 'the-archwing', name: 'The Archwing', arc: 'arc1',
+    image: 'https://wiki.warframe.com/images/TheArchwing.png', mr: 0,
+    howToGet: { pt: 'Mensagem no Orbiter',                        en: 'Inbox message' },
+    rewards: [
+      { name: { pt: 'Odonata', en: 'Odonata' }, icon: 'https://wiki.warframe.com/images/Odonata.png' },
+      { name: { pt: 'Lançador de Archwing', en: 'Archwing Launcher' }, icon: 'https://wiki.warframe.com/images/ArchwingLauncherSegment.png' },
+    ],
+    desc: { pt: 'Desbloqueia o modo de voo espacial Archwing — necessário para missões no espaço aberto e Railjack. Recompensa o launcher e o diagrama do Odonata.',
+            en: 'Unlocks Archwing space flight mode — required for open-space missions and Railjack. Rewards the launcher segment and the Odonata Archwing blueprint.' } },
+  // ─── Arc 2 ───────────────────────────────────────────────────────────────────
+  { slug: 'natah', name: 'Natah', arc: 'arc2',
+    image: "https://wiki.warframe.com/images/NatahQuest.png?78356", mr: 0,
+    howToGet: { pt: ["Uranus Junction"], en: ["Uranus Junction"] },
+    rewards: [
+      { name: { pt: "Exilus Warframe Adapter", en: "Exilus Warframe Adapter" }, icon: "https://wiki.warframe.com/images/ExilusWarframeAdapter.png?bfcaf" },
+    ],
+    desc: { pt: 'Revela a verdadeira identidade da Lotus — ela é Natah, uma espiã Sentient. Acontece na Lua e abre o caminho para The Second Dream.',
+            en: "Reveals the Lotus's true identity — she is Natah, a Sentient spy. Takes place on Lua and opens the path to The Second Dream." } },
+  { slug: 'the-second-dream', name: 'The Second Dream', arc: 'arc2',
+    image: "https://wiki.warframe.com/images/TheSecondDream.png?b5fc2", mr: 0,
+    howToGet: { pt: ["Completar Natah (Quest)", "Neptune Junction"], en: ["Completed Natah (Quest)", "Neptune Junction"] },
+    rewards: [
+      { name: { pt: "Operator Unlocked", en: "Operator Unlocked" } },
+      { name: { pt: "Broken War", en: "Broken War" }, icon: "https://wiki.warframe.com/images/BrokenWar.png?f9cf1" },
+      { name: { pt: "Focus Unlocked", en: "Focus Unlocked" } },
+      { name: { pt: "Lua Access", en: "Lua Access" } },
+      { name: { pt: "Scar Sigil", en: "Scar Sigil" } },
+      { name: { pt: "Rising Tide Jornada", en: "Rising Tide Quest" } },
+    ],
+    desc: { pt: 'O maior plot twist de Warframe — revela quem os Tenno realmente são. Desbloqueia o Operator e o modo de combate Transference.',
+            en: "Warframe's biggest plot twist — reveals who the Tenno really are. Unlocks the Operator and Transference combat mode." } },
+  { slug: 'the-war-within', name: 'The War Within', arc: 'arc2',
+    image: "https://wiki.warframe.com/images/TheWarWithin.png?f6123", mr: 5,
+    howToGet: { pt: ["Completar The Second Dream", "Pluto Junction"], en: ["Completed The Second Dream", "Pluto Junction"] },
+    rewards: [
+      { name: { pt: "Broken Scepter", en: "Broken Scepter" }, icon: "https://wiki.warframe.com/images/BrokenScepter.png?325b2" },
+      { name: { pt: "Orvius (Diagrama)", en: "Orvius (Blueprint)" }, icon: "https://wiki.warframe.com/images/Orvius.png?d4116" },
+      { name: { pt: "Transference Unlocked", en: "Transference Unlocked" } },
+      { name: { pt: "The Plumas Access", en: "The Quills Access" } },
+      { name: { pt: "Vox Solaris Access", en: "Vox Solaris Access" } },
+      { name: { pt: "Necraloid Access", en: "Necraloid Access" } },
+      { name: { pt: "Riven Mod", en: "Riven Mod" } },
+      { name: { pt: "Incursão Access", en: "Sortie Access" } },
+      { name: { pt: "Kuva Fortress Access", en: "Kuva Fortress Access" } },
+      { name: { pt: "Kuva Lich Access", en: "Kuva Lich Access" } },
+      { name: { pt: "Grineer Queens Glyph", en: "Grineer Queens Glyph" } },
+      { name: { pt: "Personal Quarters Segment Diagrama", en: "Personal Quarters Segment Blueprint" } },
+      { name: { pt: "Conjunction Survival Access", en: "Conjunction Survival Access" } },
+      { name: { pt: "Voruna Leverian access", en: "Voruna Leverian access" }, icon: "assets/icons/base/voruna.png" },
+    ],
+    desc: { pt: 'Aprofunda os poderes Void do Operator e desbloqueia o Void Mode (invisibilidade) e o Kuva — recurso essencial para rolar Rivens.',
+            en: "Deepens the Operator's Void powers and unlocks Void Mode (invisibility) and Kuva — the essential resource for re-rolling Rivens." } },
+  { slug: 'rising-tide', name: 'Rising Tide', arc: 'arc2',
+    image: "https://wiki.warframe.com/images/RisingTide.png?9c4e0", mr: 0,
+    howToGet: { pt: ["Completar The War Within"], en: ["Completed The War Within"] },
+    rewards: [
+      { name: { pt: "Railjack", en: "Railjack" } },
+    ],
+    desc: { pt: 'Jornada de construção do Railjack — sua nave de guerra para missões Empyrean. Você recupera e restaura uma nave antiga com a ajuda do Cephalon Cy.',
+            en: "The Railjack building quest — your warship for Empyrean missions. You recover and restore an ancient ship with Cephalon Cy's guidance." } },
+  { slug: 'chains-of-harrow', name: 'Chains of Harrow', arc: 'arc2',
+    image: "https://wiki.warframe.com/images/ChainsofHarrow.png?72f56", mr: 4,
+    howToGet: { pt: ["Completar The War Within", "Visit Onkko in Cetus"], en: ["Completed The War Within", "Visit Onkko in Cetus"] },
+    rewards: [
+      { name: { pt: "Harrow Diagrama", en: "Harrow Blueprint" }, icon: "https://wiki.warframe.com/images/HarrowIcon272.png?bebac" },
+      { name: { pt: "Acesso a Iron Wake", en: "Access to Iron Wake" } },
+      { name: { pt: "Acesso a Follie's Hunt", en: "Access to Follie's Hunt" }, icon: "assets/icons/base/follie.png" },
+    ],
+    desc: { pt: 'Jornada de terror psicológico em uma nave infestada do Red Veil. Investiga um Tenno que abandonou seu Warframe e perdeu a razão.',
+            en: "A psychological horror quest aboard an infested Red Veil ship. Investigates a Tenno who abandoned their Warframe and lost their mind." } },
+  { slug: 'apostasy-prologue', name: 'Apostasy Prologue', arc: 'arc2',
+    image: "https://wiki.warframe.com/images/ApostasyPrologue.png?83f93", mr: 0,
+    howToGet: { pt: ["Completar Chains of Harrow", "Personal Quarters Segment"], en: ["Completed Chains of Harrow", "Personal Quarters Segment"] },
+    rewards:  { pt: 'Eidolons, Plumas sindicato',                   en: 'Eidolons access, Quills syndicate' },
+    desc: { pt: 'Jornada curta e atmosférica que encerra o arco de Natah/Lotus. Desbloqueia os Eidolons nas Planícies (à noite) e o sindicato Plumas.',
+            en: "A short atmospheric quest closing the Natah/Lotus arc. Unlocks Eidolons on the Plains (night cycle) and the Quills syndicate." } },
+  { slug: 'the-sacrifice', name: 'The Sacrifice', arc: 'arc2',
+    image: 'https://wiki.warframe.com/images/TheSacrifice.png', mr: 0,
+    howToGet: { pt: 'Mensagem (após Apostasy Prologue)', en: 'Inbox (after Apostasy Prologue)' },
+    rewards: [
+      { name: { pt: 'Excalibur Umbra', en: 'Excalibur Umbra' }, icon: 'https://wiki.warframe.com/images/ExcaliburUmbra.png' },
+      { name: { pt: 'Skiajati', en: 'Skiajati' }, icon: 'https://wiki.warframe.com/images/Skiajati.png' },
+      { name: { pt: 'War', en: 'War' }, icon: 'https://wiki.warframe.com/images/War.png' },
+    ],
+    desc: { pt: 'Revela a origem dos Warframes e o papel de Ballas. Recompensa o Excalibur Umbra — único Warframe com autonomia — e a espada Skiajati.',
+            en: "Reveals Warframe origins and Ballas's role. Rewards Excalibur Umbra — the only autonomous Warframe — and the Skiajati nikana." } },
+  // ─── Arc 3 ───────────────────────────────────────────────────────────────────
+  { slug: 'prelude-to-war', name: 'Prelude to War', arc: 'arc3',
+    image: "https://wiki.warframe.com/images/PreludeToWar.png?37cb0", mr: 0,
+    howToGet: { pt: 'Mensagem (após The Sacrifice)',       en: 'Inbox (after The Sacrifice)' },
+    rewards:  { pt: 'Prólogo narrativo para The New War',  en: 'Narrative prologue for The New War' },
+    desc: { pt: 'Prólogo que apresenta a invasão Sentient e prepara o cenário para The New War. Mostra Ballas aliado aos Sentients e Erra liderando o ataque.',
+            en: 'A short prologue presenting the Sentient invasion. Shows Ballas allied with the Sentients and Erra leading the assault.' } },
+  { slug: 'the-new-war', name: 'The New War', arc: 'arc3',
+    image: 'https://wiki.warframe.com/images/TheNewWar.jpg', mr: 0,
+    howToGet: { pt: ['Ter uma Railjack', 'Ter um Amp', 'Completar Prelude to War'],
+                en: ['Own a Railjack', 'Own an Amp', 'Completed Prelude to War'] },
+    rewards: [
+      { name: { pt: 'Sirocco', en: 'Sirocco Amp' }, icon: 'https://wiki.warframe.com/images/Sirocco.png?76b26' },
+      { name: { pt: "Skin do Sirocco", en: "Sirocco's Amp Skin" }, icon: 'https://wiki.warframe.com/images/Sirocco.png?76b26' },
+      { name: { pt: 'Nataruk', en: 'Nataruk' }, icon: 'https://wiki.warframe.com/images/Nataruk.png?4b210' },
+      { name: { pt: 'Rumblejack', en: 'Rumblejack' }, icon: 'https://wiki.warframe.com/images/Rumblejack.png?867de' },
+      { name: { pt: 'Booster de Afinidade (3 dias)', en: '3 Day Affinity Booster' }, icon: 'https://wiki.warframe.com/images/AffinityBooster%28xLight%29.png?1e12d' },
+      { name: { pt: 'Booster de Créditos (3 dias)', en: '3 Day Credit Booster' }, icon: 'https://wiki.warframe.com/images/CreditBooster%28xLight%29.png?0be61' },
+      { name: { pt: 'Cena do Acampamento do Drifter', en: 'The Drifter Camp Scene' }, icon: 'https://wiki.warframe.com/images/TheDrifterCampScene.png?0ec73' },
+      { name: { pt: 'A Lost Time (decoração)', en: 'A Lost Time Decoration' }, icon: 'https://wiki.warframe.com/images/FamilyPortrait.png?cdb63' },
+      { name: { pt: 'Cajado Narmer do Ballas (decoração)', en: "Ballas' Narmer Staff Decoration" } },
+      { name: { pt: 'Drifter desbloqueado', en: 'Drifter Unlocked' } },
+      { name: { pt: 'Acesso às Narmer Bounties', en: 'Access to Narmer Bounties' } },
+      { name: { pt: 'Acesso às Deepmines', en: 'Access to Deepmines' } },
+    ],
+    desc: { pt: 'A maior jornada do jogo — horas de cinematics com três personagens jogáveis (Tenno, Kahl-175, Veso). Conclui a guerra Sentient e desbloqueia os Archon Hunts semanais.',
+            en: "The game's biggest quest — hours of cinematics with three playable characters. Concludes the Sentient war and unlocks weekly Archon Hunts." } },
+  { slug: 'the-duviri-paradox', name: 'The Duviri Paradox', arc: 'arc3',
+    image: "https://wiki.warframe.com/images/TheDuviriParadox.png?d5933", mr: 0,
+    howToGet: { pt: ["Uranus Junction"], en: ["Uranus Junction"] },
+    rewards: [
+      { name: { pt: "Histornam Kaithe", en: "Histornam Kaithe" } },
+      { name: { pt: "Sun & Moon Diagrama", en: "Sun & Moon Blueprint" }, icon: "https://wiki.warframe.com/images/Sun%26Moon.png?58a53" },
+      { name: { pt: "Mountain's Edge", en: "Mountain's Edge" }, icon: "https://wiki.warframe.com/images/Mountain%27sEdgeMod.png?2a794" },
+      { name: { pt: "Acesso a The Duviri Experience, The Lone Story, and The Circuit", en: "Access to The Duviri Experience, The Lone Story, and The Circuit" } },
+    ],
+    desc: { pt: 'Introduz Duviri, onde o Drifter opera sozinho. Desbloqueia o Incarnon Genesis — upgrades permanentes para armas clássicas — e o sistema de Decrees.',
+            en: "Introduces Duviri, a paradoxical world where the Drifter operates alone. Unlocks Incarnon Genesis — permanent weapon upgrades — and the Decree system." } },
+  // ─── Arc 4 — Kalymos Sequence ────────────────────────────────────────────────
+  { slug: 'whispers-in-the-walls', name: 'Whispers in the Walls', arc: 'arc4', subarc: 'kalymos',
+    image: "https://wiki.warframe.com/images/WhispersintheWalls.png?1b514", mr: 0,
+    howToGet: { pt: ["Completar Heart of Deimos", "Completar The New War"], en: ["Completed Heart of Deimos", "Completed The New War"] },
+    rewards: [
+      { name: { pt: "Qorvex Diagrama", en: "Qorvex Blueprint" }, icon: "https://wiki.warframe.com/images/QorvexIcon272.png?9d1dd" },
+      { name: { pt: "Weapon Slot", en: "Weapon Slot" } },
+      { name: { pt: "Grimoire (Rank 30, Catalyst pre-installed)", en: "Grimoire (Rank 30, Catalyst pre-installed)" }, icon: "https://wiki.warframe.com/images/Grimoire.png?e8ce6" },
+      { name: { pt: "Melee Upgrade Segment", en: "Melee Upgrade Segment" } },
+      { name: { pt: "Mentor's Legacy", en: "Mentor's Legacy" }, icon: "https://wiki.warframe.com/images/Mentor%27sLegacyMod.png?a522c" },
+      { name: { pt: "Melee Arcane Adapter", en: "Melee Arcane Adapter" }, icon: "https://wiki.warframe.com/images/MeleeArcaneAdapter.png?a96fa" },
+      { name: { pt: "Acesso a Cavia sindicato", en: "Access to Cavia syndicate" }, icon: "https://wiki.warframe.com/images/CaviaSyndicateLogo1%28xLight%29.png?406b5" },
+      { name: { pt: "Acesso a extra nodes in Deimos", en: "Access to extra nodes in Deimos" } },
+    ],
+    desc: { pt: 'Revela os experimentos do Albrecht Entrati e abre Höllvania (subterrâneo de Deimos). Desbloqueia os Netracells — missões de endgame com Archon Shards.',
+            en: "Reveals Albrecht Entrati's experiments and opens Höllvania beneath Deimos. Unlocks Netracells — endgame missions dropping Archon Shards." } },
+  { slug: 'the-lotus-eaters', name: 'The Lotus Eaters', arc: 'arc4', subarc: 'kalymos',
+    image: "https://wiki.warframe.com/images/TheLotusEaters.png?bef0c", mr: 0,
+    howToGet: { pt: ["Completar Whispers in the Walls"], en: ["Completed Whispers in the Walls"] },
+    rewards: [
+      { name: { pt: "Arthur's KinePage", en: "Arthur's KinePage" } },
+    ],
+    desc: { pt: 'Aprofunda a relação entre Albrecht Entrati e a entidade que se tornará a Lotus. Revela os perigos além do Void e a natureza das Eternalists.',
+            en: "Deepens the relationship between Albrecht Entrati and the entity that would become the Lotus. Reveals dangers beyond the Void." } },
+  { slug: 'the-hex', name: 'The Hex', arc: 'arc4', subarc: 'kalymos',
+    image: "https://wiki.warframe.com/images/TheHex.png?29e5d", mr: 0,
+    howToGet: { pt: ["The Duviri Paradox", "The Lotus Eaters"], en: ["The Duviri Paradox", "The Lotus Eaters"] },
+    rewards: [
+      { name: { pt: "Cyte-09 diagrama", en: "Cyte-09 blueprint" }, icon: "https://wiki.warframe.com/images/Cyte-09Icon272.png?1a06f" },
+      { name: { pt: "Magnetic Might", en: "Magnetic Might" }, icon: "https://wiki.warframe.com/images/MagneticMightMod.png?2a86c" },
+      { name: { pt: "Forma", en: "Forma" }, icon: "https://wiki.warframe.com/images/Forma.png?c7d01" },
+      { name: { pt: "Atomicycle", en: "Atomicycle" } },
+      { name: { pt: "Atomicycle Summon", en: "Atomicycle Summon" }, icon: "https://wiki.warframe.com/images/AtomicycleSummon.png?6a3e2" },
+      { name: { pt: "Rust Belt Livery Atomicycle Skin", en: "Rust Belt Livery Atomicycle Skin" } },
+      { name: { pt: "Standard Livery Atomicycle Skin", en: "Standard Livery Atomicycle Skin" } },
+      { name: { pt: "Acesso a The Hex sindicato", en: "Access to The Hex syndicate" }, icon: "https://wiki.warframe.com/images/HexIcon%28xLight%29.png?c8c7d" },
+      { name: { pt: "Acesso a Höllvania missions and Bounties", en: "Access to Höllvania missions and Bounties" } },
+      { name: { pt: "Protokol Longsword Skin", en: "Protokol Longsword Skin" } },
+      { name: { pt: "The Hex Noggle Collection", en: "The Hex Noggle Collection" } },
+      { name: { pt: "Acesso a Isleweaver in Duviri", en: "Access to Isleweaver in Duviri" } },
+    ],
+    desc: { pt: 'Apresenta Jade e seus aliados únicos. Jornada narrativa e de ação que culmina na obtenção do diagrama do Jade Warframe.',
+            en: "Introduces Jade and her unique allies. A narrative and action quest culminating in the Jade Warframe blueprint." } },
+  { slug: 'the-old-peace', name: 'The Old Peace', arc: 'arc4', subarc: 'kalymos',
+    image: "https://wiki.warframe.com/images/TheOldPeace.png?439cc", mr: 0,
+    howToGet: { pt: ["The Lotus Eaters"], en: ["The Lotus Eaters"] },
+    rewards: [
+      { name: { pt: "Uriel diagrama", en: "Uriel blueprint" }, icon: "https://wiki.warframe.com/images/UrielIcon272.png?d8ae1" },
+      { name: { pt: "Operator Atmosphor accessory", en: "Operator Atmosphor accessory" } },
+      { name: { pt: "75 Lyroic Bridge", en: "75 Lyroic Bridge" }, icon: "https://wiki.warframe.com/images/LyroicBridge.png?0dccd" },
+      { name: { pt: "75 Ren Hypercore", en: "75 Ren Hypercore" }, icon: "https://wiki.warframe.com/images/RenHypercore.png?238dc" },
+      { name: { pt: "75 Ascaris Prime", en: "75 Ascaris Prime" }, icon: "https://wiki.warframe.com/images/AscarisPrime.png?a4667" },
+      { name: { pt: "Acesso a Dark Refractory", en: "Access to Dark Refractory" } },
+      { name: { pt: "Acesso a The Perita Rebellion", en: "Access to The Perita Rebellion" } },
+      { name: { pt: "Acesso a The Descendia", en: "Access to The Descendia" } },
+      { name: { pt: "Acesso a La Cathédrale (through Sanctum Anatomica)", en: "Access to La Cathédrale (through Sanctum Anatomica)" } },
+    ],
+    desc: { pt: 'Encerra a Sequência Kalymos com revelações sobre o passado de Albrecht Entrati e o equilíbrio entre o Void e o mundo material.',
+            en: "Closes the Kalymos Sequence with revelations about Albrecht Entrati's past and the balance between the Void and the material world." } },
+  // ─── Arc 4 — Jade Shadows Arc ────────────────────────────────────────────────
+  { slug: 'jade-shadows', name: 'Jade Shadows', arc: 'arc4', subarc: 'jade',
+    image: "https://wiki.warframe.com/images/JadeShadows.png?b962c", mr: 0,
+    howToGet: { pt: ["Completar The New War"], en: ["Completed The New War"] },
+    rewards: [
+      { name: { pt: "Jade Diagrama", en: "Jade Blueprint" }, icon: "https://wiki.warframe.com/images/JadeIcon272.png?f1fb2" },
+      { name: { pt: "Stalker's Lair Scene (Captura)", en: "Stalker's Lair Scene (Captura)" } },
+      { name: { pt: "Alone Portrait", en: "Alone Portrait" } },
+      { name: { pt: "United Portrait", en: "United Portrait" } },
+      { name: { pt: "Protector Portrait", en: "Protector Portrait" } },
+    ],
+    desc: { pt: 'Jornada que aprofunda os segredos e a origem do Jade Warframe, expandindo o universo do Void War Saga.',
+            en: "A quest deepening the secrets and origin of the Jade Warframe, expanding the Void War Saga universe." } },
+  { slug: 'jade-shadows-constellations', name: 'Jade Shadows: Constellations', arc: 'arc4', subarc: 'jade',
+    image: "https://wiki.warframe.com/images/JadeShadowsConstellations.png?46609", mr: 0,
+    howToGet: { pt: ["Completar Jade Shadows"], en: ["Completed Jade Shadows"] },
+    rewards: [
+      { name: { pt: "Sirius & Orion (diagrama)", en: "Sirius & Orion (blueprint)" }, icon: "https://wiki.warframe.com/images/SiriusOrion.png?3a1d6" },
+      { name: { pt: "Sirius' and Orion's Swaddle Syandanas", en: "Sirius' and Orion's Swaddle Syandanas" }, icon: "assets/icons/base/sirius.png" },
+      { name: { pt: "Stay Together Display", en: "Stay Together Display" } },
+      { name: { pt: "Sirius Alone Display", en: "Sirius Alone Display" }, icon: "assets/icons/base/sirius.png" },
+      { name: { pt: "Orion Alone Display", en: "Orion Alone Display" }, icon: "assets/icons/base/orion.png" },
+    ],
+    desc: { pt: 'Jornada do Update 43 que introduz o frame duplo Sirius & Orion e continua o Void War Saga com novos desenvolvimentos no arco de Jade.',
+            en: "The Update 43 quest introducing the dual frame Sirius & Orion and continuing the Void War Saga in the Jade arc." } },
+  // ─── Arc 4 — One-Offs ────────────────────────────────────────────────────────
+  { slug: 'angels-of-the-zariman', name: 'Angels of the Zariman', arc: 'arc4', subarc: 'oneoff',
+    image: "https://wiki.warframe.com/images/AngelsoftheZariman.jpg?d1b7f", mr: 0,
+    howToGet: { pt: ["Completar \"The New War\""], en: ["Completed \"The New War\""] },
+    rewards: [
+      { name: { pt: "1 Voidplume Pinion", en: "1 Voidplume Pinion" }, icon: "https://wiki.warframe.com/images/VoidplumePinion.png?5e728" },
+      { name: { pt: "Operator Voidshell Set", en: "Operator Voidshell Set" } },
+      { name: { pt: "Drifter Voidshell Set", en: "Drifter Voidshell Set" } },
+      { name: { pt: "Acesso a the Dormizone", en: "Access to the Dormizone" } },
+      { name: { pt: "Acesso a The Holdfasts Sindicato", en: "Access to The Holdfasts Syndicate" } },
+      { name: { pt: "Acesso a Chrysalith Bounties (Gyre)", en: "Access to Chrysalith Bounties (Gyre)" }, icon: "https://wiki.warframe.com/images/GyreIcon272.png?4c4ae" },
+    ],
+    desc: { pt: 'Abre a nave Zariman Ten Zero como hub e apresenta o sindicato Holdfast e Cavalero (Incarnon). Desbloqueia missões como Void Cascade e Void Flood.',
+            en: "Opens the Zariman Ten Zero ship as a hub and introduces the Holdfast syndicate and Cavalero (Incarnon). Unlocks Void Cascade and Void Flood missions." } },
+  // ─── Side Quests ─────────────────────────────────────────────────────────────
+  { slug: 'sayas-vigil', name: "Saya's Vigil", arc: 'side',
+    image: "https://wiki.warframe.com/images/Saya%27sVigil.png?2d84f", mr: 0,
+    howToGet: { pt: ["Completar Vor's Prize", "At least 1 bounty completed"], en: ["Completed Vor's Prize", "At least 1 bounty completed"] },
+    rewards: [
+      { name: { pt: "Gara Diagrama", en: "Gara Blueprint" }, icon: "https://wiki.warframe.com/images/GaraIcon272.png?3956f" },
+      { name: { pt: "Acesso a Shrine Defense mission", en: "Access to Shrine Defense mission" }, icon: "https://wiki.warframe.com/images/KoumeiIcon272.png?5abcc" },
+    ],
+    desc: { pt: 'Jornada de introdução a Cetus (Terra) e às Planícies de Eidolon. Apresenta Konzu e Saya enquanto investiga o paradeiro do marido desaparecido dela.',
+            en: "Introduction to Cetus and the Plains of Eidolon. Introduces Konzu and Saya as you investigate her missing husband's whereabouts." } },
+  { slug: 'howl-of-the-kubrow', name: 'Howl of the Kubrow', arc: 'side',
+    image: "https://wiki.warframe.com/images/HowloftheKubrow.png?ae539", mr: 0,
+    howToGet: { pt: ["Venus to Mercury Junction"], en: ["Venus to Mercury Junction"] },
+    rewards: [
+      { name: { pt: "Incubator Segment", en: "Incubator Segment" } },
+      { name: { pt: "Balanced Posture", en: "Balanced Posture" }, icon: "https://wiki.warframe.com/images/BalancedPostureMod.png?1eb2a" },
+    ],
+    desc: { pt: 'Introduz o sistema de Kubrow — companheiros caninos criados de ovos. Você aprende a incubar e criar um Kubrow como companion de combate.',
+            en: 'Introduces the Kubrow system — canine companions raised from eggs. You learn to incubate and raise a Kubrow as your combat companion.' } },
+  { slug: 'stolen-dreams', name: 'Stolen Dreams', arc: 'side',
+    image: "https://wiki.warframe.com/images/StolenDreams.png?5ba08", mr: 0,
+    howToGet: { pt: ["Phobos Junction"], en: ["Phobos Junction"] },
+    rewards: [
+      { name: { pt: "Ether Daggers Diagrama", en: "Ether Daggers Blueprint" }, icon: "https://wiki.warframe.com/images/EtherDaggers.png?70d49" },
+      { name: { pt: "Catalisador Orokin Diagrama", en: "Orokin Catalyst Blueprint" } },
+      { name: { pt: "Weekly Ayatan Treasure Hunt", en: "Weekly Ayatan Treasure Hunt" } },
+    ],
+    desc: { pt: 'Jornada curta investigando artefatos Orokin roubados. Apresenta Maroo, uma mercenária especializada em cofres Orokin e missões de parkour.',
+            en: "A short quest investigating stolen Orokin artifacts. Introduces Maroo, a mercenary specializing in Orokin vaults and parkour missions." } },
+  { slug: 'veilbreaker', name: 'Veilbreaker', arc: 'side',
+    image: "https://wiki.warframe.com/images/Veilbreaker.png?1e700", mr: 0,
+    howToGet: { pt: ["Completar The New War"], en: ["Completed The New War"] },
+    rewards: [
+      { name: { pt: "Archon Hunt Access", en: "Archon Hunt Access" } },
+      { name: { pt: "Kahl's Garrison Access", en: "Kahl's Garrison Access" } },
+      { name: { pt: "Break Narmer Access", en: "Break Narmer Access" } },
+      { name: { pt: "Helminth Archon Shard Segment Diagrama", en: "Helminth Archon Shard Segment Blueprint" } },
+    ],
+    desc: { pt: 'Conta a história do soldado Grineer Kahl-175 libertando companheiros do controle Sentient. Desbloqueia missões semanais de Kahl e o Styanax.',
+            en: "Follows Grineer soldier Kahl-175 freeing comrades from Sentient control. Unlocks Kahl's weekly missions and the Styanax Warframe." } },
+  { slug: 'patient-zero', name: 'Patient Zero', arc: 'side',
+    image: "https://wiki.warframe.com/images/PatientZero.png?7efb5", mr: 0,
+    howToGet: { pt: ["Completar Once Awake", "Unlocked Eris"], en: ["Completed Once Awake", "Unlocked Eris"] },
+    rewards: [
+      { name: { pt: "Mutalist Alad V Key", en: "Mutalist Alad V Key" } },
+    ],
+    desc: { pt: 'Jornada sobre o surto de Infestação em uma nave Corpus. Apresenta o perigo biológico da praga e as pesquisas do Corpus sobre sua propagação.',
+            en: 'Quest about an Infestation outbreak on a Corpus ship. Highlights the biological danger of the plague and Corpus research on its spread.' } },
+  { slug: 'a-man-of-few-words', name: 'A Man of Few Words', arc: 'side',
+    image: "https://wiki.warframe.com/images/AManofFewWords.png?623b9", mr: 0,
+    howToGet: { pt: ["Talk with Darvo in any Relay"], en: ["Talk with Darvo in any Relay"] },
+    rewards: [
+      { name: { pt: "Exilus Adapter", en: "Exilus Adapter" } },
+      { name: { pt: "Clem Clone Diagrama", en: "Clem Clone Blueprint" } },
+      { name: { pt: "Help Clem (Unlocked)", en: "Help Clem (Unlocked)" } },
+    ],
+    desc: { pt: 'Jornada curta que expande o lore de Duviri e a relação entre o Drifter e os personagens do mundo paradoxal. Complementa The Duviri Paradox.',
+            en: "A short quest expanding Duviri lore and the Drifter's relationship with its characters. Complements The Duviri Paradox." } },
+  // ─── Warframe Quests ─────────────────────────────────────────────────────────
+  { slug: 'the-deadlock-protocol', name: 'The Deadlock Protocol', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/TheDeadlockProtocol.png?a879e", mr: 0,
+    howToGet: { pt: ["Mastery Rank 4", "Saturn Junction"], en: ["Mastery Rank 4", "Saturn Junction"] },
+    rewards: [
+      { name: { pt: "Protea diagrama", en: "Protea blueprint" }, icon: "https://wiki.warframe.com/images/ProteaIcon272.png?6b6d2" },
+      { name: { pt: "Xoris", en: "Xoris" }, icon: "https://wiki.warframe.com/images/Xoris.png?5c2e5" },
+      { name: { pt: "Granum Void Captura Scene", en: "Granum Void Captura Scene" } },
+      { name: { pt: "Armatus, Deimos Unlocked", en: "Armatus, Deimos Unlocked" } },
+    ],
+    desc: { pt: 'Investiga o legado de Parvos Granum e a crise de sucessão do Corpus. Desbloqueia o Granum Void — modo extra-dimensional de endgame.',
+            en: "Investigates Parvos Granum's legacy and the Corpus succession crisis. Unlocks the Granum Void — an extra-dimensional endgame mode." } },
+  { slug: 'call-of-the-tempestarii', name: 'Call of the Tempestarii', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/CalloftheTempestarii.jpg?153a6", mr: 0,
+    howToGet: { pt: ["The Deadlock Protocol completed", "Ter Railjack and retrieved Reliquary Key", "Mastery Rank 4"], en: ["The Deadlock Protocol completed", "Own a Railjack and retrieved Reliquary Key", "Mastery Rank 4"] },
+    rewards: [
+      { name: { pt: "Sevagoth diagrama", en: "Sevagoth blueprint" }, icon: "https://wiki.warframe.com/images/SevagothIcon272.png?89397" },
+      { name: { pt: "Tempestarii Railjack Skin", en: "Tempestarii Railjack Skin" } },
+      { name: { pt: "Sevagoth Prex", en: "Sevagoth Prex" }, icon: "assets/icons/base/sevagoth.png" },
+      { name: { pt: "Sevagoth Statuette", en: "Sevagoth Statuette" }, icon: "assets/icons/base/sevagoth.png" },
+      { name: { pt: "The Cold Below Captura Scene", en: "The Cold Below Captura Scene" } },
+    ],
+    desc: { pt: 'Jornada de Railjack que investiga o fantasma da nave Tempestarii e a lenda do Sevagoth, o Warframe das sombras.',
+            en: "A Railjack quest investigating the ghost of the Tempestarii ship and the legend of Sevagoth, the shadow Warframe." } },
+  { slug: 'the-new-strange', name: 'The New Strange', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/TheNewStrange.png?93e64", mr: 5,
+    howToGet: { pt: ["Stolen Dreams", "Europa Junction"], en: ["Stolen Dreams", "Europa Junction"] },
+    rewards: [
+      { name: { pt: "Chroma Diagrama", en: "Chroma Blueprint" }, icon: "https://wiki.warframe.com/images/ChromaIcon272.png?e852e" },
+      { name: { pt: "Acesso a Sanctuary Onslaught", en: "Access to Sanctuary Onslaught" } },
+      { name: { pt: "Acesso a Daily Synthesis Task", en: "Access to Daily Synthesis Task" } },
+    ],
+    desc: { pt: 'Introduz o Cephalon Simaris e o sistema de Synthesis — captura de criaturas com scanner. Recompensa o Chassis do Chroma e abre o lab de Simaris.',
+            en: "Introduces Cephalon Simaris and the Synthesis scanning system. Rewards the Chroma Chassis blueprint and unlocks Simaris's Relay lab." } },
+  { slug: 'the-glast-gambit', name: 'The Glast Gambit', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/TheGlastGambit.png?2bbe2", mr: 5,
+    howToGet: { pt: ["Completar The War Within"], en: ["Completed The War Within"] },
+    rewards: [
+      { name: { pt: "Nidus diagrama", en: "Nidus blueprint" }, icon: "https://wiki.warframe.com/images/NidusIcon272.png?1a2fa" },
+    ],
+    desc: { pt: 'Envolve o comerciante Ergo Glast numa aposta com Nef Anyo por uma colônia infestada. Recompensa o Neuroptics do Nidus e introduz o Infested Salvage.',
+            en: "Involves merchant Ergo Glast in a bet with Nef Anyo over an Infested colony. Rewards Nidus Neuroptics and introduces the Infested Salvage mission mode." } },
+  { slug: 'octavias-anthem', name: "Octavia's Anthem", arc: 'warframe',
+    image: "https://wiki.warframe.com/images/Octavia%27sAnthem.png?c45c9", mr: 0,
+    howToGet: { pt: ["Completar \"The Second Dream\""], en: ["Completed \"The Second Dream\""] },
+    rewards: [
+      { name: { pt: "\"Octavia\" Diagrama", en: "\"Octavia\" Blueprint" }, icon: "https://wiki.warframe.com/images/OctaviaIcon272.png" },
+    ],
+    desc: { pt: 'Jornada musical sobre o legado da Cephalon Suda. Você recupera a partitura do Octavia enquanto explora a história da música no universo Orokin.',
+            en: "A musical quest about Cephalon Suda's legacy. You recover Octavia's score while exploring the history of music in the Orokin universe." } },
+  { slug: 'sands-of-inaros', name: 'Sands of Inaros', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/SandsofInaros.png", mr: 0,
+    howToGet: { pt: ["Mastery Rank 5"], en: ["Mastery Rank 5"] },
+    rewards: [
+      { name: { pt: "Inaros diagrama and parts", en: "Inaros blueprint and parts" }, icon: "https://wiki.warframe.com/images/InarosIcon272.png" },
+      { name: { pt: "Sacred Urn Orbiter decoration", en: "Sacred Urn Orbiter decoration" } },
+    ],
+    desc: { pt: "Jornada de temática egípcia acompanhando o espírito de Inaros em rituais antigos. A única jornada comprada diretamente do Baro Ki'Teer.",
+            en: "An Egyptian-themed quest following Inaros's spirit through ancient rituals. The only quest purchased directly from Baro Ki'Teer." } },
+  { slug: 'hidden-messages', name: 'Hidden Messages', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/HiddenMessages.png", mr: 0,
+    howToGet: { pt: ["Sedna Junction"], en: ["Sedna Junction"] },
+    rewards: [
+      { name: { pt: "Mirage Neuroptics", en: "Mirage Neuroptics" }, icon: "https://wiki.warframe.com/images/MirageIcon272.png" },
+      { name: { pt: "Mirage System", en: "Mirage System" }, icon: "assets/icons/base/mirage.png" },
+      { name: { pt: "Mirage Chassis", en: "Mirage Chassis" }, icon: "assets/icons/base/mirage.png" },
+    ],
+    desc: { pt: 'Jornada de puzzles com cifras — você decifra mensagens para encontrar os componentes do Mirage. Uma das poucas jornadas focadas em enigmas sem combate intenso.',
+            en: "A cipher-puzzle quest — you decode messages to find Mirage's components. One of the few quests focused entirely on riddles." } },
+  { slug: 'mask-of-the-revenant', name: 'Mask of the Revenant', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/MaskoftheRevenant.png", mr: 0,
+    howToGet: { pt: ["Observer rank with The Quills"], en: ["Observer rank with The Quills"] },
+    rewards: [
+      { name: { pt: "Revenant diagrama", en: "Revenant blueprint" }, icon: "assets/icons/base/revenant.png" },
+    ],
+    desc: { pt: 'Jornada curta nas Planícies de Eidolon investigando a origem do Revenant — um Warframe possuído por uma entidade Sentient.',
+            en: "A short quest in the Plains of Eidolon investigating Revenant's origin — a Warframe possessed by a Sentient entity." } },
+  { slug: 'the-silver-grove', name: 'The Silver Grove', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/TheSilverGrove.png", mr: 7,
+    howToGet: { pt: ["The Second Dream Complete", "Mastery Rank 7"], en: ["The Second Dream Complete", "Mastery Rank 7"] },
+    rewards: [
+      { name: { pt: "Titania Diagrama & Parts", en: "Titania Blueprint & Parts" }, icon: "https://wiki.warframe.com/images/TitaniaIcon272.png" },
+    ],
+    desc: { pt: 'Jornada pastoral que protege um bosque sagrado na Terra. Requer rank 2 no sindicato New Loka. Recompensa o Titania completo.',
+            en: 'A pastoral quest protecting a sacred grove on Earth. Requires New Loka syndicate Rank 2. Rewards the full Titania blueprint.' } },
+  { slug: 'the-waverider', name: 'The Waverider', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/TheWaverider.jpg", mr: 0,
+    howToGet: { pt: ["Completar Vox Solaris (Quest)", "Mastery Rank 3"], en: ["Completed Vox Solaris (Quest)", "Mastery Rank 3"] },
+    rewards: [
+      { name: { pt: "Yareli Diagrama", en: "Yareli Blueprint" }, icon: "https://wiki.warframe.com/images/YareliIcon272.png" },
+      { name: { pt: "Noggle Statue - Yareli", en: "Noggle Statue - Yareli" }, icon: "assets/icons/base/yareli.png" },
+      { name: { pt: "K-Drive Booster Decoration", en: "K-Drive Booster Decoration" } },
+      { name: { pt: "Yareli Prex", en: "Yareli Prex" }, icon: "assets/icons/base/yareli.png" },
+      { name: { pt: "Waverider #1", en: "Waverider #1" } },
+    ],
+    desc: { pt: "Jornada curta focada no Yareli, o Warframe surfista. Envolve missões no K-Drive e apresenta a história de Yareli dentro do universo de Fortuna.",
+            en: "A short quest centered on Yareli, the surfing Warframe. Involves K-Drive missions and introduces Yareli's story within the Fortuna universe." } },
+  { slug: 'the-limbo-theorem', name: 'The Limbo Theorem', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/TheLimboTheorem.png?dcfe0", mr: 0,
+    howToGet: { pt: ["Obtain an Archwing", "Jupiter - Europa Junction"], en: ["Obtain an Archwing", "Jupiter - Europa Junction"] },
+    rewards: [
+      { name: { pt: "Limbo Neuroptics", en: "Limbo Neuroptics" }, icon: "https://wiki.warframe.com/images/LimboIcon272.png?a04a4" },
+      { name: { pt: "Limbo System", en: "Limbo System" }, icon: "assets/icons/base/limbo.png" },
+      { name: { pt: "Limbo Chassis", en: "Limbo Chassis" }, icon: "assets/icons/base/limbo.png" },
+    ],
+    desc: { pt: 'Jornada de coleta onde você recupera as notas do cientista que criou o Limbo, espalhadas por missões do Mapa Estelar.',
+            en: "A collection quest recovering notes from the scientist who created Limbo, scattered across Star Chart missions." } },
+  { slug: 'the-jordas-precept', name: 'The Jordas Precept', arc: 'warframe',
+    image: "https://wiki.warframe.com/images/TheJordasPrecept.png?7956c", mr: 5,
+    howToGet: { pt: ["Pluto to Eris Junction"], en: ["Pluto to Eris Junction"] },
+    rewards: [
+      { name: { pt: "Atlas Diagrama", en: "Atlas Blueprint" }, icon: "https://wiki.warframe.com/images/AtlasIcon272.png?7e79f" },
+      { name: { pt: "Jordas Golem Assassination", en: "Jordas Golem Assassination" } },
+    ],
+    desc: { pt: 'Jornada de horror com a Cephalon Jordas, infectada pela Infestação. Culmina em um boss battle de Archwing único. Recompensa o Neuroptics do Atlas.',
+            en: 'A horror quest featuring the Infested Cephalon Jordas. Culminates in a unique Archwing boss battle. Rewards the Atlas Neuroptics blueprint.' } },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
 
 // Dados de cada warframe (stats + cor do gráfico). Preenchido incrementalmente.
 const WARFRAMES_DATA = {
@@ -1707,7 +2326,7 @@ const WARFRAMES_DETAILS = {
       recommended_farm: 'Uranus Proxima (Railjack) — repita Scoria\'s Angel para as partes; agora jogável também no Steel Path.',
     },
     railjackFarms: [
-      { planet: 'uranus-proxima', missionTypes: [], note: { en: 'Component blueprints drop from Scoria\'s Angel.', 'pt-BR': 'Blueprints de componentes dropam de Scoria\'s Angel.' } },
+      { planet: 'uranus-proxima', missionTypes: [], note: { en: 'Component blueprints drop from Scoria\'s Angel.', 'pt-BR': 'Diagramas de componentes dropam de Scoria\'s Angel.' } },
     ],
   },
   'temple': {
@@ -5579,7 +6198,7 @@ const AUGMENTS = {
         image: 'assets/augments/styanax/axiosjavelineers.png',
         description: {
           en: 'A pair of Styanax Specters spawn to throw javelins, creating vortexes on impact. Impale an enemy to increase vortex duration by 5s.',
-          'pt-BR': 'Um par de Specters do Styanax surge para arremessar dardos, criando vórtices ao impacto. Empale um inimigo para aumentar a duração do vórtice em 5s.',
+          'pt-BR': 'Um par de Espectros do Styanax surge para arremessar dardos, criando vórtices ao impacto. Empale um inimigo para aumentar a duração do vórtice em 5s.',
         },
       },
     ],
@@ -7110,7 +7729,7 @@ const WEAPONS = {
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
       notes: {
         en: 'Quest-locked Incarnon shotgun — Multishot/Crit Chance/Damage all top tier.',
-        'pt-BR': 'Escopeta Incarnon liberada por quest — Multishot/Chance de Crítico/Dano todos top tier.',
+        'pt-BR': 'Escopeta Incarnon liberada por jornada — Multishot/Chance de Crítico/Dano todos top tier.',
       },
     },
     {
@@ -7641,7 +8260,7 @@ const WEAPONS = {
       preferred_negative: { zoom: 'beneficial', recoil: 'beneficial' },
       notes: {
         en: 'Quest-locked Incarnon rifle — Multishot/Crit Chance/Crit Damage carry the AoE form.',
-        'pt-BR': 'Rifle Incarnon liberado por quest — Multishot/Chance de Crítico/Dano Crítico carregam o modo AoE.',
+        'pt-BR': 'Rifle Incarnon liberado por jornada — Multishot/Chance de Crítico/Dano Crítico carregam o modo AoE.',
       },
     },
     {
@@ -10546,7 +11165,7 @@ const WEAPONS = {
       preferred_positive: { critical_chance: 'S', critical_damage: 'S', attack_speed: 'A', combo_duration: 'B', damage: 'C' },
       notes: {
         en: 'Quest-locked Incarnon dagger — Damage/Crit Chance/Crit Damage dominate.',
-        'pt-BR': 'Adaga Incarnon liberada por quest — Dano/Chance de Crítico/Dano Crítico dominam.',
+        'pt-BR': 'Adaga Incarnon liberada por jornada — Dano/Chance de Crítico/Dano Crítico dominam.',
       },
     },
     {
@@ -11116,9 +11735,9 @@ const MISSION_TYPES = {
   ascension:        { name: { en: 'Ascension',        'pt-BR': 'Ascensão'            }, color: '#d4c25a' },
   alchemy:          { name: { en: 'Alchemy',          'pt-BR': 'Alquimia'            }, color: '#9aa44d' },
   infested_salvage: { name: { en: 'Infested Salvage', 'pt-BR': 'Sucata Infestada'    }, color: '#8a9a4d' },
-  void_cascade:     { name: { en: 'Void Cascade',     'pt-BR': 'Cascata Void'        }, color: '#c8a8e0' },
-  void_flood:       { name: { en: 'Void Flood',       'pt-BR': 'Dilúvio Void'        }, color: '#7fa8e0' },
-  void_armageddon:  { name: { en: 'Void Armageddon',  'pt-BR': 'Armagedom Void'      }, color: '#e8a85a' },
+  void_cascade:     { name: { en: 'Void Cascade',     'pt-BR': 'Cascata do Void'     }, color: '#c8a8e0' },
+  void_flood:       { name: { en: 'Void Flood',       'pt-BR': 'Inundação do Void'   }, color: '#7fa8e0' },
+  void_armageddon:  { name: { en: 'Void Armageddon',  'pt-BR': 'Armagedom do Void'   }, color: '#e8a85a' },
   // §20.5 — Railjack-specific mission types
   skirmish:         { name: { en: 'Skirmish',         'pt-BR': 'Escaramuça'          }, color: '#b888ff' },
   volatile:         { name: { en: 'Volatile',         'pt-BR': 'Volátil'             }, color: '#e85a5a' },
@@ -11250,7 +11869,7 @@ const SC_SOURCES = {
   'boss-drops':            { name: { en: 'Boss Drops',             'pt-BR': 'Drops de Boss'            } },
   'hex-treasures':         { name: { en: 'Hex Treasures',          'pt-BR': 'Tesouros Hex'             } },
   'temporal-archimedea':   { name: { en: 'Temporal Archimedea',    'pt-BR': 'Archimedea Temporal'      } },
-  'quests':                { name: { en: 'Quests',                 'pt-BR': 'Quests'                   } },
+  'quests':                { name: { en: 'Quests',                 'pt-BR': 'Jornadas'                   } },
   'plants':                { name: { en: 'Plants',                 'pt-BR': 'Plantas'                  } },
   'events':                { name: { en: 'Events',                 'pt-BR': 'Eventos'                  } },
   'deepmines':             { name: { en: 'Deepmines',              'pt-BR': 'Minas Profundas'          } },
@@ -101977,7 +102596,7 @@ const RESOURCES = {
     },
     usedFor: {
       en: 'Corpus weapons, warframe parts (Nova, Volt) and gear blueprints.',
-      'pt-BR': 'Armas Corpus, partes de warframes (Nova, Volt) e blueprints de equipamento.',
+      'pt-BR': 'Armas Corpus, partes de warframes (Nova, Volt) e diagramas de equipamento.',
     },
     recommendedFarm: { planet: 'venus', node: 'romula',
       noteEn: 'On Venus, Romula Dark Sector Defense gives good Polymer drops. For peak yield, Assur on Uranus is the meta.',
@@ -102072,7 +102691,7 @@ const RESOURCES = {
     },
     usedFor: {
       en: 'Many warframe chassis (Rhino, Mag, Volt) and Forma blueprints.',
-      'pt-BR': 'Muitos chassis de warframe (Rhino, Mag, Volt) e blueprints de Forma.',
+      'pt-BR': 'Muitos chassis de warframe (Rhino, Mag, Volt) e diagramas de Forma.',
     },
     recommendedFarm: { planet: 'mars', node: 'kadesh',
       noteEn: 'On Mars, Survival runs net consistent Morphics. Hellas (Exterminate) is faster per-run.',
@@ -102110,7 +102729,7 @@ const RESOURCES = {
     },
     usedFor: {
       en: 'Endgame weapons and warframes (Tigris Prime, Vauban Prime, Equinox Prime), arcanes, and Forma blueprints. Plan farms close to when you actually need them.',
-      'pt-BR': 'Armas e warframes endgame (Tigris Prime, Vauban Prime, Equinox Prime), arcanes e blueprints de Forma. Planeje farms perto de quando você de fato precisar.',
+      'pt-BR': 'Armas e warframes endgame (Tigris Prime, Vauban Prime, Equinox Prime), arcanes e diagramas de Forma. Planeje farms perto de quando você de fato precisar.',
     },
     recommendedFarm: { planet: 'void', node: 'hepit',
       noteEn: 'Hepit (Capture) is the fastest farm — quick runs, low level, ~2 Argon deposits per map yielding 1–2 crystals each.',
@@ -102129,7 +102748,7 @@ const RESOURCES = {
     },
     usedFor: {
       en: 'Tons of weapons and warframes — almost every early blueprint needs Ferrite.',
-      'pt-BR': 'Muitas armas e warframes — quase todo blueprint inicial pede Ferrita.',
+      'pt-BR': 'Muitas armas e warframes — quase todo diagrama inicial pede Ferrita.',
     },
     recommendedFarm: { planet: 'earth', node: 'cervantes',
       noteEn: 'Capture missions stack Ferrite fast; Cervantes is the classic farm.',
@@ -102148,7 +102767,7 @@ const RESOURCES = {
     },
     usedFor: {
       en: 'Nova, Trinity, Vauban, Sentinel parts, and many Prime blueprints.',
-      'pt-BR': 'Nova, Trinity, Vauban, partes de sentinelas e muitos blueprints Prime.',
+      'pt-BR': 'Nova, Trinity, Vauban, partes de sentinelas e muitos diagramas Prime.',
     },
     recommendedFarm: { planet: 'neptune', node: 'salacia',
       noteEn: 'Salacia (Mobile Defense) is a popular farm; Ukko (Void Capture) also drops these.',
@@ -102352,11 +102971,11 @@ const RESOURCES = {
     spoilerLocked: true,
     description: {
       en: 'Cavia syndicate currency from Albrecht\'s Laboratories. Three tiers: Shrill (500), Bellow (1k), Echo (2k) standing each. Drops from Murmur enemies.',
-      'pt-BR': 'Moeda do sindicato Cavia, dos Laboratórios de Albrecht. Três tiers: Shrill (500), Bellow (1k), Echo (2k) de standing cada. Cai de inimigos do Murmúrio.',
+      'pt-BR': 'Moeda do sindicato Cavia, dos Laboratórios de Albrecht. Três tiers: Shrill (500), Bellow (1k), Echo (2k) de reputação cada. Cai de inimigos do Murmúrio.',
     },
     usedFor: {
       en: 'Cavia syndicate standing — unlocks Melee Arcanes and Cavia-themed items.',
-      'pt-BR': 'Standing do sindicato Cavia — desbloqueia Arcanes de melee e itens do tema Cavia.',
+      'pt-BR': 'Reputação do sindicato Cavia — desbloqueia Arcanes de melee e itens do tema Cavia.',
     },
     recommendedFarm: { planet: 'deimos', node: 'persto',
       noteEn: 'Persto (Survival) sustains heavy Voca drops over long runs.',
@@ -102374,7 +102993,7 @@ const RESOURCES = {
     },
     usedFor: {
       en: 'Cephalon Quell / Holdfasts standing — unlocks Zariman arcanes and weapons.',
-      'pt-BR': 'Standing do Cephalon Quell / Holdfasts — desbloqueia arcanes e armas do Zariman.',
+      'pt-BR': 'Reputação do Cephalon Quell / Holdfasts — desbloqueia arcanes e armas do Zariman.',
     },
     recommendedFarm: { planet: 'zariman', node: 'tuvul-commons',
       noteEn: 'Tuvul Commons (Void Cascade) consistently rewards Voidplume Down per rotation.',
@@ -102386,7 +103005,7 @@ const RESOURCES = {
     location: 'star-chart', sources: ['special', 'mission-drops'],
     image: 'https://wiki.warframe.com/images/VoidplumeVane.png',
     description: { en: '2nd-tier Zariman bounty reward. Less common than Down, used for mid-tier Holdfasts offerings.', 'pt-BR': 'Voidplume de 2º tier de bounties do Zariman. Menos comum que Down, usada pra ofertas de tier médio dos Holdfasts.' },
-    usedFor: { en: 'Holdfasts standing — Zariman arcanes and Incarnon adapter prerequisites.', 'pt-BR': 'Standing dos Holdfasts — arcanes do Zariman e pré-requisitos de adaptadores Incarnon.' },
+    usedFor: { en: 'Holdfasts standing — Zariman arcanes and Incarnon adapter prerequisites.', 'pt-BR': 'Reputação dos Holdfasts — arcanes do Zariman e pré-requisitos de adaptadores Incarnon.' },
   },
   voidplume_crest: {
     name: { en: 'Voidplume Crest', 'pt-BR': 'Crista Voidplume' },
@@ -102394,7 +103013,7 @@ const RESOURCES = {
     location: 'star-chart', sources: ['special', 'mission-drops'],
     image: 'https://wiki.warframe.com/images/VoidplumeCrest.png',
     description: { en: '3rd-tier Voidplume from Zariman B/C rotations. Rare drop, more valuable per unit.', 'pt-BR': 'Voidplume de 3º tier das rotações B/C do Zariman. Drop raro, mais valioso por unidade.' },
-    usedFor: { en: 'Higher-rank Holdfasts items including Quassus Veiled Riven blueprint.', 'pt-BR': 'Itens de Holdfasts de rank mais alto, incluindo blueprint da Riven Velada Quassus.' },
+    usedFor: { en: 'Higher-rank Holdfasts items including Quassus Veiled Riven blueprint.', 'pt-BR': 'Itens de Holdfasts de rank mais alto, incluindo diagrama da Riven Velada Quassus.' },
   },
   voidplume_pinion: {
     name: { en: 'Voidplume Pinion', 'pt-BR': 'Pinhão Voidplume' },
@@ -102474,7 +103093,7 @@ const RESOURCES = {
     rarity: 'special', category: 'currency',
     location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/Endo.png',
-    description: { en: 'Mod upgrade currency. Earned by dissolving duplicate mods, breaking Ayatan stars/sculptures, Arbitrations, Sortie rewards, and Index runs.', 'pt-BR': 'Moeda de upgrade de mods. Ganha ao dissolver mods duplicados, quebrar estrelas/esculturas Ayatan, Arbitrations, Sorties e Index.' },
+    description: { en: 'Mod upgrade currency. Earned by dissolving duplicate mods, breaking Ayatan stars/sculptures, Arbitrations, Sortie rewards, and Index runs.', 'pt-BR': 'Moeda de upgrade de mods. Ganha ao dissolver mods duplicados, quebrar estrelas/esculturas Ayatan, Arbitragens, Incursões e Index.' },
     usedFor: { en: 'Required to rank up every mod in the game. An endgame loadout averages 60–100k Endo invested.', 'pt-BR': 'Necessária pra upar qualquer mod. Loadout endgame tem 60–100k de Endo investido em média.' },
   },
   aya: {
@@ -102490,7 +103109,7 @@ const RESOURCES = {
     rarity: 'special', category: 'currency',
     location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/Forma.png',
-    description: { en: 'Crafted from Forma Blueprints which drop from Void Relics (uncommon and rare slots). 1-day build time per Forma in the Foundry. Also rewarded weekly from Sortie/Steel Path/Nightwave.', 'pt-BR': 'Crafteado a partir de Blueprints de Forma que dropam de Relíquias Void (slots uncommon e rare). 1 dia de build na Foundry. Também recompensa semanal de Sortie/Steel Path/Nightwave.' },
+    description: { en: 'Crafted from Forma Blueprints which drop from Void Relics (uncommon and rare slots). 1-day build time per Forma in the Foundry. Also rewarded weekly from Sortie/Steel Path/Nightwave.', 'pt-BR': 'Crafteado a partir de Diagramas de Forma que dropam de Relíquias Void (slots uncommon e rare). 1 dia de build na Foundry. Também recompensa semanal de Incursão/Percurso de Aço/Nightwave.' },
     usedFor: { en: 'Polarizes mod slots on weapons and warframes to halve mod capacity costs. Also required for some Prime crafts and Equinox.', 'pt-BR': 'Polariza slots de mod em armas e warframes pra reduzir o custo pela metade. Também necessário em alguns crafts Prime e no Equinox.' },
   },
   void_traces: {
@@ -102514,15 +103133,15 @@ const RESOURCES = {
     rarity: 'special', category: 'currency',
     location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/VitusEssence.png',
-    description: { en: 'Arbitrations C-rotation reward currency. Drops every 4th rotation reward (typically every 20 min).', 'pt-BR': 'Moeda de recompensa da rotação C das Arbitrations. Cai a cada 4ª rotação (geralmente cada 20 min).' },
-    usedFor: { en: 'Arbiters of Hexis shop — Forma Umbra blueprint, Arcanes (Aegis, Avenger, Velocity), augments.', 'pt-BR': 'Loja dos Arbiters of Hexis — blueprint de Forma Umbra, Arcanes (Aegis, Avenger, Velocity), augmentos.' },
+    description: { en: 'Arbitrations C-rotation reward currency. Drops every 4th rotation reward (typically every 20 min).', 'pt-BR': 'Moeda de recompensa da rotação C das Arbitragens. Cai a cada 4ª rotação (geralmente cada 20 min).' },
+    usedFor: { en: 'Arbiters of Hexis shop — Forma Umbra blueprint, Arcanes (Aegis, Avenger, Velocity), augments.', 'pt-BR': 'Loja dos Arbiters of Hexis — diagrama de Forma Umbra, Arcanes (Aegis, Avenger, Velocity), augmentos.' },
   },
   riven_sliver: {
     name: { en: 'Riven Sliver', 'pt-BR': 'Fragmento de Riven' },
     rarity: 'special', category: 'currency',
     location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/RivenSliver.png',
-    description: { en: 'Combine 10 Slivers into a Veiled Riven via Palladino in the Iron Wake. Drops from Sorties, Arbitrations, and the Steel Path shop.', 'pt-BR': 'Combine 10 Fragmentos pra formar um Riven Velado com a Palladino no Iron Wake. Cai de Sorties, Arbitrations e na loja do Steel Path.' },
+    description: { en: 'Combine 10 Slivers into a Veiled Riven via Palladino in the Iron Wake. Drops from Sorties, Arbitrations, and the Steel Path shop.', 'pt-BR': 'Combine 10 Fragmentos pra formar um Riven Velado com a Palladino no Iron Wake. Cai de Incursões, Arbitragens e na loja do Percurso de Aço.' },
     usedFor: { en: 'Crafting Veiled Rivens of chosen weapon category (primary/secondary/melee). 10 Slivers → 1 Veiled Riven.', 'pt-BR': 'Craft de Rivens Velados de categoria escolhida (primária/secundária/melee). 10 Fragmentos → 1 Riven Velado.' },
   },
   steel_essence: {
@@ -102530,8 +103149,8 @@ const RESOURCES = {
     rarity: 'special', category: 'currency', spoilerLocked: true,
     location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/SteelEssence.png',
-    description: { en: 'Steel Path premium currency. Drops from Acolytes (random spawn on Steel Path nodes) and from completing Steel Path Incursions.', 'pt-BR': 'Moeda premium do Steel Path. Cai de Acólitos (spawn aleatório em nodos do Steel Path) e ao completar Incursões.' },
-    usedFor: { en: 'Teshin\'s Steel Path shop — Umbra Forma, Riven Slivers, Kuva, arcanes, cosmetics.', 'pt-BR': 'Loja do Teshin no Steel Path — Forma Umbra, Fragmentos de Riven, Kuva, arcanes, cosméticos.' },
+    description: { en: 'Steel Path premium currency. Drops from Acolytes (random spawn on Steel Path nodes) and from completing Steel Path Incursions.', 'pt-BR': 'Moeda premium do Percurso de Aço. Cai de Acólitos (spawn aleatório em nodos do Percurso de Aço) e ao completar Incursões.' },
+    usedFor: { en: 'Teshin\'s Steel Path shop — Umbra Forma, Riven Slivers, Kuva, arcanes, cosmetics.', 'pt-BR': 'Loja do Teshin no Percurso de Aço — Forma Umbra, Fragmentos de Riven, Kuva, arcanes, cosméticos.' },
     recommendedFarm: { planet: 'saturn', node: 'helene',
       noteEn: 'Helene Defense on Steel Path — Acolytes spawn frequently in defense waves.',
       notePt: 'Defesa de Helene no Steel Path — Acólitos spawnam com frequência nas waves.' },
@@ -102558,7 +103177,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['sentient-drops'],
     image: 'https://wiki.warframe.com/images/EidolonShard.png',
     description: { en: 'Drops from defeating Teralyst Eidolons during Plains of Eidolon night cycle (one per kill).', 'pt-BR': 'Cai ao derrotar Teralyst Eidolons durante a noite nas Plains of Eidolon (1 por kill).' },
-    usedFor: { en: 'Focus conversion (high yield), Quills standing, Operator Arcane purchases, Focus intrinsics.', 'pt-BR': 'Conversão pra Focus (alto rendimento), standing dos Quills, compra de Arcanes de Operador, intrinsics de Focus.' },
+    usedFor: { en: 'Focus conversion (high yield), Quills standing, Operator Arcane purchases, Focus intrinsics.', 'pt-BR': 'Conversão pra Focus (alto rendimento), reputação dos Plumas, compra de Arcanes de Operador, intrinsics de Focus.' },
   },
   brilliant_eidolon_shard: {
     name: { en: 'Brilliant Eidolon Shard', 'pt-BR': 'Fragmento Brilhante de Eidolon' },
@@ -102566,7 +103185,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['sentient-drops'],
     image: 'https://wiki.warframe.com/images/BrilliantEidolonShard.png',
     description: { en: 'Drops from Gantulyst (2 per kill). Mid-tier Eidolon shard with bigger Focus yield.', 'pt-BR': 'Cai de Gantulyst (2 por kill). Fragmento Eidolon de tier médio com rendimento maior em Focus.' },
-    usedFor: { en: 'Focus conversion (high yield), Quills standing, top Operator Arcanes.', 'pt-BR': 'Conversão pra Focus (alto rendimento), standing dos Quills, Arcanes de Operador top.' },
+    usedFor: { en: 'Focus conversion (high yield), Quills standing, top Operator Arcanes.', 'pt-BR': 'Conversão pra Focus (alto rendimento), reputação dos Plumas, Arcanes de Operador top.' },
   },
   radiant_eidolon_shard: {
     name: { en: 'Radiant Eidolon Shard', 'pt-BR': 'Fragmento Radiante de Eidolon' },
@@ -102574,15 +103193,15 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['sentient-drops'],
     image: 'https://wiki.warframe.com/images/RadiantEidolonShard.png',
     description: { en: 'Drops from Hydrolyst (3 per kill). Top-tier Eidolon shard — biggest Focus yield available.', 'pt-BR': 'Cai de Hydrolyst (3 por kill). Fragmento Eidolon top tier — maior rendimento de Focus disponível.' },
-    usedFor: { en: 'Bulk Focus conversion, Quills top-rank arcanes, MR-gated Operator unlocks.', 'pt-BR': 'Conversão de Focus em massa, arcanes top rank dos Quills, desbloqueios MR-gated do Operador.' },
+    usedFor: { en: 'Bulk Focus conversion, Quills top-rank arcanes, MR-gated Operator unlocks.', 'pt-BR': 'Conversão de Focus em massa, arcanes top rank dos Plumas, desbloqueios MR-gated do Operador.' },
   },
   pathos_clamps: {
     name: { en: 'Pathos Clamps', 'pt-BR': 'Pinças de Pathos' },
     rarity: 'special', category: 'currency', spoilerLocked: true,
     location: 'duviri', sources: ['boss-drops'],
     image: 'https://wiki.warframe.com/images/PathosClamp.png',
-    description: { en: 'Reward for defeating the Orowyrm at the end of a Duviri spiral. ~1 per spiral on Normal, 2 on Steel Path.', 'pt-BR': 'Recompensa por derrotar a Orowyrm no fim de um espiral de Duviri. ~1 por espiral no Normal, 2 no Steel Path.' },
-    usedFor: { en: 'Acrithis shop in Dormizone — Incarnon Genesis adapters, intrinsics, Kullervo blueprint.', 'pt-BR': 'Loja da Acrithis na Dormizone — adaptadores Incarnon Genesis, intrinsics, blueprint do Kullervo.' },
+    description: { en: 'Reward for defeating the Orowyrm at the end of a Duviri spiral. ~1 per spiral on Normal, 2 on Steel Path.', 'pt-BR': 'Recompensa por derrotar a Orowyrm no fim de um espiral de Duviri. ~1 por espiral no Normal, 2 no Percurso de Aço.' },
+    usedFor: { en: 'Acrithis shop in Dormizone — Incarnon Genesis adapters, intrinsics, Kullervo blueprint.', 'pt-BR': 'Loja da Acrithis na Dormizone — adaptadores Incarnon Genesis, intrinsics, diagrama do Kullervo.' },
   },
   cetus_wisp: {
     name: { en: 'Cetus Wisp', 'pt-BR': 'Wisp de Cetus' },
@@ -102590,7 +103209,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['open-world-materials'],
     image: 'https://wiki.warframe.com/images/CetusWisp.png',
     description: { en: 'Floating wisp found on water edges in Plains of Eidolon, mostly at night. Rare — bring a resource booster.', 'pt-BR': 'Wisp flutuante encontrada nas bordas de água nas Plains of Eidolon, principalmente à noite. Raro — leve um resource booster.' },
-    usedFor: { en: 'Amps, Operator Arcanes (Magus/Virtuos), many quest crafts, and Mining drill upgrades.', 'pt-BR': 'Amps, Arcanes de Operador (Magus/Virtuos), muitos crafts de quests e upgrades de drill de mineração.' },
+    usedFor: { en: 'Amps, Operator Arcanes (Magus/Virtuos), many quest crafts, and Mining drill upgrades.', 'pt-BR': 'Amps, Arcanes de Operador (Magus/Virtuos), muitos crafts de jornadas e upgrades de drill de mineração.' },
   },
   grokdrul: {
     name: { en: 'Grokdrul', 'pt-BR': 'Grokdrul' },
@@ -102614,7 +103233,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['open-world-materials'],
     image: 'https://wiki.warframe.com/images/Maprico.png',
     description: { en: 'Bright orange fruit growing on trees in Plains of Eidolon. Visible during day or night.', 'pt-BR': 'Fruta alaranjada que cresce em árvores nas Plains of Eidolon. Visível dia ou noite.' },
-    usedFor: { en: 'Ostron syndicate offerings, Hok\'s mod packs, and standing for Cetus rep.', 'pt-BR': 'Ofertas do sindicato Ostron, mod packs do Hok, e standing pra reputação em Cetus.' },
+    usedFor: { en: 'Ostron syndicate offerings, Hok\'s mod packs, and standing for Cetus rep.', 'pt-BR': 'Ofertas do sindicato Ostron, mod packs do Hok, e reputação pra reputação em Cetus.' },
   },
   nistlepod: {
     name: { en: 'Nistlepod', 'pt-BR': 'Nistlepod' },
@@ -102622,7 +103241,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['open-world-materials'],
     image: 'https://wiki.warframe.com/images/Nistlepod.png',
     description: { en: 'Mushroom-like growth found near water and trees on the Plains. Gather alongside Maprico.', 'pt-BR': 'Cogumelo encontrado perto de água e árvores nas Plains. Colete junto com Maprico.' },
-    usedFor: { en: 'Ostron offerings, Konzu bounties standing, Hok\'s crafts.', 'pt-BR': 'Ofertas dos Ostron, standing de bounties do Konzu, crafts do Hok.' },
+    usedFor: { en: 'Ostron offerings, Konzu bounties standing, Hok\'s crafts.', 'pt-BR': 'Ofertas dos Ostron, reputação de bounties do Konzu, crafts do Hok.' },
   },
   condroc_wing: {
     name: { en: 'Condroc Wing', 'pt-BR': 'Asa de Condroc' },
@@ -102646,14 +103265,14 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['bounty-drops'],
     image: 'https://wiki.warframe.com/images/BreathOfTheEidolon.png',
     description: { en: 'Bounty reward from Cetus bounties (mainly Tier 4-5). Used in Operator Amp crafting.', 'pt-BR': 'Recompensa de bounty em Cetus (principalmente Tier 4-5). Usado em craft de Amps de Operador.' },
-    usedFor: { en: 'Operator Amps via Onkko/Little Duck, and Quills standing offerings.', 'pt-BR': 'Amps de Operador via Onkko/Little Duck, e ofertas de standing dos Quills.' },
+    usedFor: { en: 'Operator Amps via Onkko/Little Duck, and Quills standing offerings.', 'pt-BR': 'Amps de Operador via Onkko/Little Duck, e ofertas de reputação dos Plumas.' },
   },
   narmer_isoplast: {
     name: { en: 'Narmer Isoplast', 'pt-BR': 'Isoplast de Narmer' },
     rarity: 'rare', category: 'open-world',
     location: 'plains-of-eidolon', sources: ['bounty-drops'],
     image: 'https://wiki.warframe.com/images/NarmerIsoplast.png',
-    description: { en: 'Bounty drop from Narmer-themed Plains/Vallis bounties (rotation C). Required for several quest follow-ups.', 'pt-BR': 'Drop de bounties Narmer nas Plains/Vallis (rotação C). Necessário pra várias quests pós-New War.' },
+    description: { en: 'Bounty drop from Narmer-themed Plains/Vallis bounties (rotation C). Required for several quest follow-ups.', 'pt-BR': 'Drop de bounties Narmer nas Plains/Vallis (rotação C). Necessário pra várias jornadas pós-New War.' },
     usedFor: { en: 'Caliban parts, Praedos crafting, and Veilbreaker-related items.', 'pt-BR': 'Partes do Caliban, craft do Praedos e itens relacionados ao Veilbreaker.' },
   },
   hemocyte_cystolith: {
@@ -102662,7 +103281,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['event-currency'],
     image: 'https://wiki.warframe.com/images/HemocyteCystolith.png',
     description: { en: 'Event-exclusive drop from Hemocytes during Plague Star (rotating event). Used in Plague Star reward crafts.', 'pt-BR': 'Drop exclusivo de evento dos Hemocytes durante Plague Star (evento rotativo). Usado em crafts de recompensas do Plague Star.' },
-    usedFor: { en: 'Plague Star zaw parts, Forma blueprints, and Ghoulsaw event drops.', 'pt-BR': 'Partes de zaw do Plague Star, blueprints de Forma e drops de evento do Ghoulsaw.' },
+    usedFor: { en: 'Plague Star zaw parts, Forma blueprints, and Ghoulsaw event drops.', 'pt-BR': 'Partes de zaw do Plague Star, diagramas de Forma e drops de evento do Ghoulsaw.' },
   },
   nakak_pearl: {
     name: { en: 'Nakak Pearl', 'pt-BR': 'Pérola de Nakak' },
@@ -102670,7 +103289,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['event-currency'],
     image: 'https://wiki.warframe.com/images/NakakPearl.png',
     description: { en: 'Event-exclusive currency from Plague Star. Trade with Nakak in Cetus during the event for unique offerings.', 'pt-BR': 'Moeda exclusiva de evento do Plague Star. Troque com a Nakak em Cetus durante o evento por ofertas únicas.' },
-    usedFor: { en: 'Plague Star mods, cosmetics, and Ghoulsaw blueprint via Nakak.', 'pt-BR': 'Mods do Plague Star, cosméticos e blueprint do Ghoulsaw com a Nakak.' },
+    usedFor: { en: 'Plague Star mods, cosmetics, and Ghoulsaw blueprint via Nakak.', 'pt-BR': 'Mods do Plague Star, cosméticos e diagrama do Ghoulsaw com a Nakak.' },
   },
   intact_sentient_core: {
     name: { en: 'Intact Sentient Core', 'pt-BR': 'Núcleo Sentiente Intacto' },
@@ -102678,7 +103297,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['sentient-drops'],
     image: 'https://wiki.warframe.com/images/IntactSentientCore.png',
     description: { en: 'Drops from Vomvalysts and smaller Sentients on the Plains at night. The lowest of 3 Sentient Core tiers.', 'pt-BR': 'Cai de Vomvalysts e Sentients menores nas Plains à noite. O menor dos 3 tiers de Núcleo Sentiente.' },
-    usedFor: { en: 'Quills standing — entry-level offerings and unlocks.', 'pt-BR': 'Standing dos Quills — ofertas iniciais e desbloqueios.' },
+    usedFor: { en: 'Quills standing — entry-level offerings and unlocks.', 'pt-BR': 'Reputação dos Plumas — ofertas iniciais e desbloqueios.' },
   },
   exceptional_sentient_core: {
     name: { en: 'Exceptional Sentient Core', 'pt-BR': 'Núcleo Sentiente Excepcional' },
@@ -102686,7 +103305,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['sentient-drops'],
     image: 'https://wiki.warframe.com/images/ExceptionalSentientCore.png',
     description: { en: 'Mid-tier Sentient Core. Drops from larger Sentients on the Plains at night and from Eidolon limb breaks.', 'pt-BR': 'Tier médio de Núcleo Sentiente. Cai de Sentients maiores nas Plains à noite e quando se quebra os membros dos Eidolons.' },
-    usedFor: { en: 'Quills standing for mid-tier Operator Amps and Arcanes.', 'pt-BR': 'Standing dos Quills pra Amps e Arcanes de Operador de tier médio.' },
+    usedFor: { en: 'Quills standing for mid-tier Operator Amps and Arcanes.', 'pt-BR': 'Reputação dos Plumas pra Amps e Arcanes de Operador de tier médio.' },
   },
   flawless_sentient_core: {
     name: { en: 'Flawless Sentient Core', 'pt-BR': 'Núcleo Sentiente Impecável' },
@@ -102694,7 +103313,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['sentient-drops'],
     image: 'https://wiki.warframe.com/images/FlawlessSentientCore.png',
     description: { en: 'Top-tier Sentient Core. Drops from Eidolons (limb breaks) and the highest-tier Sentients during Plains night.', 'pt-BR': 'Top tier de Núcleo Sentiente. Cai de Eidolons (quebra de membros) e dos Sentients top da noite nas Plains.' },
-    usedFor: { en: 'Quills standing for top-tier offerings (Magus Lockdown, Virtuos Shadow, etc.).', 'pt-BR': 'Standing dos Quills pra ofertas top tier (Magus Lockdown, Virtuos Shadow, etc.).' },
+    usedFor: { en: 'Quills standing for top-tier offerings (Magus Lockdown, Virtuos Shadow, etc.).', 'pt-BR': 'Reputação dos Plumas pra ofertas top tier (Magus Lockdown, Virtuos Shadow, etc.).' },
   },
   thermal_sludge: {
     name: { en: 'Thermal Sludge', 'pt-BR': 'Lodo Térmico' },
@@ -102726,7 +103345,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['open-world-materials'],
     image: 'https://wiki.warframe.com/images/MytocardiaSpore.png',
     description: { en: 'Fungus spore harvested from Mytocardia growth in the colder regions of Orb Vallis. Also drops in Cambion Drift.', 'pt-BR': 'Esporo fúngico coletado de Mytocardia em regiões mais frias do Orb Vallis. Também cai no Cambion Drift.' },
-    usedFor: { en: 'Kitgun parts, Moa companion crafts, Solaris standing offerings.', 'pt-BR': 'Partes de Kitgun, crafts de companion Moa, ofertas de standing dos Solaris.' },
+    usedFor: { en: 'Kitgun parts, Moa companion crafts, Solaris standing offerings.', 'pt-BR': 'Partes de Kitgun, crafts de companion Moa, ofertas de reputação dos Solaris.' },
   },
   advances_debt_bond: {
     name: { en: 'Advances Debt-Bond', 'pt-BR': 'Título de Dívida Avançado' },
@@ -102734,7 +103353,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['bounty-drops'],
     image: 'https://wiki.warframe.com/images/AdvancesDebt-Bond.png',
     description: { en: 'One of 5 Debt-Bond types from Orb Vallis bounties. Drops from low-tier bounties.', 'pt-BR': 'Um dos 5 tipos de Título de Dívida do Orb Vallis. Cai de bounties de tier baixo.' },
-    usedFor: { en: 'Solaris United standing rank-up (requires increasing combinations of debt bonds).', 'pt-BR': 'Rank up de standing dos Solaris United (exige combinações crescentes de títulos de dívida).' },
+    usedFor: { en: 'Solaris United standing rank-up (requires increasing combinations of debt bonds).', 'pt-BR': 'Rank up de reputação dos Solaris United (exige combinações crescentes de títulos de dívida).' },
   },
   familial_debt_bond: {
     name: { en: 'Familial Debt-Bond', 'pt-BR': 'Título de Dívida Familiar' },
@@ -102742,7 +103361,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['bounty-drops'],
     image: 'https://wiki.warframe.com/images/FamilialDebt-Bond.png',
     description: { en: 'One of 5 Debt-Bond types from Orb Vallis bounties. Mid-tier bounty reward.', 'pt-BR': 'Um dos 5 tipos de Título de Dívida do Orb Vallis. Recompensa de bounty tier médio.' },
-    usedFor: { en: 'Solaris United standing rank-up at higher tiers.', 'pt-BR': 'Rank up de standing dos Solaris United em tiers mais altos.' },
+    usedFor: { en: 'Solaris United standing rank-up at higher tiers.', 'pt-BR': 'Rank up de reputação dos Solaris United em tiers mais altos.' },
   },
   medical_debt_bond: {
     name: { en: 'Medical Debt-Bond', 'pt-BR': 'Título de Dívida Médico' },
@@ -102750,7 +103369,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['bounty-drops'],
     image: 'https://wiki.warframe.com/images/MedicalDebt-Bond.png',
     description: { en: 'One of 5 Debt-Bond types from Orb Vallis bounties. Mid-tier.', 'pt-BR': 'Um dos 5 tipos de Título de Dívida do Orb Vallis. Tier médio.' },
-    usedFor: { en: 'Solaris United standing rank-up at higher tiers.', 'pt-BR': 'Rank up de standing dos Solaris United em tiers mais altos.' },
+    usedFor: { en: 'Solaris United standing rank-up at higher tiers.', 'pt-BR': 'Rank up de reputação dos Solaris United em tiers mais altos.' },
   },
   shelter_debt_bond: {
     name: { en: 'Shelter Debt-Bond', 'pt-BR': 'Título de Dívida de Abrigo' },
@@ -102766,7 +103385,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['bounty-drops'],
     image: 'https://wiki.warframe.com/images/TrainingDebt-Bond.png',
     description: { en: 'Low-tier Debt-Bond from Orb Vallis bounties. Common rotation A reward.', 'pt-BR': 'Título de Dívida de tier baixo de bounties do Orb Vallis. Recompensa comum da rotação A.' },
-    usedFor: { en: 'Solaris United rank-up at entry levels.', 'pt-BR': 'Rank up de standing dos Solaris United nos níveis iniciais.' },
+    usedFor: { en: 'Solaris United rank-up at entry levels.', 'pt-BR': 'Rank up de reputação dos Solaris United nos níveis iniciais.' },
   },
   atmo_systems: {
     name: { en: 'Atmo Systems', 'pt-BR': 'Sistemas Atmo' },
@@ -102774,7 +103393,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['heist-drops'],
     image: 'https://wiki.warframe.com/images/AtmoSystems.png',
     description: { en: 'Drops from Profit-Taker Orb heist (Phase 2) and select Exploiter Orb activities.', 'pt-BR': 'Cai da heist da Profit-Taker Orb (Fase 2) e algumas atividades da Exploiter Orb.' },
-    usedFor: { en: 'Vox Solaris standing, several arcane and amp upgrade unlocks.', 'pt-BR': 'Standing dos Vox Solaris, vários desbloqueios de arcanes e upgrades de amp.' },
+    usedFor: { en: 'Vox Solaris standing, several arcane and amp upgrade unlocks.', 'pt-BR': 'Reputação dos Vox Solaris, vários desbloqueios de arcanes e upgrades de amp.' },
   },
   gyromag_systems: {
     name: { en: 'Gyromag Systems', 'pt-BR': 'Sistemas Gyromag' },
@@ -102782,7 +103401,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['heist-drops'],
     image: 'https://wiki.warframe.com/images/GyromagSystems.png',
     description: { en: 'Drops from Profit-Taker Orb heist (Phase 3). Mid-tier heist material.', 'pt-BR': 'Cai da heist da Profit-Taker Orb (Fase 3). Material de heist tier médio.' },
-    usedFor: { en: 'Vox Solaris standing and operator Arcane purchases.', 'pt-BR': 'Standing dos Vox Solaris e compras de Arcanes de operador.' },
+    usedFor: { en: 'Vox Solaris standing and operator Arcane purchases.', 'pt-BR': 'Reputação dos Vox Solaris e compras de Arcanes de operador.' },
   },
   repeller_systems: {
     name: { en: 'Repeller Systems', 'pt-BR': 'Sistemas Repeller' },
@@ -102798,7 +103417,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['raknoid-drops'],
     image: 'https://wiki.warframe.com/images/CaldaToroid.png',
     description: { en: 'Drops from Coolant Raknoids in the Temple of Profit (Orb Vallis). Caves nearby are good for spawns.', 'pt-BR': 'Cai de Coolant Raknoids no Templo do Lucro (Orb Vallis). Cavernas próximas são bons spawns.' },
-    usedFor: { en: 'Vox Solaris standing offerings, Arcane purchases.', 'pt-BR': 'Ofertas de standing dos Vox Solaris, compras de Arcanes.' },
+    usedFor: { en: 'Vox Solaris standing offerings, Arcane purchases.', 'pt-BR': 'Ofertas de reputação dos Vox Solaris, compras de Arcanes.' },
   },
   sola_toroid: {
     name: { en: 'Sola Toroid', 'pt-BR': 'Toroide Sola' },
@@ -102806,7 +103425,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['raknoid-drops'],
     image: 'https://wiki.warframe.com/images/SolaToroid.png',
     description: { en: 'Drops from Raknoids near the Enrichment Labs (Orb Vallis). Often farmed at the same location for hours.', 'pt-BR': 'Cai de Raknoids perto dos Enrichment Labs (Orb Vallis). Geralmente farmado no mesmo lugar por horas.' },
-    usedFor: { en: 'Vox Solaris standing offerings.', 'pt-BR': 'Ofertas de standing dos Vox Solaris.' },
+    usedFor: { en: 'Vox Solaris standing offerings.', 'pt-BR': 'Ofertas de reputação dos Vox Solaris.' },
   },
   vega_toroid: {
     name: { en: 'Vega Toroid', 'pt-BR': 'Toroide Vega' },
@@ -102814,7 +103433,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['raknoid-drops'],
     image: 'https://wiki.warframe.com/images/VegaToroid.png',
     description: { en: 'Drops from Raknoids near the Spaceport in Orb Vallis. Bring a stealth frame for sustained farms.', 'pt-BR': 'Cai de Raknoids perto do Spaceport no Orb Vallis. Leve uma frame de stealth pra farms sustentados.' },
-    usedFor: { en: 'Vox Solaris standing offerings.', 'pt-BR': 'Ofertas de standing dos Vox Solaris.' },
+    usedFor: { en: 'Vox Solaris standing offerings.', 'pt-BR': 'Ofertas de reputação dos Vox Solaris.' },
   },
   crisma_toroid: {
     name: { en: 'Crisma Toroid', 'pt-BR': 'Toroide Crisma' },
@@ -103022,7 +103641,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/StarAmarast.png',
     description: { en: 'Cut Amarast from Smokefinger. Used in Kitgun crafts and Moa parts.', 'pt-BR': 'Amarast lapidado com o Smokefinger. Usado em crafts de Kitgun e partes de Moa.' },
-    usedFor: { en: 'Kitgun parts, Moa companion crafts, Solaris standing offerings.', 'pt-BR': 'Partes de Kitgun, crafts de companion Moa, ofertas de standing dos Solaris.' },
+    usedFor: { en: 'Kitgun parts, Moa companion crafts, Solaris standing offerings.', 'pt-BR': 'Partes de Kitgun, crafts de companion Moa, ofertas de reputação dos Solaris.' },
   },
   noctrul: {
     name: { en: 'Noctrul', 'pt-BR': 'Noctrul' },
@@ -103086,39 +103705,39 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['isolation-vault'],
     image: 'https://wiki.warframe.com/images/Scintillant.png',
     description: { en: 'Rare floating yellow drone resource in Cambion Drift, often at night and in Isolation Vaults. Shoot to collect.', 'pt-BR': 'Recurso raro de drone amarelo flutuante no Cambion Drift, geralmente à noite e em Isolation Vaults. Atire pra coletar.' },
-    usedFor: { en: 'Necramech crafts (required for Voidrig/Bonewidow blueprint) and Helminth Invigorations.', 'pt-BR': 'Crafts de Necramech (obrigatório pra blueprint do Voidrig/Bonewidow) e Invigorações do Helminth.' },
+    usedFor: { en: 'Necramech crafts (required for Voidrig/Bonewidow blueprint) and Helminth Invigorations.', 'pt-BR': 'Crafts de Necramech (obrigatório pra diagrama do Voidrig/Bonewidow) e Invigorações do Helminth.' },
   },
   damaged_necramech_engine: {
     name: { en: 'Damaged Necramech Engine', 'pt-BR': 'Motor Necramech Danificado' },
     rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/DamagedNecramechEngine.png',
-    description: { en: 'Drops from Necramech kills in Isolation Vaults (Cambion Drift). One of 6 damaged parts for Voidrig blueprint.', 'pt-BR': 'Cai de kills de Necramech em Isolation Vaults (Cambion Drift). Uma das 6 partes danificadas pra blueprint do Voidrig.' },
-    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Blueprint do Necramech Voidrig (parte obrigatória).' },
+    description: { en: 'Drops from Necramech kills in Isolation Vaults (Cambion Drift). One of 6 damaged parts for Voidrig blueprint.', 'pt-BR': 'Cai de kills de Necramech em Isolation Vaults (Cambion Drift). Uma das 6 partes danificadas pra diagrama do Voidrig.' },
+    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Diagrama do Necramech Voidrig (parte obrigatória).' },
   },
   damaged_necramech_pod: {
     name: { en: 'Damaged Necramech Pod', 'pt-BR': 'Cápsula Necramech Danificada' },
     rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/DamagedNecramechPod.png',
-    description: { en: 'Drops from Necramechs in Isolation Vaults. Part of Voidrig blueprint requirements.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Parte dos requisitos da blueprint do Voidrig.' },
-    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Blueprint do Necramech Voidrig (parte obrigatória).' },
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Part of Voidrig blueprint requirements.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Parte dos requisitos da diagrama do Voidrig.' },
+    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Diagrama do Necramech Voidrig (parte obrigatória).' },
   },
   damaged_necramech_casing: {
     name: { en: 'Damaged Necramech Casing', 'pt-BR': 'Carcaça Necramech Danificada' },
     rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/DamagedNecramechCasing.png',
-    description: { en: 'Drops from Necramechs in Isolation Vaults. Required for Voidrig blueprint.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Obrigatória pra blueprint do Voidrig.' },
-    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Blueprint do Necramech Voidrig (parte obrigatória).' },
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Required for Voidrig blueprint.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Obrigatória pra diagrama do Voidrig.' },
+    usedFor: { en: 'Voidrig Necramech blueprint (required part).', 'pt-BR': 'Diagrama do Necramech Voidrig (parte obrigatória).' },
   },
   damaged_necramech_weapon_pod: {
     name: { en: 'Damaged Necramech Weapon Pod', 'pt-BR': 'Cápsula de Arma Necramech Danificada' },
     rarity: 'uncommon', category: 'open-world', spoilerLocked: true,
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/DamagedNecramechWeaponPod.png',
-    description: { en: 'Drops from Necramechs in Isolation Vaults. Used in Mausolon/Cortege weapon blueprints.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Usada em blueprints de armas Mausolon/Cortege.' },
-    usedFor: { en: 'Necramech weapon (Mausolon, Cortege) blueprint requirements.', 'pt-BR': 'Requisitos de blueprint de armas de Necramech (Mausolon, Cortege).' },
+    description: { en: 'Drops from Necramechs in Isolation Vaults. Used in Mausolon/Cortege weapon blueprints.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Usada em diagramas de armas Mausolon/Cortege.' },
+    usedFor: { en: 'Necramech weapon (Mausolon, Cortege) blueprint requirements.', 'pt-BR': 'Requisitos de diagrama de armas de Necramech (Mausolon, Cortege).' },
   },
   damaged_necramech_weapon_barrel: {
     name: { en: 'Damaged Necramech Weapon Barrel', 'pt-BR': 'Cano de Arma Necramech Danificado' },
@@ -103126,7 +103745,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/DamagedNecramechWeaponBarrel.png',
     description: { en: 'Drops from Necramechs in Isolation Vaults. Used in Necramech weapon crafts.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Usado em crafts de armas de Necramech.' },
-    usedFor: { en: 'Mausolon/Cortege weapon blueprints.', 'pt-BR': 'Blueprints de armas Mausolon/Cortege.' },
+    usedFor: { en: 'Mausolon/Cortege weapon blueprints.', 'pt-BR': 'Diagramas de armas Mausolon/Cortege.' },
   },
   damaged_necramech_weapon_receiver: {
     name: { en: 'Damaged Necramech Weapon Receiver', 'pt-BR': 'Receptor de Arma Necramech Danificado' },
@@ -103134,7 +103753,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/DamagedNecramechWeaponReceiver.png',
     description: { en: 'Drops from Necramechs in Isolation Vaults. Used in Necramech weapon crafts.', 'pt-BR': 'Cai de Necramechs em Isolation Vaults. Usado em crafts de armas de Necramech.' },
-    usedFor: { en: 'Necramech weapon blueprints (Mausolon, Cortege, Morgha).', 'pt-BR': 'Blueprints de armas de Necramech (Mausolon, Cortege, Morgha).' },
+    usedFor: { en: 'Necramech weapon blueprints (Mausolon, Cortege, Morgha).', 'pt-BR': 'Diagramas de armas de Necramech (Mausolon, Cortege, Morgha).' },
   },
   connla_sprout: {
     name: { en: 'Connla Sprout', 'pt-BR': 'Broto de Connla' },
@@ -103216,7 +103835,7 @@ const RESOURCES = {
     rarity: 'special', category: 'currency', spoilerLocked: true,
     location: 'star-chart', sources: ['special', 'navigation-currency'],
     image: 'https://wiki.warframe.com/images/ZenithGranumCrown.png',
-    description: { en: 'Drops from Tier 3 Treasurers (Steel Path Corpus missions). Unlocks the Tier 3 Granum Void.', 'pt-BR': 'Cai de Tesoureiros Tier 3 (missões Corpus Steel Path). Desbloqueia a Granum Void Tier 3.' },
+    description: { en: 'Drops from Tier 3 Treasurers (Steel Path Corpus missions). Unlocks the Tier 3 Granum Void.', 'pt-BR': 'Cai de Tesoureiros Tier 3 (missões Corpus Percurso de Aço). Desbloqueia a Granum Void Tier 3.' },
     usedFor: { en: 'Tier 3 Granum Void — Protea Prime parts, top-tier Granum rewards.', 'pt-BR': 'Granum Void Tier 3 — partes da Protea Prime, recompensas Granum top tier.' },
   },
   adramal_alloy: {
@@ -103224,7 +103843,7 @@ const RESOURCES = {
     rarity: 'uncommon', category: 'uncommon',
     location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
     image: 'https://wiki.warframe.com/images/AdramalAlloy.png',
-    description: { en: 'Refined alloy crafted in the Foundry from Adramalium. Blueprint from Otak (Rank 0). Yields 20 per build.', 'pt-BR': 'Liga refinada criada na Foundry a partir de Adramalium. Blueprint com Otak (Rank 0). Rende 20 por build.' },
+    description: { en: 'Refined alloy crafted in the Foundry from Adramalium. Blueprint from Otak (Rank 0). Yields 20 per build.', 'pt-BR': 'Liga refinada criada na Foundry a partir de Adramalium. Diagrama com Otak (Rank 0). Rende 20 por build.' },
     usedFor: { en: 'Used for Necramech parts (Voidrig, Bonewidow), Entrati weapons (Cortege, Morgha, Trumna, Zymos), Kitguns and the Helminth Segment.', 'pt-BR': 'Usada em pecas de Necramech (Voidrig, Bonewidow), armas Entrati (Cortege, Morgha, Trumna, Zymos), Kitguns e no Helminth Segment.' },
   },
   adramalium: {
@@ -103313,7 +103932,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'star-chart', sources: ['special', 'warframe-currency'],
     image: 'https://wiki.warframe.com/images/Atramentum.png',
-    description: { en: 'Special currency from Follies Hunt missions at Vesper Relay. Drops 15 per run, 25 on Steel Path, plus Atramentum Balloons that must be shot.', 'pt-BR': 'Moeda especial das missoes Follies Hunt no Vesper Relay. Cai 15 por run, 25 no Steel Path, mais Atramentum Balloons que precisam ser atirados.' },
+    description: { en: 'Special currency from Follies Hunt missions at Vesper Relay. Drops 15 per run, 25 on Steel Path, plus Atramentum Balloons that must be shot.', 'pt-BR': 'Moeda especial das missoes Follies Hunt no Vesper Relay. Cai 15 por run, 25 no Percurso de Aço, mais Atramentum Balloons que precisam ser atirados.' },
     usedFor: { en: 'Spent at Aspirant Zorba for the Follie warframe, Enkaus weapon, Truths Flame mod, Chromatic Atramentum, and cosmetics.', 'pt-BR': 'Gasto com Aspirant Zorba pela warframe Follie, arma Enkaus, mod Truths Flame, Chromatic Atramentum e cosmeticos.' },
   },
   aucrux_capacitors: {
@@ -103339,7 +103958,7 @@ const RESOURCES = {
     location: 'star-chart', sources: ['special', 'warframe-currency'],
     image: 'https://wiki.warframe.com/images/BeatingHeartstrings.png',
     description: { en: 'Rare Techrot growth awarded for completing a rotation of Stage Defense at Solstice Square, Hollvania. Yields 4 to 9 per rotation.', 'pt-BR': 'Crescimento Techrot raro ganho ao completar uma rotacao de Stage Defense em Solstice Square, Hollvania. Rende de 4 a 9 por rotacao.' },
-    usedFor: { en: 'Spent at Flare Varleon for Temple warframe and Riot-848 secondary blueprints, music decorations, and the Blazing Revolutionary Honoria.', 'pt-BR': 'Gasto com Flare Varleon pelos blueprints da Temple e da Riot-848, decoracoes musicais e a skin Blazing Revolutionary da Honoria.' },
+    usedFor: { en: 'Spent at Flare Varleon for Temple warframe and Riot-848 secondary blueprints, music decorations, and the Blazing Revolutionary Honoria.', 'pt-BR': 'Gasto com Flare Varleon pelos diagramas da Temple e da Riot-848, decoracoes musicais e a skin Blazing Revolutionary da Honoria.' },
   },
   belric_crystal_fragment: {
     name: { en: 'Belric Crystal Fragment', 'pt-BR': 'Belric Crystal Fragment' },
@@ -103395,7 +104014,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['fishing', 'junk'],
     image: 'https://wiki.warframe.com/images/Boot.png',
     description: { en: 'Junk item caught while fishing in Plains of Eidolon by grazing a fish hitbox or hitting the floor. Fixed 4.0kg weight and Easter egg reference.', 'pt-BR': 'Item de lixo pescado nas Plains of Eidolon ao raspar o hitbox de um peixe ou acertar o chao. Peso fixo de 4.0kg e referencia easter egg.' },
-    usedFor: { en: 'Crafts the Boot Trophy Orbiter decoration (blueprint from Fisher Hai-Luk, Surah rank). Can also be sold for 400 Credits.', 'pt-BR': 'Cria a decoracao Boot Trophy para o Orbiter (blueprint com Fisher Hai-Luk, rank Surah). Tambem pode ser vendido por 400 Creditos.' },
+    usedFor: { en: 'Crafts the Boot Trophy Orbiter decoration (blueprint from Fisher Hai-Luk, Surah rank). Can also be sold for 400 Credits.', 'pt-BR': 'Cria a decoracao Boot Trophy para o Orbiter (diagrama com Fisher Hai-Luk, rank Surah). Tambem pode ser vendido por 400 Creditos.' },
   },
   borica: {
     name: { en: 'Borica', 'pt-BR': 'Borica' },
@@ -103418,7 +104037,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
     image: 'https://wiki.warframe.com/images/CabochonEmbolos.png',
-    description: { en: 'Refined gem crafted in the Foundry from Embolos. Blueprint from Otak (Rank 3). Yields 3 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Embolos. Blueprint com Otak (Rank 3). Rende 3 por build.' },
+    description: { en: 'Refined gem crafted in the Foundry from Embolos. Blueprint from Otak (Rank 3). Yields 3 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Embolos. Diagrama com Otak (Rank 3). Rende 3 por build.' },
     usedFor: { en: 'Used for Arum Spinosa, Cortege/Morgha/Trumna stocks, and Lavos Systems.', 'pt-BR': 'Usada em Arum Spinosa, stocks de Cortege/Morgha/Trumna, e Lavos Systems.' },
   },
   cephalite_resonance: {
@@ -103458,15 +104077,15 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/ChitinousHusk.png',
-    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
-    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to lure Infested and progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca usada para atrair Infestados e avancar a quest.' },
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da jornada The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to lure Infested and progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca usada para atrair Infestados e avancar a jornada.' },
   },
   chroma_mark: {
     name: { en: 'Chroma Mark', 'pt-BR': 'Chroma Mark' },
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/ChromaMark64.png',
-    description: { en: 'Quest item from The New Strange, built in the Foundry after scanning the hostile Chroma at the Arcane Machine on Alator, Mars.', 'pt-BR': 'Item da quest The New Strange, construido na Forja apos escanear o Chroma hostil na Maquina Arcana em Alator, Marte.' },
+    description: { en: 'Quest item from The New Strange, built in the Foundry after scanning the hostile Chroma at the Arcane Machine on Alator, Mars.', 'pt-BR': 'Item da jornada The New Strange, construido na Forja apos escanear o Chroma hostil na Maquina Arcana em Alator, Marte.' },
     usedFor: { en: 'Combines Scorched Beacon and Chroma Signal to pinpoint Chroma, unlocking the final mission on Ose, Europa.', 'pt-BR': 'Combina Scorched Beacon e Chroma Signal para localizar Chroma, desbloqueando a missao final em Ose, Europa.' },
   },
   chroma_signal: {
@@ -103474,7 +104093,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/ChromaSignal64.png',
-    description: { en: 'Quest blueprint from The New Strange, rewarded from the Mobile Defense mission on Morax, Europa.', 'pt-BR': 'Projeto da quest The New Strange, obtido na missao de Defesa Movel em Morax, Europa.' },
+    description: { en: 'Quest blueprint from The New Strange, rewarded from the Mobile Defense mission on Morax, Europa.', 'pt-BR': 'Projeto da jornada The New Strange, obtido na missao de Defesa Movel em Morax, Europa.' },
     usedFor: { en: 'Built in the Foundry to reveal Chroma as the source of the transmission; combined later into the Chroma Mark.', 'pt-BR': 'Construido na Forja para revelar Chroma como fonte da transmissao; depois combinado no Chroma Mark.' },
   },
   chromatic_atramentum: {
@@ -103532,7 +104151,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['fishing', 'junk'],
     image: 'https://wiki.warframe.com/images/Crewman%27sBoot.png',
     description: { en: 'Common Vallis fishing junk pulled up when grazing a Servofish hitbox or hitting the floor while fishing in Orb Vallis.', 'pt-BR': 'Lixo comum de pesca do Vallis obtido ao raspar a hitbox de um Servofish ou acertar o fundo durante a pesca no Orb Vallis.' },
-    usedFor: { en: 'Crafting the Boot Trophy decoration via The Business blueprint. Can also be sold for credits.', 'pt-BR': 'Crafting da decoração Boot Trophy via blueprint de The Business. Também pode ser vendido por créditos.' },
+    usedFor: { en: 'Crafting the Boot Trophy decoration via The Business blueprint. Can also be sold for credits.', 'pt-BR': 'Crafting da decoração Boot Trophy via diagrama de The Business. Também pode ser vendido por créditos.' },
   },
   crimzian: {
     name: { en: 'Crimzian', 'pt-BR': 'Crimzian' },
@@ -103540,7 +104159,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/Crimzian.png',
     description: { en: 'Raw gem mined from blue veins in Plains of Eidolon, with a bonus chance from red veins. Also drops from Thumpers.', 'pt-BR': 'Gema bruta minerada de veios azuis em Plains of Eidolon, com chance bonus em veios vermelhos. Tambem dropa de Thumpers.' },
-    usedFor: { en: 'Refined into Star Crimzian at the Foundry, or turned in to Old Man Suumbaat for 100 Ostron Standing each.', 'pt-BR': 'Refinado em Star Crimzian na Foundry, ou trocado com Old Man Suumbaat por 100 de Standing Ostron cada.' },
+    usedFor: { en: 'Refined into Star Crimzian at the Foundry, or turned in to Old Man Suumbaat for 100 Ostron Standing each.', 'pt-BR': 'Refinado em Star Crimzian na Foundry, ou trocado com Old Man Suumbaat por 100 de Reputação Ostron cada.' },
   },
   cryptographic_alu: {
     name: { en: 'Cryptographic ALU', 'pt-BR': 'Cryptographic ALU' },
@@ -103604,7 +104223,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['entrati-currency'],
     image: 'https://wiki.warframe.com/images/DaughterToken.png',
     description: { en: 'Entrati family token earned by trading fish products to Daughter, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao trocar produtos de peixe com a Daughter, achado na Drift, ou via opcao Mend the Family da Grandmother.' },
-    usedFor: { en: 'Traded to Grandmother for 500 Entrati Standing each or converted into Grandmother Tokens.', 'pt-BR': 'Trocado com a Grandmother por 500 de Entrati Standing cada, ou convertido em Grandmother Tokens.' },
+    usedFor: { en: 'Traded to Grandmother for 500 Entrati Standing each or converted into Grandmother Tokens.', 'pt-BR': 'Trocado com a Grandmother por 500 de Reputação Entrati cada, ou convertido em Grandmother Tokens.' },
   },
   dendrite_blastoma: {
     name: { en: 'Dendrite Blastoma', 'pt-BR': 'Dendrite Blastoma' },
@@ -103620,7 +104239,7 @@ const RESOURCES = {
     location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/Devar.png',
     description: { en: 'Raw gem mined from blue veins in Plains of Eidolon. Also drops from Thumpers.', 'pt-BR': 'Gema bruta minerada de veios azuis em Plains of Eidolon. Tambem dropa de Thumpers.' },
-    usedFor: { en: 'Refined into Esher Devar at the Foundry, or sold to Old Man Suumbaat for 50 Ostron Standing per gem.', 'pt-BR': 'Refinado em Esher Devar na Foundry, ou vendido para Old Man Suumbaat por 50 de Standing Ostron por gema.' },
+    usedFor: { en: 'Refined into Esher Devar at the Foundry, or sold to Old Man Suumbaat for 50 Ostron Standing per gem.', 'pt-BR': 'Refinado em Esher Devar na Foundry, ou vendido para Old Man Suumbaat por 50 de Reputação Ostron por gema.' },
   },
   devils_cap: {
     name: { en: 'Devil\'s Cap', 'pt-BR': 'Devil\'s Cap' },
@@ -103635,7 +104254,7 @@ const RESOURCES = {
     rarity: 'uncommon', category: 'uncommon',
     location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
     image: 'https://wiki.warframe.com/images/DevolvedNamalon.png',
-    description: { en: 'Refined ore crafted in the Foundry from Namalon. Blueprint from Otak (Rank 1). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Namalon. Blueprint com Otak (Rank 1). Rende 20 por build.' },
+    description: { en: 'Refined ore crafted in the Foundry from Namalon. Blueprint from Otak (Rank 1). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Namalon. Diagrama com Otak (Rank 1). Rende 20 por build.' },
     usedFor: { en: 'Used for Necramech parts (Voidrig, Bonewidow, Morgha, Cortege), Pulmonars, Quassus, and the Helminth Archon Shard Segment.', 'pt-BR': 'Usado em pecas de Necramech (Voidrig, Bonewidow, Morgha, Cortege), Pulmonars, Quassus, e no Helminth Archon Shard Segment.' },
   },
   dominus_aureus: {
@@ -103723,7 +104342,7 @@ const RESOURCES = {
     rarity: 'uncommon', category: 'uncommon',
     location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/EsherDevar.png',
-    description: { en: 'Refined gem crafted from 10 Devar in the Foundry (yields 10). Blueprint from Old Man Suumbaat at Offworlder rank.', 'pt-BR': 'Gema refinada criada com 10 Devar na Foundry (rende 10). Blueprint com Old Man Suumbaat no rank Offworlder.' },
+    description: { en: 'Refined gem crafted from 10 Devar in the Foundry (yields 10). Blueprint from Old Man Suumbaat at Offworlder rank.', 'pt-BR': 'Gema refinada criada com 10 Devar na Foundry (rende 10). Diagrama com Old Man Suumbaat no rank Offworlder.' },
     usedFor: { en: 'Used in Gara Systems, Xaku and Koumei components, Rahn/Raplak/Shwaak Prisms, several Zaw strikes, and Korrudo.', 'pt-BR': 'Usado em Gara Systems, componentes de Xaku e Koumei, Prismas Rahn/Raplak/Shwaak, varios golpes de Zaw, e Korrudo.' },
   },
   experimental_arc_relay: {
@@ -103747,7 +104366,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
     image: 'https://wiki.warframe.com/images/FacetedTiametrite.png',
-    description: { en: 'Refined gem crafted in the Foundry from Tiametrite. Blueprint from Otak (Rank 0). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Tiametrite. Blueprint com Otak (Rank 0). Rende 10 por build.' },
+    description: { en: 'Refined gem crafted in the Foundry from Tiametrite. Blueprint from Otak (Rank 0). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Tiametrite. Diagrama com Otak (Rank 0). Rende 10 por build.' },
     usedFor: { en: 'Used for Citrine Neuroptics, Voidrig Casing, Kitgun loaders, and the Xaku Kintsu Helmet.', 'pt-BR': 'Usada em Citrine Neuroptics, Voidrig Casing, loaders de Kitgun, e no Xaku Kintsu Helmet.' },
   },
   fate_pearl: {
@@ -103755,8 +104374,8 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'star-chart', sources: ['special', 'warframe-currency'],
     image: 'https://wiki.warframe.com/images/FatePearl.png',
-    description: { en: 'Special drop from the Oni boss at the end of Shrine Defense at Sayas Visions, Earth. Yields 14 to 18 per run, 20 to 24 on Steel Path.', 'pt-BR': 'Drop especial do chefe Oni ao fim do Shrine Defense em Sayas Visions, Terra. Rende 14 a 18 por run, 20 a 24 no Steel Path.' },
-    usedFor: { en: 'Spent at Koumeis Shrine in Cetus for Koumei warframe, Higasa and Amanata weapons, plus their augment mods on Steel Path.', 'pt-BR': 'Gasto no Shrine da Koumei em Cetus pela warframe Koumei, armas Higasa e Amanata e seus augment mods no Steel Path.' },
+    description: { en: 'Special drop from the Oni boss at the end of Shrine Defense at Sayas Visions, Earth. Yields 14 to 18 per run, 20 to 24 on Steel Path.', 'pt-BR': 'Drop especial do chefe Oni ao fim do Shrine Defense em Sayas Visions, Terra. Rende 14 a 18 por run, 20 a 24 no Percurso de Aço.' },
+    usedFor: { en: 'Spent at Koumeis Shrine in Cetus for Koumei warframe, Higasa and Amanata weapons, plus their augment mods on Steel Path.', 'pt-BR': 'Gasto no Shrine da Koumei em Cetus pela warframe Koumei, armas Higasa e Amanata e seus augment mods no Percurso de Aço.' },
   },
   father_token: {
     name: { en: 'Father Token', 'pt-BR': 'Father Token' },
@@ -103764,7 +104383,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['entrati-currency'],
     image: 'https://wiki.warframe.com/images/FatherToken.png',
     description: { en: 'Entrati family token earned by trading Cambion Drift resources to Father, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao trocar recursos da Cambion Drift com o Father, achado na Drift, ou via Mend the Family da Grandmother.' },
-    usedFor: { en: 'Used to gild Kitguns (25), rank up Necraloid, trade to Grandmother for 500 Standing, or convert into Grandmother Tokens.', 'pt-BR': 'Usado para gildar Kitguns (25), subir no Necraloid, trocar com a Grandmother por 500 de Standing, ou converter em Grandmother Tokens.' },
+    usedFor: { en: 'Used to gild Kitguns (25), rank up Necraloid, trade to Grandmother for 500 Standing, or convert into Grandmother Tokens.', 'pt-BR': 'Usado para gildar Kitguns (25), subir no Necraloid, trocar com a Grandmother por 500 de Reputação, ou converter em Grandmother Tokens.' },
   },
   fergolyte: {
     name: { en: 'Fergolyte', 'pt-BR': 'Fergolyte' },
@@ -103853,7 +104472,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/Goblite.png',
     description: { en: 'Common Vallis blue-vein gem mined with the Nosam Cutter or Sunpoint Plasma Drill. Refine into Goblite Tears at Smokefinger in Fortuna.', 'pt-BR': 'Gema comum de veias azuis do Vallis minerada com o Nosam Cutter ou Sunpoint Plasma Drill. Refine em Goblite Tears com Smokefinger em Fortuna.' },
-    usedFor: { en: 'Refined into Goblite Tears for MOA, Kitgun, K-Drive and Warframe builds. Raw Goblite can be traded to Smokefinger for Solaris United standing.', 'pt-BR': 'Refinada em Goblite Tears para builds de MOA, Kitgun, K-Drive e Warframe. Goblite cru pode ser trocada com Smokefinger por standing de Solaris United.' },
+    usedFor: { en: 'Refined into Goblite Tears for MOA, Kitgun, K-Drive and Warframe builds. Raw Goblite can be traded to Smokefinger for Solaris United standing.', 'pt-BR': 'Refinada em Goblite Tears para builds de MOA, Kitgun, K-Drive e Warframe. Goblite cru pode ser trocada com Smokefinger por reputação de Solaris United.' },
   },
   goblite_tears: {
     name: { en: 'Goblite Tears', 'pt-BR': 'Goblite Tears' },
@@ -103877,7 +104496,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['entrati-currency'],
     image: 'https://wiki.warframe.com/images/GrandmotherToken.png',
     description: { en: 'Rare Entrati family token obtained by trading other family tokens to Grandmother (at 50% bonus), found in the Drift, or via Mend the Family.', 'pt-BR': 'Token raro da familia Entrati obtido ao trocar outros tokens com a Grandmother (com bonus de 50%), achado na Drift, ou via Mend the Family.' },
-    usedFor: { en: 'Traded for 3,000 Entrati Standing each, used to craft Seriglass Shards (10 each), and required for Family rank progression.', 'pt-BR': 'Trocado por 3.000 de Entrati Standing cada, usado para criar Seriglass Shards (10 cada), e necessario para o rank Family.' },
+    usedFor: { en: 'Traded for 3,000 Entrati Standing each, used to craft Seriglass Shards (10 each), and required for Family rank progression.', 'pt-BR': 'Trocado por 3.000 de Reputação Entrati cada, usado para criar Seriglass Shards (10 cada), e necessario para o rank Family.' },
   },
   grotesque_splinter: {
     name: { en: 'Grotesque Splinter', 'pt-BR': 'Grotesque Splinter' },
@@ -103924,7 +104543,7 @@ const RESOURCES = {
     rarity: 'common', category: 'common',
     location: 'dark-refractory', sources: ['common-drops'],
     image: 'https://wiki.warframe.com/images/Ignia.png',
-    description: { en: 'Common container drop from The Descendia in the Dark Refractory. Awarded in stacks on Infernums 2, 4, 9, 11, 16, and 18; bigger stacks on Steel Path.', 'pt-BR': 'Drop comum de containers em The Descendia no Dark Refractory. Concedido em pilhas em Infernums 2, 4, 9, 11, 16 e 18; pilhas maiores no Steel Path.' },
+    description: { en: 'Common container drop from The Descendia in the Dark Refractory. Awarded in stacks on Infernums 2, 4, 9, 11, 16, and 18; bigger stacks on Steel Path.', 'pt-BR': 'Drop comum de containers em The Descendia no Dark Refractory. Concedido em pilhas em Infernums 2, 4, 9, 11, 16 e 18; pilhas maiores no Percurso de Aço.' },
     usedFor: { en: 'Spent at Roathe to buy the Descendia Arcane Collection and the Fire And Brimstone Honoria cosmetic. Not a crafting ingredient.', 'pt-BR': 'Gasto com Roathe para comprar a Descendia Arcane Collection e o cosmetico Fire And Brimstone Honoria. Nao e ingrediente de craft.' },
   },
   infected_palpators: {
@@ -103932,8 +104551,8 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/InfectedPalpators.png',
-    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
-    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a quest.' },
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da jornada The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a jornada.' },
   },
   ironwood: {
     name: { en: 'Ironwood', 'pt-BR': 'Ironwood' },
@@ -104014,7 +104633,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'duviri', sources: ['boss-drops'],
     image: 'https://wiki.warframe.com/images/Kullervo%27sBane.png',
-    description: { en: 'Rare drop from defeating both Kullervo and the Orowyrm in a single Duviri Fear, Anger, or Sorrow spiral. Yields 4-6 normally, 6-8 on Steel Path.', 'pt-BR': 'Drop raro por derrotar Kullervo e o Orowyrm no mesmo spiral de Fear, Anger ou Sorrow em Duviri. Da 4-6 unidades no normal, 6-8 no Steel Path.' },
+    description: { en: 'Rare drop from defeating both Kullervo and the Orowyrm in a single Duviri Fear, Anger, or Sorrow spiral. Yields 4-6 normally, 6-8 on Steel Path.', 'pt-BR': 'Drop raro por derrotar Kullervo e o Orowyrm no mesmo spiral de Fear, Anger ou Sorrow em Duviri. Da 4-6 unidades no normal, 6-8 no Percurso de Aço.' },
     usedFor: { en: 'Traded at Acrithis for the Kullervo Warframe (42), Rauta secondary (30), credits, a Captura scene, and the Honoria cosmetic. Feeds Helminth Bile.', 'pt-BR': 'Trocado com Acrithis pela Warframe Kullervo (42), secundaria Rauta (30), creditos, uma cena de Captura e o cosmetico Honoria. Alimenta Bile no Helminth.' },
   },
   lamentus: {
@@ -104070,7 +104689,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/MandachordBody.png',
-    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da quest Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
+    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da jornada Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
     usedFor: { en: 'Crafted with the Bridge and Fret to build the Mandachord, required to unlock the Octavia blueprint.', 'pt-BR': 'Combinada com Bridge e Fret para criar o Mandachord, necessario para desbloquear o projeto da Octavia.' },
   },
   mandachord_bridge: {
@@ -104078,7 +104697,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/MandachordBridge.png',
-    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da quest Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
+    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da jornada Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
     usedFor: { en: 'Crafted with the Body and Fret to build the Mandachord, required to unlock the Octavia blueprint.', 'pt-BR': 'Combinada com Body e Fret para criar o Mandachord, necessario para desbloquear o projeto da Octavia.' },
   },
   mandachord_fret: {
@@ -104086,7 +104705,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/MandachordFret.png',
-    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da quest Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
+    description: { en: 'Quest piece from Octavia\'s Anthem, collected during the Corpus base mission on Sao, Neptune.', 'pt-BR': 'Peca da jornada Octavia\'s Anthem, obtida na missao em base Corpus em Sao, Netuno.' },
     usedFor: { en: 'Crafted with the Body and Bridge to build the Mandachord, required to unlock the Octavia blueprint.', 'pt-BR': 'Combinada com Body e Bridge para criar o Mandachord, necessario para desbloquear o projeto da Octavia.' },
   },
   maphica: {
@@ -104094,7 +104713,7 @@ const RESOURCES = {
     rarity: 'common', category: 'common',
     location: 'dark-refractory', sources: ['common-drops'],
     image: 'https://wiki.warframe.com/images/Maphica.png',
-    description: { en: 'Common container drop from The Descendia in the Dark Refractory. Awarded from boss encounters on Infernums 2, 4, 9, 11, and 16/18, with larger stacks on Steel Path.', 'pt-BR': 'Drop comum de containers em The Descendia no Dark Refractory. Concedido em encontros com chefes nos Infernums 2, 4, 9, 11 e 16/18, com pilhas maiores no Steel Path.' },
+    description: { en: 'Common container drop from The Descendia in the Dark Refractory. Awarded from boss encounters on Infernums 2, 4, 9, 11, and 16/18, with larger stacks on Steel Path.', 'pt-BR': 'Drop comum de containers em The Descendia no Dark Refractory. Concedido em encontros com chefes nos Infernums 2, 4, 9, 11 e 16/18, com pilhas maiores no Percurso de Aço.' },
     usedFor: { en: 'Spent at Roathe to buy Uriel parts, Vinquibus/Galariak Prime/Sagek Prime, arcanes, and exclusives like the Insign Bundle and Captura scenes.', 'pt-BR': 'Gasto com Roathe para comprar pecas do Uriel, Vinquibus/Galariak Prime/Sagek Prime, arcanos e exclusivos como o Insign Bundle e cenas de Captura.' },
   },
   marks_of_valiance: {
@@ -104183,7 +104802,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['entrati-currency'],
     image: 'https://wiki.warframe.com/images/MotherToken.png',
     description: { en: 'Entrati family token earned by completing Mother bounties on the Cambion Drift, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao completar bounties da Mother na Cambion Drift, achado na Drift, ou via Mend the Family da Grandmother.' },
-    usedFor: { en: 'Traded to Grandmother for 100 Entrati Standing each, converted into Grandmother Tokens, or spent during Nights of Naberus events.', 'pt-BR': 'Trocado com a Grandmother por 100 de Entrati Standing cada, convertido em Grandmother Tokens, ou gasto no evento Nights of Naberus.' },
+    usedFor: { en: 'Traded to Grandmother for 100 Entrati Standing each, converted into Grandmother Tokens, or spent during Nights of Naberus events.', 'pt-BR': 'Trocado com a Grandmother por 100 de Reputação Entrati cada, convertido em Grandmother Tokens, ou gasto no evento Nights of Naberus.' },
   },
   muck_bonnet: {
     name: { en: 'Muck Bonnet', 'pt-BR': 'Muck Bonnet' },
@@ -104223,7 +104842,7 @@ const RESOURCES = {
     location: 'star-chart', sources: ['special', 'navigation-currency'],
     image: 'https://wiki.warframe.com/images/NavCoordinate.png',
     description: { en: 'Special drop from storage containers and lockers across all tilesets, plus rare drops from Eximus and feral animals.', 'pt-BR': 'Drop especial de containers e armarios em todos os tilesets, mais drops raros de Eximus e animais selvagens.' },
-    usedFor: { en: 'Used to craft Chroma Signal and Scorched Beacon for The New Strange, plus Mutalist Alad V keys. Now mostly Helminth Bile food.', 'pt-BR': 'Usado para construir Chroma Signal e Scorched Beacon na quest The New Strange e chaves do Mutalist Alad V. Hoje quase so comida de Bile.' },
+    usedFor: { en: 'Used to craft Chroma Signal and Scorched Beacon for The New Strange, plus Mutalist Alad V keys. Now mostly Helminth Bile food.', 'pt-BR': 'Usado para construir Chroma Signal e Scorched Beacon na jornada The New Strange e chaves do Mutalist Alad V. Hoje quase so comida de Bile.' },
   },
   necracoil: {
     name: { en: 'Necracoil', 'pt-BR': 'Necracoil' },
@@ -104304,14 +104923,14 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/OrokinAnimusMatrix.png',
     description: { en: 'Uncommon matrix guaranteed to drop from all three Necramechs guarding Tier 3 Isolation Vaults on the Cambion Drift.', 'pt-BR': 'Matriz incomum garantida ao derrotar os tres Necramechs que guardam as Tier 3 Isolation Vaults na Cambion Drift.' },
-    usedFor: { en: 'Turned in to Loid for 5,000 Necraloid Standing each; 15 needed to reach Clearance: Odima (Rank 3).', 'pt-BR': 'Entregue ao Loid por 5.000 de Necraloid Standing cada; 15 necessarios para alcancar Clearance: Odima (Rank 3).' },
+    usedFor: { en: 'Turned in to Loid for 5,000 Necraloid Standing each; 15 needed to reach Clearance: Odima (Rank 3).', 'pt-BR': 'Entregue ao Loid por 5.000 de Reputação Necraloid cada; 15 necessarios para alcancar Clearance: Odima (Rank 3).' },
   },
   orokin_archive: {
     name: { en: 'Orokin Archive', 'pt-BR': 'Orokin Archive' },
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/NavCoordinate.png',
-    description: { en: 'Quest item from The Archwing, recovered during the Sabotage mission on Tessera, Venus by reversing a Void portal.', 'pt-BR': 'Item da quest The Archwing, recuperado na missao Sabotagem em Tessera, Venus, revertendo um portal Void.' },
+    description: { en: 'Quest item from The Archwing, recovered during the Sabotage mission on Tessera, Venus by reversing a Void portal.', 'pt-BR': 'Item da jornada The Archwing, recuperado na missao Sabotagem em Tessera, Venus, revertendo um portal Void.' },
     usedFor: { en: 'Decoded by Ordis to reveal the locations of the Odonata Archwing component blueprints.', 'pt-BR': 'Decodificado por Ordis para revelar a localizacao dos projetos dos componentes do Archwing Odonata.' },
   },
   orokin_ballistics_matrix: {
@@ -104320,7 +104939,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/OrokinBallisticsMatrix.png',
     description: { en: 'Uncommon matrix guaranteed to drop from the Necramech guarding Tier 2 Isolation Vaults. Also rewarded by all vault bounty tiers.', 'pt-BR': 'Matriz incomum garantida ao derrotar o Necramech que guarda a Tier 2 Isolation Vault. Tambem recompensa de todas as bounties de vault.' },
-    usedFor: { en: 'Turned in to Loid for 2,500 Necraloid Standing each; 15 needed to reach Clearance: Modus (Rank 2).', 'pt-BR': 'Entregue ao Loid por 2.500 de Necraloid Standing cada; 15 necessarios para alcancar Clearance: Modus (Rank 2).' },
+    usedFor: { en: 'Turned in to Loid for 2,500 Necraloid Standing each; 15 needed to reach Clearance: Modus (Rank 2).', 'pt-BR': 'Entregue ao Loid por 2.500 de Reputação Necraloid cada; 15 necessarios para alcancar Clearance: Modus (Rank 2).' },
   },
   orokin_cipher: {
     name: { en: 'Orokin Cipher', 'pt-BR': 'Orokin Cipher' },
@@ -104328,7 +104947,7 @@ const RESOURCES = {
     location: 'star-chart', sources: ['mission-drops'],
     image: 'https://wiki.warframe.com/images/OrokinCipher.png',
     description: { en: 'Special drop guaranteed when opening an Orokin Vault on Deimos Derelict missions. Requires a Dragon Key.', 'pt-BR': 'Drop especial garantido ao abrir um Orokin Vault nas missoes do Derelict de Deimos. Requer uma Dragon Key.' },
-    usedFor: { en: 'Now used only as Helminth Bile food after the old Hidden Messages quest was removed.', 'pt-BR': 'Hoje usado so como comida de Bile no Helminth, depois que a antiga quest Hidden Messages foi removida.' },
+    usedFor: { en: 'Now used only as Helminth Bile food after the old Hidden Messages quest was removed.', 'pt-BR': 'Hoje usado so como comida de Bile no Helminth, depois que a antiga jornada Hidden Messages foi removida.' },
   },
   orokin_orientation_matrix: {
     name: { en: 'Orokin Orientation Matrix', 'pt-BR': 'Orokin Orientation Matrix' },
@@ -104336,7 +104955,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['necramech-drops'],
     image: 'https://wiki.warframe.com/images/OrokinOrientationMatrix.png',
     description: { en: 'Uncommon matrix guaranteed to drop from the Necramech guarding Tier 1 Isolation Vaults on the Cambion Drift.', 'pt-BR': 'Matriz incomum garantida ao derrotar o Necramech que guarda a Tier 1 Isolation Vault na Cambion Drift.' },
-    usedFor: { en: 'Turned in to Loid for 1,000 Necraloid Standing each; 10 needed to reach Clearance: Agnesis (Rank 1).', 'pt-BR': 'Entregue ao Loid por 1.000 de Necraloid Standing cada; 10 necessarios para alcancar Clearance: Agnesis (Rank 1).' },
+    usedFor: { en: 'Turned in to Loid for 1,000 Necraloid Standing each; 10 needed to reach Clearance: Agnesis (Rank 1).', 'pt-BR': 'Entregue ao Loid por 1.000 de Reputação Necraloid cada; 10 necessarios para alcancar Clearance: Agnesis (Rank 1).' },
   },
   otak_token: {
     name: { en: 'Otak Token', 'pt-BR': 'Otak Token' },
@@ -104344,7 +104963,7 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['entrati-currency'],
     image: 'https://wiki.warframe.com/images/OtakToken.png',
     description: { en: 'Entrati family token earned by trading gems and ores to Otak, found in the Drift, or via the Grandmother Mend the Family option.', 'pt-BR': 'Token da familia Entrati obtido ao trocar gemas e minerios com o Otak, achado na Drift, ou via Mend the Family da Grandmother.' },
-    usedFor: { en: 'Traded to Grandmother for 500 Entrati Standing each or converted into Grandmother Tokens.', 'pt-BR': 'Trocado com a Grandmother por 500 de Entrati Standing cada, ou convertido em Grandmother Tokens.' },
+    usedFor: { en: 'Traded to Grandmother for 500 Entrati Standing each or converted into Grandmother Tokens.', 'pt-BR': 'Trocado com a Grandmother por 500 de Reputação Entrati cada, ou convertido em Grandmother Tokens.' },
   },
   parasitic_tethermaw: {
     name: { en: 'Parasitic Tethermaw', 'pt-BR': 'Parasitic Tethermaw' },
@@ -104360,7 +104979,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/Phasmin.png',
     description: { en: 'Common Vallis blue-vein gem mined with the Nosam Cutter or Sunpoint Plasma Drill. Refine into Smooth Phasmin at Smokefinger in Fortuna.', 'pt-BR': 'Gema comum de veias azuis do Vallis minerada com o Nosam Cutter ou Sunpoint Plasma Drill. Refine em Smooth Phasmin com Smokefinger em Fortuna.' },
-    usedFor: { en: 'Refined into Smooth Phasmin for MOA and Kitgun parts. Raw Phasmin can be traded to Smokefinger for Solaris United standing.', 'pt-BR': 'Refinada em Smooth Phasmin para peças de MOA e Kitgun. Phasmin cru pode ser trocada com Smokefinger por standing de Solaris United.' },
+    usedFor: { en: 'Refined into Smooth Phasmin for MOA and Kitgun parts. Raw Phasmin can be traded to Smokefinger for Solaris United standing.', 'pt-BR': 'Refinada em Smooth Phasmin para peças de MOA e Kitgun. Phasmin cru pode ser trocada com Smokefinger por reputação de Solaris United.' },
   },
   pigment: {
     name: { en: 'Pigment', 'pt-BR': 'Pigment' },
@@ -104383,7 +105002,7 @@ const RESOURCES = {
     rarity: 'common', category: 'common',
     location: 'cambion-drift', sources: ['open-world-materials'],
     image: 'https://wiki.warframe.com/images/ProcessedFassResidue.png',
-    description: { en: 'Refined Fass matter purchased from Daughter at Rank 3 (Associate) for 300 Standing each.', 'pt-BR': 'Materia de Fass refinada comprada com a Daughter no Rank 3 (Associate) por 300 de Standing cada.' },
+    description: { en: 'Refined Fass matter purchased from Daughter at Rank 3 (Associate) for 300 Standing each.', 'pt-BR': 'Materia de Fass refinada comprada com a Daughter no Rank 3 (Associate) por 300 de Reputação cada.' },
     usedFor: { en: 'Fishing bait used to attract Aquapulmo and Flagellocanth on the Cambion Drift.', 'pt-BR': 'Isca de pesca usada para atrair Aquapulmo e Flagellocanth na Cambion Drift.' },
   },
   processed_vome_residue: {
@@ -104391,7 +105010,7 @@ const RESOURCES = {
     rarity: 'common', category: 'common',
     location: 'cambion-drift', sources: ['open-world-materials'],
     image: 'https://wiki.warframe.com/images/ProcessedVomeResidue.png',
-    description: { en: 'Refined Vome matter purchased from Daughter at Rank 4 (Friend) for 400 Standing each.', 'pt-BR': 'Materia de Vome refinada comprada com a Daughter no Rank 4 (Friend) por 400 de Standing cada.' },
+    description: { en: 'Refined Vome matter purchased from Daughter at Rank 4 (Friend) for 400 Standing each.', 'pt-BR': 'Materia de Vome refinada comprada com a Daughter no Rank 4 (Friend) por 400 de Reputação cada.' },
     usedFor: { en: 'Fishing bait used to attract Myxostomata on the Cambion Drift.', 'pt-BR': 'Isca de pesca usada para atrair Myxostomata na Cambion Drift.' },
   },
   proof_fragment: {
@@ -104399,23 +105018,23 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/NavCoordinate.png',
-    description: { en: 'Quest resource from The Limbo Theorem, dropped by enemies as Nav Coordinates.', 'pt-BR': 'Recurso da quest The Limbo Theorem, obtido de inimigos como Nav Coordinates.' },
-    usedFor: { en: '9 are needed to craft the keys required to finish the quest and build the Limbo Warframe.', 'pt-BR': 'Sao necessarios 9 para criar as chaves para concluir a quest e construir a Warframe Limbo.' },
+    description: { en: 'Quest resource from The Limbo Theorem, dropped by enemies as Nav Coordinates.', 'pt-BR': 'Recurso da jornada The Limbo Theorem, obtido de inimigos como Nav Coordinates.' },
+    usedFor: { en: '9 are needed to craft the keys required to finish the quest and build the Limbo Warframe.', 'pt-BR': 'Sao necessarios 9 para criar as chaves para concluir a jornada e construir a Warframe Limbo.' },
   },
   pulsating_tubercles: {
     name: { en: 'Pulsating Tubercles', 'pt-BR': 'Pulsating Tubercles' },
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/PulsatingTubercles.png',
-    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
-    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a quest.' },
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da jornada The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a jornada.' },
   },
   purged_dagonic: {
     name: { en: 'Purged Dagonic', 'pt-BR': 'Purged Dagonic' },
     rarity: 'rare', category: 'rare',
     location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
     image: 'https://wiki.warframe.com/images/PurgedDagonic.png',
-    description: { en: 'Refined gem crafted in the Foundry from Dagonic. Blueprint from Otak (Rank 0). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Dagonic. Blueprint com Otak (Rank 0). Rende 10 por build.' },
+    description: { en: 'Refined gem crafted in the Foundry from Dagonic. Blueprint from Otak (Rank 0). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Dagonic. Diagrama com Otak (Rank 0). Rende 10 por build.' },
     usedFor: { en: 'Used for Styanax components, Voidrig Weapon Pod, Keratinos Blades, and Kitgun parts.', 'pt-BR': 'Usada em componentes do Styanax, Voidrig Weapon Pod, Keratinos Blades, e pecas de Kitgun.' },
   },
   purified_heciphron: {
@@ -104423,7 +105042,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
     image: 'https://wiki.warframe.com/images/PurifiedHeciphron.png',
-    description: { en: 'Refined gem crafted in the Foundry from Heciphron. Blueprint from Otak (Rank 1). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Heciphron. Blueprint com Otak (Rank 1). Rende 10 por build.' },
+    description: { en: 'Refined gem crafted in the Foundry from Heciphron. Blueprint from Otak (Rank 1). Yields 10 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Heciphron. Diagrama com Otak (Rank 1). Rende 10 por build.' },
     usedFor: { en: 'Used for Sepulcrum, Trumna, Zymos, Vitrica, and the Voidrig Weapon Pod.', 'pt-BR': 'Usada em Sepulcrum, Trumna, Zymos, Vitrica, e Voidrig Weapon Pod.' },
   },
   pustulent_cognitive_nodule: {
@@ -104455,7 +105074,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'orb-vallis', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/RadiantZodian.png',
-    description: { en: 'Rare refined gem cut from raw Zodian at Smokefinger in Fortuna. Blueprint requires Doer rank with Solaris United.', 'pt-BR': 'Gema rara refinada cortada do Zodian cru com Smokefinger em Fortuna. A blueprint exige rank Doer com Solaris United.' },
+    description: { en: 'Rare refined gem cut from raw Zodian at Smokefinger in Fortuna. Blueprint requires Doer rank with Solaris United.', 'pt-BR': 'Gema rara refinada cortada do Zodian cru com Smokefinger em Fortuna. A diagrama exige rank Doer com Solaris United.' },
     usedFor: { en: 'Amp prisms (Cantic, Klamora, Lega), Korumm, Larkspur, Warframe components (Baruuk, Garuda, Gauss) and Ventkid cosmetics.', 'pt-BR': 'Prisms de Amp (Cantic, Klamora, Lega), Korumm, Larkspur, componentes de Warframe (Baruuk, Garuda, Gauss) e cosméticos Ventkid.' },
   },
   rania_crystal_fragment: {
@@ -104543,7 +105162,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/ScorchedBeacon64.png',
-    description: { en: 'Quest blueprint from The New Strange, given by Cephalon Simaris after synthesizing three Elite Arid Lancers on Mars.', 'pt-BR': 'Projeto da quest The New Strange, dado por Cephalon Simaris apos sintetizar tres Elite Arid Lancers em Marte.' },
+    description: { en: 'Quest blueprint from The New Strange, given by Cephalon Simaris after synthesizing three Elite Arid Lancers on Mars.', 'pt-BR': 'Projeto da jornada The New Strange, dado por Cephalon Simaris apos sintetizar tres Elite Arid Lancers em Marte.' },
     usedFor: { en: 'Built in the Foundry to transmit a signal from the Arcane Machine, then combined into the Chroma Mark.', 'pt-BR': 'Construido na Forja para emitir um sinal da Maquina Arcana, depois combinado no Chroma Mark.' },
   },
   scrap: {
@@ -104567,7 +105186,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'duviri', sources: ['boss-drops'],
     image: 'https://wiki.warframe.com/images/ScuttlerHusk.png',
-    description: { en: 'Rare drop from defeating The Fragmented (Oraxia) in Isleweaver missions: 16-20 normally, 20-24 on Steel Path. Boosters do not affect the amount.', 'pt-BR': 'Drop raro por derrotar The Fragmented (Oraxia) em missoes da Isleweaver: 16-20 no normal, 20-24 no Steel Path. Boosters nao afetam a quantidade.' },
+    description: { en: 'Rare drop from defeating The Fragmented (Oraxia) in Isleweaver missions: 16-20 normally, 20-24 on Steel Path. Boosters do not affect the amount.', 'pt-BR': 'Drop raro por derrotar The Fragmented (Oraxia) em missoes da Isleweaver: 16-20 no normal, 20-24 no Percurso de Aço. Boosters nao afetam a quantidade.' },
     usedFor: { en: 'Spent at Acrithis (Dormizone) for the Oraxia Warframe, Scyotid, Spinnerex, Thalys melee, Captura scenes, and a weekly Kuva bundle.', 'pt-BR': 'Gasto com Acrithis (Dormizone) pela Warframe Oraxia, Scyotid, Spinnerex, melee Thalys, cenas de Captura e um pacote semanal de Kuva.' },
   },
   seram_beetle_shell: {
@@ -104591,8 +105210,8 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'misc', sources: ['quests'],
     image: 'https://wiki.warframe.com/images/SeveredBileSac.png',
-    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da quest The Jordas Precept, obtido de Juggernauts Infestados.' },
-    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a quest.' },
+    description: { en: 'Quest material for The Jordas Precept, dropped by Infested Juggernauts.', 'pt-BR': 'Material da jornada The Jordas Precept, obtido de Juggernauts Infestados.' },
+    usedFor: { en: 'Used in the Foundry to craft Pherliac Pods, the decoy gear needed to progress the quest.', 'pt-BR': 'Usado na Forja para criar Pherliac Pods, a isca necessaria para avancar a jornada.' },
   },
   sharrac_teeth: {
     name: { en: 'Sharrac Teeth', 'pt-BR': 'Sharrac Teeth' },
@@ -104632,14 +105251,14 @@ const RESOURCES = {
     location: 'cambion-drift', sources: ['entrati-currency'],
     image: 'https://wiki.warframe.com/images/SonToken.png',
     description: { en: 'Entrati family token earned by trading conservation tags to Son, donating gilded Predasites/Vulpaphylas, or via Mend the Family.', 'pt-BR': 'Token da familia Entrati obtido ao trocar tags de conservacao com o Son, doar Predasites/Vulpaphylas gildados, ou via Mend the Family.' },
-    usedFor: { en: 'Used to gild Predasites and Vulpaphylas (10 each) or traded to Grandmother for 1,000 Entrati Standing.', 'pt-BR': 'Usado para gildar Predasites e Vulpaphylas (10 cada) ou trocado com a Grandmother por 1.000 de Entrati Standing.' },
+    usedFor: { en: 'Used to gild Predasites and Vulpaphylas (10 each) or traded to Grandmother for 1,000 Entrati Standing.', 'pt-BR': 'Usado para gildar Predasites e Vulpaphylas (10 cada) ou trocado com a Grandmother por 1.000 de Reputação Entrati.' },
   },
   spectral_debris: {
     name: { en: 'Spectral Debris', 'pt-BR': 'Spectral Debris' },
     rarity: 'special', category: 'special',
     location: 'star-chart', sources: ['mission-drops'],
     image: 'https://wiki.warframe.com/images/SpectralDebris.png',
-    description: { en: 'Special drop from Errant Specters in the Granum Void at a 5 percent chance per kill.', 'pt-BR': 'Drop especial de Errant Specters no Granum Void com 5 por cento de chance por kill.' },
+    description: { en: 'Special drop from Errant Specters in the Granum Void at a 5 percent chance per kill.', 'pt-BR': 'Drop especial de Errant Espectros no Granum Void com 5 por cento de chance por kill.' },
     usedFor: { en: 'Used to craft modular Hound parts (Adlet, Garmr, Raiju cores and Bhaira, Dorma, Hec models) and the Sworn Sister Honoria skin.', 'pt-BR': 'Usado para construir partes modulares de Hounds (cores Adlet, Garmr, Raiju e modelos Bhaira, Dorma, Hec) e a skin Sworn Sister da Honoria.' },
   },
   spinal_core_section: {
@@ -104679,7 +105298,7 @@ const RESOURCES = {
     rarity: 'uncommon', category: 'uncommon',
     location: 'plains-of-eidolon', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/StarCrimzian.png',
-    description: { en: 'Refined gem crafted from 6 raw Crimzian (yields 6). Blueprint from Old Man Suumbaat at Trusted rank.', 'pt-BR': 'Gema refinada criada com 6 Crimzian bruto (rende 6). Blueprint com Old Man Suumbaat no rank Trusted.' },
+    description: { en: 'Refined gem crafted from 6 raw Crimzian (yields 6). Blueprint from Old Man Suumbaat at Trusted rank.', 'pt-BR': 'Gema refinada criada com 6 Crimzian bruto (rende 6). Diagrama com Old Man Suumbaat no rank Trusted.' },
     usedFor: { en: 'Used in Bonewidow Capsule, Gauss Chassis, Styanax Chassis, Granmu Prism, Helstrum, and Ramflare Loader.', 'pt-BR': 'Usado em Bonewidow Capsule, Gauss Chassis, Styanax Chassis, Granmu Prism, Helstrum, e Ramflare Loader.' },
   },
   stela: {
@@ -104695,7 +105314,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
     image: 'https://wiki.warframe.com/images/StellatedNecrathene.png',
-    description: { en: 'Refined gem crafted in the Foundry from Necrathene. Blueprint from Otak (Rank 2). Yields 6 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Necrathene. Blueprint com Otak (Rank 2). Rende 6 por build.' },
+    description: { en: 'Refined gem crafted in the Foundry from Necrathene. Blueprint from Otak (Rank 2). Yields 6 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Necrathene. Diagrama com Otak (Rank 2). Rende 6 por build.' },
     usedFor: { en: 'Used for Citrine Chassis, Catabolyst, Parallax Engines, and the Nodulite K-Drive nose.', 'pt-BR': 'Usada em Citrine Chassis, Catabolyst, Parallax Engines, e no nariz Nodulite de K-Drive.' },
   },
   stock_kahl: {
@@ -104704,7 +105323,7 @@ const RESOURCES = {
     location: 'star-chart', sources: ['mission-drops'],
     image: 'https://wiki.warframe.com/images/Stock.png',
     description: { en: 'Special weekly currency earned from Kahls Break Narmer bonus objectives and blue crates. Capped at 105 per week.', 'pt-BR': 'Moeda semanal especial ganha pelos objetivos bonus de Kahls Break Narmer e crates azuis. Limite de 105 por semana.' },
-    usedFor: { en: 'Spent at Chipper for Styanax blueprints, Afentis, Aegrit, Slaytra weapons, Archon Mods, the Skaut, ephemeras, and Captura scenes.', 'pt-BR': 'Gasto com Chipper pelos blueprints da Styanax, armas Afentis, Aegrit, Slaytra, Archon Mods, a Skaut, ephemeras e cenas de Captura.' },
+    usedFor: { en: 'Spent at Chipper for Styanax blueprints, Afentis, Aegrit, Slaytra weapons, Archon Mods, the Skaut, ephemeras, and Captura scenes.', 'pt-BR': 'Gasto com Chipper pelos diagramas da Styanax, armas Afentis, Aegrit, Slaytra, Archon Mods, a Skaut, ephemeras e cenas de Captura.' },
   },
   sunlight_dragonlily: {
     name: { en: 'Sunlight Dragonlily', 'pt-BR': 'Sunlight Dragonlily' },
@@ -104775,7 +105394,7 @@ const RESOURCES = {
     rarity: 'uncommon', category: 'uncommon',
     location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
     image: 'https://wiki.warframe.com/images/TemperedBapholite.png',
-    description: { en: 'Refined ore crafted in the Foundry from Bapholite. Blueprint from Otak (Rank 0). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Bapholite. Blueprint com Otak (Rank 0). Rende 20 por build.' },
+    description: { en: 'Refined ore crafted in the Foundry from Bapholite. Blueprint from Otak (Rank 0). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Bapholite. Diagrama com Otak (Rank 0). Rende 20 por build.' },
     usedFor: { en: 'Used for Necramech parts (Bonewidow, Voidrig), Cortege/Morgha stocks, Trumna, Vitrica, and Kitgun parts.', 'pt-BR': 'Usado em pecas de Necramech (Bonewidow, Voidrig), stocks de Cortege/Morgha, Trumna, Vitrica, e pecas de Kitgun.' },
   },
   temporal_dust: {
@@ -104783,7 +105402,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'duviri', sources: ['isleweaver'],
     image: 'https://wiki.warframe.com/images/TemporalDust.png',
-    description: { en: 'Rare Isleweaver resource: 20 per mission end (25 on Steel Path), plus uncommon drops from Murmur enemies and Entrati storage containers.', 'pt-BR': 'Recurso raro da Isleweaver: 20 por fim de missao (25 no Steel Path), alem de drops incomuns de inimigos Murmur e baus Entrati.' },
+    description: { en: 'Rare Isleweaver resource: 20 per mission end (25 on Steel Path), plus uncommon drops from Murmur enemies and Entrati storage containers.', 'pt-BR': 'Recurso raro da Isleweaver: 20 por fim de missao (25 no Percurso de Aço), alem de drops incomuns de inimigos Murmur e baus Entrati.' },
     usedFor: { en: 'Crafts the Oraxia Warframe (all parts), Scyotid Gauntlets, Spinnerex Blade and String, and the Thalys melee.', 'pt-BR': 'Usado em todas as partes da Warframe Oraxia, nas Scyotid Gauntlets, na Spinnerex Blade e String, e no melee Thalys.' },
   },
   tethra_data_fragments: {
@@ -104799,7 +105418,7 @@ const RESOURCES = {
     rarity: 'uncommon', category: 'uncommon',
     location: 'cambion-drift', sources: ['mining', 'minerals-yellow'],
     image: 'https://wiki.warframe.com/images/ThaumicDistillate.png',
-    description: { en: 'Refined ore crafted in the Foundry from Thaumica. Blueprint from Otak (Rank 2). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Thaumica. Blueprint com Otak (Rank 2). Rende 20 por build.' },
+    description: { en: 'Refined ore crafted in the Foundry from Thaumica. Blueprint from Otak (Rank 2). Yields 20 per build.', 'pt-BR': 'Minerio refinado criado na Foundry a partir de Thaumica. Diagrama com Otak (Rank 2). Rende 20 por build.' },
     usedFor: { en: 'Used for Xaku Neuroptics, Bonewidow Casing, and Cambion Drift fish trophy decorations.', 'pt-BR': 'Usado em Xaku Neuroptics, Bonewidow Casing, e decoracoes de trofeu de peixes da Cambion Drift.' },
   },
   thaumica: {
@@ -104840,7 +105459,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['deepmines'],
     image: 'https://wiki.warframe.com/images/Thunder-Button.png',
     description: { en: 'Deepmines mushroom found in the Corpus Lab section of Vallis Deepmines. Pickup grants a temporary Electricity damage buff.', 'pt-BR': 'Cogumelo dos Deepmines encontrado na seção Corpus Lab. Pegar concede buff temporário de dano Elétrico.' },
-    usedFor: { en: 'Solaris United standing offerings, Fergolyte exchange at Nightcap, Deepmines progression.', 'pt-BR': 'Ofertas de standing dos Solaris United, troca por Fergolyte no Nightcap, progressão dos Deepmines.' },
+    usedFor: { en: 'Solaris United standing offerings, Fergolyte exchange at Nightcap, Deepmines progression.', 'pt-BR': 'Ofertas de reputação dos Solaris United, troca por Fergolyte no Nightcap, progressão dos Deepmines.' },
   },
   thyst: {
     name: { en: 'Thyst', 'pt-BR': 'Thyst' },
@@ -104848,7 +105467,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/Thyst.png',
     description: { en: 'Rare Vallis blue-vein gem mined with the Advanced Nosam Cutter or Sunpoint Plasma Drill. Also drops from the Exploiter Orb in bulk.', 'pt-BR': 'Gema rara de veias azuis do Vallis minerada com o Advanced Nosam Cutter ou Sunpoint Plasma Drill. Também dropa em grande quantidade do Exploiter Orb.' },
-    usedFor: { en: 'Refined into Marquise Thyst at Smokefinger for use in many Warframe, weapon and companion blueprints. Raw Thyst also trades for Solaris United standing.', 'pt-BR': 'Refinada em Marquise Thyst com Smokefinger para muitas blueprints de Warframe, armas e companions. Thyst cru também pode ser trocado por standing de Solaris United.' },
+    usedFor: { en: 'Refined into Marquise Thyst at Smokefinger for use in many Warframe, weapon and companion blueprints. Raw Thyst also trades for Solaris United standing.', 'pt-BR': 'Refinada em Marquise Thyst com Smokefinger para muitas diagramas de Warframe, armas e companions. Thyst cru também pode ser trocado por reputação de Solaris United.' },
   },
   tiametrite: {
     name: { en: 'Tiametrite', 'pt-BR': 'Tiametrite' },
@@ -104897,7 +105516,7 @@ const RESOURCES = {
     rarity: 'rare', category: 'rare',
     location: 'cambion-drift', sources: ['mining', 'gems-blue-cambion'],
     image: 'https://wiki.warframe.com/images/TrapeziumXenorhast.png',
-    description: { en: 'Refined gem crafted in the Foundry from Xenorhast. Blueprint from Otak (Rank 3). Yields 3 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Xenorhast. Blueprint com Otak (Rank 3). Rende 3 por build.' },
+    description: { en: 'Refined gem crafted in the Foundry from Xenorhast. Blueprint from Otak (Rank 3). Yields 3 per build.', 'pt-BR': 'Gema refinada criada na Foundry a partir de Xenorhast. Diagrama com Otak (Rank 3). Rende 3 por build.' },
     usedFor: { en: 'Used for Arum Spinosa, Cortege/Morgha receivers, Lavos Neuroptics, Sepulcrum Receiver, and the Hec Hound.', 'pt-BR': 'Usada em Arum Spinosa, receivers de Cortege/Morgha, Lavos Neuroptics, Sepulcrum Receiver, e no Hec Hound.' },
   },
   trembera_essence: {
@@ -104937,7 +105556,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'star-chart', sources: ['special', 'warframe-currency'],
     image: 'https://wiki.warframe.com/images/Vainthorn.png',
-    description: { en: 'Special reward from the Abyssal Zone on Ceres, accessed using an Abyssal Beacon bought from any main syndicate at Rank 2 for 5,000 standing.', 'pt-BR': 'Recompensa especial da Abyssal Zone em Ceres, acessada com um Abyssal Beacon comprado em qualquer sindicato principal no Rank 2 por 5.000 standing.' },
+    description: { en: 'Special reward from the Abyssal Zone on Ceres, accessed using an Abyssal Beacon bought from any main syndicate at Rank 2 for 5,000 standing.', 'pt-BR': 'Recompensa especial da Abyssal Zone em Ceres, acessada com um Abyssal Beacon comprado em qualquer sindicato principal no Rank 2 por 5.000 reputação.' },
     usedFor: { en: 'Used to craft Dagath and the Dorrclave melee weapon. 34 per Dagath component, 20 per Dorrclave part.', 'pt-BR': 'Usado para construir Dagath e a arma corpo a corpo Dorrclave. 34 por componente da Dagath, 20 por parte da Dorrclave.' },
   },
   vessel_capillaries: {
@@ -104945,7 +105564,7 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'star-chart', sources: ['special', 'warframe-currency'],
     image: 'https://wiki.warframe.com/images/VesselCapillaries.png',
-    description: { en: 'Special drop from Demolisher Voidrigs and Bonewidows in Disruption at Armatus, Deimos. Yields 2 to 4 per kill, 5 to 7 on Steel Path.', 'pt-BR': 'Drop especial de Demolisher Voidrigs e Bonewidows no Disruption em Armatus, Deimos. Rende 2 a 4 por kill, 5 a 7 no Steel Path.' },
+    description: { en: 'Special drop from Demolisher Voidrigs and Bonewidows in Disruption at Armatus, Deimos. Yields 2 to 4 per kill, 5 to 7 on Steel Path.', 'pt-BR': 'Drop especial de Demolisher Voidrigs e Bonewidows no Disruption em Armatus, Deimos. Rende 2 a 4 por kill, 5 a 7 no Percurso de Aço.' },
     usedFor: { en: 'Spent at Loid in the Sanctum Anatomica as an alternate way to buy Dante, Onos, Ruvox, Riven Transmuters, and Captura scenes.', 'pt-BR': 'Gasto com Loid no Sanctum Anatomica como alternativa para comprar Dante, Onos, Ruvox, Riven Transmuters e cenas de Captura.' },
   },
   vestan_moss: {
@@ -104961,8 +105580,8 @@ const RESOURCES = {
     rarity: 'special', category: 'special',
     location: 'star-chart', sources: ['special', 'warframe-currency'],
     image: 'https://wiki.warframe.com/images/VestigialMotes.png',
-    description: { en: 'Special drop from Ascension missions on Brutus, Uranus. Yields 11 to 14 per run, 16 to 18 on Steel Path, plus summoned Sisters drop more.', 'pt-BR': 'Drop especial das missoes Ascension em Brutus, Uranus. Rende 11 a 14 por run, 16 a 18 no Steel Path, e Sisters invocadas dropam mais.' },
-    usedFor: { en: 'Spent at Ordis at the Drifters Camp for Jade blueprints, Evensong, Cantare, Harmony weapons, and rank 5 arcanes like Ice Storm and Battery.', 'pt-BR': 'Gasto com Ordis no Drifters Camp pelos blueprints da Jade, armas Evensong, Cantare, Harmony e arcanes rank 5 como Ice Storm e Battery.' },
+    description: { en: 'Special drop from Ascension missions on Brutus, Uranus. Yields 11 to 14 per run, 16 to 18 on Steel Path, plus summoned Sisters drop more.', 'pt-BR': 'Drop especial das missoes Ascension em Brutus, Uranus. Rende 11 a 14 por run, 16 a 18 no Percurso de Aço, e Sisters invocadas dropam mais.' },
+    usedFor: { en: 'Spent at Ordis at the Drifters Camp for Jade blueprints, Evensong, Cantare, Harmony weapons, and rank 5 arcanes like Ice Storm and Battery.', 'pt-BR': 'Gasto com Ordis no Drifters Camp pelos diagramas da Jade, armas Evensong, Cantare, Harmony e arcanes rank 5 como Ice Storm e Battery.' },
   },
   violets_bane: {
     name: { en: 'Violet\'s Bane', 'pt-BR': 'Violet\'s Bane' },
@@ -105050,7 +105669,7 @@ const RESOURCES = {
     location: 'orb-vallis', sources: ['mining', 'gems-blue'],
     image: 'https://wiki.warframe.com/images/Zodian.png',
     description: { en: 'Rare Vallis blue-vein gem mined with the Advanced Nosam Cutter or Sunpoint Plasma Drill. Also drops from the Exploiter Orb in bulk.', 'pt-BR': 'Gema rara de veias azuis do Vallis minerada com o Advanced Nosam Cutter ou Sunpoint Plasma Drill. Também dropa em grande quantidade do Exploiter Orb.' },
-    usedFor: { en: 'Refined into Radiant Zodian at Smokefinger for Amps, Warframes (Baruuk, Garuda, Gauss) and weapons. Raw Zodian also trades for Solaris United standing.', 'pt-BR': 'Refinada em Radiant Zodian com Smokefinger para Amps, Warframes (Baruuk, Garuda, Gauss) e armas. Zodian cru também pode ser trocado por standing de Solaris United.' },
+    usedFor: { en: 'Refined into Radiant Zodian at Smokefinger for Amps, Warframes (Baruuk, Garuda, Gauss) and weapons. Raw Zodian also trades for Solaris United standing.', 'pt-BR': 'Refinada em Radiant Zodian com Smokefinger para Amps, Warframes (Baruuk, Garuda, Gauss) e armas. Zodian cru também pode ser trocado por reputação de Solaris United.' },
   },
 
 
@@ -105338,7 +105957,7 @@ const STAR_CHART = {
         'albrechts-laboratories': {
           name: { en: "Albrecht's Laboratories", 'pt-BR': 'Laboratórios de Albrecht' },
           note: { en: 'Unlocked after the Whispers in the Walls quest.',
-                  'pt-BR': 'Desbloqueado após a quest Whispers in the Walls.' },
+                  'pt-BR': 'Desbloqueado após a jornada Whispers in the Walls.' },
           factionOverride: 'murmur',
           spoilerLocked: true,
         },
@@ -105633,7 +106252,7 @@ const STAR_CHART = {
       resources: ['voidplume_down'],
       note: {
         en: 'Unlocked after completing The Angels of the Zariman quest. The ruling faction (Kuva Grineer / Juno Corpus) rotates every 2.5h.',
-        'pt-BR': 'Desbloqueado após a quest The Angels of the Zariman. A facção dominante (Kuva Grineer / Juno Corpus) alterna a cada 2.5h.',
+        'pt-BR': 'Desbloqueado após a jornada The Angels of the Zariman. A facção dominante (Kuva Grineer / Juno Corpus) alterna a cada 2.5h.',
       },
       nodes: [
         { slug: 'the-greenway',     name: 'The Greenway',     type: 'mobile_defense',  levelRange: '50-55' },
@@ -107554,6 +108173,16 @@ function setupWeaponPickerEvents() {
 const PATCH_NOTES = {
   en: [
     {
+      date: '2026-06-22',
+      title: 'Glossary launch',
+      items: [
+        'The Glossary is live — a searchable, categorized reference (Progression, Combat, Builds & Mods, Economy, Enemies) with rich, illustrated sections. A few entries are still marked "Soon" and will be filled in over the coming updates.',
+        'Mission Types — a new section covering all 40 mission types from the Star Chart filters (Exterminate, Survival, Disruption, the Void/Zariman modes, Railjack and more), grouped and color-coded, with late-game modes tucked behind a spoiler veil.',
+        'Mission Rotations (A/B/C) — how the AABC reward cycle works, when each rotation lands per mission type (Survival, Defense, Interception…), plus the special cases (Disruption, Arbitrations, The Index).',
+        'Critical Hits — a clearer take on how Critical Chance and Critical Damage multiply, a worked example table per crit tier, and what the in-game "!", "!!" and "!!!" actually mean.',
+      ]
+    },
+    {
       date: '2026-06-19',
       title: 'Riven recoil overhaul & relic filters',
       items: [
@@ -107650,6 +108279,16 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-22',
+      title: 'Lançamento do Glossário',
+      items: [
+        'O Glossário está no ar — uma referência pesquisável e categorizada (Progressão, Combate, Builds & Mods, Economia, Inimigos) com seções ricas e ilustradas. Algumas entradas ainda estão marcadas como "Em breve" e serão preenchidas nas próximas atualizações.',
+        'Tipos de Missão — nova seção cobrindo os 40 tipos de missão dos filtros do Mapa Estelar (Exterminar, Sobrevivência, Disrupção, os modos Void/Zariman, Railjack e mais), agrupados e coloridos, com os modos de fim de jogo atrás de um véu de spoiler.',
+        'Rotações de Missão (A/B/C) — como funciona o ciclo de recompensas AABC, quando cada rotação cai por tipo de missão (Sobrevivência, Defesa, Interceptação…) e os casos especiais (Disrupção, Arbitragens, O Índice).',
+        'Críticos — uma explicação mais clara de como Chance de Crítico e Dano de Crítico se multiplicam, uma tabela de exemplo por tier de crítico, e o que significam os "!", "!!" e "!!!" que aparecem no jogo.',
+      ]
+    },
     {
       date: '2026-06-19',
       title: 'Reforma do recuo nos Rivens e filtros de relíquias',
@@ -107795,6 +108434,1227 @@ function setupCreditsEvents() {
     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
       e.preventDefault();
       closeCreditsModal();
+    }
+  });
+}
+
+function openLightbox(src, alt) {
+  const modal = document.getElementById('lightbox-modal');
+  const img   = document.getElementById('lightbox-img');
+  img.src = src;
+  img.alt = alt || '';
+  modal.classList.remove('hidden');
+}
+
+function closeLightbox() {
+  const modal = document.getElementById('lightbox-modal');
+  modal.classList.add('hidden');
+  document.getElementById('lightbox-img').src = '';
+}
+
+// ── Star Chart glossary section (timeline + junction anatomy + special + terms) ──
+
+// Ordem aproximada de progressão pelo Sistema de Origem (alimenta a timeline;
+// dados de cada planeta vêm de STAR_CHART por slug).
+const SC_TIMELINE_ORDER = ['earth', 'venus', 'mercury', 'mars', 'deimos', 'phobos', 'ceres',
+  'jupiter', 'europa', 'saturn', 'uranus', 'neptune', 'pluto', 'eris', 'sedna'];
+
+// `spoiler: true` → escondido atrás do véu quando "Mostrar Spoilers" está OFF.
+const SC_SPECIAL = [
+  { slug: 'void',          note: { en: 'Relics & Void Traces. Opens early via the Mars Junction.', 'pt-BR': 'Relíquias & Void Traces. Abre cedo pela Junção de Marte.' } },
+  { slug: 'lua',           spoiler: true, note: { en: 'The Moon. Requires the The Second Dream quest.', 'pt-BR': 'A Lua. Exige a jornada The Second Dream.' } },
+  { slug: 'zariman',       spoiler: true, note: { en: 'Hub. Angels of the Zariman quest.',            'pt-BR': 'Central. Jornada Angels of the Zariman.' } },
+  { slug: 'kuva-fortress', spoiler: true, note: { en: 'Roaming Grineer fortress. The War Within.',    'pt-BR': 'Fortaleza Grineer móvel. The War Within.' } },
+  { slug: 'duviri',        spoiler: true, note: { en: 'Standalone realm. The Duviri Paradox.',        'pt-BR': 'Reino à parte. The Duviri Paradox.' } },
+];
+
+const SC_JUNCTION_STEPS = [
+  { t: { en: '1 · Tasks',        'pt-BR': '1 · Tarefas' },          d: { en: 'A checklist: kill enemies with a damage type, fully rank a mod, finish certain missions or a quest.', 'pt-BR': 'Uma lista: matar com um tipo de dano, maxar um mod, completar certas missões ou uma jornada.' } },
+  { t: { en: '2 · Specter duel', 'pt-BR': '2 · Duelo de Espectro' }, d: { en: 'Beat a Specter — a clone enemy guarding the gateway.', 'pt-BR': 'Derrote um Espectro — um clone inimigo que guarda o portão.' } },
+  { t: { en: '3 · Rewards',      'pt-BR': '3 · Recompensas' },      d: { en: 'Unlocks the next planet, plus mods, credits, sometimes a Warframe slot or an Orokin Catalyst/Reactor.', 'pt-BR': 'Libera o próximo planeta, além de mods, créditos e às vezes slot de Warframe ou Catalisador/Reator Orokin.' } },
+];
+
+const SC_TERMS = [
+  { t: { en: 'Node',          'pt-BR': 'Nodo' },             d: { en: 'A single mission on a planet.',                          'pt-BR': 'Uma missão individual num planeta.' } },
+  { t: { en: 'Junction',      'pt-BR': 'Junção' },         d: { en: 'The gateway between planets — clear it to progress.',     'pt-BR': 'O portão entre planetas — complete pra avançar.' } },
+  { t: { en: 'Dark Sector',   'pt-BR': 'Dark Sector' },      d: { en: 'Special Infested nodes with bonus resource drops.',       'pt-BR': 'Nodos Infestados especiais com bônus de recursos.' } },
+  { t: { en: 'Archwing node', 'pt-BR': 'Nodo de Archwing' }, d: { en: 'Free-flight space missions; needs Archwing.',             'pt-BR': 'Missões espaciais de voo livre; exigem Archwing.' } },
+  { t: { en: 'Assassination', 'pt-BR': 'Assassinato' },      d: { en: 'Boss nodes — many drop Warframe parts.',                  'pt-BR': 'Nodos de chefe — muitos dropam partes de Warframe.' } },
+];
+
+const SC_TIPS = [
+  { en: "You don't need to 100% every node — Junctions are what gate your progression.", 'pt-BR': 'Você não precisa 100%ar cada nodo — são as Junções que travam a progressão.' },
+  { en: 'Relics (for Prime gear) come from Void missions and many node rewards.',         'pt-BR': 'Relíquias (pro equipamento Prime) vêm de missões no Void e de vários nodos.' },
+  { en: 'Steel Path is a harder remix of the whole Star Chart — see its own section.',    'pt-BR': 'O Percurso de Aço é uma versão mais difícil de todo o Mapa Estelar — veja a seção dele.' },
+];
+
+let _scGlossBound = false;
+function renderStarChartGlossary() {
+  const el = document.getElementById('sc-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc; // reutiliza o escape de HTML já existente
+
+  const bySlug = {};
+  (STAR_CHART.planets || []).forEach(p => { bySlug[p.slug] = p; });
+  (STAR_CHART.special || []).forEach(p => { bySlug[p.slug] = p; });
+
+  const facColor = p => (p && p.faction && SC_FACTIONS[p.faction] && SC_FACTIONS[p.faction].color) || '#b888ff';
+
+  // Timeline de planetas
+  const tl = SC_TIMELINE_ORDER.map(slug => {
+    const p = bySlug[slug];
+    if (!p) return '';
+    return `<button type="button" class="sc-tl-chip" data-sc-go="${slug}" style="--f:${facColor(p)}">`
+      + `<img class="sc-tl-img" src="${esc(p.image)}" alt="" loading="lazy">`
+      + `<span class="sc-tl-name">${esc(L(p.name))}</span>`
+      + `<span class="sc-tl-lv">${esc(p.levelRange || '')}</span></button>`;
+  }).filter(Boolean).join('<span class="sc-tl-arrow" aria-hidden="true">›</span>');
+
+  // Legenda de facções
+  // só as facções que aparecem nos planetas da timeline (origin system)
+  const facKeys = ['grineer', 'corpus', 'infested'];
+  const legend = facKeys.map(k =>
+    `<span class="sc-fac"><i style="background:${SC_FACTIONS[k].color}"></i>${esc(L(SC_FACTIONS[k].name))}</span>`
+  ).join('');
+
+  // Anatomia da Junction
+  const steps = SC_JUNCTION_STEPS.map(s =>
+    `<div class="sc-jstep"><span class="sc-jstep-t">${esc(L(s.t))}</span><span class="sc-jstep-d">${esc(L(s.d))}</span></div>`
+  ).join('');
+
+  // Destinos especiais — com proteção contra spoilers.
+  const showSpoilers = !!(state.starChart && state.starChart.showSpoilers);
+  const card = sp => {
+    const p = bySlug[sp.slug];
+    if (!p) return '';
+    return `<button type="button" class="sc-special-card" data-sc-go="${sp.slug}" style="--f:${facColor(p)}">`
+      + `<img class="sc-special-img" src="${esc(p.image)}" alt="" loading="lazy">`
+      + `<span class="sc-special-name">${esc(L(p.name))}</span>`
+      + `<span class="sc-special-note">${esc(L(sp.note))}</span></button>`;
+  };
+  const hiddenCount = SC_SPECIAL.filter(sp => sp.spoiler).length;
+  let special;
+  if (showSpoilers) {
+    special = SC_SPECIAL.map(card).filter(Boolean).join('');
+  } else {
+    const visible = SC_SPECIAL.filter(sp => !sp.spoiler).map(card).filter(Boolean).join('');
+    const veilTxt = L({ en: `${hiddenCount} quest-locked destinations hidden`, 'pt-BR': `${hiddenCount} destinos com quest-lock ocultos` });
+    const veilCta = L({ en: 'Reveal spoilers', 'pt-BR': 'Revelar spoilers' });
+    special = visible
+      + `<button type="button" class="sc-special-card sc-special-veil" data-sc-reveal>`
+      + `<span class="sc-veil-ico" aria-hidden="true">🔒</span>`
+      + `<span class="sc-special-name">${esc(veilTxt)}</span>`
+      + `<span class="sc-special-note">${esc(veilCta)} →</span></button>`;
+  }
+
+  // Termos-chave
+  const terms = SC_TERMS.map(t =>
+    `<div class="sc-term"><dt>${esc(L(t.t))}</dt><dd>${esc(L(t.d))}</dd></div>`
+  ).join('');
+
+  // Dicas
+  const tips = SC_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    timeline:  { en: 'Progression order',        'pt-BR': 'Ordem de progressão' },
+    timelineS: { en: 'Approximate planet unlock order. Tap a planet to open it on the interactive map.', 'pt-BR': 'Ordem aproximada de desbloqueio. Toque num planeta para abri-lo no mapa interativo.' },
+    junction:  { en: 'Anatomy of a Junction',    'pt-BR': 'Anatomia de uma Junção' },
+    special:   { en: 'Special destinations',     'pt-BR': 'Destinos especiais' },
+    terms:     { en: 'Key terms',                'pt-BR': 'Termos-chave' },
+    tips:      { en: 'Good to know',             'pt-BR': 'Bom saber' },
+    cta:       { en: 'Explore the interactive Star Chart', 'pt-BR': 'Explorar o Mapa Estelar interativo' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.terms))}</h4>`
+    + `<dl class="sc-terms">${terms}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.timeline))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.timelineS))}</p>`
+    + `<div class="sc-timeline">${tl}</div>`
+    + `<div class="sc-legend">${legend}</div>`
+    + `<h4 class="sc-h">${esc(L(T.junction))}</h4>`
+    + `<div class="sc-jsteps">${steps}</div>`
+    + `<div class="sc-h-row"><h4 class="sc-h">${esc(L(T.special))}</h4>`
+    + (showSpoilers && hiddenCount ? `<button type="button" class="sc-spoiler-toggle" data-sc-hide>${esc(L({ en: 'Hide spoilers', 'pt-BR': 'Ocultar spoilers' }))}</button>` : '')
+    + `</div>`
+    + `<div class="sc-special">${special}</div>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`
+    + `<button type="button" class="sc-cta" data-sc-cta>${esc(L(T.cta))} →</button>`;
+
+  if (!_scGlossBound) {
+    el.addEventListener('click', e => {
+      const reveal = e.target.closest('[data-sc-reveal]');
+      const hide = e.target.closest('[data-sc-hide]');
+      if (reveal || hide) {
+        state.starChart.showSpoilers = !!reveal;
+        try { localStorage.setItem('starChart.showSpoilers', reveal ? 'true' : 'false'); } catch (err) {}
+        renderStarChartGlossary();
+        return;
+      }
+      const go = e.target.closest('[data-sc-go]');
+      if (go) { goToStarChart(go.dataset.scGo); return; }
+      if (e.target.closest('[data-sc-cta]')) {
+        if (typeof selectTab === 'function') selectTab('star-chart');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+    _scGlossBound = true;
+  }
+}
+
+// ── Mastery Rank glossary section ────────────────────────────────────────────
+
+const MR_EARN = [
+  { xp: '3 000', t: { en: 'Weapons', 'pt-BR': 'Armas' },
+    d: { en: '100 XP per rank, to 30. Primaries, secondaries, melee, Kitguns, Zaws, Amps, Archwing & Sentinel weapons.',
+         'pt-BR': '100 XP por rank, até 30. Primárias, secundárias, melee, Kitguns, Zaws, Amps, armas de Archwing e Sentinela.' } },
+  { xp: '4 000', t: { en: 'Rank-40 weapons', 'pt-BR': 'Armas de rank 40' },
+    d: { en: 'Kuva, Tenet & Coda weapons and the Paracesis rank to 40 (5 Forma) for more mastery.',
+         'pt-BR': 'Armas Kuva, Tenet e Coda e a Paracesis sobem até o rank 40 (5 Forma), valendo mais mastery.' } },
+  { xp: '6 000', t: { en: 'Warframes & co.', 'pt-BR': 'Warframes & cia.' },
+    d: { en: '200 XP per rank, to 30. Warframes, Companions, Archwings, K-Drives, Necramechs.',
+         'pt-BR': '200 XP por rank, até 30. Warframes, Companions, Archwings, K-Drives, Necramechs.' } },
+];
+
+const MR_PERKS = [
+  { t: { en: 'Mod capacity head start', 'pt-BR': 'Capacidade de mod inicial' },
+    d: { en: 'New unranked gear starts with mod capacity equal to your MR.', 'pt-BR': 'Equipamento novo já começa com capacidade de mod igual ao seu MR.' } },
+  { t: { en: 'Daily Standing cap', 'pt-BR': 'Limite diário de Reputação' },
+    d: { en: '16 000 + (500 × MR) per syndicate, each day.', 'pt-BR': '16.000 + (500 × MR) por sindicato, por dia.' } },
+  { t: { en: 'Daily trades', 'pt-BR': 'Trades por dia' },
+    d: { en: 'You can trade up to MR times per day.', 'pt-BR': 'Você pode negociar até MR vezes por dia.' } },
+  { t: { en: 'MR-locked gear', 'pt-BR': 'Equipamento com MR-lock' },
+    d: { en: 'Some weapons, items and Riven mods require a minimum rank.', 'pt-BR': 'Algumas armas, itens e Rivens exigem rank mínimo.' } },
+];
+
+const MR_TIPS = [
+  { en: 'Rank each unique item to 30 once before selling it — that’s how MR rises, and you keep it after selling.',
+    'pt-BR': 'Ranqueie cada item único até 30 uma vez antes de vender — é assim que o MR sobe, e você o mantém depois de vender.' },
+  { en: 'Variants count separately: base, Prime, Vandal, Wraith and MK1 each grant mastery.',
+    'pt-BR': 'Variantes contam separado: base, Prime, Vandal, Wraith e MK1 dão mastery cada uma.' },
+  { en: 'MR matters most early (capacity + gates); later it’s mostly prestige and higher caps.',
+    'pt-BR': 'MR importa mais no começo (capacidade + gates); depois é mais prestígio e caps maiores.' },
+];
+
+function renderMrSection() {
+  const el = document.getElementById('mr-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const earn = MR_EARN.map(m =>
+    `<div class="mr-earn-card"><span class="mr-earn-xp">${esc(m.xp)}</span>`
+    + `<span class="mr-earn-t">${esc(L(m.t))}</span>`
+    + `<span class="mr-earn-d">${esc(L(m.d))}</span></div>`
+  ).join('');
+
+  const perks = MR_PERKS.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`
+  ).join('');
+
+  const tips = MR_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    earn:  { en: 'How you earn MR',       'pt-BR': 'Como você ganha MR' },
+    earnS: { en: 'Each unique item grants its mastery only once, the first time you rank it.', 'pt-BR': 'Cada item único dá o mastery só uma vez, na primeira vez que você o ranqueia.' },
+    perks: { en: 'What MR unlocks',        'pt-BR': 'O que o MR desbloqueia' },
+    test:  { en: 'The Mastery Rank test',  'pt-BR': 'O teste de Maestria' },
+    testD: { en: 'Each rank-up needs a solo test. You can retry it as many times as you want — there’s no penalty for failing. Only passing a test locks you out for 24 hours before you can attempt the next one.',
+             'pt-BR': 'Cada rank-up exige um teste solo. Você pode tentar quantas vezes quiser — não há punição por falhar. Só passar num teste trava por 24 horas até você poder tentar o próximo.' },
+    ranks: { en: 'MR runs 0–30; beyond that are Legendary Ranks (LR1+). Each rank needs more XP (2 500 × rank²).',
+             'pt-BR': 'O MR vai de 0 a 30; acima disso vêm os Legendary Ranks (LR1+). Cada rank exige mais XP (2.500 × rank²).' },
+    tips:  { en: 'Good to know',           'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.earn))}</h4>`
+    + `<div class="mr-earn">${earn}</div>`
+    + `<p class="sc-sub">${esc(L(T.earnS))}</p>`
+    + `<h4 class="sc-h">${esc(L(T.perks))}</h4>`
+    + `<dl class="sc-terms">${perks}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.test))}</h4>`
+    + `<div class="sc-jstep sc-jstep-full"><span class="sc-jstep-d">${esc(L(T.testD))}</span></div>`
+    + `<p class="sc-sub">${esc(L(T.ranks))}</p>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Nightwave glossary section ───────────────────────────────────────────────
+
+const NW_ACTS = [
+  { v: '1 000', t: { en: 'Daily acts', 'pt-BR': 'Atos diários' },
+    d: { en: 'A new one each day; each lasts 3 days. Quick, simple goals.', 'pt-BR': 'Um novo por dia; cada um dura 3 dias. Objetivos rápidos.' } },
+  { v: '4 500', t: { en: 'Weekly acts', 'pt-BR': 'Atos semanais' },
+    d: { en: '2 weekly + 3 permanent weekly. Refresh every Sunday.', 'pt-BR': '2 semanais + 3 permanentes. Renovam sábado às 21h (horário de Brasília).' } },
+  { v: '7 000', t: { en: 'Elite weekly', 'pt-BR': 'Elite semanal' },
+    d: { en: '2 per week — the hardest tier, the most Standing.', 'pt-BR': '2 por semana — o tier mais difícil, mais Reputação.' } },
+];
+
+const NW_DETAILS = [
+  { t: { en: 'Ranks', 'pt-BR': 'Ranks' },
+    d: { en: '30 ranks, 10 000 Standing each. Leftover Standing carries over.', 'pt-BR': '30 ranks, 10.000 de Reputação cada. O excedente acumula.' } },
+  { t: { en: 'Prestige', 'pt-BR': 'Prestige' },
+    d: { en: 'After rank 30, each Prestige rank grants 15 Cred.', 'pt-BR': 'Depois do rank 30, cada Prestige dá 15 Cred.' } },
+  { t: { en: 'Rewards', 'pt-BR': 'Recompensas' },
+    d: { en: 'Nitain, Forma, Catalysts/Reactors, Auras, Umbra Forma, slots and exclusive cosmetics — rarer at higher ranks.', 'pt-BR': 'Nitain, Forma, Catalisadores/Reatores, Auras, Forma Umbra, slots e cosméticos exclusivos — mais raros nos ranks altos.' } },
+  { t: { en: 'Cred shop', 'pt-BR': 'Loja de Cred' },
+    d: { en: 'Rank-ups grant Cred — spend it in the rotating Cred Offerings. Standing only ranks you up.', 'pt-BR': 'Subir de rank dá Cred — gaste nas Cred Offerings rotativas. Reputação só sobe o rank.' } },
+  { t: { en: 'Season length', 'pt-BR': 'Duração da temporada' },
+    d: { en: 'Each Mix runs about 3–5 months (recent ones ranged 3.5–5.5). A countdown appears when ~2 weeks remain.', 'pt-BR': 'Cada Mix dura cerca de 3 a 5 meses (os recentes variaram de 3,5 a 5,5). Um contador aparece quando faltam ~2 semanas.' } },
+];
+
+const NW_TIPS = [
+  { en: 'Do your Weekly and Elite acts first — that’s where the Standing is.', 'pt-BR': 'Faça os Atos Semanais e Elite primeiro — é onde está a Reputação.' },
+  { en: 'Missed a weekly? It returns as a “Recovered” act once you run low.', 'pt-BR': 'Perdeu um semanal? Ele volta como ato “Recovered” quando você fica com poucos.' },
+  { en: 'Cred is season-specific — spend it before the season ends.', 'pt-BR': 'O Cred é específico da temporada — gaste antes dela acabar.' },
+  { en: 'Nightwave is always on; seasons rotate — currently Nora’s Mix: Time Tempests.', 'pt-BR': 'A Nightwave está sempre ativa; as temporadas giram — atualmente Nora’s Mix: Time Tempests.' },
+];
+
+function renderNightwaveSection() {
+  const el = document.getElementById('nw-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const unit = L({ en: 'Standing', 'pt-BR': 'Reputação' });
+  const acts = NW_ACTS.map(a =>
+    `<div class="mr-earn-card"><span class="nw-stat">${esc(a.v)}<span class="nw-unit"> ${esc(unit)}</span></span>`
+    + `<span class="mr-earn-t">${esc(L(a.t))}</span>`
+    + `<span class="mr-earn-d">${esc(L(a.d))}</span></div>`
+  ).join('');
+
+  const details = NW_DETAILS.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`
+  ).join('');
+
+  const tips = NW_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    acts:  { en: 'Acts — earn Standing', 'pt-BR': 'Atos — ganhe Reputação' },
+    actsS: { en: 'Weekly and Elite acts refresh every Sunday; missed ones come back as “Recovered”.', 'pt-BR': 'Atos Semanais e Elite renovam sábado às 21h (horário de Brasília); os perdidos voltam como “Recovered”.' },
+    track: { en: 'The reward track', 'pt-BR': 'A trilha de recompensas' },
+    tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.acts))}</h4>`
+    + `<div class="mr-earn nw-acts">${acts}</div>`
+    + `<p class="sc-sub">${esc(L(T.actsS))}</p>`
+    + `<h4 class="sc-h">${esc(L(T.track))}</h4>`
+    + `<dl class="sc-terms">${details}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Sortie glossary section ──────────────────────────────────────────────────
+
+const SORTIE_MISSIONS = [
+  { v: '50–60',  t: { en: 'Mission 1', 'pt-BR': 'Missão 1' }, d: { en: 'Eases you in.',              'pt-BR': 'Pra aquecer.' } },
+  { v: '65–80',  t: { en: 'Mission 2', 'pt-BR': 'Missão 2' }, d: { en: 'Tougher, same faction.',     'pt-BR': 'Mais difícil, mesma facção.' } },
+  { v: '80–100', t: { en: 'Mission 3', 'pt-BR': 'Missão 3' }, d: { en: 'Often ends on the boss.',     'pt-BR': 'Costuma terminar no boss.' } },
+];
+
+const SORTIE_MODS = [
+  { t: { en: 'Augmented Armor', 'pt-BR': 'Armadura Aumentada' },        d: { en: 'Enemies have +300% armor.', 'pt-BR': 'Inimigos com +300% de armadura.' } },
+  { t: { en: 'Elemental Enhancement', 'pt-BR': 'Reforço Elemental' },   d: { en: '+100% of an element, +85% resistance to all elements.', 'pt-BR': '+100% de um elemento, +85% de resistência a todos.' } },
+  { t: { en: 'Energy Reduction', 'pt-BR': 'Redução de Energia' },       d: { en: 'Max Warframe energy quartered, slow regen.', 'pt-BR': 'Energia máxima do Warframe cai pra 1/4, regen lenta.' } },
+  { t: { en: 'Eximus Stronghold', 'pt-BR': 'Reduto Eximus' },           d: { en: 'Far more buffed Eximus enemies.', 'pt-BR': 'Muito mais inimigos Eximus buffados.' } },
+  { t: { en: 'Environmental hazard', 'pt-BR': 'Risco ambiental' },      d: { en: 'Radiation, Cryo leak or Fire across the map.', 'pt-BR': 'Radiação, vazamento criogênico ou fogo pelo mapa.' } },
+  { t: { en: 'Weapon restriction', 'pt-BR': 'Restrição de arma' },      d: { en: 'Only Sniper / Shotgun / Bow / Melee allowed.', 'pt-BR': 'Só Sniper / Shotgun / Arco / Melee permitidos.' } },
+];
+
+const SORTIE_REWARDS = [
+  { t: { en: 'Riven Mod (veiled)', 'pt-BR': 'Riven Mod (velado)' },       v: '28%' },
+  { t: { en: 'Anasa Sculpture → Endo', 'pt-BR': 'Anasa Sculpture → Endo' }, v: '28%' },
+  { t: { en: '4 000 Endo', 'pt-BR': '4.000 Endo' },                       v: '12%' },
+  { t: { en: '6 000 Kuva', 'pt-BR': '6.000 Kuva' },                       v: '12%' },
+  { t: { en: '3-day Booster', 'pt-BR': 'Booster de 3 dias' },             v: '~20%' },
+  { t: { en: 'Exilus Adapter · Forma · Catalyst · Reactor', 'pt-BR': 'Exilus Adapter · Forma · Catalyst · Reactor' }, v: '2,5% ' },
+  { t: { en: 'Legendary Core', 'pt-BR': 'Legendary Core' },               v: '0,19%' },
+];
+
+const SORTIE_TIPS = [
+  { en: 'One reward per day — finish all three missions, in order.', 'pt-BR': 'Uma recompensa por dia — complete as três missões, em ordem.' },
+  { en: 'Match your loadout to the modifier (e.g. the weapon restriction) and bring a strong rank-30 frame.', 'pt-BR': 'Adapte o loadout ao modificador (ex.: a restrição de arma) e leve um Warframe forte no rank 30.' },
+  { en: 'Riven mods drop veiled — unveil them with a challenge. Anasa Sculptures convert to a big chunk of Endo.', 'pt-BR': 'Rivens caem velados — revele com um desafio. Anasa Sculptures convertem num bom tanto de Endo.' },
+];
+
+function renderSortieSection() {
+  const el = document.getElementById('sorties-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const unit = L({ en: 'lvl', 'pt-BR': 'nível' });
+  const missions = SORTIE_MISSIONS.map(m =>
+    `<div class="mr-earn-card"><span class="nw-stat">${esc(m.v)}<span class="nw-unit"> ${esc(unit)}</span></span>`
+    + `<span class="mr-earn-t">${esc(L(m.t))}</span>`
+    + `<span class="mr-earn-d">${esc(L(m.d))}</span></div>`
+  ).join('');
+
+  const mods = SORTIE_MODS.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`
+  ).join('');
+
+  const rewards = SORTIE_REWARDS.map(r =>
+    `<div class="sc-term"><dt>${esc(L(r.t))}</dt><dd class="sortie-chance">${esc(r.v)}</dd></div>`
+  ).join('');
+
+  const tips = SORTIE_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    miss:  { en: 'Three missions, rising difficulty', 'pt-BR': 'Três missões, dificuldade crescente' },
+    missS: { en: 'All three share one faction and reset daily. You must clear them in order.', 'pt-BR': 'As três compartilham uma facção e renovam diariamente. Você precisa completá-las em ordem.' },
+    mods:  { en: 'Modifiers you’ll see', 'pt-BR': 'Modificadores que aparecem' },
+    rew:   { en: 'Reward pool (one per day)', 'pt-BR': 'Pool de recompensas (uma por dia)' },
+    tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.miss))}</h4>`
+    + `<div class="mr-earn nw-acts">${missions}</div>`
+    + `<p class="sc-sub">${esc(L(T.missS))}</p>`
+    + `<h4 class="sc-h">${esc(L(T.mods))}</h4>`
+    + `<dl class="sc-terms">${mods}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.rew))}</h4>`
+    + `<dl class="sc-terms sc-terms-chance">${rewards}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Arbitration glossary section ─────────────────────────────────────────────
+
+const ARB_RULES = [
+  { t: { en: 'One life · no bleedout', 'pt-BR': 'Uma vida · sem bleedout' },
+    d: { en: 'Lose all health and you die instantly. In a squad, allies revive you with 5 Resurgence Tokens (dropped by drones); solo, death is final for the run.',
+         'pt-BR': 'Perdeu toda a vida, morre na hora. Em squad, aliados revivem com 5 Resurgence Tokens (dropados pelos drones); solo, a morte é definitiva.' } },
+  { t: { en: 'Arbitration Drones', 'pt-BR': 'Arbitragem Drones' },
+    d: { en: 'They tether nearby enemies and make them invulnerable (magenta aura). Up to 5 at once, 10 m range — kill them first. Punch-through, AoE or big-hitbox guns help.',
+         'pt-BR': 'Prendem inimigos próximos e os deixam invulneráveis (aura magenta). Até 5 por vez, alcance 10 m — mate-os primeiro. Punch-through, AoE ou armas de hitbox grande ajudam.' } },
+];
+
+const ARB_DETAILS = [
+  { t: { en: 'Rotation', 'pt-BR': 'Rotação' },
+    d: { en: 'A new node every hour; only endless mission types. Enemies start at level 60–80.', 'pt-BR': 'Um nodo novo a cada hora; só tipos infinitos. Inimigos começam no nível 60–80.' } },
+  { t: { en: 'Reward rounds', 'pt-BR': 'Rodadas de recompensa' },
+    d: { en: 'Rotate AABBCC… — the longer you stay, the better the pool.', 'pt-BR': 'Giram em AABBCC… — quanto mais tempo, melhor o pool.' } },
+  { t: { en: 'Vitus Essence', 'pt-BR': 'Vitus Essence' },
+    d: { en: 'The currency: 1 per completed round (+6% drop from drones), plus 50 000 credits on completion.', 'pt-BR': 'A moeda: 1 por rodada concluída (+6% de drop nos drones), além de 50.000 créditos ao completar.' } },
+  { t: { en: 'Rotation drops', 'pt-BR': 'Drops de rotação' },
+    d: { en: 'Endo, Ayatan Sculptures, Arcanes, mods (Adaptation, Combat Discipline), Omni Forma.', 'pt-BR': 'Endo, Esculturas Ayatan, Arcanos, mods (Adaptation, Combat Discipline), Omni Forma.' } },
+  { t: { en: 'Arbitration Honors shop', 'pt-BR': 'Loja Arbitragem Honors' },
+    d: { en: 'Spend Vitus in the Arbiters of Hexis room of any Relay (no reputation needed): Galvanized mods, Archgun Rivens, Kuva, Grendel locators, cosmetics.', 'pt-BR': 'Gaste Vitus na sala dos Arbiters of Hexis em qualquer Relay (sem precisar de reputação): mods Galvanized, Archgun Rivens, Kuva, localizadores do Grendel, cosméticos.' } },
+];
+
+const ARB_TIPS = [
+  { en: 'Kill the drones on sight — while they live, nearby enemies are immortal.', 'pt-BR': 'Mate os drones assim que aparecem — enquanto vivos, os inimigos perto ficam imortais.' },
+  { en: 'Don’t go down: no bleedout, and reviving needs a squad + tokens. Bring survivability (Adaptation, dashes, healing).', 'pt-BR': 'Não vá ao chão: sem bleedout, e reviver exige squad + tokens. Leve sobrevivência (Adaptation, dashes, cura).' },
+  { en: 'Galvanized mods (huge weapon upgrades) are the main reason to farm Vitus Essence here.', 'pt-BR': 'Os mods Galvanized (upgrades enormes de arma) são o principal motivo pra farmar Vitus Essence aqui.' },
+];
+
+function renderArbitrationSection() {
+  const el = document.getElementById('arb-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const rules = ARB_RULES.map(r =>
+    `<div class="sc-jstep"><span class="sc-jstep-t">${esc(L(r.t))}</span><span class="sc-jstep-d">${esc(L(r.d))}</span></div>`
+  ).join('');
+
+  const details = ARB_DETAILS.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`
+  ).join('');
+
+  const tips = ARB_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    rules: { en: 'Two rules that define it', 'pt-BR': 'Duas regras que definem o modo' },
+    how:   { en: 'How it works', 'pt-BR': 'Como funciona' },
+    tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.rules))}</h4>`
+    + `<div class="sc-jsteps sc-jsteps-2">${rules}</div>`
+    + `<h4 class="sc-h">${esc(L(T.how))}</h4>`
+    + `<dl class="sc-terms">${details}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Steel Path glossary section ──────────────────────────────────────────────
+
+const SP_MODS = [
+  { v: '+100', t: { en: 'Levels', 'pt-BR': 'Níveis' },  d: { en: 'On enemies (only +50 on Archwing/Railjack).', 'pt-BR': 'Nos inimigos (só +50 em Archwing/Railjack).' } },
+  { v: '×2.5', t: { en: 'Health', 'pt-BR': 'Vida' },    d: { en: 'Enemies are far tankier.', 'pt-BR': 'Inimigos bem mais tankões.' } },
+  { v: '×2.5', t: { en: 'Shields', 'pt-BR': 'Escudos' }, d: { en: 'Same for Corpus shields.', 'pt-BR': 'Idem nos escudos Corpus.' } },
+];
+
+const SP_DETAILS = [
+  { t: { en: 'How you earn Essence', 'pt-BR': 'Como ganhar Essência de Aço' },
+    d: { en: 'Acolytes (2 each), Steel Path Incursions (5 each), clearing a full planet (25), Eidolons and SP relic cracking (1).', 'pt-BR': 'Acólitos (2 cada), Incursões do Percurso de Aço (5 cada), limpar um planeta inteiro (25), Eidolons e relíquias em Fissuras do Percurso de Aço (1).' } },
+  { t: { en: 'Teshin’s Steel Path Honors', 'pt-BR': 'Loja do Teshin (Honras do Percurso de Aço)' },
+    d: { en: 'Umbra Forma BP (150), Kuva, Arcane Adapters, a weekly Veiled Riven Cipher, Stance Forma, cosmetics — plus a rotating weekly offer.', 'pt-BR': 'Diagrama de Forma Umbra (150), Kuva, adaptadores de arcanos, um decodificador de riven oculto semanal, forma de postura, cosméticos — além de uma oferta semanal rotativa.' } },
+  { t: { en: 'Steel Path Incursions', 'pt-BR': 'Incursões do Percurso de Aço' },
+    d: { en: '6 alert missions a day (reset 00:00 UTC), 5 Steel Essence each.', 'pt-BR': '6 missões-alerta por dia (renovam às 21h, horário de Brasília), 5 Essência de Aço cada.' } },
+  { t: { en: 'The Circuit (weekly)', 'pt-BR': 'O Circuito (semanal)' },
+    d: { en: 'Offers Incarnon Genesis adapters — 2 of 5 selectable per week.', 'pt-BR': 'Oferece adaptadores de Incarnon Genesis — 2 de 5 escolhíveis por semana.' } },
+];
+
+const SP_TIPS = [
+  { en: 'Enemies are tankier, not just more numerous — bring real damage and armor/shield strip.', 'pt-BR': 'Os inimigos são mais resistentes, não só mais numerosos — leve dano de verdade e remoção de armadura/escudo.' },
+  { en: 'Even solo, enemy spawns stay at the maximum (4-player) rate — normal missions scale to squad size, Steel Path doesn’t.', 'pt-BR': 'Mesmo solo, a quantidade de inimigos é sempre máxima (como num squad de 4) — no modo normal ela se adapta ao número de jogadores; no Percurso de Aço, não.' },
+  { en: 'Steel Path Incursions are an easy, steady source of Steel Essence; Umbra Forma is the shop’s highest-value buy.', 'pt-BR': 'As Incursões do Percurso de Aço rendem Essência de Aço de forma fácil e constante. A Forma Umbra é a compra mais valiosa da loja.' },
+];
+
+function renderSteelPathSection() {
+  const el = document.getElementById('sp-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const mods = SP_MODS.map(m =>
+    `<div class="mr-earn-card"><span class="nw-stat">${esc(m.v)}</span>`
+    + `<span class="mr-earn-t">${esc(L(m.t))}</span>`
+    + `<span class="mr-earn-d">${esc(L(m.d))}</span></div>`
+  ).join('');
+
+  const details = SP_DETAILS.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`
+  ).join('');
+
+  const tips = SP_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    diff:  { en: 'How much harder', 'pt-BR': 'Quão mais difícil' },
+    diffS: { en: 'Armor is NOT increased (changed in Update 36) — the challenge comes from levels + HP/shields.', 'pt-BR': 'A armadura NÃO aumenta (mudou no Update 36) — o desafio vem de nível + HP/escudos.' },
+    bonus: { en: 'Bonus: +100% resource drop chance and +100% mod drop chance (not on Railjack missions).', 'pt-BR': 'Bônus: +100% de chance de drop de recursos e +100% de chance de drop de mods (não conta para missões de Railjack).' },
+    aco:   { en: 'Acolytes', 'pt-BR': 'Acólitos' },
+    acoD:  { en: 'Minibosses that hunt you down every few minutes. Each guarantees 2 Steel Essence + a random Steel Path Arcane. If one downs you, it escapes and you get nothing.', 'pt-BR': 'Mini-bosses que te caçam a cada poucos minutos. Cada um garante 2 Essência de Aço + um Arcano do Percurso de Aço. Se um te derruba, ele foge e você não ganha nada.' },
+    ess:   { en: 'Steel Essence & shop', 'pt-BR': 'Essência de Aço & loja' },
+    tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.diff))}</h4>`
+    + `<div class="mr-earn nw-acts">${mods}</div>`
+    + `<p class="sc-sub">${esc(L(T.diffS))}</p>`
+    + `<p class="sp-bonus">${esc(L(T.bonus))}</p>`
+    + `<h4 class="sc-h">${esc(L(T.aco))}</h4>`
+    + `<div class="sc-jstep sc-jstep-full"><span class="sc-jstep-d">${esc(L(T.acoD))}</span></div>`
+    + `<h4 class="sc-h">${esc(L(T.ess))}</h4>`
+    + `<dl class="sc-terms">${details}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── The Circuit glossary section ─────────────────────────────────────────────
+
+const CIRCUIT_VERSIONS = [
+  { t: { en: 'Normal', 'pt-BR': 'Normal' },
+    d: { en: 'Pick 1 of 3 Warframes offered each week — you earn their blueprints across the tiers.',
+         'pt-BR': 'Escolha 1 de 3 Warframes oferecidos por semana — você ganha os diagramas deles ao longo dos tiers.' } },
+  { t: { en: 'Steel Path', 'pt-BR': 'Percurso de Aço' },
+    d: { en: 'Pick 2 of 5 Incarnon Genesis adapters each week (Tier 5 & 10). Enemies start around level 130.',
+         'pt-BR': 'Escolha 2 de 5 adaptadores de Incarnon Genesis por semana (Tier 5 e 10). Inimigos começam por volta do nível 130.' } },
+];
+
+const CIRCUIT_HOW = [
+  { t: { en: 'Mission types', 'pt-BR': 'Tipos de missão' },
+    d: { en: 'Stages rotate through Survival, Exterminate, Defense, Excavation, Alchemy, Void Flood — and a Corrupted Jackal boss from stage 5 on.', 'pt-BR': 'Os estágios alternam entre Sobrevivência, Extermínio, Defesa, Escavação, Alquimia, Inundação do Void — e um boss Corrupted Jackal a partir do estágio 5.' } },
+  { t: { en: 'Random loadout', 'pt-BR': 'Loadout aleatório' },
+    d: { en: 'You start with a random set of Warframes & weapons (Duviri rules) — your own gear and companions are disabled.', 'pt-BR': 'Você começa com um conjunto aleatório de Warframes e armas (regras de Duviri) — seu equipamento e companions ficam desativados.' } },
+  { t: { en: 'Decrees', 'pt-BR': 'Decretos' },
+    d: { en: 'Collect 3 Decree Fragments per stage to earn a Decree — a strong buff that lasts the run.', 'pt-BR': 'Junte 3 Fragmentos de Decreto por estágio pra ganhar um Decreto — um buff forte que dura a partida.' } },
+  { t: { en: 'Progress & reset', 'pt-BR': 'Progresso & reset' },
+    d: { en: 'Clear stages to fill Circuit Progress toward tiers; rewards are claimable once a week, resetting Monday 00:00 UTC.', 'pt-BR': 'Complete estágios pra encher o Progresso do Circuito rumo aos tiers; recompensas resgatáveis uma vez por semana, reiniciando domingo às 21h (horário de Brasília).' } },
+  { t: { en: 'Steel Path extras', 'pt-BR': 'Extras do Percurso de Aço' },
+    d: { en: 'At Drifter Opportunity Intrinsic 9 you can also pick Riven Mods or 20,000 Kuva as rewards.', 'pt-BR': 'Com Intrínseco Opportunity 9 do Drifter você também pode escolher Rivens ou 20.000 Kuva como recompensa.' } },
+];
+
+const CIRCUIT_TIPS = [
+  { en: 'The Circuit is the main way to farm Warframes and Incarnons — check each week’s rotation.', 'pt-BR': 'O Circuito é a principal forma de farmar Warframes e Incarnons — confira a rotação de cada semana.' },
+  { en: 'Bring nothing — the loadout is random. Lean into Decrees to power up your run.', 'pt-BR': 'Não precisa levar nada — o loadout é aleatório. Aposte nos Decretos pra fortalecer a partida.' },
+];
+
+function renderCircuitSection() {
+  const el = document.getElementById('circuit-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const versions = CIRCUIT_VERSIONS.map(v =>
+    `<div class="sc-jstep"><span class="sc-jstep-t">${esc(L(v.t))}</span><span class="sc-jstep-d">${esc(L(v.d))}</span></div>`
+  ).join('');
+
+  const how = CIRCUIT_HOW.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`
+  ).join('');
+
+  const tips = CIRCUIT_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    ver:  { en: 'Two versions', 'pt-BR': 'Duas versões' },
+    how:  { en: 'How it works', 'pt-BR': 'Como funciona' },
+    tips: { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.ver))}</h4>`
+    + `<div class="sc-jsteps sc-jsteps-2">${versions}</div>`
+    + `<h4 class="sc-h">${esc(L(T.how))}</h4>`
+    + `<dl class="sc-terms">${how}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Syndicates glossary section ──────────────────────────────────────────────
+
+const SYN_HOW = [
+  { t: { en: 'Pledge & Sigil', 'pt-BR': 'Compromisso & Sigilo' },
+    d: { en: 'Pledge to a syndicate and equip its Sigil — 15% of the affinity you earn becomes its Standing. Daily cap is 16,000 + (500 × MR).', 'pt-BR': 'Comprometa-se com um sindicato e equipe o Sigilo dele — 15% da afinidade que você ganha vira Reputação pra ele. O cap diário é 16.000 + (500 × MR).' } },
+  { t: { en: 'Extra Standing', 'pt-BR': 'Reputação extra' },
+    d: { en: 'Daily Syndicate Alerts and Medallions found in missions give Standing beyond the daily cap.', 'pt-BR': 'Alertas diários e Medalhões achados em missão dão Reputação além do cap diário.' } },
+  { t: { en: 'Ranking up', 'pt-BR': 'Subir de rank' },
+    d: { en: 'Spend Standing plus a sacrifice of items; all Standing is consumed and you pick one free gift.', 'pt-BR': 'Gaste Reputação + um sacrifício de itens; toda a Reputação é consumida e você escolhe um presente grátis.' } },
+  { t: { en: 'Offerings', 'pt-BR': 'Ofertas' },
+    d: { en: 'Sigils, relic packs, weapon augments and — at higher ranks — Warframe Augment Mods and syndicate weapons.', 'pt-BR': 'Sigilos, packs de relíquia, augmentos de arma e — nos ranks altos — Mods de Augment de Warframe e armas exclusivas do sindicato.' } },
+];
+
+const SYN_IMG = 'https://wiki.warframe.com/images/';
+// cores oficiais da wiki (bg = fundo, c = fontcolor/nome). hexágono: aliado +50% / oposto −50% / inimigo −100%
+const SYN_BASE = [
+  { n: 'Steel Meridian', bg: '#2C3F46', c: '#f9bc93', icon: SYN_IMG + 'SteelIcon(xPink).png?58e3f',
+    d: { en: 'Grineer deserters protecting what remains of the colonies.', 'pt-BR': 'Desertores Grineer protegendo o que resta das colônias.' },
+    ally: 'Red Veil', opp: 'New Loka', enemy: 'The Perrin Sequence' },
+  { n: 'Arbiters of Hexis', bg: '#374045', c: '#cfe1e4', icon: SYN_IMG + 'ArbitarIcon(xGrey).png?f8712',
+    d: { en: 'Seekers of the truth behind Tenno potential.', 'pt-BR': 'Buscam a verdade por trás do potencial dos Tenno.' },
+    ally: 'Cephalon Suda', opp: 'The Perrin Sequence', enemy: 'Red Veil' },
+  { n: 'Cephalon Suda', bg: '#3D375D', c: '#fbfed0', icon: SYN_IMG + 'CephalonIconLightGold.png?0cbc3',
+    d: { en: 'A vast consciousness hungry for knowledge.', 'pt-BR': 'Uma vasta consciência ávida por conhecimento.' },
+    ally: 'Arbiters of Hexis', opp: 'Red Veil', enemy: 'New Loka' },
+  { n: 'The Perrin Sequence', bg: '#3D4963', c: '#92dbff', icon: SYN_IMG + 'PerrinSequenceIconBlue.png?0cbc3',
+    d: { en: 'Merchants restoring order through prosperity.', 'pt-BR': 'Mercadores que restauram a ordem pela prosperidade.' },
+    ally: 'New Loka', opp: 'Arbiters of Hexis', enemy: 'Steel Meridian' },
+  { n: 'Red Veil', bg: '#3D1839', c: '#fe8a88', icon: SYN_IMG + 'RedVeilIcon(xRed).png?f8712',
+    d: { en: 'Purge the system’s corruption — at any cost.', 'pt-BR': 'Purgam a corrupção do sistema — a qualquer custo.' },
+    ally: 'Steel Meridian', opp: 'Cephalon Suda', enemy: 'Arbiters of Hexis' },
+  { n: 'New Loka', bg: '#2A3C2E', c: '#c2ffbf', icon: SYN_IMG + 'LokaIcon(xGreen).png?58e3f',
+    d: { en: 'Seek a pure humanity and a repopulated Earth.', 'pt-BR': 'Buscam uma humanidade pura e a Terra repovoada.' },
+    ally: 'The Perrin Sequence', opp: 'Steel Meridian', enemy: 'Cephalon Suda' },
+];
+
+const SYN_NEUTRAL = [
+  { n: 'Cephalon Simaris', bg: '#5F3C0D', c: '#ebd18f', icon: SYN_IMG + 'SimarisSigil(xYellow)(xLight).png?3e3ec', d: { en: 'Sanctuary — Synthesis scanning.', 'pt-BR': 'Santuário — escaneamento (Synthesis).' } },
+  { n: 'Conclave',         bg: '#0a0a0a', c: '#ffffff', icon: SYN_IMG + 'ConclaveSigil(SxWhite).png?b6dad', d: { en: 'PvP modes.', 'pt-BR': 'Modos PvP.' } },
+  { n: 'Ostron',           bg: '#B74624', c: '#e8ddaf', icon: SYN_IMG + 'OstronSigil(xLight).png?ba21e', d: { en: 'Cetus / Plains of Eidolon.', 'pt-BR': 'Cetus / Planícies de Eidolon.' } },
+  { n: 'Solaris United',   bg: '#5F3C0D', c: '#e8ddaf', icon: SYN_IMG + 'SolarisUnited1(xLight).png?9ee79', d: { en: 'Fortuna / Orb Vallis.', 'pt-BR': 'Fortuna / Orb Vallis.' } },
+  { n: 'Vox Solaris',      bg: '#F2E5A7', c: '#4A2B18', icon: SYN_IMG + 'VoxSolarisIcon(xDark).png?e6889', d: { en: 'Orb Vallis endgame (Vox Solaris quest).', 'pt-BR': 'Endgame do Orb Vallis (jornada Vox Solaris).' } },
+  { n: 'Ventkids',         bg: '#B97EF9', c: '#FFF58F', icon: SYN_IMG + 'VentkidsIcon(xLight).png?70259', d: { en: 'Fortuna — K-Drive racing.', 'pt-BR': 'Fortuna — corridas de K-Drive.' } },
+  { n: 'Entrati',          bg: '#4E5360', c: '#FFC12F', icon: SYN_IMG + 'EntratiIcon(xLight).png?cafef', d: { en: 'Deimos / Cambion Drift (Heart of Deimos).', 'pt-BR': 'Deimos / Cambion Drift (Heart of Deimos).' } },
+  { n: 'Necraloid',        bg: '#333334', c: '#BA9E5E', icon: SYN_IMG + 'NecraloidIcon.png?a3e90', d: { en: 'Deimos — Necramech progression.', 'pt-BR': 'Deimos — progressão de Necramech.' } },
+];
+
+const SYN_SPOILER = [
+  { n: 'Plumas',          bg: '#F7FACB', c: '#b43419', icon: SYN_IMG + 'TheQuillsSigil.png?954cb', d: { en: 'Cetus at night — Eidolons & Operator.', 'pt-BR': 'Cetus à noite — Eidolons & Operador.' } },
+  { n: 'The Holdfasts',   bg: '#21242e', c: '#a9b5cc', icon: SYN_IMG + 'TheHoldfastsIcon(xDark).png?8bad1', d: { en: 'Zariman (Angels of the Zariman).', 'pt-BR': 'Zariman (jornada Angels of the Zariman).' } },
+  { n: 'Cavia',           bg: '#282624', c: '#A5A394', icon: SYN_IMG + 'CaviaSyndicateLogo1(xLight).png?406b5', d: { en: 'Albrecht’s Laboratories (Whispers in the Walls).', 'pt-BR': 'Albrecht’s Laboratories (Whispers in the Walls).' } },
+  { n: 'Kahl’s Garrison', bg: '#0a2a1b', c: '#a16042', icon: SYN_IMG + 'GarrisonIcon.png?3d907', d: { en: 'Weekly missions (Veilbreaker).', 'pt-BR': 'Missões semanais (Veilbreaker).' } },
+  { n: 'The Hex',         bg: '#556033', c: '#171b0e', icon: SYN_IMG + 'HexIcon(xLight).png?c8c7d', d: { en: 'Höllvania / 1999.', 'pt-BR': 'Höllvania / 1999.' } },
+  { n: 'Nightcap',        bg: '#603672', c: '#f8942a', icon: SYN_IMG + 'NightcapIcon(xLight).png?59010', d: { en: 'Deepmines (Fortuna / Orb Vallis).', 'pt-BR': 'Deepmines (Fortuna / Orb Vallis).' } },
+];
+
+const SYN_TIPS = [
+  { en: 'The 6 base syndicates interlock: gaining Standing with one rewards its ally (+50%) and penalizes its opposed (−50%) and its enemy (−100%) — align with ones that don’t clash.', 'pt-BR': 'Os 6 sindicatos base se entrelaçam: ganhar Reputação com um beneficia o aliado (+50%) e penaliza o oposto (−50%) e o inimigo (−100%) — alinhe-se com os que não se opõem.' },
+  { en: 'Each Warframe Augment Mod is sold by two syndicates.', 'pt-BR': 'Cada Mod de Augment de Warframe é vendido por dois sindicatos.' },
+  { en: 'Syndicates outside the hexagon (neutral and late-game) have no enemies and never demote — the late-game ones just unlock after certain quests.', 'pt-BR': 'Os sindicatos fora do hexágono (neutros e de fim de jogo) não têm inimigos nem perdem rank — os de fim de jogo só desbloqueiam depois de certas jornadas.' },
+  { en: 'Letting a syndicate’s Standing go too negative sends Death Squads after you.', 'pt-BR': 'Deixar a Reputação de um sindicato muito negativa faz ele mandar Death Squads atrás de você.' },
+  { en: 'There are also event syndicates: Operational Supply (live operations) and Nightwave (its own section here).', 'pt-BR': 'Há ainda sindicatos de evento: Operational Supply (operações ativas) e a Nightwave (que tem seção própria aqui).' },
+];
+
+let _synGlossBound = false;
+function renderSyndicateSection() {
+  const el = document.getElementById('syn-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+  const showSpoilers = !!(state.starChart && state.starChart.showSpoilers);
+
+  const how = SYN_HOW.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+
+  const allyLbl = L({ en: 'Allied', 'pt-BR': 'Aliado' });
+  const oppLbl = L({ en: 'Opposed', 'pt-BR': 'Oposto' });
+  const enemyLbl = L({ en: 'Enemy', 'pt-BR': 'Inimigo' });
+
+  // card de sindicato: ícone + nome (cor) + descrição (+ relações, se de facção)
+  const synCard = (s, rels) =>
+    `<div class="syn-card" style="--c:${s.c};--bg:${s.bg}">`
+    + `<div class="syn-card-head">`
+    + (s.icon ? `<img class="syn-card-icon" src="${esc(s.icon)}" alt="" loading="lazy" onerror="this.style.display='none'">` : '')
+    + `<div class="syn-card-htext"><div class="syn-card-name">${esc(s.n)}</div>`
+    + `<div class="syn-card-desc">${esc(L(s.d))}</div></div></div>`
+    + (rels || '') + `</div>`;
+
+  const base = SYN_BASE.map(s => synCard(s,
+    `<div class="syn-rels">`
+    + `<div class="syn-rel syn-rel--ally"><span class="syn-rel-k">${allyLbl} +50%</span><span class="syn-rel-v">${esc(s.ally)}</span></div>`
+    + `<div class="syn-rel syn-rel--opp"><span class="syn-rel-k">${oppLbl} −50%</span><span class="syn-rel-v">${esc(s.opp)}</span></div>`
+    + `<div class="syn-rel syn-rel--enemy"><span class="syn-rel-k">${enemyLbl} −100%</span><span class="syn-rel-v">${esc(s.enemy)}</span></div>`
+    + `</div>`)).join('');
+
+  const neutral = SYN_NEUTRAL.map(s => synCard(s)).join('');
+  const spoilerList = SYN_SPOILER.map(s => synCard(s)).join('');
+
+  const tips = SYN_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    how:     { en: 'How it works', 'pt-BR': 'Como funciona' },
+    base:    { en: 'The 6 faction syndicates', 'pt-BR': 'Os 6 sindicatos de facção' },
+    baseS:   { en: 'Pledge to one at a time. Standing ripples out: allies gain +50%, opposed lose −50%, enemies lose −100%.', 'pt-BR': 'Você se compromete com um por vez. A Reputação respinga: aliados ganham +50%, opostos perdem −50%, inimigos perdem −100%.' },
+    neutral: { en: 'Neutral syndicates', 'pt-BR': 'Sindicatos neutros' },
+    neutralS:{ en: 'No enemies, each with its own daily cap — join them as you reach their content.', 'pt-BR': 'Sem inimigos, cada um com seu próprio cap diário — entre neles conforme alcança o conteúdo.' },
+    spoiler: { en: 'Late-game syndicates', 'pt-BR': 'Sindicatos de fim de jogo' },
+    tips:    { en: 'Good to know', 'pt-BR': 'Bom saber' },
+    hide:    { en: 'Hide spoilers', 'pt-BR': 'Ocultar spoilers' },
+  };
+
+  let spoilerBlock;
+  if (showSpoilers) {
+    spoilerBlock = `<div class="sc-h-row"><h4 class="sc-h">${esc(L(T.spoiler))}</h4>`
+      + `<button type="button" class="sc-spoiler-toggle" data-syn-hide>${esc(L(T.hide))}</button></div>`
+      + `<div class="syn-grid">${spoilerList}</div>`;
+  } else {
+    const veilTxt = L({ en: `${SYN_SPOILER.length} quest-locked syndicates hidden`, 'pt-BR': `${SYN_SPOILER.length} sindicatos com quest-lock ocultos` });
+    const veilCta = L({ en: 'Reveal spoilers', 'pt-BR': 'Revelar spoilers' });
+    spoilerBlock = `<h4 class="sc-h">${esc(L(T.spoiler))}</h4>`
+      + `<button type="button" class="sc-special-card sc-special-veil" data-syn-reveal style="aspect-ratio:auto">`
+      + `<span class="sc-veil-ico" aria-hidden="true">🔒</span>`
+      + `<span class="sc-special-name">${esc(veilTxt)}</span>`
+      + `<span class="sc-special-note">${esc(veilCta)} →</span></button>`;
+  }
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.how))}</h4>`
+    + `<dl class="sc-terms">${how}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.base))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.baseS))}</p>`
+    + `<div class="syn-grid">${base}</div>`
+    + `<h4 class="sc-h">${esc(L(T.neutral))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.neutralS))}</p>`
+    + `<div class="syn-grid">${neutral}</div>`
+    + spoilerBlock
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+
+  if (!_synGlossBound) {
+    el.addEventListener('click', e => {
+      const reveal = e.target.closest('[data-syn-reveal]');
+      const hide = e.target.closest('[data-syn-hide]');
+      if (reveal || hide) {
+        state.starChart.showSpoilers = !!reveal;
+        try { localStorage.setItem('starChart.showSpoilers', reveal ? 'true' : 'false'); } catch (err) {}
+        renderSyndicateSection();
+      }
+    });
+    _synGlossBound = true;
+  }
+}
+
+// ── Critical Hits glossary section ───────────────────────────────────────────
+
+const CRIT_STATS = [
+  { k: 'CC', t: { en: 'Critical Chance', 'pt-BR': 'Chance de Crítico' },
+    d: { en: 'How often a hit crits.', 'pt-BR': 'Com que frequência um tiro crita.' } },
+  { k: 'CD', t: { en: 'Critical Damage', 'pt-BR': 'Dano de Crítico' },
+    d: { en: 'The damage multiplier when it crits.', 'pt-BR': 'O multiplicador de dano quando crita.' } },
+];
+
+const CRIT_TIERS = [
+  { c: '#e8c04a', t: { en: 'Tier 1 · Yellow', 'pt-BR': 'Tier 1 · Amarelo' }, cc: { en: 'CC up to 100%', 'pt-BR': 'CC até 100%' },
+    d: { en: 'A normal crit — damage × CD.', 'pt-BR': 'Crítico normal — dano × CD.' }, ex: 'CD 2,0× → ×2,0' },
+  { c: '#e0823c', t: { en: 'Tier 2 · Orange', 'pt-BR': 'Tier 2 · Laranja' }, cc: { en: 'CC above 100%', 'pt-BR': 'CC acima de 100%' },
+    d: { en: 'Big crit — the crit bonus is doubled.', 'pt-BR': 'Crítico grande — o bônus do crítico é dobrado.' }, ex: 'CD 2,0× → ×3,0' },
+  { c: '#d2483a', t: { en: 'Tier 3 · Red', 'pt-BR': 'Tier 3 · Vermelho' }, cc: { en: 'CC 200%+', 'pt-BR': 'CC 200%+' },
+    d: { en: 'Super crit — the crit bonus is tripled.', 'pt-BR': 'Crítico supremo — o bônus do crítico é triplicado.' }, ex: 'CD 2,0× → ×4,0' },
+];
+
+// multiplicador efetivo por tier = 1 + T×(CD−1). r1/r2/r3 = vermelho com ! / !! / !!!
+const CRIT_EX = [
+  { cd: '2,0×',  y: '×2',  o: '×3',  r: '×4',  r1: '×5',  r2: '×6',  r3: '×7' },
+  { cd: '3,0×',  y: '×3',  o: '×5',  r: '×7',  r1: '×9',  r2: '×11', r3: '×13' },
+  { cd: '10,0×', y: '×10', o: '×19', r: '×28', r1: '×37', r2: '×46', r3: '×55' },
+];
+
+const CRIT_DETAILS = [
+  { t: { en: 'Above 100% CC', 'pt-BR': 'Acima de 100% de CC' },
+    d: { en: 'Every hit is a guaranteed crit; the excess becomes the chance to tier up. E.g. 150% CC → all hits crit and 50% turn orange.', 'pt-BR': 'Todo tiro vira crítico garantido; o excedente vira a chance de subir de tier. Ex.: 150% de CC → todos critam e 50% viram laranja.' } },
+  { t: { en: 'CC and CD multiply each other', 'pt-BR': 'CC e CD se multiplicam' },
+    d: { en: 'Tiering up re-applies the CD bonus (the part above ×1) — orange doubles it, red triples it (multiplier = 1 + T × (CD − 1)). So CC past 100% raises your damage, not just how often you crit — that’s why crit weapons stack both. See the table above.', 'pt-BR': 'Subir de tier reaplica o bônus do CD (a parte acima de ×1) — laranja dobra, vermelho triplica (multiplicador = 1 + T × (CD − 1)). Por isso CC acima de 100% aumenta o dano, não só a frequência — e armas de crit sobem os dois juntos. Veja a tabela acima.' } },
+  { t: { en: 'The “!” in-game', 'pt-BR': 'Os “!” no jogo' },
+    d: { en: 'Past red (tier 3) the colour stops changing, so each extra tier adds an exclamation mark — red !, red !!, then red !!! (tier 6, around 500%+ CC). More marks = even more damage.', 'pt-BR': 'Passado o vermelho (tier 3), a cor para de mudar — aí cada tier a mais coloca um “!”: vermelho !, vermelho !!, e vermelho !!! (tier 6, com CC lá por ~500%+). Mais “!” = ainda mais dano.' } },
+  { t: { en: 'Headshots', 'pt-BR': 'Tiros na cabeça' },
+    d: { en: 'Have their own multiplier that stacks on top of the crit — and some effects (e.g. Harrow’s Covenant) boost crit chance on headshots.', 'pt-BR': 'Têm multiplicador próprio que empilha por cima do crítico — e alguns efeitos (ex.: Covenant da Harrow) aumentam a CC na cabeça.' } },
+  { t: { en: 'Boosting it', 'pt-BR': 'Como aumentar' },
+    d: { en: 'CC mods (Point Strike +150%, Galvanized Scope…), CD mods (Vital Sense +120%, Bladed Rounds…), arcanes (Avenger/Crepuscular) and Rivens.', 'pt-BR': 'Mods de CC (Point Strike +150%, Galvanized Scope…), de CD (Vital Sense +120%, Bladed Rounds…), arcanos (Avenger/Crepuscular) e Rivens.' } },
+];
+
+const CRIT_TIPS = [
+  { en: 'Crit weapons want CC and CD together — they multiply each other, so raising both beats focusing one.', 'pt-BR': 'Armas de crit querem CC e CD juntos — eles se multiplicam, então subir os dois rende mais que focar um.' },
+  { en: 'Passing 100% (orange) and 200% (red) are huge damage jumps — worth chasing.', 'pt-BR': 'Passar de 100% (laranja) e 200% (vermelho) são saltos enormes de dano — vale a pena buscar.' },
+  { en: 'Headshots multiply on top of crits — great on snipers and precision weapons.', 'pt-BR': 'Headshots multiplicam por cima do crit — ótimos em snipers e armas de precisão.' },
+  { en: 'Status weapons (low crit, high status) don’t want crit — invest in Status Chance instead.', 'pt-BR': 'Armas de status (crit baixo, status alto) não querem crit — invista em Chance de Status.' },
+];
+
+function renderCritsSection() {
+  const el = document.getElementById('crits-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const stats = CRIT_STATS.map(s =>
+    `<div class="mr-earn-card"><span class="nw-stat">${esc(s.k)}</span>`
+    + `<span class="mr-earn-t">${esc(L(s.t))}</span>`
+    + `<span class="mr-earn-d">${esc(L(s.d))}</span></div>`).join('');
+
+  const tiers = CRIT_TIERS.map(t =>
+    `<div class="crit-tier" style="--c:${t.c}">`
+    + `<div class="crit-tier-name">${esc(L(t.t))}</div>`
+    + `<div class="crit-tier-cc">${esc(L(t.cc))}</div>`
+    + `<div class="crit-tier-d">${esc(L(t.d))}</div>`
+    + `<div class="crit-tier-ex">${esc(t.ex)}</div></div>`).join('');
+
+  const exRows = CRIT_EX.map(r =>
+    `<tr><td>${esc(r.cd)}</td><td class="ct-y">${esc(r.y)}</td><td class="ct-o">${esc(r.o)}</td><td class="ct-r">${esc(r.r)}</td><td class="ct-r">${esc(r.r1)}</td><td class="ct-r">${esc(r.r2)}</td><td class="ct-r">${esc(r.r3)}</td></tr>`).join('');
+  const exTable = `<p class="sc-sub crit-ex-label">${esc(L({ en: 'Example — effective multiplier per tier:', 'pt-BR': 'Exemplo — multiplicador efetivo por tier:' }))}</p>`
+    + `<div class="crit-ex-wrap"><table class="crit-ex"><thead><tr>`
+    + `<th>${esc(L({ en: 'Crit Damage', 'pt-BR': 'Dano de Crít.' }))}</th>`
+    + `<th class="ct-y">${esc(L({ en: 'Yellow', 'pt-BR': 'Amarelo' }))}</th>`
+    + `<th class="ct-o">${esc(L({ en: 'Orange', 'pt-BR': 'Laranja' }))}</th>`
+    + `<th class="ct-r">${esc(L({ en: 'Red', 'pt-BR': 'Vermelho' }))}</th>`
+    + `<th class="ct-r">!</th>`
+    + `<th class="ct-r">!!</th>`
+    + `<th class="ct-r">!!!</th></tr></thead>`
+    + `<tbody>${exRows}</tbody></table></div>`;
+
+  const details = CRIT_DETAILS.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+
+  const tips = CRIT_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    stats: { en: 'The two stats', 'pt-BR': 'As duas stats' },
+    tiers: { en: 'Crit tiers', 'pt-BR': 'Tiers de crítico' },
+    how:   { en: 'How it works', 'pt-BR': 'Como funciona' },
+    tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.stats))}</h4>`
+    + `<div class="mr-earn nw-acts">${stats}</div>`
+    + `<h4 class="sc-h">${esc(L(T.tiers))}</h4>`
+    + `<div class="crit-tiers">${tiers}</div>`
+    + exTable
+    + `<h4 class="sc-h">${esc(L(T.how))}</h4>`
+    + `<dl class="sc-terms">${details}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Mission Rotations glossary section ───────────────────────────────────────
+
+const ROT_MISSIONS = [
+  { m: { en: 'Survival',       'pt-BR': 'Sobrevivência' },     iv: { en: 'every 5 min',      'pt-BR': 'a cada 5 min' },     a: { en: '5 / 10 min',     'pt-BR': '5 / 10 min' },     b: { en: '15 min',     'pt-BR': '15 min' },     c: { en: '20 min',     'pt-BR': '20 min' } },
+  { m: { en: 'Defense',        'pt-BR': 'Defesa' },            iv: { en: 'every 3 waves',    'pt-BR': 'a cada 3 ondas' },   a: { en: 'waves 3 / 6',    'pt-BR': 'ondas 3 / 6' },    b: { en: 'wave 9',     'pt-BR': 'onda 9' },     c: { en: 'wave 12',    'pt-BR': 'onda 12' } },
+  { m: { en: 'Interception',   'pt-BR': 'Interceptação' },     iv: { en: 'each round',       'pt-BR': 'cada rodada' },      a: { en: 'rounds 1 / 2',   'pt-BR': 'rodadas 1 / 2' },  b: { en: 'round 3',    'pt-BR': 'rodada 3' },   c: { en: 'round 4',    'pt-BR': 'rodada 4' } },
+  { m: { en: 'Excavation',     'pt-BR': 'Escavação' },         iv: { en: 'every 100 Cryotic','pt-BR': 'a cada 100 Cryotic' },a: { en: '1st / 2nd dig',  'pt-BR': '1ª / 2ª escav.' }, b: { en: '3rd',        'pt-BR': '3ª' },         c: { en: '4th',        'pt-BR': '4ª' } },
+  { m: { en: 'Defection',      'pt-BR': 'Defecção' },          iv: { en: 'every 2 squads',   'pt-BR': 'a cada 2 esquadrões' }, a: { en: '2 / 4 squads', 'pt-BR': '2 / 4 esq.' },  b: { en: '6 squads',   'pt-BR': '6 esq.' },     c: { en: '8 squads',   'pt-BR': '8 esq.' } },
+  { m: { en: 'Mirror Defense', 'pt-BR': 'Defesa Espelhada' },  iv: { en: '~5.5 min',         'pt-BR': '~5,5 min' },         a: { en: '1st / 2nd',      'pt-BR': '1ª / 2ª' },        b: { en: '3rd',        'pt-BR': '3ª' },         c: { en: '4th',        'pt-BR': '4ª' } },
+];
+
+const ROT_SPECIAL = [
+  { t: { en: 'Disruption', 'pt-BR': 'Disrupção' },
+    d: { en: 'Ignores the clock and waves — the tier depends on the round and how many of the 4 conduits you defend. More conduits defended = a better table. E.g. on round 3: defending all 4 conduits gives C, 3 gives B, just 1 drops to A. From round 4 on, 4 conduits = C.', 'pt-BR': 'Ignora relógio e ondas — o tier depende da rodada e de quantos dos 4 conduítes você defende. Mais conduítes defendidos = tabela melhor. Ex.: na rodada 3, defender os 4 conduítes dá C, 3 dão B e só 1 cai pra A. Da rodada 4 em diante, 4 conduítes = C.' } },
+  { t: { en: 'Arbitrations', 'pt-BR': 'Arbitragens' },
+    d: { en: 'Run on AABBCCCC… — after AABB they stay on C forever, which makes them great for farming C-tier drops.', 'pt-BR': 'Rodam em AABBCCCC… — depois de AABB ficam na C pra sempre, o que as torna ótimas pra farmar drops de tier C.' } },
+  { t: { en: 'The Index', 'pt-BR': 'O Índice' },
+    d: { en: 'Breaks the pattern with A-B-B-…, and the C rotation shows up only once per match (after one hour, when John Prodman appears).', 'pt-BR': 'Quebra o padrão com A-B-B-…, e a rotação C aparece só uma vez por partida (após uma hora, quando o John Prodman surge).' } },
+  { t: { en: 'Sabotage caches', 'pt-BR': 'Caches de Sabotagem' },
+    d: { en: 'Roll on their own table, separate from the mission rotation — finding all hidden caches is what unlocks the bonus drops.', 'pt-BR': 'Rolam numa tabela própria, separada da rotação da missão — achar todos os caches escondidos é o que libera os drops de bônus.' } },
+];
+
+const ROT_TIPS = [
+  { en: 'Rotation C usually has what you want (Prime parts, rare mods) — plan your exit on a C: 20 min, wave 12, round 4, or the 4th excavation.', 'pt-BR': 'A rotação C costuma ter o que você quer (peças Prime, mods raros) — planeje a saída numa C: 20 min, onda 12, rodada 4, ou a 4ª escavação.' },
+  { en: 'You only keep the loot when you extract — dying without a revive or abandoning the run loses the rewards.', 'pt-BR': 'Você só leva o loot ao extrair — morrer sem revive ou abandonar a partida perde as recompensas.' },
+  { en: 'Disruption and Arbitrations do not follow AABC (see special cases).', 'pt-BR': 'Disrupção e Arbitragens não seguem o AABC (veja casos especiais).' },
+  { en: 'In Void Fissures, Excavation asks for 200 Cryotic per reward (double the usual).', 'pt-BR': 'Em Fissuras do Void, a Escavação pede 200 Cryotic por recompensa (o dobro do normal).' },
+];
+
+function renderRotationsSection() {
+  const el = document.getElementById('rotations-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const cycle = ['A', 'A', 'B', 'C'].map(x =>
+    `<span class="rot-chip${x === 'C' ? ' is-c' : ''}">${x}</span>`).join('<span class="rot-arrow">›</span>');
+
+  const rows = ROT_MISSIONS.map(r =>
+    `<tr><td>${esc(L(r.m))}</td><td class="rot-iv">${esc(L(r.iv))}</td><td>${esc(L(r.a))}</td><td>${esc(L(r.b))}</td><td class="rot-c">${esc(L(r.c))}</td></tr>`).join('');
+
+  const table = `<div class="crit-ex-wrap"><table class="rot-table"><thead><tr>`
+    + `<th>${esc(L({ en: 'Mission', 'pt-BR': 'Missão' }))}</th>`
+    + `<th>${esc(L({ en: 'Cadence', 'pt-BR': 'Cadência' }))}</th>`
+    + `<th>A</th><th>B</th><th class="rot-c">C</th></tr></thead>`
+    + `<tbody>${rows}</tbody></table></div>`;
+
+  const special = ROT_SPECIAL.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+
+  const tips = ROT_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    cycle:   { en: 'The AABC cycle', 'pt-BR': 'O ciclo AABC' },
+    when:    { en: 'When each rotation lands', 'pt-BR': 'Quando cada rotação cai' },
+    special: { en: 'Special cases', 'pt-BR': 'Casos especiais' },
+    tips:    { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.cycle))}</h4>`
+    + `<div class="rot-cycle">${cycle}<span class="rot-loop">↻</span></div>`
+    + `<p class="rot-repeat">${esc(L({ en: '…then it repeats: A A B C A A B C…', 'pt-BR': '…e repete: A A B C A A B C…' }))}</p>`
+    + `<h4 class="sc-h">${esc(L(T.when))}</h4>`
+    + table
+    + `<h4 class="sc-h">${esc(L(T.special))}</h4>`
+    + `<dl class="sc-terms">${special}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Mission Types glossary section ───────────────────────────────────────────
+// Names + colors are inherited from MISSION_TYPES (the Star Chart filter source).
+
+const MT_GROUPS = [
+  { label: { en: 'Basics (single objective)', 'pt-BR': 'Básicas (objetivo único)' }, items: [
+    { key: 'exterminate',    d: { en: 'Kill enemies until you hit the quota, then head to extraction.', 'pt-BR': 'Elimine inimigos até bater a cota e siga pra extração.' } },
+    { key: 'capture',        d: { en: 'Track the target, take it down and capture it before it escapes.', 'pt-BR': 'Rastreie o alvo, derrube-o e capture antes que fuja.' } },
+    { key: 'rescue',         d: { en: 'Break into the prison and escort the hostage out — alarms send guards to execute them.', 'pt-BR': 'Invada a prisão e escolte o refém até a saída — alarmes mandam guardas executá-lo.' } },
+    { key: 'spy',            d: { en: 'Hack data vaults without tripping the alarm; stealth is rewarded.', 'pt-BR': 'Invada cofres de dados sem disparar o alarme; furtividade é recompensada.' } },
+    { key: 'sabotage',       d: { en: 'Destroy or compromise an objective (reactor, cache); the method varies by tileset.', 'pt-BR': 'Destrua ou comprometa um objetivo (reator, cache); o método muda conforme o local.' } },
+    { key: 'mobile_defense', d: { en: 'Plant the datamass at terminals and defend each for a timed countdown.', 'pt-BR': 'Plante o datamass nos terminais e defenda cada um por um tempo cronometrado.' } },
+    { key: 'assassination',  d: { en: 'Fight the planet boss — usually drops Warframe parts.', 'pt-BR': 'Enfrente o chefe daquele planeta — costuma dropar peças de Warframe.' } },
+  ] },
+  { label: { en: 'Endless (A/B/C rotations)', 'pt-BR': 'Infinitas (rotações A/B/C)' }, items: [
+    { key: 'survival',       d: { en: 'Stay alive by keeping life support up; the longer you last, the better the rewards.', 'pt-BR': 'Sobreviva mantendo o suporte de vida ativo; quanto mais tempo, melhores as recompensas.' } },
+    { key: 'defense',        d: { en: 'Protect a target through waves of enemies.', 'pt-BR': 'Proteja um alvo ao longo de ondas de inimigos.' } },
+    { key: 'interception',   d: { en: 'Capture and hold towers to fill your bar before the enemy fills theirs.', 'pt-BR': 'Capture e segure torres pra encher sua barra antes do inimigo.' } },
+    { key: 'excavation',     d: { en: 'Feed excavators with power cells while defending them.', 'pt-BR': 'Alimente escavadoras com células de energia enquanto as defende.' } },
+    { key: 'disruption',     d: { en: 'Defend conduits from Demolishers rushing to blow them up.', 'pt-BR': 'Defenda conduítes dos Demolishers que correm pra explodi-los.' } },
+    { key: 'defection',      d: { en: 'Escort groups of Infested refugees, healing them along the way.', 'pt-BR': 'Escolte grupos de refugiados infestados, curando-os pelo caminho.' } },
+    { key: 'mirror_defense', d: { en: 'A Defense variant with two parallel objectives; alternate between them and grab pickups to heal them.', 'pt-BR': 'Variante de Defesa com dois objetivos paralelos; alterne entre eles e colete itens pra curá-los.' } },
+  ] },
+  { label: { en: 'Special', 'pt-BR': 'Especiais' }, items: [
+    { key: 'hijack',           d: { en: 'Drive a mobile objective to extraction, fueling it with your shields.', 'pt-BR': 'Conduza um objetivo móvel até a extração, abastecendo-o com seus escudos.' } },
+    { key: 'arena',            d: { en: 'Fight waves of enemies in a closed arena (Rathuum).', 'pt-BR': 'Lute contra ondas de inimigos numa arena fechada (Rathuum).' } },
+    { key: 'assault',          d: { en: 'A chain of linked objectives through an enemy base.', 'pt-BR': 'Uma sequência de objetivos encadeados por uma base inimiga.' } },
+    { key: 'ascension',        d: { en: 'Corpus mission: defend the collector, charge the capsule up the elevator and escort it out.', 'pt-BR': 'Missão Corpus: defenda o coletor, carregue a cápsula no elevador e escolte até a saída.' } },
+    { key: 'alchemy',          d: { en: 'Collect Amphors and toss them into the Crucible to combine primary elements into the target element.', 'pt-BR': 'Colete Amphors e jogue-os no Caldeirão pra combinar elementos primários no elemento-alvo.' } },
+    { key: 'infested_salvage', d: { en: 'Keep consoles active while managing toxic Infested gas.', 'pt-BR': 'Mantenha consoles ativos enquanto lida com o gás tóxico infestado.' } },
+  ] },
+  { label: { en: 'Void (Zariman)', 'pt-BR': 'Void (Zariman)' }, spoiler: true, items: [
+    { key: 'void_cascade',     d: { en: 'Use Operator Void damage to purge possessed Exolizers and stop the cascade.', 'pt-BR': 'Use o dano Void do Operador pra purgar Exolizers possuídos e evitar o colapso.' } },
+    { key: 'void_flood',       d: { en: 'Gather Vitoplast and deposit it into Void Ruptures to seal them.', 'pt-BR': 'Recolha Vitoplast e deposite nas Rupturas do Void pra selá-las.' } },
+    { key: 'void_armageddon',  d: { en: 'Defend the relic and Exodampers from enemy waves, then defeat the Void Angel that ends each round.', 'pt-BR': 'Defenda a relíquia e os Exodampers das ondas e derrote o Anjo do Void que encerra cada rodada.' } },
+  ] },
+  { label: { en: 'Archwing & Railjack', 'pt-BR': 'Archwing & Railjack' }, items: [
+    { key: 'archwing',    d: { en: 'Aerial / space combat flying your Archwing.', 'pt-BR': 'Combate aéreo/espacial pilotando seu Archwing.' } },
+    { key: 'pursuit',     d: { en: 'Archwing mission: chase down and disable a fleeing Grineer Courier ship to grab its black box.', 'pt-BR': 'Missão de Archwing: persiga e desative uma nave Courier Grineer em fuga pra pegar a caixa-preta.' } },
+    { key: 'free_flight', d: { en: 'Free Archwing flight to practice with no objective.', 'pt-BR': 'Voo livre de Archwing pra treinar sem objetivo.' } },
+    { key: 'skirmish',    d: { en: 'Railjack: clear enemy fighters and bases in space and on foot.', 'pt-BR': 'Railjack: limpe esquadrilhas e bases inimigas no espaço e a pé.' } },
+    { key: 'volatile',    d: { en: 'Railjack: a Skirmish variant with reactor sabotage inside the enemy ship.', 'pt-BR': 'Railjack: variante de Escaramuça com sabotagem de reator dentro da nave inimiga.' } },
+    { key: 'orphix',      d: { en: 'Railjack: destroy Orphix sentients using Necramechs.', 'pt-BR': 'Railjack: destrua sentinelas Orphix usando Necramechs.' } },
+  ] },
+  { label: { en: 'Open worlds', 'pt-BR': 'Mundo aberto' }, items: [
+    { key: 'free_roam', d: { en: 'Open-world areas to explore freely (Cetus, Fortuna, Necralisk).', 'pt-BR': 'Áreas de mundo aberto pra explorar livremente (Cetus, Fortuna, Necralisk).' } },
+    { key: 'bounty',    d: { en: 'Series of open-world objectives handed out by the local syndicates.', 'pt-BR': 'Séries de objetivos no mundo aberto dadas pelos sindicatos locais.' } },
+  ] },
+  { label: { en: 'Region-specific modes', 'pt-BR': 'Modos de região' }, items: [
+    { key: 'shrine_defense',   d: { en: 'Earth mission: protect the Ostrons, bring offerings to the Koumei Shrine for buffs, and beat the Infested Oni boss.', 'pt-BR': 'Missão na Terra: proteja os Ostron, leve oferendas ao Santuário de Koumei por bônus e derrote o chefe Oni Infestado.' } },
+    { key: 'abyssal_zone',     d: { en: 'Exterminate on Ceres: wipe out Grineer and haul cursed Orokin Defixios to extraction while random debuffs hit.', 'pt-BR': 'Exterminação em Ceres: elimine Grineer e leve Defixios Orokin amaldiçoados à extração enquanto sofre penalidades aleatórias.' } },
+    { key: 'follies_hunt',     d: { en: 'In the ruined Vesper Relay on Venus, gather Paint to finish three Shadowgraph canvases while Follie hunts you.', 'pt-BR': 'Na arruinada Vesper Relay em Vênus, junte Tinta pra completar três telas de Shadowgraph enquanto Follie te caça.' } },
+  ] },
+  { label: { en: 'Höllvania (1999)', 'pt-BR': 'Höllvania (1999)' }, spoiler: true, items: [
+    { key: 'faceoff',          d: { en: 'PvPvE mode: two squads of four race through Höllvania completing objectives while fighting Scaldra and Techrot.', 'pt-BR': 'Modo PvPvE: dois times de quatro disputam em Höllvania completando objetivos enquanto lutam contra Scaldra e Techrot.' } },
+    { key: 'hell_scrub',       d: { en: 'A Survival twist: cleanse spore-infested zones by destroying spores before they grow into Eximus.', 'pt-BR': 'Variante de Sobrevivência: limpe zonas infestadas por esporos, destruindo-os antes que virem Eximus.' } },
+    { key: 'legacyte_harvest', d: { en: 'An endless Capture: help the Kavat Kalymos lure out and capture Techrot Legacytes.', 'pt-BR': 'Captura infinita: ajude o Kavat Kalymos a atrair e capturar Legacytes Techrot.' } },
+    { key: 'stage_defense',    d: { en: 'Defense in Solstice Square: protect the musician Flare from waves of Scaldra and Techrot.', 'pt-BR': 'Defesa na Solstice Square: proteja a musicista Flare de ondas de Scaldra e Techrot.' } },
+  ] },
+  { label: { en: 'Dark Refractory', 'pt-BR': 'Dark Refractory' }, spoiler: true, items: [
+    { key: 'descendia',        d: { en: 'Weekly run via the Dark Refractory: descend a 21-floor tower of Hell, clearing each floor before facing the boss Roathe.', 'pt-BR': 'Partida semanal pelo Dark Refractory: desça uma torre do Inferno de 21 andares, vencendo cada andar antes de encarar o chefe Roathe.' } },
+    { key: 'perita_rebellion', d: { en: 'Weekly run in the Dark Refractory: clear as many Orders as you can in 12 minutes, stacking buffs, then fight a chosen boss.', 'pt-BR': 'Partida semanal no Dark Refractory: complete o máximo de Orders em 12 minutos, acumulando bônus, e enfrente um chefe escolhido.' } },
+  ] },
+  { label: { en: 'Weekly endgame (Archimedea)', 'pt-BR': 'Endgame semanal (Archimedea)' }, spoiler: true, items: [
+    { key: 'temporal_archimedea', d: { en: 'Höllvania weekly endgame: three back-to-back high-difficulty missions vs Scaldra and Techrot for Research Points and Archon Shards.', 'pt-BR': 'Endgame semanal de Höllvania: três missões seguidas de alta dificuldade contra Scaldra e Techrot por Pontos de Pesquisa e Archon Shards.' } },
+    { key: 'deep_archimedea',     d: { en: 'Sanctum Anatomica weekly endgame (Deimos): three high-difficulty missions vs The Murmur, with optional loadout restrictions and modifiers for better rewards.', 'pt-BR': 'Endgame semanal do Sanctum Anatomica (Deimos): três missões de alta dificuldade contra The Murmur, com restrições de loadout e modificadores opcionais por recompensas melhores.' } },
+  ] },
+];
+
+const MT_NOTE = { en: 'These are the mission types tracked by the Star Chart filters — Digital Extremes adds new ones with each region and update.', 'pt-BR': 'Estes são os tipos de missão acompanhados pelos filtros do Mapa Estelar — a Digital Extremes adiciona novos a cada região e atualização.' };
+
+let _mtGlossBound = false;
+
+function renderMissionTypesSection() {
+  const el = document.getElementById('mission-types-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+  const showSpoilers = !!(state.starChart && state.starChart.showSpoilers);
+
+  const renderGroup = g => {
+    const cards = g.items.map(it => {
+      const mt = MISSION_TYPES[it.key] || { name: { en: it.key }, color: '#5ec0e8' };
+      const c = mt.color || '#5ec0e8';
+      return `<div class="mt-card"><span class="mt-dot" style="background:${c};box-shadow:0 0 8px ${c}"></span>`
+        + `<div class="mt-body"><span class="mt-name">${esc(L(mt.name))}</span>`
+        + `<span class="mt-desc">${esc(L(it.d))}</span></div></div>`;
+    }).join('');
+    return `<h4 class="sc-h">${esc(L(g.label))}</h4><div class="mt-grid">${cards}</div>`;
+  };
+
+  const open = MT_GROUPS.filter(g => !g.spoiler);
+  const locked = MT_GROUPS.filter(g => g.spoiler);
+  const hiddenCount = locked.reduce((n, g) => n + g.items.length, 0);
+
+  const T = {
+    spoiler: { en: 'Late-game & endgame modes', 'pt-BR': 'Modos de fim de jogo e história' },
+    hide:    { en: 'Hide spoilers', 'pt-BR': 'Ocultar spoilers' },
+  };
+
+  let spoilerBlock = '';
+  if (locked.length) {
+    if (showSpoilers) {
+      spoilerBlock = `<div class="sc-h-row"><h4 class="sc-h">${esc(L(T.spoiler))}</h4>`
+        + `<button type="button" class="sc-spoiler-toggle" data-mt-hide>${esc(L(T.hide))}</button></div>`
+        + locked.map(renderGroup).join('');
+    } else {
+      const veilTxt = L({ en: `${hiddenCount} late-game / story modes hidden`, 'pt-BR': `${hiddenCount} modos de fim de jogo / história ocultos` });
+      const veilCta = L({ en: 'Reveal spoilers', 'pt-BR': 'Revelar spoilers' });
+      spoilerBlock = `<h4 class="sc-h">${esc(L(T.spoiler))}</h4>`
+        + `<button type="button" class="sc-special-card sc-special-veil" data-mt-reveal style="aspect-ratio:auto">`
+        + `<span class="sc-veil-ico" aria-hidden="true">🔒</span>`
+        + `<span class="sc-special-name">${esc(veilTxt)}</span>`
+        + `<span class="sc-special-note">${esc(veilCta)} →</span></button>`;
+    }
+  }
+
+  el.innerHTML = open.map(renderGroup).join('') + spoilerBlock
+    + `<p class="mt-note">${esc(L(MT_NOTE))}</p>`;
+
+  if (!_mtGlossBound) {
+    el.addEventListener('click', e => {
+      const reveal = e.target.closest('[data-mt-reveal]');
+      const hide = e.target.closest('[data-mt-hide]');
+      if (reveal || hide) {
+        state.starChart.showSpoilers = !!reveal;
+        try { localStorage.setItem('starChart.showSpoilers', reveal ? 'true' : 'false'); } catch (err) {}
+        renderMissionTypesSection();
+      }
+    });
+    _mtGlossBound = true;
+  }
+}
+
+// ── Quest section ─────────────────────────────────────────────────────────────
+
+function renderQuestsSection() {
+  const container = document.getElementById('quest-arcs-container');
+  if (!container) return;
+  const loc = state.locale === 'pt-BR' ? 'pt' : 'en';
+  container.innerHTML = '';
+
+  QUEST_ARCS.forEach(arc => {
+    const section = document.createElement('div');
+    section.className = 'quest-arc-section';
+
+    const header = document.createElement('h3');
+    header.className = 'quest-arc-header';
+    header.textContent = arc.label[loc];
+    section.appendChild(header);
+
+    if (arc.subarcs) {
+      arc.subarcs.forEach(subarc => {
+        const subLabel = document.createElement('p');
+        subLabel.className = 'quest-subarc-label';
+        subLabel.textContent = subarc.label[loc];
+        section.appendChild(subLabel);
+        section.appendChild(buildQuestGrid(arc.key, subarc.key));
+      });
+    } else {
+      section.appendChild(buildQuestGrid(arc.key, null));
+    }
+
+    container.appendChild(section);
+  });
+}
+
+function buildQuestGrid(arcKey, subarc) {
+  const loc = state.locale === 'pt-BR' ? 'pt' : 'en';
+  const quests = QUESTS.filter(q => q.arc === arcKey && (subarc ? q.subarc === subarc : true));
+  const grid = document.createElement('div');
+  grid.className = 'quest-grid';
+
+  quests.forEach(quest => {
+    const card = document.createElement('div');
+    card.className = 'quest-card';
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.dataset.slug = quest.slug;
+
+    const img = document.createElement('div');
+    img.className = 'quest-card-img';
+    img.style.backgroundImage = `url('${quest.image}')`;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'quest-card-overlay';
+
+    const name = document.createElement('span');
+    name.className = 'quest-card-name';
+    name.textContent = quest.name;
+
+    overlay.appendChild(name);
+    card.appendChild(img);
+    card.appendChild(overlay);
+    grid.appendChild(card);
+  });
+
+  return grid;
+}
+
+function openQuestModal(slug) {
+  const quest = QUESTS.find(q => q.slug === slug);
+  if (!quest) return;
+  const loc = state.locale === 'pt-BR' ? 'pt' : 'en';
+
+  document.getElementById('quest-modal-img').src = quest.image;
+  document.getElementById('quest-modal-img').alt = quest.name;
+  document.getElementById('quest-modal-title').textContent = quest.name;
+  document.getElementById('quest-modal-desc').textContent = quest.desc[loc];
+
+  // Pré-requisitos: lista (seção "Requirements" da wiki). Aceita array de strings
+  // ou, legado, uma string única.
+  const howEl = document.getElementById('quest-meta-how');
+  howEl.innerHTML = '';
+  const how = quest.howToGet[loc];
+  if (Array.isArray(how)) {
+    const ul = document.createElement('ul');
+    ul.className = 'quest-req-list';
+    how.forEach(r => { const li = document.createElement('li'); li.textContent = r; ul.appendChild(li); });
+    howEl.appendChild(ul);
+  } else {
+    howEl.textContent = how;
+  }
+
+  // Recompensas: grade de ícones (estilo tela de fim de missão). Aceita array de
+  // { name:{pt,en}, icon? } — sem icon vira célula de "desbloqueio" só com texto —
+  // ou, legado, um objeto de texto { pt, en }.
+  const rewardsWrap = document.getElementById('quest-modal-rewards-wrap');
+  const rewardsGrid = document.getElementById('quest-modal-rewards');
+  rewardsGrid.innerHTML = '';
+  const rw = quest.rewards;
+  if (Array.isArray(rw) && rw.length) {
+    rw.forEach(item => {
+      const cell = document.createElement('div');
+      cell.className = 'quest-reward-cell' + (item.icon ? '' : ' quest-reward-unlock');
+      const name = (item.name && (item.name[loc] || item.name.en)) || '';
+      if (item.icon) {
+        cell.style.backgroundImage = `url("${item.icon}")`;
+      }
+      const label = document.createElement('span');
+      label.className = 'quest-reward-name';
+      label.textContent = name;
+      cell.appendChild(label);
+      rewardsGrid.appendChild(cell);
+    });
+    rewardsWrap.classList.remove('hidden');
+  } else if (rw && (rw.pt || rw.en)) {
+    const p = document.createElement('p');
+    p.className = 'quest-reward-legacy';
+    p.textContent = rw[loc] || rw.en || '';
+    rewardsGrid.appendChild(p);
+    rewardsWrap.classList.remove('hidden');
+  } else {
+    rewardsWrap.classList.add('hidden');
+  }
+
+  const tagsEl = document.getElementById('quest-modal-tags');
+  tagsEl.innerHTML = '';
+  if (quest.mr > 0) {
+    const tag = document.createElement('span');
+    tag.className = 'glossary-tag';
+    tag.textContent = t('quest_mr') + ' ' + quest.mr;
+    tagsEl.appendChild(tag);
+  }
+
+  const modal = document.getElementById('quest-modal');
+  modal.classList.remove('hidden');
+  document.body.classList.add('modal-open');
+}
+
+function closeQuestModal() {
+  document.getElementById('quest-modal').classList.add('hidden');
+  document.getElementById('quest-modal-img').src = '';
+  document.body.classList.remove('modal-open');
+}
+
+function setupQuestModalEvents() {
+  document.getElementById('quest-modal-backdrop')?.addEventListener('click', closeQuestModal);
+  document.getElementById('quest-modal-close')?.addEventListener('click', closeQuestModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !document.getElementById('quest-modal')?.classList.contains('hidden')) {
+      closeQuestModal();
+    }
+  });
+  document.getElementById('quest-arcs-container')?.addEventListener('click', e => {
+    const card = e.target.closest('.quest-card');
+    if (card) openQuestModal(card.dataset.slug);
+  });
+  document.getElementById('quest-arcs-container')?.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const card = e.target.closest('.quest-card');
+      if (card) { e.preventDefault(); openQuestModal(card.dataset.slug); }
+    }
+  });
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
+function setupLightboxEvents() {
+  document.getElementById('lightbox-backdrop')?.addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
+  document.getElementById('glossary-sections')?.addEventListener('click', e => {
+    const img = e.target.closest('.glossary-figure img');
+    if (img) openLightbox(img.src, img.alt);
+  });
+  document.addEventListener('keydown', e => {
+    const modal = document.getElementById('lightbox-modal');
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      e.preventDefault();
+      closeLightbox();
     }
   });
 }
@@ -108096,6 +109956,18 @@ function setLocale(loc) {
 
   render();
   renderStatusEffects();
+  renderQuestsSection();
+  renderStarChartGlossary();
+  renderMrSection();
+  renderNightwaveSection();
+  renderSortieSection();
+  renderArbitrationSection();
+  renderSteelPathSection();
+  renderCircuitSection();
+  renderSyndicateSection();
+  renderCritsSection();
+  renderRotationsSection();
+  renderMissionTypesSection();
 }
 
 function selectArchetype(slug) {
@@ -108389,6 +110261,7 @@ function openRelicModal(slug) {
   if (!r) return;
   state.relics.selected = slug;
   const era = RELIC_ERAS[r.era];
+  document.getElementById('relic-modal')?.style.setProperty('--era-color', era.color);
   document.getElementById('relic-modal-era-icon').src = era.icon;
   document.getElementById('relic-modal-title').textContent = r.name;
   document.getElementById('relic-modal-era').textContent = relicLoc(era.name) + (r.vaulted ? ' · ' + t('relic_vaulted') : '');
@@ -110871,18 +112744,88 @@ function setupTabNav() {
   setupRivenUploadEvents();
   setupWeaponPickerEvents();
   setupCreditsEvents();
+  setupLightboxEvents();
+  setupQuestModalEvents();
+  renderQuestsSection();
+  renderStarChartGlossary();
+  renderMrSection();
+  renderNightwaveSection();
+  renderSortieSection();
+  renderArbitrationSection();
+  renderSteelPathSection();
+  renderCircuitSection();
+  renderSyndicateSection();
+  renderCritsSection();
+  renderRotationsSection();
+  renderMissionTypesSection();
   setupGlossarySearch();
   setupStarChartSearch();
   setupResourceModalEvents();
 }
 
+// Fold acento+caixa preservando alinhamento 1:1 por caractere (cada char precomposto
+// vira 1 char base), pra mapear o índice do match de volta ao texto original.
+function foldForHighlight(s) {
+  return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+function clearGlossaryHighlights(root) {
+  root.querySelectorAll('mark.glossary-hl').forEach(m => {
+    m.replaceWith(document.createTextNode(m.textContent));
+  });
+  root.normalize();
+}
+
+// Envolve ocorrências de `rawQuery` (acento/caixa-insensível) em <mark> nos nós de
+// texto de `el`. Pula nós onde o fold muda o comprimento (alinhamento quebraria).
+function highlightGlossaryMatches(el, rawQuery) {
+  if (!el) return;
+  const q = foldForHighlight(rawQuery).trim();
+  if (!q) return;
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+  nodes.forEach(node => {
+    const text = node.nodeValue;
+    const folded = foldForHighlight(text);
+    if (folded.length !== text.length) return;   // alinhamento não-1:1 → não destaca
+    let idx = folded.indexOf(q);
+    if (idx === -1) return;
+    const frag = document.createDocumentFragment();
+    let cursor = 0;
+    while (idx !== -1) {
+      if (idx > cursor) frag.appendChild(document.createTextNode(text.slice(cursor, idx)));
+      const mark = document.createElement('mark');
+      mark.className = 'glossary-hl';
+      mark.textContent = text.slice(idx, idx + q.length);
+      frag.appendChild(mark);
+      cursor = idx + q.length;
+      idx = folded.indexOf(q, cursor);
+    }
+    if (cursor < text.length) frag.appendChild(document.createTextNode(text.slice(cursor)));
+    node.parentNode.replaceChild(frag, node);
+  });
+}
+
 function setupGlossarySearch() {
   const input = document.getElementById('glossary-search-input');
   const clearBtn = document.getElementById('glossary-search-clear');
-  const empty = document.getElementById('glossary-empty');
-  if (!input) return;
+  const container = document.getElementById('glossary-sections');
+  if (!input || !container) return;
 
-  const sections = Array.from(document.querySelectorAll('.glossary-section'));
+  const sections = Array.from(container.querySelectorAll('.glossary-section'));
+  const categories = Array.from(container.querySelectorAll('.glossary-category'));
+
+  // Esconde o divider de categoria se nenhuma seção até o próximo divider estiver visível.
+  const updateCategories = () => {
+    categories.forEach(cat => {
+      let anyVisible = false;
+      for (let el = cat.nextElementSibling; el && !el.classList.contains('glossary-category'); el = el.nextElementSibling) {
+        if (el.classList.contains('glossary-section') && !el.classList.contains('hidden')) { anyVisible = true; break; }
+      }
+      cat.classList.toggle('hidden', !anyVisible);
+    });
+  };
 
   const applyFilter = () => {
     const raw = input.value.trim();
@@ -110890,12 +112833,15 @@ function setupGlossarySearch() {
     clearBtn?.classList.toggle('hidden', raw.length === 0);
 
     if (!q) {
-      sections.forEach(s => s.classList.remove('hidden'));
-      empty?.classList.add('hidden');
+      sections.forEach(s => {
+        s.classList.remove('hidden');
+        clearGlossaryHighlights(s);
+        if (s.dataset.glossaryAutoOpen === '1') { s.open = false; delete s.dataset.glossaryAutoOpen; }
+      });
+      categories.forEach(c => c.classList.remove('hidden'));
       return;
     }
 
-    let visible = 0;
     sections.forEach(s => {
       const titleEl = s.querySelector('.glossary-section-title');
       const bodyEl = s.querySelector('.glossary-section-body');
@@ -110906,9 +112852,18 @@ function setupGlossarySearch() {
       );
       const match = haystack.includes(q);
       s.classList.toggle('hidden', !match);
-      if (match) visible++;
+      clearGlossaryHighlights(s);
+      if (match) {
+        highlightGlossaryMatches(titleEl, raw);
+        // destaca em todo o corpo (inclui o conteúdo rico renderizado: dt/dd/li/spans),
+        // não só nos <p> — assim termos como "Incursões" no Steel Path são marcados.
+        if (bodyEl) highlightGlossaryMatches(bodyEl, raw);
+        if (!s.open) { s.open = true; s.dataset.glossaryAutoOpen = '1'; }
+      } else if (s.dataset.glossaryAutoOpen === '1') {
+        s.open = false; delete s.dataset.glossaryAutoOpen;
+      }
     });
-    empty?.classList.toggle('hidden', visible > 0);
+    updateCategories();
   };
 
   input.addEventListener('input', applyFilter);
