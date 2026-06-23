@@ -56,17 +56,18 @@ const STRINGS = {
     glossary_relics: 'Relics & Void Traces',
     glossary_relics_body: 'Void Relics drop [[Prime parts]] when cracked in Void Fissure missions. Each relic has 6 possible rewards split as [[Common ×3]] (~76% combined), [[Uncommon ×2]] (~22%), [[Rare ×1]] (2% at Intact). Spend [[Void Traces]] to refine a relic — [[Intact → Exceptional → Flawless → Radiant]] — bumping the rare chance from 2% to 10%. In a squad of 4, after cracking, you see all 4 players\' reward choices and pick one — bring [[radiant relics]] for the rare, share with the team. Earn traces by collecting [[Reactant]] during Fissure missions (10 Reactant required to crack; up to 30 traces awarded per mission, daily cap = MR × 50).',
     glossary_modding: 'Modding Basics',
+    glossary_modding_body: 'Mods are cards that power up your Warframes, weapons and companions — and they matter far more than the gear itself: a well-modded starter frame beats an unmodded Prime. The catch is mod [[capacity]] — every item only fits so much.',
     glossary_modding_body: 'Mods grant stat bonuses but cost [[Mod Capacity]] equal to the mod\'s rank. Each item starts with capacity equal to its rank (max 30); installing an [[Orokin Reactor]] (Warframes/companions) or [[Orokin Catalyst]] (weapons) doubles that to 60. [[Polarities]] on slots cut the cost of matching-polarity mods in half (rounded up). [[Forma]] adds or changes a polarity on a slot, but resets the item\'s rank to 0. [[Set bonuses]] (Augur, Vigilante, etc.) stack from multiple equipped items. The [[Exilus slot]] only takes utility mods (movement, ammo, reload). [[Galvanized]] mods stack a damage buff on kill (from the Arbitrations vendor).',
     glossary_crits: 'Critical Hits',
     glossary_crits_body: 'A [[critical hit]] deals bonus damage. How often is your [[Critical Chance (CC)]]; how big is your [[Critical Damage (CD)]]. Push CC past 100% and crits [[tier up]] — orange, then red — for even bigger multipliers.',
     glossary_rivens: 'Riven Mods',
-    glossary_rivens_body: 'Rivens are randomized mods tied to a specific weapon. Each weapon has a [[Disposition]] (1–5 dots) that scales the magnitude of every Riven stat — meta weapons usually have low disposition (small bonuses), low-tier weapons get huge ones. Rerolling ([[cycling]]) a Riven costs [[Kuva]], starting at 900 and rising per cycle until it caps at 3,500. Unrolled Rivens are [[veiled]] — complete a specific challenge in-mission to unveil. MR requirement scales with disposition (MR 8–16). The generic strong combo for guns is [[CC + CD + Damage / Multishot]] with no negative; for status weapons, [[Status Chance + Multishot]] beats raw damage.',
+    glossary_rivens_body: 'Rivens are randomized mods tied to a single weapon — each rolls its own mix of [[bonuses]] (and sometimes a curse). A good one can turn a weak weapon into a monster, which is why the best Rivens trade for huge Platinum.',
     glossary_arcanes: 'Arcanes',
-    glossary_arcanes_body: 'Arcanes are slot-based bonuses that trigger on conditions ([[on kill]], [[on hit]], [[on cast]], etc.). [[Warframe Arcanes]] go on the Arcane slot (1 slot, 2 with an Arcane Adapter). [[Operator/Tenno Arcanes]] (Magus, Virtuos, Molt) go on Operator gear. Rank from 0 to 5 by feeding duplicates — each rank cuts cooldown or boosts the effect. Common picks: [[Arcane Energize]] (energy on orb pickup), [[Arcane Grace]] (health regen on damage), [[Molt Augmented]] (+ability strength after kills). [[Set bonuses]] no longer exist after the rework — each Arcane stands alone.',
+    glossary_arcanes_body: 'Arcanes are enhancements that trigger on a condition — [[on kill]], on headshot, when you take damage, on energy pickup. Slotted into Warframes, weapons and Operators, they’re a big chunk of late-game power.',
     glossary_mr: 'Mastery Rank',
     glossary_mr_body: 'Your [[Mastery Rank (MR)]] is an account-wide level that rises as you rank new gear to 30. It raises daily caps, gives new gear a head start on [[mod capacity]], and gates some weapons, items and [[Rivens]] behind a minimum rank.',
     glossary_helminth: 'Helminth (Subsume)',
-    glossary_helminth_body: 'The [[Helminth]] system (unlocked at MR 8 + the Heart of Deimos quest) lets you replace one ability on most Warframes with a [[subsumed ability]] from another. To subsume: feed a fully-ranked Warframe to Helminth — that consumes the frame but permanently unlocks its 1st ability for installation. Some abilities can\'t be subsumed (e.g., Octavia\'s Mallet, Mesa\'s Peacemaker). Installing a subsumed ability costs [[Helminth resources]] (Bile, Calx, Oxides, Pheromones, Synthetics, Biotics, Sentient Appetite) — each ability slot has a specific resource type. [[Invigorations]] are random weekly buffs picked from the Helminth menu — separate system, same room.',
+    glossary_helminth_body: 'The [[Helminth]] is an Infested system in your Orbiter that lets you take one ability from a Warframe and graft it onto another — replacing one of its four abilities. It’s a deep customization tool you unlock mid-game.',
     glossary_cat_progression: 'Progression',
     glossary_tag_foundation: 'Foundation',
     glossary_tag_story: 'Story',
@@ -80,15 +81,14 @@ const STRINGS = {
     glossary_cat_economy: 'Economy & Resources',
     glossary_cat_enemies: 'Enemies',
     glossary_soon_body: 'A detailed explanation for this term is coming soon.',
-    glossary_caches: 'Caches',
     glossary_forma: 'Forma & Orokin Catalyst / Reactor',
+    glossary_forma_body: 'These are the one-time items you apply to gear to supercharge it. An [[Orokin Catalyst/Reactor]] doubles a piece’s mod capacity, while [[Forma]] reshapes its [[polarities]] so a tighter build fits. Both are huge, permanent power jumps — and worth saving for gear you’ll keep.',
     glossary_ducats: 'Ducats',
     glossary_endo: 'Endo',
     glossary_kuva: 'Kuva',
-    glossary_riven_slivers: 'Riven Slivers',
+    glossary_platinum: 'Platinum & Trading',
     glossary_eximus: 'Eximus',
     glossary_liches_sisters: 'Kuva Liches & Sisters of Parvos',
-    glossary_necramechs: 'Necramechs',
     glossary_star_chart: 'Star Chart & Junctions',
     glossary_star_chart_body: 'The [[Star Chart]] is your map of the Origin System. You progress by completing [[Junctions]] — gateways between planets that unlock the next destination. Each planet has its own [[faction]], [[level range]] and mission [[nodes]].',
     glossary_star_chart_fig1: 'The Star Chart at the start of the game — only Mercury and Venus are accessible.',
@@ -374,17 +374,18 @@ const STRINGS = {
     glossary_relics: 'Relíquias & Void Traces',
     glossary_relics_body: 'Relíquias Void dropam [[peças Prime]] quando crackadas em missões Void Fissure. Cada relíquia tem 6 recompensas possíveis: [[Comum ×3]] (~76% somado), [[Incomum ×2]] (~22%), [[Rara ×1]] (2% no Intacta). Gaste [[Void Traces]] pra refinar uma relíquia — [[Intacta → Excepcional → Impecável → Radiante]] — subindo a chance de rara de 2% pra 10%. Em squad de 4, depois de crackar, aparecem as 4 escolhas de recompensa — escolhe a melhor. Leve [[relíquias radiantes]] pra puxar a rara, divida com o time. Ganha traces coletando [[Reactant]] durante missões Fissure (10 Reactant pra crackar; até 30 traces por missão, cap diário = MR × 50).',
     glossary_modding: 'Modding Básico',
+    glossary_modding_body: 'Mods são cartas que potencializam seus Warframes, armas e companheiros — e importam muito mais que o equipamento em si: um frame inicial bem modado supera um Prime sem mods. O detalhe é a [[capacidade]] de mods — cada item só comporta uma certa quantidade.',
     glossary_modding_body: 'Mods dão bônus de stat mas custam [[Capacidade de Mod]] igual ao rank do mod. Cada item começa com capacidade igual ao seu rank (máx 30); instalar um [[Reator Orokin]] (Warframes/companions) ou [[Catalisador Orokin]] (armas) dobra pra 60. [[Polaridades]] nos slots cortam pela metade o custo de mods de mesma polaridade (arredonda pra cima). [[Forma]] adiciona ou muda a polaridade num slot, mas reseta o rank do item pra 0. [[Set bonuses]] (Augur, Vigilante, etc.) acumulam de múltiplos itens equipados. O [[slot Exilus]] aceita só mods utilitários (mobilidade, munição, recarga). Mods [[Galvanized]] empilham buff de dano ao matar (vêm do vendedor de Arbitragens).',
     glossary_crits: 'Críticos',
     glossary_crits_body: 'Um [[acerto crítico]] causa dano extra. A frequência é a [[Chance de Crítico (CC)]]; o tamanho é o [[Dano de Crítico (CD)]]. Passe a CC de 100% e os críticos [[sobem de tier]] — laranja, depois vermelho — pra multiplicadores ainda maiores.',
     glossary_rivens: 'Mods Riven',
-    glossary_rivens_body: 'Rivens são mods randomizados ligados a uma arma específica. Cada arma tem uma [[Disposition]] (1–5 pontos) que escala a magnitude de todo stat de Riven — armas meta geralmente têm disposition baixo (bônus pequenos), armas low-tier ganham bônus enormes. Rerollar ([[cycling]]) um Riven custa [[Kuva]], começa em 900 e sobe por cycle até travar em 3.500. Rivens não rolados são [[velados]] — completa um desafio específico em missão pra desvelar. Requisito de MR escala com disposition (MR 8–16). Combo genérico forte pra armas é [[CC + CD + Dano / Multishot]] sem negativo; pra armas de status, [[Status Chance + Multishot]] bate dano puro.',
+    glossary_rivens_body: 'Rivens são mods aleatórios presos a uma única arma — cada um rola sua própria mistura de [[bônus]] (e às vezes uma maldição). Um bom Riven transforma uma arma fraca num monstro, e por isso os melhores valem muita Platina no mercado.',
     glossary_arcanes: 'Arcanes',
-    glossary_arcanes_body: 'Arcanes são bônus de slot que ativam em condições ([[on kill]], [[on hit]], [[on cast]], etc.). [[Arcanes de Warframe]] vão no slot de Arcane (1 slot, 2 com Arcane Adapter). [[Arcanes de Operador/Tenno]] (Magus, Virtuos, Molt) vão no equipamento do Operador. Rank de 0 a 5 alimentando duplicatas — cada rank corta cooldown ou aumenta o efeito. Escolhas comuns: [[Arcane Energize]] (energia ao pegar orb), [[Arcane Grace]] (regen de vida ao tomar dano), [[Molt Augmented]] (+força de habilidade após kills). [[Set bonuses]] não existem mais depois do rework — cada Arcane se sustenta sozinho.',
+    glossary_arcanes_body: 'Arcanos são aprimoramentos que disparam numa condição — [[ao abater]], no headshot, ao tomar dano, ao pegar orb de energia. Encaixados em Warframes, armas e no Operador, são uma boa fatia do poder de fim de jogo.',
     glossary_mr: 'Nível de Maestria',
     glossary_mr_body: 'Seu [[Nível de Maestria (MR)]] é um nível geral da conta que sobe conforme você ranqueia equipamentos novos até 30. Ele aumenta limites diários, dá uma vantagem inicial de [[capacidade de mod]], e tranca algumas armas, itens e [[Rivens]] atrás de um rank mínimo.',
     glossary_helminth: 'Helminth (Subsume)',
-    glossary_helminth_body: 'O sistema [[Helminth]] (desbloqueado em MR 8 + jornada Heart of Deimos) deixa você substituir uma habilidade da maioria dos Warframes por uma [[habilidade subsumida]] de outro. Pra subsumir: alimente um Warframe no rank máximo ao Helminth — consome o frame mas desbloqueia a 1ª habilidade dele permanentemente pra instalação. Algumas habilidades não podem ser subsumidas (ex: Mallet da Octavia, Peacemaker da Mesa). Instalar uma habilidade subsumida custa [[recursos do Helminth]] (Bile, Calx, Oxides, Pheromones, Synthetics, Biotics, Sentient Appetite) — cada slot de habilidade pede um tipo específico. [[Invigorations]] são buffs aleatórios semanais escolhidos no menu Helminth — sistema separado, mesma sala.',
+    glossary_helminth_body: 'O [[Helminth]] é um sistema Infestado no seu Orbiter que deixa você pegar uma habilidade de um Warframe e enxertá-la em outro — substituindo uma das quatro habilidades dele. É uma ferramenta de customização profunda que você desbloqueia no meio do jogo.',
     glossary_cat_progression: 'Progressão',
     glossary_tag_foundation: 'Base',
     glossary_tag_story: 'História',
@@ -398,15 +399,14 @@ const STRINGS = {
     glossary_cat_economy: 'Economia & Recursos',
     glossary_cat_enemies: 'Inimigos',
     glossary_soon_body: 'A explicação detalhada deste termo vem em breve.',
-    glossary_caches: 'Caches',
     glossary_forma: 'Forma & Catalisador / Reator Orokin',
+    glossary_forma_body: 'São os itens de uso único que você aplica no equipamento pra turbiná-lo. Um [[Catalisador/Reator Orokin]] dobra a capacidade de mods da peça, enquanto a [[Forma]] remodela as [[polaridades]] pra caber um build mais apertado. Os dois são saltos de poder enormes e permanentes — e valem ser guardados pros itens que você vai manter.',
     glossary_ducats: 'Ducados',
     glossary_endo: 'Endo',
     glossary_kuva: 'Kuva',
-    glossary_riven_slivers: 'Riven Slivers',
+    glossary_platinum: 'Platina & Trade',
     glossary_eximus: 'Eximus',
     glossary_liches_sisters: 'Kuva Liches & Sisters of Parvos',
-    glossary_necramechs: 'Necramechs',
     glossary_star_chart: 'Mapa Estelar & Junções',
     glossary_star_chart_body: 'O [[Mapa Estelar]] é o seu mapa do Sistema de Origem. Você avança completando [[Junções]] — portões entre planetas que liberam o próximo destino. Cada planeta tem sua própria [[facção]], [[faixa de nível]] e [[nodos]] de missão.',
     glossary_star_chart_fig1: 'O Mapa Estelar no início do jogo — apenas Mercúrio e Vênus estão acessíveis.',
@@ -1146,7 +1146,7 @@ const QUESTS = [
     howToGet: { pt: ["Vor's Prize"], en: ["Vor's Prize"] },
     rewards: [
       { name: { pt: "Thornbak", en: "Thornbak" }, icon: "https://wiki.warframe.com/images/Thornbak.png?ac555" },
-      { name: { pt: "Mod Segment", en: "Mod Segment" } },
+      { name: { pt: "Mod Segment", en: "Mod Segment" }, icon: "https://wiki.warframe.com/images/OrbiterSegment.png?24bfe" },
       { name: { pt: "Acesso a Cetus", en: "Access to Cetus" } },
       { name: { pt: "Stormbringer", en: "Stormbringer" }, icon: "https://wiki.warframe.com/images/StormbringerMod.png?7215d" },
       { name: { pt: "Cryo Rounds", en: "Cryo Rounds" }, icon: "https://wiki.warframe.com/images/CryoRoundsMod.png?dee2a" },
@@ -1189,21 +1189,21 @@ const QUESTS = [
     howToGet: { pt: ["Earth to Mars Junction"], en: ["Earth to Mars Junction"] },
     rewards: [
       { name: { pt: "Xaku diagrama", en: "Xaku blueprint" }, icon: "https://wiki.warframe.com/images/XakuIcon272.png?ad108" },
-      { name: { pt: "Deimos Necralisk Captura Scene", en: "Deimos Necralisk Captura Scene" } },
+      { name: { pt: "Deimos Necralisk Captura Scene", en: "Deimos Necralisk Captura Scene" }, icon: "https://wiki.warframe.com/images/DeimosNecraliskScene.png?e9880" },
       { name: { pt: "Acesso a Entrati sindicato", en: "Access to Entrati syndicate" } },
       { name: { pt: "Acesso a Necralisk bounties", en: "Access to Necralisk bounties" } },
-      { name: { pt: "Voidrig diagrama", en: "Voidrig blueprint" } },
-      { name: { pt: "Voidrig Capsule diagrama", en: "Voidrig Capsule blueprint" } },
-      { name: { pt: "Voidrig Casing diagrama", en: "Voidrig Casing blueprint" } },
-      { name: { pt: "Voidrig Engine diagrama", en: "Voidrig Engine blueprint" } },
-      { name: { pt: "Voidrig Weapon Pod diagrama", en: "Voidrig Weapon Pod blueprint" } },
+      { name: { pt: "Voidrig diagrama", en: "Voidrig blueprint" }, icon: "https://wiki.warframe.com/images/Voidrig.png?1b92f" },
+      { name: { pt: "Voidrig Capsule diagrama", en: "Voidrig Capsule blueprint" }, icon: "https://wiki.warframe.com/images/VoidrigCapsule.png?fd45f" },
+      { name: { pt: "Voidrig Casing diagrama", en: "Voidrig Casing blueprint" }, icon: "https://wiki.warframe.com/images/VoidrigCasing.png?9e29b" },
+      { name: { pt: "Voidrig Engine diagrama", en: "Voidrig Engine blueprint" }, icon: "https://wiki.warframe.com/images/VoidrigEngine.png?7f653" },
+      { name: { pt: "Voidrig Weapon Pod diagrama", en: "Voidrig Weapon Pod blueprint" }, icon: "https://wiki.warframe.com/images/VoidrigWeaponPod.png?faa1c" },
       { name: { pt: "Mirror Defense", en: "Mirror Defense" } },
     ],
     desc: { pt: 'Introduz Deimos e o mundo aberto Cambion Drift, dominado pela Infestação. Apresenta a família Entrati e abre o caminho para o Helminth.',
             en: 'Introduces Deimos and the Cambion Drift open world. Meets the Entrati family and opens the path to the Helminth system.' } },
   { slug: 'the-archwing', name: 'The Archwing', arc: 'arc1',
     image: 'https://wiki.warframe.com/images/TheArchwing.png', mr: 0,
-    howToGet: { pt: 'Mensagem no Orbiter',                        en: 'Inbox message' },
+    howToGet: { pt: ['Mensagem no Orbiter'],                        en: ['Inbox message'] },
     rewards: [
       { name: { pt: 'Odonata', en: 'Odonata' }, icon: 'https://wiki.warframe.com/images/Odonata.png' },
       { name: { pt: 'Lançador de Archwing', en: 'Archwing Launcher' }, icon: 'https://wiki.warframe.com/images/ArchwingLauncherSegment.png' },
@@ -1217,8 +1217,8 @@ const QUESTS = [
     rewards: [
       { name: { pt: "Exilus Warframe Adapter", en: "Exilus Warframe Adapter" }, icon: "https://wiki.warframe.com/images/ExilusWarframeAdapter.png?bfcaf" },
     ],
-    desc: { pt: 'Revela a verdadeira identidade da Lotus — ela é Natah, uma espiã Sentient. Acontece na Lua e abre o caminho para The Second Dream.',
-            en: "Reveals the Lotus's true identity — she is Natah, a Sentient spy. Takes place on Lua and opens the path to The Second Dream." } },
+    desc: { pt: "Jornada de história na Lua que segue uma investigação Sentient e prepara o caminho para The Second Dream.",
+            en: "A story quest on Lua following a Sentient investigation, setting up The Second Dream." } },
   { slug: 'the-second-dream', name: 'The Second Dream', arc: 'arc2',
     image: "https://wiki.warframe.com/images/TheSecondDream.png?b5fc2", mr: 0,
     howToGet: { pt: ["Completar Natah (Quest)", "Neptune Junction"], en: ["Completed Natah (Quest)", "Neptune Junction"] },
@@ -1227,11 +1227,11 @@ const QUESTS = [
       { name: { pt: "Broken War", en: "Broken War" }, icon: "https://wiki.warframe.com/images/BrokenWar.png?f9cf1" },
       { name: { pt: "Focus Unlocked", en: "Focus Unlocked" } },
       { name: { pt: "Lua Access", en: "Lua Access" } },
-      { name: { pt: "Scar Sigil", en: "Scar Sigil" } },
+      { name: { pt: "Scar Sigil", en: "Scar Sigil" }, icon: "https://wiki.warframe.com/images/ScarSigil%28SxWhite%29.png?98182" },
       { name: { pt: "Rising Tide Jornada", en: "Rising Tide Quest" } },
     ],
-    desc: { pt: 'O maior plot twist de Warframe — revela quem os Tenno realmente são. Desbloqueia o Operator e o modo de combate Transference.',
-            en: "Warframe's biggest plot twist — reveals who the Tenno really are. Unlocks the Operator and Transference combat mode." } },
+    desc: { pt: "Um marco da história de Warframe e um ponto de virada do jogo — desbloqueia uma forma de jogar totalmente nova. Melhor vivida sem spoilers.",
+            en: "A milestone in Warframe's story and a turning point for the game — unlocks a whole new way to play. Best experienced unspoiled." } },
   { slug: 'the-war-within', name: 'The War Within', arc: 'arc2',
     image: "https://wiki.warframe.com/images/TheWarWithin.png?f6123", mr: 5,
     howToGet: { pt: ["Completar The Second Dream", "Pluto Junction"], en: ["Completed The Second Dream", "Pluto Junction"] },
@@ -1242,22 +1242,22 @@ const QUESTS = [
       { name: { pt: "The Plumas Access", en: "The Quills Access" } },
       { name: { pt: "Vox Solaris Access", en: "Vox Solaris Access" } },
       { name: { pt: "Necraloid Access", en: "Necraloid Access" } },
-      { name: { pt: "Riven Mod", en: "Riven Mod" } },
+      { name: { pt: "Riven Mod", en: "Riven Mod" }, icon: "https://wiki.warframe.com/images/RivenVeiledMod.png?72ada" },
       { name: { pt: "Incursão Access", en: "Sortie Access" } },
       { name: { pt: "Kuva Fortress Access", en: "Kuva Fortress Access" } },
       { name: { pt: "Kuva Lich Access", en: "Kuva Lich Access" } },
       { name: { pt: "Grineer Queens Glyph", en: "Grineer Queens Glyph" } },
-      { name: { pt: "Personal Quarters Segment Diagrama", en: "Personal Quarters Segment Blueprint" } },
+      { name: { pt: "Personal Quarters Segment Diagrama", en: "Personal Quarters Segment Blueprint" }, icon: "https://wiki.warframe.com/images/OrbiterSegment.png?24bfe" },
       { name: { pt: "Conjunction Survival Access", en: "Conjunction Survival Access" } },
       { name: { pt: "Voruna Leverian access", en: "Voruna Leverian access" }, icon: "assets/icons/base/voruna.png" },
     ],
-    desc: { pt: 'Aprofunda os poderes Void do Operator e desbloqueia o Void Mode (invisibilidade) e o Kuva — recurso essencial para rolar Rivens.',
-            en: "Deepens the Operator's Void powers and unlocks Void Mode (invisibility) and Kuva — the essential resource for re-rolling Rivens." } },
+    desc: { pt: "Continua o arco anterior e desbloqueia o Kuva — recurso essencial para rolar Rivens — além de novos poderes.",
+            en: "Continues the previous arc and unlocks Kuva — the key resource for re-rolling Rivens — along with new powers." } },
   { slug: 'rising-tide', name: 'Rising Tide', arc: 'arc2',
     image: "https://wiki.warframe.com/images/RisingTide.png?9c4e0", mr: 0,
     howToGet: { pt: ["Completar The War Within"], en: ["Completed The War Within"] },
     rewards: [
-      { name: { pt: "Railjack", en: "Railjack" } },
+      { name: { pt: "Railjack", en: "Railjack" }, icon: "https://wiki.warframe.com/images/Railjack.png?2cf09" },
     ],
     desc: { pt: 'Jornada de construção do Railjack — sua nave de guerra para missões Empyrean. Você recupera e restaura uma nave antiga com a ajuda do Cephalon Cy.',
             en: "The Railjack building quest — your warship for Empyrean missions. You recover and restore an ancient ship with Cephalon Cy's guidance." } },
@@ -1269,31 +1269,36 @@ const QUESTS = [
       { name: { pt: "Acesso a Iron Wake", en: "Access to Iron Wake" } },
       { name: { pt: "Acesso a Follie's Hunt", en: "Access to Follie's Hunt" }, icon: "assets/icons/base/follie.png" },
     ],
-    desc: { pt: 'Jornada de terror psicológico em uma nave infestada do Red Veil. Investiga um Tenno que abandonou seu Warframe e perdeu a razão.',
-            en: "A psychological horror quest aboard an infested Red Veil ship. Investigates a Tenno who abandoned their Warframe and lost their mind." } },
+    desc: { pt: "Jornada de terror psicológico a bordo de uma nave infestada do Red Veil. Recompensa o Warframe Harrow.",
+            en: "A psychological-horror quest aboard an infested Red Veil ship. Rewards the Harrow Warframe." } },
   { slug: 'apostasy-prologue', name: 'Apostasy Prologue', arc: 'arc2',
     image: "https://wiki.warframe.com/images/ApostasyPrologue.png?83f93", mr: 0,
     howToGet: { pt: ["Completar Chains of Harrow", "Personal Quarters Segment"], en: ["Completed Chains of Harrow", "Personal Quarters Segment"] },
-    rewards:  { pt: 'Eidolons, Plumas sindicato',                   en: 'Eidolons access, Quills syndicate' },
-    desc: { pt: 'Jornada curta e atmosférica que encerra o arco de Natah/Lotus. Desbloqueia os Eidolons nas Planícies (à noite) e o sindicato Plumas.',
-            en: "A short atmospheric quest closing the Natah/Lotus arc. Unlocks Eidolons on the Plains (night cycle) and the Quills syndicate." } },
+    rewards: [
+      { name: { pt: 'Conclui o arco da Lotus (Apostasy)', en: 'Completes the Lotus arc (Apostasy)' } },
+      { name: { pt: 'Pedestal da Lotus nos Aposentos Pessoais', en: 'Lotus plinth in Personal Quarters' } },
+    ],
+    desc: { pt: "Jornada curta e atmosférica que fecha o arco anterior. É puramente narrativa, sem recompensas de item.",
+            en: "A short, atmospheric quest that closes the previous arc. It's purely narrative, with no item rewards." } },
   { slug: 'the-sacrifice', name: 'The Sacrifice', arc: 'arc2',
     image: 'https://wiki.warframe.com/images/TheSacrifice.png', mr: 0,
-    howToGet: { pt: 'Mensagem (após Apostasy Prologue)', en: 'Inbox (after Apostasy Prologue)' },
+    howToGet: { pt: ['Mensagem (após Apostasy Prologue)'], en: ['Inbox (after Apostasy Prologue)'] },
     rewards: [
       { name: { pt: 'Excalibur Umbra', en: 'Excalibur Umbra' }, icon: 'https://wiki.warframe.com/images/ExcaliburUmbra.png' },
       { name: { pt: 'Skiajati', en: 'Skiajati' }, icon: 'https://wiki.warframe.com/images/Skiajati.png' },
       { name: { pt: 'War', en: 'War' }, icon: 'https://wiki.warframe.com/images/War.png' },
     ],
-    desc: { pt: 'Revela a origem dos Warframes e o papel de Ballas. Recompensa o Excalibur Umbra — único Warframe com autonomia — e a espada Skiajati.',
-            en: "Reveals Warframe origins and Ballas's role. Rewards Excalibur Umbra — the only autonomous Warframe — and the Skiajati nikana." } },
+    desc: { pt: "Jornada cinematográfica do arco principal. Recompensa o Excalibur Umbra e a nikana Skiajati.",
+            en: "A cinematic main-story quest. Rewards Excalibur Umbra and the Skiajati nikana." } },
   // ─── Arc 3 ───────────────────────────────────────────────────────────────────
   { slug: 'prelude-to-war', name: 'Prelude to War', arc: 'arc3',
     image: "https://wiki.warframe.com/images/PreludeToWar.png?37cb0", mr: 0,
-    howToGet: { pt: 'Mensagem (após The Sacrifice)',       en: 'Inbox (after The Sacrifice)' },
-    rewards:  { pt: 'Prólogo narrativo para The New War',  en: 'Narrative prologue for The New War' },
-    desc: { pt: 'Prólogo que apresenta a invasão Sentient e prepara o cenário para The New War. Mostra Ballas aliado aos Sentients e Erra liderando o ataque.',
-            en: 'A short prologue presenting the Sentient invasion. Shows Ballas allied with the Sentients and Erra leading the assault.' } },
+    howToGet: { pt: ['Mensagem (após The Sacrifice)'],       en: ['Inbox (after The Sacrifice)'] },
+    rewards: [
+      { name: { pt: 'Prólogo narrativo (prepara The New War)', en: 'Narrative prologue (sets up The New War)' } },
+    ],
+    desc: { pt: "Prólogo curto que prepara o cenário para The New War.",
+            en: "A short prologue that sets the stage for The New War." } },
   { slug: 'the-new-war', name: 'The New War', arc: 'arc3',
     image: 'https://wiki.warframe.com/images/TheNewWar.jpg', mr: 0,
     howToGet: { pt: ['Ter uma Railjack', 'Ter um Amp', 'Completar Prelude to War'],
@@ -1312,16 +1317,16 @@ const QUESTS = [
       { name: { pt: 'Acesso às Narmer Bounties', en: 'Access to Narmer Bounties' } },
       { name: { pt: 'Acesso às Deepmines', en: 'Access to Deepmines' } },
     ],
-    desc: { pt: 'A maior jornada do jogo — horas de cinematics com três personagens jogáveis (Tenno, Kahl-175, Veso). Conclui a guerra Sentient e desbloqueia os Archon Hunts semanais.',
-            en: "The game's biggest quest — hours of cinematics with three playable characters. Concludes the Sentient war and unlocks weekly Archon Hunts." } },
+    desc: { pt: "A maior jornada do jogo — horas de cinematics com três personagens jogáveis. Conclui o arco Sentient e desbloqueia os Archon Hunts semanais.",
+            en: "The game's biggest quest — hours of cinematics across three playable characters. Concludes the Sentient arc and unlocks weekly Archon Hunts." } },
   { slug: 'the-duviri-paradox', name: 'The Duviri Paradox', arc: 'arc3',
     image: "https://wiki.warframe.com/images/TheDuviriParadox.png?d5933", mr: 0,
     howToGet: { pt: ["Uranus Junction"], en: ["Uranus Junction"] },
     rewards: [
-      { name: { pt: "Histornam Kaithe", en: "Histornam Kaithe" } },
+      { name: { pt: "Histornam Kaithe", en: "Histornam Kaithe" }, icon: "https://wiki.warframe.com/images/HistornamKaithe.png?f1e11" },
       { name: { pt: "Sun & Moon Diagrama", en: "Sun & Moon Blueprint" }, icon: "https://wiki.warframe.com/images/Sun%26Moon.png?58a53" },
       { name: { pt: "Mountain's Edge", en: "Mountain's Edge" }, icon: "https://wiki.warframe.com/images/Mountain%27sEdgeMod.png?2a794" },
-      { name: { pt: "Acesso a The Duviri Experience, The Lone Story, and The Circuit", en: "Access to The Duviri Experience, The Lone Story, and The Circuit" } },
+      { name: { pt: "Acesso a Duviri, The Lone Story e The Circuit", en: "Access to Duviri, The Lone Story & The Circuit" } },
     ],
     desc: { pt: 'Introduz Duviri, onde o Drifter opera sozinho. Desbloqueia o Incarnon Genesis — upgrades permanentes para armas clássicas — e o sistema de Decrees.',
             en: "Introduces Duviri, a paradoxical world where the Drifter operates alone. Unlocks Incarnon Genesis — permanent weapon upgrades — and the Decree system." } },
@@ -1333,7 +1338,7 @@ const QUESTS = [
       { name: { pt: "Qorvex Diagrama", en: "Qorvex Blueprint" }, icon: "https://wiki.warframe.com/images/QorvexIcon272.png?9d1dd" },
       { name: { pt: "Weapon Slot", en: "Weapon Slot" } },
       { name: { pt: "Grimoire (Rank 30, Catalyst pre-installed)", en: "Grimoire (Rank 30, Catalyst pre-installed)" }, icon: "https://wiki.warframe.com/images/Grimoire.png?e8ce6" },
-      { name: { pt: "Melee Upgrade Segment", en: "Melee Upgrade Segment" } },
+      { name: { pt: "Melee Upgrade Segment", en: "Melee Upgrade Segment" }, icon: "https://wiki.warframe.com/images/MeleeUpgradeSegment.png?da2c5" },
       { name: { pt: "Mentor's Legacy", en: "Mentor's Legacy" }, icon: "https://wiki.warframe.com/images/Mentor%27sLegacyMod.png?a522c" },
       { name: { pt: "Melee Arcane Adapter", en: "Melee Arcane Adapter" }, icon: "https://wiki.warframe.com/images/MeleeArcaneAdapter.png?a96fa" },
       { name: { pt: "Acesso a Cavia sindicato", en: "Access to Cavia syndicate" }, icon: "https://wiki.warframe.com/images/CaviaSyndicateLogo1%28xLight%29.png?406b5" },
@@ -1347,8 +1352,8 @@ const QUESTS = [
     rewards: [
       { name: { pt: "Arthur's KinePage", en: "Arthur's KinePage" } },
     ],
-    desc: { pt: 'Aprofunda a relação entre Albrecht Entrati e a entidade que se tornará a Lotus. Revela os perigos além do Void e a natureza das Eternalists.',
-            en: "Deepens the relationship between Albrecht Entrati and the entity that would become the Lotus. Reveals dangers beyond the Void." } },
+    desc: { pt: "Jornada de história recente que aprofunda o lore do Void e dos experimentos de Albrecht Entrati.",
+            en: "A recent story quest deepening the lore of the Void and Albrecht Entrati's experiments." } },
   { slug: 'the-hex', name: 'The Hex', arc: 'arc4', subarc: 'kalymos',
     image: "https://wiki.warframe.com/images/TheHex.png?29e5d", mr: 0,
     howToGet: { pt: ["The Duviri Paradox", "The Lotus Eaters"], en: ["The Duviri Paradox", "The Lotus Eaters"] },
@@ -1356,13 +1361,13 @@ const QUESTS = [
       { name: { pt: "Cyte-09 diagrama", en: "Cyte-09 blueprint" }, icon: "https://wiki.warframe.com/images/Cyte-09Icon272.png?1a06f" },
       { name: { pt: "Magnetic Might", en: "Magnetic Might" }, icon: "https://wiki.warframe.com/images/MagneticMightMod.png?2a86c" },
       { name: { pt: "Forma", en: "Forma" }, icon: "https://wiki.warframe.com/images/Forma.png?c7d01" },
-      { name: { pt: "Atomicycle", en: "Atomicycle" } },
+      { name: { pt: "Atomicycle", en: "Atomicycle" }, icon: "https://wiki.warframe.com/images/AtomicycleSummon.png?6a3e2" },
       { name: { pt: "Atomicycle Summon", en: "Atomicycle Summon" }, icon: "https://wiki.warframe.com/images/AtomicycleSummon.png?6a3e2" },
-      { name: { pt: "Rust Belt Livery Atomicycle Skin", en: "Rust Belt Livery Atomicycle Skin" } },
+      { name: { pt: "Rust Belt Livery Atomicycle Skin", en: "Rust Belt Livery Atomicycle Skin" }, icon: "https://wiki.warframe.com/images/RustBeltLivery.png?8b5ad" },
       { name: { pt: "Standard Livery Atomicycle Skin", en: "Standard Livery Atomicycle Skin" } },
       { name: { pt: "Acesso a The Hex sindicato", en: "Access to The Hex syndicate" }, icon: "https://wiki.warframe.com/images/HexIcon%28xLight%29.png?c8c7d" },
       { name: { pt: "Acesso a Höllvania missions and Bounties", en: "Access to Höllvania missions and Bounties" } },
-      { name: { pt: "Protokol Longsword Skin", en: "Protokol Longsword Skin" } },
+      { name: { pt: "Protokol Longsword Skin", en: "Protokol Longsword Skin" }, icon: "https://wiki.warframe.com/images/ProtokolLongswordSkin.png?facb9" },
       { name: { pt: "The Hex Noggle Collection", en: "The Hex Noggle Collection" } },
       { name: { pt: "Acesso a Isleweaver in Duviri", en: "Access to Isleweaver in Duviri" } },
     ],
@@ -1373,7 +1378,7 @@ const QUESTS = [
     howToGet: { pt: ["The Lotus Eaters"], en: ["The Lotus Eaters"] },
     rewards: [
       { name: { pt: "Uriel diagrama", en: "Uriel blueprint" }, icon: "https://wiki.warframe.com/images/UrielIcon272.png?d8ae1" },
-      { name: { pt: "Operator Atmosphor accessory", en: "Operator Atmosphor accessory" } },
+      { name: { pt: "Operator Atmosphor accessory", en: "Operator Atmosphor accessory" }, icon: "https://wiki.warframe.com/images/OperatorAtmosphor.png?a0afe" },
       { name: { pt: "75 Lyroic Bridge", en: "75 Lyroic Bridge" }, icon: "https://wiki.warframe.com/images/LyroicBridge.png?0dccd" },
       { name: { pt: "75 Ren Hypercore", en: "75 Ren Hypercore" }, icon: "https://wiki.warframe.com/images/RenHypercore.png?238dc" },
       { name: { pt: "75 Ascaris Prime", en: "75 Ascaris Prime" }, icon: "https://wiki.warframe.com/images/AscarisPrime.png?a4667" },
@@ -1390,7 +1395,7 @@ const QUESTS = [
     howToGet: { pt: ["Completar The New War"], en: ["Completed The New War"] },
     rewards: [
       { name: { pt: "Jade Diagrama", en: "Jade Blueprint" }, icon: "https://wiki.warframe.com/images/JadeIcon272.png?f1fb2" },
-      { name: { pt: "Stalker's Lair Scene (Captura)", en: "Stalker's Lair Scene (Captura)" } },
+      { name: { pt: "Stalker's Lair Scene (Captura)", en: "Stalker's Lair Scene (Captura)" }, icon: "https://wiki.warframe.com/images/Stalker%27sLairScene.png?c4966" },
       { name: { pt: "Alone Portrait", en: "Alone Portrait" } },
       { name: { pt: "United Portrait", en: "United Portrait" } },
       { name: { pt: "Protector Portrait", en: "Protector Portrait" } },
@@ -1402,10 +1407,11 @@ const QUESTS = [
     howToGet: { pt: ["Completar Jade Shadows"], en: ["Completed Jade Shadows"] },
     rewards: [
       { name: { pt: "Sirius & Orion (diagrama)", en: "Sirius & Orion (blueprint)" }, icon: "https://wiki.warframe.com/images/SiriusOrion.png?3a1d6" },
-      { name: { pt: "Sirius' and Orion's Swaddle Syandanas", en: "Sirius' and Orion's Swaddle Syandanas" }, icon: "assets/icons/base/sirius.png" },
-      { name: { pt: "Stay Together Display", en: "Stay Together Display" } },
-      { name: { pt: "Sirius Alone Display", en: "Sirius Alone Display" }, icon: "assets/icons/base/sirius.png" },
-      { name: { pt: "Orion Alone Display", en: "Orion Alone Display" }, icon: "assets/icons/base/orion.png" },
+      { name: { pt: "Sirius' Swaddle Syandana", en: "Sirius' Swaddle Syandana" }, icon: "https://wiki.warframe.com/images/Sirius%27SwaddleSyandana.png?a2136" },
+      { name: { pt: "Orion's Swaddle Syandana", en: "Orion's Swaddle Syandana" }, icon: "https://wiki.warframe.com/images/Orion%27sSwaddleSyandana.png?a2136" },
+      { name: { pt: "Stay Together Display", en: "Stay Together Display" }, icon: "https://wiki.warframe.com/images/StayTogetherDisplay.png?db58a" },
+      { name: { pt: "Sirius Alone Display", en: "Sirius Alone Display" }, icon: "https://wiki.warframe.com/images/SiriusAloneDisplay.png?18674" },
+      { name: { pt: "Orion Alone Display", en: "Orion Alone Display" }, icon: "https://wiki.warframe.com/images/OrionAloneDisplay.png?db58a" },
     ],
     desc: { pt: 'Jornada do Update 43 que introduz o frame duplo Sirius & Orion e continua o Void War Saga com novos desenvolvimentos no arco de Jade.',
             en: "The Update 43 quest introducing the dual frame Sirius & Orion and continuing the Void War Saga in the Jade arc." } },
@@ -1415,8 +1421,8 @@ const QUESTS = [
     howToGet: { pt: ["Completar \"The New War\""], en: ["Completed \"The New War\""] },
     rewards: [
       { name: { pt: "1 Voidplume Pinion", en: "1 Voidplume Pinion" }, icon: "https://wiki.warframe.com/images/VoidplumePinion.png?5e728" },
-      { name: { pt: "Operator Voidshell Set", en: "Operator Voidshell Set" } },
-      { name: { pt: "Drifter Voidshell Set", en: "Drifter Voidshell Set" } },
+      { name: { pt: "Operator Voidshell Set", en: "Operator Voidshell Set" }, icon: "https://wiki.warframe.com/images/VoidshellSuit.png?e6c0f" },
+      { name: { pt: "Drifter Voidshell Set", en: "Drifter Voidshell Set" }, icon: "https://wiki.warframe.com/images/SuitAdultVoidshell.png?9dd70" },
       { name: { pt: "Acesso a the Dormizone", en: "Access to the Dormizone" } },
       { name: { pt: "Acesso a The Holdfasts Sindicato", en: "Access to The Holdfasts Syndicate" } },
       { name: { pt: "Acesso a Chrysalith Bounties (Gyre)", en: "Access to Chrysalith Bounties (Gyre)" }, icon: "https://wiki.warframe.com/images/GyreIcon272.png?4c4ae" },
@@ -1437,7 +1443,7 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/HowloftheKubrow.png?ae539", mr: 0,
     howToGet: { pt: ["Venus to Mercury Junction"], en: ["Venus to Mercury Junction"] },
     rewards: [
-      { name: { pt: "Incubator Segment", en: "Incubator Segment" } },
+      { name: { pt: "Incubator Segment", en: "Incubator Segment" }, icon: "https://wiki.warframe.com/images/IncubatorSegment.png?c7a73" },
       { name: { pt: "Balanced Posture", en: "Balanced Posture" }, icon: "https://wiki.warframe.com/images/BalancedPostureMod.png?1eb2a" },
     ],
     desc: { pt: 'Introduz o sistema de Kubrow — companheiros caninos criados de ovos. Você aprende a incubar e criar um Kubrow como companion de combate.',
@@ -1447,7 +1453,7 @@ const QUESTS = [
     howToGet: { pt: ["Phobos Junction"], en: ["Phobos Junction"] },
     rewards: [
       { name: { pt: "Ether Daggers Diagrama", en: "Ether Daggers Blueprint" }, icon: "https://wiki.warframe.com/images/EtherDaggers.png?70d49" },
-      { name: { pt: "Catalisador Orokin Diagrama", en: "Orokin Catalyst Blueprint" } },
+      { name: { pt: "Catalisador Orokin Diagrama", en: "Orokin Catalyst Blueprint" }, icon: "https://wiki.warframe.com/images/OrokinCatalyst.png?1d542" },
       { name: { pt: "Weekly Ayatan Treasure Hunt", en: "Weekly Ayatan Treasure Hunt" } },
     ],
     desc: { pt: 'Jornada curta investigando artefatos Orokin roubados. Apresenta Maroo, uma mercenária especializada em cofres Orokin e missões de parkour.',
@@ -1459,7 +1465,7 @@ const QUESTS = [
       { name: { pt: "Archon Hunt Access", en: "Archon Hunt Access" } },
       { name: { pt: "Kahl's Garrison Access", en: "Kahl's Garrison Access" } },
       { name: { pt: "Break Narmer Access", en: "Break Narmer Access" } },
-      { name: { pt: "Helminth Archon Shard Segment Diagrama", en: "Helminth Archon Shard Segment Blueprint" } },
+      { name: { pt: "Helminth Archon Shard Segment Diagrama", en: "Helminth Archon Shard Segment Blueprint" }, icon: "https://wiki.warframe.com/images/OrbiterSegment.png?24bfe" },
     ],
     desc: { pt: 'Conta a história do soldado Grineer Kahl-175 libertando companheiros do controle Sentient. Desbloqueia missões semanais de Kahl e o Styanax.',
             en: "Follows Grineer soldier Kahl-175 freeing comrades from Sentient control. Unlocks Kahl's weekly missions and the Styanax Warframe." } },
@@ -1467,7 +1473,7 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/PatientZero.png?7efb5", mr: 0,
     howToGet: { pt: ["Completar Once Awake", "Unlocked Eris"], en: ["Completed Once Awake", "Unlocked Eris"] },
     rewards: [
-      { name: { pt: "Mutalist Alad V Key", en: "Mutalist Alad V Key" } },
+      { name: { pt: "Mutalist Alad V Key", en: "Mutalist Alad V Key" }, icon: "https://wiki.warframe.com/images/MutalistAladVNavCoordinate.png?807d3" },
     ],
     desc: { pt: 'Jornada sobre o surto de Infestação em uma nave Corpus. Apresenta o perigo biológico da praga e as pesquisas do Corpus sobre sua propagação.',
             en: 'Quest about an Infestation outbreak on a Corpus ship. Highlights the biological danger of the plague and Corpus research on its spread.' } },
@@ -1475,8 +1481,8 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/AManofFewWords.png?623b9", mr: 0,
     howToGet: { pt: ["Talk with Darvo in any Relay"], en: ["Talk with Darvo in any Relay"] },
     rewards: [
-      { name: { pt: "Exilus Adapter", en: "Exilus Adapter" } },
-      { name: { pt: "Clem Clone Diagrama", en: "Clem Clone Blueprint" } },
+      { name: { pt: "Exilus Adapter", en: "Exilus Adapter" }, icon: "https://wiki.warframe.com/images/ExilusWarframeAdapter.png?bfcaf" },
+      { name: { pt: "Clem Clone Diagrama", en: "Clem Clone Blueprint" }, icon: "https://wiki.warframe.com/images/Clem.png?acc8e" },
       { name: { pt: "Help Clem (Unlocked)", en: "Help Clem (Unlocked)" } },
     ],
     desc: { pt: 'Jornada curta que expande o lore de Duviri e a relação entre o Drifter e os personagens do mundo paradoxal. Complementa The Duviri Paradox.',
@@ -1488,7 +1494,7 @@ const QUESTS = [
     rewards: [
       { name: { pt: "Protea diagrama", en: "Protea blueprint" }, icon: "https://wiki.warframe.com/images/ProteaIcon272.png?6b6d2" },
       { name: { pt: "Xoris", en: "Xoris" }, icon: "https://wiki.warframe.com/images/Xoris.png?5c2e5" },
-      { name: { pt: "Granum Void Captura Scene", en: "Granum Void Captura Scene" } },
+      { name: { pt: "Granum Void Captura Scene", en: "Granum Void Captura Scene" }, icon: "https://wiki.warframe.com/images/GranumVoidScene.png?80363" },
       { name: { pt: "Armatus, Deimos Unlocked", en: "Armatus, Deimos Unlocked" } },
     ],
     desc: { pt: 'Investiga o legado de Parvos Granum e a crise de sucessão do Corpus. Desbloqueia o Granum Void — modo extra-dimensional de endgame.',
@@ -1498,10 +1504,10 @@ const QUESTS = [
     howToGet: { pt: ["The Deadlock Protocol completed", "Ter Railjack and retrieved Reliquary Key", "Mastery Rank 4"], en: ["The Deadlock Protocol completed", "Own a Railjack and retrieved Reliquary Key", "Mastery Rank 4"] },
     rewards: [
       { name: { pt: "Sevagoth diagrama", en: "Sevagoth blueprint" }, icon: "https://wiki.warframe.com/images/SevagothIcon272.png?89397" },
-      { name: { pt: "Tempestarii Railjack Skin", en: "Tempestarii Railjack Skin" } },
-      { name: { pt: "Sevagoth Prex", en: "Sevagoth Prex" }, icon: "assets/icons/base/sevagoth.png" },
-      { name: { pt: "Sevagoth Statuette", en: "Sevagoth Statuette" }, icon: "assets/icons/base/sevagoth.png" },
-      { name: { pt: "The Cold Below Captura Scene", en: "The Cold Below Captura Scene" } },
+      { name: { pt: "Tempestarii Railjack Skin", en: "Tempestarii Railjack Skin" }, icon: "https://wiki.warframe.com/images/TempestariiRailjackSkin.png?12e98" },
+      { name: { pt: "Sevagoth Prex", en: "Sevagoth Prex" }, icon: "https://wiki.warframe.com/images/Prex46Sevagoth.png?8be4c" },
+      { name: { pt: "Sevagoth Statuette", en: "Sevagoth Statuette" }, icon: "https://wiki.warframe.com/images/SevagothStatuette.png?7b399" },
+      { name: { pt: "The Cold Below Captura Scene", en: "The Cold Below Captura Scene" }, icon: "https://wiki.warframe.com/images/TheColdBelowScene.png?a9292" },
     ],
     desc: { pt: 'Jornada de Railjack que investiga o fantasma da nave Tempestarii e a lenda do Sevagoth, o Warframe das sombras.',
             en: "A Railjack quest investigating the ghost of the Tempestarii ship and the legend of Sevagoth, the shadow Warframe." } },
@@ -1527,7 +1533,7 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/Octavia%27sAnthem.png?c45c9", mr: 0,
     howToGet: { pt: ["Completar \"The Second Dream\""], en: ["Completed \"The Second Dream\""] },
     rewards: [
-      { name: { pt: "\"Octavia\" Diagrama", en: "\"Octavia\" Blueprint" }, icon: "https://wiki.warframe.com/images/OctaviaIcon272.png" },
+      { name: { pt: "\"Octavia\" Diagrama", en: "\"Octavia\" Blueprint" }, icon: "https://wiki.warframe.com/images/OctaviaIcon272.png?ad6d4" },
     ],
     desc: { pt: 'Jornada musical sobre o legado da Cephalon Suda. Você recupera a partitura do Octavia enquanto explora a história da música no universo Orokin.',
             en: "A musical quest about Cephalon Suda's legacy. You recover Octavia's score while exploring the history of music in the Orokin universe." } },
@@ -1535,7 +1541,7 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/SandsofInaros.png", mr: 0,
     howToGet: { pt: ["Mastery Rank 5"], en: ["Mastery Rank 5"] },
     rewards: [
-      { name: { pt: "Inaros diagrama and parts", en: "Inaros blueprint and parts" }, icon: "https://wiki.warframe.com/images/InarosIcon272.png" },
+      { name: { pt: "Inaros diagrama and parts", en: "Inaros blueprint and parts" }, icon: "https://wiki.warframe.com/images/InarosIcon272.png?aa366" },
       { name: { pt: "Sacred Urn Orbiter decoration", en: "Sacred Urn Orbiter decoration" } },
     ],
     desc: { pt: "Jornada de temática egípcia acompanhando o espírito de Inaros em rituais antigos. A única jornada comprada diretamente do Baro Ki'Teer.",
@@ -1544,7 +1550,7 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/HiddenMessages.png", mr: 0,
     howToGet: { pt: ["Sedna Junction"], en: ["Sedna Junction"] },
     rewards: [
-      { name: { pt: "Mirage Neuroptics", en: "Mirage Neuroptics" }, icon: "https://wiki.warframe.com/images/MirageIcon272.png" },
+      { name: { pt: "Mirage Neuroptics", en: "Mirage Neuroptics" }, icon: "https://wiki.warframe.com/images/MirageIcon272.png?08564" },
       { name: { pt: "Mirage System", en: "Mirage System" }, icon: "assets/icons/base/mirage.png" },
       { name: { pt: "Mirage Chassis", en: "Mirage Chassis" }, icon: "assets/icons/base/mirage.png" },
     ],
@@ -1562,7 +1568,7 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/TheSilverGrove.png", mr: 7,
     howToGet: { pt: ["The Second Dream Complete", "Mastery Rank 7"], en: ["The Second Dream Complete", "Mastery Rank 7"] },
     rewards: [
-      { name: { pt: "Titania Diagrama & Parts", en: "Titania Blueprint & Parts" }, icon: "https://wiki.warframe.com/images/TitaniaIcon272.png" },
+      { name: { pt: "Titania Diagrama & Parts", en: "Titania Blueprint & Parts" }, icon: "https://wiki.warframe.com/images/TitaniaIcon272.png?c9409" },
     ],
     desc: { pt: 'Jornada pastoral que protege um bosque sagrado na Terra. Requer rank 2 no sindicato New Loka. Recompensa o Titania completo.',
             en: 'A pastoral quest protecting a sacred grove on Earth. Requires New Loka syndicate Rank 2. Rewards the full Titania blueprint.' } },
@@ -1570,10 +1576,10 @@ const QUESTS = [
     image: "https://wiki.warframe.com/images/TheWaverider.jpg", mr: 0,
     howToGet: { pt: ["Completar Vox Solaris (Quest)", "Mastery Rank 3"], en: ["Completed Vox Solaris (Quest)", "Mastery Rank 3"] },
     rewards: [
-      { name: { pt: "Yareli Diagrama", en: "Yareli Blueprint" }, icon: "https://wiki.warframe.com/images/YareliIcon272.png" },
-      { name: { pt: "Noggle Statue - Yareli", en: "Noggle Statue - Yareli" }, icon: "assets/icons/base/yareli.png" },
-      { name: { pt: "K-Drive Booster Decoration", en: "K-Drive Booster Decoration" } },
-      { name: { pt: "Yareli Prex", en: "Yareli Prex" }, icon: "assets/icons/base/yareli.png" },
+      { name: { pt: "Yareli Diagrama", en: "Yareli Blueprint" }, icon: "https://wiki.warframe.com/images/YareliIcon272.png?0b164" },
+      { name: { pt: "Noggle Statue - Yareli", en: "Noggle Statue - Yareli" }, icon: "https://wiki.warframe.com/images/BobbleheadYareli.png?31fe2" },
+      { name: { pt: "K-Drive Booster Decoration", en: "K-Drive Booster Decoration" }, icon: "https://wiki.warframe.com/images/K-BoosterDecoration.png?bc848" },
+      { name: { pt: "Yareli Prex", en: "Yareli Prex" }, icon: "https://wiki.warframe.com/images/Prex47Yareli.png?11e6e" },
       { name: { pt: "Waverider #1", en: "Waverider #1" } },
     ],
     desc: { pt: "Jornada curta focada no Yareli, o Warframe surfista. Envolve missões no K-Drive e apresenta a história de Yareli dentro do universo de Fortuna.",
@@ -2305,18 +2311,18 @@ const WARFRAMES_DETAILS = {
     abilities: [
       { type: 'passive', icon: 'assets/icons/base/sirius-orion.png', name: 'Constelação Gêmea', description: 'Trocar entre Sirius e Orion concede +45% de Eficiência de Habilidade nos 2 lançamentos seguintes e acumula Constellation Stars para a ultimate. Abaixo de 50 de energia, os dois roubam energia um do outro. A forma inativa permanece em campo como aliada controlada por IA, invulnerável.' },
       { name: 'Coronal Ejection / Gravitic Slash', forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/coronalejection.png', name: 'Coronal Ejection', description: 'Arremessa uma foice de Luz Jade que retorna como bumerangue, causando dano de Calor e recolhendo itens no caminho.' },
+        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/coronalejection.png', name: 'Coronal Ejection', description: 'Arremessa uma foice de Luz Jade que retorna como bumerangue, causando dano Ígneo e recolhendo itens no caminho.' },
         { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/graviticslash.png', name: 'Gravitic Slash', description: 'Um corte frontal amplo que inflige status de Corte enquanto remove Armadura e Escudos dos inimigos atingidos.' },
       ] },
       { name: 'Jade Stars / Astral Shell', forms: [
-        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/jadestars.png', name: 'Jade Stars', description: 'Invoca motes de Luz Jade que disparam contra os inimigos atacados, causando dano de Calor e status.' },
+        { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/jadestars.png', name: 'Jade Stars', description: 'Invoca motes de Luz Jade que disparam contra os inimigos atacados, causando dano Ígneo e status.' },
         { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/astralshell.png', name: 'Astral Shell', description: 'Envolve Orion (e Sirius) em uma casca que, ao receber dano, gera um chamariz invulnerável que atrai a atenção inimiga.' },
       ] },
       { name: "Light's Sanctuary / Event Horizon", forms: [
         { label: 'Sirius', labelIcon: 'assets/icons/base/sirius.png', icon: 'assets/abilities/sirius and orion/lightssanctuary.png', name: "Light's Sanctuary", description: 'Cria um santuário em expansão que cura aliados, concede Redução de Dano e revive quem estiver caído na área.' },
         { label: 'Orion', labelIcon: 'assets/icons/base/orion.png', icon: 'assets/abilities/sirius and orion/eventhorizon.png', name: 'Event Horizon', description: 'Lança um buraco negro errante que ragdolla e puxa os inimigos, causando dano enquanto os agrupa.' },
       ] },
-      { name: 'Celestial Clash', icon: 'assets/abilities/sirius and orion/celestialclash.png', description: 'Ultimate compartilhada: Sirius e Orion duelam no ar consumindo Constellation Stars para causar dano radial massivo de Explosão, com crítico bônus quando as cores se alinham.' },
+      { name: 'Celestial Clash', icon: 'assets/abilities/sirius and orion/celestialclash.png', description: 'Ultimate compartilhada: Sirius e Orion duelam no ar consumindo Constellation Stars para causar dano radial massivo Explosivo, com crítico bônus quando as cores se alinham.' },
     ],
     acquisition: {
       source_type: 'railjack',
@@ -2335,9 +2341,9 @@ const WARFRAMES_DETAILS = {
     portraits: { base: 'assets/icons/base/temple.png' },
     abilities: [
       { type: 'passive', name: 'Backbeat', icon: 'assets/abilities/temple/passive.png', description: 'Lançar habilidades no ritmo do metrônomo Backbeat amplifica seus efeitos e concede eficiência adicional, recompensando quem segue a batida.' },
-      { name: 'Pyrotechnics', icon: 'assets/abilities/temple/skill1.png', description: 'Invoca pilares ardentes de fogo que irrompem do chão, consumindo inimigos com dano de Calor.' },
+      { name: 'Pyrotechnics', icon: 'assets/abilities/temple/skill1.png', description: 'Invoca pilares ardentes de fogo que irrompem do chão, consumindo inimigos com dano Ígneo.' },
       { name: 'Overdrive', icon: 'assets/abilities/temple/skill2.png', description: 'Atinge inimigos com um debuff de Vulnerabilidade a Chance Crítica, deixando-os abertos a golpes devastadores.' },
-      { name: "Ripper's Wail", icon: 'assets/abilities/temple/skill3.png', description: 'Solta um solo poderoso, ficando invulnerável enquanto restaura Vida e Escudos próprios e dos aliados, e amplifica o dano de Calor da equipe.' },
+      { name: "Ripper's Wail", icon: 'assets/abilities/temple/skill3.png', description: 'Solta um solo poderoso, ficando invulnerável enquanto restaura Vida e Escudos próprios e dos aliados, e amplifica o dano Ígneo da equipe.' },
       { name: 'Exalted Solo', icon: 'assets/abilities/temple/skill4.png', description: 'Saca Lizzie, sua guitarra-lança-chamas exaltada, para incinerar o palco com uma performance flamejante.' },
     ],
     acquisition: {
@@ -2433,10 +2439,10 @@ const WARFRAMES_DETAILS = {
     description: 'Warframe defensivo de elemento gelo focado em controle de multidão e sobrevivência. Congela inimigos, protege objetivos e reforça a durabilidade da equipe com seus poderes glaciais.',
     portraits: { base: 'assets/icons/base/frost.png', prime: 'assets/icons/prime/frost.png' },
     abilities: [
-      { type: 'passive', name: 'Aura Glacial', icon: 'assets/abilities/frost/passive.png', description: 'Efeitos de status de Frio causados por Frost têm duração dobrada, e ele ganha armadura bônus para cada inimigo próximo afetado por Frio.' },
+      { type: 'passive', name: 'Aura Glacial', icon: 'assets/abilities/frost/passive.png', description: 'Efeitos de status Glacial causados por Frost têm duração dobrada, e ele ganha armadura bônus para cada inimigo próximo afetado por Frio.' },
       { name: 'Freeze', icon: 'assets/abilities/frost/freeze.png', description: 'Lança um projétil que encapsula o inimigo atingido em um bloco de gelo, deixando-o totalmente imobilizado.' },
-      { name: 'Ice Wave', icon: 'assets/abilities/frost/icewave.png', description: 'Envia uma trilha de gelo deslizando pelo chão que causa dano e aplica efeito de Frio em todos os inimigos no caminho.' },
-      { name: 'Snow Globe', icon: 'assets/abilities/frost/snowglobe.png', description: 'Cria uma cúpula protetora que repele inimigos ao ser criada e aplica status de Frio em qualquer um que tente entrar.' },
+      { name: 'Ice Wave', icon: 'assets/abilities/frost/icewave.png', description: 'Envia uma trilha de gelo deslizando pelo chão que causa dano e aplica efeito Glacial em todos os inimigos no caminho.' },
+      { name: 'Snow Globe', icon: 'assets/abilities/frost/snowglobe.png', description: 'Cria uma cúpula protetora que repele inimigos ao ser criada e aplica status Glacial em qualquer um que tente entrar.' },
       { name: 'Avalanche', icon: 'assets/abilities/frost/avalanche.png', description: 'Cerca Frost com uma tempestade gelada que congela inimigos por completo e remove sua armadura ao quebrar.' },
     ],
     acquisition: {
@@ -2486,9 +2492,9 @@ const WARFRAMES_DETAILS = {
     portraits: { base: 'assets/icons/base/nyx.png', prime: 'assets/icons/prime/nyx.png' },
     abilities: [
       { type: 'passive', name: 'Foco Psíquico', icon: 'assets/abilities/nyx/passive.png', description: 'Nyx e suas armas ganham chance crítica bônus para cada inimigo confuso dentro de seu alcance de afinidade, até um limite alto.' },
-      { name: 'Mind Control', icon: 'assets/abilities/nyx/mindcontrol.png', description: 'Domina um único alvo, forçando-o a lutar ao lado de Nyx e infundindo seus ataques com dano de Radiação; pode ser potencializado se Nyx danificar o controlado.' },
+      { name: 'Mind Control', icon: 'assets/abilities/nyx/mindcontrol.png', description: 'Domina um único alvo, forçando-o a lutar ao lado de Nyx e infundindo seus ataques com dano Radioativo; pode ser potencializado se Nyx danificar o controlado.' },
       { name: 'Psychic Bolts', icon: 'assets/abilities/nyx/psychicbolts.png', description: 'Lança projéteis teleguiados que removem armadura e escudos dos alvos, desaceleram Infestados e devolvem armadura, escudos e Overguard para Nyx.' },
-      { name: 'Chaos', icon: 'assets/abilities/nyx/chaos.png', description: 'Emite um pulso desorientador que aplica status máximo de Radiação, fazendo com que os inimigos afetados se ataquem uns aos outros.' },
+      { name: 'Chaos', icon: 'assets/abilities/nyx/chaos.png', description: 'Emite um pulso desorientador que aplica status máximo Radioativo, fazendo com que os inimigos afetados se ataquem uns aos outros.' },
       { name: 'Absorb', icon: 'assets/abilities/nyx/absorb.png', description: 'Nyx entra em um estado meditativo e invulnerável, absorvendo todo dano recebido e o dos inimigos confusos, liberando tudo depois como uma explosão devastadora.' },
     ],
     acquisition: {
@@ -2622,7 +2628,7 @@ const WARFRAMES_DETAILS = {
       { type: 'passive', name: 'Bateria Eletrocinética', icon: 'assets/abilities/gauss/passive.png', description: 'O movimento gera corrente que enche o medidor de bateria, acelerando a recarga dos escudos e reduzindo drasticamente o atraso para recomeçar a recarga.' },
       { name: 'Mach Rush', icon: 'assets/abilities/gauss/machrush.png', description: 'Impulsiona Gauss em velocidades supersônicas, ótimo para travessia rápida e para atropelar inimigos no caminho.' },
       { name: 'Kinetic Plating', icon: 'assets/abilities/gauss/kineticplating.png', description: 'Concede redução de dano e imunidade a status contra Impacto, Perfuração, Corte, Frio, Calor e Explosão, convertendo o dano recebido em Energia.' },
-      { name: 'Thermal Sunder', icon: 'assets/abilities/gauss/thermalsunder.png', description: 'Implanta um campo de Frio ou Calor; sobrepor os dois campos produz dano Explosivo em grande área.' },
+      { name: 'Thermal Sunder', icon: 'assets/abilities/gauss/thermalsunder.png', description: 'Implanta um campo Glacial ou Calor; sobrepor os dois campos produz dano Explosivo em grande área.' },
       { name: 'Redline', icon: 'assets/abilities/gauss/redline.png', description: 'Acelera a bateria ao máximo, aumentando cadência de tiro, velocidade de ataque, recarga e conjuração, além de emitir projéteis elétricos automáticos.' },
     ],
     acquisition: {
@@ -3261,7 +3267,7 @@ const WARFRAMES_DETAILS = {
     portraits: { base: 'assets/icons/base/jade.png', variants: [{ key: 'glory', label: 'Glory' }] },
     abilities: [
       { type: 'passive', name: 'Julgamento', icon: 'assets/abilities/jade/passive.png', description: 'Jade possui dois slots de Mod de Aura, e suas habilidades marcam inimigos com Julgamento, aumentando em 50% sua vulnerabilidade a dano por 10 segundos.' },
-      { name: "Light's Judgment", icon: 'assets/abilities/jade/lights-judgment.png', description: 'Cria poços de luz que restauram a vida dos aliados enquanto causam dano de Calor e marcam os inimigos com Julgamento.' },
+      { name: "Light's Judgment", icon: 'assets/abilities/jade/lights-judgment.png', description: 'Cria poços de luz que restauram a vida dos aliados enquanto causam dano Ígneo e marcam os inimigos com Julgamento.' },
       { name: 'Symphony of Mercy', icon: 'assets/abilities/jade/symphony-of-mercy.png', description: 'Alterna entre três hinos: Power of The Seven (Força de Habilidade), Deathbringer (dano de arma) e Spirit of Resilience (regeneração de escudo).' },
       { name: 'Ophanim Eyes', icon: 'assets/abilities/jade/ophanim-eyes.png', description: 'Invoca um olhar celestial que lentifica alvos, remove escudos e armaduras, e pode reviver companheiros caídos à distância.' },
       { name: 'Glory on High', icon: 'assets/abilities/jade/glory-on-high.png', description: 'Jade alça voo empunhando a arma exaltada Glory, cujos projéteis aplicam Julgamento e detonam as marcas em área no disparo alternativo.' },
@@ -3287,7 +3293,7 @@ const WARFRAMES_DETAILS = {
     abilities: [
       { type: 'passive', name: 'Crítico Calculado', icon: 'assets/abilities/protea/passive.png', description: 'A cada quarto uso consecutivo de habilidade, o conjuro recebe +100% de Força de Habilidade.' },
       { name: 'Grenade Fan', icon: 'assets/abilities/protea/grenade-fan.png', description: 'Lança em leque granadas que viram vórtices de estilhaços contra inimigos, ou satélites que restauram escudos e reforçam o shield gating dos aliados.' },
-      { name: 'Blaze Artillery', icon: 'assets/abilities/protea/blaze-artillery.png', description: 'Implanta uma torre estacionária de Calor que se torna mais poderosa a cada disparo realizado.' },
+      { name: 'Blaze Artillery', icon: 'assets/abilities/protea/blaze-artillery.png', description: 'Implanta uma torre estacionária Ígnea que se torna mais poderosa a cada disparo realizado.' },
       { name: 'Dispensary', icon: 'assets/abilities/protea/dispensary.png', description: 'Posiciona um dispensador que gera periodicamente Orbes de Vida, Energia e um Pacote de Munição Universal aprimorados.' },
       { name: 'Temporal Anchor', icon: 'assets/abilities/protea/temporal-anchor.png', description: 'Fixa uma âncora temporal que registra o dano causado; ao expirar, Protea torna-se invulnerável, retorna ao ponto inicial e detona uma implosão com todo o dano acumulado.' },
     ],
@@ -4557,6 +4563,13 @@ const WARFRAMES_DETAILS_EN = {
   },
 };
 
+// ── Augment → faction syndicate mapping ─────────────────────────────────────
+// GERADO por scripts/_augment_syndicates.py a partir do WFCD. NÃO editar à mão.
+// AUGMENT_SYNDICATES: nome-normalizado do augment -> sindicatos de facção que vendem.
+// SYNDICATE_AUGMENTS: sindicato -> [{f:frame, a:augment}] (ordenado).
+const AUGMENT_SYNDICATES = {"abatinglink":["New Loka","The Perrin Sequence"],"abundantmutation":["Steel Meridian","The Perrin Sequence"],"accumulatingwhipclaw":["Red Veil","Steel Meridian"],"aegisgale":["Cephalon Suda","The Perrin Sequence"],"afterburn":["Cephalon Suda","The Perrin Sequence"],"airburstrounds":["New Loka","Red Veil"],"anchoredglide":["New Loka","Red Veil"],"antimatterabsorb":["Cephalon Suda","Steel Meridian"],"assimilate":["Arbiters of Hexis","New Loka"],"axiosjavelineers":["Arbiters of Hexis","New Loka"],"balefiresurge":["Cephalon Suda","The Perrin Sequence"],"ballisticbullseye":["Red Veil","Steel Meridian"],"beguilinglantern":["New Loka","Red Veil"],"bitingfrost":["Cephalon Suda","Steel Meridian"],"blazingpillage":["Cephalon Suda","The Perrin Sequence"],"blendingtalons":["Red Veil","Steel Meridian"],"blindingreave":["Cephalon Suda","The Perrin Sequence"],"bloodforge":["Red Veil","Steel Meridian"],"calmfrenzy":["Arbiters of Hexis","New Loka"],"capacitance":["Arbiters of Hexis","Red Veil"],"cataclysmiccontinuum":["Arbiters of Hexis","Cephalon Suda"],"cataclysmicgate":["Cephalon Suda","New Loka"],"catapult":["Red Veil","Steel Meridian"],"cathodecurrent":["Arbiters of Hexis","The Perrin Sequence"],"celestialstomp":["Arbiters of Hexis","New Loka"],"championsblessing":["New Loka","The Perrin Sequence"],"chaossphere":["Arbiters of Hexis","New Loka"],"chillingglobe":["Cephalon Suda","Steel Meridian"],"chromaticblade":["Arbiters of Hexis","Steel Meridian"],"coilrecharge":["Arbiters of Hexis","The Perrin Sequence"],"concentratedarrow":["Cephalon Suda","The Perrin Sequence"],"conductivesphere":["Arbiters of Hexis","The Perrin Sequence"],"conductor":["Cephalon Suda","New Loka"],"contagioncloud":["Red Veil","Steel Meridian"],"controlledslide":["Cephalon Suda","Steel Meridian"],"counterpulse":["New Loka","The Perrin Sequence"],"creepingterrify":["Red Veil","The Perrin Sequence"],"criticalsurge":["Cephalon Suda","New Loka"],"damagedecoy":["Arbiters of Hexis","Red Veil"],"darkpropagation":["Cephalon Suda","The Perrin Sequence"],"desiccationscurse":["Arbiters of Hexis","The Perrin Sequence"],"despoil":["Red Veil","The Perrin Sequence"],"divineretribution":["Cephalon Suda","Steel Meridian"],"dreadward":["Red Veil","Steel Meridian"],"duality":["Arbiters of Hexis","New Loka"],"elementalsandstorm":["Arbiters of Hexis","The Perrin Sequence"],"elusiveretribution":["Arbiters of Hexis","New Loka"],"empoweredquiver":["Cephalon Suda","The Perrin Sequence"],"endlesslullaby":["Arbiters of Hexis","New Loka"],"enduringbastille":["Cephalon Suda","The Perrin Sequence"],"energytransfer":["Arbiters of Hexis","New Loka"],"enraged":["New Loka","The Perrin Sequence"],"envelopingcloud":["Arbiters of Hexis","New Loka"],"escapevelocity":["Cephalon Suda","Steel Meridian"],"eternalwar":["New Loka","The Perrin Sequence"],"everlastingward":["Cephalon Suda","The Perrin Sequence"],"exothermic":["Red Veil","Steel Meridian"],"explosivelegerdemain":["Arbiters of Hexis","Cephalon Suda"],"fireballfrenzy":["Red Veil","Steel Meridian"],"fracturingcrush":["New Loka","The Perrin Sequence"],"freezeforce":["Cephalon Suda","Steel Meridian"],"funnelclouds":["New Loka","Red Veil"],"furiousjavelin":["Arbiters of Hexis","Steel Meridian"],"fusedcrucible":["Cephalon Suda","Steel Meridian"],"fusedreservoir":["Cephalon Suda","New Loka"],"gastro":["Red Veil","Steel Meridian"],"gourmand":["Red Veil","Steel Meridian"],"greedypull":["New Loka","The Perrin Sequence"],"guardianarmor":["Cephalon Suda","The Perrin Sequence"],"guidedeffigy":["Cephalon Suda","The Perrin Sequence"],"hallofmalevolence":["Arbiters of Hexis","Cephalon Suda"],"hallowederuption":["New Loka","Steel Meridian"],"hallowedreckoning":["New Loka","Steel Meridian"],"healingflame":["Red Veil","Steel Meridian"],"heartynourishment":["Red Veil","Steel Meridian"],"hushedinvisibility":["Arbiters of Hexis","Red Veil"],"hystericalassault":["New Loka","The Perrin Sequence"],"icewaveimpedance":["Cephalon Suda","Steel Meridian"],"icyavalanche":["Cephalon Suda","Steel Meridian"],"immolatedradiance":["Red Veil","Steel Meridian"],"infiltrate":["Cephalon Suda","The Perrin Sequence"],"insatiable":["Steel Meridian","The Perrin Sequence"],"intrepidstand":["Arbiters of Hexis","New Loka"],"ironcladcharge":["Steel Meridian","The Perrin Sequence"],"ironcladflight":["New Loka","Red Veil"],"ironshrapnel":["Steel Meridian","The Perrin Sequence"],"irradiatingdisarm":["Arbiters of Hexis","Red Veil"],"jadesjudgment":["Arbiters of Hexis","Red Veil"],"jetstream":["New Loka","Red Veil"],"kumihimoloading":["Arbiters of Hexis","New Loka"],"larvaburst":["Steel Meridian","The Perrin Sequence"],"lastingcovenant":["Arbiters of Hexis","Red Veil"],"lingeringtransmutation":["New Loka","Red Veil"],"loyalmerulina":["Cephalon Suda","New Loka"],"machcrash":["Arbiters of Hexis","The Perrin Sequence"],"magnetizeddischarge":["New Loka","The Perrin Sequence"],"mendingsplinters":["Arbiters of Hexis","New Loka"],"merulinaguardian":["Cephalon Suda","New Loka"],"mesaswaltz":["Red Veil","Steel Meridian"],"mesmershield":["Cephalon Suda","The Perrin Sequence"],"mindfreak":["Arbiters of Hexis","New Loka"],"molecularfission":["Cephalon Suda","Steel Meridian"],"muzzleflash":["Red Veil","Steel Meridian"],"negationarmor":["Arbiters of Hexis","The Perrin Sequence"],"neutronstar":["Cephalon Suda","Steel Meridian"],"noctuaswarm":["Arbiters of Hexis","Cephalon Suda"],"omikujisfortune":["Arbiters of Hexis","New Loka"],"oregaze":["Red Veil","Steel Meridian"],"pacifyingbolts":["Arbiters of Hexis","New Loka"],"parasiticvitality":["Steel Meridian","The Perrin Sequence"],"partitionedmallet":["Cephalon Suda","New Loka"],"pathofstatues":["Red Veil","Steel Meridian"],"peacefulprovocation":["Arbiters of Hexis","New Loka"],"phoenixrenewal":["New Loka","Steel Meridian"],"photonrepeater":["Cephalon Suda","The Perrin Sequence"],"piercingnavigator":["Cephalon Suda","The Perrin Sequence"],"piercingroar":["Steel Meridian","The Perrin Sequence"],"pilferingstrangledome":["Red Veil","Steel Meridian"],"pilferingswarm":["Cephalon Suda","New Loka"],"pooloflife":["New Loka","The Perrin Sequence"],"preyofdynar":["Red Veil","Steel Meridian"],"primalrage":["Arbiters of Hexis","New Loka"],"prismaticcompanion":["Red Veil","Steel Meridian"],"prolongedparalysis":["New Loka","The Perrin Sequence"],"pyroclasticflow":["Cephalon Suda","Steel Meridian"],"radiantfinish":["Arbiters of Hexis","Steel Meridian"],"razormortar":["Cephalon Suda","The Perrin Sequence"],"razorwingblitz":["New Loka","Red Veil"],"reactivestorm":["Arbiters of Hexis","New Loka"],"reapingchakram":["Cephalon Suda","Steel Meridian"],"recrystalize":["Red Veil","Steel Meridian"],"regenerativemolt":["Red Veil","Steel Meridian"],"reinforcingstomp":["Steel Meridian","The Perrin Sequence"],"repairdispensary":["Arbiters of Hexis","The Perrin Sequence"],"rerootrampage":["Red Veil","The Perrin Sequence"],"resonance":["Cephalon Suda","The Perrin Sequence"],"resonatingquake":["Cephalon Suda","The Perrin Sequence"],"revealingspores":["Red Veil","Steel Meridian"],"reverserotorswell":["Arbiters of Hexis","The Perrin Sequence"],"rhythmguard":["New Loka","Steel Meridian"],"rifthaven":["Arbiters of Hexis","Cephalon Suda"],"rifttorrent":["Arbiters of Hexis","Cephalon Suda"],"risingstorm":["Arbiters of Hexis","Red Veil"],"rousingplunder":["Cephalon Suda","New Loka"],"rubbleheap":["Red Veil","Steel Meridian"],"safeguard":["Arbiters of Hexis","Cephalon Suda","Red Veil","Steel Meridian"],"safeguardswitch":["Arbiters of Hexis","Red Veil"],"savagesilence":["Cephalon Suda","The Perrin Sequence"],"saviordecoy":["Arbiters of Hexis","Red Veil"],"seekingshuriken":["Arbiters of Hexis","Red Veil"],"shadowhaze":["Cephalon Suda","The Perrin Sequence"],"shatteredstorm":["Arbiters of Hexis","New Loka"],"shieldofshadows":["Red Veil","The Perrin Sequence"],"shockingspeed":["Arbiters of Hexis","Red Veil"],"shocktrooper":["Arbiters of Hexis","Red Veil"],"smiteinfusion":["New Loka","Steel Meridian"],"smokeshadow":["Arbiters of Hexis","Red Veil"],"sonicfracture":["Cephalon Suda","The Perrin Sequence"],"soulsurvivor":["Red Veil","The Perrin Sequence"],"spectralspirit":["Red Veil","The Perrin Sequence"],"spectrosiphon":["Arbiters of Hexis","New Loka"],"spellboundharvest":["New Loka","Red Veil"],"staggeringshield":["Red Veil","Steel Meridian"],"surgingblades":["Cephalon Suda","New Loka"],"surgingdash":["Arbiters of Hexis","Steel Meridian"],"swiftbite":["New Loka","Red Veil"],"swingline":["New Loka","The Perrin Sequence"],"targetfixation":["New Loka","Red Veil"],"tectonicfracture":["Red Veil","Steel Meridian"],"teemingvirulence":["Steel Meridian","The Perrin Sequence"],"teleportrush":["Arbiters of Hexis","Red Veil"],"temporalartillery":["Arbiters of Hexis","The Perrin Sequence"],"temporalerosion":["Arbiters of Hexis","The Perrin Sequence"],"teslabank":["Cephalon Suda","The Perrin Sequence"],"tharroslethality":["Arbiters of Hexis","New Loka"],"therelentlesslost":["Cephalon Suda","Steel Meridian"],"thermaltransfer":["Arbiters of Hexis","The Perrin Sequence"],"thrallpact":["Cephalon Suda","The Perrin Sequence"],"tidalimpunity":["Cephalon Suda","New Loka"],"titanicrumbler":["Red Veil","Steel Meridian"],"totaleclipse":["Arbiters of Hexis","Cephalon Suda"],"transistorshield":["Arbiters of Hexis","Red Veil"],"tribunal":["Arbiters of Hexis","Red Veil"],"ulfrunsendurance":["Red Veil","Steel Meridian"],"untimerift":["Cephalon Suda","Steel Meridian"],"valenceformation":["New Loka","Red Veil"],"vampireleech":["New Loka","The Perrin Sequence"],"vampiricgrasp":["Cephalon Suda","Steel Meridian"],"venaribodyguard":["Red Veil","Steel Meridian"],"venomdose":["Red Veil","Steel Meridian"],"vexingretaliation":["Cephalon Suda","The Perrin Sequence"],"viraltempest":["Cephalon Suda","New Loka"],"volatilerecompense":["New Loka","Steel Meridian"],"wardingthurible":["Arbiters of Hexis","Red Veil"],"warriorsrest":["Arbiters of Hexis","Red Veil"],"wrathofukko":["New Loka","Steel Meridian"],"wreckingwall":["Cephalon Suda","Steel Meridian"]};
+const SYNDICATE_AUGMENTS = {"Steel Meridian":[{f:"Atlas",a:"Ore Gaze"},{f:"Atlas",a:"Path Of Statues"},{f:"Atlas",a:"Rubble Heap"},{f:"Atlas",a:"Tectonic Fracture"},{f:"Atlas",a:"Titanic Rumbler"},{f:"Citrine",a:"Prismatic Companion"},{f:"Citrine",a:"Recrystalize"},{f:"Ember",a:"Exothermic"},{f:"Ember",a:"Fireball Frenzy"},{f:"Ember",a:"Healing Flame"},{f:"Ember",a:"Immolated Radiance"},{f:"Excalibur",a:"Chromatic Blade"},{f:"Excalibur",a:"Furious Javelin"},{f:"Excalibur",a:"Radiant Finish"},{f:"Excalibur",a:"Surging Dash"},{f:"Frost",a:"Biting Frost"},{f:"Frost",a:"Chilling Globe"},{f:"Frost",a:"Freeze Force"},{f:"Frost",a:"Ice Wave Impedance"},{f:"Frost",a:"Icy Avalanche"},{f:"Garuda",a:"Blending Talons"},{f:"Garuda",a:"Blood Forge"},{f:"Garuda",a:"Dread Ward"},{f:"Grendel",a:"Catapult"},{f:"Grendel",a:"Gastro"},{f:"Grendel",a:"Gourmand"},{f:"Grendel",a:"Hearty Nourishment"},{f:"Khora",a:"Accumulating Whipclaw"},{f:"Khora",a:"Pilfering Strangledome"},{f:"Khora",a:"Venari Bodyguard"},{f:"Kullervo",a:"Volatile Recompense"},{f:"Kullervo",a:"Wrath Of Ukko"},{f:"Mesa",a:"Ballistic Bullseye"},{f:"Mesa",a:"Mesa's Waltz"},{f:"Mesa",a:"Muzzle Flash"},{f:"Mesa",a:"Staggering Shield"},{f:"Nezha",a:"Controlled Slide"},{f:"Nezha",a:"Divine Retribution"},{f:"Nezha",a:"Pyroclastic Flow"},{f:"Nezha",a:"Reaping Chakram"},{f:"Nezha",a:"Safeguard"},{f:"Nidus",a:"Abundant Mutation"},{f:"Nidus",a:"Insatiable"},{f:"Nidus",a:"Larva Burst"},{f:"Nidus",a:"Parasitic Vitality"},{f:"Nidus",a:"Teeming Virulence"},{f:"Nova",a:"Antimatter Absorb"},{f:"Nova",a:"Escape Velocity"},{f:"Nova",a:"Molecular Fission"},{f:"Nova",a:"Neutron Star"},{f:"Oberon",a:"Hallowed Eruption"},{f:"Oberon",a:"Hallowed Reckoning"},{f:"Oberon",a:"Phoenix Renewal"},{f:"Oberon",a:"Smite Infusion"},{f:"Qorvex",a:"Fused Crucible"},{f:"Qorvex",a:"Wrecking Wall"},{f:"Rhino",a:"Iron Shrapnel"},{f:"Rhino",a:"Ironclad Charge"},{f:"Rhino",a:"Piercing Roar"},{f:"Rhino",a:"Reinforcing Stomp"},{f:"Saryn",a:"Contagion Cloud"},{f:"Saryn",a:"Regenerative Molt"},{f:"Saryn",a:"Revealing Spores"},{f:"Saryn",a:"Venom Dose"},{f:"Temple",a:"Rhythm Guard"},{f:"Voruna",a:"Prey Of Dynar"},{f:"Voruna",a:"Ulfrun's Endurance"},{f:"Xaku",a:"The Relentless Lost"},{f:"Xaku",a:"Untime Rift"},{f:"Xaku",a:"Vampiric Grasp"}],"Arbiters of Hexis":[{f:"Ash",a:"Rising Storm"},{f:"Ash",a:"Seeking Shuriken"},{f:"Ash",a:"Smoke Shadow"},{f:"Ash",a:"Teleport Rush"},{f:"Baruuk",a:"Elusive Retribution"},{f:"Baruuk",a:"Endless Lullaby"},{f:"Baruuk",a:"Reactive Storm"},{f:"Dante",a:"Noctua Swarm"},{f:"Equinox",a:"Calm & Frenzy"},{f:"Equinox",a:"Duality"},{f:"Equinox",a:"Energy Transfer"},{f:"Equinox",a:"Peaceful Provocation"},{f:"Excalibur",a:"Chromatic Blade"},{f:"Excalibur",a:"Furious Javelin"},{f:"Excalibur",a:"Radiant Finish"},{f:"Excalibur",a:"Surging Dash"},{f:"Excalibur Umbra",a:"Warrior's Rest"},{f:"Gara",a:"Mending Splinters"},{f:"Gara",a:"Shattered Storm"},{f:"Gara",a:"Spectrosiphon"},{f:"Gauss",a:"Mach Crash"},{f:"Gauss",a:"Thermal Transfer"},{f:"Gyre",a:"Cathode Current"},{f:"Gyre",a:"Coil Recharge"},{f:"Gyre",a:"Conductive Sphere"},{f:"Gyre",a:"Reverse Rotorswell"},{f:"Harrow",a:"Lasting Covenant"},{f:"Harrow",a:"Tribunal"},{f:"Harrow",a:"Warding Thurible"},{f:"Inaros",a:"Desiccation's Curse"},{f:"Inaros",a:"Elemental Sandstorm"},{f:"Inaros",a:"Negation Armor"},{f:"Jade",a:"Jade's Judgment"},{f:"Koumei",a:"Kumihimo Loading"},{f:"Koumei",a:"Omikuji's Fortune"},{f:"Limbo",a:"Cataclysmic Continuum"},{f:"Limbo",a:"Rift Haven"},{f:"Limbo",a:"Rift Torrent"},{f:"Loki",a:"Damage Decoy"},{f:"Loki",a:"Hushed Invisibility"},{f:"Loki",a:"Irradiating Disarm"},{f:"Loki",a:"Safeguard Switch"},{f:"Loki",a:"Savior Decoy"},{f:"Mirage",a:"Explosive Legerdemain"},{f:"Mirage",a:"Hall Of Malevolence"},{f:"Mirage",a:"Total Eclipse"},{f:"Nezha",a:"Safeguard"},{f:"Nyx",a:"Assimilate"},{f:"Nyx",a:"Chaos Sphere"},{f:"Nyx",a:"Mind Freak"},{f:"Nyx",a:"Pacifying Bolts"},{f:"Protea",a:"Repair Dispensary"},{f:"Protea",a:"Temporal Artillery"},{f:"Protea",a:"Temporal Erosion"},{f:"Styanax",a:"Axios Javelineers"},{f:"Styanax",a:"Intrepid Stand"},{f:"Styanax",a:"Tharros Lethality"},{f:"Volt",a:"Capacitance"},{f:"Volt",a:"Shock Trooper"},{f:"Volt",a:"Shocking Speed"},{f:"Volt",a:"Transistor Shield"},{f:"Wukong",a:"Celestial Stomp"},{f:"Wukong",a:"Enveloping Cloud"},{f:"Wukong",a:"Primal Rage"}],"Cephalon Suda":[{f:"Banshee",a:"Resonance"},{f:"Banshee",a:"Resonating Quake"},{f:"Banshee",a:"Savage Silence"},{f:"Banshee",a:"Sonic Fracture"},{f:"Caliban",a:"Razor Mortar"},{f:"Chroma",a:"Afterburn"},{f:"Chroma",a:"Everlasting Ward"},{f:"Chroma",a:"Guardian Armor"},{f:"Chroma",a:"Guided Effigy"},{f:"Chroma",a:"Vexing Retaliation"},{f:"Dante",a:"Noctua Swarm"},{f:"Frost",a:"Biting Frost"},{f:"Frost",a:"Chilling Globe"},{f:"Frost",a:"Freeze Force"},{f:"Frost",a:"Ice Wave Impedance"},{f:"Frost",a:"Icy Avalanche"},{f:"Hildryn",a:"Aegis Gale"},{f:"Hildryn",a:"Balefire Surge"},{f:"Hildryn",a:"Blazing Pillage"},{f:"Hydroid",a:"Pilfering Swarm"},{f:"Hydroid",a:"Rousing Plunder"},{f:"Hydroid",a:"Tidal Impunity"},{f:"Hydroid",a:"Viral Tempest"},{f:"Ivara",a:"Concentrated Arrow"},{f:"Ivara",a:"Empowered Quiver"},{f:"Ivara",a:"Infiltrate"},{f:"Ivara",a:"Piercing Navigator"},{f:"Limbo",a:"Cataclysmic Continuum"},{f:"Limbo",a:"Rift Haven"},{f:"Limbo",a:"Rift Torrent"},{f:"Mirage",a:"Explosive Legerdemain"},{f:"Mirage",a:"Hall Of Malevolence"},{f:"Mirage",a:"Total Eclipse"},{f:"Nezha",a:"Controlled Slide"},{f:"Nezha",a:"Divine Retribution"},{f:"Nezha",a:"Pyroclastic Flow"},{f:"Nezha",a:"Reaping Chakram"},{f:"Nezha",a:"Safeguard"},{f:"Nova",a:"Antimatter Absorb"},{f:"Nova",a:"Escape Velocity"},{f:"Nova",a:"Molecular Fission"},{f:"Nova",a:"Neutron Star"},{f:"Octavia",a:"Conductor"},{f:"Octavia",a:"Partitioned Mallet"},{f:"Qorvex",a:"Fused Crucible"},{f:"Qorvex",a:"Wrecking Wall"},{f:"Revenant",a:"Blinding Reave"},{f:"Revenant",a:"Mesmer Shield"},{f:"Revenant",a:"Thrall Pact"},{f:"Sevagoth",a:"Dark Propagation"},{f:"Sevagoth",a:"Shadow Haze"},{f:"Vauban",a:"Enduring Bastille"},{f:"Vauban",a:"Photon Repeater"},{f:"Vauban",a:"Tesla Bank"},{f:"Wisp",a:"Cataclysmic Gate"},{f:"Wisp",a:"Critical Surge"},{f:"Wisp",a:"Fused Reservoir"},{f:"Xaku",a:"The Relentless Lost"},{f:"Xaku",a:"Untime Rift"},{f:"Xaku",a:"Vampiric Grasp"},{f:"Yareli",a:"Loyal Merulina"},{f:"Yareli",a:"Merulina Guardian"},{f:"Yareli",a:"Surging Blades"}],"The Perrin Sequence":[{f:"Banshee",a:"Resonance"},{f:"Banshee",a:"Resonating Quake"},{f:"Banshee",a:"Savage Silence"},{f:"Banshee",a:"Sonic Fracture"},{f:"Caliban",a:"Razor Mortar"},{f:"Chroma",a:"Afterburn"},{f:"Chroma",a:"Everlasting Ward"},{f:"Chroma",a:"Guardian Armor"},{f:"Chroma",a:"Guided Effigy"},{f:"Chroma",a:"Vexing Retaliation"},{f:"Dagath",a:"Spectral Spirit"},{f:"Gauss",a:"Mach Crash"},{f:"Gauss",a:"Thermal Transfer"},{f:"Gyre",a:"Cathode Current"},{f:"Gyre",a:"Coil Recharge"},{f:"Gyre",a:"Conductive Sphere"},{f:"Gyre",a:"Reverse Rotorswell"},{f:"Hildryn",a:"Aegis Gale"},{f:"Hildryn",a:"Balefire Surge"},{f:"Hildryn",a:"Blazing Pillage"},{f:"Inaros",a:"Desiccation's Curse"},{f:"Inaros",a:"Elemental Sandstorm"},{f:"Inaros",a:"Negation Armor"},{f:"Ivara",a:"Concentrated Arrow"},{f:"Ivara",a:"Empowered Quiver"},{f:"Ivara",a:"Infiltrate"},{f:"Ivara",a:"Piercing Navigator"},{f:"Mag",a:"Counter Pulse"},{f:"Mag",a:"Fracturing Crush"},{f:"Mag",a:"Greedy Pull"},{f:"Mag",a:"Magnetized Discharge"},{f:"Nekros",a:"Creeping Terrify"},{f:"Nekros",a:"Despoil"},{f:"Nekros",a:"Shield Of Shadows"},{f:"Nekros",a:"Soul Survivor"},{f:"Nidus",a:"Abundant Mutation"},{f:"Nidus",a:"Insatiable"},{f:"Nidus",a:"Larva Burst"},{f:"Nidus",a:"Parasitic Vitality"},{f:"Nidus",a:"Teeming Virulence"},{f:"Nokko",a:"Reroot Rampage"},{f:"Protea",a:"Repair Dispensary"},{f:"Protea",a:"Temporal Artillery"},{f:"Protea",a:"Temporal Erosion"},{f:"Revenant",a:"Blinding Reave"},{f:"Revenant",a:"Mesmer Shield"},{f:"Revenant",a:"Thrall Pact"},{f:"Rhino",a:"Iron Shrapnel"},{f:"Rhino",a:"Ironclad Charge"},{f:"Rhino",a:"Piercing Roar"},{f:"Rhino",a:"Reinforcing Stomp"},{f:"Sevagoth",a:"Dark Propagation"},{f:"Sevagoth",a:"Shadow Haze"},{f:"Trinity",a:"Abating Link"},{f:"Trinity",a:"Champion's Blessing"},{f:"Trinity",a:"Pool Of Life"},{f:"Trinity",a:"Vampire Leech"},{f:"Valkyr",a:"Enraged"},{f:"Valkyr",a:"Eternal War"},{f:"Valkyr",a:"Hysterical Assault"},{f:"Valkyr",a:"Prolonged Paralysis"},{f:"Valkyr",a:"Swing Line"},{f:"Vauban",a:"Enduring Bastille"},{f:"Vauban",a:"Photon Repeater"},{f:"Vauban",a:"Tesla Bank"}],"Red Veil":[{f:"Ash",a:"Rising Storm"},{f:"Ash",a:"Seeking Shuriken"},{f:"Ash",a:"Smoke Shadow"},{f:"Ash",a:"Teleport Rush"},{f:"Atlas",a:"Ore Gaze"},{f:"Atlas",a:"Path Of Statues"},{f:"Atlas",a:"Rubble Heap"},{f:"Atlas",a:"Tectonic Fracture"},{f:"Atlas",a:"Titanic Rumbler"},{f:"Citrine",a:"Prismatic Companion"},{f:"Citrine",a:"Recrystalize"},{f:"Dagath",a:"Spectral Spirit"},{f:"Ember",a:"Exothermic"},{f:"Ember",a:"Fireball Frenzy"},{f:"Ember",a:"Healing Flame"},{f:"Ember",a:"Immolated Radiance"},{f:"Excalibur Umbra",a:"Warrior's Rest"},{f:"Garuda",a:"Blending Talons"},{f:"Garuda",a:"Blood Forge"},{f:"Garuda",a:"Dread Ward"},{f:"Grendel",a:"Catapult"},{f:"Grendel",a:"Gastro"},{f:"Grendel",a:"Gourmand"},{f:"Grendel",a:"Hearty Nourishment"},{f:"Harrow",a:"Lasting Covenant"},{f:"Harrow",a:"Tribunal"},{f:"Harrow",a:"Warding Thurible"},{f:"Jade",a:"Jade's Judgment"},{f:"Khora",a:"Accumulating Whipclaw"},{f:"Khora",a:"Pilfering Strangledome"},{f:"Khora",a:"Venari Bodyguard"},{f:"Lavos",a:"Lingering Transmutation"},{f:"Lavos",a:"Swift Bite"},{f:"Lavos",a:"Valence Formation"},{f:"Loki",a:"Damage Decoy"},{f:"Loki",a:"Hushed Invisibility"},{f:"Loki",a:"Irradiating Disarm"},{f:"Loki",a:"Safeguard Switch"},{f:"Loki",a:"Savior Decoy"},{f:"Mesa",a:"Ballistic Bullseye"},{f:"Mesa",a:"Mesa's Waltz"},{f:"Mesa",a:"Muzzle Flash"},{f:"Mesa",a:"Staggering Shield"},{f:"Nekros",a:"Creeping Terrify"},{f:"Nekros",a:"Despoil"},{f:"Nekros",a:"Shield Of Shadows"},{f:"Nekros",a:"Soul Survivor"},{f:"Nezha",a:"Safeguard"},{f:"Nokko",a:"Reroot Rampage"},{f:"Saryn",a:"Contagion Cloud"},{f:"Saryn",a:"Regenerative Molt"},{f:"Saryn",a:"Revealing Spores"},{f:"Saryn",a:"Venom Dose"},{f:"Titania",a:"Beguiling Lantern"},{f:"Titania",a:"Ironclad Flight"},{f:"Titania",a:"Razorwing Blitz"},{f:"Titania",a:"Spellbound Harvest"},{f:"Volt",a:"Capacitance"},{f:"Volt",a:"Shock Trooper"},{f:"Volt",a:"Shocking Speed"},{f:"Volt",a:"Transistor Shield"},{f:"Voruna",a:"Prey Of Dynar"},{f:"Voruna",a:"Ulfrun's Endurance"},{f:"Zephyr",a:"Airburst Rounds"},{f:"Zephyr",a:"Anchored Glide"},{f:"Zephyr",a:"Funnel Clouds"},{f:"Zephyr",a:"Jet Stream"},{f:"Zephyr",a:"Target Fixation"}],"New Loka":[{f:"Baruuk",a:"Elusive Retribution"},{f:"Baruuk",a:"Endless Lullaby"},{f:"Baruuk",a:"Reactive Storm"},{f:"Equinox",a:"Calm & Frenzy"},{f:"Equinox",a:"Duality"},{f:"Equinox",a:"Energy Transfer"},{f:"Equinox",a:"Peaceful Provocation"},{f:"Gara",a:"Mending Splinters"},{f:"Gara",a:"Shattered Storm"},{f:"Gara",a:"Spectrosiphon"},{f:"Hydroid",a:"Pilfering Swarm"},{f:"Hydroid",a:"Rousing Plunder"},{f:"Hydroid",a:"Tidal Impunity"},{f:"Hydroid",a:"Viral Tempest"},{f:"Koumei",a:"Kumihimo Loading"},{f:"Koumei",a:"Omikuji's Fortune"},{f:"Kullervo",a:"Volatile Recompense"},{f:"Kullervo",a:"Wrath Of Ukko"},{f:"Lavos",a:"Lingering Transmutation"},{f:"Lavos",a:"Swift Bite"},{f:"Lavos",a:"Valence Formation"},{f:"Mag",a:"Counter Pulse"},{f:"Mag",a:"Fracturing Crush"},{f:"Mag",a:"Greedy Pull"},{f:"Mag",a:"Magnetized Discharge"},{f:"Nyx",a:"Assimilate"},{f:"Nyx",a:"Chaos Sphere"},{f:"Nyx",a:"Mind Freak"},{f:"Nyx",a:"Pacifying Bolts"},{f:"Oberon",a:"Hallowed Eruption"},{f:"Oberon",a:"Hallowed Reckoning"},{f:"Oberon",a:"Phoenix Renewal"},{f:"Oberon",a:"Smite Infusion"},{f:"Octavia",a:"Conductor"},{f:"Octavia",a:"Partitioned Mallet"},{f:"Styanax",a:"Axios Javelineers"},{f:"Styanax",a:"Intrepid Stand"},{f:"Styanax",a:"Tharros Lethality"},{f:"Temple",a:"Rhythm Guard"},{f:"Titania",a:"Beguiling Lantern"},{f:"Titania",a:"Ironclad Flight"},{f:"Titania",a:"Razorwing Blitz"},{f:"Titania",a:"Spellbound Harvest"},{f:"Trinity",a:"Abating Link"},{f:"Trinity",a:"Champion's Blessing"},{f:"Trinity",a:"Pool Of Life"},{f:"Trinity",a:"Vampire Leech"},{f:"Valkyr",a:"Enraged"},{f:"Valkyr",a:"Eternal War"},{f:"Valkyr",a:"Hysterical Assault"},{f:"Valkyr",a:"Prolonged Paralysis"},{f:"Valkyr",a:"Swing Line"},{f:"Wisp",a:"Cataclysmic Gate"},{f:"Wisp",a:"Critical Surge"},{f:"Wisp",a:"Fused Reservoir"},{f:"Wukong",a:"Celestial Stomp"},{f:"Wukong",a:"Enveloping Cloud"},{f:"Wukong",a:"Primal Rage"},{f:"Yareli",a:"Loyal Merulina"},{f:"Yareli",a:"Merulina Guardian"},{f:"Yareli",a:"Surging Blades"},{f:"Zephyr",a:"Airburst Rounds"},{f:"Zephyr",a:"Anchored Glide"},{f:"Zephyr",a:"Funnel Clouds"},{f:"Zephyr",a:"Jet Stream"},{f:"Zephyr",a:"Target Fixation"}]};
+
 // ============== Augments ==============
 // Augments are keyed by warframe slug, then by ability index (0 = passive, 1-4 = abilities).
 // Each augment: { name, description, image }. Descriptions verbatim from wiki.warframe.com.
@@ -4802,7 +4815,7 @@ const AUGMENTS = {
         image: 'assets/augments/chroma/vexingretaliation.png',
         description: {
           en: 'Taking 150 Damage will trigger a 9m burst. Shield damage will cause a Puncture Status effect while Health damage will cause a Blast Status effect.',
-          'pt-BR': 'Receber 150 de Dano aciona uma explosão de 9m. Dano em escudo causa efeito de Status de Perfuração, enquanto dano em vida causa efeito de Status de Explosão.',
+          'pt-BR': 'Receber 150 de Dano aciona uma explosão de 9m. Dano em escudo causa efeito de Status de Perfuração, enquanto dano em vida causa efeito de Status Explosivo.',
         },
       },
     ],
@@ -4858,7 +4871,7 @@ const AUGMENTS = {
         image: 'assets/augments/ember/fireballfrenzy.png',
         description: {
           en: 'Hold to cast will grant all allies within 15m an additional 100% Heat Damage to their attacks for 40s.',
-          'pt-BR': 'Segurar para lançar concede a todos os aliados num raio de 15m um adicional de 100% de Dano de Calor em seus ataques por 40s.',
+          'pt-BR': 'Segurar para lançar concede a todos os aliados num raio de 15m um adicional de 100% de Dano Ígneo em seus ataques por 40s.',
         },
       },
     ],
@@ -5004,7 +5017,7 @@ const AUGMENTS = {
         image: 'assets/augments/frost/freezeforce.png',
         description: {
           en: 'Hold to cast will grant all allies within 15m an additional 100% Cold Damage to their attacks for 40s.',
-          'pt-BR': 'Segurar para lançar concede a todos os aliados num raio de 15m um adicional de 100% de Dano de Frio em seus ataques por 40s.',
+          'pt-BR': 'Segurar para lançar concede a todos os aliados num raio de 15m um adicional de 100% de Dano Glacial em seus ataques por 40s.',
         },
       },
     ],
@@ -5014,7 +5027,7 @@ const AUGMENTS = {
         image: 'assets/augments/frost/icewaveimpedance.png',
         description: {
           en: 'Create a frozen trail for 12 seconds. Enemies that touch it are inflicted with Cold Status every second.',
-          'pt-BR': 'Cria um rastro congelado por 12 segundos. Inimigos que o tocam recebem Status de Frio a cada segundo.',
+          'pt-BR': 'Cria um rastro congelado por 12 segundos. Inimigos que o tocam recebem Status Glacial a cada segundo.',
         },
       },
     ],
@@ -5162,7 +5175,7 @@ const AUGMENTS = {
         image: 'assets/augments/grendel/gastro.png',
         description: {
           en: 'Regurgitated enemies bounce up to 3 times, creating gas clouds that last 8s and inflict nearby enemies with Gas Status Effect.',
-          'pt-BR': 'Inimigos regurgitados quicam até 3 vezes, criando nuvens de gás que duram 8s e infligem Efeito de Status de Gás em inimigos próximos.',
+          'pt-BR': 'Inimigos regurgitados quicam até 3 vezes, criando nuvens de gás que duram 8s e infligem Efeito de Status Gasoso em inimigos próximos.',
         },
       },
     ],
@@ -5258,7 +5271,7 @@ const AUGMENTS = {
         image: 'assets/augments/hildryn/blazingpillage.png',
         description: {
           en: 'Enemies affected by Haven will be set ablaze for 200 Heat Damage and restore 50 additional Shields to Hildryn.',
-          'pt-BR': 'Inimigos afetados por Haven são incendiados sofrendo 200 de Dano de Calor e restauram 50 de Escudo adicionais para Hildryn.',
+          'pt-BR': 'Inimigos afetados por Haven são incendiados sofrendo 200 de Dano Ígneo e restauram 50 de Escudo adicionais para Hildryn.',
         },
       },
     ],
@@ -5462,7 +5475,7 @@ const AUGMENTS = {
         image: 'assets/augments/kullervo/volatilerecompense.png',
         description: {
           en: 'Daggers whirl in a ring around Kullervo for 25s, slashing nearby foes and dealing Blast Damage and Status Effect before returning to the ring.',
-          'pt-BR': 'Adagas giram em um anel ao redor de Kullervo por 25s, cortando inimigos próximos e causando Dano de Explosão e Efeito de Status antes de retornarem ao anel.',
+          'pt-BR': 'Adagas giram em um anel ao redor de Kullervo por 25s, cortando inimigos próximos e causando Dano Explosivo e Efeito de Status antes de retornarem ao anel.',
         },
       },
     ],
@@ -5586,7 +5599,7 @@ const AUGMENTS = {
         image: 'assets/augments/loki/irradiatingdisarm.png',
         description: {
           en: 'Enemies will be affected by Radiation Status for 9s',
-          'pt-BR': 'Inimigos serão afetados pelo Status de Radiação por 9s.',
+          'pt-BR': 'Inimigos serão afetados pelo Status Radioativo por 9s.',
         },
       },
     ],
@@ -5912,7 +5925,7 @@ const AUGMENTS = {
         image: 'assets/augments/nyx/pacifyingbolts.png',
         description: {
           en: 'Throw an additional 3 force bolts with guaranteed Radiation Status Effect. Enemies struck are confused for 10s.',
-          'pt-BR': 'Lança 3 dardos de força adicionais com Efeito de Status de Radiação garantido. Inimigos atingidos ficam confusos por 10s.',
+          'pt-BR': 'Lança 3 dardos de força adicionais com Efeito de Status Radioativo garantido. Inimigos atingidos ficam confusos por 10s.',
         },
       },
     ],
@@ -5944,7 +5957,7 @@ const AUGMENTS = {
         image: 'assets/augments/oberon/smiteinfusion.png',
         description: {
           en: 'Hold to cast will grant all allies within 15m an additional 100% Radiation Damage to their attacks for 40s.',
-          'pt-BR': 'Segure para conjurar e conceder a todos os aliados em 15m um adicional de 100% de Dano de Radiação aos seus ataques por 40s.',
+          'pt-BR': 'Segure para conjurar e conceder a todos os aliados em 15m um adicional de 100% de Dano Radioativo aos seus ataques por 40s.',
         },
       },
     ],
@@ -5954,7 +5967,7 @@ const AUGMENTS = {
         image: 'assets/augments/oberon/hallowederuption.png',
         description: {
           en: 'Reactivate to deal all Remaining Damage and Radiation Status. Passive: +200% Hallowed Ground Duration.',
-          'pt-BR': 'Reative para causar todo o Dano Restante e Status de Radiação. Passiva: +200% de Duração de Hallowed Ground.',
+          'pt-BR': 'Reative para causar todo o Dano Restante e Status Radioativo. Passiva: +200% de Duração de Hallowed Ground.',
         },
       },
     ],
@@ -6362,7 +6375,7 @@ const AUGMENTS = {
         image: 'assets/augments/vauban/teslabank.png',
         description: {
           en: 'Enemy health when a Nervos is first attached is converted into a 8m burst of Electricity when killed.',
-          'pt-BR': 'A vida do inimigo no momento em que um Nervos se prende a ele é convertida em uma explosão de Eletricidade de 8m quando ele é morto.',
+          'pt-BR': 'A vida do inimigo no momento em que um Nervos se prende a ele é convertida em uma explosão Elétrica de 8m quando ele é morto.',
         },
       },
     ],
@@ -6394,7 +6407,7 @@ const AUGMENTS = {
         image: 'assets/augments/volt/shocktrooper.png',
         description: {
           en: 'Hold to cast will grant all allies within 15m an additional 100% Electricity Damage to their attacks for 40s.',
-          'pt-BR': 'Segurar para lançar concede a todos os aliados em até 15m um adicional de 100% de Dano de Eletricidade aos seus ataques por 40s.',
+          'pt-BR': 'Segurar para lançar concede a todos os aliados em até 15m um adicional de 100% de Dano Elétrico aos seus ataques por 40s.',
         },
       },
     ],
@@ -6404,7 +6417,7 @@ const AUGMENTS = {
         image: 'assets/augments/volt/shockingspeed.png',
         description: {
           en: 'While moving under the effects of Speed, enemies within 3m will take 300 Electricity Damage with guaranteed Status effect.',
-          'pt-BR': 'Enquanto se move sob os efeitos de Speed, inimigos em até 3m recebem 300 de Dano de Eletricidade com efeito de Status garantido.',
+          'pt-BR': 'Enquanto se move sob os efeitos de Speed, inimigos em até 3m recebem 300 de Dano Elétrico com efeito de Status garantido.',
         },
       },
     ],
@@ -6478,7 +6491,7 @@ const AUGMENTS = {
         image: 'assets/augments/wisp/cataclysmicgate.png',
         description: {
           en: 'Wisp and 2 spectral images cast a single blast of Sol Gate, leaving an area with 500 Heat Damage / Second with guaranteed Heat and Radiation Status Effects for 10s.',
-          'pt-BR': 'Wisp e 2 imagens espectrais disparam uma única rajada de Sol Gate, deixando uma área com 500 de Dano de Calor por segundo com Efeitos de Status de Calor e Radiação garantidos por 10s.',
+          'pt-BR': 'Wisp e 2 imagens espectrais disparam uma única rajada de Sol Gate, deixando uma área com 500 de Dano Ígneo por segundo com Efeitos de Status Ígneo e Radiação garantidos por 10s.',
         },
       },
     ],
@@ -6644,6 +6657,117 @@ function augmentCaption(au) {
   return au.description[state.locale] || au.description[DEFAULT_LOCALE] || '';
 }
 
+// normaliza o nome do augment do mesmo jeito que scripts/_augment_syndicates.py
+function normAugName(s) { return (s || '').toLowerCase().replace(/[^a-z0-9]/g, ''); }
+
+// "Comprar em: <Sindicato A> · <Sindicato B>" — chips com a cor oficial do
+// sindicato (SYN_BASE), clicáveis pra abrir a seção Sindicatos do glossário.
+function augmentSyndsHtml(au) {
+  const list = (typeof AUGMENT_SYNDICATES !== 'undefined') && AUGMENT_SYNDICATES[normAugName(au.name)];
+  if (!list || !list.length) return '';
+  const label = state.locale === 'pt-BR' ? 'Comprar em' : 'Buy from';
+  const chips = list.map(n => {
+    const s = (typeof SYN_BASE !== 'undefined') ? SYN_BASE.find(x => x.n === n) : null;
+    const col = (s && s.c) || '#7fd13b';
+    return `<button type="button" class="augment-syn-chip" style="--sc:${col}" onclick="goToGlossarySection('syndicates')">${n}</button>`;
+  }).join('');
+  return `<div class="augment-syn"><span class="augment-syn-label">${label}</span>${chips}</div>`;
+}
+
+// ============== Term tooltips (jargon) ==============
+// Curated new-player jargon. applyTermTips() auto-wraps the FIRST occurrence of
+// each term (whole word, case-insensitive) inside a container — used on archetype
+// and ability descriptions. NOT applied in the glossary (it has [[hl]]/search,
+// and "CC" there means Critical Chance, not crowd control).
+const TERM_TIPS = {
+  'glass cannon': { en: 'A build/frame with huge damage but very low survivability — hits hard, dies fast.', 'pt-BR': 'Um build/frame com dano enorme mas pouquíssima sobrevivência — bate forte, morre rápido.' },
+  'dps':          { en: 'Damage per second — sustained damage output; also a damage-focused role.', 'pt-BR': 'Dano por segundo — dano sustentado; também o papel focado em dano.' },
+  'nuker':        { en: 'A frame that wipes whole rooms at once with a big area ability.', 'pt-BR': 'Um frame que limpa salas inteiras de uma vez com uma habilidade de área.' },
+  'nuke':         { en: 'Wiping a whole room of enemies at once with one big ability.', 'pt-BR': 'Limpar uma sala inteira de inimigos de uma vez com uma habilidade grande.' },
+  'tank':         { en: 'A frame that soaks up damage and stays alive to protect the team.', 'pt-BR': 'Um frame que aguenta dano e fica vivo pra proteger o time.' },
+  'bruiser':      { en: 'A frame that is both tough and hits hard — survivability plus damage.', 'pt-BR': 'Um frame durão e que bate forte ao mesmo tempo — sobrevivência com dano.' },
+  'crowd control':{ en: 'Abilities that stun, freeze, hold or otherwise disable enemies (CC).', 'pt-BR': 'Habilidades que atordoam, congelam, prendem ou desabilitam inimigos (CC).' },
+  'aoe':          { en: 'Area of effect — hits everything in a zone, not a single target.', 'pt-BR': 'Área de efeito — atinge tudo numa zona, não um alvo só.' },
+  'buff':         { en: 'A temporary boost to you or your allies (more damage, speed, etc.).', 'pt-BR': 'Um reforço temporário pra você ou aliados (mais dano, velocidade, etc.).' },
+  'debuff':       { en: 'A temporary weakening applied to enemies (less armor, slowed, etc.).', 'pt-BR': 'Um enfraquecimento temporário aplicado a inimigos (menos armadura, lentidão, etc.).' },
+  'shield gating':{ en: 'A brief invulnerability window when your shields break, used to survive big hits.', 'pt-BR': 'Uma janela breve de invulnerabilidade quando o escudo quebra, usada pra sobreviver a golpes fortes.' },
+  'bleedout':     { en: 'The downed state where allies can revive you before you die.', 'pt-BR': 'O estado caído em que aliados podem te reviver antes de você morrer.' },
+  'cheese':       { en: 'A tactic that trivializes content, making it very easy.', 'pt-BR': 'Uma tática que trivializa o conteúdo, deixando-o muito fácil.' },
+  // sinônimos PT (o texto pt-BR traduz vários jargões) — mesma definição
+  'controle de grupo': { en: 'Abilities that stun, freeze, hold or otherwise disable enemies (CC).', 'pt-BR': 'Habilidades que atordoam, congelam, prendem ou desabilitam inimigos (CC).' },
+  'canhão de vidro':   { en: 'A build/frame with huge damage but very low survivability — hits hard, dies fast.', 'pt-BR': 'Um build/frame com dano enorme mas pouquíssima sobrevivência — bate forte, morre rápido.' },
+  'tanque':            { en: 'A frame that soaks up damage and stays alive to protect the team.', 'pt-BR': 'Um frame que aguenta dano e fica vivo pra proteger o time.' },
+  'tanques':           { en: 'A frame that soaks up damage and stays alive to protect the team.', 'pt-BR': 'Um frame que aguenta dano e fica vivo pra proteger o time.' },
+};
+// aliases: conjugações/sinônimos PT+EN apontando pro mesmo verbete (jargão
+// inequívoco, sem risco de falso positivo). O `s?` do regex cobre os plurais.
+['buffam', 'buffar', 'buffado', 'buffada', 'buffed', 'buffing'].forEach(k => { TERM_TIPS[k] = TERM_TIPS['buff']; });
+['debuffar', 'debuffam', 'debuffado', 'debuffed', 'debuffing'].forEach(k => { TERM_TIPS[k] = TERM_TIPS['debuff']; });
+TERM_TIPS['controle de massa'] = TERM_TIPS['crowd control'];
+
+const TERM_TIPS_RE = (() => {
+  const keys = Object.keys(TERM_TIPS).sort((a, b) => b.length - a.length)
+    .map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ /g, '[ -]')); // espaço casa espaço OU hífen
+  // `s?` pega plurais ("buff"→"buffs", "tank"→"tanks"); o lookup tira o "s" final.
+  return keys.length ? new RegExp('\\b(?:' + keys.join('|') + ')s?\\b', 'gi') : null;
+})();
+
+// resolve o texto casado (plural / hífen) pro termo-base do dicionário
+function resolveTermKey(raw) {
+  const k = raw.toLowerCase().replace(/-/g, ' '); // chaves usam espaço (ex.: "crowd-control" → "crowd control")
+  if (TERM_TIPS[k]) return k;
+  if (k.endsWith('s') && TERM_TIPS[k.slice(0, -1)]) return k.slice(0, -1);
+  return null;
+}
+
+function applyTermTips(root) {
+  if (!root || !TERM_TIPS_RE) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const SKIP = new Set(['A', 'BUTTON', 'SUMMARY', 'SCRIPT', 'STYLE']);
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+      for (let p = node.parentElement; p && p !== root; p = p.parentElement) {
+        if (SKIP.has(p.tagName) || p.classList.contains('term-tip') || p.classList.contains('hl')) {
+          return NodeFilter.FILTER_REJECT;
+        }
+      }
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  const nodes = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) nodes.push(n);
+  nodes.forEach(node => {
+    const text = node.nodeValue;
+    TERM_TIPS_RE.lastIndex = 0;
+    let m, last = 0, frag = null;
+    while ((m = TERM_TIPS_RE.exec(text))) {
+      const key = resolveTermKey(m[0]);
+      if (!key) continue;
+      frag = frag || document.createDocumentFragment();
+      if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+      const span = document.createElement('span');
+      span.className = 'term-tip';
+      span.tabIndex = 0;
+      span.setAttribute('data-tip', TERM_TIPS[key][loc] || TERM_TIPS[key].en);
+      span.textContent = m[0];
+      frag.appendChild(span);
+      last = m.index + m[0].length;
+    }
+    if (frag) {
+      if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+      node.parentNode.replaceChild(frag, node);
+    }
+  });
+}
+
+// Aplica os tooltips de termos a cada corpo de seção do glossário (1ª ocorrência
+// por seção). Chamado após o render do glossário (setLocale + boot). Ignora "CC"
+// porque o termo não está no dicionário (lá significa Critical Chance).
+function applyTermTipsToGlossary() {
+  document.querySelectorAll('#glossary-sections .glossary-section-body').forEach(applyTermTips);
+}
+
 // ============== Status Effects ==============
 
 const FACTIONS = {
@@ -6711,7 +6835,7 @@ const STATUS_EFFECTS = {
   // ---- Elemental base ----
   heat: {
     type: 'elemental',
-    name: { en: 'Heat', 'pt-BR': 'Calor' },
+    name: { en: 'Heat', 'pt-BR': 'Ígneo' },
     color: '#e3702f',
     description: {
       en: 'Elemental damage from fire and intense heat. Causes [[ongoing burns]] and gradually [[strips armor]].',
@@ -6726,7 +6850,7 @@ const STATUS_EFFECTS = {
   },
   cold: {
     type: 'elemental',
-    name: { en: 'Cold', 'pt-BR': 'Frio' },
+    name: { en: 'Cold', 'pt-BR': 'Glacial' },
     color: '#2f92e3',
     description: {
       en: 'Elemental damage from extreme cold. [[Slows targets]] and rewards the attacker with [[bonus critical damage]].',
@@ -6741,7 +6865,7 @@ const STATUS_EFFECTS = {
   },
   electricity: {
     type: 'elemental',
-    name: { en: 'Electricity', 'pt-BR': 'Eletricidade' },
+    name: { en: 'Electricity', 'pt-BR': 'Elétrico' },
     color: '#b62fe3',
     description: {
       en: 'Elemental damage from arcing current. [[Chains between nearby enemies]] and [[stuns the original target]].',
@@ -6756,7 +6880,7 @@ const STATUS_EFFECTS = {
   },
   toxin: {
     type: 'elemental',
-    name: { en: 'Toxin', 'pt-BR': 'Toxina' },
+    name: { en: 'Toxin', 'pt-BR': 'Tóxico' },
     color: '#2fe33a',
     description: {
       en: 'Elemental damage from corrosive venom. [[Eats through Shields]] and continues [[poisoning the target]].',
@@ -6773,7 +6897,7 @@ const STATUS_EFFECTS = {
   // ---- Elemental combinations ----
   blast: {
     type: 'combination',
-    name: { en: 'Blast', 'pt-BR': 'Explosão' },
+    name: { en: 'Blast', 'pt-BR': 'Explosivo' },
     color: '#9c4144',
     components: ['heat', 'cold'],
     description: {
@@ -6789,7 +6913,7 @@ const STATUS_EFFECTS = {
   },
   radiation: {
     type: 'combination',
-    name: { en: 'Radiation', 'pt-BR': 'Radiação' },
+    name: { en: 'Radiation', 'pt-BR': 'Radioativo' },
     color: '#f4e925',
     components: ['heat', 'electricity'],
     description: {
@@ -6805,7 +6929,7 @@ const STATUS_EFFECTS = {
   },
   gas: {
     type: 'combination',
-    name: { en: 'Gas', 'pt-BR': 'Gás' },
+    name: { en: 'Gas', 'pt-BR': 'Gasoso' },
     color: '#2fe3aa',
     components: ['heat', 'toxin'],
     description: {
@@ -6830,7 +6954,7 @@ const STATUS_EFFECTS = {
     },
     proc: {
       en: '[[Disrupt]] — amplifies damage to Shields and Overguard by [[+100%]] (up to [[+325%]] at 10 stacks) and [[nullifies shield regeneration]] for 6s. When shields or overguard are removed, it triggers an Electricity proc dealing [[3% of max shields per stack]] (capped at [[30%]]).',
-      'pt-BR': '[[Interromper]] — amplifica o dano em Escudos e Overguard em [[+100%]] (até [[+325%]] em 10 acúmulos) e [[anula a regeneração de escudos]] por 6s. Quando escudos ou overguard são removidos, dispara um proc de Eletricidade causando [[3% do escudo máximo por acúmulo]] (limitado a [[30%]]).',
+      'pt-BR': '[[Interromper]] — amplifica o dano em Escudos e Overguard em [[+100%]] (até [[+325%]] em 10 acúmulos) e [[anula a regeneração de escudos]] por 6s. Quando escudos ou overguard são removidos, dispara um proc Elétrico causando [[3% do escudo máximo por acúmulo]] (limitado a [[30%]]).',
     },
     vulnerable: ['corpus', 'techrot'],
     resistant: ['narmer'],
@@ -6968,8 +7092,8 @@ const RIVEN_STATS = {
   status_chance:        { name: { en: 'Status Chance',           'pt-BR': 'Chance de Status' },           posTier: 'A', negTier: 'harmful',    cats: ['primary', 'secondary', 'melee'] },
   status_duration:      { name: { en: 'Status Duration',         'pt-BR': 'Duração de Status' },          posTier: 'D', negTier: 'neutral',       cats: ['primary', 'secondary', 'melee'], typicalMax: 100 },
   toxin:                { name: { en: 'Toxin Damage',            'pt-BR': 'Dano Tóxico' },                posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
-  heat:                 { name: { en: 'Heat Damage',             'pt-BR': 'Dano de Calor' },              posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
-  cold:                 { name: { en: 'Cold Damage',             'pt-BR': 'Dano de Frio' },               posTier: 'B', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
+  heat:                 { name: { en: 'Heat Damage',             'pt-BR': 'Dano Ígneo' },                 posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
+  cold:                 { name: { en: 'Cold Damage',             'pt-BR': 'Dano Glacial' },               posTier: 'B', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
   electricity:          { name: { en: 'Electricity Damage',      'pt-BR': 'Dano Elétrico' },              posTier: 'A', negTier: 'mild',       cats: ['primary', 'secondary', 'melee'] },
   impact:               { name: { en: 'Impact Damage',           'pt-BR': 'Dano Colisivo' },              posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary', 'melee'] },
   puncture:             { name: { en: 'Puncture Damage',         'pt-BR': 'Dano de Penetração' },         posTier: 'D', negTier: 'beneficial', cats: ['primary', 'secondary', 'melee'] },
@@ -11717,7 +11841,7 @@ const MISSION_TYPES = {
   capture:          { name: { en: 'Capture',          'pt-BR': 'Captura'             }, color: '#7fb8d4' },
   defense:          { name: { en: 'Defense',          'pt-BR': 'Defesa'              }, color: '#d4b25a' },
   disruption:       { name: { en: 'Disruption',       'pt-BR': 'Disrupção'           }, color: '#b888ff' },
-  exterminate:      { name: { en: 'Exterminate',      'pt-BR': 'Exterminar'          }, color: '#cc6666' },
+  exterminate:      { name: { en: 'Exterminate',      'pt-BR': 'Extermínio'          }, color: '#cc6666' },
   interception:     { name: { en: 'Interception',     'pt-BR': 'Interceptação'       }, color: '#88c0d0' },
   mobile_defense:   { name: { en: 'Mobile Defense',   'pt-BR': 'Defesa Móvel'        }, color: '#e89c4a' },
   rescue:           { name: { en: 'Rescue',           'pt-BR': 'Resgate'             }, color: '#7fb88a' },
@@ -11725,7 +11849,7 @@ const MISSION_TYPES = {
   survival:         { name: { en: 'Survival',         'pt-BR': 'Sobrevivência'       }, color: '#a3d142' },
   sabotage:         { name: { en: 'Sabotage',         'pt-BR': 'Sabotagem'           }, color: '#f0c97a' },
   excavation:       { name: { en: 'Excavation',       'pt-BR': 'Escavação'           }, color: '#c9a04a' },
-  hijack:           { name: { en: 'Hijack',           'pt-BR': 'Sequestro'           }, color: '#d18a5a' },
+  hijack:           { name: { en: 'Hijack',           'pt-BR': 'Extravio'           }, color: '#d18a5a' },
   defection:        { name: { en: 'Defection',        'pt-BR': 'Defecção'            }, color: '#9a8acd' },
   arena:            { name: { en: 'Arena',            'pt-BR': 'Arena'               }, color: '#bf5555' },
   pursuit:          { name: { en: 'Pursuit',          'pt-BR': 'Perseguição'         }, color: '#5fb8c9' },
@@ -102687,7 +102811,7 @@ const RESOURCES = {
     image: 'https://wiki.warframe.com/images/Morphics.png',
     description: {
       en: 'Rare reactive metallic compound. Drops on Mercury, Mars, Phobos, Europa, and Pluto — Mars has the highest drop rate. Hellas (Mars, Exterminate) is the meta farm.',
-      'pt-BR': 'Composto metálico reativo raro. Cai em Mercúrio, Marte, Phobos, Europa e Plutão — Marte tem a maior taxa de drop. Hellas (Marte, Exterminar) é o farm meta.',
+      'pt-BR': 'Composto metálico reativo raro. Cai em Mercúrio, Marte, Phobos, Europa e Plutão — Marte tem a maior taxa de drop. Hellas (Marte, Extermínio) é o farm meta.',
     },
     usedFor: {
       en: 'Many warframe chassis (Rhino, Mag, Volt) and Forma blueprints.',
@@ -102695,7 +102819,7 @@ const RESOURCES = {
     },
     recommendedFarm: { planet: 'mars', node: 'kadesh',
       noteEn: 'On Mars, Survival runs net consistent Morphics. Hellas (Exterminate) is faster per-run.',
-      notePt: 'Em Marte, runs de Sobrevivência dão Mórficos consistentes. Hellas (Exterminar) é mais rápido por run.' },
+      notePt: 'Em Marte, runs de Sobrevivência dão Mórficos consistentes. Hellas (Extermínio) é mais rápido por run.' },
   },
   gallium: {
     name: { en: 'Gallium', 'pt-BR': 'Gálio' },
@@ -102714,7 +102838,7 @@ const RESOURCES = {
     },
     recommendedFarm: { planet: 'mars', node: 'war',
       noteEn: 'Boss assassination has a chance to drop Gallium. Hellas (Exterminate) is the meta farm on Mars.',
-      notePt: 'Assassinato de boss tem chance de dropar Gálio. Hellas (Exterminar) é o farm meta em Marte.' },
+      notePt: 'Assassinato de boss tem chance de dropar Gálio. Hellas (Extermínio) é o farm meta em Marte.' },
   },
   argon_crystal: {
     name: { en: 'Argon Crystal', 'pt-BR': 'Cristal de Argônio' },
@@ -102904,7 +103028,7 @@ const RESOURCES = {
     },
     recommendedFarm: { planet: 'lua', node: 'plato',
       noteEn: 'Plato (Lua Exterminate) drops Neurodes consistently. Earth Caches also yield them.',
-      notePt: 'Plato (Exterminar na Lua) dropa Neuródios consistentemente. Caches da Terra também dão.' },
+      notePt: 'Plato (Extermínio na Lua) dropa Neuródios consistentemente. Caches da Terra também dão.' },
   },
   mutagen_sample: {
     name: { en: 'Mutagen Sample', 'pt-BR': 'Amostra Mutagênica' },
@@ -104005,7 +104129,7 @@ const RESOURCES = {
     rarity: 'common', category: 'common',
     location: 'orb-vallis', sources: ['deepmines'],
     image: 'https://wiki.warframe.com/images/BlisterStalk.png',
-    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Heat damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano de Calor.' },
+    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Heat damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano Ígneo.' },
     usedFor: { en: 'Fairy Ring Cave Art decoration and ranking up the Nightcap Field Guide. Also purchasable from Nightcap for Fergolyte.', 'pt-BR': 'Decoração Fairy Ring Cave Art e para subir de rank no Field Guide do Nightcap. Também comprável de Nightcap por Fergolyte.' },
   },
   boot: {
@@ -104463,7 +104587,7 @@ const RESOURCES = {
     rarity: 'common', category: 'common',
     location: 'orb-vallis', sources: ['deepmines'],
     image: 'https://wiki.warframe.com/images/GammaBerry.png',
-    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Radiation damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano de Radiação.' },
+    description: { en: 'Common Deepmines mushroom harvested in the Nutrient Processing section during the Weed The Garden bounty. On pickup grants Radiation damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Nutrient Processing durante a bounty Weed The Garden. Ao pegar, concede dano Radioativo.' },
     usedFor: { en: 'Crafting the Arbucep Receiver, Root Maze Cave Art decoration, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Receiver, decoração Root Maze Cave Art e para subir de rank no Field Guide do Nightcap.' },
   },
   goblite: {
@@ -105098,7 +105222,7 @@ const RESOURCES = {
     rarity: 'common', category: 'common',
     location: 'orb-vallis', sources: ['deepmines'],
     image: 'https://wiki.warframe.com/images/ReekingPuffball.png',
-    description: { en: 'Common Deepmines mushroom harvested in the Entrance Caves section during stage 1 of Deepmines bounties. On pickup grants Gas damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Entrance Caves durante o estágio 1 das bounties de Deepmines. Ao pegar, concede dano de Gás.' },
+    description: { en: 'Common Deepmines mushroom harvested in the Entrance Caves section during stage 1 of Deepmines bounties. On pickup grants Gas damage.', 'pt-BR': 'Cogumelo comum de Deepmines colhido na seção Entrance Caves durante o estágio 1 das bounties de Deepmines. Ao pegar, concede dano Gasoso.' },
     usedFor: { en: 'Crafting the Arbucep Receiver, Deep Roots and Lookout Cave Art decorations, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Receiver, decorações Deep Roots e Lookout Cave Art e para subir de rank no Field Guide do Nightcap.' },
   },
   regal_aya: {
@@ -105282,7 +105406,7 @@ const RESOURCES = {
     rarity: 'uncommon', category: 'uncommon',
     location: 'orb-vallis', sources: ['deepmines'],
     image: 'https://wiki.warframe.com/images/SpringPopper.png',
-    description: { en: 'Uncommon Deepmines mushroom harvested in the Forward Base section during the Corporate Restructuring bounty. On pickup grants Blast damage and ragdolls enemies.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Forward Base durante a bounty Corporate Restructuring. Ao pegar, concede dano de Explosão e faz ragdoll dos inimigos.' },
+    description: { en: 'Uncommon Deepmines mushroom harvested in the Forward Base section during the Corporate Restructuring bounty. On pickup grants Blast damage and ragdolls enemies.', 'pt-BR': 'Cogumelo incomum de Deepmines colhido na seção Forward Base durante a bounty Corporate Restructuring. Ao pegar, concede dano Explosivo e faz ragdoll dos inimigos.' },
     usedFor: { en: 'Crafting the Arbucep Barrel, The Prince Cave Art decoration, and ranking up the Nightcap Field Guide.', 'pt-BR': 'Crafting do Arbucep Barrel, decoração The Prince Cave Art e para subir de rank no Field Guide do Nightcap.' },
   },
   stable_corruptor: {
@@ -106740,24 +106864,24 @@ const RIVEN_RATIONALE = {
     neg: { en: 'Drops proc rate. Harmful on status builds, less impactful on pure crit weapons.', 'pt-BR': 'Reduz a taxa de procs. Ruim em builds de status, menos impactante em crit puro.' },
   },
   status_duration: {
-    pos: { en: 'Extends procs (Slash bleed, Heat armor strip, Viral). Useful but secondary.', 'pt-BR': 'Estende procs (sangramento de Corte, strip de Calor, Viral). Útil mas secundário.' },
+    pos: { en: 'Extends procs (Slash bleed, Heat armor strip, Viral). Useful but secondary.', 'pt-BR': 'Estende procs (sangramento de Corte, strip de armadura do Ígneo, Viral). Útil mas secundário.' },
     neg: { en: 'Shorter procs — less time for stack-up effects. Mild.', 'pt-BR': 'Procs mais curtos — menos tempo pra stacks acumularem. Leve.' },
   },
   toxin: {
-    pos: { en: 'Adds Toxin element — combines with Cold for Viral, with Electricity for Corrosive.', 'pt-BR': 'Adiciona Tóxico — combina com Frio pra Viral, com Eletricidade pra Corrosivo.' },
+    pos: { en: 'Adds Toxin element — combines with Cold for Viral, with Electricity for Corrosive.', 'pt-BR': 'Adiciona dano Tóxico — combina com Glacial pra Viral, com Elétrico pra Corrosivo.' },
     neg: { en: 'Reduces Toxin damage. Mild unless the build relies on a specific elemental combo.', 'pt-BR': 'Reduz dano Tóxico. Leve, a menos que a build dependa da combinação elemental.' },
   },
   heat: {
-    pos: { en: 'Adds Heat — strips armor and procs panic. Standalone strong, also combines.', 'pt-BR': 'Adiciona Calor — remove armadura e causa pânico. Forte sozinho, combina também.' },
-    neg: { en: 'Reduces Heat. Mild on most builds.', 'pt-BR': 'Reduz Calor. Leve na maioria das builds.' },
+    pos: { en: 'Adds Heat — strips armor and procs panic. Standalone strong, also combines.', 'pt-BR': 'Adiciona dano Ígneo — remove armadura e causa pânico. Forte sozinho, combina também.' },
+    neg: { en: 'Reduces Heat. Mild on most builds.', 'pt-BR': 'Reduz dano Ígneo. Leve na maioria das builds.' },
   },
   cold: {
-    pos: { en: 'Adds Cold — slows enemies and feeds Viral combos.', 'pt-BR': 'Adiciona Frio — lenta inimigos e alimenta combos Virais.' },
-    neg: { en: 'Reduces Cold. Mild unless slow/Viral is critical.', 'pt-BR': 'Reduz Frio. Leve, a menos que slow/Viral seja crítico.' },
+    pos: { en: 'Adds Cold — slows enemies and feeds Viral combos.', 'pt-BR': 'Adiciona dano Glacial — lenta inimigos e alimenta combos Virais.' },
+    neg: { en: 'Reduces Cold. Mild unless slow/Viral is critical.', 'pt-BR': 'Reduz dano Glacial. Leve, a menos que slow/Viral seja crítico.' },
   },
   electricity: {
-    pos: { en: 'Adds Electricity — chains between enemies, feeds Magnetic/Corrosive/Radiation combos.', 'pt-BR': 'Adiciona Eletricidade — encadeia entre inimigos, alimenta combos Magnético/Corrosivo/Radiação.' },
-    neg: { en: 'Reduces Electricity. Mild on most builds.', 'pt-BR': 'Reduz Eletricidade. Leve na maioria das builds.' },
+    pos: { en: 'Adds Electricity — chains between enemies, feeds Magnetic/Corrosive/Radiation combos.', 'pt-BR': 'Adiciona dano Elétrico — encadeia entre inimigos, alimenta combos Magnético/Corrosivo/Radioativo.' },
+    neg: { en: 'Reduces Electricity. Mild on most builds.', 'pt-BR': 'Reduz dano Elétrico. Leve na maioria das builds.' },
   },
   impact: {
     pos: { en: 'Adds Impact. Generally low-value — Slash dominates physical procs.', 'pt-BR': 'Adiciona Impacto. Geralmente fraco — Corte domina os procs físicos.' },
@@ -108173,6 +108297,19 @@ function setupWeaponPickerEvents() {
 const PATCH_NOTES = {
   en: [
     {
+      date: '2026-06-23',
+      title: 'Glossary index, augment sources, tooltips & Modding Basics',
+      items: [
+        'Glossary index — a table of contents at the top jumps you to any section.',
+        'Augment sources — each Warframe ability augment now shows which syndicates sell it (with a link to the Syndicates entry), and each faction syndicate lists the Warframes that have augments there.',
+        'Keyword tooltips — hover (or tap) jargon like *DPS*, *crowd control* or *AoE* in archetype and ability descriptions for a quick explanation.',
+        'Quest rewards with icons — quest reward grids now show item icons (Necramech parts, catalysts, Captura scenes, decorations and more), and several quest descriptions were rewritten to stay spoiler-free.',
+        'New "Modding Basics" glossary section — capacity, polarities and mod types, with annotated in-game screenshots.',
+        'Status Effects: combining elements — a new guide showing how the *order* of your elemental mods decides which combo you get, plus the mod-search shortcut.',
+        'pt-BR damage elements now use their adjective names (Calor → Ígneo, Frio → Glacial, etc.).',
+      ]
+    },
+    {
       date: '2026-06-22',
       title: 'Glossary launch',
       items: [
@@ -108279,6 +108416,19 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-23',
+      title: 'Índice do glossário, fontes de augment, tooltips e Modding Básico',
+      items: [
+        'Índice do glossário — um sumário no topo te leva direto pra qualquer seção.',
+        'Fontes de augment — cada augment de habilidade agora mostra em quais sindicatos comprá-lo (com link pra entrada de Sindicatos), e cada sindicato de facção lista os Warframes que têm augment lá.',
+        'Tooltips de termos — passe o mouse (ou toque) em jargões como *DPS*, *controle de grupo* ou *AoE* nas descrições de arquétipos e habilidades pra uma explicação rápida.',
+        'Recompensas de quest com ícones — as grades de recompensa agora mostram ícones de item (peças de Necramech, catalisadores, cenas de Captura, decorações e mais), e várias descrições de quest foram reescritas sem spoilers.',
+        'Nova seção "Modding Básico" — capacidade, polaridades e tipos de mod, com capturas anotadas do jogo.',
+        'Status Effects: combinando elementos — um guia novo mostrando como a *ordem* dos seus mods elementais decide qual combo sai, mais o atalho da busca de mods.',
+        'Elementos de dano em pt-BR agora usam a forma adjetiva (Calor → Ígneo, Frio → Glacial, etc.).',
+      ]
+    },
     {
       date: '2026-06-22',
       title: 'Lançamento do Glossário',
@@ -109107,12 +109257,26 @@ function renderSyndicateSection() {
     + `<div class="syn-card-desc">${esc(L(s.d))}</div></div></div>`
     + (rels || '') + `</div>`;
 
+  // lista expansível "Warframes com augments aqui" (de SYNDICATE_AUGMENTS, por sindicato)
+  const synAugList = name => {
+    const items = (typeof SYNDICATE_AUGMENTS !== 'undefined' && SYNDICATE_AUGMENTS[name]) || [];
+    if (!items.length) return '';
+    const byFrame = {};
+    items.forEach(it => { (byFrame[it.f] = byFrame[it.f] || []).push(it.a); });
+    const frames = Object.keys(byFrame).sort((a, b) => a.localeCompare(b));
+    const rows = frames.map(f =>
+      `<li class="syn-aug-row"><span class="syn-aug-frame">${esc(f)}</span>`
+      + `<span class="syn-aug-mods">${byFrame[f].map(esc).join(', ')}</span></li>`).join('');
+    const summary = L({ en: `Warframes with augments here (${frames.length})`, 'pt-BR': `Warframes com augments aqui (${frames.length})` });
+    return `<details class="syn-aug"><summary>${esc(summary)}</summary><ul class="syn-aug-list">${rows}</ul></details>`;
+  };
+
   const base = SYN_BASE.map(s => synCard(s,
     `<div class="syn-rels">`
     + `<div class="syn-rel syn-rel--ally"><span class="syn-rel-k">${allyLbl} +50%</span><span class="syn-rel-v">${esc(s.ally)}</span></div>`
     + `<div class="syn-rel syn-rel--opp"><span class="syn-rel-k">${oppLbl} −50%</span><span class="syn-rel-v">${esc(s.opp)}</span></div>`
     + `<div class="syn-rel syn-rel--enemy"><span class="syn-rel-k">${enemyLbl} −100%</span><span class="syn-rel-v">${esc(s.enemy)}</span></div>`
-    + `</div>`)).join('');
+    + `</div>` + synAugList(s.n))).join('');
 
   const neutral = SYN_NEUTRAL.map(s => synCard(s)).join('');
   const spoilerList = SYN_SPOILER.map(s => synCard(s)).join('');
@@ -109479,6 +109643,415 @@ function renderMissionTypesSection() {
   }
 }
 
+// ── Modding Basics glossary section ──────────────────────────────────────────
+
+// legenda da captura anotada da tela de mods (cores batem com os retângulos da imagem)
+const MOD_UI_LEGEND = [
+  { c: '#e0473a', t: { en: 'Capacity', 'pt-BR': 'Capacidade' },
+    d: { en: 'Your mod budget. 60/60 means a maxed item with a Reactor/Catalyst installed.', 'pt-BR': 'Seu limite de mods. 60/60 é um item no máximo com Reator/Catalisador instalado.' } },
+  { c: '#5fc26a', t: { en: 'Status', 'pt-BR': 'Status' },
+    d: { en: 'Live stats (Health, Shield, Armor…) plus the four ability stats — Strength, Duration, Range, Efficiency — that ability mods change.', 'pt-BR': 'Stats ao vivo (Vida, Escudo, Armadura…) e as quatro stats de habilidade — Força, Duração, Alcance, Eficiência — que os mods de habilidade alteram.' } },
+  { c: '#3fd0e0', t: { en: 'Aura slot', 'pt-BR': 'Slot de Aura' },
+    d: { en: 'Holds an Aura mod — adds capacity instead of using it.', 'pt-BR': 'Recebe um mod de Aura — adiciona capacidade em vez de gastar.' } },
+  { c: '#e85ad0', t: { en: 'Exilus slot', 'pt-BR': 'Slot Exilus' },
+    d: { en: 'Utility / mobility mods (needs an Exilus Adapter).', 'pt-BR': 'Mods de utilidade / mobilidade (precisa de um Exilus Adapter).' } },
+  { c: '#e0c33a', t: { en: 'Mod slots', 'pt-BR': 'Slots de mod' },
+    d: { en: 'The eight main slots for your build.', 'pt-BR': 'Os oito slots principais do seu build.' } },
+  { c: '#e0822e', t: { en: 'Polarity', 'pt-BR': 'Polaridade' },
+    d: { en: 'The symbol on a slot is its polarity — a mod with the same polarity costs half (see below).', 'pt-BR': 'O símbolo no slot é a polaridade dele — um mod com a mesma polaridade custa metade (veja abaixo).' } },
+];
+
+const MOD_CAP = [
+  { k: '30 → 60', t: { en: 'Capacity', 'pt-BR': 'Capacidade' },
+    d: { en: 'Equals the item rank (max 30); a Reactor/Catalyst (“potato”) doubles it to 60.', 'pt-BR': 'Igual ao rank do item (máx 30); um Reator/Catalisador (“batata”) dobra pra 60.' } },
+  { k: 'Endo', t: { en: 'Ranking mods', 'pt-BR': 'Subir mods' },
+    d: { en: 'Upgrading a mod raises its effect and its drain — paid with Endo + Credits.', 'pt-BR': 'Subir o rank de um mod aumenta o efeito e o custo — pago com Endo + Créditos.' } },
+  { k: 'Forma', t: { en: 'Forma', 'pt-BR': 'Forma' },
+    d: { en: 'Changes a slot’s polarity (resetting the item to rank 0) so you can fit heavier builds — then re-level it.', 'pt-BR': 'Muda a polaridade de um slot (zerando o item pro rank 0) pra caber builds mais pesadas — depois é só upar de novo.' } },
+];
+
+// demonstração visual: o mesmo mod (Transient Fortitude, base 16) em 3 slots
+const MOD_POL_DEMO = [
+  { img: 'mod-normal-slot.png', cls: '',
+    cap: { en: 'In a slot with no polarity, the mod’s cost is unchanged (16).', 'pt-BR': 'Em um slot sem polaridade, o custo do mod fica inalterado (16).' } },
+  { img: 'mod-right-polarity.png', cls: 'is-match',
+    cap: { en: 'When the slot polarity matches the mod, the cost is halved (16 → 8).', 'pt-BR': 'Quando a polaridade do slot é igual à do mod, o custo cai pela metade (16 → 8).' } },
+  { img: 'mod-wrong-polarity.png', cls: 'is-miss',
+    cap: { en: 'When the polarity is different, the cost rises about 25% (16 → 20).', 'pt-BR': 'Quando a polaridade é diferente, o custo sobe cerca de 25% (16 → 20).' } },
+];
+
+const MOD_TYPES = [
+  { t: { en: 'Augment mods', 'pt-BR': 'Mods de Augment' },
+    d: { en: 'Tweak one specific Warframe ability — bought from syndicates.', 'pt-BR': 'Modificam uma habilidade específica do Warframe — comprados nos sindicatos.' } },
+  { t: { en: 'Exilus mods', 'pt-BR': 'Mods Exilus' },
+    d: { en: 'Utility / mobility mods (parkour, ammo, sprint…) that fit the Exilus slot.', 'pt-BR': 'Mods de utilidade / mobilidade (parkour, munição, corrida…) que entram no slot Exilus.' } },
+  { t: { en: 'Set mods', 'pt-BR': 'Mods de conjunto (set)' },
+    d: { en: 'Give a bonus that grows with how many pieces of the set you equip across your gear.', 'pt-BR': 'Dão um bônus que cresce conforme quantas peças do conjunto você equipa entre os equipamentos.' } },
+  { t: { en: 'Galvanized & Primed', 'pt-BR': 'Galvanized e Primed' },
+    d: { en: 'Upgraded versions of core mods — Galvanized (Arbitration shop, on-kill bonus) and Primed (Void Trader, higher max rank).', 'pt-BR': 'Versões melhoradas dos mods básicos — Galvanized (loja de Arbitragens, bônus ao abater) e Primed (Void Trader, rank máximo maior).' } },
+  { t: { en: 'Archon mods', 'pt-BR': 'Mods Archon' },
+    d: { en: 'Upgraded core ability mods (Archon Intensify, Vitality…) with an extra effect — bought from Chipper in Kahl\'s Garrison with Stock.', 'pt-BR': 'Versões melhoradas de mods de habilidade (Archon Intensify, Vitality…) com um efeito extra — comprados no Chipper, em Kahl\'s Garrison, com Stock (moeda das missões do Kahl).' } },
+  { t: { en: 'Riven mods', 'pt-BR': 'Mods Riven' },
+    d: { en: 'Randomized mods unique to a single weapon — see the Rivens section.', 'pt-BR': 'Mods aleatórios exclusivos de uma arma — veja a seção Rivens.' } },
+];
+
+const MOD_TIPS = [
+  { en: 'Matching the polarity on an Aura or Stance slot doubles the capacity it adds.', 'pt-BR': 'Casar a polaridade num slot de Aura ou Stance dobra a capacidade que ele adiciona.' },
+  { en: 'Core early mods: Vitality and Redirection (survival); Serration / Hornet Strike / Pressure Point (damage); Intensify, Continuity, Streamline (abilities).', 'pt-BR': 'Mods essenciais no começo: Vitality e Redirection (sobrevivência); Serration / Hornet Strike / Pressure Point (dano); Intensify, Continuity, Streamline (habilidades).' },
+  { en: 'Save Reactors / Catalysts (potatoes) for gear you will keep — doubling capacity is a huge jump.', 'pt-BR': 'Guarde Reatores / Catalisadores (batatas) pros itens que você vai manter — dobrar a capacidade é um salto enorme.' },
+  { en: 'Do not max every mod early — Endo cost grows exponentially per rank. On mods that go to Rank 10, stopping around Rank 6–7 at first is plenty.', 'pt-BR': 'Não maximize todo mod cedo — o custo em Endo cresce exponencialmente a cada rank. Em mods que vão até o Rank 10, parar por volta do Rank 6/7 no começo já resolve.' },
+];
+
+function renderModdingSection() {
+  const el = document.getElementById('modding-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const cap = MOD_CAP.map(c =>
+    `<div class="mr-earn-card"><span class="nw-stat">${esc(c.k)}</span>`
+    + `<span class="mr-earn-t">${esc(L(c.t))}</span>`
+    + `<span class="mr-earn-d">${esc(L(c.d))}</span></div>`).join('');
+
+  const term = arr => arr.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+  const tips = MOD_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const legend = MOD_UI_LEGEND.map(x =>
+    `<li class="mod-legend-item"><span class="mod-legend-dot" style="background:${x.c}"></span>`
+    + `<span><b>${esc(L(x.t))}</b> — ${esc(L(x.d))}</span></li>`).join('');
+
+  const polDemo = MOD_POL_DEMO.map(x =>
+    `<figure class="mod-pol-fig"><img src="assets/glossary/${x.img}" alt="" loading="lazy">`
+    + `<figcaption class="${x.cls}">${esc(L(x.cap))}</figcaption></figure>`).join('');
+
+  const T = {
+    screen:{ en: 'The modding screen', 'pt-BR': 'A tela de mods' },
+    cap:   { en: 'Capacity', 'pt-BR': 'Capacidade' },
+    pol:   { en: 'Polarities', 'pt-BR': 'Polaridades' },
+    polSub:{ en: 'The same mod (Transient Fortitude, base 16) in three different slots:', 'pt-BR': 'O mesmo mod (Transient Fortitude, base 16) em três slots diferentes:' },
+    types: { en: 'Mod types', 'pt-BR': 'Tipos de mod' },
+    tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+  const figCap = L({ en: 'In-game modding screen (annotated).', 'pt-BR': 'Tela de mods do jogo (anotada).' });
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.screen))}</h4>`
+    + `<figure class="mod-ui-fig"><img src="assets/glossary/mods-ui.png" alt="" loading="lazy">`
+    + `<figcaption>${esc(figCap)}</figcaption></figure>`
+    + `<ul class="mod-legend">${legend}</ul>`
+    + `<h4 class="sc-h">${esc(L(T.pol))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.polSub))}</p>`
+    + `<div class="mod-pol-demo">${polDemo}</div>`
+    + `<h4 class="sc-h">${esc(L(T.cap))}</h4>`
+    + `<div class="mr-earn nw-acts">${cap}</div>`
+    + `<h4 class="sc-h">${esc(L(T.types))}</h4>`
+    + `<dl class="sc-terms">${term(MOD_TYPES)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Forma & Orokin Catalyst/Reactor glossary section ─────────────────────────
+
+const FORMA_ITEMS = [
+  { k: '×2', t: { en: 'Orokin Reactor', 'pt-BR': 'Reator Orokin' },
+    d: { en: 'Doubles the mod capacity of Warframes, companions, Archwings and Necramechs. The “golden potato”.', 'pt-BR': 'Dobra a capacidade de mods de Warframes, companheiros, Archwings e Necramechs. A “batata dourada”.' } },
+  { k: '×2', t: { en: 'Orokin Catalyst', 'pt-BR': 'Catalisador Orokin' },
+    d: { en: 'Doubles the mod capacity of any weapon. The “blue potato”.', 'pt-BR': 'Dobra a capacidade de mods de qualquer arma. A “batata azul”.' } },
+  { k: '+slot', t: { en: 'Exilus Adapter', 'pt-BR': 'Exilus Adapter' },
+    d: { en: 'Unlocks the Exilus (utility) slot — Exilus Adapter for Warframes, Exilus Weapon Adapter for weapons.', 'pt-BR': 'Libera o slot Exilus (utilidade) — Exilus Adapter pra Warframes, Exilus Weapon Adapter pra armas.' } },
+];
+
+const FORMA_HOW = [
+  { t: { en: 'What it does', 'pt-BR': 'O que faz' },
+    d: { en: 'Polarizes one mod slot — adds or changes its polarity so matching mods cost half. It works only on max-rank gear and resets that item to rank 0, so you re-level it afterwards.', 'pt-BR': 'Polariza um slot — adiciona ou muda a polaridade pra que mods que combinam custem metade. Só funciona em equipamento no rank máximo e zera o item pro rank 0, então você upa de novo depois.' } },
+  { t: { en: 'Getting it', 'pt-BR': 'Como conseguir' },
+    d: { en: 'Build it from a blueprint (relics, Nightwave, daily tribute, Acrithis) in ~23h, or buy it for 20 Platinum.', 'pt-BR': 'Construa a partir de um diagrama (relíquias, Nightwave, recompensa diária, Acrithis) em ~23h, ou compre por 20 de Platina.' } },
+];
+
+const FORMA_TYPES = [
+  { t: { en: 'Forma', 'pt-BR': 'Forma' },
+    d: { en: 'Standard — applies any one polarity (V, D, –, etc.) to a slot.', 'pt-BR': 'Padrão — aplica uma polaridade qualquer (V, D, –, etc.) num slot.' } },
+  { t: { en: 'Umbra Forma', 'pt-BR': 'Forma Umbra' },
+    d: { en: 'Applies the Umbra polarity, needed for Umbral mods. Rare — save it for Umbral builds.', 'pt-BR': 'Aplica a polaridade Umbra, necessária pros mods Umbral. Rara — guarde pros builds Umbral.' } },
+  { t: { en: 'Omni Forma', 'pt-BR': 'Forma Omni' },
+    d: { en: 'Applies a universal polarity that halves any mod in that slot (this replaced the old Aura Forma).', 'pt-BR': 'Aplica uma polaridade universal que reduz pela metade qualquer mod naquele slot (substituiu a antiga Forma Aura).' } },
+];
+
+const FORMA_TIPS = [
+  { en: 'A Reactor/Catalyst is usually the first thing to put on gear you’re committing to — doubling capacity is the biggest single jump.', 'pt-BR': 'Um Reator/Catalisador costuma ser a primeira coisa a colocar num equipamento que você vai manter — dobrar a capacidade é o maior salto isolado.' },
+  { en: 'Don’t Forma until your build is settled — each Forma resets the item to rank 0.', 'pt-BR': 'Não dê Forma até o build estar definido — cada Forma zera o item pro rank 0.' },
+  { en: 'Keep a Forma cooking in the foundry — it takes ~23h, so start one before you log off.', 'pt-BR': 'Deixe sempre uma Forma na fundição — leva ~23h, então comece uma antes de sair.' },
+];
+
+function renderFormaSection() {
+  const el = document.getElementById('forma-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const items = FORMA_ITEMS.map(c =>
+    `<div class="mr-earn-card"><span class="nw-stat">${esc(c.k)}</span>`
+    + `<span class="mr-earn-t">${esc(L(c.t))}</span>`
+    + `<span class="mr-earn-d">${esc(L(c.d))}</span></div>`).join('');
+  const term = arr => arr.map(p =>
+    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+  const tips = FORMA_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    items: { en: 'Orokin catalysts (“potatoes”)', 'pt-BR': 'Catalisadores Orokin (“batatas”)' },
+    forma: { en: 'Forma', 'pt-BR': 'Forma' },
+    types: { en: 'Forma variants', 'pt-BR': 'Tipos de Forma' },
+    tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.items))}</h4>`
+    + `<div class="mr-earn nw-acts">${items}</div>`
+    + `<h4 class="sc-h">${esc(L(T.forma))}</h4>`
+    + `<dl class="sc-terms">${term(FORMA_HOW)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.types))}</h4>`
+    + `<dl class="sc-terms">${term(FORMA_TYPES)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Rivens glossary section ──────────────────────────────────────────────────
+
+const RIVEN_HOW = [
+  { t: { en: 'Veiled → unveil', 'pt-BR': 'Velado → desvendar' },
+    d: { en: 'A new Riven starts veiled. Equip it and complete the Riven Challenge it shows (in any mission) to reveal its stats, polarity and Mastery requirement (MR 8–16, scaling with disposition).', 'pt-BR': 'Um Riven novo vem velado. Equipe-o e complete o Desafio de Riven que ele mostra (em qualquer missão) pra revelar os stats, a polaridade e o requisito de Maestria (MR 8–16, escala com a disposition).' } },
+  { t: { en: 'Stats & curse', 'pt-BR': 'Stats e maldição' },
+    d: { en: 'It carries 2–3 positive bonuses and sometimes 1 negative (a curse). A curse on a stat you don’t care about (−Zoom, −Recoil…) is great — it actually makes the positives stronger.', 'pt-BR': 'Tem 2–3 bônus positivos e, às vezes, 1 negativo (maldição). Uma maldição num stat que você não usa (−Zoom, −Recuo…) é ótima — ela ainda deixa os positivos mais fortes.' } },
+  { t: { en: 'Tied to one weapon', 'pt-BR': 'Preso a uma arma' },
+    d: { en: 'Each Riven works on a single weapon (and its variants), and you can equip only one at a time.', 'pt-BR': 'Cada Riven serve só pra uma arma (e suas variantes), e você só pode equipar um por vez.' } },
+];
+const RIVEN_DEEP = [
+  { t: { en: 'Disposition', 'pt-BR': 'Disposition' },
+    d: { en: 'A ●1–5 dot value (0.5 to 1.55) that scales the strength of every Riven stat. The LESS popular the weapon, the HIGHER its disposition — weak weapons get huge bonuses, meta ones get small. DE re-tunes it about every 3 months.', 'pt-BR': 'Um valor de ●1–5 pontos (0,5 a 1,55) que escala a força de todo stat do Riven. Quanto MENOS popular a arma, MAIOR a disposition — armas fracas ganham bônus enormes, as meta ganham pequenos. A DE reajusta a cada ~3 meses.' } },
+  { t: { en: 'Re-rolling (Kuva)', 'pt-BR': 'Rerolar (Kuva)' },
+    d: { en: 'Don’t like the roll? Re-roll it with Kuva — the cost climbs each time, from 900 up to a 3,500 Kuva cap. Every roll re-randomizes everything.', 'pt-BR': 'Não curtiu os stats? Rerole com Kuva — o custo sobe a cada vez, de 900 até travar em 3.500 Kuva. Cada roll re-sorteia tudo.' } },
+  { t: { en: 'Where they come from', 'pt-BR': 'De onde vêm' },
+    d: { en: 'Sorties, the Steel Path, Archon Hunts, Acrithis (15 Pathos Clamps), Nightwave — plus one free from The War Within. Riven Slivers: collect 10 and Palladino (Iron Wake) trades them for a veiled Riven, once a week.', 'pt-BR': 'Sortie, Percurso de Aço, Archon Hunt, Acrithis (15 Pathos Clamps), Nightwave — e 1 grátis na quest The War Within. Riven Slivers: junte 10 e a Palladino (Iron Wake) troca por um Riven velado, 1×/semana.' } },
+];
+const RIVEN_TIPS = [
+  { en: 'Crit weapons want Critical Chance + Critical Damage + Multishot; status weapons want Status Chance + Multishot.', 'pt-BR': 'Armas de crit querem Chance de Crítico + Dano de Crítico + Multishot; armas de status querem Chance de Status + Multishot.' },
+  { en: 'Best curses to roll: −Zoom, −Recoil, −Faction Damage — they barely hurt.', 'pt-BR': 'Melhores maldições pra rolar: −Zoom, −Recuo, −Dano em Facção — quase não atrapalham.' },
+];
+
+function renderRivensSection() {
+  const el = document.getElementById('rivens-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+  const term = arr => arr.map(p => `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+  const T = {
+    how: { en: 'How it works', 'pt-BR': 'Como funciona' },
+    deep: { en: 'Disposition, rolling & sources', 'pt-BR': 'Disposition, reroll e fontes' },
+    tips: { en: 'Good to know', 'pt-BR': 'Bom saber' },
+    cta: { en: 'Evaluate or compare your Rivens →', 'pt-BR': 'Avalie ou compare seus Rivens →' },
+  };
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.how))}</h4><dl class="sc-terms">${term(RIVEN_HOW)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.deep))}</h4><dl class="sc-terms">${term(RIVEN_DEEP)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4><ul class="sc-tips">${RIVEN_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('')}</ul>`
+    + `<button type="button" class="sc-cta" onclick="selectTab('rivens')">${esc(L(T.cta))}</button>`;
+}
+
+// ── Arcanes glossary section ─────────────────────────────────────────────────
+
+const ARC_HOW = [
+  { t: { en: 'How they fire', 'pt-BR': 'Como disparam' },
+    d: { en: 'Each arcane triggers on a condition — on kill, on headshot, when damaged, on energy pickup — usually with a % chance.', 'pt-BR': 'Cada arcano dispara numa condição — ao abater, no headshot, ao tomar dano, ao pegar orb de energia — geralmente com uma % de chance.' } },
+  { t: { en: 'Slots', 'pt-BR': 'Slots' },
+    d: { en: 'Warframes, Operators and Amps have 2 arcane slots each; weapons have 1. Sentinel weapons can’t use them.', 'pt-BR': 'Warframes, Operador e Amp têm 2 slots de arcano cada; armas têm 1. Armas de Sentinela não usam arcanos.' } },
+  { t: { en: 'Ranks', 'pt-BR': 'Ranks' },
+    d: { en: 'Rank 0 to 5 by feeding copies — 21 in total (1/3/6/10/15/21). A few (Virtuos, Exodia, Pax, Residual) cap at rank 3.', 'pt-BR': 'Do rank 0 ao 5 alimentando cópias — 21 no total (1/3/6/10/15/21). Alguns (Virtuos, Exodia, Pax, Residual) param no rank 3.' } },
+];
+const ARC_EXAMPLES = [
+  { t: { en: 'Arcane Energize', 'pt-BR': 'Arcane Energize' },
+    d: { en: 'On energy-orb pickup, a chance to restore energy to you and nearby allies.', 'pt-BR': 'Ao pegar orb de energia, chance de restaurar energia pra você e aliados próximos.' } },
+  { t: { en: 'Arcane Grace', 'pt-BR': 'Arcane Grace' },
+    d: { en: 'When your health is damaged, a chance to regenerate health for a few seconds.', 'pt-BR': 'Ao tomar dano na vida, chance de regenerar vida por alguns segundos.' } },
+  { t: { en: 'Arcane Guardian', 'pt-BR': 'Arcane Guardian' },
+    d: { en: 'When damaged, a chance to gain a big chunk of Armor for 20s.', 'pt-BR': 'Ao tomar dano, chance de ganhar bastante Armadura por 20s.' } },
+  { t: { en: 'Molt family', 'pt-BR': 'Família Molt' },
+    d: { en: 'Molt Efficiency / Augmented / Vigor (from the Zariman) — strong ability-strength and efficiency buffs.', 'pt-BR': 'Molt Efficiency / Augmented / Vigor (do Zariman) — buffs fortes de força de habilidade e eficiência.' } },
+];
+const ARC_SRC = { en: 'Eidolons (Quills), the Holdfasts (Zariman), Cavia (Deimos — melee arcanes), the Steel Path / Acolytes, Arbitrations and Orphix. Duplicate arcanes dissolve into Vosfor with Loid.', 'pt-BR': 'Eidolons (Plumas), os Holdfasts (Zariman), Cavia (Deimos — arcanos de melee), o Percurso de Aço / Acólitos, Arbitragens e Orphix. Arcanos repetidos viram Vosfor com o Loid.' };
+
+function renderArcanesSection() {
+  const el = document.getElementById('arcanes-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+  const term = arr => arr.map(p => `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+  const T = {
+    how: { en: 'How it works', 'pt-BR': 'Como funciona' },
+    ex: { en: 'Common picks', 'pt-BR': 'Escolhas comuns' },
+    src: { en: 'Where they come from', 'pt-BR': 'De onde vêm' },
+  };
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.how))}</h4><dl class="sc-terms">${term(ARC_HOW)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.ex))}</h4><dl class="sc-terms">${term(ARC_EXAMPLES)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.src))}</h4><p class="sc-sub">${esc(L(ARC_SRC))}</p>`;
+}
+
+// ── Helminth glossary section ────────────────────────────────────────────────
+
+const HELM_HOW = [
+  { t: { en: 'Unlocking it', 'pt-BR': 'Como desbloquear' },
+    d: { en: 'Needs Mastery Rank 8 + standing with the Entrati (Deimos); the Helminth Segment blueprint comes from Son in the Necralisk.', 'pt-BR': 'Precisa de MR 8 + reputação com os Entrati (Deimos); o segmento do Helminth vem de um diagrama com o Son, no Necralisk.' } },
+  { t: { en: 'Subsume', 'pt-BR': 'Subsumir' },
+    d: { en: 'Feed a Warframe (non-Prime, non-Umbra) to the Helminth — it’s consumed, but you permanently learn one specific ability from it (e.g. Mag → Pull). You can’t subsume the same frame twice.', 'pt-BR': 'Alimente um Warframe (não-Prime, não-Umbra) ao Helminth — ele é consumido, mas você aprende UMA habilidade específica dele pra sempre (ex.: Mag → Pull). Não dá pra subsumir o mesmo frame duas vezes.' } },
+  { t: { en: 'Inject (replace)', 'pt-BR': 'Injetar (substituir)' },
+    d: { en: 'Apply the learned ability in place of one of another frame’s four abilities (Prime/Umbra included). It costs Helminth Secretions, made by feeding it resources.', 'pt-BR': 'Aplique a habilidade aprendida no lugar de uma das 4 habilidades de outro frame (inclusive Prime/Umbra). Custa Secreções do Helminth, feitas alimentando recursos.' } },
+  { t: { en: 'Invigorations', 'pt-BR': 'Invigorations' },
+    d: { en: 'Weekly buffs you pick for a Warframe (e.g. +ability strength + efficiency for a week), paid with resources.', 'pt-BR': 'Buffs semanais que você escolhe pra um Warframe (ex.: +força + eficiência por uma semana), pagos com recursos.' } },
+  { t: { en: 'It ranks up', 'pt-BR': 'Ele sobe de rank' },
+    d: { en: 'Using the Helminth raises its own rank, unlocking more subsume slots and its own abilities (like Empower).', 'pt-BR': 'Usar o Helminth aumenta o rank dele, liberando mais slots de subsume e habilidades próprias (como Empower).' } },
+];
+const HELM_TIPS = [
+  { en: 'Not every ability can be subsumed — each frame has one fixed option, and some (like Mesa’s ult) aren’t available.', 'pt-BR': 'Nem toda habilidade é subsumível — cada frame tem uma opção fixa, e algumas (como a ult da Mesa) não dá.' },
+  { en: 'Popular subsumes: Roar (Rhino), Eclipse (Mirage), Nourish (Grendel), Gloom (Sevagoth).', 'pt-BR': 'Subsumes populares: Roar (Rhino), Eclipse (Mirage), Nourish (Grendel), Gloom (Sevagoth).' },
+];
+
+function renderHelminthSection() {
+  const el = document.getElementById('helminth-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+  const term = arr => arr.map(p => `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+  const T = {
+    how: { en: 'How it works', 'pt-BR': 'Como funciona' },
+    tips: { en: 'Good to know', 'pt-BR': 'Bom saber' },
+  };
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.how))}</h4><dl class="sc-terms">${term(HELM_HOW)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4><ul class="sc-tips">${HELM_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('')}</ul>`;
+}
+
+// ── Elemental combination order (Status Effects extra) ───────────────────────
+// As 3 capturas mostram os MESMOS 3 mods (Heat/Cold/Electric) em ordens diferentes.
+const EL_ORDER = [
+  { img: 'status-cold-rad.png',   order: ['electricity', 'heat', 'cold'],        combo: 'radiation', rest: 'cold' },
+  { img: 'status-blast-elec.png', order: ['cold', 'heat', 'electricity'],        combo: 'blast',     rest: 'electricity' },
+  { img: 'status-mag-heat.png',   order: ['cold', 'electricity', 'heat'],        combo: 'magnetic',  rest: 'heat' },
+];
+const EL_COMBOS = [
+  { c: 'viral',     a: 'cold',        b: 'toxin' },
+  { c: 'corrosive', a: 'electricity', b: 'toxin' },
+  { c: 'gas',       a: 'heat',        b: 'toxin' },
+  { c: 'blast',     a: 'heat',        b: 'cold' },
+  { c: 'radiation', a: 'heat',        b: 'electricity' },
+  { c: 'magnetic',  a: 'cold',        b: 'electricity' },
+];
+// busca de mods filtra pelos mods base do elemento combinado
+const EL_SEARCH = [
+  { img: 'search-viral.png', combo: 'viral', a: 'cold', b: 'toxin' },
+  { img: 'search-blast.png', combo: 'blast', a: 'heat', b: 'cold' },
+];
+
+function renderElementOrder() {
+  const el = document.getElementById('element-order-gloss');
+  if (!el || typeof STATUS_EFFECTS === 'undefined') return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const esc = relicEsc;
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const sn = s => { const e = STATUS_EFFECTS[s]; return e ? (e.name[loc] || e.name.en) : s; };
+  const scol = s => (STATUS_EFFECTS[s] && STATUS_EFFECTS[s].color) || '#cfcfd6';
+
+  const figs = EL_ORDER.map(d => {
+    const order = d.order.map(sn).map(esc).join(' → ');
+    const res = `<b style="color:${scol(d.combo)}">${esc(sn(d.combo))}</b> + ${esc(sn(d.rest))}`;
+    return `<figure class="el-ord-fig"><img src="assets/glossary/${d.img}" alt="" loading="lazy">`
+      + `<figcaption><span class="el-ord-order">${order}</span><span class="el-ord-res">= ${res}</span></figcaption></figure>`;
+  }).join('');
+
+  const combos = EL_COMBOS.map(x =>
+    `<li class="el-combo"><b style="color:${scol(x.c)}">${esc(sn(x.c))}</b> = ${esc(sn(x.a))} + ${esc(sn(x.b))}</li>`).join('');
+
+  const search = EL_SEARCH.map(d =>
+    `<figure class="el-ord-fig"><img src="assets/glossary/${d.img}" alt="" loading="lazy">`
+    + `<figcaption><span class="el-ord-res"><b style="color:${scol(d.combo)}">${esc(sn(d.combo))}</b></span>`
+    + `<span class="el-ord-order">${esc(sn(d.a))} + ${esc(sn(d.b))}</span></figcaption></figure>`).join('');
+
+  const T = {
+    h:       { en: 'Combining elements (mod order)', 'pt-BR': 'Combinando elementos (ordem dos mods)' },
+    intro:   { en: 'When you equip two base elements — Heat, Cold, Electricity or Toxin — they merge into a secondary element. The order the mods sit in the slots decides which element comes out (read left to right, starting with the top row). So the same three mods can become different elements just by reordering them:', 'pt-BR': 'Quando você equipa dois elementos base — Ígneo, Glacial, Elétrico ou Tóxico — eles se combinam num elemento secundário. A ordem dos mods nos slots decide qual elemento sai (a leitura é da esquerda pra direita, começando pela linha de cima). Por isso, os mesmos três mods podem virar elementos diferentes só trocando a ordem:' },
+    combosH: { en: 'The six combinations', 'pt-BR': 'As seis combinações' },
+    searchH: { en: 'Shortcut: the mod search', 'pt-BR': 'Atalho: a busca de mods' },
+    searchT: { en: 'Type the combined element’s name in the mod search and the game filters the base mods you need for it.', 'pt-BR': 'Digite o nome do elemento combinado na busca de mods e o jogo já filtra os mods base que você precisa pra ele.' },
+  };
+
+  el.innerHTML =
+    `<h4 class="sc-h">${esc(L(T.h))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.intro))}</p>`
+    + `<div class="el-ord-demo">${figs}</div>`
+    + `<h5 class="sc-h el-combos-h">${esc(L(T.combosH))}</h5>`
+    + `<ul class="el-combos">${combos}</ul>`
+    + `<h5 class="sc-h el-combos-h">${esc(L(T.searchH))}</h5>`
+    + `<p class="sc-sub">${esc(L(T.searchT))}</p>`
+    + `<div class="el-ord-demo el-search-demo">${search}</div>`;
+}
+
+// ── Glossary navigation + table of contents ──────────────────────────────────
+
+// Jump to a glossary <details data-id="..."> section: switch to the tab, open it,
+// and scroll it into view. Reused by the TOC and by augment → syndicate links.
+function goToGlossarySection(id) {
+  if (typeof selectTab === 'function') selectTab('glossary');
+  const sec = document.querySelector(`.glossary-section[data-id="${id}"]`);
+  if (!sec) return;
+  sec.open = true;
+  // also reveal its category if hidden by a stale search filter
+  sec.classList.remove('hidden');
+  const cat = sec.previousElementSibling;
+  requestAnimationFrame(() => sec.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+}
+
+// Build the index from the DOM so labels stay in sync with the rendered
+// (locale-aware) section titles. Walks #glossary-sections in order: each
+// .glossary-category starts a group, each .glossary-section[data-id] is a link.
+let _glossaryTocBound = false;
+function renderGlossaryToc() {
+  const toc = document.getElementById('glossary-toc');
+  const root = document.getElementById('glossary-sections');
+  if (!toc || !root) return;
+
+  let html = '';
+  let open = false;
+  root.querySelectorAll(':scope > .glossary-category, :scope > .glossary-section[data-id]').forEach(node => {
+    if (node.classList.contains('glossary-category')) {
+      if (open) html += '</div></div>';
+      const label = node.querySelector('.glossary-category-label');
+      html += `<div class="glossary-toc-cat"><span class="glossary-toc-cat-label">${(label ? label.textContent : '').trim()}</span><div class="glossary-toc-links">`;
+      open = true;
+    } else {
+      const id = node.getAttribute('data-id');
+      const titleEl = node.querySelector('.glossary-section-title');
+      const soon = node.classList.contains('glossary-section-soon');
+      const title = (titleEl ? titleEl.textContent : id).trim();
+      html += `<button type="button" class="glossary-toc-link${soon ? ' is-soon' : ''}" data-toc="${id}">${title}</button>`;
+    }
+  });
+  if (open) html += '</div></div>';
+  toc.innerHTML = html;
+
+  if (!_glossaryTocBound) {
+    toc.addEventListener('click', e => {
+      const link = e.target.closest('[data-toc]');
+      if (link) goToGlossarySection(link.getAttribute('data-toc'));
+    });
+    _glossaryTocBound = true;
+  }
+}
+
 // ── Quest section ─────────────────────────────────────────────────────────────
 
 function renderQuestsSection() {
@@ -109577,7 +110150,9 @@ function openQuestModal(slug) {
   rewardsGrid.innerHTML = '';
   const rw = quest.rewards;
   if (Array.isArray(rw) && rw.length) {
-    rw.forEach(item => {
+    // recompensas com ícone primeiro (sort estável preserva a ordem dentro de cada grupo)
+    const ordered = rw.slice().sort((a, b) => (b.icon ? 1 : 0) - (a.icon ? 1 : 0));
+    ordered.forEach(item => {
       const cell = document.createElement('div');
       cell.className = 'quest-reward-cell' + (item.icon ? '' : ' quest-reward-unlock');
       const name = (item.name && (item.name[loc] || item.name.en)) || '';
@@ -109647,7 +110222,7 @@ function setupLightboxEvents() {
   document.getElementById('lightbox-backdrop')?.addEventListener('click', closeLightbox);
   document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
   document.getElementById('glossary-sections')?.addEventListener('click', e => {
-    const img = e.target.closest('.glossary-figure img');
+    const img = e.target.closest('.glossary-figure img, .mod-ui-fig img, .mod-pol-fig img, .el-ord-fig img');
     if (img) openLightbox(img.src, img.alt);
   });
   document.addEventListener('keydown', e => {
@@ -109968,6 +110543,14 @@ function setLocale(loc) {
   renderCritsSection();
   renderRotationsSection();
   renderMissionTypesSection();
+  renderModdingSection();
+  renderFormaSection();
+  renderRivensSection();
+  renderArcanesSection();
+  renderHelminthSection();
+  renderElementOrder();
+  renderGlossaryToc();
+  applyTermTipsToGlossary();
 }
 
 function selectArchetype(slug) {
@@ -110651,6 +111234,7 @@ function render() {
     titleEl.appendChild(document.createTextNode(archName(archetype)));
 
     document.getElementById('archetype-description').textContent = archDesc(archetype);
+    applyTermTips(document.getElementById('archetype-description'));
     infoEl.style.setProperty('--neon-color', blendStatColors(archetype.signature));
     infoEl.style.setProperty('--neon-gradient', statGradient(archetype.signature));
     infoEl.style.setProperty('--neon-outline', outlineShadow(archetype.signature, 1.4));
@@ -111338,6 +111922,7 @@ function renderAbilityPanel() {
           <figure class="augment-card">
             <img class="augment-image" src="${au.image}" alt="${au.name}">
             ${showCaption ? `<figcaption class="augment-caption">${augmentCaption(au)}</figcaption>` : ''}
+            ${augmentSyndsHtml(au)}
           </figure>
         `).join('')}
       </div>
@@ -111378,6 +111963,7 @@ function renderAbilityPanel() {
     ${contentHtml}
     ${augmentsHtml}
   `;
+  panel.querySelectorAll('.ability-description, .augment-caption').forEach(applyTermTips);
 }
 
 // ============== Builders ==============
@@ -112758,6 +113344,14 @@ function setupTabNav() {
   renderCritsSection();
   renderRotationsSection();
   renderMissionTypesSection();
+  renderModdingSection();
+  renderFormaSection();
+  renderRivensSection();
+  renderArcanesSection();
+  renderHelminthSection();
+  renderElementOrder();
+  renderGlossaryToc();
+  applyTermTipsToGlossary();
   setupGlossarySearch();
   setupStarChartSearch();
   setupResourceModalEvents();
@@ -112827,10 +113421,14 @@ function setupGlossarySearch() {
     });
   };
 
+  const toc = document.getElementById('glossary-toc');
+
   const applyFilter = () => {
     const raw = input.value.trim();
     const q = normalizeForMatch(raw);
     clearBtn?.classList.toggle('hidden', raw.length === 0);
+    // o índice só faz sentido na visão completa — esconde durante a busca
+    toc?.classList.toggle('hidden', q.length > 0);
 
     if (!q) {
       sections.forEach(s => {

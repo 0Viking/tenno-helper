@@ -163,6 +163,8 @@
         <button type="button" id="glossary-search-clear" class="glossary-search-clear hidden" aria-label="Clear search">×</button>
       </section>
 
+      <nav class="glossary-toc" id="glossary-toc" aria-label="Glossary index"></nav>
+
       <div class="glossary-sections" id="glossary-sections">
 
         <div class="glossary-category">
@@ -383,6 +385,21 @@
         </details>
 
         <div class="glossary-category">
+          <span class="glossary-category-label" data-i18n="glossary_cat_build">Builds &amp; Mods</span>
+        </div>
+
+        <details class="glossary-section" data-id="modding">
+          <summary class="glossary-section-header">
+            <span class="glossary-section-title" data-i18n="glossary_modding">Modding Basics</span>
+            <span class="glossary-section-caret">▾</span>
+          </summary>
+          <div class="glossary-section-body">
+            <p class="glossary-lead" data-i18n="glossary_modding_body" data-i18n-html></p>
+            <div class="sc-gloss" id="modding-gloss"></div>
+          </div>
+        </details>
+
+        <div class="glossary-category">
           <span class="glossary-category-label" data-i18n="glossary_cat_combat">Combat</span>
         </div>
 
@@ -416,6 +433,7 @@
               <div class="status-info-proc" id="status-info-proc"></div>
               <div class="status-faction-grid" id="status-faction-grid"></div>
             </section>
+            <div class="sc-gloss" id="element-order-gloss"></div>
           </div>
         </details>
 
@@ -438,88 +456,6 @@
           <div class="glossary-section-body">
             <p class="glossary-lead" data-i18n="glossary_rotations_body" data-i18n-html></p>
             <div class="sc-gloss" id="rotations-gloss"></div>
-          </div>
-        </details>
-
-        <details class="glossary-section glossary-section-soon" data-id="caches" data-keywords="cache,sabotage,sabotagem,railjack,poi,defective,damaged,intact,reservoir,oberon,bonus">
-          <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_caches">Caches</span>
-            <div class="glossary-section-meta">
-              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
-              <span class="glossary-section-caret">▾</span>
-            </div>
-          </summary>
-          <div class="glossary-section-body">
-            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
-          </div>
-        </details>
-
-        <div class="glossary-category">
-          <span class="glossary-category-label" data-i18n="glossary_cat_build">Builds &amp; Mods</span>
-        </div>
-
-        <details class="glossary-section glossary-section-soon" data-id="modding" data-keywords="mod,modding,polaridade,polarity,forma,capacity,capacidade,reator,reactor,catalisador,catalyst,potato,batata,galvanized,set,conjunto,exilus">
-          <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_modding">Modding Basics</span>
-            <div class="glossary-section-meta">
-              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
-              <span class="glossary-section-caret">▾</span>
-            </div>
-          </summary>
-          <div class="glossary-section-body">
-            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
-          </div>
-        </details>
-
-        <details class="glossary-section glossary-section-soon" data-id="rivens" data-keywords="riven,disposition,kuva,sliver,roll,cycle,tier,exilus">
-          <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_rivens">Riven Mods</span>
-            <div class="glossary-section-meta">
-              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
-              <span class="glossary-section-caret">▾</span>
-            </div>
-          </summary>
-          <div class="glossary-section-body">
-            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
-          </div>
-        </details>
-
-        <details class="glossary-section glossary-section-soon" data-id="arcanes" data-keywords="arcane,operator,operador,energize,grace,resistance,velocity,molt,virtuos">
-          <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_arcanes">Arcanes</span>
-            <div class="glossary-section-meta">
-              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
-              <span class="glossary-section-caret">▾</span>
-            </div>
-          </summary>
-          <div class="glossary-section-body">
-            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
-          </div>
-        </details>
-
-        <details class="glossary-section glossary-section-soon" data-id="helminth" data-keywords="helminth,subsume,invigoration,molt,bile,calx,oxides,pheromones,synthase,sentient,wisdom">
-          <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_helminth">Helminth (Subsume)</span>
-            <div class="glossary-section-meta">
-              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
-              <span class="glossary-section-caret">▾</span>
-            </div>
-          </summary>
-          <div class="glossary-section-body">
-            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
-          </div>
-        </details>
-
-        <details class="glossary-section glossary-section-soon" data-id="forma" data-keywords="forma,polaridade,polarity,catalyst,catalisador,reactor,reator,potato,batata,orokin,slot,polarize,polarizar,umbra,aura,exilus">
-          <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_forma">Forma &amp; Orokin Catalyst / Reactor</span>
-            <div class="glossary-section-meta">
-              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
-              <span class="glossary-section-caret">▾</span>
-            </div>
-          </summary>
-          <div class="glossary-section-body">
-            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
           </div>
         </details>
 
@@ -579,9 +515,9 @@
           </div>
         </details>
 
-        <details class="glossary-section glossary-section-soon" data-id="riven-slivers" data-keywords="riven sliver,sliver,palladino,requiem,reroll,kuva,iron wake,cycle">
+        <details class="glossary-section glossary-section-soon" data-id="platinum-trading" data-keywords="platinum,platina,plat,trade,trading,trocar,mercado,market,warframe.market,maroo,bazaar,bazar,prime,riven,vender,comprar,premium">
           <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_riven_slivers">Riven Slivers</span>
+            <span class="glossary-section-title" data-i18n="glossary_platinum">Platinum &amp; Trading</span>
             <div class="glossary-section-meta">
               <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
               <span class="glossary-section-caret">▾</span>
@@ -622,18 +558,6 @@
           </div>
         </details>
 
-        <details class="glossary-section glossary-section-soon" data-id="necramechs" data-keywords="necramech,voidrig,bonewidow,mech,entrati,deimos,arcana,necraloid,isolation vault">
-          <summary class="glossary-section-header">
-            <span class="glossary-section-title" data-i18n="glossary_necramechs">Necramechs</span>
-            <div class="glossary-section-meta">
-              <span class="glossary-tag tag-soon" data-i18n="glossary_tag_soon">Soon</span>
-              <span class="glossary-section-caret">▾</span>
-            </div>
-          </summary>
-          <div class="glossary-section-body">
-            <p class="glossary-soon" data-i18n="glossary_soon_body">A detailed explanation for this term is coming soon.</p>
-          </div>
-        </details>
       </div>
     </div>
 

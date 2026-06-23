@@ -40,6 +40,15 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-23 — Glossary index, augment sources, tooltips & Modding Basics
+- **Glossary index** — a table of contents at the top jumps you to any section.
+- **Augment sources** — each Warframe ability augment now shows which syndicates sell it (with a link to the Syndicates entry), and each faction syndicate lists the Warframes that have augments there.
+- **Keyword tooltips** — hover (or tap) jargon like *DPS*, *crowd control* or *AoE* in archetype and ability descriptions for a quick explanation.
+- **Quest rewards with icons** — quest reward grids now show item icons (Necramech parts, catalysts, Captura scenes, decorations and more), and several quest descriptions were rewritten to stay spoiler-free.
+- **New "Modding Basics" glossary section** — capacity, polarities and mod types, with annotated in-game screenshots.
+- **Status Effects: combining elements** — a new guide showing how the *order* of your elemental mods decides which combo you get, plus the mod-search shortcut.
+- **pt-BR damage elements** now use their adjective names (Calor → Ígneo, Frio → Glacial, etc.).
+
 #### 2026-06-22 — Glossary launch
 - **The Glossary is live** — a searchable, categorized reference (Progression, Combat, Builds & Mods, Economy, Enemies) with rich, illustrated sections. A few entries are still marked "Soon" and will be filled in over the coming updates.
 - **Mission Types** — a new section covering all 40 mission types from the Star Chart filters (Exterminate, Survival, Disruption, the Void/Zariman modes, Railjack and more), grouped and color-coded, with late-game modes tucked behind a spoiler veil.
@@ -154,6 +163,15 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-23 — Índice do glossário, fontes de augment, tooltips e Modding Básico
+- **Índice do glossário** — um sumário no topo te leva direto pra qualquer seção.
+- **Fontes de augment** — cada augment de habilidade agora mostra em quais sindicatos comprá-lo (com link pra entrada de Sindicatos), e cada sindicato de facção lista os Warframes que têm augment lá.
+- **Tooltips de termos** — passe o mouse (ou toque) em jargões como *DPS*, *controle de grupo* ou *AoE* nas descrições de arquétipos e habilidades pra uma explicação rápida.
+- **Recompensas de quest com ícones** — as grades de recompensa agora mostram ícones de item (peças de Necramech, catalisadores, cenas de Captura, decorações e mais), e várias descrições de quest foram reescritas sem spoilers.
+- **Nova seção "Modding Básico"** — capacidade, polaridades e tipos de mod, com capturas anotadas do jogo.
+- **Status Effects: combinando elementos** — um guia novo mostrando como a *ordem* dos seus mods elementais decide qual combo sai, mais o atalho da busca de mods.
+- **Elementos de dano em pt-BR** agora usam a forma adjetiva (Calor → Ígneo, Frio → Glacial, etc.).
 
 #### 2026-06-22 — Lançamento do Glossário
 - **O Glossário está no ar** — uma referência pesquisável e categorizada (Progressão, Combate, Builds & Mods, Economia, Inimigos) com seções ricas e ilustradas. Algumas entradas ainda estão marcadas como "Em breve" e serão preenchidas nas próximas atualizações.

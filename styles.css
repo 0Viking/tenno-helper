@@ -1050,6 +1050,38 @@ svg#radar {
   text-align: center;
 }
 
+/* "Buy from" syndicate chips on an augment card */
+.augment-syn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+.augment-syn-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8a8a92;
+}
+.augment-syn-chip {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: var(--sc, #7fd13b);
+  background: color-mix(in srgb, var(--sc, #7fd13b) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sc, #7fd13b) 55%, transparent);
+  transition: background 0.12s, box-shadow 0.12s;
+}
+.augment-syn-chip:hover {
+  background: color-mix(in srgb, var(--sc, #7fd13b) 26%, transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--sc, #7fd13b) 35%, transparent);
+}
+
 /* ------- Tabs (top-level pages) ------- */
 
 .tab-content.hidden { display: none; }
@@ -1176,6 +1208,94 @@ input[type="search"]::-webkit-search-decoration {
   border-radius: 6px;
   margin-top: 8px;
 }
+
+/* Jargon term tooltips (auto-wrapped key terms) */
+.term-tip {
+  position: relative;
+  border-bottom: 1px dotted rgba(255,255,255,0.45);
+  cursor: help;
+  outline: none;
+}
+.term-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 9px);
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 250px;
+  background: #1c1c22;
+  color: #e8e8ee;
+  border: 1px solid #3a3a42;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: normal;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s;
+  z-index: 60;
+  pointer-events: none;
+}
+.term-tip::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 3px);
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #3a3a42;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s;
+  z-index: 60;
+  pointer-events: none;
+}
+.term-tip:hover::after, .term-tip:focus::after,
+.term-tip:hover::before, .term-tip:focus::before { opacity: 1; visibility: visible; }
+
+/* Glossary index (TOC) */
+.glossary-toc {
+  --neon-color: #7fd13b;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px 18px;
+  margin: 0 0 22px;
+  padding: 16px 18px;
+  background: linear-gradient(180deg, #131316 0%, #0e0e10 100%);
+  border: 1px solid #232328;
+  border-radius: 10px;
+}
+.glossary-toc:empty,
+.glossary-toc.hidden { display: none; }
+.glossary-toc-cat { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.glossary-toc-cat-label {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7fd13b;
+}
+.glossary-toc-links { display: flex; flex-direction: column; gap: 2px; }
+.glossary-toc-link {
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 3px 6px;
+  margin: 0;
+  border-radius: 6px;
+  color: #cfcfd6;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.glossary-toc-link:hover { background: rgba(127,209,59,0.12); color: #e8e8ee; }
+.glossary-toc-link.is-soon { color: #8a8a92; }
+.glossary-toc-link.is-soon::after { content: ' •'; color: #6a6a72; }
 
 .glossary-sections {
   display: flex;
@@ -1566,6 +1686,37 @@ mark.glossary-hl {
 .mt-desc { color: #b8b8c0; font-size: 12px; line-height: 1.4; }
 .mt-note { color: #9a9aa2; font-size: 12px; margin: 8px 0 0; }
 
+/* Modding — annotated UI figure + color legend */
+.mod-ui-fig { margin: 4px 0 10px; }
+.mod-ui-fig img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid #26262c; cursor: zoom-in; }
+.mod-ui-fig figcaption { margin-top: 5px; font-size: 11px; color: #8a8a92; text-align: center; }
+.mod-legend { list-style: none; margin: 0 0 6px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 16px; }
+.mod-legend-item { display: flex; gap: 8px; font-size: 12.5px; line-height: 1.4; color: #b8b8c0; }
+.mod-legend-item b { color: #e8e8ee; font-weight: 600; }
+.mod-legend-dot { width: 11px; height: 11px; border-radius: 3px; margin-top: 4px; flex: none; box-shadow: 0 0 6px currentColor; }
+
+/* Modding — polarity demo (3 states of the same mod) */
+.mod-pol-demo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 4px 0 10px; }
+.mod-pol-fig { margin: 0; }
+.mod-pol-fig img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid #26262c; cursor: zoom-in; }
+.mod-pol-fig figcaption { margin-top: 6px; font-size: 12px; line-height: 1.4; color: #b8b8c0; text-align: center; }
+.mod-pol-fig figcaption.is-match { color: #7fce8a; }
+.mod-pol-fig figcaption.is-miss { color: #e0857c; }
+@media (max-width: 560px) { .mod-pol-demo { grid-template-columns: 1fr; } }
+
+/* Status Effects — elemental combination order */
+.el-ord-demo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 4px 0 12px; }
+.el-ord-fig { margin: 0; }
+.el-ord-fig img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid #26262c; cursor: zoom-in; }
+.el-ord-fig figcaption { margin-top: 6px; text-align: center; line-height: 1.35; }
+.el-ord-order { display: block; font-size: 11.5px; color: #9a9aa2; }
+.el-ord-res { display: block; font-size: 13px; color: #cfcfd6; }
+.el-combos-h { margin-top: 28px; }
+.el-combos { list-style: none; margin: 6px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 5px 16px; }
+.el-combo { font-size: 13px; color: #b8b8c0; }
+.el-search-demo { grid-template-columns: repeat(2, 1fr); max-width: 760px; }
+@media (max-width: 560px) { .el-ord-demo { grid-template-columns: 1fr; } }
+
 /* cards dos sindicatos de facção */
 .syn-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
 .syn-card {
@@ -1593,7 +1744,29 @@ mark.glossary-hl {
 .syn-rel--ally  .syn-rel-k { color: #7fd13b; }
 .syn-rel--opp   .syn-rel-k { color: #c9b063; }
 .syn-rel--enemy .syn-rel-k { color: #e07b8a; }
-@media (max-width: 600px) { .syn-grid { grid-template-columns: 1fr; } }
+
+/* "Warframes com augments aqui" — lista expansível no card do sindicato */
+.syn-aug { margin-top: 10px; border-top: 1px solid color-mix(in srgb, var(--c, #7fd13b) 22%, transparent); padding-top: 8px; }
+.syn-aug > summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--c, #cfcfd6);
+  opacity: 0.92;
+}
+.syn-aug > summary::-webkit-details-marker { display: none; }
+.syn-aug > summary::before { content: '▸ '; }
+.syn-aug[open] > summary::before { content: '▾ '; }
+.syn-aug-list { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.syn-aug-row { display: flex; gap: 8px; font-size: 11.5px; line-height: 1.35; }
+.syn-aug-frame { flex: 0 0 92px; font-weight: 600; color: #e8e8ee; }
+.syn-aug-mods { color: #b8b8c0; }
+@media (max-width: 600px) {
+  .syn-grid { grid-template-columns: 1fr; }
+  .syn-aug-row { flex-direction: column; gap: 0; }
+  .syn-aug-frame { flex: none; }
+}
 
 /* callout full-width (ex.: teste de Mastery) */
 .sc-jstep-full { margin-bottom: 4px; }
@@ -1990,25 +2163,37 @@ mark.glossary-hl {
   margin: 0;
 }
 /* célula de "desbloqueio" (recompensa genérica sem item/ícone, ex.: Access to Deepmines) */
+/* empilha o ✦ em cima e o nome embaixo, centralizados — nome longo não cobre o diamante */
 .quest-reward-cell.quest-reward-unlock {
   background-color: rgba(127, 209, 59, 0.05);
   border-style: dashed;
   border-color: #33402a;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px;
 }
 .quest-reward-cell.quest-reward-unlock::before {
   content: '✦';
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 22px;
+  position: static;
+  transform: none;
+  flex: none;
+  font-size: 20px;
+  line-height: 1;
   color: #7fd13b;
   opacity: 0.75;
 }
 .quest-reward-cell.quest-reward-unlock .quest-reward-name {
   background: none;
-  padding: 6px;
+  padding: 0;
   color: #cdd6c4;
+  font-size: 10px;
+  line-height: 1.2;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* lista de pré-requisitos (seção Requirements da wiki) */
