@@ -47,6 +47,7 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 - **Quest rewards with icons** — quest reward grids now show item icons (Necramech parts, catalysts, Captura scenes, decorations and more), and several quest descriptions were rewritten to stay spoiler-free.
 - **New "Modding Basics" glossary section** — capacity, polarities and mod types, with annotated in-game screenshots.
 - **Status Effects: combining elements** — a new guide showing how the *order* of your elemental mods decides which combo you get, plus the mod-search shortcut.
+- **More Builds & Mods sections** — Forma & Orokin Catalysts, Riven Mods, Arcanes and Helminth, marked *under construction* while we add visuals.
 - **pt-BR damage elements** now use their adjective names (Calor → Ígneo, Frio → Glacial, etc.).
 
 #### 2026-06-22 — Glossary launch
@@ -171,6 +172,7 @@ O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne 
 - **Recompensas de quest com ícones** — as grades de recompensa agora mostram ícones de item (peças de Necramech, catalisadores, cenas de Captura, decorações e mais), e várias descrições de quest foram reescritas sem spoilers.
 - **Nova seção "Modding Básico"** — capacidade, polaridades e tipos de mod, com capturas anotadas do jogo.
 - **Status Effects: combinando elementos** — um guia novo mostrando como a *ordem* dos seus mods elementais decide qual combo sai, mais o atalho da busca de mods.
+- **Mais seções de Builds & Mods** — Forma & Catalisador/Reator Orokin, Mods Riven, Arcanos e Helminth, marcadas como *em construção* enquanto adicionamos as imagens.
 - **Elementos de dano em pt-BR** agora usam a forma adjetiva (Calor → Ígneo, Frio → Glacial, etc.).
 
 #### 2026-06-22 — Lançamento do Glossário
