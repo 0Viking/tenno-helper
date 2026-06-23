@@ -113371,6 +113371,11 @@ function clearGlossaryHighlights(root) {
   root.querySelectorAll('mark.glossary-hl').forEach(m => {
     m.replaceWith(document.createTextNode(m.textContent));
   });
+  // fecha <details> aninhados que a busca abriu só pra mostrar um highlight
+  root.querySelectorAll('details[data-glossary-hl-open]').forEach(d => {
+    d.open = false;
+    delete d.dataset.glossaryHlOpen;
+  });
   root.normalize();
 }
 
@@ -113459,7 +113464,17 @@ function setupGlossarySearch() {
         highlightGlossaryMatches(titleEl, raw);
         // destaca em todo o corpo (inclui o conteúdo rico renderizado: dt/dd/li/spans),
         // não só nos <p> — assim termos como "Incursões" no Steel Path são marcados.
-        if (bodyEl) highlightGlossaryMatches(bodyEl, raw);
+        if (bodyEl) {
+          highlightGlossaryMatches(bodyEl, raw);
+          // abre <details> aninhados (ex.: "Warframes com augments aqui" nos
+          // cards de sindicato) que contenham um highlight, pra a marca aparecer
+          bodyEl.querySelectorAll('details').forEach(d => {
+            if (!d.open && d.querySelector('mark.glossary-hl')) {
+              d.open = true;
+              d.dataset.glossaryHlOpen = '1';
+            }
+          });
+        }
         if (!s.open) { s.open = true; s.dataset.glossaryAutoOpen = '1'; }
       } else if (s.dataset.glossaryAutoOpen === '1') {
         s.open = false; delete s.dataset.glossaryAutoOpen;
