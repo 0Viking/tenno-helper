@@ -8,6 +8,8 @@ body {
   color: #f5f5f5;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
+  /* Espaço pro rodapé fixo (desktop). Zerado no mobile, onde o rodapé some. */
+  padding-bottom: 64px;
 }
 
 /* ------- Header ------- */
@@ -22,8 +24,6 @@ body {
 }
 
 .header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,6 +74,78 @@ body {
   display: flex;
   align-items: center;
   gap: 6px;
+}
+
+/* Rodapé (desktop): idioma + créditos vivem aqui, alinhados à direita. O JS
+   move o .header-right pra cá no desktop e de volta pro header no mobile. */
+.site-footer {
+  background: #050505;
+  border-top: 1px solid #1f1f1f;
+  padding: 12px 24px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 49;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+/* Dropdown de idioma no rodapé abre pra CIMA (fica no fim da página). */
+.site-footer .dropdown-menu { top: auto; bottom: calc(100% + 6px); }
+
+/* ------- Painel de contato (canto inferior direito, estilo chat de suporte) ------- */
+.contact-icon { font-size: 13px; }
+.contact-panel {
+  --neon-color: #7fd13b;
+  position: fixed;
+  right: 20px;
+  bottom: 78px;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: #111114;
+  border: 1px solid #2a2a32;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  z-index: 60;
+  padding: 14px 16px 16px;
+  animation: contact-pop 0.16s ease-out;
+}
+.contact-panel.hidden { display: none; }
+@keyframes contact-pop { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.contact-panel-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.contact-panel-title { margin: 0; font-size: 16px; color: #fff; }
+.contact-panel-close { background: none; border: 0; color: #aaa; font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px; }
+.contact-panel-close:hover { color: #fff; }
+.contact-panel-intro { margin: 4px 0 12px; font-size: 12.5px; color: #9a9aa4; line-height: 1.35; }
+.contact-form { display: flex; flex-direction: column; gap: 9px; }
+.contact-field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #c8c8d0; }
+.contact-field input, .contact-field select, .contact-field textarea {
+  background: #1a1a20; border: 1px solid #2e2e38; border-radius: 6px; color: #f0f0f0;
+  font: inherit; font-size: 13px; padding: 8px 10px; width: 100%; box-sizing: border-box;
+}
+.contact-field textarea { resize: vertical; min-height: 72px; }
+.contact-field input:focus, .contact-field select:focus, .contact-field textarea:focus {
+  outline: none; border-color: var(--neon-color);
+}
+.contact-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-submit {
+  margin-top: 2px; background: var(--neon-color); color: #07120a; border: 0; border-radius: 6px;
+  font: inherit; font-weight: 700; font-size: 14px; padding: 10px; cursor: pointer;
+}
+.contact-submit:hover { filter: brightness(1.08); }
+.contact-submit:disabled { opacity: 0.55; cursor: default; }
+.contact-status { margin: 4px 0 0; font-size: 12px; min-height: 1em; line-height: 1.35; }
+.contact-status.is-ok { color: #7fd13b; }
+.contact-status.is-err { color: #e0685a; }
+@media (max-width: 600px) {
+  .contact-text { display: none; }
+  .contact-panel { right: 10px; left: 10px; bottom: 10px; width: auto; max-width: none; max-height: calc(100vh - 90px); }
 }
 
 .site-title {
@@ -1691,6 +1763,103 @@ mark.glossary-hl {
 .mt-desc { color: #b8b8c0; font-size: 12px; line-height: 1.4; }
 .mt-note { color: #9a9aa2; font-size: 12px; margin: 8px 0 0; }
 
+/* Forma & Orokin — item cards with in-game icons */
+.forma-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin: 4px 0 6px; }
+.forma-card { display: flex; gap: 12px; align-items: center; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); }
+.forma-icon { width: 46px; height: 46px; flex: none; object-fit: contain; }
+.forma-card-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.forma-card-name { font-weight: 600; color: #e8e8ee; font-size: 13px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.forma-badge { font-size: 10px; font-weight: 700; color: #7fd13b; background: rgba(127,209,59,0.12); border: 1px solid rgba(127,209,59,0.3); border-radius: 999px; padding: 1px 7px; }
+.forma-card-desc { color: #b8b8c0; font-size: 12px; line-height: 1.4; }
+
+/* Forma & Orokin — polarity types (wiki icons are black → invert to white) */
+.pol-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 8px 16px; margin: 4px 0 6px; }
+.pol-item { display: flex; gap: 10px; align-items: center; }
+.pol-icon { width: 26px; height: 26px; flex: none; object-fit: contain; filter: invert(1); opacity: 0.92; }
+.pol-icon.is-light { filter: none; }
+.pol-item-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.pol-name { font-weight: 600; color: #e8e8ee; font-size: 12.5px; }
+.pol-desc { color: #b8b8c0; font-size: 11.5px; line-height: 1.3; }
+
+/* Reusable highlighted callout inside glossary sections */
+.gloss-callout {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 10px 0 14px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  background: rgba(127, 209, 59, 0.08);
+  border: 1px solid rgba(127, 209, 59, 0.28);
+  border-left-width: 3px;
+}
+.gloss-callout-ico { font-size: 17px; line-height: 1.4; flex: none; }
+.gloss-callout-text { font-size: 13px; line-height: 1.45; color: #d6e8c8; }
+
+/* Rivens — lifecycle triptych (veiled → challenge → unveiled) */
+.riven-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 4px 0 12px; }
+.riven-flow-fig { margin: 0; }
+.riven-flow-fig img { width: 100%; aspect-ratio: 563 / 842; object-fit: cover; object-position: center; display: block; border-radius: 8px; border: 1px solid #26262c; cursor: zoom-in; }
+.gloss-link { background: none; border: 0; padding: 0; margin: 0; font: inherit; color: var(--neon-color, #6ee787); cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+.gloss-link:hover { filter: brightness(1.25); }
+.gloss-ico { width: 17px; height: 17px; vertical-align: -4px; margin: 0 1px; object-fit: contain; }
+.archon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 4px 0 10px; }
+.archon-card { position: relative; aspect-ratio: 3 / 4; border-radius: 10px; overflow: hidden; background: #15151b; border: 1px solid #2a2a32; border-top: 2px solid var(--ac, #6ee787); }
+.archon-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; cursor: zoom-in; }
+.archon-card-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 10px 10px; display: flex; flex-direction: column; align-items: center; gap: 3px; background: linear-gradient(to top, rgba(0,0,0,0.94) 24%, rgba(0,0,0,0.55) 64%, transparent); }
+.archon-name { font-weight: 700; font-size: 15px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.85); }
+.archon-shard { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: var(--ac, #6ee787); text-shadow: 0 1px 3px rgba(0,0,0,0.85); }
+.archon-shard img { width: 16px; height: 16px; object-fit: contain; }
+@media (max-width: 560px) { .archon-grid { gap: 6px; } .archon-name { font-size: 12.5px; } .archon-shard { font-size: 10px; gap: 3px; } }
+.gloss-rew-list { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.gloss-rew { display: flex; align-items: center; gap: 10px; padding: 7px 10px; border-radius: 8px; background: #15151b; border: 1px solid #24242c; }
+.gloss-rew-ico { width: 26px; height: 26px; object-fit: contain; flex: none; }
+.gloss-rew-name { font-size: 13px; color: #d8d8e0; }
+.gloss-rew-pct { font-size: 12.5px; font-weight: 700; color: #9a9aa4; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gloss-rew.is-guaranteed { border-color: #3a5d44; background: linear-gradient(90deg, rgba(110,231,135,0.10), #15151b); }
+.gloss-rew.is-guaranteed .gloss-rew-pct { color: #6ee787; }
+.riven-flow-fig figcaption { margin-top: 6px; text-align: center; display: flex; flex-direction: column; gap: 1px; }
+.riven-flow-t { font-weight: 600; font-size: 12.5px; color: #d2b8ff; }
+.riven-flow-d { font-size: 11.5px; color: #b8b8c0; line-height: 1.3; }
+@media (max-width: 560px) { .riven-flow { grid-template-columns: 1fr; } }
+
+/* Rivens — disposition dots */
+.riven-disp { display: flex; flex-direction: column; gap: 3px; margin: 2px 0 10px; }
+.riven-disp-row { display: flex; gap: 11px; align-items: baseline; font-size: 12.5px; }
+.riven-disp-dots { font-family: monospace; letter-spacing: 2px; color: #b888ff; font-size: 13px; flex: none; }
+.riven-disp-t { color: #b8b8c0; }
+
+/* Rivens — unveiling challenges (expandable + chips) */
+.riven-chal { margin: 2px 0 6px; }
+.riven-chal > summary { cursor: pointer; list-style: none; font-size: 12.5px; font-weight: 600; color: #b888ff; }
+.riven-chal > summary::-webkit-details-marker { display: none; }
+.riven-chal > summary::before { content: '▸ '; }
+.riven-chal[open] > summary::before { content: '▾ '; }
+.riven-chal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; margin-top: 8px; }
+.riven-chal-chip { text-align: left; font: inherit; font-size: 12px; line-height: 1.3; color: #d2d2d6; background: rgba(184,136,255,0.06); border: 1px solid rgba(184,136,255,0.2); border-radius: 8px; padding: 8px 10px; cursor: pointer; transition: background .12s, border-color .12s; }
+.riven-chal-chip:hover { background: rgba(184,136,255,0.14); border-color: rgba(184,136,255,0.5); }
+@media (max-width: 680px) { .riven-chal-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 460px) { .riven-chal-grid { grid-template-columns: 1fr; } }
+
+/* Rivens — challenge modal */
+.riven-chal-modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.riven-chal-modal.hidden { display: none; }
+.riven-chal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.72); }
+.riven-chal-box { position: relative; z-index: 1; width: 100%; max-width: 460px; background: linear-gradient(180deg, #16131c 0%, #0e0c12 100%); border: 1px solid #34294a; border-radius: 14px; padding: 20px 22px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+.riven-chal-close { position: absolute; top: 10px; right: 12px; background: none; border: 0; color: #9a9aa2; font-size: 22px; line-height: 1; cursor: pointer; }
+.riven-chal-close:hover { color: #fff; }
+.riven-chal-modal-title { margin: 0 24px 10px 0; font-size: 16px; color: #e8d9ff; }
+.riven-chal-tip { margin: 0 0 14px; font-size: 13.5px; line-height: 1.5; color: #cfcfd6; }
+.riven-chal-frames.hidden, .riven-chal-place.hidden { display: none; }
+.riven-chal-label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a8a92; margin-bottom: 6px; }
+.riven-chal-frame-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.riven-frame { display: flex; align-items: center; gap: 6px; font: inherit; font-size: 12px; color: #e8e8ee; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; padding: 3px 10px 3px 4px; cursor: pointer; }
+.riven-frame:hover { background: rgba(184,136,255,0.16); border-color: rgba(184,136,255,0.5); }
+.riven-frame img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; }
+.riven-chal-place { margin-top: 12px; }
+.riven-place { font: inherit; font-size: 12.5px; color: #7fb8d4; background: rgba(127,184,212,0.1); border: 1px solid rgba(127,184,212,0.3); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.riven-place:hover { background: rgba(127,184,212,0.2); }
+
 /* Modding — annotated UI figure + color legend */
 .mod-ui-fig { margin: 4px 0 10px; }
 .mod-ui-fig img { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid #26262c; cursor: zoom-in; }
@@ -2624,6 +2793,9 @@ mark.glossary-hl {
     font-size: 15px;
   }
   .lang-name { display: none; }
+  /* No mobile o idioma + créditos voltam pro header (via JS) → rodapé some. */
+  .site-footer { display: none; }
+  body { padding-bottom: 0; }
 }
 
 /* ========================================================================

@@ -67,6 +67,9 @@ const STRINGS = {
     glossary_mr: 'Mastery Rank',
     glossary_mr_body: 'Your [[Mastery Rank (MR)]] is an account-wide level that rises as you rank new gear to 30. It raises daily caps, gives new gear a head start on [[mod capacity]], and gates some weapons, items and [[Rivens]] behind a minimum rank.',
     glossary_helminth: 'Helminth (Subsume)',
+    glossary_archon_hunts: 'Archon Hunts',
+    glossary_archon_hunts_body: 'A weekly endgame mission chain — three escalating missions ending in a showdown against one of Pazuul’s [[Archons]], the Sentient generals from The New War. Win and you’re guaranteed an [[Archon Shard]] to permanently buff a Warframe.',
+    glossary_archon_shards: 'Archon Shards',
     glossary_helminth_body: 'The [[Helminth]] is an Infested system in your Orbiter that lets you take one ability from a Warframe and graft it onto another — replacing one of its four abilities. It’s a deep customization tool you unlock mid-game.',
     glossary_cat_progression: 'Progression',
     glossary_tag_foundation: 'Foundation',
@@ -128,6 +131,18 @@ const STRINGS = {
     quest_mr: 'Min. MR',
     coming_soon: '(coming soon)',
     credits: 'Credits',
+    contact: 'Contact',
+    contact_title: 'Contact',
+    contact_intro: 'Feedback, a bug or an idea? Send it our way.',
+    contact_type: 'Type',
+    contact_type_feedback: 'Feedback',
+    contact_type_bug: 'Bug report',
+    contact_type_idea: 'Idea / suggestion',
+    contact_name: 'Name',
+    contact_email: 'Email',
+    contact_subject: 'Subject',
+    contact_message: 'Message',
+    contact_send: 'Send',
     credits_title: 'Credits',
     credits_creator_label: 'Created by',
     credits_archetype_label: 'Archetype system',
@@ -386,6 +401,9 @@ const STRINGS = {
     glossary_mr: 'Nível de Maestria',
     glossary_mr_body: 'Seu [[Nível de Maestria (MR)]] é um nível geral da conta que sobe conforme você ranqueia equipamentos novos até 30. Ele aumenta limites diários, dá uma vantagem inicial de [[capacidade de mod]], e tranca algumas armas, itens e [[Rivens]] atrás de um rank mínimo.',
     glossary_helminth: 'Helminth (Subsume)',
+    glossary_archon_hunts: 'Caçada aos Archons',
+    glossary_archon_hunts_body: 'Uma cadeia de missões de fim-de-jogo semanal — três missões cada vez mais difíceis terminando num confronto contra um dos [[Archons]] de Pazuul, os generais Sentientes de The New War. Vença e você ganha um [[Fragmento de Archon]] garantido pra buffar um Warframe permanentemente.',
+    glossary_archon_shards: 'Fragmentos de Archon',
     glossary_helminth_body: 'O [[Helminth]] é um sistema Infestado no seu Orbiter que deixa você pegar uma habilidade de um Warframe e enxertá-la em outro — substituindo uma das quatro habilidades dele. É uma ferramenta de customização profunda que você desbloqueia no meio do jogo.',
     glossary_cat_progression: 'Progressão',
     glossary_tag_foundation: 'Base',
@@ -447,6 +465,18 @@ const STRINGS = {
     quest_mr: 'MR mínimo',
     coming_soon: '(em breve)',
     credits: 'Créditos',
+    contact: 'Contato',
+    contact_title: 'Contato',
+    contact_intro: 'Feedback, um bug ou uma ideia? Manda pra gente.',
+    contact_type: 'Tipo',
+    contact_type_feedback: 'Feedback',
+    contact_type_bug: 'Reportar bug',
+    contact_type_idea: 'Ideia / sugestão',
+    contact_name: 'Nome',
+    contact_email: 'Email',
+    contact_subject: 'Assunto',
+    contact_message: 'Mensagem',
+    contact_send: 'Enviar',
     credits_title: 'Créditos',
     credits_creator_label: 'Criado por',
     credits_archetype_label: 'Sistema de arquétipos',
@@ -103139,7 +103169,7 @@ const RESOURCES = {
     location: 'star-chart', sources: ['special', 'mission-drops'],
     image: 'https://wiki.warframe.com/images/VoidplumeCrest.png',
     description: { en: '3rd-tier Voidplume from Zariman B/C rotations. Rare drop, more valuable per unit.', 'pt-BR': 'Voidplume de 3º tier das rotações B/C do Zariman. Drop raro, mais valioso por unidade.' },
-    usedFor: { en: 'Higher-rank Holdfasts items including Quassus Veiled Riven blueprint.', 'pt-BR': 'Itens de Holdfasts de rank mais alto, incluindo diagrama da Riven Velada Quassus.' },
+    usedFor: { en: 'Higher-rank Holdfasts items including Quassus Veiled Riven blueprint.', 'pt-BR': 'Itens de Holdfasts de rank mais alto, incluindo diagrama da Riven Oculta Quassus.' },
   },
   voidplume_pinion: {
     name: { en: 'Voidplume Pinion', 'pt-BR': 'Pinhão Voidplume' },
@@ -103267,8 +103297,8 @@ const RESOURCES = {
     rarity: 'special', category: 'currency',
     location: 'star-chart', sources: ['special', 'misc'],
     image: 'https://wiki.warframe.com/images/RivenSliver.png',
-    description: { en: 'Combine 10 Slivers into a Veiled Riven via Palladino in the Iron Wake. Drops from Sorties, Arbitrations, and the Steel Path shop.', 'pt-BR': 'Combine 10 Fragmentos pra formar um Riven Velado com a Palladino no Iron Wake. Cai de Incursões, Arbitragens e na loja do Percurso de Aço.' },
-    usedFor: { en: 'Crafting Veiled Rivens of chosen weapon category (primary/secondary/melee). 10 Slivers → 1 Veiled Riven.', 'pt-BR': 'Craft de Rivens Velados de categoria escolhida (primária/secundária/melee). 10 Fragmentos → 1 Riven Velado.' },
+    description: { en: 'Combine 10 Slivers into a Veiled Riven via Palladino in the Iron Wake. Drops from Sorties, Arbitrations, and the Steel Path shop.', 'pt-BR': 'Combine 10 Fragmentos pra formar um Riven Oculto com a Palladino no Iron Wake. Cai de Incursões, Arbitragens e na loja do Percurso de Aço.' },
+    usedFor: { en: 'Crafting Veiled Rivens of chosen weapon category (primary/secondary/melee). 10 Slivers → 1 Veiled Riven.', 'pt-BR': 'Craft de Rivens Ocultos de categoria escolhida (primária/secundária/melee). 10 Fragmentos → 1 Riven Oculto.' },
   },
   steel_essence: {
     name: { en: 'Steel Essence', 'pt-BR': 'Essência de Aço' },
@@ -108299,6 +108329,17 @@ function setupWeaponPickerEvents() {
 const PATCH_NOTES = {
   en: [
     {
+      date: '2026-06-24',
+      title: 'Archon Hunts, reward lists & a contact form',
+      items: [
+        'New "Archon Hunts" glossary section — how to unlock it, the three weekly Archons (Amar, Nira, Boreal) and their shards, the mission stages and levels, and the full reward table.',
+        'Reward lists with icons — Sortie and Archon Hunt rewards now show each item with its icon and drop chance.',
+        'Polished Riven Mods section — a visual veiled → challenge → unveiled walkthrough, links to related topics (Kuva, Sorties…), and a clearer take on how unveiling works.',
+        'Desktop footer — language and Credits moved to a footer so the navigation uses the full width of the screen.',
+        'Contact form — a new Contact button opens a quick form to send feedback, a bug report or an idea.',
+      ]
+    },
+    {
       date: '2026-06-23',
       title: 'Glossary index, augment sources, tooltips & Modding Basics',
       items: [
@@ -108419,6 +108460,17 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-24',
+      title: 'Caçada aos Archons, listas de recompensa e formulário de contato',
+      items: [
+        'Nova seção "Caçada aos Archons" no Glossário — como desbloquear, os três Archons semanais (Amar, Nira, Boreal) e seus fragmentos, os estágios e níveis das missões, e a tabela completa de recompensas.',
+        'Listas de recompensa com ícones — as recompensas de Sortie e da Caçada aos Archons agora mostram cada item com seu ícone e a chance de drop.',
+        'Seção de Riven Mods melhorada — um passo a passo visual oculto → desafio → revelado, links pra tópicos relacionados (Kuva, Sortie…) e uma explicação mais clara de como revelar funciona.',
+        'Rodapé no desktop — idioma e Créditos foram pro rodapé pra navegação usar a largura toda da tela.',
+        'Formulário de contato — um novo botão Contato abre um formulário rápido pra mandar feedback, reportar um bug ou sugerir uma ideia.',
+      ]
+    },
     {
       date: '2026-06-23',
       title: 'Índice do glossário, fontes de augment, tooltips e Modding Básico',
@@ -108588,6 +108640,79 @@ function setupCreditsEvents() {
     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
       e.preventDefault();
       closeCreditsModal();
+    }
+  });
+}
+
+// ── Painel de contato (form → email via Cloudflare Function /api/contact) ─────
+function openContactPanel() {
+  const p = document.getElementById('contact-panel');
+  if (!p) return;
+  p.classList.remove('hidden');
+  document.getElementById('contact-name')?.focus();
+}
+function closeContactPanel() {
+  document.getElementById('contact-panel')?.classList.add('hidden');
+}
+function setupContactPanel() {
+  const panel = document.getElementById('contact-panel');
+  const btn = document.getElementById('contact-btn');
+  const form = document.getElementById('contact-form');
+  if (!panel || !btn || !form) return;
+
+  btn.addEventListener('click', () => {
+    if (panel.classList.contains('hidden')) openContactPanel();
+    else closeContactPanel();
+  });
+  document.getElementById('contact-panel-close')?.addEventListener('click', closeContactPanel);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !panel.classList.contains('hidden')) { e.preventDefault(); closeContactPanel(); }
+  });
+
+  const statusEl = document.getElementById('contact-status');
+  const submitBtn = document.getElementById('contact-submit');
+  const setStatus = (msg, kind) => {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.classList.remove('is-ok', 'is-err');
+    if (kind) statusEl.classList.add(kind === 'ok' ? 'is-ok' : 'is-err');
+  };
+  const T = () => (state.locale === 'pt-BR'
+    ? { sending: 'Enviando…', ok: 'Mensagem enviada — obrigado!', err: 'Não foi possível enviar. Tente de novo mais tarde.', fill: 'Preencha todos os campos.', email: 'Email inválido.' }
+    : { sending: 'Sending…', ok: 'Message sent — thank you!', err: 'Could not send. Please try again later.', fill: 'Please fill in all fields.', email: 'Invalid email.' });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const t = T();
+    // Honeypot: se o campo escondido foi preenchido, é bot → finge sucesso e aborta.
+    if (document.getElementById('contact-website')?.value) { setStatus(t.ok, 'ok'); form.reset(); return; }
+
+    const payload = {
+      type: document.getElementById('contact-type')?.value || '',
+      name: (document.getElementById('contact-name')?.value || '').trim(),
+      email: (document.getElementById('contact-email')?.value || '').trim(),
+      subject: (document.getElementById('contact-subject')?.value || '').trim(),
+      message: (document.getElementById('contact-message')?.value || '').trim(),
+      locale: state.locale,
+    };
+    if (!payload.name || !payload.email || !payload.subject || !payload.message) { setStatus(t.fill, 'err'); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) { setStatus(t.email, 'err'); return; }
+
+    submitBtn.disabled = true;
+    setStatus(t.sending, null);
+    try {
+      const resp = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!resp.ok) throw new Error('bad_status');
+      setStatus(t.ok, 'ok');
+      form.reset();
+    } catch (err) {
+      setStatus(t.err, 'err');
+    } finally {
+      submitBtn.disabled = false;
     }
   });
 }
@@ -108863,7 +108988,6 @@ const NW_DETAILS = [
 
 const NW_TIPS = [
   { en: 'Do your Weekly and Elite acts first — that’s where the Standing is.', 'pt-BR': 'Faça os Atos Semanais e Elite primeiro — é onde está a Reputação.' },
-  { en: 'Missed a weekly? It returns as a “Recovered” act once you run low.', 'pt-BR': 'Perdeu um semanal? Ele volta como ato “Recovered” quando você fica com poucos.' },
   { en: 'Cred is season-specific — spend it before the season ends.', 'pt-BR': 'O Cred é específico da temporada — gaste antes dela acabar.' },
   { en: 'Nightwave is always on; seasons rotate — currently Nora’s Mix: Time Tempests.', 'pt-BR': 'A Nightwave está sempre ativa; as temporadas giram — atualmente Nora’s Mix: Time Tempests.' },
 ];
@@ -108890,7 +109014,8 @@ function renderNightwaveSection() {
 
   const T = {
     acts:  { en: 'Acts — earn Standing', 'pt-BR': 'Atos — ganhe Reputação' },
-    actsS: { en: 'Weekly and Elite acts refresh every Sunday; missed ones come back as “Recovered”.', 'pt-BR': 'Atos Semanais e Elite renovam sábado às 21h (horário de Brasília); os perdidos voltam como “Recovered”.' },
+    actsS: { en: 'Weekly and Elite acts refresh every week.', 'pt-BR': 'Atos Semanais e Elite renovam toda semana (sábado, 21h horário de Brasília).' },
+    callout: { en: 'No need to stress about missing Weekly or Elite acts — as long as you keep completing your active acts, the missed ones keep coming back as “Recovered” acts, until you’ve done them all.', 'pt-BR': 'Não precisa se preocupar em perder Atos Semanais ou Elite — enquanto você for completando os atos ativos, os que faltam continuam voltando como atos “Recovered”, até você fazer todos.' },
     track: { en: 'The reward track', 'pt-BR': 'A trilha de recompensas' },
     tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
   };
@@ -108899,6 +109024,7 @@ function renderNightwaveSection() {
     `<h4 class="sc-h">${esc(L(T.acts))}</h4>`
     + `<div class="mr-earn nw-acts">${acts}</div>`
     + `<p class="sc-sub">${esc(L(T.actsS))}</p>`
+    + `<div class="gloss-callout"><span class="gloss-callout-ico" aria-hidden="true">♻️</span><span class="gloss-callout-text">${esc(L(T.callout))}</span></div>`
     + `<h4 class="sc-h">${esc(L(T.track))}</h4>`
     + `<dl class="sc-terms">${details}</dl>`
     + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
@@ -108922,20 +109048,25 @@ const SORTIE_MODS = [
   { t: { en: 'Weapon restriction', 'pt-BR': 'Restrição de arma' },      d: { en: 'Only Sniper / Shotgun / Bow / Melee allowed.', 'pt-BR': 'Só Sniper / Shotgun / Arco / Melee permitidos.' } },
 ];
 
+// Recompensa diária = 1 sorteio deste pool (estilo lista, igual Archon Hunt).
+// Rivens (6 categorias) e Boosters (3) agrupados; drop chances + ícones da wiki.
 const SORTIE_REWARDS = [
-  { t: { en: 'Riven Mod (veiled)', 'pt-BR': 'Riven Mod (velado)' },       v: '28%' },
-  { t: { en: 'Anasa Sculpture → Endo', 'pt-BR': 'Anasa Sculpture → Endo' }, v: '28%' },
-  { t: { en: '4 000 Endo', 'pt-BR': '4.000 Endo' },                       v: '12%' },
-  { t: { en: '6 000 Kuva', 'pt-BR': '6.000 Kuva' },                       v: '12%' },
-  { t: { en: '3-day Booster', 'pt-BR': 'Booster de 3 dias' },             v: '~20%' },
-  { t: { en: 'Exilus Adapter · Forma · Catalyst · Reactor', 'pt-BR': 'Exilus Adapter · Forma · Catalyst · Reactor' }, v: '2,5% ' },
-  { t: { en: 'Legendary Core', 'pt-BR': 'Legendary Core' },               v: '0,19%' },
+  { icon: 'AyatanAnasaSculpture.png?b0b14', name: { en: 'Ayatan Anasa Sculpture', 'pt-BR': 'Escultura Ayatan Anasa' }, pct: '28%' },
+  { icon: 'RifleRivenMod.png?c488c', name: { en: 'Riven Mod (any category)', 'pt-BR': 'Riven Mod (qualquer categoria)' }, pct: '28%' },
+  { icon: 'Endo.png?34c5c', name: { en: 'Endo ×4,000', 'pt-BR': 'Endo ×4.000' }, pct: '12%' },
+  { icon: 'Kuva.png?0db18', name: { en: 'Kuva ×6,000', 'pt-BR': 'Kuva ×6.000' }, pct: '12%' },
+  { icon: 'AffinityBooster%28xLight%29.png?1e12d', name: { en: '3-day Booster (Affinity / Mod / Resource)', 'pt-BR': 'Booster de 3 dias (Afinidade / Mod / Recurso)' }, pct: { en: '3.27% each', 'pt-BR': '3,27% cada' } },
+  { icon: 'OrokinCatalyst.png?1d542', name: { en: 'Orokin Catalyst Blueprint', 'pt-BR': 'Diagrama de Catalisador Orokin' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'OrokinReactor.png?903d2', name: { en: 'Orokin Reactor Blueprint', 'pt-BR': 'Diagrama de Reator Orokin' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'ExilusWarframeAdapter.png?bfcaf', name: { en: 'Exilus Warframe Adapter', 'pt-BR': 'Adaptador Exilus de Warframe' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'Forma.png?c7d01', name: { en: 'Forma', 'pt-BR': 'Forma' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'LegendaryCore.png?30a55', name: { en: 'Legendary Core', 'pt-BR': 'Legendary Core' }, pct: { en: '0.19%', 'pt-BR': '0,19%' } },
 ];
 
 const SORTIE_TIPS = [
   { en: 'One reward per day — finish all three missions, in order.', 'pt-BR': 'Uma recompensa por dia — complete as três missões, em ordem.' },
   { en: 'Match your loadout to the modifier (e.g. the weapon restriction) and bring a strong rank-30 frame.', 'pt-BR': 'Adapte o loadout ao modificador (ex.: a restrição de arma) e leve um Warframe forte no rank 30.' },
-  { en: 'Riven mods drop veiled — unveil them with a challenge. Anasa Sculptures convert to a big chunk of Endo.', 'pt-BR': 'Rivens caem velados — revele com um desafio. Anasa Sculptures convertem num bom tanto de Endo.' },
+  { en: 'Riven mods drop veiled — unveil them with a challenge. Anasa Sculptures convert to a big chunk of Endo.', 'pt-BR': 'Rivens caem ocultos — revele com um desafio. Anasa Sculptures convertem num bom tanto de Endo.' },
 ];
 
 function renderSortieSection() {
@@ -108956,8 +109087,12 @@ function renderSortieSection() {
     `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`
   ).join('');
 
+  const pctL = r => (typeof r.pct === 'object' ? L(r.pct) : r.pct);
   const rewards = SORTIE_REWARDS.map(r =>
-    `<div class="sc-term"><dt>${esc(L(r.t))}</dt><dd class="sortie-chance">${esc(r.v)}</dd></div>`
+    `<li class="gloss-rew">`
+    + `<img class="gloss-rew-ico" src="https://wiki.warframe.com/images/${r.icon}" alt="" loading="lazy" onerror="this.style.display='none'">`
+    + `<span class="gloss-rew-name">${esc(L(r.name))}</span>`
+    + `<span class="gloss-rew-pct">${esc(pctL(r))}</span></li>`
   ).join('');
 
   const tips = SORTIE_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
@@ -108977,7 +109112,7 @@ function renderSortieSection() {
     + `<h4 class="sc-h">${esc(L(T.mods))}</h4>`
     + `<dl class="sc-terms">${mods}</dl>`
     + `<h4 class="sc-h">${esc(L(T.rew))}</h4>`
-    + `<dl class="sc-terms sc-terms-chance">${rewards}</dl>`
+    + `<ul class="gloss-rew-list">${rewards}</ul>`
     + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
     + `<ul class="sc-tips">${tips}</ul>`;
 }
@@ -109042,6 +109177,122 @@ function renderArbitrationSection() {
     + `<dl class="sc-terms">${details}</dl>`
     + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
     + `<ul class="sc-tips">${tips}</ul>`;
+}
+
+// ── Archon Hunt glossary section ─────────────────────────────────────────────
+
+// Os 3 Archons rotacionam semanalmente; cada um dropa uma cor de Fragmento (wiki).
+const ARCHON_LIST = [
+  { img: 'ArchonAmar.png?09983',   name: 'Amar',   shardImg: 'CrimsonArchonShard.png?f2048', ac: '#e0473a',
+    shard: { en: 'Crimson Shard', 'pt-BR': 'Fragmento Carmesim' } },
+  { img: 'ArchonNira.png?37ec9',   name: 'Nira',   shardImg: 'AmberArchonShard.png?5eaa1',   ac: '#e0a93a',
+    shard: { en: 'Amber Shard', 'pt-BR': 'Fragmento Âmbar' } },
+  { img: 'ArchonBoreal.png?1174b', name: 'Boreal', shardImg: 'AzureArchonShard.png?e6241',   ac: '#3a8fe0',
+    shard: { en: 'Azure Shard', 'pt-BR': 'Fragmento Azure' } },
+];
+
+const ARCHON_HOW = [
+  { t: { en: 'Weekly reset', 'pt-BR': 'Reset semanal' },
+    d: { en: 'One hunt per week, resetting Monday 00:00 UTC. The Archon — and with it the planet, tileset and faction — rotates between Amar, Nira and Boreal.', 'pt-BR': 'Uma caçada por semana, renovando domingo às 21h (horário de Brasília). O Archon — e com ele o planeta, o cenário e a facção — alterna entre Amar, Nira e Boreal.' } },
+  { t: { en: 'Three missions in a row', 'pt-BR': 'Três missões em sequência' },
+    d: { en: 'Like a Sortie: clear all three in order, with shared mission conditions (no Ciphers). The third stage is the Archon showdown.', 'pt-BR': 'Tipo um Sortie: complete as três em ordem, com condições compartilhadas (sem Ciphers). O terceiro estágio é o confronto com o Archon.' } },
+  { t: { en: 'Loadout buff', 'pt-BR': 'Buff de loadout' },
+    d: { en: 'You bring your own gear, but each hunt spotlights a random Warframe + 3 weapons with big bonuses (+300% Ability Strength, +500 Health, +300% Damage) — even on gear you don’t own.', 'pt-BR': 'Você leva seu próprio equipamento, mas cada caçada destaca um Warframe + 3 armas aleatórios com bônus altos (+300% de Força de Habilidade, +500 de Vida, +300% de Dano) — até em itens que você não tem.' } },
+  { t: { en: 'Brutal rules', 'pt-BR': 'Regras brutais' },
+    d: { en: 'No self-revive (only teammates revive you), bleedout shortens each time, no summons or specters, Restores on a 3-min cooldown, and enemy Health/Shields +100% (up to +300% in a full squad).', 'pt-BR': 'Sem auto-reviver (só aliados te revivem), o bleedout encurta a cada vez, sem invocações ou espectros, Restores com cooldown de 3 min, e Vida/Escudo dos inimigos +100% (até +300% em squad cheio).' } },
+];
+
+const ARCHON_STAGES = [
+  { v: '130–135', t: { en: 'Stage 1', 'pt-BR': 'Estágio 1' },
+    d: { en: 'Capture, Exterminate, Mobile Defense, Rescue, Sabotage or Spy.', 'pt-BR': 'Captura, Extermínio, Defesa Móvel, Resgate, Sabotagem ou Espionagem.' } },
+  { v: '135–140', t: { en: 'Stage 2', 'pt-BR': 'Estágio 2' },
+    d: { en: 'Defense (6 waves), Disruption (8 conduits), Excavation (500 Cryotic), Interception (2) or Survival (10 min).', 'pt-BR': 'Defesa (6 ondas), Disrupção (8 conduítes), Escavação (500 Cryotic), Intercepção (2) ou Sobrevivência (10 min).' } },
+  { v: '145–150', t: { en: 'Stage 3 · Showdown', 'pt-BR': 'Estágio 3 · Confronto' },
+    d: { en: 'Assassinate the Archon itself.', 'pt-BR': 'Assassine o próprio Archon.' } },
+];
+
+// Lista de recompensas (ícone + nome + %). Fragmento = garantido; o resto é 1 sorteio
+// do pool rotativo (estilo Sortie, soma ~100%). Rivens (6 categorias) e Boosters (3)
+// agrupados pra leitura. Drop chances + ícones da wiki.
+const ARCHON_REWARDS = [
+  { icon: 'ArchonShard.png?a7ee5', guaranteed: true, name: { en: 'Archon Shard', 'pt-BR': 'Fragmento de Archon' },
+    pct: { en: 'guaranteed · 20% Tauforged', 'pt-BR': 'garantido · 20% Tauforged' } },
+  { icon: 'AyatanAnasaSculpture.png?b0b14', name: { en: 'Ayatan Anasa Sculpture', 'pt-BR': 'Escultura Ayatan Anasa' }, pct: '28%' },
+  { icon: 'RifleRivenMod.png?c488c', name: { en: 'Riven Mod (any category)', 'pt-BR': 'Riven Mod (qualquer categoria)' }, pct: { en: '27.9%', 'pt-BR': '27,9%' } },
+  { icon: 'Endo.png?34c5c', name: { en: 'Endo ×8,000', 'pt-BR': 'Endo ×8.000' }, pct: { en: '12.1%', 'pt-BR': '12,1%' } },
+  { icon: 'Kuva.png?0db18', name: { en: 'Kuva ×12,000', 'pt-BR': 'Kuva ×12.000' }, pct: '12%' },
+  { icon: 'AffinityBooster%28xLight%29.png?1e12d', name: { en: 'Booster (Affinity / Mod / Resource)', 'pt-BR': 'Booster (Afinidade / Mod / Recurso)' }, pct: { en: '3.27% each', 'pt-BR': '3,27% cada' } },
+  { icon: 'OrokinCatalyst.png?1d542', name: { en: 'Orokin Catalyst Blueprint', 'pt-BR': 'Diagrama de Catalisador Orokin' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'OrokinReactor.png?903d2', name: { en: 'Orokin Reactor Blueprint', 'pt-BR': 'Diagrama de Reator Orokin' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'ExilusWarframeAdapter.png?bfcaf', name: { en: 'Exilus Warframe Adapter', 'pt-BR': 'Adaptador Exilus de Warframe' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'Forma.png?c7d01', name: { en: 'Forma ×3', 'pt-BR': 'Forma ×3' }, pct: { en: '2.5%', 'pt-BR': '2,5%' } },
+  { icon: 'LegendaryCore.png?30a55', name: { en: 'Legendary Core', 'pt-BR': 'Legendary Core' }, pct: { en: '0.18%', 'pt-BR': '0,18%' } },
+];
+
+const ARCHON_TIPS = [
+  { en: 'The guaranteed Archon Shard is the prize — bank it into a Warframe for a permanent stat boost.', 'pt-BR': 'O Fragmento de Archon garantido é o prêmio — invista num Warframe pra um aumento de status permanente.' },
+  { en: 'Bring single-target burst and survivability — the Archon is tanky, adapts to damage, and you can’t self-revive.', 'pt-BR': 'Leve dano single-target e sobrevivência — o Archon é tankão, se adapta ao dano, e você não pode se auto-reviver.' },
+  { en: 'Archon Hunts don’t count as Sorties for Nightwave acts.', 'pt-BR': 'Archon Hunts não contam como Sortie pros atos da Nightwave.' },
+];
+
+function renderArchonHuntsSection() {
+  const el = document.getElementById('archon-hunts-gloss');
+  if (!el) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+
+  const archons = ARCHON_LIST.map(a =>
+    `<div class="archon-card" style="--ac:${a.ac}">`
+    + `<img class="archon-img" src="https://wiki.warframe.com/images/${a.img}" alt="" loading="lazy" onerror="this.style.display='none'">`
+    + `<div class="archon-card-cap">`
+    + `<span class="archon-name">${esc(a.name)}</span>`
+    + `<span class="archon-shard"><img src="https://wiki.warframe.com/images/${a.shardImg}" alt="" onerror="this.style.display='none'">${esc(L(a.shard))}</span>`
+    + `</div></div>`).join('');
+
+  const how = ARCHON_HOW.map(p => `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+
+  const unitL = L({ en: 'lvl', 'pt-BR': 'nível' });
+  const stages = ARCHON_STAGES.map(s =>
+    `<div class="mr-earn-card"><span class="nw-stat">${esc(s.v)}<span class="nw-unit"> ${esc(unitL)}</span></span>`
+    + `<span class="mr-earn-t">${esc(L(s.t))}</span><span class="mr-earn-d">${esc(L(s.d))}</span></div>`).join('');
+
+  const pctL = r => (typeof r.pct === 'object' ? L(r.pct) : r.pct);
+  const rewards = ARCHON_REWARDS.map(r =>
+    `<li class="gloss-rew${r.guaranteed ? ' is-guaranteed' : ''}">`
+    + `<img class="gloss-rew-ico" src="https://wiki.warframe.com/images/${r.icon}" alt="" loading="lazy" onerror="this.style.display='none'">`
+    + `<span class="gloss-rew-name">${esc(L(r.name))}</span>`
+    + `<span class="gloss-rew-pct">${esc(pctL(r))}</span></li>`).join('');
+
+  const tips = ARCHON_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+
+  const T = {
+    unlock: { en: 'Unlock by finishing the Veilbreaker quest. You also need a rank-30 Warframe (or to be MR 30 with a Forma’d Warframe).', 'pt-BR': 'Desbloqueie terminando a quest Veilbreaker. Você também precisa de um Warframe rank 30 (ou ser MR 30 com um Warframe já Formado).' },
+    arch:   { en: 'The three Archons (weekly rotation)', 'pt-BR': 'Os três Archons (rotação semanal)' },
+    archS:  { en: 'Each one drops its own colour of Archon Shard.', 'pt-BR': 'Cada um dropa sua própria cor de Fragmento de Archon.' },
+    how:    { en: 'How it works', 'pt-BR': 'Como funciona' },
+    stages: { en: 'The three missions & levels', 'pt-BR': 'As três missões e níveis' },
+    rew:    { en: 'Rewards', 'pt-BR': 'Recompensas' },
+    rewS:   { en: 'Every hunt: the Archon Shard is guaranteed; the rest is one roll from this pool.', 'pt-BR': 'Toda caçada: o Fragmento de Archon é garantido; o resto é um sorteio deste pool.' },
+    tips:   { en: 'Good to know', 'pt-BR': 'Bom saber' },
+    cta:    { en: 'What Archon Shards do →', 'pt-BR': 'O que os Fragmentos de Archon fazem →' },
+  };
+
+  el.innerHTML =
+    `<div class="gloss-callout"><span class="gloss-callout-ico" aria-hidden="true">🔓</span><span class="gloss-callout-text">${esc(L(T.unlock))}</span></div>`
+    + `<h4 class="sc-h">${esc(L(T.arch))}</h4>`
+    + `<div class="archon-grid">${archons}</div>`
+    + `<p class="sc-sub">${esc(L(T.archS))}</p>`
+    + `<h4 class="sc-h">${esc(L(T.how))}</h4>`
+    + `<dl class="sc-terms">${how}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.stages))}</h4>`
+    + `<div class="mr-earn nw-acts">${stages}</div>`
+    + `<h4 class="sc-h">${esc(L(T.rew))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.rewS))}</p>`
+    + `<ul class="gloss-rew-list">${rewards}</ul>`
+    + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
+    + `<ul class="sc-tips">${tips}</ul>`
+    + `<button type="button" class="sc-cta" onclick="goToGlossarySection('archon-shards')">${esc(L(T.cta))}</button>`;
 }
 
 // ── Steel Path glossary section ──────────────────────────────────────────────
@@ -109759,11 +110010,11 @@ function renderModdingSection() {
 // ── Forma & Orokin Catalyst/Reactor glossary section ─────────────────────────
 
 const FORMA_ITEMS = [
-  { k: '×2', t: { en: 'Orokin Reactor', 'pt-BR': 'Reator Orokin' },
-    d: { en: 'Doubles the mod capacity of Warframes, companions, Archwings and Necramechs. The “golden potato”.', 'pt-BR': 'Dobra a capacidade de mods de Warframes, companheiros, Archwings e Necramechs. A “batata dourada”.' } },
-  { k: '×2', t: { en: 'Orokin Catalyst', 'pt-BR': 'Catalisador Orokin' },
-    d: { en: 'Doubles the mod capacity of any weapon. The “blue potato”.', 'pt-BR': 'Dobra a capacidade de mods de qualquer arma. A “batata azul”.' } },
-  { k: '+slot', t: { en: 'Exilus Adapter', 'pt-BR': 'Exilus Adapter' },
+  { k: '×2', img: 'OrokinReactor.png?903d2', t: { en: 'Orokin Reactor', 'pt-BR': 'Reator Orokin' },
+    d: { en: 'Doubles the mod capacity of <b>Warframes</b>, companions, Archwings and Necramechs. The “golden potato”.', 'pt-BR': 'Dobra a capacidade de mods de <b>Warframes</b>, companheiros, Archwings e Necramechs. A “batata dourada”.' } },
+  { k: '×2', img: 'OrokinCatalyst.png?1d542', t: { en: 'Orokin Catalyst', 'pt-BR': 'Catalisador Orokin' },
+    d: { en: 'Doubles the mod capacity of any <b>weapon</b>. The “blue potato”.', 'pt-BR': 'Dobra a capacidade de mods de qualquer <b>arma</b>. A “batata azul”.' } },
+  { k: '+slot', img: 'ExilusWarframeAdapter.png?bfcaf', t: { en: 'Exilus Adapter', 'pt-BR': 'Exilus Adapter' },
     d: { en: 'Unlocks the Exilus (utility) slot — Exilus Adapter for Warframes, Exilus Weapon Adapter for weapons.', 'pt-BR': 'Libera o slot Exilus (utilidade) — Exilus Adapter pra Warframes, Exilus Weapon Adapter pra armas.' } },
 ];
 
@@ -109775,12 +110026,35 @@ const FORMA_HOW = [
 ];
 
 const FORMA_TYPES = [
-  { t: { en: 'Forma', 'pt-BR': 'Forma' },
+  { img: 'Forma.png?c7d01', t: { en: 'Forma', 'pt-BR': 'Forma' },
     d: { en: 'Standard — applies any one polarity (V, D, –, etc.) to a slot.', 'pt-BR': 'Padrão — aplica uma polaridade qualquer (V, D, –, etc.) num slot.' } },
-  { t: { en: 'Umbra Forma', 'pt-BR': 'Forma Umbra' },
+  { img: 'UmbraForma.png?dcf23', t: { en: 'Umbra Forma', 'pt-BR': 'Forma Umbra' },
     d: { en: 'Applies the Umbra polarity, needed for Umbral mods. Rare — save it for Umbral builds.', 'pt-BR': 'Aplica a polaridade Umbra, necessária pros mods Umbral. Rara — guarde pros builds Umbral.' } },
-  { t: { en: 'Omni Forma', 'pt-BR': 'Forma Omni' },
-    d: { en: 'Applies a universal polarity that halves any mod in that slot (this replaced the old Aura Forma).', 'pt-BR': 'Aplica uma polaridade universal que reduz pela metade qualquer mod naquele slot (substituiu a antiga Forma Aura).' } },
+  { img: 'AuraForma.png?ab6ef', t: { en: 'Omni Forma', 'pt-BR': 'Forma Omni' },
+    d: { en: 'A universal polarity that halves any mod in the slot — except Umbral mods (placed at full cost; use an Umbra Forma for those) and the Stance slot.', 'pt-BR': 'Polaridade universal que corta pela metade qualquer mod naquele slot — exceto mods Umbral (entram com custo cheio; pra eles, a Forma Umbra) e o slot de Stance.' } },
+  { img: 'StanceForma.png?97a5b', t: { en: 'Stance Forma', 'pt-BR': 'Forma de Stance' },
+    d: { en: 'Universally polarizes a melee Stance slot, so any Stance mod fits at the matching (halved) cost. From the Steel Path Honors shop.', 'pt-BR': 'Polariza o slot de Stance (melee) como universal, então qualquer mod de Stance entra com o custo de polaridade combinada (metade). Vem da loja Honras do Percurso de Aço.' } },
+];
+
+// tipos de polaridade (ícones do wiki em preto → invertidos pra branco no CSS;
+// "Any" já tem versão branca). A polaridade não restringe mods — só muda o custo.
+const POL_TYPES = [
+  { img: 'Madurai_Pol%28xBlack%29.svg?5760d', t: { en: 'Madurai (V)', 'pt-BR': 'Madurai (V)' },
+    d: { en: 'Loosely tied to damage & power mods.', 'pt-BR': 'Ligada a mods de dano e força.' } },
+  { img: 'Vazarin_Pol%28xBlack%29.svg?f3e14', t: { en: 'Vazarin (D)', 'pt-BR': 'Vazarin (D)' },
+    d: { en: 'Defensive mods (health, armor, shields).', 'pt-BR': 'Mods defensivos (vida, armadura, escudos).' } },
+  { img: 'Naramon_Pol%28xBlack%29.svg?ffa12', t: { en: 'Naramon (—)', 'pt-BR': 'Naramon (—)' },
+    d: { en: 'Utility & miscellaneous mods.', 'pt-BR': 'Mods de utilidade e diversos.' } },
+  { img: 'Zenurik_Pol%28xBlack%29.svg?8b7f2', t: { en: 'Zenurik', 'pt-BR': 'Zenurik' },
+    d: { en: 'Warframe augments and some melee stances.', 'pt-BR': 'Augments de Warframe e algumas posturas de melee.' } },
+  { img: 'Unairu_Pol%28xBlack%29.svg?b9372', t: { en: 'Unairu', 'pt-BR': 'Unairu' },
+    d: { en: 'Certain melee stance mods.', 'pt-BR': 'Certas posturas de melee.' } },
+  { img: 'Penjaga_Pol%28xBlack%29.svg?39944', t: { en: 'Penjaga', 'pt-BR': 'Penjaga' },
+    d: { en: 'Companion ability mods.', 'pt-BR': 'Mods de habilidade de companheiro.' } },
+  { img: 'Umbra_Pol%28xBlack%29.svg?008d1', t: { en: 'Umbra', 'pt-BR': 'Umbra' },
+    d: { en: 'Umbral mods — applied only with an Umbra Forma.', 'pt-BR': 'Mods Umbral — aplicada só com uma Forma Umbra.' } },
+  { img: 'Any_Pol%28xWhite%29.png?2c348', light: true, t: { en: 'Universal (Any)', 'pt-BR': 'Universal (Any)' },
+    d: { en: 'From Omni Forma — fits any mod (except Umbra) at half cost.', 'pt-BR': 'Da Forma Omni — serve pra qualquer mod (menos Umbra) por metade do custo.' } },
 ];
 
 const FORMA_TIPS = [
@@ -109796,54 +110070,167 @@ function renderFormaSection() {
   const L = o => (o && (o[loc] || o.en)) || '';
   const esc = relicEsc;
 
-  const items = FORMA_ITEMS.map(c =>
-    `<div class="mr-earn-card"><span class="nw-stat">${esc(c.k)}</span>`
-    + `<span class="mr-earn-t">${esc(L(c.t))}</span>`
-    + `<span class="mr-earn-d">${esc(L(c.d))}</span></div>`).join('');
+  const card = it => {
+    const badge = it.k ? ` <span class="forma-badge">${esc(it.k)}</span>` : '';
+    return `<div class="forma-card"><img class="forma-icon" src="https://wiki.warframe.com/images/${it.img}" alt="" loading="lazy" onerror="this.style.display='none'">`
+      + `<div class="forma-card-body"><span class="forma-card-name">${esc(L(it.t))}${badge}</span>`
+      + `<span class="forma-card-desc">${L(it.d)}</span></div></div>`;  // desc confiável: permite <b> inline
+  };
   const term = arr => arr.map(p =>
     `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
   const tips = FORMA_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
+  const pols = POL_TYPES.map(p =>
+    `<div class="pol-item"><img class="pol-icon${p.light ? ' is-light' : ''}" src="https://wiki.warframe.com/images/${p.img}" alt="" loading="lazy" onerror="this.style.display='none'">`
+    + `<div class="pol-item-body"><span class="pol-name">${esc(L(p.t))}</span>`
+    + `<span class="pol-desc">${esc(L(p.d))}</span></div></div>`).join('');
 
   const T = {
     items: { en: 'Orokin catalysts (“potatoes”)', 'pt-BR': 'Catalisadores Orokin (“batatas”)' },
     forma: { en: 'Forma', 'pt-BR': 'Forma' },
+    pol:   { en: 'Polarity types', 'pt-BR': 'Tipos de polaridade' },
+    polSub:{ en: 'Each slot symbol is its polarity. It does NOT restrict which mods fit — matching just halves the cost (and mismatching adds ~25%). The themes below are only loose/historical.', 'pt-BR': 'O símbolo de cada slot é a polaridade dele. Ela NÃO limita quais mods entram — combinar só reduz o custo pela metade (e não combinar soma ~25%). Os "temas" abaixo são só históricos.' },
+    fix:   { en: 'Put a polarity on the wrong slot? It’s not wasted — once an item is polarized, the Swap Polarity option moves existing polarities between slots for free (the Stance slot is the exception), or an extra Forma can change one.', 'pt-BR': 'Colocou uma polaridade no slot errado? Não foi desperdício — depois que o item já tem ao menos uma polarização, a opção Swap Polarity (Trocar Polaridade) move as polaridades entre os slots de graça (o slot de Stance é a exceção), ou uma Forma extra troca uma.' },
     types: { en: 'Forma variants', 'pt-BR': 'Tipos de Forma' },
     tips:  { en: 'Good to know', 'pt-BR': 'Bom saber' },
   };
 
   el.innerHTML =
     `<h4 class="sc-h">${esc(L(T.items))}</h4>`
-    + `<div class="mr-earn nw-acts">${items}</div>`
+    + `<div class="forma-grid">${FORMA_ITEMS.map(card).join('')}</div>`
     + `<h4 class="sc-h">${esc(L(T.forma))}</h4>`
     + `<dl class="sc-terms">${term(FORMA_HOW)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.pol))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.polSub))}</p>`
+    + `<div class="pol-grid">${pols}</div>`
+    + `<div class="gloss-callout"><span class="gloss-callout-ico" aria-hidden="true">🔧</span><span class="gloss-callout-text">${esc(L(T.fix))}</span></div>`
     + `<h4 class="sc-h">${esc(L(T.types))}</h4>`
-    + `<dl class="sc-terms">${term(FORMA_TYPES)}</dl>`
+    + `<div class="forma-grid">${FORMA_TYPES.map(card).join('')}</div>`
     + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
     + `<ul class="sc-tips">${tips}</ul>`;
 }
 
 // ── Rivens glossary section ──────────────────────────────────────────────────
 
+// ciclo de vida do Riven (imagens do usuário): oculto → desafio → revelado
+const RIVEN_FLOW = [
+  { img: 'riven-veiled.png', t: { en: '1. Veiled', 'pt-BR': '1. Oculto' },
+    d: { en: 'A new Riven — stats hidden.', 'pt-BR': 'Um Riven novo — stats ocultos.' } },
+  { img: 'riven-challenge.png', t: { en: '2. Challenge', 'pt-BR': '2. Desafio' },
+    d: { en: 'Equip it and complete its challenge.', 'pt-BR': 'Equipe e complete o desafio dele.' } },
+  { img: 'riven-unveiled.png', t: { en: '3. Unveiled', 'pt-BR': '3. Revelado' },
+    d: { en: 'Stats, polarity and MR revealed.', 'pt-BR': 'Stats, polaridade e MR revelados.' } },
+];
+
 const RIVEN_HOW = [
-  { t: { en: 'Veiled → unveil', 'pt-BR': 'Velado → desvendar' },
-    d: { en: 'A new Riven starts veiled. Equip it and complete the Riven Challenge it shows (in any mission) to reveal its stats, polarity and Mastery requirement (MR 8–16, scaling with disposition).', 'pt-BR': 'Um Riven novo vem velado. Equipe-o e complete o Desafio de Riven que ele mostra (em qualquer missão) pra revelar os stats, a polaridade e o requisito de Maestria (MR 8–16, escala com a disposition).' } },
+  { t: { en: 'Veiled → unveiled', 'pt-BR': 'Oculto → revelado' },
+    d: { en: 'A veiled Riven is bound to a weapon category (Rifle, Pistol, Shotgun, Melee…), not a specific weapon — so you can equip it on ANY weapon of that category. Complete its challenge with it equipped, and on unveil it locks to a RANDOM weapon of that category (and its variants), with stat values scaled by that weapon’s disposition. You can only have one Riven equipped at a time.', 'pt-BR': 'Um Riven oculto está preso a uma categoria de arma (Rifle, Pistola, Shotgun, Melee…), não a uma arma específica — então você pode equipá-lo em QUALQUER arma daquela categoria. Complete o desafio com ele equipado e, ao revelar, ele trava numa arma ALEATÓRIA da categoria (e suas variantes), com os valores dos stats escalados pela disposition dessa arma. Você só pode ter um Riven equipado por vez.' } },
   { t: { en: 'Stats & curse', 'pt-BR': 'Stats e maldição' },
-    d: { en: 'It carries 2–3 positive bonuses and sometimes 1 negative (a curse). A curse on a stat you don’t care about (−Zoom, −Recoil…) is great — it actually makes the positives stronger.', 'pt-BR': 'Tem 2–3 bônus positivos e, às vezes, 1 negativo (maldição). Uma maldição num stat que você não usa (−Zoom, −Recuo…) é ótima — ela ainda deixa os positivos mais fortes.' } },
-  { t: { en: 'Tied to one weapon', 'pt-BR': 'Preso a uma arma' },
-    d: { en: 'Each Riven works on a single weapon (and its variants), and you can equip only one at a time.', 'pt-BR': 'Cada Riven serve só pra uma arma (e suas variantes), e você só pode equipar um por vez.' } },
+    d: { en: 'It carries 2–3 positive bonuses and sometimes 1 negative (a curse). A curse on a stat you don’t care about (−Zoom, +Recoil…) is great — it actually makes the positives stronger.', 'pt-BR': 'Tem 2–3 bônus positivos e, às vezes, 1 negativo (maldição). Uma maldição num stat que você não usa (−Zoom, +Recuo…) é ótima — ela ainda deixa os positivos mais fortes.' } },
 ];
 const RIVEN_DEEP = [
-  { t: { en: 'Disposition', 'pt-BR': 'Disposition' },
-    d: { en: 'A ●1–5 dot value (0.5 to 1.55) that scales the strength of every Riven stat. The LESS popular the weapon, the HIGHER its disposition — weak weapons get huge bonuses, meta ones get small. DE re-tunes it about every 3 months.', 'pt-BR': 'Um valor de ●1–5 pontos (0,5 a 1,55) que escala a força de todo stat do Riven. Quanto MENOS popular a arma, MAIOR a disposition — armas fracas ganham bônus enormes, as meta ganham pequenos. A DE reajusta a cada ~3 meses.' } },
-  { t: { en: 'Re-rolling (Kuva)', 'pt-BR': 'Rerolar (Kuva)' },
-    d: { en: 'Don’t like the roll? Re-roll it with Kuva — the cost climbs each time, from 900 up to a 3,500 Kuva cap. Every roll re-randomizes everything.', 'pt-BR': 'Não curtiu os stats? Rerole com Kuva — o custo sobe a cada vez, de 900 até travar em 3.500 Kuva. Cada roll re-sorteia tudo.' } },
-  { t: { en: 'Where they come from', 'pt-BR': 'De onde vêm' },
-    d: { en: 'Sorties, the Steel Path, Archon Hunts, Acrithis (15 Pathos Clamps), Nightwave — plus one free from The War Within. Riven Slivers: collect 10 and Palladino (Iron Wake) trades them for a veiled Riven, once a week.', 'pt-BR': 'Sortie, Percurso de Aço, Archon Hunt, Acrithis (15 Pathos Clamps), Nightwave — e 1 grátis na quest The War Within. Riven Slivers: junte 10 e a Palladino (Iron Wake) troca por um Riven velado, 1×/semana.' } },
+  { html: true, t: { en: 'Re-rolling (Kuva)', 'pt-BR': 'Rerolar (Kuva)' },
+    d: { en: 'Don’t like the roll? Re-roll it with <img class="gloss-ico" src="https://wiki.warframe.com/images/Kuva.png?0db18" alt="" onerror="this.style.display=\'none\'"><button type="button" class="gloss-link" onclick="goToGlossarySection(\'kuva\')">Kuva</button> — the cost climbs each time, from 900 up to a 3,500 Kuva cap. Every roll re-randomizes everything.', 'pt-BR': 'Não curtiu os stats? Rerole com <img class="gloss-ico" src="https://wiki.warframe.com/images/Kuva.png?0db18" alt="" onerror="this.style.display=\'none\'"><button type="button" class="gloss-link" onclick="goToGlossarySection(\'kuva\')">Kuva</button> — o custo sobe a cada vez, de 900 até travar em 3.500 Kuva. Cada roll re-sorteia tudo.' } },
+  { html: true, t: { en: 'Where they come from', 'pt-BR': 'De onde vêm' },
+    d: { en: '<button type="button" class="gloss-link" onclick="goToGlossarySection(\'sorties\')">Sorties</button>, the <button type="button" class="gloss-link" onclick="goToGlossarySection(\'steel-path\')">Steel Path</button>, <button type="button" class="gloss-link" onclick="goToGlossarySection(\'archon-hunts\')">Archon Hunts</button>, Acrithis (15 <img class="gloss-ico" src="https://wiki.warframe.com/images/PathosClamp.png?888cf" alt="" onerror="this.style.display=\'none\'">Pathos Clamps), <button type="button" class="gloss-link" onclick="goToGlossarySection(\'nightwave\')">Nightwave</button> — plus one free from The War Within. <img class="gloss-ico" src="https://wiki.warframe.com/images/RivenSliver.png?55597" alt="" onerror="this.style.display=\'none\'">Riven Slivers: collect 10 and Palladino (Iron Wake) trades them for a veiled Riven, once a week.', 'pt-BR': '<button type="button" class="gloss-link" onclick="goToGlossarySection(\'sorties\')">Sortie</button>, <button type="button" class="gloss-link" onclick="goToGlossarySection(\'steel-path\')">Percurso de Aço</button>, <button type="button" class="gloss-link" onclick="goToGlossarySection(\'archon-hunts\')">Archon Hunt</button>, Acrithis (15 <img class="gloss-ico" src="https://wiki.warframe.com/images/PathosClamp.png?888cf" alt="" onerror="this.style.display=\'none\'">Pathos Clamps), <button type="button" class="gloss-link" onclick="goToGlossarySection(\'nightwave\')">Nightwave</button> — e 1 grátis na quest The War Within. <img class="gloss-ico" src="https://wiki.warframe.com/images/RivenSliver.png?55597" alt="" onerror="this.style.display=\'none\'">Riven Slivers: junte 10 e a Palladino (Iron Wake) troca por um Riven oculto, 1×/semana.' } },
 ];
 const RIVEN_TIPS = [
   { en: 'Crit weapons want Critical Chance + Critical Damage + Multishot; status weapons want Status Chance + Multishot.', 'pt-BR': 'Armas de crit querem Chance de Crítico + Dano de Crítico + Multishot; armas de status querem Chance de Status + Multishot.' },
-  { en: 'Best curses to roll: −Zoom, −Recoil, −Faction Damage — they barely hurt.', 'pt-BR': 'Melhores maldições pra rolar: −Zoom, −Recuo, −Dano em Facção — quase não atrapalham.' },
 ];
+
+// Disposition dot tiers (●1–5). Lower popularity = more dots = stronger stats.
+const RIVEN_DISP = [
+  { n: 1, t: { en: 'Faint — meta / very used weapons', 'pt-BR': 'Faint — armas meta / muito usadas' } },
+  { n: 2, t: { en: 'Below average', 'pt-BR': 'Abaixo da média' } },
+  { n: 3, t: { en: 'Average', 'pt-BR': 'Média' } },
+  { n: 4, t: { en: 'Above average', 'pt-BR': 'Acima da média' } },
+  { n: 5, t: { en: 'Strong — rarely-used weapons', 'pt-BR': 'Strong — armas pouco usadas' } },
+];
+
+// Unveiling challenges (active only — retired ones excluded). place = star-chart link.
+const PLAINS = { slug: 'earth', label: { en: 'Plains of Eidolon (Earth)', 'pt-BR': 'Planícies de Eidolon (Terra)' } };
+const RIVEN_CHALLENGES = [
+  { c: { en: 'Kill enemies with Finishers', 'pt-BR': 'Matar inimigos com Finishers' }, frames: ['ash', 'excalibur', 'equinox', 'ivara', 'inaros'],
+    tip: { en: 'Open enemies to finishers — blind them (Excalibur), sleep them (Equinox/Ivara) or use Ash’s Teleport, then melee the finisher prompt. (Ash’s Teleport opens a finisher; his Blade Storm does not count.)', 'pt-BR': 'Deixe os inimigos abertos a finisher — cegue (Excalibur), durma (Equinox/Ivara) ou use o Teleport do Ash, e aperte o melee no prompt de finisher. (O Teleport do Ash abre finisher; o Blade Storm dele não conta.)' } },
+  { c: { en: 'Kill enemies while Sliding', 'pt-BR': 'Matar inimigos deslizando' }, frames: ['gauss', 'volt'],
+    tip: { en: 'Hold crouch while sprinting to slide, and kill during the slide. A fast frame and a high-fire-rate weapon let you chain slides through a crowd.', 'pt-BR': 'Segure agachar enquanto corre pra deslizar, e mate durante o slide. Um frame rápido + arma de cadência alta encadeiam slides numa horda.' } },
+  { c: { en: 'Kill enemies with Headshots', 'pt-BR': 'Matar com Headshots' }, frames: ['banshee', 'harrow'],
+    tip: { en: 'Use a precise weapon and aim for the head. Banshee’s Sonar marks weak spots; Harrow’s Covenant boosts headshot crit.', 'pt-BR': 'Use uma arma precisa e mire na cabeça. O Sonar da Banshee marca pontos fracos; o Covenant do Harrow aumenta o crit no headshot.' } },
+  { c: { en: 'Headshot unalerted Tusk Ballistas', 'pt-BR': 'Headshot em Tusk Ballistas desavisadas' }, frames: ['ivara', 'loki'], place: PLAINS,
+    tip: { en: 'Tusk Ballistas are the Grineer snipers up in the watchtowers around Plains camps. Stay invisible and headshot them before they spot you — they must be unalerted.', 'pt-BR': 'As Tusk Ballistas são as snipers Grineer nas torres dos acampamentos das Planícies. Fique invisível e atire na cabeça antes de ser visto — precisam estar desavisadas.' } },
+  { c: { en: 'Headshots from 75m+ away', 'pt-BR': 'Headshots a 75m+ de distância' }, frames: ['banshee'], place: PLAINS,
+    tip: { en: 'Use a sniper rifle on a wide-open tile (the Plains is ideal). Banshee’s Sonar helps land the distant headshots.', 'pt-BR': 'Use um rifle sniper num cenário aberto (as Planícies são ideais). O Sonar da Banshee ajuda nos headshots distantes.' } },
+  { c: { en: 'Kill enemies on a Dropship', 'pt-BR': 'Matar inimigos numa Dropship' }, frames: [], place: PLAINS,
+    tip: { en: 'In the Plains, shoot the Grineer still riding a Dropship before they deploy. Hit them while they’re hanging off the sides.', 'pt-BR': 'Nas Planícies, atire nos Grineer que ainda estão na Dropship antes de desembarcarem — pegue-os pendurados nas laterais.' } },
+  { c: { en: 'Catch fish without missing a throw', 'pt-BR': 'Pescar sem errar um arremesso' }, frames: [], place: PLAINS,
+    tip: { en: 'In any open world: equip a fishing spear, aim carefully (bait/dye help fish appear), and don’t throw at empty water — a miss resets it.', 'pt-BR': 'Em qualquer mundo aberto: equipe um arpão, mire com calma (iscas/tintas ajudam os peixes a aparecer) e não jogue na água vazia — errar zera o progresso.' } },
+  { c: { en: 'Catch 1 fish, mine 1 deposit, kill 1 enemy in 30s', 'pt-BR': 'Pescar 1, minerar 1 e matar 1 em 30s' }, frames: [], place: PLAINS,
+    tip: { en: 'Set up next to a fishing spot that has a mining vein and an enemy nearby, then do all three back-to-back within the timer.', 'pt-BR': 'Se posicione perto de um ponto de pesca que tenha uma veia de minério e um inimigo por perto, e faça os três em sequência dentro do tempo.' } },
+  { c: { en: 'Defense (lvl 30+) — objective takes no damage', 'pt-BR': 'Defesa (nv 30+) — alvo sem dano' }, frames: ['frost', 'limbo', 'gara'],
+    tip: { en: 'Only 3 waves — wall off the objective with Frost’s Snow Globe, Limbo’s Cataclysm or Gara’s Mass Vitrify so it takes no damage.', 'pt-BR': 'Só 3 ondas — cerque o alvo com Snow Globe do Frost, Cataclysm do Limbo ou Mass Vitrify da Gara pra ele não tomar dano.' } },
+  { c: { en: 'Exterminate (lvl 30+) undetected', 'pt-BR': 'Exterminar (nv 30+) sem ser detectado' }, frames: ['loki', 'ivara', 'ash', 'octavia'],
+    tip: { en: 'Bring a stealth frame and kill before alarms trip. Loki/Ash invisibility or Ivara’s Prowl let you clear it unseen.', 'pt-BR': 'Leve um frame furtivo e mate antes do alarme. Invisibilidade de Loki/Ash ou o Prowl da Ivara limpam sem ser visto.' } },
+  { c: { en: 'Solo Interception (lvl 30+) with a Hobbled Dragon Key', 'pt-BR': 'Interceptação solo (nv 30+) com Hobbled Dragon Key' }, frames: ['vauban', 'khora', 'nyx'],
+    tip: { en: 'Only 1 round. The Hobbled key just slows your sprint, so pick a frame that holds points without running — Vauban, Khora or Nyx lock enemies down.', 'pt-BR': 'Só 1 rodada. A Hobbled key só te deixa lento, então use um frame que segura pontos parado — Vauban, Khora ou Nyx travam os inimigos.' } },
+  { c: { en: 'Survival (lvl 30+) without killing anyone', 'pt-BR': 'Sobrevivência (nv 30+) sem matar ninguém' }, frames: ['limbo', 'loki', 'nyx', 'ivara'],
+    tip: { en: 'Just 5 minutes, and you can’t deal the killing blow — survive on life-support capsules and crowd control. Limbo’s rift (Stasis) or invisibility keeps you safe without kills.', 'pt-BR': 'Só 5 minutos, e você não pode dar o golpe final — sobreviva com cápsulas de suporte de vida e controle de grupo. A fenda do Limbo (Stasis) ou invisibilidade te mantêm vivo sem matar.' } },
+  { c: { en: 'Destroy Dargyns with a bow', 'pt-BR': 'Destruir Dargyns com um arco' }, frames: [], place: PLAINS,
+    tip: { en: 'Dargyns are the flying Grineer skiffs in the Plains. Equip a bow and shoot them (or their pilots) out of the sky.', 'pt-BR': 'Dargyns são as naves Grineer voadoras das Planícies. Equipe um arco e derrube-as (ou os pilotos).' } },
+  { c: { en: 'Destroy Vruush Turrets in Archwing', 'pt-BR': 'Destruir Torres Vruush em Archwing' }, frames: [],
+    tip: { en: 'Enter Archwing (the Plains has free Archwing, or run an Archwing mission) and destroy the Vruush anti-air turrets.', 'pt-BR': 'Entre em Archwing (as Planícies têm Archwing livre, ou rode uma missão de Archwing) e destrua as torres antiaéreas Vruush.' } },
+  { c: { en: 'Find all Caches (1–4)', 'pt-BR': 'Achar todos os Caches (1–4)' }, frames: [],
+    tip: { en: 'Run a Sabotage (or cache) mission and search the tileset for the hidden lockers — a Loot/Animal radar mod and an Loot frame (Nekros/Khora) help spot them.', 'pt-BR': 'Rode uma missão de Sabotagem (ou de caches) e vasculhe o cenário pelos armários escondidos — mods de radar e um frame de loot (Nekros/Khora) ajudam a achar.' } },
+  { c: { en: 'Find Syndicate Medallions (8–12)', 'pt-BR': 'Achar Medalhões de Sindicato (8–12)' }, frames: [],
+    tip: { en: 'Run a Syndicate alert and comb the tiles for hidden medallions (they ping on the minimap up close). A medallion-location guide saves time.', 'pt-BR': 'Rode um alerta de Sindicato e vasculhe os medalhões escondidos (eles pingam no mapa de perto). Um guia de localização economiza tempo.' } },
+  { c: { en: '3 headshot kills in one aim-glide', 'pt-BR': '3 headshots num único aim-glide' }, frames: ['zephyr'],
+    tip: { en: 'Jump and hold aim to slow-fall (aim glide), then headshot 3 enemies before you land. Zephyr floats longest; pick grouped, low-level enemies.', 'pt-BR': 'Pule e segure mirar pra planar (aim glide), e dê 3 headshots antes de cair. A Zephyr flutua mais; pegue inimigos agrupados e fracos.' } },
+  { c: { en: 'Kills in a row while wall dashing/clinging (no floor)', 'pt-BR': 'Abates seguidos em parede (sem tocar o chão)' }, frames: ['zephyr', 'titania'],
+    tip: { en: 'Stay off the ground: wall-latch (aim while touching a wall) and wall-dash between kills. Titania’s Razorwing or Zephyr make it easy.', 'pt-BR': 'Fique fora do chão: gruda na parede (mire encostado nela) e dê wall-dash entre os abates. Razorwing da Titania ou a Zephyr facilitam.' } },
+  { c: { en: 'Get the killing blow on Sentients', 'pt-BR': 'Dar o golpe final em Sentientes' }, frames: [], place: { slug: 'lua', label: { en: 'Lua', 'pt-BR': 'Lua' } },
+    tip: { en: 'Sentients spawn on Lua, Jupiter, Murex/Veil Proxima and Orphix (and the Plains at night). They adapt to damage — switch damage types to keep hurting them, but land the killing blow with your Warframe/weapon (Operator, Sentinel and Necramech hits don’t count).', 'pt-BR': 'Sentientes aparecem em Lua, Júpiter, Murex/Veil Proxima e Orphix (e nas Planícies à noite). Eles se adaptam ao dano — troque o tipo de dano pra continuar machucando, mas dê o golpe final com seu Warframe/arma (Operador, Sentinela e Necramech não contam).' } },
+  { c: { en: 'Kill many enemies (often with a modifier)', 'pt-BR': 'Matar muitos inimigos (às vezes com modificador)' }, frames: ['saryn', 'mesa', 'equinox', 'gara'],
+    tip: { en: 'Pick a high-density mission (Steel Path Survival/Exterminate or Sanctuary Onslaught) and a room-clearing frame. Watch for modifiers (no shields, time limit, a Dragon Key…).', 'pt-BR': 'Escolha uma missão de alta densidade (Sobrevivência/Extermínio do Percurso de Aço ou Sanctuary Onslaught) e um frame que limpa sala. Cuidado com modificadores (sem escudo, tempo, Dragon Key…).' } },
+  { c: { en: 'Consecutive headshots in Archwing (Plains)', 'pt-BR': 'Headshots seguidos em Archwing (Planícies)' }, frames: [], place: PLAINS,
+    tip: { en: 'Summon your Archwing in the Plains and headshot enemies in a row — aim for grouped Grineer near their camps.', 'pt-BR': 'Invoque o Archwing nas Planícies e dê headshots seguidos — mire em Grineer agrupados perto dos acampamentos.' } },
+  { c: { en: 'Sustain a 6× melee combo for 30s', 'pt-BR': 'Manter combo 6× de melee por 30s' }, frames: [],
+    tip: { en: 'Build the combo to 6× — that’s 100 hits (every 20 hits is another tier) — then keep hitting a crowd or a tanky enemy. Naramon’s Power Spike stops the combo decaying, and the Xoris holds it indefinitely.', 'pt-BR': 'Suba o combo até 6× — são 100 acertos (a cada 20 sobe um nível) — e siga batendo numa horda ou num inimigo tanque. O Power Spike do Naramon impede o combo de cair, e o Xoris segura ele pra sempre.' } },
+  { c: { en: 'Synthesize a Simaris target (no traps/abilities, Hobbled Key)', 'pt-BR': 'Sintetizar alvo do Simaris (sem armadilhas/habilidades, Hobbled Key)' }, frames: [],
+    tip: { en: 'Take a Synthesis task from Cephalon Simaris and scan the target’s glowing points — without Kinetic Siphon Traps or any Warframe ability. The Hobbled key only slows you.', 'pt-BR': 'Pegue uma tarefa de Síntese com o Cephalon Simaris e escaneie os pontos brilhantes do alvo — sem Kinetic Siphon Traps nem habilidade de Warframe. A Hobbled key só te deixa lento.' } },
+];
+
+// ── Riven challenge modal ────────────────────────────────────────────────────
+function openRivenChallenge(i) {
+  const ch = RIVEN_CHALLENGES[i];
+  if (!ch) return;
+  const modal = document.getElementById('riven-chal-modal');
+  if (!modal) return;
+  const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
+  const L = o => (o && (o[loc] || o.en)) || '';
+  const esc = relicEsc;
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+  document.getElementById('riven-chal-title').textContent = L(ch.c);
+  document.getElementById('riven-chal-tip').textContent = L(ch.tip);
+
+  const fr = document.getElementById('riven-chal-frames');
+  if (ch.frames && ch.frames.length) {
+    fr.innerHTML = `<span class="riven-chal-label">${esc(L({ en: 'Suggested Warframes', 'pt-BR': 'Warframes sugeridos' }))}</span>`
+      + `<div class="riven-chal-frame-row">${ch.frames.map(s =>
+        `<button type="button" class="riven-frame" onclick="goToArchetype('${s}'); closeRivenChal();">`
+        + `<img src="assets/icons/base/${s}.png" alt="" onerror="this.style.display='none'"><span>${esc(cap(s))}</span></button>`).join('')}</div>`;
+    fr.classList.remove('hidden');
+  } else { fr.innerHTML = ''; fr.classList.add('hidden'); }
+
+  const pl = document.getElementById('riven-chal-place');
+  if (ch.place) {
+    pl.innerHTML = `<button type="button" class="riven-place" onclick="goToStarChart('${ch.place.slug}'); closeRivenChal();">📍 ${esc(L(ch.place.label))}</button>`;
+    pl.classList.remove('hidden');
+  } else { pl.innerHTML = ''; pl.classList.add('hidden'); }
+
+  modal.classList.remove('hidden');
+}
+function closeRivenChal() {
+  document.getElementById('riven-chal-modal')?.classList.add('hidden');
+}
 
 function renderRivensSection() {
   const el = document.getElementById('rivens-gloss');
@@ -109851,16 +110238,35 @@ function renderRivensSection() {
   const loc = state.locale === 'pt-BR' ? 'pt-BR' : 'en';
   const L = o => (o && (o[loc] || o.en)) || '';
   const esc = relicEsc;
-  const term = arr => arr.map(p => `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+  const term = arr => arr.map(p => `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${p.html ? L(p.d) : esc(L(p.d))}</dd></div>`).join('');
+  const dots = n => '●'.repeat(n) + '○'.repeat(5 - n);
   const T = {
     how: { en: 'How it works', 'pt-BR': 'Como funciona' },
     deep: { en: 'Disposition, rolling & sources', 'pt-BR': 'Disposition, reroll e fontes' },
+    disp: { en: 'Disposition (●1–5, 0.5–1.55) scales the strength of every Riven stat — the less popular the weapon, the more dots. DE re-tunes it about every 3 months:', 'pt-BR': 'A disposition (●1–5, 0,5–1,55) escala a força de todo stat do Riven — quanto menos usada a arma, mais pontos. A DE reajusta a cada ~3 meses:' },
+    chal: { en: 'Unveiling challenges', 'pt-BR': 'Desafios de revelação' },
+    chalSub: { en: 'Tap a challenge for tips on completing it.', 'pt-BR': 'Toque num desafio pra ver dicas de como completá-lo.' },
     tips: { en: 'Good to know', 'pt-BR': 'Bom saber' },
     cta: { en: 'Evaluate or compare your Rivens →', 'pt-BR': 'Avalie ou compare seus Rivens →' },
   };
+  const dispScale = RIVEN_DISP.map(d =>
+    `<div class="riven-disp-row"><span class="riven-disp-dots">${dots(d.n)}</span><span class="riven-disp-t">${esc(L(d.t))}</span></div>`).join('');
+  const chalChips = RIVEN_CHALLENGES.map((ch, i) =>
+    `<button type="button" class="riven-chal-chip" onclick="openRivenChallenge(${i})">${esc(L(ch.c))}</button>`).join('');
+  const flow = RIVEN_FLOW.map(f =>
+    `<figure class="riven-flow-fig"><img src="assets/glossary/${f.img}" alt="" loading="lazy">`
+    + `<figcaption><span class="riven-flow-t">${esc(L(f.t))}</span><span class="riven-flow-d">${esc(L(f.d))}</span></figcaption></figure>`).join('');
+
   el.innerHTML =
-    `<h4 class="sc-h">${esc(L(T.how))}</h4><dl class="sc-terms">${term(RIVEN_HOW)}</dl>`
-    + `<h4 class="sc-h">${esc(L(T.deep))}</h4><dl class="sc-terms">${term(RIVEN_DEEP)}</dl>`
+    `<h4 class="sc-h">${esc(L(T.how))}</h4>`
+    + `<div class="riven-flow">${flow}</div>`
+    + `<dl class="sc-terms">${term(RIVEN_HOW)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.deep))}</h4>`
+    + `<p class="sc-sub">${esc(L(T.disp))}</p><div class="riven-disp">${dispScale}</div>`
+    + `<dl class="sc-terms">${term(RIVEN_DEEP)}</dl>`
+    + `<h4 class="sc-h">${esc(L(T.chal))}</h4>`
+    + `<details class="riven-chal"><summary>${esc(L({ en: `All challenges (${RIVEN_CHALLENGES.length})`, 'pt-BR': `Todos os desafios (${RIVEN_CHALLENGES.length})` }))}</summary>`
+    + `<p class="sc-sub">${esc(L(T.chalSub))}</p><div class="riven-chal-grid">${chalChips}</div></details>`
     + `<h4 class="sc-h">${esc(L(T.tips))}</h4><ul class="sc-tips">${RIVEN_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('')}</ul>`
     + `<button type="button" class="sc-cta" onclick="selectTab('rivens')">${esc(L(T.cta))}</button>`;
 }
@@ -110226,10 +110632,14 @@ function setupLightboxEvents() {
   document.getElementById('lightbox-backdrop')?.addEventListener('click', closeLightbox);
   document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
   document.getElementById('glossary-sections')?.addEventListener('click', e => {
-    const img = e.target.closest('.glossary-figure img, .mod-ui-fig img, .mod-pol-fig img, .el-ord-fig img');
+    const img = e.target.closest('.glossary-figure img, .mod-ui-fig img, .mod-pol-fig img, .el-ord-fig img, .riven-flow-fig img, .archon-img');
     if (img) openLightbox(img.src, img.alt);
   });
   document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const rc = document.getElementById('riven-chal-modal');
+      if (rc && !rc.classList.contains('hidden')) { e.preventDefault(); closeRivenChal(); return; }
+    }
     const modal = document.getElementById('lightbox-modal');
     if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
       e.preventDefault();
@@ -110552,6 +110962,7 @@ function setLocale(loc) {
   renderRivensSection();
   renderArcanesSection();
   renderHelminthSection();
+  renderArchonHuntsSection();
   renderElementOrder();
   renderGlossaryToc();
   applyTermTipsToGlossary();
@@ -113313,6 +113724,26 @@ function setupTabNav() {
     closeNav();
   });
 
+  // Idioma + créditos (.header-right): no desktop ficam no rodapé (alinhados à
+  // direita) pra liberar espaço no topo; no mobile voltam pro header. Mover o nó
+  // preserva os listeners (já ligados por ID no boot). matchMedia = breakpoint do drawer.
+  const headerRight = document.querySelector('.header-right');
+  const headerInner = document.querySelector('.header-inner');
+  const footerInner = document.getElementById('footer-inner');
+  if (headerRight && headerInner && footerInner) {
+    const mqMobile = window.matchMedia('(max-width: 600px)');
+    const placeHeaderRight = () => {
+      if (mqMobile.matches) {
+        // Mobile: header-right precisa ser o último filho do header-inner (3ª coluna do grid).
+        if (headerRight.parentElement !== headerInner) headerInner.appendChild(headerRight);
+      } else if (headerRight.parentElement !== footerInner) {
+        footerInner.appendChild(headerRight);
+      }
+    };
+    placeHeaderRight();
+    mqMobile.addEventListener('change', placeHeaderRight);
+  }
+
   document.getElementById('glossary-btn')?.addEventListener('click', () => { selectTab('glossary'); pushPath(); });
   document.getElementById('rivens-btn')?.addEventListener('click', () => { selectTab('rivens'); pushPath(); });
   document.getElementById('relics-btn')?.addEventListener('click', () => { selectTab('relics'); pushPath(); });
@@ -113334,6 +113765,7 @@ function setupTabNav() {
   setupRivenUploadEvents();
   setupWeaponPickerEvents();
   setupCreditsEvents();
+  setupContactPanel();
   setupLightboxEvents();
   setupQuestModalEvents();
   renderQuestsSection();
@@ -113353,6 +113785,7 @@ function setupTabNav() {
   renderRivensSection();
   renderArcanesSection();
   renderHelminthSection();
+  renderArchonHuntsSection();
   renderElementOrder();
   renderGlossaryToc();
   applyTermTipsToGlossary();

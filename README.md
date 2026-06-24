@@ -40,6 +40,13 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-24 — Archon Hunts, reward lists & a contact form
+- **New "Archon Hunts" glossary section** — how to unlock it, the three weekly Archons (Amar, Nira, Boreal) and their shards, the mission stages and levels, and the full reward table.
+- **Reward lists with icons** — Sortie and Archon Hunt rewards now show each item with its icon and drop chance.
+- **Polished Riven Mods section** — a visual veiled → challenge → unveiled walkthrough, links to related topics (Kuva, Sorties…), and a clearer take on how unveiling works.
+- **Desktop footer** — language and Credits moved to a footer so the navigation uses the full width of the screen.
+- **Contact form** — a new Contact button opens a quick form to send feedback, a bug report or an idea.
+
 #### 2026-06-23 — Glossary index, augment sources, tooltips & Modding Basics
 - **Glossary index** — a table of contents at the top jumps you to any section.
 - **Augment sources** — each Warframe ability augment now shows which syndicates sell it (with a link to the Syndicates entry), and each faction syndicate lists the Warframes that have augments there.
@@ -164,6 +171,13 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-24 — Caçada aos Archons, listas de recompensa e formulário de contato
+- **Nova seção "Caçada aos Archons" no Glossário** — como desbloquear, os três Archons semanais (Amar, Nira, Boreal) e seus fragmentos, os estágios e níveis das missões, e a tabela completa de recompensas.
+- **Listas de recompensa com ícones** — as recompensas de Sortie e da Caçada aos Archons agora mostram cada item com seu ícone e a chance de drop.
+- **Seção de Riven Mods melhorada** — um passo a passo visual oculto → desafio → revelado, links pra tópicos relacionados (Kuva, Sortie…) e uma explicação mais clara de como revelar funciona.
+- **Rodapé no desktop** — idioma e Créditos foram pro rodapé pra navegação usar a largura toda da tela.
+- **Formulário de contato** — um novo botão Contato abre um formulário rápido pra mandar feedback, reportar um bug ou sugerir uma ideia.
 
 #### 2026-06-23 — Índice do glossário, fontes de augment, tooltips e Modding Básico
 - **Índice do glossário** — um sumário no topo te leva direto pra qualquer seção.
