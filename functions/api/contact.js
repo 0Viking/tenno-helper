@@ -58,6 +58,24 @@ export async function onRequestPost({ request, env }) {
     + `<p><b>Subject:</b> ${esc(subject)}</p>`
     + `<p style="white-space:pre-wrap">${esc(message)}</p>`;
 
+  // Anexo opcional (base64). Cap defensivo (~5 MB de arquivo → ~7 MB em base64) + tipo permitido.
+  let attachments;
+  const att = body && body.attachment;
+  if (att && att.data && att.filename) {
+    if (typeof att.data !== 'string' || att.data.length > 7400000) return json({ error: 'attachment_too_large' }, 413);
+    if (!/^(image\/(png|jpeg|gif|webp)|application\/pdf)$/.test(att.type || '')) return json({ error: 'attachment_bad_type' }, 400);
+    attachments = [{ filename: clean(att.filename, 120), content: att.data }];
+  }
+
+  const mail = {
+    from: `Tenno Helper <${from}>`,
+    to: [to],
+    reply_to: email,
+    subject: `[${typeLabel}] ${subject}`,
+    html,
+  };
+  if (attachments) mail.attachments = attachments;
+
   let resp;
   try {
     resp = await fetch('https://api.resend.com/emails', {
@@ -66,13 +84,7 @@ export async function onRequestPost({ request, env }) {
         'authorization': 'Bearer ' + key,
         'content-type': 'application/json',
       },
-      body: JSON.stringify({
-        from: `Tenno Helper <${from}>`,
-        to: [to],
-        reply_to: email,
-        subject: `[${typeLabel}] ${subject}`,
-        html,
-      }),
+      body: JSON.stringify(mail),
     });
   } catch (e) {
     return json({ error: 'upstream_fetch_failed' }, 502);

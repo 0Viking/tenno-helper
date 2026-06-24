@@ -40,6 +40,11 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-24 — Donations & contact attachments
+- **Support the project** — a new "Support" button in the footer, with PayPal/card (international) and Pix (Brazil only, with a QR code and copy-paste code).
+- **Attach a file to the contact form** — optionally include an image or PDF (up to 5 MB), handy for bug reports.
+- **Stronger spam protection** on the contact form.
+
 #### 2026-06-24 — Archon Hunts, reward lists & a contact form
 - **New "Archon Hunts" glossary section** — how to unlock it, the three weekly Archons (Amar, Nira, Boreal) and their shards, the mission stages and levels, and the full reward table.
 - **Reward lists with icons** — Sortie and Archon Hunt rewards now show each item with its icon and drop chance.
@@ -171,6 +176,11 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-24 — Doações e anexos no contato
+- **Apoie o projeto** — um novo botão "Apoiar" no rodapé, com PayPal/cartão (internacional) e Pix (apenas no Brasil, com QR Code e código copia-e-cola).
+- **Anexo no formulário de contato** — opcionalmente inclua uma imagem ou PDF (até 5 MB), útil pra reportar bugs.
+- **Proteção anti-spam reforçada** no formulário de contato.
 
 #### 2026-06-24 — Caçada aos Archons, listas de recompensa e formulário de contato
 - **Nova seção "Caçada aos Archons" no Glossário** — como desbloquear, os três Archons semanais (Amar, Nira, Boreal) e seus fragmentos, os estágios e níveis das missões, e a tabela completa de recompensas.

@@ -142,7 +142,16 @@ const STRINGS = {
     contact_email: 'Email',
     contact_subject: 'Subject',
     contact_message: 'Message',
+    contact_attach: 'Attachment (optional)',
+    contact_attach_hint: 'Image or PDF, up to 5 MB.',
     contact_send: 'Send',
+    donate: 'Support',
+    donate_title: 'Support Tenno Helper',
+    donate_intro: 'Tenno Helper is free, but hosting, the domain and the photo-reading service aren’t. If it’s been useful, a small donation helps keep it alive — totally optional. Thank you! 💚',
+    donate_paypal: 'Donate with PayPal or card',
+    donate_pix_label: 'Pix (only in Brazil)',
+    donate_pix_help: 'Copy the code or scan the QR in your bank app.',
+    donate_copy: 'Copy',
     credits_title: 'Credits',
     credits_creator_label: 'Created by',
     credits_archetype_label: 'Archetype system',
@@ -165,6 +174,7 @@ const STRINGS = {
     credits_tech_label: 'Tech stack',
     credits_vision_desc: 'OCR for reading riven screenshots',
     credits_tesseract_desc: 'offline OCR fallback',
+    credits_qrcode_desc: 'Pix QR code on the donation panel',
     credits_thanks_label: 'Thanks',
     credits_thanks_text: 'To the Warframe community for screenshots, feedback and testing.',
     acquisition_title: 'Acquisition',
@@ -476,7 +486,16 @@ const STRINGS = {
     contact_email: 'Email',
     contact_subject: 'Assunto',
     contact_message: 'Mensagem',
+    contact_attach: 'Anexo (opcional)',
+    contact_attach_hint: 'Imagem ou PDF, até 5 MB.',
     contact_send: 'Enviar',
+    donate: 'Apoiar',
+    donate_title: 'Apoie o Tenno Helper',
+    donate_intro: 'O Tenno Helper é grátis, mas hospedagem, domínio e o serviço de leitura de prints não são. Se ele te ajudou, uma pequena doação ajuda a manter o projeto vivo — totalmente opcional. Obrigado! 💚',
+    donate_paypal: 'Doar com PayPal ou cartão',
+    donate_pix_label: 'Pix (apenas no Brasil)',
+    donate_pix_help: 'Copie o código ou escaneie o QR no app do banco.',
+    donate_copy: 'Copiar',
     credits_title: 'Créditos',
     credits_creator_label: 'Criado por',
     credits_archetype_label: 'Sistema de arquétipos',
@@ -499,6 +518,7 @@ const STRINGS = {
     credits_tech_label: 'Stack técnica',
     credits_vision_desc: 'OCR para leitura de prints de riven',
     credits_tesseract_desc: 'OCR de reserva (offline)',
+    credits_qrcode_desc: 'QR Code do Pix no painel de doação',
     credits_thanks_label: 'Agradecimentos',
     credits_thanks_text: 'À comunidade Warframe pelos prints, feedback e testes.',
     acquisition_title: 'Aquisição',
@@ -108330,6 +108350,15 @@ const PATCH_NOTES = {
   en: [
     {
       date: '2026-06-24',
+      title: 'Donations & contact attachments',
+      items: [
+        'Support the project — a new "Support" button in the footer, with PayPal/card (international) and Pix (Brazil only, with a QR code and copy-paste code).',
+        'Attach a file to the contact form — optionally include an image or PDF (up to 5 MB), handy for bug reports.',
+        'Stronger spam protection on the contact form.',
+      ]
+    },
+    {
+      date: '2026-06-24',
       title: 'Archon Hunts, reward lists & a contact form',
       items: [
         'New "Archon Hunts" glossary section — how to unlock it, the three weekly Archons (Amar, Nira, Boreal) and their shards, the mission stages and levels, and the full reward table.',
@@ -108460,6 +108489,15 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-24',
+      title: 'Doações e anexos no contato',
+      items: [
+        'Apoie o projeto — um novo botão "Apoiar" no rodapé, com PayPal/cartão (internacional) e Pix (apenas no Brasil, com QR Code e código copia-e-cola).',
+        'Anexo no formulário de contato — opcionalmente inclua uma imagem ou PDF (até 5 MB), útil pra reportar bugs.',
+        'Proteção anti-spam reforçada no formulário de contato.',
+      ]
+    },
     {
       date: '2026-06-24',
       title: 'Caçada aos Archons, listas de recompensa e formulário de contato',
@@ -108645,10 +108683,25 @@ function setupCreditsEvents() {
 }
 
 // ── Painel de contato (form → email via Cloudflare Function /api/contact) ─────
+const CONTACT_MAX_FILE = 5 * 1024 * 1024; // 5 MB
+// Lê um arquivo como base64 puro (sem o prefixo "data:...;base64,").
+function readContactFile(file) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => {
+      const s = String(r.result || '');
+      const i = s.indexOf(',');
+      resolve({ filename: file.name, type: file.type || 'application/octet-stream', data: i >= 0 ? s.slice(i + 1) : s });
+    };
+    r.onerror = () => reject(new Error('read_failed'));
+    r.readAsDataURL(file);
+  });
+}
 function openContactPanel() {
   const p = document.getElementById('contact-panel');
   if (!p) return;
   p.classList.remove('hidden');
+  p.dataset.openedAt = String(Date.now()); // armadilha de tempo (anti-spam)
   document.getElementById('contact-name')?.focus();
 }
 function closeContactPanel() {
@@ -108678,14 +108731,17 @@ function setupContactPanel() {
     if (kind) statusEl.classList.add(kind === 'ok' ? 'is-ok' : 'is-err');
   };
   const T = () => (state.locale === 'pt-BR'
-    ? { sending: 'Enviando…', ok: 'Mensagem enviada — obrigado!', err: 'Não foi possível enviar. Tente de novo mais tarde.', fill: 'Preencha todos os campos.', email: 'Email inválido.' }
-    : { sending: 'Sending…', ok: 'Message sent — thank you!', err: 'Could not send. Please try again later.', fill: 'Please fill in all fields.', email: 'Invalid email.' });
+    ? { sending: 'Enviando…', ok: 'Mensagem enviada — obrigado!', err: 'Não foi possível enviar. Tente de novo mais tarde.', fill: 'Preencha todos os campos.', email: 'Email inválido.', fileBig: 'Anexo muito grande (máx 5 MB).', fileType: 'Anexo deve ser imagem ou PDF.' }
+    : { sending: 'Sending…', ok: 'Message sent — thank you!', err: 'Could not send. Please try again later.', fill: 'Please fill in all fields.', email: 'Invalid email.', fileBig: 'Attachment too large (max 5 MB).', fileType: 'Attachment must be an image or PDF.' });
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const t = T();
     // Honeypot: se o campo escondido foi preenchido, é bot → finge sucesso e aborta.
     if (document.getElementById('contact-website')?.value) { setStatus(t.ok, 'ok'); form.reset(); return; }
+    // Armadilha de tempo: envio em menos de 2,5s do abrir = bot → finge sucesso e aborta.
+    const openedAt = Number(panel.dataset.openedAt || 0);
+    if (openedAt && Date.now() - openedAt < 2500) { setStatus(t.ok, 'ok'); form.reset(); return; }
 
     const payload = {
       type: document.getElementById('contact-type')?.value || '',
@@ -108697,6 +108753,16 @@ function setupContactPanel() {
     };
     if (!payload.name || !payload.email || !payload.subject || !payload.message) { setStatus(t.fill, 'err'); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) { setStatus(t.email, 'err'); return; }
+
+    // Anexo opcional: valida tipo + tamanho e converte pra base64.
+    const fileInput = document.getElementById('contact-file');
+    const file = fileInput?.files?.[0];
+    if (file) {
+      if (!/^(image\/(png|jpeg|gif|webp)|application\/pdf)$/.test(file.type)) { setStatus(t.fileType, 'err'); return; }
+      if (file.size > CONTACT_MAX_FILE) { setStatus(t.fileBig, 'err'); return; }
+      try { payload.attachment = await readContactFile(file); }
+      catch (err) { setStatus(t.err, 'err'); return; }
+    }
 
     submitBtn.disabled = true;
     setStatus(t.sending, null);
@@ -108714,6 +108780,70 @@ function setupContactPanel() {
     } finally {
       submitBtn.disabled = false;
     }
+  });
+}
+
+// ── Modal de doação (PayPal + PIX) ───────────────────────────────────────────
+// ⚠️ PREENCHER com os dados reais do usuário:
+//   PAYPAL_URL  = link PayPal.me (ex.: 'https://paypal.me/usuario')
+//   PIX_PAYLOAD = código "Pix Copia e Cola" (BR Code) de uma chave aleatória/email
+// Se PIX_PAYLOAD ficar vazio, a seção do Pix some (mostra só PayPal).
+const PAYPAL_URL = 'https://streamelements.com/viking_tropical/tip';
+// Pix Copia e Cola (BR Code) — gerado de chave aleatória via scripts/_pix_brcode.py.
+const PIX_PAYLOAD = '00020126580014br.gov.bcb.pix013648b98a4a-c5c7-4a6d-9735-9ae88badbf615204000053039865802BR5912TENNO HELPER6006BRASIL62070503***630429A2';
+
+function openDonateModal() {
+  const m = document.getElementById('donate-modal');
+  if (!m) return;
+  m.classList.remove('hidden');
+  // Gera o QR do Pix uma vez (lazy), quando o modal abre.
+  const qrBox = document.getElementById('donate-pix-qr');
+  if (qrBox && !qrBox.dataset.done && PIX_PAYLOAD && typeof qrcode === 'function') {
+    try {
+      const qr = qrcode(0, 'M');
+      qr.addData(PIX_PAYLOAD);
+      qr.make();
+      qrBox.innerHTML = `<img src="${qr.createDataURL(5, 8)}" alt="Pix QR Code" width="180" height="180">`;
+      qrBox.dataset.done = '1';
+    } catch (e) { qrBox.style.display = 'none'; }
+  }
+}
+function closeDonateModal() {
+  document.getElementById('donate-modal')?.classList.add('hidden');
+}
+function setupDonateModal() {
+  const btn = document.getElementById('donate-btn');
+  const modal = document.getElementById('donate-modal');
+  if (!btn || !modal) return;
+
+  // PayPal: aplica a URL (e esconde se não configurada).
+  const pp = document.getElementById('donate-paypal');
+  if (pp) {
+    if (PAYPAL_URL && !/SEU_USUARIO/.test(PAYPAL_URL)) pp.href = PAYPAL_URL;
+    else pp.style.display = 'none';
+  }
+  // PIX: preenche o código (e esconde a seção se não configurado).
+  const pixSection = document.getElementById('donate-pix');
+  const pixCode = document.getElementById('donate-pix-code');
+  if (PIX_PAYLOAD && pixCode) pixCode.value = PIX_PAYLOAD;
+  else if (pixSection) pixSection.style.display = 'none';
+
+  btn.addEventListener('click', openDonateModal);
+  document.getElementById('donate-modal-close')?.addEventListener('click', closeDonateModal);
+  document.getElementById('donate-modal-backdrop')?.addEventListener('click', closeDonateModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) { e.preventDefault(); closeDonateModal(); }
+  });
+
+  // Copiar o código Pix.
+  const copyBtn = document.getElementById('donate-pix-btn');
+  copyBtn?.addEventListener('click', async () => {
+    if (!PIX_PAYLOAD) return;
+    try { await navigator.clipboard.writeText(PIX_PAYLOAD); }
+    catch (e) { pixCode?.select(); document.execCommand && document.execCommand('copy'); }
+    const orig = copyBtn.textContent;
+    copyBtn.textContent = state.locale === 'pt-BR' ? 'Copiado!' : 'Copied!';
+    setTimeout(() => { copyBtn.textContent = orig; }, 1600);
   });
 }
 
@@ -113766,6 +113896,7 @@ function setupTabNav() {
   setupWeaponPickerEvents();
   setupCreditsEvents();
   setupContactPanel();
+  setupDonateModal();
   setupLightboxEvents();
   setupQuestModalEvents();
   renderQuestsSection();
