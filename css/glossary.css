@@ -1654,3 +1654,62 @@ mark.glossary-hl {
   padding: 6px 0;
 }
 
+/* ===== Archon Shards ===== */
+.shard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 14px; }
+.shard-card { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 8px; border: 1px solid #2a2a31; border-top: 2px solid var(--ac); border-radius: 8px; background: #16161a; text-align: center; }
+.shard-card-ics { display: flex; gap: 6px; align-items: center; }
+.shard-ic { width: 30px; height: 30px; object-fit: contain; }
+.shard-ic.is-tau { filter: drop-shadow(0 0 5px var(--ac, #fff)); }
+.shard-card-name { font-weight: 700; color: var(--ac); font-size: 14px; }
+.shard-card-cat { font-size: 11px; color: #9a9aa2; line-height: 1.3; }
+.shard-card-recipe { display: flex; align-items: center; gap: 4px; margin-top: 4px; font-size: 11px; color: #8a8a92; }
+.shard-card-recipe .shard-ic { width: 18px; height: 18px; }
+.shard-card-fusedtag { text-transform: uppercase; letter-spacing: 0.5px; font-size: 9px; color: #6f6f78; border: 1px solid #34343c; border-radius: 4px; padding: 1px 4px; }
+
+.shard-tables { display: grid; gap: 14px; margin: 0 0 4px; }
+.shard-tbl-wrap { overflow-x: auto; border: 1px solid #26262c; border-radius: 8px; }
+.shard-tbl { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 380px; }
+.shard-tbl caption { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #16161a; border-bottom: 2px solid var(--ac); text-align: left; }
+.shard-tbl caption .shard-ic { width: 22px; height: 22px; }
+.shard-tbl caption span { font-weight: 700; color: var(--ac); }
+.shard-tbl caption em { font-style: normal; font-size: 11px; color: #8a8a92; }
+.shard-tbl th, .shard-tbl td { padding: 6px 10px; text-align: left; border-bottom: 1px solid #222228; }
+.shard-tbl thead th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a8a92; background: #131316; }
+.shard-tbl td:first-child { color: #d6d6dd; }
+.shard-tbl td:not(:first-child), .shard-tbl th:not(:first-child) { text-align: right; white-space: nowrap; width: 1%; }
+.shard-tbl .is-tau { color: var(--ac); font-weight: 600; }
+.shard-sub { display: inline-block; padding-left: 14px; margin-top: 3px; font-size: 11.5px; color: #9a9aa2; }
+.shard-el { font-weight: 600; white-space: nowrap; }
+.shard-el-ic { width: 13px; height: 13px; object-fit: contain; vertical-align: -2px; margin-right: 1px; }
+.shard-tbl tbody tr:last-child td { border-bottom: none; }
+
+.shard-src-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 0 0 4px; }
+.shard-src-card { display: flex; flex-direction: column; gap: 7px; padding: 12px; border: 1px solid #2a2a31; border-radius: 8px; background: #16161a; }
+.shard-src-head { display: flex; align-items: center; gap: 8px; }
+.shard-src-ico { width: 22px; height: 22px; object-fit: contain; flex: none; }
+.shard-src-title { font-weight: 700; color: #eaffd6; font-size: 13.5px; }
+.shard-src-cad { margin-left: auto; font-size: 9px; text-transform: uppercase; letter-spacing: 0.5px; color: #8a8a92; border: 1px solid #34343c; border-radius: 4px; padding: 1px 6px; }
+.shard-src-desc { font-size: 12.5px; color: #b6b6bd; line-height: 1.5; margin: 0; flex: 1; }
+.shard-src-link { align-self: flex-start; display: inline-flex; align-items: center; gap: 5px; padding: 5px 11px; border: 1px solid var(--neon-color, #8fd14f); border-radius: 999px; background: rgba(143,209,79,0.08); color: var(--neon-color, #8fd14f); font: inherit; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+.shard-src-link:hover { background: rgba(143,209,79,0.18); }
+.shard-src-arrow { transition: transform 0.15s; }
+.shard-src-link:hover .shard-src-arrow { transform: translateX(2px); }
+
+/* Coalescent é estreito (2 entradas); Ascent leva o resto pra caber 3 entradas + "+" numa linha. */
+.shard-fuse-cols { display: grid; grid-template-columns: minmax(0, 320px) 1fr; gap: 18px; align-items: start; margin: 0 0 4px; }
+.shard-fuse-col { min-width: 0; }
+.shard-fuse-col .shard-fuse-list { margin-bottom: 0; }
+.shard-ascent-grid { display: grid; grid-template-rows: repeat(3, auto); grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; }
+.shard-fuse-list { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin: 0 0 14px; }
+.shard-fuse { display: flex; align-items: center; gap: 6px; padding: 6px 12px; min-height: 46px; box-sizing: border-box; border: 1px solid #26262c; border-radius: 8px; background: #16161a; flex-wrap: wrap; }
+.shard-fuse .shard-ic { width: 26px; height: 26px; }
+.shard-fuse-op { color: #6f6f78; font-weight: 700; }
+.shard-fuse-out { color: #eaffd6; margin-right: 4px; }
+.shard-stela { display: flex; align-items: center; gap: 5px; padding-left: 12px; margin-left: auto; border-left: 1px solid #2a2a31; font-size: 12px; color: #c9b96a; white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .shard-grid { grid-template-columns: repeat(2, 1fr); }
+  .shard-src-grid { grid-template-columns: 1fr; }
+  .shard-fuse-cols { grid-template-columns: 1fr; gap: 4px; }
+}
+

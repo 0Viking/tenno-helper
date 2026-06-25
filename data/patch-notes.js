@@ -2,10 +2,11 @@ const PATCH_NOTES = {
   en: [
     {
       date: '2026-06-25',
-      title: 'Arcanes & Helminth glossary sections',
+      title: 'Arcanes, Helminth & Archon Shards glossary sections',
       items: [
         'Arcanes — a new visual guide: what arcanes are, where they slot in (Warframe, weapons, Archwing…), how ranks and upgrade costs work, and the main arcane families.',
         'Helminth — how to unlock the Helminth, how subsuming and injecting abilities works, the secretion resources and their costs, and which ability each Warframe can give up (with a note when a subsumed ability is weakened).',
+        'Archon Shards — all six shard colors and their Tauforged versions, full effect tables (normal vs Tauforged) with status icons, every way to get them (with shortcuts to the Star Chart), and the Coalescent/Ascent fusion recipes with their Stela costs.',
       ]
     },
     {
@@ -124,10 +125,11 @@ const PATCH_NOTES = {
   'pt-BR': [
     {
       date: '2026-06-25',
-      title: 'Seções de Arcanos e Helminth no Glossário',
+      title: 'Seções de Arcanos, Helminth e Fragmentos de Archon no Glossário',
       items: [
         'Arcanos — um guia visual novo: o que são arcanos, onde encaixam (Warframe, armas, Archwing…), como funcionam os ranks e os custos de upgrade, e as principais famílias de arcanos.',
         'Helminth — como desbloquear o Helminth, como funciona subsumir e injetar habilidades, os recursos de secreção e seus custos, e qual habilidade cada Warframe pode ceder (com aviso quando a habilidade subsumida é enfraquecida).',
+        'Fragmentos de Archon — as seis cores de fragmento e suas versões Tauforged, tabelas completas de efeitos (normal vs Tauforged) com ícones de status, todas as formas de conseguir (com atalhos pro Mapa Estelar) e as receitas de fusão Coalescent/Ascent com seus custos em Stela.',
       ]
     },
     {

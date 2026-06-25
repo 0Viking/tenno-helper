@@ -40,9 +40,10 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
-#### 2026-06-25 — Arcanes & Helminth glossary sections
+#### 2026-06-25 — Arcanes, Helminth & Archon Shards glossary sections
 - **Arcanes** — a new visual guide: what arcanes are, where they slot in (Warframe, weapons, Archwing…), how ranks and upgrade costs work, and the main arcane families.
 - **Helminth** — how to unlock the Helminth, how subsuming and injecting abilities works, the secretion resources and their costs, and which ability each Warframe can give up (with a note when a subsumed ability is weakened).
+- **Archon Shards** — all six shard colors and their Tauforged versions, full effect tables (normal vs Tauforged) with status icons, every way to get them (with shortcuts to the Star Chart), and the Coalescent/Ascent fusion recipes with their Stela costs.
 
 #### 2026-06-24 — Archon Hunts, contact form & donations
 - **New "Archon Hunts" glossary section** — how to unlock it, the three weekly Archons (Amar, Nira, Boreal) and their shards, the mission stages and levels, and the full reward table.
@@ -170,9 +171,10 @@ O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne 
 
 ### Patches
 
-#### 2026-06-25 — Seções de Arcanos e Helminth no Glossário
+#### 2026-06-25 — Seções de Arcanos, Helminth e Fragmentos de Archon no Glossário
 - **Arcanos** — um guia visual novo: o que são arcanos, onde encaixam (Warframe, armas, Archwing…), como funcionam os ranks e os custos de upgrade, e as principais famílias de arcanos.
 - **Helminth** — como desbloquear o Helminth, como funciona subsumir e injetar habilidades, os recursos de secreção e seus custos, e qual habilidade cada Warframe pode ceder (com aviso quando a habilidade subsumida é enfraquecida).
+- **Fragmentos de Archon** — as seis cores de fragmento e suas versões Tauforged, tabelas completas de efeitos (normal vs Tauforged) com ícones de status, todas as formas de conseguir (com atalhos pro Mapa Estelar) e as receitas de fusão Coalescent/Ascent com seus custos em Stela.
 
 #### 2026-06-24 — Caçada aos Archons, formulário de contato e doações
 - **Nova seção "Caçada aos Archons" no Glossário** — como desbloquear, os três Archons semanais (Amar, Nira, Boreal) e seus fragmentos, os estágios e níveis das missões, e a tabela completa de recompensas.

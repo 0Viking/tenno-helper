@@ -333,6 +333,7 @@ function setLocale(loc) {
   renderArcanesSection();
   renderHelminthSection();
   renderArchonHuntsSection();
+  renderArchonShardsSection();
   renderElementOrder();
   renderGlossaryToc();
   applyTermTipsToGlossary();
@@ -3174,6 +3175,7 @@ function setupTabNav() {
   renderArcanesSection();
   renderHelminthSection();
   renderArchonHuntsSection();
+  renderArchonShardsSection();
   renderElementOrder();
   renderGlossaryToc();
   applyTermTipsToGlossary();
