@@ -8,7 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/archetypes.css">
+  <link rel="stylesheet" href="css/glossary.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/rivens.css">
+  <link rel="stylesheet" href="css/credits.css">
+  <link rel="stylesheet" href="css/acquisition.css">
+  <link rel="stylesheet" href="css/star-chart.css">
 </head>
 <body>
   <header class="site-header">
@@ -451,7 +458,6 @@
           <summary class="glossary-section-header">
             <span class="glossary-section-title" data-i18n="glossary_arcanes">Arcanes</span>
             <div class="glossary-section-meta">
-              <span class="glossary-tag tag-wip" data-i18n="glossary_tag_wip">Under construction</span>
               <span class="glossary-section-caret">▾</span>
             </div>
           </summary>
@@ -465,7 +471,6 @@
           <summary class="glossary-section-header">
             <span class="glossary-section-title" data-i18n="glossary_helminth">Helminth (Subsume)</span>
             <div class="glossary-section-meta">
-              <span class="glossary-tag tag-wip" data-i18n="glossary_tag_wip">Under construction</span>
               <span class="glossary-section-caret">▾</span>
             </div>
           </summary>
@@ -1119,6 +1124,18 @@
     </form>
   </div>
 
+  <!-- Modal de secreção do Helminth: ícone grande + lista completa de materiais/quantidades. -->
+  <div class="helm-sec-modal hidden" id="helminth-sec-modal" role="dialog" aria-modal="true" aria-labelledby="helminth-sec-modal-title">
+    <div class="helm-sec-modal-backdrop" id="helminth-sec-modal-backdrop" onclick="closeHelminthSecretion()"></div>
+    <div class="helm-sec-modal-content">
+      <button class="helm-sec-modal-close" id="helminth-sec-modal-close" type="button" aria-label="Close" onclick="closeHelminthSecretion()">×</button>
+      <img class="helm-sec-modal-ico" id="helminth-sec-modal-ico" src="" alt="">
+      <h3 class="helm-sec-modal-title" id="helminth-sec-modal-title">—</h3>
+      <p class="helm-sec-modal-sub" id="helminth-sec-modal-sub"></p>
+      <div class="helm-sec-modal-mats" id="helminth-sec-modal-mats"></div>
+    </div>
+  </div>
+
   <!-- Modal de doação (PayPal + PIX). Sem backend — só links e QR gerado no cliente. -->
   <div class="donate-modal hidden" id="donate-modal" role="dialog" aria-modal="true" aria-labelledby="donate-modal-title">
     <div class="donate-modal-backdrop" id="donate-modal-backdrop"></div>
@@ -1147,6 +1164,41 @@
   </div>
 
   <script src="assets/js/qrcode.min.js"></script>
-  <script src="script.js"></script>
+  <!-- App splitado (§24): dados primeiro, lógica (js/app.js) por último. Ordem = ordem original. -->
+  <script src="data/i18n.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="data/archetypes.js"></script>
+  <script src="data/warframes.js"></script>
+  <script src="data/augments.js"></script>
+  <script src="data/combat.js"></script>
+  <script src="data/weapons.js"></script>
+  <script src="data/star-chart-config.js"></script>
+  <script src="data/relics.js"></script>
+  <script src="data/resources.js"></script>
+  <script src="data/star-chart.js"></script>
+  <script src="data/patch-notes.js"></script>
+  <script src="js/ui-modals.js"></script>
+  <!-- Glossário: uma seção por arquivo (§24, ordem = original). -->
+  <script src="js/glossary/star-chart.js"></script>
+  <script src="js/glossary/mastery-rank.js"></script>
+  <script src="js/glossary/nightwave.js"></script>
+  <script src="js/glossary/sortie.js"></script>
+  <script src="js/glossary/arbitration.js"></script>
+  <script src="js/glossary/archon-hunts.js"></script>
+  <script src="js/glossary/steel-path.js"></script>
+  <script src="js/glossary/circuit.js"></script>
+  <script src="js/glossary/syndicates.js"></script>
+  <script src="js/glossary/crits.js"></script>
+  <script src="js/glossary/rotations.js"></script>
+  <script src="js/glossary/mission-types.js"></script>
+  <script src="js/glossary/modding.js"></script>
+  <script src="js/glossary/forma.js"></script>
+  <script src="js/glossary/rivens.js"></script>
+  <script src="js/glossary/arcanes.js"></script>
+  <script src="js/glossary/helminth.js"></script>
+  <script src="js/glossary/element-order.js"></script>
+  <script src="js/glossary/toc.js"></script>
+  <script src="js/glossary/quests.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

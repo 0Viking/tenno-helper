@@ -1,0 +1,1434 @@
+/* ========================================================================
+   Rivens
+   ======================================================================== */
+
+.riven-intro {
+  padding: 18px 20px;
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.riven-intro-title {
+  margin: 0 0 8px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 6px rgba(184, 136, 255, 0.6),
+    0 0 14px rgba(184, 136, 255, 0.3);
+}
+
+.riven-intro-text {
+  margin: 0 auto;
+  max-width: 760px;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.page-intro {
+  padding: 18px 20px;
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 18px;
+}
+.page-intro-title {
+  margin: 0 0 8px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 6px var(--neon-color, rgba(255, 255, 255, 0.4)),
+    0 0 14px color-mix(in srgb, var(--neon-color, #fff) 30%, transparent);
+}
+.page-intro-text {
+  margin: 0 auto;
+  max-width: 760px;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.riven-section {
+  margin-top: 20px;
+}
+
+/* Two-column comparison layout */
+.riven-columns {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0 1rem;
+  align-items: stretch;
+  margin-top: 20px;
+}
+
+.riven-column {
+  align-self: start;
+}
+
+.riven-col-vs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-shadow:
+    0 0 10px #b888ff,
+    0 0 28px rgba(184, 136, 255, 0.5);
+  padding: 0 0.75rem;
+}
+
+.riven-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #2a2a3a;
+}
+
+.riven-col-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #7070a0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.riven-clear-btn {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #2a2a40;
+  border-radius: 4px;
+  background: transparent;
+  color: #55556a;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.riven-clear-btn:hover {
+  border-color: #5555aa;
+  color: #9090cc;
+}
+
+@media (max-width: 680px) {
+  .riven-columns {
+    grid-template-columns: 1fr;
+  }
+  .riven-col-vs {
+    margin: 2rem 0 1.25rem;
+    font-size: 1.8rem;
+  }
+}
+
+.riven-section-label {
+  margin: 0 0 10px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.riven-pill-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.riven-pill {
+  --neon-color: #b888ff;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1.5px solid color-mix(in srgb, var(--neon-color) 45%, transparent);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, #fff 70%, transparent);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.15s ease;
+  min-width: 56px;
+}
+
+.riven-pill:hover {
+  opacity: 0.9;
+  border-color: color-mix(in srgb, var(--neon-color) 75%, transparent);
+}
+
+.riven-pill.active {
+  opacity: 1;
+  color: #fff;
+  background: color-mix(in srgb, var(--neon-color) 25%, rgba(0,0,0,0.6));
+  border: 2px solid var(--neon-color);
+  text-shadow: 0 0 5px var(--neon-color), 0 0 12px var(--neon-color);
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--neon-color) 70%, transparent),
+    0 0 24px color-mix(in srgb, var(--neon-color) 35%, transparent);
+}
+
+.riven-stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.riven-stat-row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 280px) 32px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: rgba(20, 20, 20, 0.6);
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  width: fit-content;
+  max-width: 100%;
+}
+.riven-stat-row.is-negative {
+  border-color: rgba(209, 69, 69, 0.4);
+  background: rgba(60, 25, 25, 0.4);
+}
+
+.riven-stat-value-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  padding: 4px 10px;
+  transition: border-color 0.15s;
+}
+.riven-stat-value-wrap:focus-within {
+  border-color: #b888ff;
+  box-shadow: 0 0 4px rgba(184, 136, 255, 0.4);
+}
+
+.riven-stat-value-wrap .riven-stat-value {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 4px 0;
+  color: #ddd;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  text-align: right;
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+.riven-stat-row.is-negative .riven-stat-value { color: #ff8585; }
+
+.riven-stat-unit {
+  color: #888;
+  font-size: 13px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  pointer-events: none;
+  min-width: 12px;
+  text-align: center;
+}
+
+.riven-stat-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #888;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.12s ease;
+}
+.riven-stat-remove:hover {
+  border-color: #d14545;
+  color: #d14545;
+  background: rgba(209, 69, 69, 0.08);
+}
+
+.riven-add-stat-btn {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1.5px dashed rgba(184, 136, 255, 0.45);
+  border-radius: 999px;
+  color: #b888ff;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.riven-add-stat-btn:hover {
+  background: rgba(184, 136, 255, 0.08);
+  border-style: solid;
+  border-color: #b888ff;
+  text-shadow: 0 0 4px rgba(184, 136, 255, 0.5);
+}
+.riven-add-stat-btn.hidden { display: none; }
+.riven-add-stat-icon {
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.riven-stat-select {
+  background: #0a0a0a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #ddd;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  padding: 6px 10px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.riven-stat-select:focus {
+  border-color: #b888ff;
+  box-shadow: 0 0 4px rgba(184, 136, 255, 0.4);
+}
+.riven-stat-row.is-negative .riven-stat-select {
+  border-color: rgba(209, 69, 69, 0.35);
+}
+
+.riven-evaluate-wrap {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.riven-evaluate-btn {
+  --neon-color: #b888ff;
+  background: color-mix(in srgb, var(--neon-color) 25%, rgba(0,0,0,0.7));
+  border: 2px solid var(--neon-color);
+  color: #fff;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 12px 36px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-shadow: 0 0 6px var(--neon-color), 0 0 14px var(--neon-color);
+  box-shadow:
+    0 0 16px color-mix(in srgb, var(--neon-color) 70%, transparent),
+    0 0 30px color-mix(in srgb, var(--neon-color) 40%, transparent);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.riven-evaluate-btn:hover { transform: scale(1.04); }
+.riven-evaluate-btn:active { transform: scale(0.97); }
+
+.riven-result {
+  margin-top: 26px;
+  padding: 22px 24px;
+  background: #0e0e0e;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  --neon-color: #b888ff;
+}
+
+.riven-score-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.riven-score-number {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 78px;
+  line-height: 1;
+  color: #fff;
+  text-shadow:
+    0 0 8px var(--neon-color),
+    0 0 22px var(--neon-color),
+    0 0 40px color-mix(in srgb, var(--neon-color) 70%, transparent);
+}
+
+.riven-score-meta { display: flex; flex-direction: column; gap: 4px; }
+.riven-score-verdict {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px currentColor;
+}
+.riven-score-outof {
+  color: #666;
+  font-size: 14px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+}
+
+.riven-breakdown-label {
+  margin: 0 0 12px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  border-bottom: 1px solid #222;
+  padding-bottom: 8px;
+}
+
+.riven-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.riven-breakdown-row {
+  display: grid;
+  grid-template-columns: 24px 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 4px;
+}
+
+.riven-breakdown-sign {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+.riven-breakdown-row.pos .riven-breakdown-sign { color: #4ec3ea; text-shadow: 0 0 4px #4ec3ea; }
+.riven-breakdown-row.neg .riven-breakdown-sign { color: #d14545; text-shadow: 0 0 4px #d14545; }
+
+.riven-breakdown-name { font-size: 14px; color: #ddd; }
+
+.riven-breakdown-tier {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+.riven-breakdown-tier[data-tier="S"]         { color: #f0c97a; text-shadow: 0 0 4px rgba(240,201,122,0.6); }
+.riven-breakdown-tier[data-tier="A"]         { color: #a3d142; text-shadow: 0 0 4px rgba(163,209,66,0.6); }
+.riven-breakdown-tier[data-tier="B"]         { color: #4ec3ea; text-shadow: 0 0 4px rgba(78,195,234,0.6); }
+.riven-breakdown-tier[data-tier="C"]         { color: #bbbbbb; }
+.riven-breakdown-tier[data-tier="D"]         { color: #777; }
+.riven-breakdown-tier[data-neg="beneficial"] { color: #a3d142; text-shadow: 0 0 4px rgba(163,209,66,0.6); }
+.riven-breakdown-tier[data-neg="neutral"]    { color: #bbbbbb; }
+.riven-breakdown-tier[data-neg="mild"]       { color: #e6a14a; }
+.riven-breakdown-tier[data-neg="harmful"]    { color: #d14545; text-shadow: 0 0 4px rgba(209,69,69,0.6); }
+
+.riven-breakdown-value {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: #ccc;
+  min-width: 60px;
+  text-align: right;
+}
+
+.riven-shape-note {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: rgba(184, 136, 255, 0.08);
+  border-left: 3px solid var(--neon-color, #b888ff);
+  border-radius: 4px;
+  color: #c9c9c9;
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Per-stat rationale row (sits under each breakdown row). */
+.riven-breakdown-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 4px;
+}
+.riven-breakdown-item .riven-breakdown-row {
+  background: transparent;
+  padding: 0;
+}
+.riven-breakdown-rationale {
+  color: #989898;
+  font-size: 12px;
+  line-height: 1.45;
+  padding-left: 36px; /* aligns with the stat name (after sign+gap) */
+  font-style: italic;
+}
+.riven-breakdown-override {
+  color: #e6a14a;
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Recommended panel — header + grid of sections. */
+.riven-rec-header {
+  margin: 24px 0 12px;
+  padding-top: 14px;
+  border-top: 1px solid #222;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #f0c97a;
+  text-shadow: 0 0 5px rgba(240, 201, 122, 0.4);
+}
+
+.riven-rec-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.riven-rec-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.riven-rec-section-label {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.riven-rec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(20, 20, 20, 0.45);
+  border-radius: 4px;
+  border-left: 2px solid transparent;
+}
+.riven-rec-item .riven-rec-row { padding: 0; background: transparent; }
+
+.riven-rec-row {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.riven-rec-item.wasted { border-left-color: #e6a14a; background: rgba(230, 161, 74, 0.05); }
+.riven-rec-item.avoid  { border-left-color: #d14545; background: rgba(209, 69, 69, 0.05); }
+
+.riven-rec-sign {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  text-align: center;
+  color: #4ec3ea;
+}
+.riven-rec-row.pos .riven-rec-sign { color: #4ec3ea; text-shadow: 0 0 4px #4ec3ea; }
+.riven-rec-row.neg .riven-rec-sign { color: #a3d142; text-shadow: 0 0 4px #a3d142; }
+.riven-rec-row.wasted .riven-rec-sign { color: #e6a14a; text-shadow: 0 0 4px #e6a14a; }
+.riven-rec-row.avoid  .riven-rec-sign { color: #d14545; text-shadow: 0 0 4px #d14545; }
+
+.riven-rec-name {
+  font-size: 14px;
+  color: #ddd;
+}
+
+.riven-rec-tier {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+.riven-rec-tier[data-tier="S"]         { color: #f0c97a; text-shadow: 0 0 4px rgba(240,201,122,0.6); }
+.riven-rec-tier[data-tier="A"]         { color: #a3d142; text-shadow: 0 0 4px rgba(163,209,66,0.6); }
+.riven-rec-tier[data-tier="B"]         { color: #4ec3ea; text-shadow: 0 0 4px rgba(78,195,234,0.6); }
+.riven-rec-tier[data-tier="C"]         { color: #bbbbbb; }
+.riven-rec-tier[data-tier="D"]         { color: #777; }
+.riven-rec-tier[data-neg="beneficial"] { color: #a3d142; text-shadow: 0 0 4px rgba(163,209,66,0.6); }
+.riven-rec-tier[data-neg="neutral"]    { color: #bbbbbb; }
+.riven-rec-tier[data-neg="mild"]       { color: #e6a14a; }
+.riven-rec-tier[data-neg="harmful"]    { color: #d14545; text-shadow: 0 0 4px rgba(209,69,69,0.6); }
+
+.riven-rec-rationale {
+  color: #989898;
+  font-size: 12px;
+  line-height: 1.45;
+  padding-left: 36px;
+  font-style: italic;
+}
+
+.riven-image-section { margin-top: 20px; }
+
+/* All riven sub-sections honor `.hidden` (no global rule for it). */
+.riven-section.hidden,
+.riven-image-section.hidden,
+.riven-evaluate-wrap.hidden,
+.riven-result.hidden,
+.riven-upload-zone.hidden,
+.riven-image-preview.hidden,
+.riven-ocr-status.hidden,
+.riven-ocr-banner.hidden {
+  display: none;
+}
+
+.riven-upload-zone {
+  border: 2px dashed #3a3a3a;
+  border-radius: 8px;
+  padding: 36px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+  background: rgba(20, 20, 20, 0.4);
+}
+.riven-upload-zone:hover,
+.riven-upload-zone.dragging {
+  border-color: #b888ff;
+  background: rgba(184, 136, 255, 0.07);
+  transform: translateY(-1px);
+}
+
+.riven-upload-icon {
+  font-size: 44px;
+  display: block;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 8px rgba(184, 136, 255, 0.5));
+}
+.riven-upload-prompt-text {
+  margin: 4px 0 6px;
+  color: #ddd;
+  font-size: 15px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+}
+.riven-upload-hint {
+  margin: 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.riven-image-preview {
+  margin-top: 14px;
+  padding: 14px;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  text-align: center;
+}
+.riven-image-preview img {
+  max-width: 300px;
+  max-height: 360px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 1px solid #2a2a2a;
+}
+.riven-image-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.riven-image-change-btn,
+.riven-image-remove-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: #bbb;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.riven-image-change-btn:hover { border-color: #b888ff; color: #fff; }
+.riven-image-remove-btn:hover {
+  border-color: #d14545;
+  color: #fff;
+  background: rgba(209, 69, 69, 0.10);
+}
+
+.riven-ocr-status {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(184, 136, 255, 0.07);
+  border: 1px solid rgba(184, 136, 255, 0.35);
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  grid-template-areas: 'spinner text' 'progress progress';
+  gap: 8px 10px;
+  align-items: center;
+}
+.riven-ocr-spinner {
+  grid-area: spinner;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(184, 136, 255, 0.25);
+  border-top-color: #b888ff;
+  border-radius: 50%;
+  animation: riven-spin 0.9s linear infinite;
+}
+.riven-ocr-status-text {
+  grid-area: text;
+  color: #ddd;
+  font-size: 13px;
+}
+.riven-ocr-progress-bar {
+  grid-area: progress;
+  height: 4px;
+  background: rgba(184, 136, 255, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.riven-ocr-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #b888ff, #d4b2ff);
+  box-shadow: 0 0 8px rgba(184, 136, 255, 0.6);
+  width: 0%;
+  transition: width 0.2s ease;
+}
+@keyframes riven-spin { to { transform: rotate(360deg); } }
+
+.riven-ocr-banner {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(163, 209, 66, 0.08);
+  border-left: 3px solid #a3d142;
+  border-radius: 4px;
+  color: #c9e08e;
+  font-size: 13px;
+}
+.riven-ocr-banner.error {
+  background: rgba(209, 69, 69, 0.08);
+  border-left-color: #d14545;
+  color: #e89898;
+}
+.riven-ocr-banner.success {
+  background: rgba(163, 209, 66, 0.08);
+  border-left-color: #a3d142;
+  color: #c9e08e;
+}
+
+.riven-ocr-disclaimer {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(235, 180, 52, 0.10);
+  border-left: 3px solid #ebb434;
+  border-radius: 4px;
+  color: #f0d486;
+  font-size: 13px;
+  line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.riven-ocr-disclaimer-icon {
+  flex-shrink: 0;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+@media (max-width: 600px) {
+  .riven-intro-title { font-size: 18px; }
+  .riven-stat-row { grid-template-columns: 100px 1fr 28px; gap: 8px; }
+  .riven-score-number { font-size: 60px; }
+  .riven-score-verdict { font-size: 18px; }
+  .riven-upload-zone { padding: 24px 16px; }
+  .riven-upload-icon { font-size: 36px; }
+  .riven-image-preview img { max-width: 100%; }
+}
+
+/* ========================================================================
+   Weapon picker
+   ======================================================================== */
+
+.riven-weapon-row { display: flex; gap: 10px; }
+
+.riven-weapon-btn {
+  --neon-color: #b888ff;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(10, 10, 10, 0.7);
+  border: 1.5px dashed color-mix(in srgb, var(--neon-color) 45%, transparent);
+  border-radius: 8px;
+  color: #bbb;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  text-align: left;
+}
+.riven-weapon-btn:hover {
+  border-color: var(--neon-color);
+  color: #fff;
+  background: rgba(184, 136, 255, 0.07);
+}
+.riven-weapon-btn.has-weapon {
+  border-style: solid;
+  border-color: var(--neon-color);
+  color: #fff;
+  background: rgba(184, 136, 255, 0.08);
+}
+.riven-weapon-btn .weapon-btn-icon { font-size: 18px; flex-shrink: 0; }
+.riven-weapon-btn .weapon-btn-icon-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 4px rgba(184, 136, 255, 0.35));
+}
+.riven-weapon-btn .weapon-btn-main { display: flex; flex-direction: column; flex: 1; gap: 2px; }
+.riven-weapon-btn .weapon-btn-name {
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 15px;
+}
+.riven-weapon-btn .weapon-btn-meta {
+  color: #999;
+  font-size: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.riven-weapon-btn .weapon-btn-meta .dots {
+  font-size: 1.05em;
+  letter-spacing: 2px;
+  color: var(--neon-color);
+  text-shadow: 0 0 4px var(--neon-color);
+}
+.riven-weapon-btn .weapon-btn-auto {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border: 1px solid #a3d142;
+  color: #a3d142;
+  border-radius: 999px;
+  text-shadow: 0 0 4px rgba(163, 209, 66, 0.5);
+}
+.riven-weapon-btn .weapon-btn-clear {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid #444;
+  color: #aaa;
+  border-radius: 999px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.riven-weapon-btn .weapon-btn-clear:hover { border-color: #d14545; color: #d14545; }
+
+/* Incarnon Mode toggle */
+.riven-incarnon-row {
+  margin-top: 10px;
+}
+/* Não há `.hidden` global — sem estas regras, classList.add('hidden') nestes
+   elementos não esconde nada (a row aparecia mesmo sem arma). */
+.riven-incarnon-row.hidden { display: none; }
+.riven-incarnon-auto.hidden { display: none; }
+.riven-incarnon-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.riven-incarnon-checkbox { display: none; }
+.riven-incarnon-toggle-track {
+  display: inline-flex;
+  align-items: center;
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: #333;
+  border: 1px solid #555;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+}
+.riven-incarnon-toggle-thumb {
+  position: absolute;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #888;
+  transition: left 0.2s, background 0.2s;
+}
+.riven-incarnon-checkbox:checked + .riven-incarnon-toggle-track {
+  background: #4a2a7a;
+  border-color: #b888ff;
+}
+.riven-incarnon-checkbox:checked + .riven-incarnon-toggle-track .riven-incarnon-toggle-thumb {
+  left: 18px;
+  background: #b888ff;
+}
+.riven-incarnon-text {
+  font-size: 14px;
+  color: #ddd;
+  font-weight: 500;
+}
+.riven-incarnon-checkbox:checked ~ .riven-incarnon-text {
+  color: #b888ff;
+}
+.riven-incarnon-hint {
+  font-size: 11px;
+  color: #777;
+}
+
+.riven-incarnon-auto {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #d8c06a;
+}
+
+/* ── Weapon conflict modal ─────────────────────────────────────────────── */
+.riven-conflict-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.riven-conflict-modal.hidden { display: none; }
+.riven-conflict-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+.riven-conflict-box {
+  position: relative;
+  background: #1a1a2e;
+  border: 1px solid #b888ff;
+  border-radius: 14px;
+  padding: 2rem 1.75rem 1.75rem;
+  max-width: 440px;
+  width: calc(100% - 2rem);
+  text-align: center;
+  box-shadow: 0 0 32px rgba(184, 136, 255, 0.25);
+}
+.riven-conflict-title {
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+}
+.riven-conflict-weapons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 1.25rem;
+}
+.riven-conflict-weapon-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 1.25rem 1rem;
+  border: 2px solid #b888ff;
+  border-radius: 12px;
+  background: rgba(184, 136, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+}
+.riven-conflict-weapon-btn:hover {
+  background: rgba(184, 136, 255, 0.17);
+  border-color: #d0aaff;
+  transform: translateY(-2px);
+}
+.riven-conflict-roll-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b888ff;
+  text-shadow: 0 0 6px rgba(184, 136, 255, 0.55);
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+}
+.riven-conflict-weapon-img {
+  width: 128px;
+  height: 128px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(184, 136, 255, 0.6));
+}
+.riven-conflict-weapon-name {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.4px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+}
+.riven-conflict-footer {
+  text-align: center;
+}
+.riven-conflict-clear-link {
+  background: #25253a;
+  border: 1px solid #444;
+  color: #aaa;
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.55rem 1.5rem;
+  border-radius: 8px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  letter-spacing: 0.4px;
+  transition: border-color 0.15s, color 0.15s;
+}
+.riven-conflict-clear-link:hover { border-color: #666; color: #ccc; }
+@media (max-width: 480px) {
+  .riven-conflict-weapons { flex-direction: column; }
+}
+
+.riven-result-meta {
+  font-size: 12px;
+  color: #9aa;
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #222;
+}
+
+/* Modal */
+
+.weapon-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.weapon-modal.hidden { display: none; }
+
+.weapon-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.weapon-modal-content {
+  position: relative;
+  width: min(960px, 100%);
+  max-height: 88vh;
+  background: #0c0c10;
+  border: 1px solid rgba(184, 136, 255, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(184, 136, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.weapon-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #1f1f22;
+}
+
+.weapon-modal-title {
+  margin: 0;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(184, 136, 255, 0.6);
+}
+
+.weapon-modal-close {
+  background: transparent;
+  border: 1px solid #333;
+  color: #ccc;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.weapon-modal-close:hover { border-color: #d14545; color: #d14545; }
+
+.weapon-modal-cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 14px 20px 8px;
+}
+.weapon-cat-tab {
+  --neon-color: #b888ff;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1.5px solid color-mix(in srgb, var(--neon-color) 35%, transparent);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ccc;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: all 0.15s ease;
+}
+.weapon-cat-tab:hover { opacity: 0.9; }
+.weapon-cat-tab.active {
+  opacity: 1;
+  color: #fff;
+  background: color-mix(in srgb, var(--neon-color) 25%, rgba(0,0,0,0.5));
+  border-color: var(--neon-color);
+  text-shadow: 0 0 4px var(--neon-color);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--neon-color) 50%, transparent);
+}
+.weapon-cat-tab.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.weapon-modal-search {
+  padding: 6px 20px 12px;
+}
+.weapon-modal-search input {
+  width: 100%;
+  background: #06060a;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 9px 14px;
+  color: #fff;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.weapon-modal-search input:focus { border-color: #b888ff; box-shadow: 0 0 6px rgba(184, 136, 255, 0.35); }
+
+.weapon-modal-body {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0;
+  min-height: 0;
+  flex: 1;
+  border-top: 1px solid #1f1f22;
+}
+
+.weapon-list {
+  border-right: 1px solid #1f1f22;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+.weapon-list-empty {
+  padding: 18px 16px;
+  color: #777;
+  font-size: 13px;
+  text-align: center;
+}
+
+.weapon-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+.weapon-list-item:hover { background: rgba(184, 136, 255, 0.05); }
+.weapon-list-item.active {
+  background: rgba(184, 136, 255, 0.1);
+  border-left-color: #b888ff;
+}
+.weapon-list-name {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #ddd;
+  flex: 1;
+}
+.weapon-list-item.active .weapon-list-name { color: #fff; }
+.weapon-list-dots {
+  color: #b888ff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 3px rgba(184, 136, 255, 0.6);
+}
+
+.weapon-list-family {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #f0c97a;
+  background: rgba(240, 201, 122, 0.1);
+  border: 1px solid rgba(240, 201, 122, 0.4);
+  padding: 2px 9px;
+  border-radius: 999px;
+  text-shadow: 0 0 3px rgba(240, 201, 122, 0.5);
+  flex-shrink: 0;
+  letter-spacing: 0.3px;
+}
+
+/* Visual grouping: thin separator between families + indent on non-base variants */
+.weapon-list-family-sep {
+  height: 1px;
+  margin: 4px 14px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(184, 136, 255, 0.18) 30%,
+    rgba(184, 136, 255, 0.18) 70%,
+    transparent 100%
+  );
+}
+
+/* Collapsible family header row — same padding/alignment as a regular item
+   so the weapon name lines up with the rest of the list. */
+.weapon-list-family-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-left: 3px solid transparent;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+  user-select: none;
+}
+.weapon-list-family-header:hover {
+  background: rgba(184, 136, 255, 0.06);
+}
+.weapon-list-family-header.expanded {
+  background: rgba(184, 136, 255, 0.04);
+}
+.weapon-list-family-header.has-selection {
+  border-left-color: #b888ff;
+}
+.weapon-list-family-header .weapon-list-name {
+  flex: 1;
+  font-weight: 700;
+  color: #e8d49a;
+}
+.weapon-list-family-header.expanded .weapon-list-name { color: #f0c97a; }
+
+/* Variant rows under an expanded family header */
+.weapon-list-item.is-variant {
+  padding-left: 36px;
+  position: relative;
+  background: rgba(184, 136, 255, 0.025);
+}
+.weapon-list-item.is-variant::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 10px;
+  height: 1px;
+  background: rgba(184, 136, 255, 0.5);
+}
+.weapon-list-item.is-variant.active::before {
+  background: #b888ff;
+}
+
+.weapon-family-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 201, 122, 0.5);
+  background: rgba(240, 201, 122, 0.07);
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  color: #e8d49a;
+  text-shadow: 0 0 3px rgba(240, 201, 122, 0.4);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.weapon-family-chip:hover {
+  background: rgba(240, 201, 122, 0.15);
+  border-color: rgba(240, 201, 122, 0.8);
+}
+
+.weapon-detail {
+  padding: 22px 24px;
+  overflow-y: auto;
+}
+.weapon-detail-empty {
+  color: #666;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+.weapon-detail-name {
+  margin: 0 0 6px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(184, 136, 255, 0.55);
+}
+.weapon-detail-subtitle { color: #888; font-size: 13px; margin: 0 0 16px; letter-spacing: 0.5px; }
+
+.weapon-detail-image-wrap {
+  margin: 0 0 16px;
+  padding: 12px;
+  background: rgba(184, 136, 255, 0.04);
+  border: 1px solid rgba(184, 136, 255, 0.18);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.weapon-detail-image-wrap.hidden { display: none; }
+.weapon-detail-image {
+  max-width: 260px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(184, 136, 255, 0.35));
+}
+
+.weapon-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 18px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  background: rgba(20, 20, 26, 0.6);
+  border: 1px solid #1f1f22;
+  border-radius: 6px;
+}
+.weapon-detail-grid-row { display: flex; gap: 8px; align-items: baseline; }
+.weapon-detail-grid-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #777;
+  min-width: 110px;
+}
+.weapon-detail-grid-value { color: #ddd; font-size: 14px; }
+.weapon-detail-grid-value.disp-dots { color: #b888ff; letter-spacing: 2px; text-shadow: 0 0 4px rgba(184, 136, 255, 0.5); }
+
+.weapon-detail-section { margin: 14px 0; }
+.weapon-detail-section-label {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin: 0 0 6px;
+}
+.weapon-detail-stat-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.weapon-stat-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+}
+.weapon-stat-chip[data-tier="S"]         { color: #f0c97a; text-shadow: 0 0 4px rgba(240,201,122,0.5); }
+.weapon-stat-chip[data-tier="A"]         { color: #a3d142; text-shadow: 0 0 4px rgba(163,209,66,0.5); }
+.weapon-stat-chip[data-tier="B"]         { color: #4ec3ea; text-shadow: 0 0 4px rgba(78,195,234,0.5); }
+.weapon-stat-chip[data-tier="C"]         { color: #bbbbbb; }
+.weapon-stat-chip[data-tier="D"]         { color: #777; }
+.weapon-stat-chip[data-neg="beneficial"] { color: #a3d142; }
+.weapon-stat-chip[data-neg="neutral"]    { color: #bbbbbb; }
+.weapon-stat-chip[data-neg="mild"]       { color: #e6a14a; }
+.weapon-stat-chip[data-neg="harmful"]    { color: #d14545; }
+
+.weapon-detail-notes {
+  margin: 12px 0 18px;
+  padding: 10px 14px;
+  border-left: 3px solid #b888ff;
+  background: rgba(184, 136, 255, 0.06);
+  border-radius: 4px;
+  color: #c9c9c9;
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.weapon-detail-use-btn {
+  --neon-color: #b888ff;
+  display: block;
+  margin: 20px auto 0;
+  background: color-mix(in srgb, var(--neon-color) 25%, rgba(0,0,0,0.7));
+  border: 2px solid var(--neon-color);
+  color: #fff;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-shadow: 0 0 5px var(--neon-color);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--neon-color) 60%, transparent);
+  transition: transform 0.1s;
+}
+.weapon-detail-use-btn:hover { transform: scale(1.04); }
+
+@media (max-width: 700px) {
+  .weapon-modal-content { max-height: 95vh; }
+  .weapon-modal-body { grid-template-columns: 1fr; }
+  .weapon-list { max-height: 220px; border-right: none; border-bottom: 1px solid #1f1f22; }
+  .weapon-detail-grid { grid-template-columns: 1fr; }
+  .weapon-detail-name { font-size: 20px; }
+}
+

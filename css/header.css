@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0a0a0a;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  /* Espaço pro rodapé fixo (desktop). Zerado no mobile, onde o rodapé some. */
+  padding-bottom: 64px;
+}
+
+/* ------- Header ------- */
+
+.site-header {
+  background: #050505;
+  border-bottom: 1px solid #1f1f1f;
+  padding: 10px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Nav buttons live in their own container so mobile can turn them into a
+   drawer without moving the logo. Desktop: inline row, same as before. */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Hamburger — hidden on desktop, shown in the mobile media query. */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 0 auto;
+  background: #ddd;
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.nav-toggle.open .nav-toggle-bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle.open .nav-toggle-bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Rodapé (desktop): idioma + créditos vivem aqui, alinhados à direita. O JS
+   move o .header-right pra cá no desktop e de volta pro header no mobile. */
+.site-footer {
+  background: #050505;
+  border-top: 1px solid #1f1f1f;
+  padding: 12px 24px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 49;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+/* Dropdown de idioma no rodapé abre pra CIMA (fica no fim da página). */
+.site-footer .dropdown-menu { top: auto; bottom: calc(100% + 6px); }
+
+/* ------- Painel de contato (canto inferior direito, estilo chat de suporte) ------- */
+.contact-icon { font-size: 13px; }
+.contact-panel {
+  --neon-color: #7fd13b;
+  position: fixed;
+  right: 20px;
+  bottom: 78px;
+  width: 340px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  background: #111114;
+  border: 1px solid #2a2a32;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  z-index: 60;
+  padding: 14px 16px 16px;
+  animation: contact-pop 0.16s ease-out;
+}
+.contact-panel.hidden { display: none; }
+@keyframes contact-pop { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.contact-panel-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.contact-panel-title { margin: 0; font-size: 16px; color: #fff; }
+.contact-panel-close { background: none; border: 0; color: #aaa; font-size: 22px; line-height: 1; cursor: pointer; padding: 0 4px; }
+.contact-panel-close:hover { color: #fff; }
+.contact-panel-intro { margin: 4px 0 12px; font-size: 12.5px; color: #9a9aa4; line-height: 1.35; }
+.contact-form { display: flex; flex-direction: column; gap: 9px; }
+.contact-field { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: #c8c8d0; }
+.contact-field input, .contact-field select, .contact-field textarea {
+  background: #1a1a20; border: 1px solid #2e2e38; border-radius: 6px; color: #f0f0f0;
+  font: inherit; font-size: 13px; padding: 8px 10px; width: 100%; box-sizing: border-box;
+}
+.contact-field textarea { resize: vertical; min-height: 72px; }
+.contact-field input[type="file"] { font-size: 12px; padding: 6px 8px; color: #c8c8d0; cursor: pointer; }
+.contact-field input[type="file"]::file-selector-button { background: #2a2a32; color: #e8e8ee; border: 1px solid #3a3a44; border-radius: 5px; padding: 5px 10px; margin-right: 8px; font: inherit; font-size: 12px; cursor: pointer; }
+.contact-file-hint { font-size: 10.5px; color: #7a7a82; }
+.contact-field input:focus, .contact-field select:focus, .contact-field textarea:focus {
+  outline: none; border-color: var(--neon-color);
+}
+.contact-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.contact-submit {
+  margin-top: 2px; background: var(--neon-color); color: #07120a; border: 0; border-radius: 6px;
+  font: inherit; font-weight: 700; font-size: 14px; padding: 10px; cursor: pointer;
+}
+.contact-submit:hover { filter: brightness(1.08); }
+.contact-submit:disabled { opacity: 0.55; cursor: default; }
+.contact-status { margin: 4px 0 0; font-size: 12px; min-height: 1em; line-height: 1.35; }
+.contact-status.is-ok { color: #7fd13b; }
+.contact-status.is-err { color: #e0685a; }
+@media (max-width: 600px) {
+  .contact-text { display: none; }
+  .contact-panel { right: 10px; left: 10px; bottom: 10px; width: auto; max-width: none; max-height: calc(100vh - 90px); }
+}
+
+/* ------- Modal de doação (PayPal + Pix) ------- */
+.donate-icon { color: #ff6b8a; font-size: 13px; }
+.donate-modal { position: fixed; inset: 0; z-index: 70; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.donate-modal.hidden { display: none; }
+.donate-modal-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.6); }
+.donate-modal-content {
+  position: relative; width: 380px; max-width: 100%; max-height: calc(100vh - 40px); overflow-y: auto;
+  background: #111114; border: 1px solid #2a2a32; border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6); padding: 18px 20px 20px;
+}
+.donate-modal-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.donate-modal-title { margin: 0; font-size: 18px; color: #fff; }
+.donate-modal-close { background: none; border: 0; color: #aaa; font-size: 24px; line-height: 1; cursor: pointer; padding: 0 4px; }
+.donate-modal-close:hover { color: #fff; }
+.donate-intro { margin: 8px 0 16px; font-size: 13px; color: #c0c0c8; line-height: 1.5; }
+.donate-paypal {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; box-sizing: border-box;
+  background: #0070ba; color: #fff; text-decoration: none; font-weight: 700; font-size: 14px; padding: 11px; border-radius: 8px;
+}
+.donate-paypal:hover { background: #005ea6; }
+.donate-pix { margin-top: 16px; border-top: 1px solid #24242c; padding-top: 14px; }
+.donate-pix-head { display: flex; align-items: center; gap: 6px; }
+.donate-pix-title { font-weight: 700; font-size: 14px; color: #fff; }
+.donate-pix-flag { width: 18px; height: 13px; object-fit: cover; border-radius: 2px; vertical-align: middle; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08); }
+.donate-pix-help { margin: 4px 0 12px; font-size: 12px; color: #9a9aa4; line-height: 1.4; }
+.donate-pix-qr { display: flex; justify-content: center; margin-bottom: 12px; }
+.donate-pix-qr img { border-radius: 8px; background: #fff; padding: 8px; display: block; }
+.donate-pix-copy { display: flex; gap: 6px; }
+.donate-pix-code { flex: 1; min-width: 0; background: #1a1a20; border: 1px solid #2e2e38; border-radius: 6px; color: #d0d0d8; font: inherit; font-size: 11px; padding: 8px 10px; }
+.donate-pix-btn { background: #7fd13b; color: #07120a; border: 0; border-radius: 6px; font: inherit; font-weight: 700; font-size: 13px; padding: 8px 14px; cursor: pointer; white-space: nowrap; }
+.donate-pix-btn:hover { filter: brightness(1.08); }
+@media (max-width: 600px) { .donate-text { display: none; } }
+
+.site-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+  filter:
+    drop-shadow(0 0 4px rgba(184, 136, 255, 0.5))
+    drop-shadow(0 0 10px rgba(184, 136, 255, 0.25));
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.lang-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* Hide the language name in the header button — keep just the flag so the
+ * nav row stays compact. The names still appear in the dropdown's lang-items. */
+.lang-name {
+  display: none;
+}
+
+.dropdown-menu-lang {
+  min-width: 200px;
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: none;
+  font-size: 13px;
+  letter-spacing: 0.2px;
+}
+
+.lang-item .flag {
+  flex-shrink: 0;
+}
+
+.lang-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lang-item.disabled:hover {
+  background: transparent;
+  color: #ccc;
+}
+
+.lang-item .soon {
+  margin-left: auto;
+  font-size: 10px;
+  color: #888;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.nav-button {
+  background: transparent;
+  border: 1px solid #333;
+  color: #ddd;
+  padding: 7px 11px;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.nav-button:hover {
+  border-color: #666;
+  color: #fff;
+}
+
+.caret {
+  font-size: 10px;
+  opacity: 0.7;
+  transition: transform 0.15s;
+}
+
+.nav-dropdown.open .caret {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  min-width: 220px;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  padding: 4px;
+}
+
+.dropdown-menu-lang {
+  left: auto;
+  right: 0;
+}
+
+.nav-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  color: #ccc;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.dropdown-item:hover {
+  background: #232323;
+  color: #fff;
+}
+
+.dropdown-item.active {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.dropdown-item.active::before {
+  content: '› ';
+  color: #888;
+}
+

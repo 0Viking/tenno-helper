@@ -1,0 +1,455 @@
+/* ========================================================================
+   Warframe acquisition box (abaixo das habilidades)
+   ======================================================================== */
+
+.warframe-acquisition {
+  margin-top: 18px;
+  padding: 16px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 26, 0.85) 0%,
+    rgba(184, 136, 255, 0.04) 100%
+  );
+  border: 1px solid #2a2a2a;
+  border-left: 3px solid #b888ff;
+  border-radius: 6px;
+}
+.warframe-acquisition.hidden { display: none; }
+
+.acquisition-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(184, 136, 255, 0.12);
+}
+
+.acquisition-title {
+  margin: 0;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #f0c97a;
+  text-shadow: 0 0 4px rgba(240, 201, 122, 0.45);
+}
+
+.acquisition-source-badge {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  color: #b888ff;
+  background: rgba(184, 136, 255, 0.08);
+  text-shadow: 0 0 3px rgba(184, 136, 255, 0.5);
+}
+/* Cores temáticas por tipo de fonte */
+.acquisition-source-badge[data-source="boss_drop"]        { color: #d14545; background: rgba(209, 69, 69, 0.08); }
+.acquisition-source-badge[data-source="quest_reward"]     { color: #4ec3ea; background: rgba(78, 195, 234, 0.08); }
+.acquisition-source-badge[data-source="dojo_research"]    { color: #a3d142; background: rgba(163, 209, 66, 0.08); }
+.acquisition-source-badge[data-source="syndicate"]        { color: #f0c97a; background: rgba(240, 201, 122, 0.08); }
+.acquisition-source-badge[data-source="cetus_offerings"],
+.acquisition-source-badge[data-source="fortuna_offerings"]{ color: #e6a14a; background: rgba(230, 161, 74, 0.08); }
+.acquisition-source-badge[data-source="nightwave"]        { color: #e040a8; background: rgba(224, 64, 168, 0.08); }
+.acquisition-source-badge[data-source="enemy_drop"]       { color: #b888ff; background: rgba(184, 136, 255, 0.08); }
+.acquisition-source-badge[data-source="railjack"]         { color: #4ec3a0; background: rgba(78, 195, 160, 0.08); }
+.acquisition-source-badge[data-source="duviri"]           { color: #c47c4a; background: rgba(196, 124, 74, 0.08); }
+
+.acquisition-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 14px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(184, 136, 255, 0.06);
+}
+.acquisition-row:first-of-type { border-top: none; }
+
+.acquisition-row-label {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  padding-top: 2px;
+}
+
+.acquisition-row-text {
+  color: #ccc;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.acquisition-recommended {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: rgba(240, 201, 122, 0.08);
+  border-left: 2px solid #f0c97a;
+  border-radius: 4px;
+}
+
+.acquisition-recommended-label {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #f0c97a;
+  margin-bottom: 4px;
+}
+
+.acquisition-recommended-text {
+  color: #e0e0e0;
+  font-size: 13px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* §16.6 — Craft cost (aggregated resource shopping list) */
+.acquisition-craft-cost {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(94, 192, 232, 0.04);
+  border: 1px solid rgba(94, 192, 232, 0.18);
+  border-radius: 6px;
+}
+.acquisition-craft-cost-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.acquisition-craft-cost-label {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #8ed3ed;
+}
+.acquisition-craft-cost-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+@media (max-width: 900px) {
+  .acquisition-craft-cost-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .acquisition-craft-cost-grid { grid-template-columns: 1fr; }
+}
+.craft-cost-pill {
+  background: transparent;
+  border: 1px solid transparent;
+  border-left: 3px solid var(--rarity-color, #444);
+  border-radius: 4px;
+  color: #ddd;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  min-width: 0;
+}
+.craft-cost-pill:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  border-left-color: var(--rarity-color, #888);
+  color: #fff;
+}
+.craft-cost-pill:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+.craft-cost-pill-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+.craft-cost-pill-icon-fallback {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  background: #222;
+  border-radius: 3px;
+}
+.craft-cost-pill-name {
+  flex: 1 1 auto;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+.craft-cost-pill-qty {
+  flex: 0 0 auto;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--rarity-color, #ccc);
+  background: color-mix(in srgb, var(--rarity-color, #888) 10%, transparent);
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid color-mix(in srgb, var(--rarity-color, #888) 40%, transparent);
+}
+
+/* §16.6 — Cross-frame parts (Chroma case) */
+.acquisition-requires-parts {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(232, 152, 92, 0.3);
+}
+.acquisition-requires-parts-header {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #e8985c;
+  margin-bottom: 10px;
+}
+.acquisition-donor-part {
+  margin-bottom: 14px;
+}
+.acquisition-donor-part:last-child {
+  margin-bottom: 0;
+}
+.acquisition-donor-part-title {
+  width: 100%;
+  background: rgba(232, 152, 92, 0.06);
+  border: 1px solid rgba(232, 152, 92, 0.25);
+  border-radius: 6px;
+  color: #ddd;
+  padding: 8px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  transition: background 0.12s, border-color 0.12s;
+}
+.acquisition-donor-part-title:hover {
+  background: rgba(232, 152, 92, 0.14);
+  border-color: rgba(232, 152, 92, 0.55);
+  color: #fff;
+}
+.acquisition-donor-part-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.acquisition-donor-part-label-wrap {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.acquisition-donor-part-name {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.acquisition-donor-part-meta {
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+  color: #aaa;
+  text-transform: uppercase;
+}
+.acquisition-donor-part-qty {
+  flex: 0 0 auto;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #e8985c;
+  background: rgba(232, 152, 92, 0.12);
+  padding: 2px 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(232, 152, 92, 0.4);
+}
+.acquisition-donor-part-arrow {
+  flex: 0 0 auto;
+  font-size: 13px;
+  color: #e8985c;
+  opacity: 0.7;
+}
+.acquisition-donor-part-stub {
+  font-size: 11px;
+  color: #888;
+  font-style: italic;
+  padding: 6px 12px;
+}
+
+/* §16.6 — Sub-frames (Equinox case) */
+.acquisition-sub-frames {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(184, 136, 255, 0.3);
+}
+.acquisition-sub-frames-header {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #b888ff;
+  margin-bottom: 10px;
+}
+.acquisition-sub-frame {
+  margin-bottom: 14px;
+}
+.acquisition-sub-frame:last-child {
+  margin-bottom: 0;
+}
+.acquisition-sub-frame-title {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #ddd;
+  margin-bottom: 6px;
+  padding-left: 10px;
+  border-left: 2px solid #b888ff;
+}
+
+.acquisition-star-chart-link {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: rgba(94, 192, 232, 0.08);
+  border: 1px solid rgba(94, 192, 232, 0.35);
+  border-radius: 6px;
+  color: #5ec0e8;
+  cursor: pointer;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  transition: border-color 0.12s, background 0.12s, color 0.12s, transform 0.08s;
+}
+.acquisition-star-chart-link:hover {
+  border-color: #5ec0e8;
+  background: rgba(94, 192, 232, 0.14);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.acquisition-star-chart-link-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+.acquisition-star-chart-link-label {
+  font-weight: 600;
+  text-shadow: 0 0 4px rgba(94, 192, 232, 0.4);
+}
+.acquisition-star-chart-link-target {
+  margin-left: auto;
+  color: #c9e0e8;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-transform: none;
+  font-weight: 500;
+}
+.acquisition-star-chart-link:hover .acquisition-star-chart-link-target {
+  color: #fff;
+}
+
+/* §20.5 — Alternative farms in Railjack. Same shape as the Star Chart link
+   above but tinted purple (Railjack tab theme) and rendered as a stacked
+   list of links since a frame can have multiple Proxima sources. */
+.acquisition-railjack-farms {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(184, 136, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.acquisition-railjack-farms-header {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #b888ff;
+  margin-bottom: 2px;
+}
+.acquisition-railjack-farm-link {
+  padding: 8px 12px;
+  background: rgba(184, 136, 255, 0.06);
+  border: 1px solid rgba(184, 136, 255, 0.3);
+  border-radius: 6px;
+  color: #ddd;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  transition: border-color 0.12s, background 0.12s, color 0.12s, transform 0.08s;
+}
+.acquisition-railjack-farm-link:hover {
+  border-color: rgba(184, 136, 255, 0.65);
+  background: rgba(184, 136, 255, 0.14);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.acquisition-railjack-farm-arrow {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #b888ff;
+  flex-shrink: 0;
+}
+.acquisition-railjack-farm-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.acquisition-railjack-farm-target {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #d4c5f0;
+}
+.acquisition-railjack-farm-link:hover .acquisition-railjack-farm-target {
+  color: #fff;
+  text-shadow: 0 0 6px rgba(184, 136, 255, 0.5);
+}
+.acquisition-railjack-farm-note {
+  font-size: 11.5px;
+  letter-spacing: 0.2px;
+  color: #aaa;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .acquisition-row { grid-template-columns: 1fr; gap: 4px; }
+  .acquisition-row-label { padding-top: 0; }
+  .acquisition-star-chart-link {
+    flex-wrap: wrap;
+  }
+  .acquisition-star-chart-link-target {
+    margin-left: 26px;
+    width: 100%;
+  }
+}
+

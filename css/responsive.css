@@ -1,0 +1,79 @@
+/* ------- Responsive ------- */
+
+@media (max-width: 960px) {
+  .warframe-grid { grid-template-columns: repeat(8, 1fr); }
+  .warframe-detail-body { flex-direction: column-reverse; }
+  .warframe-portrait-wrapper { flex: 0 0 auto; width: 100%; max-width: 320px; align-self: center; }
+}
+@media (max-width: 600px) {
+  .status-pill { font-size: 10px; padding: 5px 12px; }
+  .status-pill .status-icon { width: 14px; height: 14px; }
+  .status-info-title { font-size: 24px; gap: 10px; }
+  .status-info-title .info-icon { width: 26px; height: 26px; }
+  .status-faction-grid { grid-template-columns: 1fr; }
+  .status-intro-title { font-size: 22px; }
+
+  .stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .stat {
+    border-bottom: 1px solid #1f1f1f;
+  }
+  .stat:nth-child(3) {
+    border-right: none;
+  }
+  .stat input {
+    font-size: 26px;
+  }
+  .warframe-grid { grid-template-columns: repeat(6, 1fr); }
+  .warframe-card .name { font-size: 11px; }
+  .site-logo { height: 32px; }
+  .archetype-pill { font-size: 9px; padding: 5px 10px; }
+  .archetype-pill .sig-icon { width: 12px; height: 12px; }
+  .archetype-info-title { font-size: 26px; gap: 10px; }
+  .archetype-info-title .info-icon { width: 28px; height: 28px; }
+  .stat-pill { font-size: 10px; padding: 4px 10px 4px 8px; gap: 5px; }
+  .stat-pill .stat-icon { width: 14px; height: 14px; }
+  /* Mobile header: ☰ (left) · logo (center) · lang+credits (right). The nav
+     becomes a full-width drawer below the header, toggled by the hamburger.
+     Horizontal padding moves from .site-header to .header-inner so the drawer
+     can bleed edge-to-edge. Desktop is unaffected (all scoped to this query). */
+  .site-header { padding-left: 0; padding-right: 0; }
+  .header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 8px;
+    padding: 0 16px;
+  }
+  .nav-toggle { display: flex; justify-self: start; }
+  .header-left { gap: 8px; justify-self: center; }
+  .header-right { justify-self: end; }
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: #050505;
+    border-bottom: 1px solid #1f1f1f;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+    padding: 6px 0;
+    display: none;
+  }
+  .header-nav.open { display: flex; }
+  .header-nav .nav-button {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 13px 20px;
+    border-radius: 0;
+    font-size: 15px;
+  }
+  .lang-name { display: none; }
+  /* No mobile o idioma + créditos voltam pro header (via JS) → rodapé some. */
+  .site-footer { display: none; }
+  body { padding-bottom: 0; }
+}
+

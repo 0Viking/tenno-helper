@@ -1,0 +1,840 @@
+/* ------- Container ------- */
+
+.container {
+  max-width: 1100px;
+  margin: 24px auto 60px;
+  padding: 0 20px;
+}
+
+/* ------- Stats bar (filtro por atributo) ------- */
+
+.stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px;
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.stat-pill {
+  --neon-color: #888;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1.5px solid color-mix(in srgb, var(--neon-color) 45%, transparent);
+  padding: 5px 14px 5px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: color-mix(in srgb, #fff 70%, transparent);
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  opacity: 0.55;
+  -webkit-text-stroke: 0.5px color-mix(in srgb, var(--neon-color) 50%, transparent);
+  text-shadow: 0 0 3px color-mix(in srgb, var(--neon-color) 35%, transparent);
+  box-shadow: none;
+}
+
+.stat-pill .stat-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 1px color-mix(in srgb, var(--neon-color) 50%, transparent));
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+.stat-pill:hover {
+  opacity: 0.85;
+  border-color: color-mix(in srgb, var(--neon-color) 75%, transparent);
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--neon-color) 35%, transparent);
+}
+
+.stat-pill.active {
+  opacity: 1;
+  color: #fff;
+  background: color-mix(in srgb, var(--neon-color) 28%, rgba(0,0,0,0.6));
+  border: 2px solid var(--neon-color);
+  transform: scale(1.06);
+  -webkit-text-stroke: 0.7px var(--neon-color);
+  text-shadow:
+    0 0 5px var(--neon-color),
+    0 0 12px var(--neon-color),
+    0 0 22px color-mix(in srgb, var(--neon-color) 80%, transparent);
+  box-shadow:
+    0 0 14px color-mix(in srgb, var(--neon-color) 75%, transparent),
+    0 0 30px color-mix(in srgb, var(--neon-color) 45%, transparent),
+    inset 0 0 12px color-mix(in srgb, var(--neon-color) 25%, transparent);
+}
+
+.stat-pill.active .stat-icon {
+  opacity: 1;
+  filter: drop-shadow(0 0 3px var(--neon-color)) drop-shadow(0 0 6px color-mix(in srgb, var(--neon-color) 70%, transparent));
+}
+
+/* ------- Archetype bar ------- */
+
+.archetype-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px;
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  justify-content: center;
+}
+
+.archetype-pill {
+  --neon-color: #888;
+  --neon-gradient: linear-gradient(90deg, var(--neon-color), var(--neon-color));
+  background:
+    linear-gradient(#060606, #060606) padding-box,
+    var(--neon-gradient) border-box;
+  border: 1.5px solid transparent;
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease, border-width 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  isolation: isolate;
+  -webkit-text-stroke: 0.6px var(--neon-color);
+  text-shadow:
+    0 0 4px var(--neon-color),
+    0 0 8px color-mix(in srgb, var(--neon-color) 65%, transparent);
+}
+
+.archetype-pill::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: inherit;
+  background: var(--neon-gradient);
+  filter: blur(8px);
+  opacity: 0.4;
+  z-index: -1;
+  pointer-events: none;
+  transition: inset 0.2s ease, opacity 0.2s ease, filter 0.2s ease;
+}
+
+.archetype-pill .sig-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.archetype-pill:hover {
+  transform: translateY(-1px);
+}
+
+.archetype-pill:hover::before {
+  opacity: 0.6;
+  filter: blur(10px);
+}
+
+.archetype-pill.matched,
+.archetype-pill.active {
+  border-width: 2px;
+  text-shadow:
+    0 0 4px var(--neon-color),
+    0 0 10px var(--neon-color),
+    0 0 18px color-mix(in srgb, var(--neon-color) 70%, transparent);
+}
+
+.archetype-pill.matched::before {
+  inset: -5px;
+  filter: blur(12px);
+  opacity: 0.75;
+}
+
+.archetype-pill.active {
+  text-shadow:
+    0 0 4px var(--neon-color),
+    0 0 12px var(--neon-color),
+    0 0 24px color-mix(in srgb, var(--neon-color) 80%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--neon-color) 50%, transparent);
+}
+
+.archetype-pill.active::before {
+  inset: -6px;
+  filter: blur(14px);
+  opacity: 0.9;
+}
+
+.archetype-pill.dimmed:not(.active) {
+  opacity: 0.16;
+  filter: saturate(0.35);
+}
+
+.archetype-pill.dimmed:not(.active)::before {
+  opacity: 0;
+}
+
+.archetype-pill.dimmed:not(.active):hover {
+  opacity: 0.55;
+  filter: saturate(0.85);
+}
+
+.archetype-pill.dimmed:not(.active):hover::before {
+  opacity: 0.3;
+}
+
+/* ------- Archetype info ------- */
+
+.archetype-info {
+  margin-top: 16px;
+  padding: 18px 20px;
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.archetype-info.hidden {
+  display: none;
+}
+
+.archetype-info-title {
+  font-family: 'Fredoka', 'Segoe UI', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #fff;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  -webkit-text-stroke: 0;
+  /* --neon-outline: 8 sombras coloridas em volta do glifo simulando contorno multicolor. */
+  text-shadow:
+    var(--neon-outline, 0 0 0 transparent),
+    0 0 6px var(--neon-color, #888),
+    0 0 14px color-mix(in srgb, var(--neon-color, #888) 70%, transparent),
+    0 0 28px color-mix(in srgb, var(--neon-color, #888) 40%, transparent);
+}
+
+.archetype-info-title .info-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px var(--neon-color, #888));
+}
+
+.archetype-info-description {
+  margin: 0;
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.5;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------- Chart ------- */
+
+h1 {
+  text-align: center;
+  margin: 0 0 30px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #fff;
+}
+
+.chart-wrapper {
+  background: #000;
+  border-radius: 8px;
+  padding: 0;
+  border: 1px solid #1f1f1f;
+  margin-top: 16px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.chart-wrapper.hidden {
+  display: none;
+}
+
+.chart-provisional-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #a0a0a0;
+  font-style: italic;
+  margin: 0 0 8px;
+  padding: 0 16px;
+}
+
+.chart-provisional-note.hidden {
+  display: none;
+}
+
+#radar {
+  padding: 16px 20px 8px;
+}
+
+svg#radar {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.grid-hex {
+  fill: none;
+  stroke: #3a3a3a;
+  stroke-width: 0.6;
+}
+
+.spoke {
+  stroke: #3a3a3a;
+  stroke-width: 0.6;
+}
+
+.value-line {
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.95;
+}
+
+.label {
+  fill: #e0e0e0;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: inherit;
+}
+
+.data-triangle {
+  fill-opacity: 0.5;
+  stroke: none;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0;
+  margin: 0;
+  background: #0a0a0a;
+  border-top: 1px solid #1f1f1f;
+}
+
+.stat {
+  text-align: center;
+  padding: 12px 6px;
+  border-right: 1px solid #1f1f1f;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.stat label {
+  display: block;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+  text-transform: none;
+  line-height: 1.25;
+  min-height: 2.5em;
+}
+
+.stat input {
+  margin-top: auto;
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: inherit;
+  outline: none;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+
+.stat input::-webkit-inner-spin-button,
+.stat input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stat[data-stat="dano"] input         { color: #e74c3c; }
+.stat[data-stat="sobrevivencia"] input { color: #3498db; }
+.stat[data-stat="suporte"] input      { color: #2ecc71; }
+.stat[data-stat="controle"] input     { color: #f39c12; }
+.stat[data-stat="furtividade"] input  { color: #9b59b6; }
+.stat[data-stat="complexidade"] input { color: #ffffff; }
+
+/* ------- Warframe grid ------- */
+
+.grid-wrapper {
+  margin-top: 24px;
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.grid-hint {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  margin: 0 0 12px;
+  letter-spacing: 0.3px;
+}
+
+.warframe-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+}
+
+.warframe-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.warframe-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 3px;
+  filter: grayscale(1) brightness(0.55);
+  transition: filter 0.3s ease;
+  pointer-events: none;
+}
+
+.warframe-card.in-archetype img {
+  filter: none;
+}
+
+.warframe-card .name {
+  font-size: 13px;
+  color: #555;
+  margin-top: 6px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.warframe-card.in-archetype .name {
+  color: #ccc;
+}
+
+.warframe-card:hover {
+  background: #1a1a1a;
+}
+
+.warframe-card.selected {
+  background: #2a2a2a;
+  outline: 2px solid #f0be12;
+}
+
+.warframe-card.selected .name {
+  color: #f0be12;
+  font-weight: 600;
+}
+
+/* ------- Warframe detail ------- */
+
+.warframe-detail {
+  margin-top: 16px;
+  padding: 22px 24px 24px;
+  background: #111;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+}
+
+.warframe-detail.hidden {
+  display: none;
+}
+
+.warframe-detail-body {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.warframe-detail-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.warframe-detail-header {
+  margin: 0;
+}
+
+.warframe-detail-name {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 34px;
+  margin: 0;
+  color: #d4b25a;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 14px rgba(212, 178, 90, 0.25);
+}
+
+.warframe-detail-subtitle {
+  margin: 4px 0 0;
+  font-size: 16px;
+  color: #aaa;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.warframe-detail-sep {
+  border: 0;
+  border-top: 1px solid #2a2a2a;
+  margin: 14px 0 14px;
+}
+
+.warframe-detail-description {
+  margin: 0 0 20px;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ----- Portrait + variant tabs ----- */
+.warframe-portrait-wrapper {
+  flex: 0 0 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.variant-tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.variant-tab {
+  appearance: none;
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  color: #888;
+  padding: 7px 18px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  flex: 1;
+}
+
+.variant-tab:hover { background: #1d1d1d; color: #ccc; }
+
+.variant-tab.active {
+  background: #1a1a1a;
+  color: #d4b25a;
+  border-color: #2a2a2a;
+}
+
+.form-tabs {
+  display: flex;
+  gap: 2px;
+  margin-top: 2px;
+}
+.form-tabs:empty { display: none; }
+
+.form-tab {
+  appearance: none;
+  background: #121212;
+  border: 1px solid #242424;
+  color: #6a6a6a;
+  padding: 5px 10px;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex: 1;
+  border-radius: 4px;
+}
+
+.form-tab:hover { background: #1a1a1a; color: #b0b0b0; }
+
+.form-tab.active {
+  background: #1c1c1c;
+  color: #d4b25a;
+  border-color: #3a3a3a;
+}
+
+.warframe-portrait {
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  border-radius: 0 6px 6px 6px;
+  aspect-ratio: 3 / 4;
+  position: relative;
+  overflow: hidden;
+}
+
+.warframe-portrait .portrait-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 100%;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.6));
+  opacity: 0;
+  transition: opacity 260ms ease;
+  pointer-events: none;
+}
+.warframe-portrait.is-variant .portrait-layer {
+  object-fit: contain;
+}
+.warframe-portrait .portrait-layer.active {
+  opacity: 1;
+}
+
+/* ----- Ability tabs ----- */
+.ability-tabs {
+  display: flex;
+  gap: 2px;
+  border-bottom: 1px solid #2a2a2a;
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.ability-tab {
+  appearance: none;
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  color: #888;
+  padding: 8px 12px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  position: relative;
+  top: 1px;
+}
+
+.ability-tab:hover {
+  background: #1d1d1d;
+  color: #ccc;
+}
+
+.ability-tab.active {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #2a2a2a;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.ability-tab.passive { font-style: italic; }
+
+.ability-panel {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-top: none;
+  border-radius: 0 6px 6px 6px;
+  padding: 18px 20px;
+  min-height: 80px;
+}
+
+.ability-content {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+/* Dual-form abilities (e.g. Sirius & Orion): stack each form vertically,
+   Sirius on top, Orion below, each with its own icon/name/description. */
+.ability-forms {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ability-forms .ability-content + .ability-content {
+  padding-top: 18px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.ability-form-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #9b8cff;
+  margin: 0 0 4px;
+}
+
+.ability-form-label-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.ability-icon {
+  flex: 0 0 80px;
+  width: 80px;
+  height: 80px;
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.ability-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.1));
+}
+
+.ability-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.ability-name {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.ability-description {
+  margin: 0;
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ability-empty {
+  margin: 0;
+  color: #777;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.ability-augments {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.augments-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #f2c94c;
+  margin: 0 0 14px;
+}
+
+.augments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.augment-card {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.augment-image {
+  width: 220px;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.augment-caption {
+  margin: 0;
+  width: 100%;
+  color: #cfcfcf;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+/* "Buy from" syndicate chips on an augment card */
+.augment-syn {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+}
+.augment-syn-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8a8a92;
+}
+.augment-syn-chip {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 3px 10px;
+  border-radius: 999px;
+  color: var(--sc, #7fd13b);
+  background: color-mix(in srgb, var(--sc, #7fd13b) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--sc, #7fd13b) 55%, transparent);
+  transition: background 0.12s, box-shadow 0.12s;
+}
+.augment-syn-chip:hover {
+  background: color-mix(in srgb, var(--sc, #7fd13b) 26%, transparent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--sc, #7fd13b) 35%, transparent);
+}
+
