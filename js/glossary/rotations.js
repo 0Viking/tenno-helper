@@ -5,38 +5,63 @@ function renderRotationsSection() {
   const L = o => (o && (o[loc] || o.en)) || '';
   const esc = relicEsc;
 
-  const cycle = ['A', 'A', 'B', 'C'].map(x =>
-    `<span class="rot-chip${x === 'C' ? ' is-c' : ''}">${x}</span>`).join('<span class="rot-arrow">›</span>');
+  const chip = ltr => `<span class="rot-chip${ltr === 'C' ? ' is-c' : ''}">${ltr}</span>`;
+  const cycle = ['A', 'A', 'B', 'C'].map(chip).join('<span class="rot-arrow">›</span>');
 
   const rows = ROT_MISSIONS.map(r =>
     `<tr><td>${esc(L(r.m))}</td><td class="rot-iv">${esc(L(r.iv))}</td><td>${esc(L(r.a))}</td><td>${esc(L(r.b))}</td><td class="rot-c">${esc(L(r.c))}</td></tr>`).join('');
-
   const table = `<div class="crit-ex-wrap"><table class="rot-table"><thead><tr>`
     + `<th>${esc(L({ en: 'Mission', 'pt-BR': 'Missão' }))}</th>`
     + `<th>${esc(L({ en: 'Cadence', 'pt-BR': 'Cadência' }))}</th>`
     + `<th>A</th><th>B</th><th class="rot-c">C</th></tr></thead>`
     + `<tbody>${rows}</tbody></table></div>`;
 
+  // Cada caso especial: o padrão visualizado (seq de chips / conduítes / tag) + legenda curta.
+  const seqViz = p => {
+    if (p.seq) {
+      let h = p.seq.split('').map(chip).join('<span class="rot-arrow">›</span>');
+      if (p.loop) h += '<span class="rot-loop">↻</span>';
+      if (p.tail) h += `<span class="rot-tail">${esc(L(p.tail))}</span>`;
+      return h;
+    }
+    if (p.conduits) return [['1', 'A'], ['3', 'B'], ['4', 'C']].map(([n, t]) =>
+      `<span class="rot-cond"><b>${n}</b><span class="rot-arrow">▸</span>${chip(t)}</span>`).join('');
+    if (p.tag) return `<span class="rot-tag">${esc(L(p.tag))}</span>`;
+    return '';
+  };
   const special = ROT_SPECIAL.map(p =>
-    `<div class="sc-term"><dt>${esc(L(p.t))}</dt><dd>${esc(L(p.d))}</dd></div>`).join('');
+    `<div class="rot-special"><div class="rot-special-head">${esc(L(p.t))}</div>`
+    + `<div class="rot-cycle rot-cycle-sm">${seqViz(p)}</div>`
+    + `<div class="rot-special-cap">${esc(L(p.d))}</div></div>`).join('');
+
+  const figs = [
+    { src: 'assets/infographics/rotation-2.png', alt: 'Rotation-C rewards infographic' },
+    { src: 'assets/infographics/rotation.jpeg', alt: 'Mission rewards rotation infographic' },
+  ].map(f => `<div class="rot-fig"><img src="${f.src}" alt="${f.alt}" loading="lazy"></div>`).join('');
 
   const tips = ROT_TIPS.map(t => `<li>${esc(L(t))}</li>`).join('');
 
   const T = {
-    cycle:   { en: 'The AABC cycle', 'pt-BR': 'O ciclo AABC' },
-    when:    { en: 'When each rotation lands', 'pt-BR': 'Quando cada rotação cai' },
-    special: { en: 'Special cases', 'pt-BR': 'Casos especiais' },
-    tips:    { en: 'Good to know', 'pt-BR': 'Bom saber' },
+    cycle:    { en: 'The AABC cycle', 'pt-BR': 'O ciclo AABC' },
+    cycleCap: { en: 'C holds the rarest loot — Prime parts and rare mods.', 'pt-BR': 'A C tem o loot mais raro — peças Prime e mods raros.' },
+    when:     { en: 'When each rotation lands', 'pt-BR': 'Quando cada rotação cai' },
+    special:  { en: 'Special cases', 'pt-BR': 'Casos especiais' },
+    visual:   { en: 'Visual cheat-sheet', 'pt-BR': 'Resumo visual' },
+    credit:   { en: 'Infographics by Tenno Info (Dawit Thepchatree). Click to enlarge.', 'pt-BR': 'Infográficos do Tenno Info (Dawit Thepchatree). Clique pra ampliar.' },
+    tips:     { en: 'Good to know', 'pt-BR': 'Bom saber' },
   };
 
   el.innerHTML =
     `<h4 class="sc-h">${esc(L(T.cycle))}</h4>`
     + `<div class="rot-cycle">${cycle}<span class="rot-loop">↻</span></div>`
     + `<p class="rot-repeat">${esc(L({ en: '…then it repeats: A A B C A A B C…', 'pt-BR': '…e repete: A A B C A A B C…' }))}</p>`
+    + `<div class="gloss-callout"><span class="gloss-callout-ico" aria-hidden="true">🟢</span><span class="gloss-callout-text">${esc(L(T.cycleCap))}</span></div>`
     + `<h4 class="sc-h">${esc(L(T.when))}</h4>`
     + table
     + `<h4 class="sc-h">${esc(L(T.special))}</h4>`
-    + `<dl class="sc-terms">${special}</dl>`
+    + `<div class="rot-special-grid">${special}</div>`
+    + `<h4 class="sc-h">${esc(L(T.visual))}</h4>`
+    + `<div class="rot-figs">${figs}</div><p class="sc-sub">${esc(L(T.credit))}</p>`
     + `<h4 class="sc-h">${esc(L(T.tips))}</h4>`
     + `<ul class="sc-tips">${tips}</ul>`;
 }

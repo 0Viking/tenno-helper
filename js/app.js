@@ -2,7 +2,7 @@ function setupLightboxEvents() {
   document.getElementById('lightbox-backdrop')?.addEventListener('click', closeLightbox);
   document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
   document.getElementById('glossary-sections')?.addEventListener('click', e => {
-    const img = e.target.closest('.glossary-figure img, .mod-ui-fig img, .mod-pol-fig img, .el-ord-fig img, .riven-flow-fig img, .archon-img');
+    const img = e.target.closest('.glossary-figure img, .mod-ui-fig img, .mod-pol-fig img, .el-ord-fig img, .riven-flow-fig img, .archon-img, .eximus-types .arc-card-ico, .rot-fig img');
     if (img) openLightbox(img.src, img.alt);
   });
   document.addEventListener('keydown', e => {
@@ -334,6 +334,13 @@ function setLocale(loc) {
   renderHelminthSection();
   renderArchonHuntsSection();
   renderArchonShardsSection();
+  renderRelicsSection();
+  renderDucatsSection();
+  renderEndoSection();
+  renderKuvaSection();
+  renderPlatinumTradingSection();
+  renderEximusSection();
+  renderLichesSistersSection();
   renderElementOrder();
   renderGlossaryToc();
   applyTermTipsToGlossary();
@@ -3176,6 +3183,13 @@ function setupTabNav() {
   renderHelminthSection();
   renderArchonHuntsSection();
   renderArchonShardsSection();
+  renderRelicsSection();
+  renderDucatsSection();
+  renderEndoSection();
+  renderKuvaSection();
+  renderPlatinumTradingSection();
+  renderEximusSection();
+  renderLichesSistersSection();
   renderElementOrder();
   renderGlossaryToc();
   applyTermTipsToGlossary();

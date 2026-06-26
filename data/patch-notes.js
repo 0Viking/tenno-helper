@@ -1,6 +1,15 @@
 const PATCH_NOTES = {
   en: [
     {
+      date: '2026-06-26',
+      title: 'Economy & Enemies glossary sections',
+      items: [
+        'Economy — new Relics, Ducats, Endo, Kuva and Platinum & Trading entries: what each currency/resource is for, where to farm it, and a panel of every Ayatan Sculpture with its socket needs and Endo value.',
+        'Enemies — Eximus & Overguard (with the full ability roster and the status types they deal) and the Nemesis system (Kuva Liches, Sisters of Parvos and the new Technocyte Codas), including a card list of every weapon you can earn from each.',
+        'Clearer Mission Rotations — the special cases (Arbitrations, Disruption, The Index) now show their pattern at a glance, plus two reward infographics you can click to enlarge.',
+      ]
+    },
+    {
       date: '2026-06-25',
       title: 'Arcanes, Helminth & Archon Shards glossary sections',
       items: [
@@ -123,6 +132,15 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-26',
+      title: 'Seções de Economia e Inimigos no Glossário',
+      items: [
+        'Economia — novas entradas de Relíquias, Ducados, Endo, Kuva e Platina & Trade: pra que serve cada moeda/recurso, onde farmar, e um painel com todas as Esculturas Ayatan (sockets necessários e valor em Endo).',
+        'Inimigos — Eximus & Overguard (com todas as habilidades e os status que causam) e o sistema de nêmesis (Kuva Liches, Sisters of Parvos e os novos Technocyte Codas), incluindo a lista em cards de cada arma que dá pra obter.',
+        'Rotações de Missão mais claras — os casos especiais (Arbitragens, Disrupção, O Índice) agora mostram o padrão de forma visual, mais dois infográficos de recompensa que dá pra clicar e ampliar.',
+      ]
+    },
     {
       date: '2026-06-25',
       title: 'Seções de Arcanos, Helminth e Fragmentos de Archon no Glossário',

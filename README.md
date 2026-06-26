@@ -40,6 +40,11 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-26 — Economy & Enemies glossary sections
+- **Economy** — new Relics, Ducats, Endo, Kuva and Platinum & Trading entries: what each currency/resource is for, where to farm it, and a panel of every Ayatan Sculpture with its socket needs and Endo value.
+- **Enemies** — Eximus & Overguard (with the full ability roster and the status types they deal) and the Nemesis system (Kuva Liches, Sisters of Parvos and the new Technocyte Codas), including a card list of every weapon you can earn from each.
+- **Clearer Mission Rotations** — the special cases (Arbitrations, Disruption, The Index) now show their pattern at a glance, plus two reward infographics you can click to enlarge.
+
 #### 2026-06-25 — Arcanes, Helminth & Archon Shards glossary sections
 - **Arcanes** — a new visual guide: what arcanes are, where they slot in (Warframe, weapons, Archwing…), how ranks and upgrade costs work, and the main arcane families.
 - **Helminth** — how to unlock the Helminth, how subsuming and injecting abilities works, the secretion resources and their costs, and which ability each Warframe can give up (with a note when a subsumed ability is weakened).
@@ -170,6 +175,11 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-26 — Seções de Economia e Inimigos no Glossário
+- **Economia** — novas entradas de Relíquias, Ducados, Endo, Kuva e Platina & Trade: pra que serve cada moeda/recurso, onde farmar, e um painel com todas as Esculturas Ayatan (sockets necessários e valor em Endo).
+- **Inimigos** — Eximus & Overguard (com todas as habilidades e os status que causam) e o sistema de nêmesis (Kuva Liches, Sisters of Parvos e os novos Technocyte Codas), incluindo a lista em cards de cada arma que dá pra obter.
+- **Rotações de Missão mais claras** — os casos especiais (Arbitragens, Disrupção, O Índice) agora mostram o padrão de forma visual, mais dois infográficos de recompensa que dá pra clicar e ampliar.
 
 #### 2026-06-25 — Seções de Arcanos, Helminth e Fragmentos de Archon no Glossário
 - **Arcanos** — um guia visual novo: o que são arcanos, onde encaixam (Warframe, armas, Archwing…), como funcionam os ranks e os custos de upgrade, e as principais famílias de arcanos.
