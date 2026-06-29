@@ -40,6 +40,10 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-29 — Visual polish: footer & archetype grid
+- **Compact footer** — the language and Credits controls moved from a full-width bar to a small floating pill in the bottom-right corner, keeping the screen cleaner.
+- **Archetype grid glow** — inactive Warframe icons are now slightly darker; icons highlighted by the selected archetype gain a soft white glow around their silhouette.
+
 #### 2026-06-26 — Economy & Enemies glossary sections
 - **Economy** — new Relics, Ducats, Endo, Kuva and Platinum & Trading entries: what each currency/resource is for, where to farm it, and a panel of every Ayatan Sculpture with its socket needs and Endo value.
 - **Enemies** — Eximus & Overguard (with the full ability roster and the status types they deal) and the Nemesis system (Kuva Liches, Sisters of Parvos and the new Technocyte Codas), including a card list of every weapon you can earn from each.
@@ -175,6 +179,10 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-29 — Polimento visual: rodapé e grade de arquétipos
+- **Rodapé compacto** — os controles de idioma e Créditos saíram da barra full-width e viraram uma pílula flutuante discreta no canto inferior direito, deixando a tela mais limpa.
+- **Glow na grade de arquétipos** — os ícones de Warframe inativos ficaram um pouco mais escuros; os ícones destacados pelo arquétipo selecionado ganham um glow branco suave ao redor da silhueta.
 
 #### 2026-06-26 — Seções de Economia e Inimigos no Glossário
 - **Economia** — novas entradas de Relíquias, Ducados, Endo, Kuva e Platina & Trade: pra que serve cada moeda/recurso, onde farmar, e um painel com todas as Esculturas Ayatan (sockets necessários e valor em Endo).

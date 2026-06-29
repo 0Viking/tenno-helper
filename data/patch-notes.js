@@ -1,6 +1,14 @@
 const PATCH_NOTES = {
   en: [
     {
+      date: '2026-06-29',
+      title: 'Visual polish: footer & archetype grid',
+      items: [
+        'Compact footer — the language and Credits controls moved from a full-width bar to a small floating pill in the bottom-right corner, keeping the screen cleaner.',
+        'Archetype grid glow — inactive Warframe icons are now slightly darker; icons highlighted by the selected archetype gain a soft white glow around their silhouette.',
+      ]
+    },
+    {
       date: '2026-06-26',
       title: 'Economy & Enemies glossary sections',
       items: [
@@ -132,6 +140,14 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-29',
+      title: 'Polimento visual: rodapé e grade de arquétipos',
+      items: [
+        'Rodapé compacto — os controles de idioma e Créditos saíram da barra full-width e viraram uma pílula flutuante discreta no canto inferior direito, deixando a tela mais limpa.',
+        'Glow na grade de arquétipos — os ícones de Warframe inativos ficaram um pouco mais escuros; os ícones destacados pelo arquétipo selecionado ganham um glow branco suave ao redor da silhueta.',
+      ]
+    },
     {
       date: '2026-06-26',
       title: 'Seções de Economia e Inimigos no Glossário',
