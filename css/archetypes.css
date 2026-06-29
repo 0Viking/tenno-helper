@@ -430,13 +430,13 @@ svg#radar {
   height: auto;
   display: block;
   border-radius: 3px;
-  filter: grayscale(1) brightness(0.55);
+  filter: grayscale(1) brightness(0.4);
   transition: filter 0.3s ease;
   pointer-events: none;
 }
 
 .warframe-card.in-archetype img {
-  filter: none;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.35)) drop-shadow(0 0 12px rgba(255,255,255,0.15));
 }
 
 .warframe-card .name {

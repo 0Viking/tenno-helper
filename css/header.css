@@ -79,20 +79,20 @@ body {
 /* Rodapé (desktop): idioma + créditos vivem aqui, alinhados à direita. O JS
    move o .header-right pra cá no desktop e de volta pro header no mobile. */
 .site-footer {
-  background: #050505;
-  border-top: 1px solid #1f1f1f;
-  padding: 12px 24px;
   position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  right: 16px;
+  bottom: 12px;
   z-index: 49;
 }
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 6px;
+  background: rgba(10,10,14,0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid #1f1f1f;
+  border-radius: 8px;
+  padding: 5px 10px;
 }
 /* Dropdown de idioma no rodapé abre pra CIMA (fica no fim da página). */
 .site-footer .dropdown-menu { top: auto; bottom: calc(100% + 6px); }
