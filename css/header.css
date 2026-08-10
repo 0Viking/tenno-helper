@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+/* ------- Preview mode -------
+   Elementos marcados como `.preview-only` são shipados pra prod mas ficam
+   escondidos por padrão. Digite `enableTutorialsPreview()` no console do
+   navegador (ou adicione `?preview=1` na URL) pra revelar. Persiste em
+   localStorage — útil pra demonstrar features WIP pra alguém sem shipar
+   pra todo mundo. Ver script inline em <head> do index.html. */
+.preview-only { display: none !important; }
+html.preview-enabled .preview-only { display: revert !important; }
+
 body {
   margin: 0;
   background: #0a0a0a;

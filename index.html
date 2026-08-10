@@ -16,6 +16,32 @@
   <link rel="stylesheet" href="css/credits.css">
   <link rel="stylesheet" href="css/acquisition.css">
   <link rel="stylesheet" href="css/star-chart.css">
+  <link rel="stylesheet" href="css/tutorials.css">
+  <script>
+    // Preview mode — reveals `.preview-only` elements (currently: Tutorials tab).
+    // Console: enableTutorialsPreview() / disableTutorialsPreview()
+    // URL: ?preview=1 to enable, ?preview=0 to disable. Persists via localStorage.
+    (function () {
+      var KEY = 'preview-tutorials';
+      var params = new URLSearchParams(window.location.search);
+      if (params.get('preview') === '1') localStorage.setItem(KEY, '1');
+      if (params.get('preview') === '0') localStorage.removeItem(KEY);
+      if (localStorage.getItem(KEY) === '1') {
+        document.documentElement.classList.add('preview-enabled');
+      }
+      window.enableTutorialsPreview = function () {
+        localStorage.setItem(KEY, '1');
+        document.documentElement.classList.add('preview-enabled');
+        console.log('%c✓ Tutorials preview enabled.', 'color:#ff6b8a;font-weight:bold;font-size:14px;');
+        console.log('  → Reload not required. Tab is visible in the navbar now.');
+      };
+      window.disableTutorialsPreview = function () {
+        localStorage.removeItem(KEY);
+        document.documentElement.classList.remove('preview-enabled');
+        console.log('%c✓ Tutorials preview disabled.', 'color:#a8adb8;');
+      };
+    })();
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -49,6 +75,9 @@
           <button class="nav-button" id="relics-btn" type="button">
             <img class="nav-icon" src="assets/icons/nav/relics.png" alt="">
             <span data-i18n="void_relics">Void Relics</span>
+          </button>
+          <button class="nav-button preview-only" id="tutorials-btn" type="button">
+            <span data-i18n="tutorials">Tutorials</span>
           </button>
         </nav>
       </div>
@@ -869,6 +898,366 @@
       <div class="relics-view" id="relics-view"></div>
     </div>
 
+    <div id="tab-tutorials" class="tab-content hidden preview-only">
+
+      <!-- LEVEL 1: Tutorial index (landing) -->
+      <div class="tut-index" id="tut-view-index">
+        <section class="page-intro">
+          <h2 class="page-intro-title">Tutorials</h2>
+          <p class="page-intro-text">Guides organized <span class="hl">by topic</span>. Each tutorial has short sections with <span class="hl">explanations, screenshots and tips</span> — so you can understand the game's systems <span class="hl">without leaving the site</span>.</p>
+        </section>
+
+        <div class="tut-search">
+          <input type="search" id="tut-search-input" class="tut-search-input" placeholder="Search tutorials…" autocomplete="off">
+          <button type="button" id="tut-search-clear" class="tut-search-clear hidden" aria-label="Clear search">×</button>
+        </div>
+
+        <div class="tut-search-empty hidden" id="tut-search-empty">
+          No tutorials match your search.
+        </div>
+
+        <div class="tut-index-section">
+          <div class="tut-index-section-label">Getting started</div>
+          <div class="tut-index-grid">
+            <button class="tut-card" data-open-tutorial="first-steps">
+              <div class="tut-card-cover is-first">
+                <span class="tut-card-cover-badge is-ready">Ready</span>
+              </div>
+              <div class="tut-card-body">
+                <div class="tut-card-tags">
+                  <span class="tut-card-tag is-level-1">Beginner</span>
+                  <span class="tut-card-tag">Onboarding</span>
+                </div>
+                <h2 class="tut-card-title">First Steps of a Tenno</h2>
+                <p class="tut-card-desc">Immersion guide for your first session. HUD, movement, warframe pick, basic modding, foundry and how to progress through the Star Chart.</p>
+                <div class="tut-card-meta">
+                  <span>11 sections</span>
+                  <span class="tut-card-meta-sep">·</span>
+                  <span>~30 min read</span>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="tut-index-section">
+          <div class="tut-index-section-label">Coming soon</div>
+          <div class="tut-index-grid">
+            <button class="tut-card is-locked" disabled>
+              <div class="tut-card-cover is-adversaries">
+                <span class="tut-card-cover-badge is-locked">🔒 Coming soon</span>
+              </div>
+              <div class="tut-card-body">
+                <div class="tut-card-tags">
+                  <span class="tut-card-tag is-level-2">Intermediate</span>
+                  <span class="tut-card-tag">Nemesis</span>
+                </div>
+                <h2 class="tut-card-title">Adversary Hunting</h2>
+                <p class="tut-card-desc">How to spawn, fight and collect rewards from the three nemesis systems: Kuva Lich (Grineer), Tenet Sister (Corpus) and Coda Hex (Murmur).</p>
+                <div class="tut-card-meta">
+                  <span>3 sub-tutorials</span>
+                  <span class="tut-card-meta-sep">·</span>
+                  <span>planned</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="tut-card is-locked" disabled>
+              <div class="tut-card-cover is-modding">
+                <span class="tut-card-cover-badge is-locked">🔒 Coming soon</span>
+              </div>
+              <div class="tut-card-body">
+                <div class="tut-card-tags">
+                  <span class="tut-card-tag is-level-2">Intermediate</span>
+                  <span class="tut-card-tag">Builds</span>
+                </div>
+                <h2 class="tut-card-title">Advanced Modding</h2>
+                <p class="tut-card-desc">Polarities, Forma, Umbra, Arcanes, Helminth. How to turn a stock warframe into an optimized build.</p>
+                <div class="tut-card-meta">
+                  <span>planned</span>
+                </div>
+              </div>
+            </button>
+
+            <button class="tut-card is-locked" disabled>
+              <div class="tut-card-cover is-relics">
+                <span class="tut-card-cover-badge is-locked">🔒 Coming soon</span>
+              </div>
+              <div class="tut-card-body">
+                <div class="tut-card-tags">
+                  <span class="tut-card-tag is-level-2">Intermediate</span>
+                  <span class="tut-card-tag">Farm</span>
+                </div>
+                <h2 class="tut-card-title">Prime Hunting</h2>
+                <p class="tut-card-desc">Void Relics, Fissures, refinement with Void Traces, efficient farming routines, and what to do with duplicate parts (Ducats).</p>
+                <div class="tut-card-meta">
+                  <span>planned</span>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 2: Tutorial detail (First Steps) -->
+      <div class="tut-detail hidden" id="tut-view-detail-first-steps">
+        <a class="tut-back" data-back-to-index>
+          <span class="tut-back-arrow">←</span>
+          All tutorials
+        </a>
+
+        <section class="page-intro">
+          <h2 class="page-intro-title">First Steps of a Tenno</h2>
+          <p class="page-intro-text"><span class="hl">Immersion guide</span> for your first session. <span class="hl">No story spoilers</span> — quest-locked systems appear blurred until you unlock them in-game.</p>
+        </section>
+
+        <div class="tut-shell">
+
+        <!-- Sticky sidebar TOC -->
+        <aside class="tut-toc">
+          <div class="tut-toc-label">On this page</div>
+          <ul class="tut-toc-list">
+            <li><a class="tut-toc-item active" href="#tut-s1"><span class="tut-toc-num">01</span><span class="tut-toc-text">Welcome, Tenno</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s2"><span class="tut-toc-num">02</span><span class="tut-toc-text">Your first hour</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s3"><span class="tut-toc-num">03</span><span class="tut-toc-text">HUD anatomy</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s4"><span class="tut-toc-num">04</span><span class="tut-toc-text">Movement (Parkour 2.0)</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s5"><span class="tut-toc-num">05</span><span class="tut-toc-text">Basic combat</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s6"><span class="tut-toc-num">06</span><span class="tut-toc-text">Essential modding</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s7"><span class="tut-toc-num">07</span><span class="tut-toc-text">Your first craft</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s8"><span class="tut-toc-num">08</span><span class="tut-toc-text">Star Chart &amp; Junctions</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s9"><span class="tut-toc-num">09</span><span class="tut-toc-text">Essential vocabulary</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s10"><span class="tut-toc-num">10</span><span class="tut-toc-text">Mistakes to avoid</span></a></li>
+            <li><a class="tut-toc-item" href="#tut-s11"><span class="tut-toc-num">11</span><span class="tut-toc-text">Locked doors 🔒</span></a></li>
+          </ul>
+
+          <div class="tut-toc-progress">
+            <div class="tut-toc-progress-label">Progress</div>
+            <div class="tut-toc-progress-bar"><div class="tut-toc-progress-fill"></div></div>
+            <div class="tut-toc-progress-count">3 / 11 in mockup</div>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <main class="tut-content">
+
+          <!-- Section 01 -->
+          <section class="tut-section" id="tut-s1">
+            <div class="tut-section-head">
+              <div class="tut-section-num">01</div>
+              <div class="tut-section-title-wrap">
+                <h2 class="tut-section-title">Welcome, Tenno</h2>
+                <p class="tut-section-lede">Warframe is big. This guide is your spoiler-free starting point.</p>
+              </div>
+            </div>
+
+            <div class="tut-hero is-first">
+              <span class="tut-hero-badge">Placeholder — Screenshot: Tenno waking up during Awakening</span>
+            </div>
+
+            <div class="tut-body">
+              <p>You are a <span class="term">Tenno</span> — an ancient warrior who pilots a <span class="term">Warframe</span>. Ordis, your onboard Cephalon, and Lotus, the mysterious voice on comms, will guide you through the first hours.</p>
+
+              <p class="dim">Warframe is free-to-play and grows in layers: first combat and mods, then warframe crafting, then open-world missions, then endgame systems. This site covers the layers <strong>in the order you'll meet them</strong>.</p>
+
+              <div class="tut-callout is-spoil">
+                <span class="tut-callout-label">Spoiler policy</span>
+                <p>Warframe has a famous story twist. We won't name future quests or locked systems — they show up blurred 🔒 until you complete the matching quest and turn on "Show Spoilers" in the relevant site sections.</p>
+              </div>
+
+              <div class="tut-callout is-tip">
+                <span class="tut-callout-label">Before you continue</span>
+                <p>If you haven't installed the game yet, do it now — this guide works best with the game running alongside. Set aside 30–45 free minutes to finish Awakening + the first mission of Vor's Prize.</p>
+              </div>
+            </div>
+
+            <a class="tut-section-next" href="#tut-s2">
+              <div>
+                <div class="tut-section-next-label">Next</div>
+                <div class="tut-section-next-title">02 · Your first hour</div>
+              </div>
+              <span class="tut-section-next-arrow">→</span>
+            </a>
+          </section>
+
+          <!-- Section 02 -->
+          <section class="tut-section" id="tut-s2">
+            <div class="tut-section-head">
+              <div class="tut-section-num">02</div>
+              <div class="tut-section-title-wrap">
+                <h2 class="tut-section-title">Your first hour</h2>
+                <p class="tut-section-lede">Awakening → warframe pick → Vor's Prize. What to expect and what each step unlocks.</p>
+              </div>
+            </div>
+
+            <div class="tut-body">
+              <p>The game opens with you in a stasis chamber. Ordis wakes you up, you fight your first Grineer, and before reaching your Orbiter (the ship) you pick one of three starter warframes. After that, a mission chain called <strong>Vor's Prize</strong> progressively unlocks the game's systems.</p>
+
+              <h3>Starter warframe pick</h3>
+
+              <div class="tut-starter-grid">
+                <div class="tut-starter-card" data-frame="excalibur">
+                  <div class="tut-starter-portrait">Excalibur</div>
+                  <div class="tut-starter-name">Excalibur</div>
+                  <div class="tut-starter-tags">
+                    <span class="tut-starter-tag">Damage</span>
+                    <span class="tut-starter-tag">Melee</span>
+                    <span class="tut-starter-tag">Recommended</span>
+                  </div>
+                  <p class="tut-starter-blurb">Sword warrior with Slash Dash and Exalted Blade. Straightforward kit, scales well, ideal if you want to learn melee combat.</p>
+                </div>
+
+                <div class="tut-starter-card" data-frame="mag">
+                  <div class="tut-starter-portrait">Mag</div>
+                  <div class="tut-starter-name">Mag</div>
+                  <div class="tut-starter-tags">
+                    <span class="tut-starter-tag">Control</span>
+                    <span class="tut-starter-tag">Magnetic</span>
+                    <span class="tut-starter-tag">Anti-Corpus</span>
+                  </div>
+                  <p class="tut-starter-blurb">Bends magnetism to pull enemies and strip shields. A great pick against Corpus (the shield faction).</p>
+                </div>
+
+                <div class="tut-starter-card" data-frame="volt">
+                  <div class="tut-starter-portrait">Volt</div>
+                  <div class="tut-starter-name">Volt</div>
+                  <div class="tut-starter-tags">
+                    <span class="tut-starter-tag">Speed</span>
+                    <span class="tut-starter-tag">Electric</span>
+                    <span class="tut-starter-tag">Support</span>
+                  </div>
+                  <p class="tut-starter-blurb">Fast, buffs allies with Speed, creates electric shields, and hits crowds with Discharge. Also great mid-game.</p>
+                </div>
+              </div>
+
+              <div class="tut-callout is-note">
+                <span class="tut-callout-label">Note</span>
+                <p>You can get all three later — the starter pick just decides which warframe you begin with. No pressure, pick the one whose look you like most.</p>
+              </div>
+
+              <h3>Vor's Prize — 6 missions, ~40 minutes</h3>
+
+              <div class="tut-steps">
+                <div class="tut-step"><div class="tut-step-num">1</div><div class="tut-step-body"><strong>Retrieve Suit Systems</strong><span>Unlocks the Arsenal — where you equip weapons, warframe and mods.</span></div></div>
+                <div class="tut-step"><div class="tut-step-num">2</div><div class="tut-step-body"><strong>Retrieve Mods Segment</strong><span>Unlocks Modding. From here on you can slot mods on your gear.</span></div></div>
+                <div class="tut-step"><div class="tut-step-num">3</div><div class="tut-step-body"><strong>Foundry Segment</strong><span>Unlocks the Foundry — where you craft new warframes and weapons from blueprints.</span></div></div>
+                <div class="tut-step"><div class="tut-step-num">4</div><div class="tut-step-body"><strong>Nav Segment</strong><span>Unlocks the Star Chart. Now you choose where to go across the solar system.</span></div></div>
+                <div class="tut-step"><div class="tut-step-num">5</div><div class="tut-step-body"><strong>Craft the Ascaris Negator</strong><span>Your first Foundry experience. Short timer (a few real-time hours).</span></div></div>
+                <div class="tut-step"><div class="tut-step-num">6</div><div class="tut-step-body"><strong>Assassinate Captain Vor</strong><span>Boss fight on Mercury. Rewards: a 3-day Affinity/Credit/Resource booster and access to Earth.</span></div></div>
+              </div>
+
+              <div class="tut-callout is-tip">
+                <span class="tut-callout-label">Tip</span>
+                <p>When Vor's Prize wraps up, start the next Earth quest (Once Awake) right away. Main quests unlock systems — never skip the order.</p>
+              </div>
+            </div>
+
+            <a class="tut-section-next" href="#tut-s3">
+              <div>
+                <div class="tut-section-next-label">Next</div>
+                <div class="tut-section-next-title">03 · HUD anatomy</div>
+              </div>
+              <span class="tut-section-next-arrow">→</span>
+            </a>
+          </section>
+
+          <!-- Section 03 -->
+          <section class="tut-section" id="tut-s3">
+            <div class="tut-section-head">
+              <div class="tut-section-num">03</div>
+              <div class="tut-section-title-wrap">
+                <h2 class="tut-section-title">HUD anatomy</h2>
+                <p class="tut-section-lede">Four screen quadrants + what each symbol means.</p>
+              </div>
+            </div>
+
+            <div class="tut-hero is-hud">
+              <span class="tut-hero-badge">Placeholder — Screenshot: full HUD annotated with callouts</span>
+            </div>
+
+            <div class="tut-body">
+              <p>Warframe's HUD packs information into every corner. After 1-2 hours you'll tune it out — but at the start it's worth knowing what everything means.</p>
+
+              <div class="tut-hud-grid">
+                <div class="tut-hud-card" data-quad="tl">
+                  <div class="tut-hud-quad">Top-left</div>
+                  <div class="tut-hud-title">Minimap and objective</div>
+                  <ul class="tut-hud-list">
+                    <li><strong>White triangle</strong>: you and your facing direction</li>
+                    <li><strong>Yellow dot</strong>: current objective</li>
+                    <li><strong>Green dot</strong>: extraction</li>
+                    <li><strong>Red dot</strong>: enemy (needs a radar aura)</li>
+                    <li><strong>Green circle</strong>: ally</li>
+                    <li>Below: objective progress (enemies left, target HP, timer…)</li>
+                  </ul>
+                </div>
+
+                <div class="tut-hud-card" data-quad="tr">
+                  <div class="tut-hud-quad">Top-right</div>
+                  <div class="tut-hud-title">Shields and health</div>
+                  <ul class="tut-hud-list">
+                    <li><strong>Blue bar</strong>: shields (regenerate after ~3s without damage)</li>
+                    <li><strong>Red bar</strong>: health (does NOT regen without a mod)</li>
+                    <li>Companion appears right below with its own bars</li>
+                    <li>Active buffs and status effects show on the left</li>
+                    <li>Press <strong>Z</strong> to see the squad</li>
+                  </ul>
+                </div>
+
+                <div class="tut-hud-card" data-quad="br">
+                  <div class="tut-hud-quad">Bottom-right</div>
+                  <div class="tut-hud-title">Weapons, ammo, abilities</div>
+                  <ul class="tut-hud-list">
+                    <li>Ammo counter: <strong>magazine / reserve</strong></li>
+                    <li>Melee: Combo Counter (multiplies Heavy Attack)</li>
+                    <li>4 ability icons → keys <strong>1/2/3/4</strong></li>
+                    <li>Light-blue bar: <strong>Energy</strong> (ability cost)</li>
+                    <li>Dots below the crosshair: ability ready / not</li>
+                  </ul>
+                </div>
+
+                <div class="tut-hud-card" data-quad="c">
+                  <div class="tut-hud-quad">Center / crosshair</div>
+                  <div class="tut-hud-title">Target and damage feedback</div>
+                  <ul class="tut-hud-list">
+                    <li>When aiming at an enemy: HP bar above them</li>
+                    <li>Segments: <strong>blue = shield</strong>, <strong>yellow = armor</strong>, <strong>red = health</strong></li>
+                    <li>Red arcs around the crosshair: incoming damage direction</li>
+                    <li>Damage numbers in different colors = status types</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="tut-callout is-warn">
+                <span class="tut-callout-label">Warning</span>
+                <p>The HUD gets busy fast once you have multiple buff mods, status auras and an active squad. It's normal — you can shrink the scale under Options → HUD.</p>
+              </div>
+            </div>
+
+            <a class="tut-section-next" href="#tut-s4">
+              <div>
+                <div class="tut-section-next-label">Next</div>
+                <div class="tut-section-next-title">04 · Movement (Parkour 2.0)</div>
+              </div>
+              <span class="tut-section-next-arrow">→</span>
+            </a>
+          </section>
+
+          <!-- Placeholder for sections 4-11 -->
+          <section class="tut-section">
+            <div class="tut-section-head">
+              <div class="tut-section-num" style="opacity:0.4">04</div>
+              <div class="tut-section-title-wrap">
+                <h2 class="tut-section-title" style="opacity:0.5">Movement, combat, modding… (8 sections to go)</h2>
+                <p class="tut-section-lede">Only the first 3 are populated in this mockup for layout approval. The rest will follow the same pattern.</p>
+              </div>
+            </div>
+          </section>
+
+        </main>
+      </div>
+      </div><!-- /.tut-detail -->
+
+    </div>
   </div>
 
   <div class="relic-modal hidden" id="relic-modal" role="dialog" aria-modal="true" aria-labelledby="relic-modal-title">
@@ -1207,6 +1596,7 @@
   <script src="js/glossary/element-order.js"></script>
   <script src="js/glossary/toc.js"></script>
   <script src="js/glossary/quests.js"></script>
+  <script src="js/tutorials.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>
