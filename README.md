@@ -40,6 +40,11 @@ The whole site is available in **Português (BR)** and **English** — switch vi
 
 ### Patches
 
+#### 2026-06-30 — Tab color system
+- **Distinct color per tab** — each tab now has its own primary color that carries through the tab title, highlighted words in the description, and the navbar button, giving each page a stronger visual identity.
+- **New Archetypes color** — the main page adopted a neutral white so it no longer competes with the dynamic archetype colors that appear when you pick a stat or a warframe.
+- Under the hood: the "Tutorials" tab is still hidden in the shipped site — the layout is being worked on in dev.
+
 #### 2026-06-29 — Visual polish: footer & archetype grid
 - **Compact footer** — the language and Credits controls moved from a full-width bar to a small floating pill in the bottom-right corner, keeping the screen cleaner.
 - **Archetype grid glow** — inactive Warframe icons are now slightly darker; icons highlighted by the selected archetype gain a soft white glow around their silhouette.
@@ -179,6 +184,11 @@ Dá uma nota de 0 a 10 pros seus **Rivens** baseado no tier dos stats e qualidad
 O site inteiro tá disponível em **Português (BR)** e **Inglês** — alterne pela bandeira no canto superior direito.
 
 ### Patches
+
+#### 2026-06-30 — Sistema de cores por aba
+- **Cor única por aba** — cada aba agora tem sua cor primária que percorre o título, as palavras destacadas na descrição e o botão do menu, dando uma identidade visual mais forte a cada página.
+- **Nova cor pra Arquétipos** — a página principal passou a usar um branco neutro pra não competir com as cores dinâmicas de arquétipo que aparecem quando você seleciona um atributo ou uma warframe.
+- Nos bastidores: a aba "Tutoriais" segue escondida do site publicado — o layout continua em desenvolvimento no dev.
 
 #### 2026-06-29 — Polimento visual: rodapé e grade de arquétipos
 - **Rodapé compacto** — os controles de idioma e Créditos saíram da barra full-width e viraram uma pílula flutuante discreta no canto inferior direito, deixando a tela mais limpa.

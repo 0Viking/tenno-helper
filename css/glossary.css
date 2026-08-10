@@ -2,6 +2,18 @@
 
 .tab-content.hidden { display: none; }
 
+/* Per-tab primary color. Cascades to every element inside the tab that reads
+   `var(--neon-color)` — .page-intro-title (neon glow), .hl (highlighted words
+   inside descriptions), and any other themed element. Nav buttons still get
+   their color set imperatively in app.js so the row of buttons keeps per-tab
+   colors even when a different tab is active. */
+#tab-archetypes  { --neon-color: #e8e8ea; }
+#tab-star-chart  { --neon-color: #5ec0e8; }
+#tab-glossary    { --neon-color: #7fd13b; }
+#tab-rivens      { --neon-color: #b888ff; }
+#tab-relics      { --neon-color: #caa15a; }
+#tab-tutorials   { --neon-color: #ff6b8a; }
+
 .nav-button.active {
   border-color: var(--neon-color, #888);
   color: #fff;

@@ -872,7 +872,9 @@ function selectTab(tab) {
   const tutBtn = document.getElementById('tutorials-btn');
   if (archBtn) {
     archBtn.classList.toggle('active', tab === 'archetypes');
-    archBtn.style.setProperty('--neon-color', '#d4b25a');
+    // Archetypes is the main page — neutral white so it doesn't clash with
+    // the per-archetype neon colors that light up when a stat/frame is picked.
+    archBtn.style.setProperty('--neon-color', '#e8e8ea');
   }
   if (starBtn) {
     starBtn.classList.toggle('active', tab === 'star-chart');
@@ -892,7 +894,9 @@ function selectTab(tab) {
   }
   if (tutBtn) {
     tutBtn.classList.toggle('active', tab === 'tutorials');
-    tutBtn.style.setProperty('--neon-color', '#ff9a3c');
+    // Coral/pink — unique in the palette (distinct from gold Void Relics and
+    // orange-ish colors we had before).
+    tutBtn.style.setProperty('--neon-color', '#ff6b8a');
   }
 
   if (tab === 'glossary') renderStatusEffects();

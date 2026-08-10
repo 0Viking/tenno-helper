@@ -1,6 +1,15 @@
 const PATCH_NOTES = {
   en: [
     {
+      date: '2026-06-30',
+      title: 'Tab color system',
+      items: [
+        'Distinct color per tab — each tab now has its own primary color that carries through the tab title, highlighted words in the description, and the navbar button, giving each page a stronger visual identity.',
+        'New Archetypes color — the main page adopted a neutral white so it no longer competes with the dynamic archetype colors that appear when you pick a stat or a warframe.',
+        'Under the hood: the "Tutorials" tab is still hidden in the shipped site — the layout is being worked on in dev.',
+      ]
+    },
+    {
       date: '2026-06-29',
       title: 'Visual polish: footer & archetype grid',
       items: [
@@ -140,6 +149,15 @@ const PATCH_NOTES = {
     }
   ],
   'pt-BR': [
+    {
+      date: '2026-06-30',
+      title: 'Sistema de cores por aba',
+      items: [
+        'Cor única por aba — cada aba agora tem sua cor primária que percorre o título, as palavras destacadas na descrição e o botão do menu, dando uma identidade visual mais forte a cada página.',
+        'Nova cor pra Arquétipos — a página principal passou a usar um branco neutro pra não competir com as cores dinâmicas de arquétipo que aparecem quando você seleciona um atributo ou uma warframe.',
+        'Nos bastidores: a aba "Tutoriais" segue escondida do site publicado — o layout continua em desenvolvimento no dev.',
+      ]
+    },
     {
       date: '2026-06-29',
       title: 'Polimento visual: rodapé e grade de arquétipos',
